@@ -20,3 +20,8 @@ AI API、Cloudflare、有料DBは使いません。
 - ② 王子の記事引用
 - ③ ウォッチリスト
 - ChatGPT Plusから直接取得するMCP連携
+
+## GitHub Pages 初回設定
+
+初回だけ GitHub の Settings → Pages で Source を GitHub Actions に設定してください。
+有効化後のURLは https://neronote100.github.io/nero_comment_reader/ です。
