@@ -84,6 +84,193 @@ function groupByArticle(items) {
   return [...groups.values()];
 }
 
+
+const NOTE_OWNER = "nero_notelover";
+
+async function noteJson(path) {
+  const response = await fetch("https://note.com" + path, {
+    headers: {
+      Accept: "application/json",
+      "User-Agent": "NeroCommentReader/0.3 (+https://neronote100.github.io/nero_comment_reader/)",
+    },
+    cf: { cacheTtl: 20, cacheEverything: true },
+  });
+  if (!response.ok) throw new Error("note API returned HTTP " + response.status + " for " + path);
+  return response.json();
+}
+
+function textFromAny(value) {
+  if (value == null) return "";
+  if (typeof value === "string") {
+    return value
+      .replace(/<br\s*\/?\s*>/gi, "\n")
+      .replace(/<\/p>/gi, "\n")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/&nbsp;/g, " ")
+      .replace(/&amp;/g, "&")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/[ \t]+/g, " ")
+      .replace(/\n{3,}/g, "\n\n")
+      .trim();
+  }
+  if (Array.isArray(value)) return value.map(textFromAny).filter(Boolean).join("\n");
+  if (typeof value === "object") {
+    if (typeof value.value === "string") return value.value;
+    if (typeof value.text === "string") return value.text;
+    if (value.children) return textFromAny(value.children);
+    return Object.values(value).map(textFromAny).filter(Boolean).join("\n");
+  }
+  return "";
+}
+
+function normalizeEventArticle(raw) {
+  const user = raw?.user || {};
+  const key = String(raw?.key || "");
+  const authorUrlname = String(user?.urlname || "");
+  const title = String(raw?.name || raw?.title || "");
+  return {
+    key,
+    title,
+    authorName: String(user?.nickname || user?.name || authorUrlname),
+    authorUrlname,
+    publishedAt: raw?.publish_at || raw?.published_at || raw?.created_at || null,
+    articleUrl: key && authorUrlname ? "https://note.com/" + authorUrlname + "/n/" + key : "",
+    preview: textFromAny(raw?.body || raw?.description || "").slice(0, 1400),
+    likeCount: Number(raw?.like_count || 0),
+  };
+}
+
+function normalizeTag(value) {
+  return decodeURIComponent(String(value || "").trim()).replace(/^#+/, "").trim();
+}
+
+function magazineKey(value) {
+  const match = String(value || "").match(/m[a-f0-9]{10,}/i);
+  if (!match) throw new Error("マガジンURLまたは m から始まるマガジンキーを指定してください。");
+  return match[0];
+}
+
+async function fetchEventSourcePage(sourceType, source, page) {
+  if (sourceType === "hashtag") {
+    const tag = normalizeTag(source);
+    if (!tag) throw new Error("ハッシュタグを指定してください。");
+    const payload = await noteJson(
+      "/api/v3/hashtags/" + encodeURIComponent(tag) + "/notes?order=new&page=" + page + "&paid_only=false"
+    );
+    const data = payload?.data || {};
+    return {
+      sourceLabel: "#" + tag,
+      articles: Array.isArray(data.notes) ? data.notes : [],
+      nextPage: data.next_page ?? null,
+    };
+  }
+
+  if (sourceType === "magazine") {
+    const key = magazineKey(source);
+    const payload = await noteJson("/api/v1/magazines/" + key + "/notes?page=" + page);
+    const data = payload?.data || {};
+    return {
+      sourceLabel: String(data.name || key),
+      magazineKey: key,
+      articles: Array.isArray(data.notes) ? data.notes : [],
+      nextPage: data.next_page ?? null,
+    };
+  }
+
+  throw new Error("sourceType must be hashtag or magazine");
+}
+
+async function ownerCommentedOnArticle(noteKey, owner = NOTE_OWNER) {
+  let page = 1;
+  for (let guard = 0; guard < 8; guard += 1) {
+    const payload = await noteJson(
+      "/api/v3/notes/" + encodeURIComponent(noteKey) + "/note_comments?order=newest&per_page=100&page=" + page
+    );
+    const comments = Array.isArray(payload?.data)
+      ? payload.data
+      : Array.isArray(payload?.data?.comments)
+        ? payload.data.comments
+        : [];
+    if (comments.some((comment) => String(comment?.user?.urlname || "") === owner)) return true;
+    const nextPage = payload?.next_page ?? payload?.data?.next_page ?? null;
+    if (!nextPage) break;
+    page = Number(nextPage) || page + 1;
+  }
+  return false;
+}
+
+async function enrichEventArticle(article) {
+  try {
+    const payload = await noteJson("/api/v3/notes/" + encodeURIComponent(article.key));
+    const data = payload?.data || {};
+    const body = textFromAny(
+      data?.body ||
+      data?.note?.body ||
+      data?.note_draft?.body ||
+      article.preview
+    );
+    return { ...article, body: body.slice(0, 12000) };
+  } catch {
+    return { ...article, body: article.preview };
+  }
+}
+
+async function scanEventArticles(sourceType, source, limit = 5, startPage = 1) {
+  const target = Math.min(10, Math.max(1, Number(limit || 5)));
+  let page = Math.max(1, Number(startPage || 1));
+  let inspected = 0;
+  let skippedCommented = 0;
+  let skippedOwn = 0;
+  let sourceLabel = sourceType === "hashtag" ? "#" + normalizeTag(source) : String(source);
+  const selected = [];
+
+  for (let pageGuard = 0; pageGuard < 8 && selected.length < target; pageGuard += 1) {
+    const sourcePage = await fetchEventSourcePage(sourceType, source, page);
+    sourceLabel = sourcePage.sourceLabel || sourceLabel;
+
+    for (const raw of sourcePage.articles) {
+      if (selected.length >= target) break;
+      const article = normalizeEventArticle(raw);
+      if (!article.key || !article.authorUrlname) continue;
+      inspected += 1;
+
+      if (article.authorUrlname === NOTE_OWNER) {
+        skippedOwn += 1;
+        continue;
+      }
+
+      let commented = false;
+      try {
+        commented = await ownerCommentedOnArticle(article.key, NOTE_OWNER);
+      } catch {
+        // Comment status is best-effort. If note temporarily rejects the check,
+        // keep the article instead of silently losing a possible participant.
+      }
+      if (commented) {
+        skippedCommented += 1;
+        continue;
+      }
+
+      selected.push(await enrichEventArticle(article));
+    }
+
+    if (!sourcePage.nextPage) break;
+    page = Number(sourcePage.nextPage) || page + 1;
+  }
+
+  return {
+    sourceType,
+    source: sourceLabel,
+    requested: target,
+    returned: selected.length,
+    inspected,
+    skippedCommented,
+    skippedOwn,
+    articles: selected,
+  };
+}
+
 const TOOLS = [
   {
     name: "get_comment_reader_status",
@@ -160,6 +347,60 @@ const TOOLS = [
     },
     annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
   },
+
+  {
+    name: "find_event_articles_by_hashtag",
+    title: "イベント記事をハッシュタグから探す",
+    description:
+      "指定したnoteハッシュタグの新着記事から、王子本人の記事と王子がすでにコメント済みの記事を除外し、未コメント記事を取得します。記事本文も返すので、王子主催イベントの参加記事へのコメント案作成に使ってください。",
+    inputSchema: {
+      type: "object",
+      properties: {
+        hashtag: {
+          type: "string",
+          minLength: 1,
+          description: "検索するハッシュタグ。#付きでも無しでも可。例: #秋読コレクション",
+        },
+        limit: {
+          type: "integer",
+          minimum: 1,
+          maximum: 10,
+          default: 5,
+          description: "未コメント記事の取得件数。既定は5件。",
+        },
+      },
+      required: ["hashtag"],
+      additionalProperties: false,
+    },
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: true },
+  },
+  {
+    name: "find_event_articles_by_magazine",
+    title: "イベント記事をマガジンから探す",
+    description:
+      "指定したnoteマガジンから、王子本人の記事と王子がすでにコメント済みの記事を除外し、未コメント記事を取得します。マガジンURLまたはmから始まるキーを指定できます。記事本文も返すのでコメント案作成に使ってください。",
+    inputSchema: {
+      type: "object",
+      properties: {
+        magazine: {
+          type: "string",
+          minLength: 1,
+          description: "noteマガジンURL、または m から始まるマガジンキー。",
+        },
+        limit: {
+          type: "integer",
+          minimum: 1,
+          maximum: 10,
+          default: 5,
+          description: "未コメント記事の取得件数。既定は5件。",
+        },
+      },
+      required: ["magazine"],
+      additionalProperties: false,
+    },
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: true },
+  },
+
   {
     name: "get_unanswered_comment",
     title: "未対応コメントを1件取得",
@@ -272,6 +513,31 @@ async function callTool(name, args, env) {
     };
   }
 
+
+  if (name === "find_event_articles_by_hashtag") {
+    const result = await scanEventArticles("hashtag", args?.hashtag, args?.limit || 5, 1);
+    return {
+      content: [{
+        type: "text",
+        text:
+          result.source + " から王子未コメントの記事を " + result.returned + " 件取得しました。各記事の本文を読んだうえで、企画主催者として内容に具体的に触れる王子らしいコメント案を作成してください。",
+      }],
+      structuredContent: result,
+    };
+  }
+
+  if (name === "find_event_articles_by_magazine") {
+    const result = await scanEventArticles("magazine", args?.magazine, args?.limit || 5, 1);
+    return {
+      content: [{
+        type: "text",
+        text:
+          result.source + " から王子未コメントの記事を " + result.returned + " 件取得しました。各記事の本文を読んだうえで、企画主催者として内容に具体的に触れる王子らしいコメント案を作成してください。",
+      }],
+      structuredContent: result,
+    };
+  }
+
   if (name === "get_unanswered_comment") {
     const id = String(args?.id || "");
     const item = inbox.items.find((candidate) => String(candidate?.id || "") === id);
@@ -327,7 +593,7 @@ async function handleMcp(request, env) {
       capabilities: { tools: { listChanged: false } },
       serverInfo: { name: "nero-comment-reader", version: "0.2.0" },
       instructions:
-        "王子（nero_notelover）の未対応コメントを読み取る専用MCPです。返信済み、または王子がスキ済みのコメントは一覧から除外されています。ユーザーが未対応コメントの確認や返信案を求めた場合は、原則としてlist_unanswered_by_articleを使い、min_commentsは明示指定がなければ5として、コメント単位ではなく記事単位でまとめて処理してください。返信対象は最低5件を基本とし、5件未満なら次の記事を追加してください。5件以上になった時点で止めますが、同じ記事の未対応コメントは途中で切らず、その記事分をすべて含めてください。1つの記事に未対応コメントが1件でもある場合、その記事に残っている他の『未返信かつ王子未スキ』コメントもすべて同じ記事グループとして扱います。出力は記事ごとにまとめ、記事タイトルと記事URLは各記事につき1回だけ表示してください。その下にコメント者ごとの返信案を並べます。返信案本文は、ChatGPT上でコピーボタンが出るように必ず markdown の text コードブロック（\`\`\`text ... \`\`\`）の中だけに入れてください。コードブロック内には『返信案：』などのラベルや記事URLを入れず、そのままnoteへ貼り付けられる返信本文だけを書いてください。王子の返信は、相手の内容へ具体的に反応し、明るく親しみやすく、短めの段落で、🌙や🤭︎を自然に使います。感謝はふざけず丁寧にし、定型的なお礼だけで終わらせません。記事内のコメントは、取得結果の順番でまとめて回答してください。MCP側ではAI生成を行いません。",
+        "王子（nero_notelover）の未対応コメントを読み取る専用MCPです。返信済み、または王子がスキ済みのコメントは一覧から除外されています。ユーザーが未対応コメントの確認や返信案を求めた場合は、原則としてlist_unanswered_by_articleを使い、min_commentsは明示指定がなければ5として、コメント単位ではなく記事単位でまとめて処理してください。返信対象は最低5件を基本とし、5件未満なら次の記事を追加してください。5件以上になった時点で止めますが、同じ記事の未対応コメントは途中で切らず、その記事分をすべて含めてください。1つの記事に未対応コメントが1件でもある場合、その記事に残っている他の『未返信かつ王子未スキ』コメントもすべて同じ記事グループとして扱います。出力は記事ごとにまとめ、記事タイトルと記事URLは各記事につき1回だけ表示してください。その下にコメント者ごとの返信案を並べます。返信案本文は、ChatGPT上でコピーボタンが出るように必ず markdown の text コードブロック（\`\`\`text ... \`\`\`）の中だけに入れてください。コードブロック内には『返信案：』などのラベルや記事URLを入れず、そのままnoteへ貼り付けられる返信本文だけを書いてください。王子の返信は、相手の内容へ具体的に反応し、明るく親しみやすく、短めの段落で、🌙や🤭︎を自然に使います。感謝はふざけず丁寧にし、定型的なお礼だけで終わらせません。記事内のコメントは、取得結果の順番でまとめて回答してください。また、ユーザーが王子主催イベントへの参加記事を探す、ハッシュタグやマガジンからコメント対象を探す、または参加記事へのコメント案を求めた場合は、find_event_articles_by_hashtag または find_event_articles_by_magazine を使ってください。イベント記事では王子本人の記事と王子がすでにコメント済みの記事は除外されます。各記事について『記事タイトル』『記事URL』『投稿者』を表示し、その後に記事本文の具体的な内容へ触れた王子らしいコメント案を1つ作ってください。コメント案は返信案と同様に text コードブロックへ本文だけを入れて、コピーボタンが出る形にしてください。単なる『参加ありがとうございます』だけでは終わらせず、記事を読んだことが伝わる内容にしてください。MCP側ではAI生成を行いません。",
     });
   }
 
@@ -376,6 +642,19 @@ export default {
         });
       } catch (error) {
         return json({ ok: false, error: String(error?.message || error) }, 502);
+      }
+    }
+
+
+    if (url.pathname === "/event/search") {
+      try {
+        const sourceType = String(url.searchParams.get("type") || "");
+        const source = String(url.searchParams.get("q") || "");
+        const limit = Math.min(10, Math.max(1, Number(url.searchParams.get("limit") || 5)));
+        const result = await scanEventArticles(sourceType, source, limit, 1);
+        return json({ ok: true, ...result });
+      } catch (error) {
+        return json({ ok: false, error: String(error?.message || error) }, 400);
       }
     }
 
