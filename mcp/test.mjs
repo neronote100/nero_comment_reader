@@ -29,6 +29,8 @@ for (const expected of [
   "get_comment_reader_status",
   "list_unanswered_comments",
   "list_unanswered_by_article",
+  "find_event_articles_by_hashtag",
+  "find_event_articles_by_magazine",
   "get_unanswered_comment",
 ]) {
   assert(names.includes(expected), "missing tool " + expected);
@@ -140,6 +142,58 @@ assert(grouped.result.structuredContent.returnedComments === 7, "minimum comment
 assert(grouped.result.structuredContent.articles[0].commentCount === 2, "same article comments were not grouped");
 assert(grouped.result.structuredContent.articles[2].commentCount === 4, "last article was split unexpectedly");
 assert(grouped.result.structuredContent.articles[2].comments[3].id === "note3:comment7", "grouped comment missing");
+
+globalThis.fetch = async (input) => {
+  const url=String(input);
+  if(url.includes("neronote100.github.io/nero_comment_reader/data/inbox.json")){
+    return new Response(JSON.stringify({
+      version:1,owner:"nero_notelover",updatedAt:"2026-10-02T00:00:00.000Z",
+      articleCount:0,unresolvedCount:0,failedArticles:0,items:[]
+    }),{status:200,headers:{"content-type":"application/json"}});
+  }
+  if(url.includes("/api/v3/hashtags/")){
+    return new Response(JSON.stringify({data:{notes:[{
+      key:"nevent1",name:"イベント参加記事",body:"秋の公園でどんぐりを拾った話です。",
+      publish_at:"2026-10-02T19:00:00+09:00",like_count:4,
+      user:{urlname:"participant",nickname:"参加者"}
+    }],next_page:null}}),{status:200,headers:{"content-type":"application/json"}});
+  }
+  if(url.includes("/api/v1/magazines/")){
+    return new Response(JSON.stringify({data:{
+      name:"テストマガジン",
+      notes:[{
+        key:"nevent2",name:"マガジン参加記事",body:null,
+        publish_at:"2026-10-02T18:00:00+09:00",
+        user:{urlname:"participant2",nickname:"参加者2"}
+      }],
+      next_page:null
+    }}),{status:200,headers:{"content-type":"application/json"}});
+  }
+  if(url.includes("/note_comments")){
+    return new Response(JSON.stringify({data:[],next_page:null}),{status:200,headers:{"content-type":"application/json"}});
+  }
+  if(url.includes("/api/v3/notes/nevent1")){
+    return new Response(JSON.stringify({data:{body:"秋の公園で子どもとどんぐりを拾い、形の違いを楽しみました。"}}),{status:200,headers:{"content-type":"application/json"}});
+  }
+  if(url.includes("/api/v3/notes/nevent2")){
+    return new Response(JSON.stringify({data:{body:"読書の秋に好きな本を読み返した話です。"}}),{status:200,headers:{"content-type":"application/json"}});
+  }
+  throw new Error("unexpected fetch "+url);
+};
+
+const hashtag = await rpc("tools/call", {
+  name:"find_event_articles_by_hashtag",
+  arguments:{hashtag:"#秋読コレクション",limit:5},
+});
+assert(hashtag.result?.structuredContent?.articles?.length===1,"hashtag event search failed");
+assert(hashtag.result.structuredContent.articles[0].body.includes("どんぐり"),"hashtag article body missing");
+
+const magazine = await rpc("tools/call", {
+  name:"find_event_articles_by_magazine",
+  arguments:{magazine:"https://note.com/nero_notelover/m/mbdfa1301e316",limit:5},
+});
+assert(magazine.result?.structuredContent?.articles?.length===1,"magazine event search failed");
+assert(magazine.result.structuredContent.articles[0].body.includes("読書の秋"),"magazine article body missing");
 
 globalThis.fetch = originalFetch;
 console.log("MCP tests passed");
