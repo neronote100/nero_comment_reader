@@ -48,7 +48,8 @@ function normalizeComment(raw){
     body:cleanText(astText(raw?.comment??raw?.body??raw?.content??'')),
     publishedAt:String(raw?.published_at||raw?.publish_at||raw?.created_at||raw?.createdAt||''),
     isRoot:raw?.is_root!==false,
-    replyCount:Number(raw?.reply_count||raw?.replyCount||0)
+    replyCount:Number(raw?.reply_count||raw?.replyCount||0),
+    creatorReplied:Boolean(raw?.is_creator_replied??raw?.isCreatorReplied??false)
   };
 }
 
@@ -140,11 +141,22 @@ async function scanArticle(article){
   const roots=(await fetchComments(article.key)).filter(c=>c.isRoot!==false);
   const unresolved=[];
   for(const root of roots){
-    let replies=[];
-    if(root.replyCount>0){
-      await sleep(120);
-      replies=await fetchComments(article.key,root.key);
+    if(!root.creatorReplied){
+      if(root.authorUrlname&&root.authorUrlname!==OWNER){
+        unresolved.push({
+          ...root,
+          rootKey:root.key,
+          rootAuthorUrlname:root.authorUrlname,
+          rootBody:root.body
+        });
+      }
+      continue;
     }
+
+    if(root.replyCount<=1)continue;
+
+    await sleep(120);
+    const replies=await fetchComments(article.key,root.key);
     unresolved.push(...unresolvedFromThread(root,replies));
   }
   return unresolved;
