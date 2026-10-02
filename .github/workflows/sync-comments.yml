@@ -37,7 +37,7 @@ jobs:
       - name: Sync comments
         env:
           NOTE_OWNER: nero_notelover
-          FORCE_SCAN: ${{ github.event_name == 'workflow_dispatch' && inputs.force || 'false' }}
+          FORCE_SCAN: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.force == 'true') }}
         run: npm run sync
 
       - name: Commit updated data
