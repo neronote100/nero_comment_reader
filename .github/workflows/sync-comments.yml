@@ -7,14 +7,6 @@ on:
         description: Force rescan
         required: false
         default: "true"
-  push:
-    branches: ["main"]
-    paths:
-      - "scripts/**"
-      - "package.json"
-      - ".github/workflows/sync-comments.yml"
-  schedule:
-    - cron: "7,37 * * * *"
 
 permissions:
   contents: write
@@ -37,7 +29,7 @@ jobs:
       - name: Sync comments
         env:
           NOTE_OWNER: nero_notelover
-          FORCE_SCAN: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.force == 'true') }}
+          FORCE_SCAN: ${{ github.event_name == 'workflow_dispatch' && inputs.force == 'true' }}
         run: npm run sync
 
       - name: Commit updated data
