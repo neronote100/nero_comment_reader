@@ -3,8 +3,6 @@
 const state={
   items:[],
   filtered:[],
-  syncWasRunning:false,
-  pollTimer:null,
   eventArticles:[],
   eventSourceType:null,
   eventSource:null,
@@ -17,7 +15,6 @@ const toastEl=$('#toast');
 const eventResultsEl=$('#eventResults');
 const eventStatusEl=$('#eventStatus');
 
-const RUNS_API='https://api.github.com/repos/neronote100/nero_comment_reader/actions/workflows/sync-comments.yml/runs?per_page=1';
 const WORKER='https://nero-comment-reader.nero-prince.workers.dev';
 
 function dateText(v){
@@ -25,32 +22,6 @@ function dateText(v){
   const d=new Date(v);
   if(Number.isNaN(d.getTime()))return String(v);
   return new Intl.DateTimeFormat('ja-JP',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(d);
-}
-
-function timeText(v){
-  const d=new Date(v);
-  if(Number.isNaN(d.getTime()))return '—';
-  return new Intl.DateTimeFormat('ja-JP',{hour:'2-digit',minute:'2-digit'}).format(d);
-}
-
-function nextScheduledSync(){
-  const now=new Date();
-  const next=new Date(now);
-  next.setSeconds(0,0);
-  const m=now.getMinutes();
-  if(m<7)next.setMinutes(7);
-  else if(m<37)next.setMinutes(37);
-  else{
-    next.setHours(now.getHours()+1);
-    next.setMinutes(7);
-  }
-  return next;
-}
-
-function updateNextSync(){
-  const next=nextScheduledSync();
-  const mins=Math.max(0,Math.ceil((next-Date.now())/60000));
-  $('#nextSync').textContent=timeText(next)+'（約'+mins+'分後）';
 }
 
 function showToast(message){
@@ -231,22 +202,38 @@ function applyFilter(){
   render();
 }
 
+function applyInboxSnapshot(data){
+  state.items=Array.isArray(data?.items)?data.items:[];
+  state.filtered=state.items;
+  $('#count').textContent=Number(data?.unresolvedCount??state.items.length);
+  $('#articleCount').textContent=Number(data?.articleCount??0)+'件';
+  $('#updatedAt').textContent=data?.updatedAt?dateText(data.updatedAt):'まだ取得していません';
+  render();
+}
+
 async function loadData(){
-  statusEl.textContent='最新データを読み込んでいます…';
+  statusEl.textContent='前回データを読み込んでいます…';
+  let cached=null;
+  try{
+    cached=JSON.parse(localStorage.getItem('nero-live-comments-cache')||'null');
+  }catch(_){}
+
   try{
     const res=await fetch('./data/inbox.json?t='+Date.now(),{cache:'no-store'});
     if(!res.ok)throw new Error('HTTP '+res.status);
-    const data=await res.json();
-    state.items=Array.isArray(data.items)?data.items:[];
-    state.filtered=state.items;
-    $('#count').textContent=Number(data.unresolvedCount??state.items.length);
-    $('#articleCount').textContent=Number(data.articleCount??0)+'件';
-    $('#updatedAt').textContent=data.updatedAt?dateText(data.updatedAt):'まだ同期されていません';
+    const saved=await res.json();
+    const cachedTime=Date.parse(cached?.updatedAt||'')||0;
+    const savedTime=Date.parse(saved?.updatedAt||'')||0;
+    applyInboxSnapshot(cachedTime>savedTime?cached:saved);
     statusEl.textContent='';
-    render();
   }catch(error){
-    statusEl.textContent='データを読み込めませんでした。同期状態を確認してください。';
-    commentsEl.innerHTML='';
+    if(cached){
+      applyInboxSnapshot(cached);
+      statusEl.textContent='';
+    }else{
+      statusEl.textContent='前回データを読み込めませんでした。「最新コメントを取得」を押してください。';
+      commentsEl.innerHTML='';
+    }
   }
 }
 
@@ -256,84 +243,76 @@ function setSyncUi(label,detail,percent){
   $('#progressFill').style.width=Math.max(0,Math.min(100,percent))+'%';
 }
 
-async function checkSyncStatus(){
-  updateNextSync();
-  clearTimeout(state.pollTimer);
-  try{
-    const res=await fetch(RUNS_API,{cache:'no-store',headers:{Accept:'application/vnd.github+json'}});
-    if(!res.ok)throw new Error('HTTP '+res.status);
-    const json=await res.json();
-    const run=json.workflow_runs&&json.workflow_runs[0];
-    if(!run){
-      setSyncUi('待機中','まだ同期履歴がありません。',0);
-      return;
-    }
-
-    if(run.status==='queued'||run.status==='waiting'||run.status==='pending'){
-      state.syncWasRunning=true;
-      setSyncUi('待機中','GitHub Actionsの開始を待っています。',12);
-      state.pollTimer=setTimeout(checkSyncStatus,30000);
-      return;
-    }
-
-    if(run.status==='in_progress'){
-      state.syncWasRunning=true;
-      let percent=45;
-      let label='note確認中';
-      let detail='コメントを確認しています。開始 '+timeText(run.run_started_at||run.created_at);
-
-      try{
-        const jobsRes=await fetch('https://api.github.com/repos/neronote100/nero_comment_reader/actions/runs/'+run.id+'/jobs?per_page=20',{
-          cache:'no-store',headers:{Accept:'application/vnd.github+json'}
-        });
-        if(jobsRes.ok){
-          const jobs=await jobsRes.json();
-          const steps=jobs.jobs?.[0]?.steps||[];
-          const syncStep=steps.find(s=>s.name==='Sync comments');
-          const commitStep=steps.find(s=>s.name==='Commit updated data');
-          if(commitStep?.status==='in_progress'){
-            percent=88;label='保存中';detail='最新の未対応コメントをGitHubへ保存しています。';
-          }else if(syncStep?.status==='completed'){
-            percent=78;label='確認完了';detail='コメント確認が終わりました。保存処理へ進みます。';
-          }else if(syncStep?.status==='in_progress'){
-            percent=52;label='note確認中';detail='記事とコメントを順番に確認しています。';
-          }else{
-            percent=25;label='準備中';detail='同期の準備をしています。';
-          }
-        }
-      }catch(_){}
-
-      setSyncUi(label,detail,percent);
-      state.pollTimer=setTimeout(checkSyncStatus,30000);
-      return;
-    }
-
-    if(run.conclusion==='success'){
-      setSyncUi('同期完了','最新同期 '+dateText(run.updated_at||run.created_at)+'。次回まで待機中です。',100);
-      if(state.syncWasRunning){
-        state.syncWasRunning=false;
-        await loadData();
-        showToast('同期が完了しました🌙');
-      }
-      return;
-    }
-
-    state.syncWasRunning=false;
-    setSyncUi('同期エラー','直近の同期は '+String(run.conclusion||'失敗')+' でした。',100);
-  }catch(error){
-    setSyncUi('状況取得失敗','GitHubの同期状況を取得できませんでした。コメント一覧の再読込は利用できます。',0);
-  }
-}
-
-async function refreshAll(){
+async function manualRefresh(){
   const btn=$('#refreshBtn');
   btn.disabled=true;
-  btn.textContent='↻ 確認中…';
+  btn.textContent='↻ note確認中…';
+  statusEl.textContent='最新コメントを取得しています…';
+  setSyncUi('取得中','noteの記事とコメントを確認しています。',8);
+
+  const merged=new Map();
+  let offset=0;
+  let candidateTotal=0;
+  let articleCount=0;
+  let failedArticles=0;
+  let updatedAt=new Date().toISOString();
+
   try{
-    await Promise.all([loadData(),checkSyncStatus()]);
+    for(let guard=0;guard<30;guard++){
+      const url=WORKER+'/comments/live?offset='+offset+'&batch=10&t='+Date.now();
+      const res=await fetch(url,{cache:'no-store'});
+      const data=await res.json();
+      if(!res.ok||!data.ok)throw new Error(data.error||('HTTP '+res.status));
+
+      candidateTotal=Number(data.candidateArticles||0);
+      articleCount=Number(data.articleCount||articleCount||0);
+      failedArticles+=Number(data.failedArticles||0);
+      updatedAt=data.updatedAt||updatedAt;
+
+      for(const item of Array.isArray(data.items)?data.items:[]){
+        merged.set(item.id,item);
+      }
+
+      const completed=Math.min(candidateTotal,Number(data.offset||0)+Number(data.scannedArticles||0));
+      const percent=candidateTotal?Math.min(94,10+Math.round((completed/candidateTotal)*84)):94;
+      setSyncUi(
+        '取得中',
+        candidateTotal
+          ? '確認対象 '+completed+' / '+candidateTotal+'記事。未対応コメント '+merged.size+'件。'
+          : '更新が必要な記事はありません。',
+        percent
+      );
+
+      if(data.nextOffset===null||data.nextOffset===undefined)break;
+      offset=Number(data.nextOffset);
+    }
+
+    const items=[...merged.values()].sort((a,b)=>(Date.parse(b.publishedAt)||0)-(Date.parse(a.publishedAt)||0));
+    const snapshot={
+      version:2,
+      owner:'nero_notelover',
+      updatedAt,
+      articleCount,
+      unresolvedCount:items.length,
+      failedArticles,
+      items
+    };
+
+    localStorage.setItem('nero-live-comments-cache',JSON.stringify(snapshot));
+    applyInboxSnapshot(snapshot);
+    statusEl.textContent='';
+    setSyncUi(
+      failedArticles?'取得完了（一部失敗）':'取得完了',
+      '今この時点の未対応コメントは '+items.length+'件です。'+(failedArticles?' '+failedArticles+'記事は前回データを使用しました。':''),
+      100
+    );
+    showToast('最新コメントを取得しました🌙');
+  }catch(error){
+    setSyncUi('取得失敗','最新コメントを取得できませんでした：'+String(error.message||error),0);
+    statusEl.textContent='取得に失敗しました。少し待ってからもう一度お試しください。';
   }finally{
     btn.disabled=false;
-    btn.textContent='↻ 同期状況を確認';
+    btn.textContent='↻ 最新コメントを取得';
   }
 }
 
@@ -386,7 +365,7 @@ document.querySelectorAll('.tab[data-view]').forEach(button=>{
   button.addEventListener('click',()=>switchView(button.dataset.view));
 });
 
-$('#refreshBtn').addEventListener('click',refreshAll);
+$('#refreshBtn').addEventListener('click',manualRefresh);
 $('#searchInput').addEventListener('input',applyFilter);
 $('#hashtagSearchBtn').addEventListener('click',()=>searchEvent('hashtag'));
 $('#magazineSearchBtn').addEventListener('click',()=>searchEvent('magazine'));
@@ -400,6 +379,5 @@ const savedMagazine=localStorage.getItem('nero-event-magazine');
 if(savedHashtag)$('#hashtagInput').value=savedHashtag;
 if(savedMagazine)$('#magazineInput').value=savedMagazine;
 
-updateNextSync();
-refreshAll();
-setInterval(updateNextSync,60000);
+loadData();
+setSyncUi('手動取得','「最新コメントを取得」を押した時だけnoteを確認します。',0);
