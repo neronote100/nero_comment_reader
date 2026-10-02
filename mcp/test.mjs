@@ -41,7 +41,7 @@ globalThis.fetch = async () =>
     owner: "nero_notelover",
     updatedAt: "2026-10-02T00:00:00.000Z",
     articleCount: 2,
-    unresolvedCount: 3,
+    unresolvedCount: 7,
     failedArticles: 0,
     items: [
       {
@@ -76,6 +76,50 @@ globalThis.fetch = async () =>
         articleUrl: "https://note.com/nero_notelover/n/test2",
         rootBody: "別記事です",
         rootAuthorUrlname: "third"
+      },
+      {
+        id: "note3:comment4",
+        authorName: "四人目",
+        authorUrlname: "fourth",
+        body: "三記事目です1",
+        publishedAt: "2026-10-02T07:50:00+09:00",
+        articleTitle: "三つ目の記事",
+        articleUrl: "https://note.com/nero_notelover/n/test3",
+        rootBody: "三記事目です1",
+        rootAuthorUrlname: "fourth"
+      },
+      {
+        id: "note3:comment5",
+        authorName: "五人目",
+        authorUrlname: "fifth",
+        body: "三記事目です2",
+        publishedAt: "2026-10-02T07:40:00+09:00",
+        articleTitle: "三つ目の記事",
+        articleUrl: "https://note.com/nero_notelover/n/test3",
+        rootBody: "三記事目です2",
+        rootAuthorUrlname: "fifth"
+      },
+      {
+        id: "note3:comment6",
+        authorName: "六人目",
+        authorUrlname: "sixth",
+        body: "三記事目です3",
+        publishedAt: "2026-10-02T07:30:00+09:00",
+        articleTitle: "三つ目の記事",
+        articleUrl: "https://note.com/nero_notelover/n/test3",
+        rootBody: "三記事目です3",
+        rootAuthorUrlname: "sixth"
+      },
+      {
+        id: "note3:comment7",
+        authorName: "七人目",
+        authorUrlname: "seventh",
+        body: "三記事目です4",
+        publishedAt: "2026-10-02T07:20:00+09:00",
+        articleTitle: "三つ目の記事",
+        articleUrl: "https://note.com/nero_notelover/n/test3",
+        rootBody: "三記事目です4",
+        rootAuthorUrlname: "seventh"
       }
     ]
   }), { status: 200, headers: { "content-type": "application/json" } });
@@ -84,16 +128,18 @@ const call = await rpc("tools/call", {
   name: "list_unanswered_comments",
   arguments: { limit: 5 },
 });
-assert(call.result?.structuredContent?.comments?.length === 3, "tools/call failed");
+assert(call.result?.structuredContent?.comments?.length === 5, "tools/call failed");
 assert(call.result.structuredContent.comments[0].id === "note:comment1", "wrong comment");
 
 const grouped = await rpc("tools/call", {
   name: "list_unanswered_by_article",
-  arguments: { limit_articles: 5 },
+  arguments: { min_comments: 5 },
 });
-assert(grouped.result?.structuredContent?.articles?.length === 2, "article grouping failed");
+assert(grouped.result?.structuredContent?.articles?.length === 3, "article grouping failed");
+assert(grouped.result.structuredContent.returnedComments === 7, "minimum comment batch failed");
 assert(grouped.result.structuredContent.articles[0].commentCount === 2, "same article comments were not grouped");
-assert(grouped.result.structuredContent.articles[0].comments[1].id === "note:comment2", "grouped comment missing");
+assert(grouped.result.structuredContent.articles[2].commentCount === 4, "last article was split unexpectedly");
+assert(grouped.result.structuredContent.articles[2].comments[3].id === "note3:comment7", "grouped comment missing");
 
 globalThis.fetch = originalFetch;
 console.log("MCP tests passed");
