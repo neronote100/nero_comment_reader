@@ -1,7 +1,7 @@
 {
   "version": 1,
   "owner": "nero_notelover",
-  "updatedAt": "2026-10-02T10:52:02.511Z",
+  "updatedAt": "2026-10-02T11:23:37.610Z",
   "articles": {
     "n2ad488027a7e": {
       "key": "n2ad488027a7e",
@@ -501,11 +501,28 @@
     "ne4843208abbe": {
       "key": "ne4843208abbe",
       "title": "はじめてのnote│スキくれたら遊びに行くよ🌙",
-      "commentCount": 44,
+      "commentCount": 45,
       "publishedAt": "2026-08-25T05:16:32+09:00",
       "url": "https://note.com/nero_notelover/n/ne4843208abbe",
-      "unresolved": [],
-      "checkedAt": 1790929610755
+      "unresolved": [
+        {
+          "key": "nc05ee4a34668a",
+          "parentKey": "",
+          "authorUrlname": "fine_worm5368",
+          "authorName": "海藻うさぎ猫",
+          "avatar": "https://assets.st-note.com/production/uploads/images/308057708/profile_b0112ae8b3c301947892cb8fdd840759.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "こんばんは♪\n🎉わくわく😆\n🐰🐱るんるん♪\n素敵💓",
+          "publishedAt": "2026-10-02T20:23:00.861+09:00",
+          "isRoot": true,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "nc05ee4a34668a",
+          "rootAuthorUrlname": "fine_worm5368",
+          "rootBody": "こんばんは♪\n🎉わくわく😆\n🐰🐱るんるん♪\n素敵💓"
+        }
+      ],
+      "checkedAt": 1790940217429
     }
   }
 }

@@ -1,9 +1,26 @@
 {
   "version": 1,
   "owner": "nero_notelover",
-  "updatedAt": "2026-10-02T10:52:02.511Z",
+  "updatedAt": "2026-10-02T11:23:37.610Z",
   "articleCount": 56,
-  "unresolvedCount": 0,
+  "unresolvedCount": 1,
   "failedArticles": 0,
-  "items": []
+  "items": [
+    {
+      "id": "ne4843208abbe:nc05ee4a34668a",
+      "articleKey": "ne4843208abbe",
+      "articleTitle": "はじめてのnote│スキくれたら遊びに行くよ🌙",
+      "articleUrl": "https://note.com/nero_notelover/n/ne4843208abbe",
+      "articlePublishedAt": "2026-08-25T05:16:32+09:00",
+      "commentKey": "nc05ee4a34668a",
+      "rootKey": "nc05ee4a34668a",
+      "authorUrlname": "fine_worm5368",
+      "authorName": "海藻うさぎ猫",
+      "avatar": "https://assets.st-note.com/production/uploads/images/308057708/profile_b0112ae8b3c301947892cb8fdd840759.png?fit=bounds&format=jpeg&quality=85&width=330",
+      "body": "こんばんは♪\n🎉わくわく😆\n🐰🐱るんるん♪\n素敵💓",
+      "publishedAt": "2026-10-02T20:23:00.861+09:00",
+      "rootAuthorUrlname": "fine_worm5368",
+      "rootBody": "こんばんは♪\n🎉わくわく😆\n🐰🐱るんるん♪\n素敵💓"
+    }
+  ]
 }
