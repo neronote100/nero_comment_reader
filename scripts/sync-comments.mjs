@@ -49,7 +49,8 @@ function normalizeComment(raw){
     publishedAt:String(raw?.published_at||raw?.publish_at||raw?.created_at||raw?.createdAt||''),
     isRoot:raw?.is_root!==false,
     replyCount:Number(raw?.reply_count||raw?.replyCount||0),
-    creatorReplied:Boolean(raw?.is_creator_replied??raw?.isCreatorReplied??false)
+    creatorReplied:Boolean(raw?.is_creator_replied??raw?.isCreatorReplied??false),
+    creatorLiked:Boolean(raw?.is_creator_liked??raw?.isCreatorLiked??false)
   };
 }
 
@@ -127,6 +128,7 @@ function unresolvedFromThread(root,replies){
   for(let i=lastOwner+1;i<thread.length;i++){
     const c=thread[i];
     if(!c.authorUrlname||c.authorUrlname===OWNER)continue;
+    if(c.creatorLiked)continue;
     unresolved.push({
       ...c,
       rootKey:root.key,
@@ -142,7 +144,7 @@ async function scanArticle(article){
   const unresolved=[];
   for(const root of roots){
     if(!root.creatorReplied){
-      if(root.authorUrlname&&root.authorUrlname!==OWNER){
+      if(root.authorUrlname&&root.authorUrlname!==OWNER&&!root.creatorLiked){
         unresolved.push({
           ...root,
           rootKey:root.key,
