@@ -63,6 +63,27 @@ function publicComment(item) {
   };
 }
 
+function groupByArticle(items) {
+  const groups = new Map();
+  for (const item of items) {
+    const articleUrl = String(item?.articleUrl || "");
+    const articleTitle = String(item?.articleTitle || "");
+    const key = articleUrl || articleTitle || "unknown";
+    if (!groups.has(key)) {
+      groups.set(key, {
+        articleTitle,
+        articleUrl,
+        commentCount: 0,
+        comments: [],
+      });
+    }
+    const group = groups.get(key);
+    group.comments.push(publicComment(item));
+    group.commentCount = group.comments.length;
+  }
+  return [...groups.values()];
+}
+
 const TOOLS = [
   {
     name: "get_comment_reader_status",
@@ -92,6 +113,36 @@ const TOOLS = [
           minimum: 0,
           default: 0,
           description: "0始まりの取得開始位置。",
+        },
+        query: {
+          type: "string",
+          description: "任意。コメント者名、note ID、記事タイトル、コメント本文の部分一致検索。",
+        },
+      },
+      additionalProperties: false,
+    },
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
+  },
+  {
+    name: "list_unanswered_by_article",
+    title: "記事ごとの未対応コメント",
+    description:
+      "王子の記事ごとに、未返信かつ王子未スキのコメントをまとめて取得します。1つの記事を開いたまま、その記事に残っている未対応コメントを一括で返信したい場合はこちらを使ってください。",
+    inputSchema: {
+      type: "object",
+      properties: {
+        limit_articles: {
+          type: "integer",
+          minimum: 1,
+          maximum: 20,
+          default: 5,
+          description: "取得する記事数。コメント数ではなく記事数です。",
+        },
+        offset_articles: {
+          type: "integer",
+          minimum: 0,
+          default: 0,
+          description: "0始まりの記事取得開始位置。",
         },
         query: {
           type: "string",
@@ -169,6 +220,40 @@ async function callTool(name, args, env) {
     };
   }
 
+  if (name === "list_unanswered_by_article") {
+    const limitArticles = Math.min(20, Math.max(1, Number(args?.limit_articles || 5)));
+    const offsetArticles = Math.max(0, Number(args?.offset_articles || 0));
+    const query = String(args?.query || "").trim().toLowerCase();
+    let items = inbox.items;
+
+    if (query) {
+      items = items.filter((item) =>
+        [item?.authorName, item?.authorUrlname, item?.articleTitle, item?.body]
+          .some((value) => String(value || "").toLowerCase().includes(query))
+      );
+    }
+
+    const groups = groupByArticle(items);
+    const selected = groups.slice(offsetArticles, offsetArticles + limitArticles);
+    const result = {
+      updatedAt: inbox.updatedAt,
+      totalArticles: groups.length,
+      totalComments: items.length,
+      offsetArticles,
+      returnedArticles: selected.length,
+      articles: selected,
+    };
+
+    return {
+      content: [{
+        type: "text",
+        text:
+          "未対応コメントを記事ごとにまとめて " + selected.length + " 記事分取得しました。同じ記事のコメントは、記事を1回開くだけで順番に対応できるよう、記事単位でまとめて返信案を作成してください。",
+      }],
+      structuredContent: result,
+    };
+  }
+
   if (name === "get_unanswered_comment") {
     const id = String(args?.id || "");
     const item = inbox.items.find((candidate) => String(candidate?.id || "") === id);
@@ -224,7 +309,7 @@ async function handleMcp(request, env) {
       capabilities: { tools: { listChanged: false } },
       serverInfo: { name: "nero-comment-reader", version: "0.2.0" },
       instructions:
-        "王子（nero_notelover）の未対応コメントを読み取る専用MCPです。返信済み、または王子がスキ済みのコメントは一覧から除外されています。ユーザーが未対応コメントの確認を求めたらlist_unanswered_commentsを使ってください。返信案も求められた場合は、取得結果ごとにChatGPT側で返信文を生成してください。各コメントは必ず『記事タイトル』『記事URL』『コメント者』を先に表示し、その後に『返信案』を表示してください。返信案本文は、ChatGPT上でコピーボタンが出るように必ず markdown の text コードブロック（\`\`\`text ... \`\`\`）の中だけに入れてください。コードブロック内には『返信案：』などのラベルや記事URLを入れず、そのままnoteへ貼り付けられる返信本文だけを書いてください。王子の返信は、相手の内容へ具体的に反応し、明るく親しみやすく、短めの段落で、🌙や🤭︎を自然に使います。感謝はふざけず丁寧にし、定型的なお礼だけで終わらせません。複数件の場合も1件ずつこの形式を繰り返してください。MCP側ではAI生成を行いません。",
+        "王子（nero_notelover）の未対応コメントを読み取る専用MCPです。返信済み、または王子がスキ済みのコメントは一覧から除外されています。ユーザーが未対応コメントの確認や返信案を求めた場合は、原則としてlist_unanswered_by_articleを使い、コメント単位ではなく記事単位でまとめて処理してください。1つの記事に未対応コメントが1件でもある場合、その記事に残っている他の『未返信かつ王子未スキ』コメントもすべて同じ記事グループとして扱います。出力は記事ごとにまとめ、記事タイトルと記事URLは各記事につき1回だけ表示してください。その下にコメント者ごとの返信案を並べます。返信案本文は、ChatGPT上でコピーボタンが出るように必ず markdown の text コードブロック（\`\`\`text ... \`\`\`）の中だけに入れてください。コードブロック内には『返信案：』などのラベルや記事URLを入れず、そのままnoteへ貼り付けられる返信本文だけを書いてください。王子の返信は、相手の内容へ具体的に反応し、明るく親しみやすく、短めの段落で、🌙や🤭︎を自然に使います。感謝はふざけず丁寧にし、定型的なお礼だけで終わらせません。記事内のコメントは、取得結果の順番でまとめて回答してください。MCP側ではAI生成を行いません。",
     });
   }
 
