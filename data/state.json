@@ -1,16 +1,33 @@
 {
   "version": 1,
   "owner": "nero_notelover",
-  "updatedAt": "2026-10-02T11:23:37.610Z",
+  "updatedAt": "2026-10-02T11:52:03.068Z",
   "articles": {
     "n2ad488027a7e": {
       "key": "n2ad488027a7e",
       "title": "赤髪のあかりさんを、王子は紹介したくなった🌙",
-      "commentCount": 31,
+      "commentCount": 32,
       "publishedAt": "2026-10-01T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n2ad488027a7e",
-      "unresolved": [],
-      "checkedAt": 1790938304647
+      "unresolved": [
+        {
+          "key": "nc78a3272f16f0",
+          "parentKey": "",
+          "authorUrlname": "kan_mina867",
+          "authorName": "❁⃘*.ﾟMina❁⃘*.ﾟ|雲バル・ブラバル運営中♡",
+          "avatar": "https://assets.st-note.com/production/uploads/images/311032761/profile_e4985526a65ec8335930c848a2c1285c.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "確かに。\n\n本気の初心者は、どこのどなたを訪ねていけばよいのか⋯さっぱり分からん？なはずですよねꉂ🤣𐤔\nわかモンさんの記事にも書きましたけど⋯noteの海原、本当に広すぎる問題⋯。\n\nホイホイ(笑)\nされたくなっちゃいますよねꉂ🤭\n王子、お呼ばれされまくり♡♡\n\nそして。\nお金とるんかーいꉂ🤣𐤔\n\nなるべくディスカウントでお願いしますね？(笑)ꉂ🤭",
+          "publishedAt": "2026-10-02T20:41:32.021+09:00",
+          "isRoot": false,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "nc6f00393aa2f1",
+          "rootAuthorUrlname": "kan_mina867",
+          "rootBody": "王子、こんばんは🌙*·̩͙\nどんどんキャラ濃い方々が集まってきているꉂ🤣w‪𐤔\n面白ーい♡♡\n普通でいることが逆にキャラ立ち？ꉂ🤣w‪𐤔\nせいぜい埋もれないようには頑張りますꉂ🤭\n期待の新人も面白かったです。\n濃いなーꉂ🤣w‪𐤔\n\n\nあかりさん、パワフルで素敵ですよね💕︎ねんころさんとあかりさんが出てる本もちゃっかり買いましたꉂ🤭♡\nお二人とも、色んなことをしっかり仕組化して、進められている印象✨️✨️\n\n\n王子と絡むといいことあるよ？ってジンクスつくります？ꉂ🤭\nでも、本当でしょ？ꉂ🤭"
+        }
+      ],
+      "checkedAt": 1790941908084
     },
     "n03732162963e": {
       "key": "n03732162963e",
@@ -105,11 +122,28 @@
     "n5cef5558a49a": {
       "key": "n5cef5558a49a",
       "title": "【王子×orivie コラボ】あなたの秋で繋がろう。｜秋読コレクション🍁🌙",
-      "commentCount": 220,
+      "commentCount": 221,
       "publishedAt": "2026-09-26T19:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n5cef5558a49a",
-      "unresolved": [],
-      "checkedAt": 1790938322331
+      "unresolved": [
+        {
+          "key": "nc8766890cf936",
+          "parentKey": "",
+          "authorUrlname": "mamanmafin",
+          "authorName": "ママンマフィン",
+          "avatar": "https://assets.st-note.com/production/uploads/images/223465348/profile_60a10c14d7fb9209cbb371bf4fbf2893.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "通りすがりの還暦オバァクリエイターです。😅\n何やら楽しそうなイベントの香りがしてきますねぇ。\n参加してもよろしいかしら？😊",
+          "publishedAt": "2026-10-02T20:30:00.296+09:00",
+          "isRoot": true,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "nc8766890cf936",
+          "rootAuthorUrlname": "mamanmafin",
+          "rootBody": "通りすがりの還暦オバァクリエイターです。😅\n何やら楽しそうなイベントの香りがしてきますねぇ。\n参加してもよろしいかしら？😊"
+        }
+      ],
+      "checkedAt": 1790941922887
     },
     "ne0cdbe05dcdd": {
       "key": "ne0cdbe05dcdd",
