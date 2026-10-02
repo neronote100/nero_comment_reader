@@ -1,11 +1,24 @@
 'use strict';
 
-const state={items:[],filtered:[],syncWasRunning:false,pollTimer:null};
+const state={
+  items:[],
+  filtered:[],
+  syncWasRunning:false,
+  pollTimer:null,
+  eventArticles:[],
+  eventSourceType:null,
+  eventSource:null,
+};
+
 const $=s=>document.querySelector(s);
 const commentsEl=$('#comments');
 const statusEl=$('#status');
 const toastEl=$('#toast');
+const eventResultsEl=$('#eventResults');
+const eventStatusEl=$('#eventStatus');
+
 const RUNS_API='https://api.github.com/repos/neronote100/nero_comment_reader/actions/workflows/sync-comments.yml/runs?per_page=1';
+const WORKER='https://nero-comment-reader.nero-prince.workers.dev';
 
 function dateText(v){
   if(!v)return '日時不明';
@@ -67,6 +80,50 @@ function promptFor(item){
   ].join('\n');
 }
 
+function eventPromptFor(article){
+  return [
+    '王子（nero_notelover）が開催しているイベントの参加記事です。',
+    '記事を読んだことが伝わる、王子らしいコメント案を1案作ってください。',
+    '',
+    '【検索元】'+String(state.eventSource||''),
+    '【記事タイトル】'+String(article.title||''),
+    '【記事URL】'+String(article.articleUrl||''),
+    '【投稿者】'+String(article.authorName||article.authorUrlname||''),
+    '【記事本文】',
+    String(article.body||article.preview||''),
+    '',
+    '条件：',
+    '- 単なる「参加ありがとうございます」だけで終わらせない',
+    '- 記事の具体的な内容・印象的だった箇所に触れる',
+    '- 企画に参加してくれたことへの感謝は自然に入れてよい',
+    '- 明るく親しみやすい王子の口調',
+    '- 🌙や🤭︎は自然な範囲で使う',
+    '- そのままnoteのコメント欄へ貼れる本文だけを出す'
+  ].join('\n');
+}
+
+function batchEventPrompt(){
+  const header=[
+    '王子（nero_notelover）が開催しているイベントの参加記事です。',
+    '以下の記事それぞれに、王子らしいコメント案を1案ずつ作ってください。',
+    '各記事について「記事タイトル」「記事URL」「投稿者」を表示し、コメント本文だけをtextコードブロックに入れてください。',
+    '単なる参加のお礼ではなく、本文の具体的な内容に触れてください。',
+    '',
+    '【検索元】'+String(state.eventSource||''),
+    ''
+  ];
+  const articles=state.eventArticles.map((article,index)=>[
+    '--- '+(index+1)+' ---',
+    '【記事タイトル】'+String(article.title||''),
+    '【記事URL】'+String(article.articleUrl||''),
+    '【投稿者】'+String(article.authorName||article.authorUrlname||''),
+    '【本文】',
+    String(article.body||article.preview||'').slice(0,8000),
+    ''
+  ].join('\n'));
+  return header.concat(articles).join('\n');
+}
+
 async function copyValue(value){
   await navigator.clipboard.writeText(value);
 }
@@ -99,6 +156,69 @@ function render(){
       showToast('ChatGPT用プロンプトをコピーしました🌙');
     });
     commentsEl.appendChild(node);
+  }
+}
+
+function renderEventArticles(){
+  eventResultsEl.innerHTML='';
+  $('#copyEventBatchBtn').classList.toggle('hidden',!state.eventArticles.length);
+
+  if(!state.eventArticles.length){
+    eventResultsEl.innerHTML='<div class="empty">未コメントの記事は見つかりませんでした🌙</div>';
+    return;
+  }
+
+  for(const article of state.eventArticles){
+    const card=document.createElement('article');
+    card.className='commentCard eventCard';
+
+    const head=document.createElement('div');
+    head.className='commentHead';
+
+    const author=document.createElement('div');
+    author.className='eventAuthor';
+    author.innerHTML='<strong></strong><div class="date"></div>';
+    author.querySelector('strong').textContent=article.authorName||('@'+article.authorUrlname);
+    author.querySelector('.date').textContent=dateText(article.publishedAt);
+
+    const badge=document.createElement('span');
+    badge.className='badge';
+    badge.textContent='王子未コメント';
+
+    head.append(author,badge);
+
+    const title=document.createElement('a');
+    title.className='articleTitle eventTitle';
+    title.href=article.articleUrl;
+    title.target='_blank';
+    title.rel='noopener';
+    title.textContent=article.title||'記事を開く';
+
+    const body=document.createElement('p');
+    body.className='commentBody eventBody';
+    const text=String(article.body||article.preview||'');
+    body.textContent=text.length>900?text.slice(0,900)+'…':text;
+
+    const actions=document.createElement('div');
+    actions.className='actions';
+
+    const ask=document.createElement('button');
+    ask.className='primary';
+    ask.textContent='✨ コメント案をChatGPT用にコピー';
+    ask.addEventListener('click',async()=>{
+      await copyValue(eventPromptFor(article));
+      showToast('この記事のコメント案プロンプトをコピーしました🌙');
+    });
+
+    const open=document.createElement('a');
+    open.href=article.articleUrl;
+    open.target='_blank';
+    open.rel='noopener';
+    open.textContent='noteで開く ↗';
+
+    actions.append(ask,open);
+    card.append(head,title,body,actions);
+    eventResultsEl.appendChild(card);
   }
 }
 
@@ -217,8 +337,69 @@ async function refreshAll(){
   }
 }
 
+function switchView(view){
+  document.querySelectorAll('.view').forEach(el=>el.classList.toggle('active',el.id===view+'View'));
+  document.querySelectorAll('.tab[data-view]').forEach(el=>el.classList.toggle('active',el.dataset.view===view));
+  $('#refreshBtn').style.display=view==='comments'?'':'none';
+}
+
+async function searchEvent(sourceType){
+  const input=sourceType==='hashtag'?$('#hashtagInput'):$('#magazineInput');
+  const source=input.value.trim();
+  if(!source){
+    eventStatusEl.textContent=sourceType==='hashtag'?'ハッシュタグを入力してください。':'マガジンURLを入力してください。';
+    return;
+  }
+
+  localStorage.setItem(sourceType==='hashtag'?'nero-event-hashtag':'nero-event-magazine',source);
+  eventStatusEl.textContent='王子がすでにコメントした記事を確認しながら検索しています…';
+  eventResultsEl.innerHTML='<div class="empty">検索中…🌙</div>';
+  $('#copyEventBatchBtn').classList.add('hidden');
+
+  const buttons=[$('#hashtagSearchBtn'),$('#magazineSearchBtn')];
+  buttons.forEach(button=>button.disabled=true);
+
+  try{
+    const url=WORKER+'/event/search?type='+encodeURIComponent(sourceType)+'&q='+encodeURIComponent(source)+'&limit=5&t='+Date.now();
+    const res=await fetch(url,{cache:'no-store'});
+    const data=await res.json();
+    if(!res.ok||!data.ok)throw new Error(data.error||('HTTP '+res.status));
+
+    state.eventArticles=Array.isArray(data.articles)?data.articles:[];
+    state.eventSourceType=sourceType;
+    state.eventSource=data.source||source;
+
+    eventStatusEl.textContent=
+      String(data.source||source)+'：未コメント '+state.eventArticles.length+'件表示'
+      +'（確認 '+Number(data.inspected||0)+'件 / コメント済み除外 '+Number(data.skippedCommented||0)+'件）';
+    renderEventArticles();
+  }catch(error){
+    state.eventArticles=[];
+    eventResultsEl.innerHTML='';
+    eventStatusEl.textContent='検索に失敗しました：'+String(error.message||error);
+  }finally{
+    buttons.forEach(button=>button.disabled=false);
+  }
+}
+
+document.querySelectorAll('.tab[data-view]').forEach(button=>{
+  button.addEventListener('click',()=>switchView(button.dataset.view));
+});
+
 $('#refreshBtn').addEventListener('click',refreshAll);
 $('#searchInput').addEventListener('input',applyFilter);
+$('#hashtagSearchBtn').addEventListener('click',()=>searchEvent('hashtag'));
+$('#magazineSearchBtn').addEventListener('click',()=>searchEvent('magazine'));
+$('#copyEventBatchBtn').addEventListener('click',async()=>{
+  await copyValue(batchEventPrompt());
+  showToast('表示中の記事をまとめてコピーしました🌙');
+});
+
+const savedHashtag=localStorage.getItem('nero-event-hashtag');
+const savedMagazine=localStorage.getItem('nero-event-magazine');
+if(savedHashtag)$('#hashtagInput').value=savedHashtag;
+if(savedMagazine)$('#magazineInput').value=savedMagazine;
+
 updateNextSync();
 refreshAll();
 setInterval(updateNextSync,60000);
