@@ -224,11 +224,15 @@ async function handleMcp(request, env) {
       capabilities: { tools: { listChanged: false } },
       serverInfo: { name: "nero-comment-reader", version: "0.2.0" },
       instructions:
-        "王子（nero_notelover）の未対応コメントを読み取る専用MCPです。返信済み、または王子がスキ済みのコメントは一覧から除外されています。取得したコメントに対する文章生成はChatGPT側で行ってください。",
+        "王子（nero_notelover）の未対応コメントを読み取る専用MCPです。返信済み、または王子がスキ済みのコメントは一覧から除外されています。ユーザーが未対応コメントの確認を求めたらlist_unanswered_commentsを使ってください。返信案も求められた場合は、取得結果ごとにそのままnoteへ貼れる返信文をChatGPT側で生成してください。王子の返信は、相手の内容へ具体的に反応し、明るく親しみやすく、短めの段落で、🌙や🤭︎を自然に使います。感謝はふざけず丁寧にし、定型的なお礼だけで終わらせません。MCP側ではAI生成を行いません。",
     });
   }
 
   if (method === "notifications/initialized") {
+    return new Response(null, { status: 202, headers: CORS });
+  }
+
+  if ((id === undefined || id === null) && method.startsWith("notifications/")) {
     return new Response(null, { status: 202, headers: CORS });
   }
 
