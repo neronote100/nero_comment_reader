@@ -14,7 +14,7 @@
       <h1>王子 Comment Reader <span>🌙</span></h1>
       <p class="lead">返信を待っているコメントだけ、ここに。</p>
     </div>
-    <button id="refreshBtn" class="secondary">↻ 再読み込み</button>
+    <button id="refreshBtn" class="secondary">↻ 同期状況を確認</button>
   </header>
 
   <nav class="tabs" aria-label="機能">
@@ -34,6 +34,18 @@
         <div>最終同期 <strong id="updatedAt">—</strong></div>
         <div>確認記事 <strong id="articleCount">—</strong></div>
       </div>
+    </section>
+
+    <section class="syncPanel">
+      <div class="syncTop">
+        <div>
+          <span class="syncLabel">同期状況</span>
+          <strong id="syncState">確認中…</strong>
+        </div>
+        <div class="nextSync">次回自動同期 <strong id="nextSync">—</strong></div>
+      </div>
+      <div class="progressTrack"><div id="progressFill" class="progressFill"></div></div>
+      <div id="syncDetail" class="syncDetail">GitHub Actionsの状態を確認しています…</div>
     </section>
 
     <section class="toolbar">
