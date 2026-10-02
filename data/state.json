@@ -1,7 +1,7 @@
 {
   "version": 1,
   "owner": "nero_notelover",
-  "updatedAt": "2026-10-02T14:54:54.169Z",
+  "updatedAt": "2026-10-02T15:26:53.823Z",
   "articles": {
     "n970088c1a217": {
       "key": "n970088c1a217",
@@ -372,28 +372,11 @@
     "ne0cdbe05dcdd": {
       "key": "ne0cdbe05dcdd",
       "title": "🌙王子、note１ヶ月の振り返り｜ダッシュボード見てみる？？",
-      "commentCount": 58,
+      "commentCount": 59,
       "publishedAt": "2026-09-25T21:25:52+09:00",
       "url": "https://note.com/nero_notelover/n/ne0cdbe05dcdd",
-      "unresolved": [
-        {
-          "key": "nccbee0d6d4c52",
-          "parentKey": "",
-          "authorUrlname": "oshikatsu_seaart",
-          "authorName": "OSHIKATSU | SeaArt AIイラストギャラリー",
-          "avatar": "https://assets.st-note.com/production/uploads/images/306862859/profile_ab3dc07765dbbe3b82647b21021b5a38.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "😍悶絶😍\n\nあ😳\n\n王子様🌙\nもしかしてそれは\n私が王子様の着せ替え記事を\n書いてもいいよという\nお告げですか？🫣💕",
-          "publishedAt": "2026-10-02T23:37:28.903+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nca4d90b846221",
-          "rootAuthorUrlname": "oshikatsu_seaart",
-          "rootBody": "王子様😍和装の王子様🌙\n病み上がりには刺激が強いです💘"
-        }
-      ],
-      "checkedAt": 1790952882820
+      "unresolved": [],
+      "checkedAt": 1790954813643
     },
     "nf2feff344e02": {
       "key": "nf2feff344e02",
