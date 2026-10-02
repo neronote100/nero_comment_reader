@@ -12,48 +12,83 @@
     <div>
       <p class="eyebrow">NERO NOTE HUB</p>
       <h1>王子 Comment Reader <span>🌙</span></h1>
-      <p class="lead">返信を待っているコメントだけ、ここに。</p>
+      <p class="lead">返信と、イベント参加者へのご挨拶をここから。</p>
     </div>
     <button id="refreshBtn" class="secondary">↻ 同期状況を確認</button>
   </header>
 
   <nav class="tabs" aria-label="機能">
-    <button class="tab active">💬 コメント</button>
+    <button class="tab active" data-view="comments">💬 コメント</button>
+    <button class="tab" data-view="events">🎪 イベント</button>
     <button class="tab disabled" title="準備中">🔗 引用 <small>準備中</small></button>
     <button class="tab disabled" title="準備中">👀 ウォッチリスト <small>準備中</small></button>
   </nav>
 
   <main>
-    <section class="summary">
-      <div class="countCard">
-        <span class="label">未返信</span>
-        <strong id="count">—</strong>
-        <span class="unit">件</span>
-      </div>
-      <div class="meta">
-        <div>最終同期 <strong id="updatedAt">—</strong></div>
-        <div>確認記事 <strong id="articleCount">—</strong></div>
-      </div>
-    </section>
-
-    <section class="syncPanel">
-      <div class="syncTop">
-        <div>
-          <span class="syncLabel">同期状況</span>
-          <strong id="syncState">確認中…</strong>
+    <section id="commentsView" class="view active">
+      <section class="summary">
+        <div class="countCard">
+          <span class="label">未返信</span>
+          <strong id="count">—</strong>
+          <span class="unit">件</span>
         </div>
-        <div class="nextSync">次回自動同期 <strong id="nextSync">—</strong></div>
-      </div>
-      <div class="progressTrack"><div id="progressFill" class="progressFill"></div></div>
-      <div id="syncDetail" class="syncDetail">GitHub Actionsの状態を確認しています…</div>
+        <div class="meta">
+          <div>最終同期 <strong id="updatedAt">—</strong></div>
+          <div>確認記事 <strong id="articleCount">—</strong></div>
+        </div>
+      </section>
+
+      <section class="syncPanel">
+        <div class="syncTop">
+          <div>
+            <span class="syncLabel">同期状況</span>
+            <strong id="syncState">確認中…</strong>
+          </div>
+          <div class="nextSync">次回自動同期 <strong id="nextSync">—</strong></div>
+        </div>
+        <div class="progressTrack"><div id="progressFill" class="progressFill"></div></div>
+        <div id="syncDetail" class="syncDetail">GitHub Actionsの状態を確認しています…</div>
+      </section>
+
+      <section class="toolbar">
+        <input id="searchInput" type="search" placeholder="名前・記事・コメントを検索">
+      </section>
+
+      <section id="status" class="status">読み込み中…</section>
+      <section id="comments" class="comments" aria-live="polite"></section>
     </section>
 
-    <section class="toolbar">
-      <input id="searchInput" type="search" placeholder="名前・記事・コメントを検索">
-    </section>
+    <section id="eventsView" class="view">
+      <section class="eventIntro">
+        <p class="eyebrow">EVENT PATROL</p>
+        <h2>企画参加記事を探す 🎪</h2>
+        <p>王子自身の記事と、王子がすでにコメントした記事を除外して表示します。</p>
+      </section>
 
-    <section id="status" class="status">読み込み中…</section>
-    <section id="comments" class="comments" aria-live="polite"></section>
+      <section class="eventSearchGrid">
+        <div class="eventSearchBox">
+          <label for="hashtagInput"># ハッシュタグ</label>
+          <div class="eventSearchRow">
+            <input id="hashtagInput" type="text" value="#秋読コレクション" placeholder="#秋読コレクション">
+            <button id="hashtagSearchBtn" class="primaryAction">検索</button>
+          </div>
+        </div>
+        <div class="eventSearchBox">
+          <label for="magazineInput">📚 マガジンURL / キー</label>
+          <div class="eventSearchRow">
+            <input id="magazineInput" type="text" value="https://note.com/nero_notelover/m/mbdfa1301e316" placeholder="https://note.com/.../m/mxxxxxxxxxxxx">
+            <button id="magazineSearchBtn" class="primaryAction">検索</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="eventActions">
+        <button id="copyEventBatchBtn" class="secondary hidden">✨ 表示中をまとめてChatGPT用にコピー</button>
+      </section>
+
+      <section id="eventStatus" class="status">#タグまたはマガジンから検索してください。</section>
+      <section id="eventResults" class="comments" aria-live="polite"></section>
+    </section>
   </main>
 
   <template id="commentTemplate">
