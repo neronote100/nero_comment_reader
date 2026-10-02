@@ -1,7 +1,7 @@
 {
   "version": 1,
   "owner": "nero_notelover",
-  "updatedAt": "2026-10-02T07:52:07.171Z",
+  "updatedAt": "2026-10-02T08:26:50.935Z",
   "articles": {
     "n2ad488027a7e": {
       "key": "n2ad488027a7e",
@@ -913,28 +913,11 @@
     "ne4843208abbe": {
       "key": "ne4843208abbe",
       "title": "はじめてのnote│スキくれたら遊びに行くよ🌙",
-      "commentCount": 43,
+      "commentCount": 44,
       "publishedAt": "2026-08-25T05:16:32+09:00",
       "url": "https://note.com/nero_notelover/n/ne4843208abbe",
-      "unresolved": [
-        {
-          "key": "nc1796381333b0",
-          "parentKey": "",
-          "authorUrlname": "leon20261002",
-          "authorName": "レオン｜勇者｜相互フォロー",
-          "avatar": "https://assets.st-note.com/production/uploads/images/319748486/profile_60c114d3b6b488baf1b46fe4e6aaec24.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "無限の可能性だなんて、最高の褒め言葉をありがとうございます！\n王子にそう言ってもらえると、ますます力が湧いてきますね。\n\nこの場所で生まれるワクワクを、もっと広げていけたら最高です😆\nぜひ一緒に面白い景色を見にいきましょう。\nこれからもよろしくお願いします！",
-          "publishedAt": "2026-10-02T06:57:40.452+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc33df076cbfe1",
-          "rootAuthorUrlname": "leon20261002",
-          "rootBody": "ネロ王子、はじめまして！ \n勇者レオンです⚔️\n\n「王子の隣でnoteを遊ぼう」という素敵なお誘いを見かけて、さっそく駆けつけました。\n魔王討伐はちょっと寄り道して、まずはこのnoteの街をご一緒させてください。\nこれからどうぞよろしくお願いします！"
-        }
-      ],
-      "checkedAt": 1790926869578
+      "unresolved": [],
+      "checkedAt": 1790929610755
     }
   }
 }
