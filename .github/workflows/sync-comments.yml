@@ -7,6 +7,12 @@ on:
         description: Force rescan
         required: false
         default: "true"
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/**"
+      - "package.json"
+      - ".github/workflows/sync-comments.yml"
   schedule:
     - cron: "7,37 * * * *"
 
