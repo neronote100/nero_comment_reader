@@ -46,9 +46,14 @@ jobs:
             echo "No changes"
             exit 0
           fi
+          cp data/inbox.json /tmp/inbox.json
+          cp data/state.json /tmp/state.json
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/inbox.json data/inbox.json
+          cp /tmp/state.json data/state.json
           git config user.name "nero-comment-reader[bot]"
           git config user.email "nero-comment-reader@users.noreply.github.com"
           git add data
           git commit -m "Update unread comment data"
-          git pull --rebase origin main
           git push
