@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "nero-comment-reader-mcp",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-02",
+  "workers_dev": true,
+  "vars": {
+    "INBOX_URL": "https://neronote100.github.io/nero_comment_reader/data/inbox.json"
+  }
+}
