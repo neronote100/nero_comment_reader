@@ -86,6 +86,236 @@ function groupByArticle(items) {
 
 
 const NOTE_OWNER = "nero_notelover";
+const DEFAULT_STATE_URL = "https://neronote100.github.io/nero_comment_reader/data/state.json";
+
+
+async function noteJsonFresh(path) {
+  const response = await fetch("https://note.com" + path, {
+    headers: {
+      Accept: "application/json",
+      "User-Agent": "NeroCommentReader/0.4 (+https://neronote100.github.io/nero_comment_reader/)",
+    },
+    cf: { cacheTtl: 0 },
+  });
+  if (!response.ok) throw new Error("note API returned HTTP " + response.status + " for " + path);
+  return response.json();
+}
+
+async function loadSavedState() {
+  try {
+    const response = await fetch(DEFAULT_STATE_URL + "?t=" + Date.now(), {
+      headers: { Accept: "application/json" },
+      cf: { cacheTtl: 0 },
+    });
+    if (!response.ok) return { articles: {} };
+    const data = await response.json();
+    return data && typeof data === "object" ? data : { articles: {} };
+  } catch {
+    return { articles: {} };
+  }
+}
+
+function astCommentText(node) {
+  if (node == null) return "";
+  if (typeof node === "string") return node;
+  if (Array.isArray(node)) return node.map(astCommentText).filter(Boolean).join("");
+  if (typeof node !== "object") return "";
+  if (node.type === "text") return String(node.value ?? node.text ?? "");
+  const children = Array.isArray(node.children) ? node.children : [];
+  const inner = children.map(astCommentText).join("");
+  const tag = String(node.tag_name || node.tagName || "").toLowerCase();
+  return ["p","div","blockquote","li"].includes(tag) ? inner + "\n" : inner;
+}
+
+function normalizeLiveComment(raw) {
+  const user = raw?.user || raw?.author || {};
+  return {
+    key: String(raw?.key || raw?.comment_key || ""),
+    parentKey: String(raw?.parent_key || raw?.parentKey || ""),
+    authorUrlname: String(user?.urlname || raw?.urlname || "").toLowerCase(),
+    authorName: String(user?.nickname || user?.name || raw?.nickname || ""),
+    avatar: String(user?.profile_image_url || user?.profileImageUrl || raw?.profile_image_url || ""),
+    body: String(astCommentText(raw?.comment ?? raw?.body ?? raw?.content ?? "")).replace(/\r/g,"").trim(),
+    publishedAt: String(raw?.published_at || raw?.publish_at || raw?.created_at || raw?.createdAt || ""),
+    isRoot: raw?.is_root !== false,
+    replyCount: Number(raw?.reply_count || raw?.replyCount || 0),
+    creatorReplied: Boolean(raw?.is_creator_replied ?? raw?.isCreatorReplied ?? false),
+    creatorLiked: Boolean(raw?.is_creator_liked ?? raw?.isCreatorLiked ?? false),
+  };
+}
+
+function liveCommentRows(payload) {
+  if (Array.isArray(payload?.data)) return payload.data;
+  if (Array.isArray(payload?.data?.comments)) return payload.data.comments;
+  if (Array.isArray(payload?.comments)) return payload.comments;
+  return [];
+}
+
+function liveNextPage(payload) {
+  return payload?.next_page ?? payload?.nextPage ?? payload?.data?.next_page ?? payload?.data?.nextPage ?? null;
+}
+
+async function fetchLiveComments(noteKey, parentKey = "") {
+  const all = [];
+  let page = 1;
+  for (let guard = 0; guard < 20; guard += 1) {
+    const params = new URLSearchParams({ order: "oldest", per_page: "100", page: String(page) });
+    if (parentKey) params.set("parent_key", parentKey);
+    const payload = await noteJsonFresh(
+      "/api/v3/notes/" + encodeURIComponent(noteKey) + "/note_comments?" + params.toString()
+    );
+    const rows = liveCommentRows(payload);
+    all.push(...rows);
+    const next = liveNextPage(payload);
+    if (!next || rows.length === 0) break;
+    const n = Number(next);
+    page = Number.isFinite(n) && n > page ? n : page + 1;
+  }
+  return all.map(normalizeLiveComment);
+}
+
+async function fetchCreatorArticlesLive() {
+  const byKey = new Map();
+  for (let page = 1; page <= 100; page += 1) {
+    const params = new URLSearchParams({
+      kind: "note",
+      disabled_pinned: "true",
+      page: String(page),
+    });
+    const payload = await noteJsonFresh(
+      "/api/v2/creators/" + encodeURIComponent(NOTE_OWNER) + "/contents?" + params.toString()
+    );
+    const data = payload?.data || {};
+    const rows = Array.isArray(data?.contents) ? data.contents : Array.isArray(payload?.contents) ? payload.contents : [];
+    for (const row of rows) {
+      const key = String(row?.key || row?.noteKey || row?.note_key || "");
+      if (!key) continue;
+      byKey.set(key, {
+        key,
+        title: String(row?.name || row?.title || ""),
+        commentCount: Number(row?.commentCount ?? row?.comment_count ?? 0),
+        publishedAt: String(row?.publishAt || row?.publishedAt || row?.publish_at || ""),
+        url: "https://note.com/" + NOTE_OWNER + "/n/" + key,
+      });
+    }
+    const last = Boolean(data?.isLastPage ?? data?.is_last_page ?? payload?.isLastPage ?? false);
+    if (last || rows.length === 0) break;
+  }
+  return [...byKey.values()];
+}
+
+function unresolvedLiveThread(root, replies) {
+  const thread = [root, ...replies].sort((a,b)=>(Date.parse(a.publishedAt)||0)-(Date.parse(b.publishedAt)||0));
+  let lastOwner = -1;
+  for (let i = 0; i < thread.length; i += 1) {
+    if (thread[i].authorUrlname === NOTE_OWNER) lastOwner = i;
+  }
+  const unresolved = [];
+  for (let i = lastOwner + 1; i < thread.length; i += 1) {
+    const item = thread[i];
+    if (!item.authorUrlname || item.authorUrlname === NOTE_OWNER || item.creatorLiked) continue;
+    unresolved.push({
+      ...item,
+      rootKey: root.key,
+      rootAuthorUrlname: root.authorUrlname,
+      rootBody: root.body,
+    });
+  }
+  return unresolved;
+}
+
+async function scanLiveArticle(article) {
+  const roots = (await fetchLiveComments(article.key)).filter(comment=>comment.isRoot !== false);
+  const unresolved = [];
+  for (const root of roots) {
+    if (!root.creatorReplied) {
+      if (root.authorUrlname && root.authorUrlname !== NOTE_OWNER && !root.creatorLiked) {
+        unresolved.push({
+          ...root,
+          rootKey: root.key,
+          rootAuthorUrlname: root.authorUrlname,
+          rootBody: root.body,
+        });
+      }
+      continue;
+    }
+    if (root.replyCount <= 1) continue;
+    const replies = await fetchLiveComments(article.key, root.key);
+    unresolved.push(...unresolvedLiveThread(root, replies));
+  }
+  return unresolved;
+}
+
+function publicLiveItem(article, comment) {
+  return {
+    id: article.key + ":" + comment.key,
+    articleKey: article.key,
+    articleTitle: article.title,
+    articleUrl: article.url,
+    articlePublishedAt: article.publishedAt,
+    commentKey: comment.key,
+    rootKey: comment.rootKey,
+    authorUrlname: comment.authorUrlname,
+    authorName: comment.authorName,
+    avatar: comment.avatar,
+    body: comment.body,
+    publishedAt: comment.publishedAt,
+    rootAuthorUrlname: comment.rootAuthorUrlname,
+    rootBody: comment.rootBody,
+  };
+}
+
+async function buildLiveCommentBatch(offset = 0, batchSize = 10) {
+  const [savedState, articles] = await Promise.all([
+    loadSavedState(),
+    fetchCreatorArticlesLive(),
+  ]);
+  const oldArticles = savedState?.articles && typeof savedState.articles === "object" ? savedState.articles : {};
+  const candidates = [];
+
+  for (const article of articles) {
+    if (article.commentCount <= 0) continue;
+    const old = oldArticles[article.key];
+    const oldPending = Array.isArray(old?.unresolved) && old.unresolved.length > 0;
+    const countChanged = !old || Number(old.commentCount || 0) !== article.commentCount;
+    const oldFailed = Boolean(old?.error) || Number(old?.checkedAt || 0) <= 0;
+    if (oldPending || countChanged || oldFailed) candidates.push(article);
+  }
+
+  const start = Math.max(0, Number(offset || 0));
+  const size = Math.min(12, Math.max(1, Number(batchSize || 10)));
+  const selected = candidates.slice(start, start + size);
+  const items = [];
+  let failedArticles = 0;
+
+  for (const article of selected) {
+    try {
+      const unresolved = await scanLiveArticle(article);
+      for (const comment of unresolved) items.push(publicLiveItem(article, comment));
+    } catch {
+      failedArticles += 1;
+      const old = oldArticles[article.key];
+      for (const comment of Array.isArray(old?.unresolved) ? old.unresolved : []) {
+        items.push(publicLiveItem(article, comment));
+      }
+    }
+  }
+
+  items.sort((a,b)=>(Date.parse(b.publishedAt)||0)-(Date.parse(a.publishedAt)||0));
+  const nextOffset = start + selected.length < candidates.length ? start + selected.length : null;
+
+  return {
+    owner: NOTE_OWNER,
+    updatedAt: new Date().toISOString(),
+    articleCount: articles.length,
+    candidateArticles: candidates.length,
+    scannedArticles: selected.length,
+    failedArticles,
+    offset: start,
+    nextOffset,
+    items,
+  };
+}
 
 async function noteJson(path) {
   const response = await fetch("https://note.com" + path, {
@@ -645,6 +875,17 @@ export default {
       }
     }
 
+
+    if (url.pathname === "/comments/live") {
+      try {
+        const offset = Number(url.searchParams.get("offset") || 0);
+        const batch = Number(url.searchParams.get("batch") || 10);
+        const result = await buildLiveCommentBatch(offset, batch);
+        return json({ ok: true, ...result });
+      } catch (error) {
+        return json({ ok: false, error: String(error?.message || error) }, 500);
+      }
+    }
 
     if (url.pathname === "/event/search") {
       try {
