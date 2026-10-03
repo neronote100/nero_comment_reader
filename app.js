@@ -259,7 +259,7 @@ async function manualRefresh(){
 
   try{
     for(let guard=0;guard<30;guard++){
-      const url=WORKER+'/comments/live?offset='+offset+'&batch=10&t='+Date.now();
+      const url=WORKER+'/comments/live?offset='+offset+'&batch=1&t='+Date.now();
       const res=await fetch(url,{cache:'no-store'});
       const data=await res.json();
       if(!res.ok||!data.ok)throw new Error(data.error||('HTTP '+res.status));
@@ -302,8 +302,9 @@ async function manualRefresh(){
     applyInboxSnapshot(snapshot);
     statusEl.textContent='';
     setSyncUi(
-      failedArticles?'取得完了（一部失敗）':'取得完了',
-      '今この時点の未対応コメントは '+items.length+'件です。'+(failedArticles?' '+failedArticles+'記事は前回データを使用しました。':''),
+      failedArticles?'取得完了（判定保留あり）':'取得完了',
+      '今この時点の未対応コメントは '+items.length+'件です。'
+        +(failedArticles?' '+failedArticles+'記事は取得に失敗したため未返信一覧へ混ぜず、判定保留にしました。もう一度更新すると再確認します。':''),
       100
     );
     showToast('最新コメントを取得しました🌙');
