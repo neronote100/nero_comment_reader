@@ -60,6 +60,8 @@ function publicComment(item) {
     articleUrl: String(item?.articleUrl || ""),
     rootBody: String(item?.rootBody || ""),
     rootAuthorUrlname: String(item?.rootAuthorUrlname || ""),
+    pendingCount: Number(item?.pendingCount || 1),
+    pendingBodies: Array.isArray(item?.pendingBodies) ? item.pendingBodies.map(String) : [String(item?.body || "")],
   };
 }
 
@@ -205,44 +207,70 @@ async function fetchCreatorArticlesLive() {
 }
 
 function unresolvedLiveThread(root, replies) {
-  const thread = [root, ...replies].sort((a,b)=>(Date.parse(a.publishedAt)||0)-(Date.parse(b.publishedAt)||0));
+  const thread = [root, ...replies]
+    .filter(item => item && item.key)
+    .sort((a,b)=>(Date.parse(a.publishedAt)||0)-(Date.parse(b.publishedAt)||0));
+
   let lastOwner = -1;
   for (let i = 0; i < thread.length; i += 1) {
     if (thread[i].authorUrlname === NOTE_OWNER) lastOwner = i;
   }
-  const unresolved = [];
+
+  const pending = [];
   for (let i = lastOwner + 1; i < thread.length; i += 1) {
     const item = thread[i];
     if (!item.authorUrlname || item.authorUrlname === NOTE_OWNER || item.creatorLiked) continue;
-    unresolved.push({
-      ...item,
-      rootKey: root.key,
-      rootAuthorUrlname: root.authorUrlname,
-      rootBody: root.body,
-    });
+    pending.push(item);
   }
-  return unresolved;
+
+  if (!pending.length) return [];
+
+  // 長い会話で相手が連投していても、1スレッドにつき1件だけ対応対象にする。
+  // 最新コメントを代表にし、返信案生成用に未対応文脈も保持する。
+  const latest = pending[pending.length - 1];
+  return [{
+    ...latest,
+    rootKey: root.key,
+    rootAuthorUrlname: root.authorUrlname,
+    rootBody: root.body,
+    pendingCount: pending.length,
+    pendingBodies: pending.map(item => item.body).filter(Boolean),
+  }];
 }
 
 async function scanLiveArticle(article) {
   const roots = (await fetchLiveComments(article.key)).filter(comment=>comment.isRoot !== false);
   const unresolved = [];
+
   for (const root of roots) {
-    if (!root.creatorReplied) {
-      if (root.authorUrlname && root.authorUrlname !== NOTE_OWNER && !root.creatorLiked) {
+    if (!root.authorUrlname || root.authorUrlname === NOTE_OWNER) continue;
+
+    // 返信なしなら、王子スキの有無だけで判定できる。
+    if (root.replyCount <= 0) {
+      if (!root.creatorLiked) {
         unresolved.push({
           ...root,
           rootKey: root.key,
           rootAuthorUrlname: root.authorUrlname,
           rootBody: root.body,
+          pendingCount: 1,
+          pendingBodies: [root.body],
         });
       }
       continue;
     }
-    if (root.replyCount <= 1) continue;
-    const replies = await fetchLiveComments(article.key, root.key);
+
+    // 返信が1件だけで、note側が「作者返信済み」と返している場合は、
+    // その1件が王子の返信なので会話は対応済み。余分なAPI呼び出しを避ける。
+    if (root.replyCount === 1 && root.creatorReplied) continue;
+
+    // 2往復以上、または作者返信フラグだけでは判断できない場合は、
+    // parent_key でスレッド全体を取得して最後の王子返信より後だけを見る。
+    const replies = (await fetchLiveComments(article.key, root.key))
+      .filter(comment => comment.isRoot === false);
     unresolved.push(...unresolvedLiveThread(root, replies));
   }
+
   return unresolved;
 }
 
@@ -262,6 +290,8 @@ function publicLiveItem(article, comment) {
     publishedAt: comment.publishedAt,
     rootAuthorUrlname: comment.rootAuthorUrlname,
     rootBody: comment.rootBody,
+    pendingCount: Number(comment.pendingCount || 1),
+    pendingBodies: Array.isArray(comment.pendingBodies) ? comment.pendingBodies : [comment.body],
   };
 }
 
@@ -283,21 +313,27 @@ async function buildLiveCommentBatch(offset = 0, batchSize = 10) {
   }
 
   const start = Math.max(0, Number(offset || 0));
-  const size = Math.min(12, Math.max(1, Number(batchSize || 10)));
+  // 1記事内に長い返信スレッドが数十本あることがある。
+  // Workersの外部サブリクエスト上限を超えないよう、ライブ判定は1記事ずつ処理する。
+  const size = 1;
   const selected = candidates.slice(start, start + size);
   const items = [];
   let failedArticles = 0;
+  const failedArticleKeys = [];
 
   for (const article of selected) {
     try {
       const unresolved = await scanLiveArticle(article);
       for (const comment of unresolved) items.push(publicLiveItem(article, comment));
-    } catch {
+    } catch (error) {
+      // 取得失敗時に古い未返信データを復活させると「返信済みなのに未返信」に戻る。
+      // 失敗記事は判定保留として除外し、次回更新時に再試行する。
       failedArticles += 1;
-      const old = oldArticles[article.key];
-      for (const comment of Array.isArray(old?.unresolved) ? old.unresolved : []) {
-        items.push(publicLiveItem(article, comment));
-      }
+      failedArticleKeys.push({
+        key: article.key,
+        title: article.title,
+        error: String(error?.message || error),
+      });
     }
   }
 
@@ -311,6 +347,7 @@ async function buildLiveCommentBatch(offset = 0, batchSize = 10) {
     candidateArticles: candidates.length,
     scannedArticles: selected.length,
     failedArticles,
+    failedArticleKeys,
     offset: start,
     nextOffset,
     items,
