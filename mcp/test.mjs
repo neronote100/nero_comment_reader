@@ -195,5 +195,84 @@ const magazine = await rpc("tools/call", {
 assert(magazine.result?.structuredContent?.articles?.length===1,"magazine event search failed");
 assert(magazine.result.structuredContent.articles[0].body.includes("読書の秋"),"magazine article body missing");
 
+// Long-thread unanswered detection: evaluate the whole conversation, not a stale root flag.
+globalThis.fetch = async (input) => {
+  const url=String(input);
+
+  if(url.includes("/data/state.json")){
+    return new Response(JSON.stringify({
+      articles:{
+        nthread1:{commentCount:4,checkedAt:1,unresolved:[{key:"old-stale",body:"古い未返信"}]},
+        npending:{commentCount:3,checkedAt:1,unresolved:[{key:"old-pending",body:"古い未返信"}]},
+        nfail:{commentCount:1,checkedAt:1,unresolved:[{key:"stale-fallback",body:"返信済みなのに残っていた古いデータ"}]}
+      }
+    }),{status:200,headers:{"content-type":"application/json"}});
+  }
+
+  if(url.includes("/api/v2/creators/nero_notelover/contents")){
+    return new Response(JSON.stringify({data:{
+      contents:[
+        {key:"nthread1",name:"長いやり取り・対応済み",commentCount:4,publishAt:"2026-10-04T01:00:00+09:00"},
+        {key:"npending",name:"長いやり取り・最後だけ未対応",commentCount:3,publishAt:"2026-10-04T00:50:00+09:00"},
+        {key:"nfail",name:"取得失敗記事",commentCount:1,publishAt:"2026-10-04T00:40:00+09:00"}
+      ],
+      isLastPage:true
+    }}),{status:200,headers:{"content-type":"application/json"}});
+  }
+
+  if(url.includes("/api/v3/notes/nthread1/note_comments") && !url.includes("parent_key")){
+    return new Response(JSON.stringify({data:[{
+      key:"root1",comment:"最初のコメント",is_root:true,reply_count:3,
+      is_creator_replied:true,is_creator_liked:false,created_at:"2026-10-04T01:00:00+09:00",
+      user:{urlname:"guest1",nickname:"ゲスト1"}
+    }],next_page:null}),{status:200,headers:{"content-type":"application/json"}});
+  }
+  if(url.includes("/api/v3/notes/nthread1/note_comments") && url.includes("parent_key=root1")){
+    return new Response(JSON.stringify({data:[
+      {key:"r1",comment:"王子返信1",is_root:false,is_creator_liked:false,created_at:"2026-10-04T01:01:00+09:00",user:{urlname:"nero_notelover",nickname:"王子"}},
+      {key:"r2",comment:"相手の追撃",is_root:false,is_creator_liked:false,created_at:"2026-10-04T01:02:00+09:00",user:{urlname:"guest1",nickname:"ゲスト1"}},
+      {key:"r3",comment:"王子の最後の返信",is_root:false,is_creator_liked:false,created_at:"2026-10-04T01:03:00+09:00",user:{urlname:"nero_notelover",nickname:"王子"}}
+    ],next_page:null}),{status:200,headers:{"content-type":"application/json"}});
+  }
+
+  if(url.includes("/api/v3/notes/npending/note_comments") && !url.includes("parent_key")){
+    return new Response(JSON.stringify({data:[{
+      key:"root2",comment:"最初のコメント",is_root:true,reply_count:2,
+      is_creator_replied:true,is_creator_liked:false,created_at:"2026-10-04T02:00:00+09:00",
+      user:{urlname:"guest2",nickname:"ゲスト2"}
+    }],next_page:null}),{status:200,headers:{"content-type":"application/json"}});
+  }
+  if(url.includes("/api/v3/notes/npending/note_comments") && url.includes("parent_key=root2")){
+    return new Response(JSON.stringify({data:[
+      {key:"p1",comment:"王子返信",is_root:false,is_creator_liked:false,created_at:"2026-10-04T02:01:00+09:00",user:{urlname:"nero_notelover",nickname:"王子"}},
+      {key:"p2",comment:"最後の相手コメント",is_root:false,is_creator_liked:false,created_at:"2026-10-04T02:02:00+09:00",user:{urlname:"guest2",nickname:"ゲスト2"}}
+    ],next_page:null}),{status:200,headers:{"content-type":"application/json"}});
+  }
+
+  if(url.includes("/api/v3/notes/nfail/note_comments")){
+    throw new Error("simulated note API failure");
+  }
+
+  throw new Error("unexpected live fetch "+url);
+};
+
+async function getLive(path){
+  const res=await worker.fetch(new Request("https://example.test"+path),{});
+  return res.json();
+}
+
+const handledThread=await getLive("/comments/live?offset=0&batch=1");
+assert(handledThread.ok===true,"live handled thread request failed");
+assert(handledThread.items.length===0,"already replied long thread was incorrectly unresolved");
+
+const pendingThread=await getLive("/comments/live?offset=1&batch=1");
+assert(pendingThread.items.length===1,"pending long thread was not detected");
+assert(pendingThread.items[0].commentKey==="p2","latest pending reply was not selected");
+assert(pendingThread.items[0].pendingCount===1,"pending thread count incorrect");
+
+const failedThread=await getLive("/comments/live?offset=2&batch=1");
+assert(failedThread.failedArticles===1,"failed article was not marked pending review");
+assert(failedThread.items.length===0,"stale unresolved data was revived after scan failure");
+
 globalThis.fetch = originalFetch;
 console.log("MCP tests passed");
