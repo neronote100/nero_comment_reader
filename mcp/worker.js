@@ -295,7 +295,7 @@ function publicLiveItem(article, comment) {
   };
 }
 
-async function buildLiveCommentBatch(offset = 0, batchSize = 10) {
+async function getLiveCandidateArticles() {
   const [savedState, articles] = await Promise.all([
     loadSavedState(),
     fetchCreatorArticlesLive(),
@@ -309,9 +309,19 @@ async function buildLiveCommentBatch(offset = 0, batchSize = 10) {
     const oldPending = Array.isArray(old?.unresolved) && old.unresolved.length > 0;
     const countChanged = !old || Number(old.commentCount || 0) !== article.commentCount;
     const oldFailed = Boolean(old?.error) || Number(old?.checkedAt || 0) <= 0;
-    if (oldPending || countChanged || oldFailed) candidates.push(article);
+    if (oldPending || countChanged || oldFailed) {
+      candidates.push({
+        ...article,
+        reason: oldPending ? "previously_pending" : countChanged ? "comment_count_changed" : "previous_scan_failed",
+      });
+    }
   }
 
+  return { articles, candidates };
+}
+
+async function buildLiveCommentBatch(offset = 0, batchSize = 10) {
+  const { articles, candidates } = await getLiveCandidateArticles();
   const start = Math.max(0, Number(offset || 0));
   // 1記事内に長い返信スレッドが数十本あることがある。
   // Workersの外部サブリクエスト上限を超えないよう、ライブ判定は1記事ずつ処理する。
@@ -669,6 +679,40 @@ const TOOLS = [
   },
 
   {
+    name: "list_live_comment_check_articles",
+    title: "最新コメント判定の候補記事一覧",
+    description:
+      "未返信コメントを最新状態で確認するために、再判定が必要な王子の記事一覧を返します。自動同期停止後はこちらを起点にし、check_live_unanswered_articleを記事ごとに呼んでください。",
+    inputSchema: {
+      type: "object",
+      properties: {
+        limit: { type: "integer", minimum: 1, maximum: 50, default: 20 },
+        offset: { type: "integer", minimum: 0, default: 0 }
+      },
+      additionalProperties: false
+    },
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: true },
+  },
+  {
+    name: "check_live_unanswered_article",
+    title: "記事1件の未対応スレッドを最新判定",
+    description:
+      "指定した王子の記事のコメントスレッドをnote APIから最新取得し、最後の王子返信より後に残る王子未スキのコメントだけを返します。長い会話は1スレッド1対応にまとめます。",
+    inputSchema: {
+      type: "object",
+      properties: {
+        key: { type: "string", minLength: 1 },
+        title: { type: "string" },
+        article_url: { type: "string" },
+        published_at: { type: "string" }
+      },
+      required: ["key"],
+      additionalProperties: false
+    },
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: true },
+  },
+
+  {
     name: "get_unanswered_comment",
     title: "未対応コメントを1件取得",
     description:
@@ -805,6 +849,63 @@ async function callTool(name, args, env) {
     };
   }
 
+  if (name === "list_live_comment_check_articles") {
+    const limit = Math.min(50, Math.max(1, Number(args?.limit || 20)));
+    const offset = Math.max(0, Number(args?.offset || 0));
+    const { articles, candidates } = await getLiveCandidateArticles();
+    const selected = candidates.slice(offset, offset + limit);
+    const result = {
+      articleCount: articles.length,
+      candidateCount: candidates.length,
+      offset,
+      returned: selected.length,
+      nextOffset: offset + selected.length < candidates.length ? offset + selected.length : null,
+      articles: selected,
+    };
+    return {
+      content: [{
+        type: "text",
+        text: "最新判定が必要な記事を " + selected.length + " 件取得しました。check_live_unanswered_articleで記事ごとに確認してください。",
+      }],
+      structuredContent: result,
+    };
+  }
+
+  if (name === "check_live_unanswered_article") {
+    const key = String(args?.key || "");
+    const article = {
+      key,
+      title: String(args?.title || key),
+      url: String(args?.article_url || ("https://note.com/" + NOTE_OWNER + "/n/" + key)),
+      publishedAt: String(args?.published_at || ""),
+    };
+    try {
+      const unresolved = await scanLiveArticle(article);
+      const items = unresolved.map(comment => publicLiveItem(article, comment));
+      const result = {
+        articleKey: key,
+        articleTitle: article.title,
+        articleUrl: article.url,
+        unresolvedCount: items.length,
+        items,
+      };
+      return {
+        content: [{
+          type: "text",
+          text: items.length
+            ? "この記事には最新判定で未対応スレッドが " + items.length + " 件あります。"
+            : "この記事は最新判定で未対応なしです。",
+        }],
+        structuredContent: result,
+      };
+    } catch (error) {
+      return {
+        isError: true,
+        content: [{ type: "text", text: "この記事は判定保留です。古い未返信データは使用しません: " + String(error?.message || error) }],
+      };
+    }
+  }
+
   if (name === "get_unanswered_comment") {
     const id = String(args?.id || "");
     const item = inbox.items.find((candidate) => String(candidate?.id || "") === id);
@@ -860,7 +961,7 @@ async function handleMcp(request, env) {
       capabilities: { tools: { listChanged: false } },
       serverInfo: { name: "nero-comment-reader", version: "0.2.0" },
       instructions:
-        "王子（nero_notelover）の未対応コメントを読み取る専用MCPです。返信済み、または王子がスキ済みのコメントは一覧から除外されています。ユーザーが未対応コメントの確認や返信案を求めた場合は、原則としてlist_unanswered_by_articleを使い、min_commentsは明示指定がなければ5として、コメント単位ではなく記事単位でまとめて処理してください。返信対象は最低5件を基本とし、5件未満なら次の記事を追加してください。5件以上になった時点で止めますが、同じ記事の未対応コメントは途中で切らず、その記事分をすべて含めてください。1つの記事に未対応コメントが1件でもある場合、その記事に残っている他の『未返信かつ王子未スキ』コメントもすべて同じ記事グループとして扱います。出力は記事ごとにまとめ、記事タイトルと記事URLは各記事につき1回だけ表示してください。その下にコメント者ごとの返信案を並べます。返信案本文は、ChatGPT上でコピーボタンが出るように必ず markdown の text コードブロック（\`\`\`text ... \`\`\`）の中だけに入れてください。コードブロック内には『返信案：』などのラベルや記事URLを入れず、そのままnoteへ貼り付けられる返信本文だけを書いてください。王子の返信は、相手の内容へ具体的に反応し、明るく親しみやすく、短めの段落で、🌙や🤭︎を自然に使います。感謝はふざけず丁寧にし、定型的なお礼だけで終わらせません。記事内のコメントは、取得結果の順番でまとめて回答してください。また、ユーザーが王子主催イベントへの参加記事を探す、ハッシュタグやマガジンからコメント対象を探す、または参加記事へのコメント案を求めた場合は、find_event_articles_by_hashtag または find_event_articles_by_magazine を使ってください。イベント記事では王子本人の記事と王子がすでにコメント済みの記事は除外されます。各記事について『記事タイトル』『記事URL』『投稿者』を表示し、その後に記事本文の具体的な内容へ触れた王子らしいコメント案を1つ作ってください。コメント案は返信案と同様に text コードブロックへ本文だけを入れて、コピーボタンが出る形にしてください。単なる『参加ありがとうございます』だけでは終わらせず、記事を読んだことが伝わる内容にしてください。MCP側ではAI生成を行いません。",
+        "王子（nero_notelover）の未対応コメントを読み取る専用MCPです。返信済み、または王子がスキ済みのコメントは一覧から除外されています。ユーザーが未対応コメントの確認や返信案を求めた場合は、古い保存データではなく最新判定を優先してください。まずlist_live_comment_check_articlesで候補記事を取得し、check_live_unanswered_articleを記事ごとに順番に呼び、未対応スレッドが合計5件以上になるまで確認してください。判定失敗の記事は古いデータで補完せず判定保留として飛ばしてください。5件以上になった時点で止めますが、同じ記事の未対応スレッドはすべて含めてください。返信対象は最低5件を基本とし、5件未満なら次の記事を追加してください。5件以上になった時点で止めますが、同じ記事の未対応コメントは途中で切らず、その記事分をすべて含めてください。1つの記事に未対応コメントが1件でもある場合、その記事に残っている他の『未返信かつ王子未スキ』コメントもすべて同じ記事グループとして扱います。出力は記事ごとにまとめ、記事タイトルと記事URLは各記事につき1回だけ表示してください。その下にコメント者ごとの返信案を並べます。返信案本文は、ChatGPT上でコピーボタンが出るように必ず markdown の text コードブロック（\`\`\`text ... \`\`\`）の中だけに入れてください。コードブロック内には『返信案：』などのラベルや記事URLを入れず、そのままnoteへ貼り付けられる返信本文だけを書いてください。王子の返信は、相手の内容へ具体的に反応し、明るく親しみやすく、短めの段落で、🌙や🤭︎を自然に使います。感謝はふざけず丁寧にし、定型的なお礼だけで終わらせません。記事内のコメントは、取得結果の順番でまとめて回答してください。また、ユーザーが王子主催イベントへの参加記事を探す、ハッシュタグやマガジンからコメント対象を探す、または参加記事へのコメント案を求めた場合は、find_event_articles_by_hashtag または find_event_articles_by_magazine を使ってください。イベント記事では王子本人の記事と王子がすでにコメント済みの記事は除外されます。各記事について『記事タイトル』『記事URL』『投稿者』を表示し、その後に記事本文の具体的な内容へ触れた王子らしいコメント案を1つ作ってください。コメント案は返信案と同様に text コードブロックへ本文だけを入れて、コピーボタンが出る形にしてください。単なる『参加ありがとうございます』だけでは終わらせず、記事を読んだことが伝わる内容にしてください。MCP側ではAI生成を行いません。",
     });
   }
 
