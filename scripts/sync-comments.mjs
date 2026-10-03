@@ -115,52 +115,71 @@ async function creatorArticles(){
 }
 
 function unresolvedFromThread(root,replies){
-  const thread=[root,...replies].sort((a,b)=>{
-    const av=Date.parse(a.publishedAt)||0;
-    const bv=Date.parse(b.publishedAt)||0;
-    return av-bv;
-  });
+  const thread=[root,...replies]
+    .filter(c=>c&&c.key)
+    .sort((a,b)=>{
+      const av=Date.parse(a.publishedAt)||0;
+      const bv=Date.parse(b.publishedAt)||0;
+      return av-bv;
+    });
+
   let lastOwner=-1;
   for(let i=0;i<thread.length;i++){
     if(thread[i].authorUrlname===OWNER)lastOwner=i;
   }
-  const unresolved=[];
+
+  const pending=[];
   for(let i=lastOwner+1;i<thread.length;i++){
     const c=thread[i];
     if(!c.authorUrlname||c.authorUrlname===OWNER)continue;
     if(c.creatorLiked)continue;
-    unresolved.push({
-      ...c,
-      rootKey:root.key,
-      rootAuthorUrlname:root.authorUrlname,
-      rootBody:root.body
-    });
+    pending.push(c);
   }
-  return unresolved;
+
+  if(!pending.length)return [];
+
+  // 長い往復で相手が連投していても、1スレッドにつき1対応で十分。
+  // 最新の未対応コメントを代表として返し、同時に未対応文脈も保持する。
+  const latest=pending[pending.length-1];
+  return [{
+    ...latest,
+    rootKey:root.key,
+    rootAuthorUrlname:root.authorUrlname,
+    rootBody:root.body,
+    pendingCount:pending.length,
+    pendingBodies:pending.map(c=>c.body).filter(Boolean)
+  }];
 }
 
 async function scanArticle(article){
   const roots=(await fetchComments(article.key)).filter(c=>c.isRoot!==false);
   const unresolved=[];
+
   for(const root of roots){
-    if(!root.creatorReplied){
-      if(root.authorUrlname&&root.authorUrlname!==OWNER&&!root.creatorLiked){
+    if(!root.authorUrlname||root.authorUrlname===OWNER)continue;
+
+    // 返信が一切ない根コメントは、王子スキ済みなら対応済み。
+    if(root.replyCount<=0){
+      if(!root.creatorLiked){
         unresolved.push({
           ...root,
           rootKey:root.key,
           rootAuthorUrlname:root.authorUrlname,
-          rootBody:root.body
+          rootBody:root.body,
+          pendingCount:1,
+          pendingBodies:[root.body]
         });
       }
       continue;
     }
 
-    if(root.replyCount<=1)continue;
-
+    // 返信が存在するスレッドは is_creator_replied の真偽に頼らず必ず会話全体を確認する。
+    // これにより長い往復や、返信への返信が続くケースでも最後の発言者を正しく判定できる。
     await sleep(120);
-    const replies=await fetchComments(article.key,root.key);
+    const replies=(await fetchComments(article.key,root.key)).filter(c=>c.isRoot===false);
     unresolved.push(...unresolvedFromThread(root,replies));
   }
+
   return unresolved;
 }
 
@@ -225,7 +244,9 @@ for(const article of Object.values(nextArticles)){
       body:comment.body,
       publishedAt:comment.publishedAt,
       rootAuthorUrlname:comment.rootAuthorUrlname,
-      rootBody:comment.rootBody
+      rootBody:comment.rootBody,
+      pendingCount:Number(comment.pendingCount||1),
+      pendingBodies:Array.isArray(comment.pendingBodies)?comment.pendingBodies:[comment.body]
     });
   }
 }
