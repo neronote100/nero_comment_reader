@@ -212,29 +212,28 @@ function applyInboxSnapshot(data){
 }
 
 async function loadData(){
-  statusEl.textContent='前回データを読み込んでいます…';
+  statusEl.textContent='前回の手動取得データを確認しています…';
   let cached=null;
   try{
     cached=JSON.parse(localStorage.getItem('nero-live-comments-cache')||'null');
   }catch(_){}
 
-  try{
-    const res=await fetch('./data/inbox.json?t='+Date.now(),{cache:'no-store'});
-    if(!res.ok)throw new Error('HTTP '+res.status);
-    const saved=await res.json();
-    const cachedTime=Date.parse(cached?.updatedAt||'')||0;
-    const savedTime=Date.parse(saved?.updatedAt||'')||0;
-    applyInboxSnapshot(cachedTime>savedTime?cached:saved);
+  // 旧判定ロジックのキャッシュは再利用しない。
+  if(cached?.classifierVersion!==2)cached=null;
+
+  if(cached){
+    applyInboxSnapshot(cached);
     statusEl.textContent='';
-  }catch(error){
-    if(cached){
-      applyInboxSnapshot(cached);
-      statusEl.textContent='';
-    }else{
-      statusEl.textContent='前回データを読み込めませんでした。「最新コメントを取得」を押してください。';
-      commentsEl.innerHTML='';
-    }
+    return;
   }
+
+  state.items=[];
+  state.filtered=[];
+  $('#count').textContent='—';
+  $('#articleCount').textContent='—';
+  $('#updatedAt').textContent='未取得';
+  commentsEl.innerHTML='<div class="empty">判定方法を更新しました。<br>「最新コメントを取得」を押して、現在の状態を確認してください🌙</div>';
+  statusEl.textContent='';
 }
 
 function setSyncUi(label,detail,percent){
@@ -289,7 +288,8 @@ async function manualRefresh(){
 
     const items=[...merged.values()].sort((a,b)=>(Date.parse(b.publishedAt)||0)-(Date.parse(a.publishedAt)||0));
     const snapshot={
-      version:2,
+      version:3,
+      classifierVersion:2,
       owner:'nero_notelover',
       updatedAt,
       articleCount,
