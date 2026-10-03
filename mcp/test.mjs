@@ -31,6 +31,8 @@ for (const expected of [
   "list_unanswered_by_article",
   "find_event_articles_by_hashtag",
   "find_event_articles_by_magazine",
+  "list_live_comment_check_articles",
+  "check_live_unanswered_article",
   "get_unanswered_comment",
 ]) {
   assert(names.includes(expected), "missing tool " + expected);
