@@ -48,7 +48,13 @@ export class CommentSnapshotStore {
       }
 
       if (Number(result.offset || 0) !== Number(scan.expectedOffset || 0)) {
-        return new Response(JSON.stringify({ ok: false, error: "unexpected scan offset" }), { status: 409 });
+        return new Response(JSON.stringify({
+          ok: false,
+          error: "unexpected scan offset",
+          gotOffset: Number(result.offset || 0),
+          expectedOffset: Number(scan.expectedOffset || 0),
+          scanId,
+        }), { status: 409 });
       }
 
       const merged = new Map(
