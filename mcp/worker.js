@@ -241,9 +241,19 @@ function unresolvedLiveThread(root, replies) {
 async function scanLiveArticle(article) {
   const roots = (await fetchLiveComments(article.key)).filter(comment=>comment.isRoot !== false);
   const unresolved = [];
+  const previousRootKeys = new Set(
+    (Array.isArray(article?.previousUnresolved) ? article.previousUnresolved : [])
+      .map(item => String(item?.rootKey || item?.key || ""))
+      .filter(Boolean)
+  );
+  const pendingOnly = article?.scanMode === "pending_only" && previousRootKeys.size > 0;
 
   for (const root of roots) {
     if (!root.authorUrlname || root.authorUrlname === NOTE_OWNER) continue;
+    // コメント総数が変わっていない「前回未対応だけ残っている記事」は、
+    // 前回未対応だったスレッドだけ再確認すればよい。解決済みの長いスレッドを
+    // 毎回すべて読み直さず、Workers の外部リクエスト上限を節約する。
+    if (pendingOnly && !previousRootKeys.has(root.key)) continue;
 
     // 返信なしなら、王子スキの有無だけで判定できる。
     if (root.replyCount <= 0) {
@@ -313,6 +323,8 @@ async function getLiveCandidateArticles() {
       candidates.push({
         ...article,
         reason: oldPending ? "previously_pending" : countChanged ? "comment_count_changed" : "previous_scan_failed",
+        scanMode: oldPending && !countChanged && !oldFailed ? "pending_only" : "full",
+        previousUnresolved: Array.isArray(old?.unresolved) ? old.unresolved : [],
       });
     }
   }
