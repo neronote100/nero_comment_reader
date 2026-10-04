@@ -493,7 +493,7 @@ async function loadPublishedInbox(env) {
 }
 
 async function recordLiveBatch(env, scanId, result, start) {
-  if (!env?.COMMENT_SNAPSHOT) return false;
+  if (!env?.COMMENT_SNAPSHOT) return { ok: false, error: "COMMENT_SNAPSHOT binding missing" };
   const id = env.COMMENT_SNAPSHOT.idFromName(NOTE_OWNER);
   const stub = env.COMMENT_SNAPSHOT.get(id);
   const response = await stub.fetch("https://comment-snapshot/append", {
@@ -501,7 +501,14 @@ async function recordLiveBatch(env, scanId, result, start) {
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ scanId, result, start }),
   });
-  return response.ok;
+  let detail = null;
+  try { detail = await response.json(); } catch {}
+  return {
+    ok: response.ok && detail?.ok !== false,
+    status: response.status,
+    detail,
+    error: response.ok ? null : (detail?.error || "snapshot append failed"),
+  };
 }
 
 let liveSnapshotMemory = null;
@@ -1235,13 +1242,19 @@ export default {
         const incomingScanId = String(url.searchParams.get("scan_id") || "");
         const scanId = incomingScanId || crypto.randomUUID();
         const result = await buildLiveCommentBatch(offset, batch);
-        let snapshotRecorded = false;
+        let snapshotRecord = { ok: false, error: null };
         try {
-          snapshotRecorded = await recordLiveBatch(env, scanId, result, !incomingScanId || offset === 0);
-        } catch {
-          snapshotRecorded = false;
+          snapshotRecord = await recordLiveBatch(env, scanId, result, !incomingScanId || offset === 0);
+        } catch (error) {
+          snapshotRecord = { ok: false, error: String(error?.message || error) };
         }
-        return json({ ok: true, scanId, snapshotRecorded, ...result });
+        return json({
+          ok: true,
+          scanId,
+          snapshotRecorded: Boolean(snapshotRecord?.ok),
+          snapshotRecordError: snapshotRecord?.ok ? null : (snapshotRecord?.error || snapshotRecord?.detail?.error || null),
+          ...result
+        });
       } catch (error) {
         return json({ ok: false, error: String(error?.message || error) }, 500);
       }
