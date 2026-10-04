@@ -158,9 +158,9 @@ globalThis.fetch = async (input) => {
   if(url.includes("/data/state.json")){
     return new Response(JSON.stringify({
       articles:{
-        nthread1:{commentCount:4,checkedAt:1,unresolved:[{key:"old-stale",body:"古い未返信"}]},
-        npending:{commentCount:3,checkedAt:1,unresolved:[{key:"old-pending",body:"古い未返信"}]},
-        nfail:{commentCount:1,checkedAt:1,unresolved:[{key:"stale-fallback",body:"返信済みなのに残っていた古いデータ"}]}
+        nthread1:{commentCount:4,checkedAt:1,unresolved:[{key:"old-stale",rootKey:"root1",body:"古い未返信"}]},
+        npending:{commentCount:3,checkedAt:1,unresolved:[{key:"old-pending",rootKey:"root2",body:"古い未返信"}]},
+        nfail:{commentCount:1,checkedAt:1,unresolved:[{key:"stale-fallback",rootKey:"root-fail",body:"返信済みなのに残っていた古いデータ"}]}
       }
     }),{status:200,headers:{"content-type":"application/json"}});
   }
