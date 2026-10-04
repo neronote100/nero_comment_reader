@@ -1259,6 +1259,7 @@ export default {
           scanId,
           snapshotRecorded: Boolean(snapshotRecord?.ok),
           snapshotRecordError: snapshotRecord?.ok ? null : (snapshotRecord?.error || snapshotRecord?.detail?.error || null),
+          snapshotRecordDetail: snapshotRecord?.ok ? null : (snapshotRecord?.detail || null),
           ...result
         });
       } catch (error) {
