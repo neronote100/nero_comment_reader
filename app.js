@@ -255,13 +255,16 @@ async function manualRefresh(){
   let articleCount=0;
   let failedArticles=0;
   let updatedAt=new Date().toISOString();
+  let scanId='';
 
   try{
     for(let guard=0;guard<30;guard++){
-      const url=WORKER+'/comments/live?offset='+offset+'&batch=1&t='+Date.now();
+      const scanParam=scanId?'&scan_id='+encodeURIComponent(scanId):'';
+      const url=WORKER+'/comments/live?offset='+offset+'&batch=1'+scanParam+'&t='+Date.now();
       const res=await fetch(url,{cache:'no-store'});
       const data=await res.json();
       if(!res.ok||!data.ok)throw new Error(data.error||('HTTP '+res.status));
+      scanId=String(data.scanId||scanId||'');
 
       candidateTotal=Number(data.candidateArticles||0);
       articleCount=Number(data.articleCount||articleCount||0);
