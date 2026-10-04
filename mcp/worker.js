@@ -1,6 +1,107 @@
 const DEFAULT_INBOX_URL = "https://neronote100.github.io/nero_comment_reader/data/inbox.json";
 const MCP_PROTOCOL_VERSION = "2025-06-18";
 
+export class CommentSnapshotStore {
+  constructor(state, env) {
+    this.state = state;
+    this.env = env;
+  }
+
+  async fetch(request) {
+    const url = new URL(request.url);
+
+    if (request.method === "GET" && url.pathname === "/latest") {
+      const latest = await this.state.storage.get("latest");
+      return new Response(JSON.stringify(latest || null), {
+        headers: { "content-type": "application/json; charset=utf-8" },
+      });
+    }
+
+    if (request.method === "POST" && url.pathname === "/append") {
+      const payload = await request.json();
+      const scanId = String(payload?.scanId || "");
+      const result = payload?.result;
+      const start = Boolean(payload?.start);
+      if (!scanId || !result || typeof result !== "object") {
+        return new Response(JSON.stringify({ ok: false, error: "invalid payload" }), { status: 400 });
+      }
+
+      const scanKey = "scan:" + scanId;
+      let scan = start ? null : await this.state.storage.get(scanKey);
+
+      if (start) {
+        if (Number(result.offset || 0) !== 0) {
+          return new Response(JSON.stringify({ ok: false, error: "scan must start at offset 0" }), { status: 409 });
+        }
+        scan = {
+          scanId,
+          startedAt: new Date().toISOString(),
+          articleCount: Number(result.articleCount || 0),
+          candidateArticles: Number(result.candidateArticles || 0),
+          expectedOffset: 0,
+          failedArticles: 0,
+          failedArticleKeys: [],
+          items: [],
+        };
+      } else if (!scan) {
+        return new Response(JSON.stringify({ ok: false, error: "scan not found" }), { status: 409 });
+      }
+
+      if (Number(result.offset || 0) !== Number(scan.expectedOffset || 0)) {
+        return new Response(JSON.stringify({ ok: false, error: "unexpected scan offset" }), { status: 409 });
+      }
+
+      const merged = new Map(
+        (Array.isArray(scan.items) ? scan.items : []).map(item => [String(item?.id || ""), item])
+      );
+      for (const item of Array.isArray(result.items) ? result.items : []) {
+        if (item?.id) merged.set(String(item.id), item);
+      }
+
+      scan.items = [...merged.values()];
+      scan.articleCount = Number(result.articleCount || scan.articleCount || 0);
+      scan.candidateArticles = Number(result.candidateArticles || scan.candidateArticles || 0);
+      scan.failedArticles = Number(scan.failedArticles || 0) + Number(result.failedArticles || 0);
+      scan.failedArticleKeys = [
+        ...(Array.isArray(scan.failedArticleKeys) ? scan.failedArticleKeys : []),
+        ...(Array.isArray(result.failedArticleKeys) ? result.failedArticleKeys : []),
+      ];
+      scan.expectedOffset = result.nextOffset;
+      scan.updatedAt = result.updatedAt || new Date().toISOString();
+
+      if (result.nextOffset === null || result.nextOffset === undefined) {
+        scan.items.sort((a, b) => (Date.parse(b?.publishedAt) || 0) - (Date.parse(a?.publishedAt) || 0));
+        const latest = {
+          version: 4,
+          source: "manual_live_scan",
+          owner: NOTE_OWNER,
+          updatedAt: scan.updatedAt,
+          articleCount: scan.articleCount,
+          unresolvedCount: scan.items.length,
+          candidateArticles: scan.candidateArticles,
+          scannedArticles: scan.candidateArticles,
+          failedArticles: scan.failedArticles,
+          failedArticleKeys: scan.failedArticleKeys,
+          items: scan.items,
+        };
+        await this.state.storage.put("latest", latest);
+        await this.state.storage.delete(scanKey);
+        return new Response(JSON.stringify({ ok: true, finalized: true }), {
+          headers: { "content-type": "application/json; charset=utf-8" },
+        });
+      }
+
+      await this.state.storage.put(scanKey, scan);
+      return new Response(JSON.stringify({ ok: true, finalized: false }), {
+        headers: { "content-type": "application/json; charset=utf-8" },
+      });
+    }
+
+    return new Response("Not Found", { status: 404 });
+  }
+}
+
+
 const CORS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
@@ -377,6 +478,32 @@ async function buildLiveCommentBatch(offset = 0, batchSize = 10) {
 }
 
 
+async function loadPublishedInbox(env) {
+  if (!env?.COMMENT_SNAPSHOT) return null;
+  try {
+    const id = env.COMMENT_SNAPSHOT.idFromName(NOTE_OWNER);
+    const stub = env.COMMENT_SNAPSHOT.get(id);
+    const response = await stub.fetch("https://comment-snapshot/latest");
+    if (!response.ok) return null;
+    const data = await response.json();
+    return data && Array.isArray(data.items) ? data : null;
+  } catch {
+    return null;
+  }
+}
+
+async function recordLiveBatch(env, scanId, result, start) {
+  if (!env?.COMMENT_SNAPSHOT) return false;
+  const id = env.COMMENT_SNAPSHOT.idFromName(NOTE_OWNER);
+  const stub = env.COMMENT_SNAPSHOT.get(id);
+  const response = await stub.fetch("https://comment-snapshot/append", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ scanId, result, start }),
+  });
+  return response.ok;
+}
+
 let liveSnapshotMemory = null;
 let liveSnapshotMemoryAt = 0;
 const LIVE_SNAPSHOT_TTL_MS = 15 * 1000;
@@ -422,7 +549,10 @@ async function buildLiveInboxSnapshot() {
   };
 }
 
-async function loadCurrentInbox() {
+async function loadCurrentInbox(env) {
+  const published = await loadPublishedInbox(env);
+  if (published) return published;
+
   const now = Date.now();
   if (liveSnapshotMemory && now - liveSnapshotMemoryAt < LIVE_SNAPSHOT_TTL_MS) {
     return liveSnapshotMemory;
@@ -804,7 +934,7 @@ const TOOLS = [
 async function callTool(name, args, env) {
   let currentInboxPromise = null;
   const currentInbox = () => {
-    if (!currentInboxPromise) currentInboxPromise = loadCurrentInbox();
+    if (!currentInboxPromise) currentInboxPromise = loadCurrentInbox(env);
     return currentInboxPromise;
   };
 
@@ -1102,8 +1232,16 @@ export default {
       try {
         const offset = Number(url.searchParams.get("offset") || 0);
         const batch = Number(url.searchParams.get("batch") || 10);
+        const incomingScanId = String(url.searchParams.get("scan_id") || "");
+        const scanId = incomingScanId || crypto.randomUUID();
         const result = await buildLiveCommentBatch(offset, batch);
-        return json({ ok: true, ...result });
+        let snapshotRecorded = false;
+        try {
+          snapshotRecorded = await recordLiveBatch(env, scanId, result, !incomingScanId || offset === 0);
+        } catch {
+          snapshotRecorded = false;
+        }
+        return json({ ok: true, scanId, snapshotRecorded, ...result });
       } catch (error) {
         return json({ ok: false, error: String(error?.message || error) }, 500);
       }
