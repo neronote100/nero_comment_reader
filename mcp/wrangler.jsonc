@@ -7,5 +7,19 @@
   "preview_urls": false,
   "vars": {
     "INBOX_URL": "https://neronote100.github.io/nero_comment_reader/data/inbox.json"
-  }
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "COMMENT_SNAPSHOT",
+        "class_name": "CommentSnapshotStore"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["CommentSnapshotStore"]
+    }
+  ]
 }
