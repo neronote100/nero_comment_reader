@@ -39,94 +39,48 @@ for (const expected of [
 }
 
 const originalFetch = globalThis.fetch;
-globalThis.fetch = async () =>
-  new Response(JSON.stringify({
-    version: 1,
-    owner: "nero_notelover",
-    updatedAt: "2026-10-02T00:00:00.000Z",
-    articleCount: 2,
-    unresolvedCount: 7,
-    failedArticles: 0,
-    items: [
-      {
-        id: "note:comment1",
-        authorName: "テストさん",
-        authorUrlname: "test",
-        body: "こんにちは",
-        publishedAt: "2026-10-02T09:00:00+09:00",
-        articleTitle: "テスト記事",
-        articleUrl: "https://note.com/nero_notelover/n/test",
-        rootBody: "こんにちは",
-        rootAuthorUrlname: "test"
-      },
-      {
-        id: "note:comment2",
-        authorName: "別の人",
-        authorUrlname: "other",
-        body: "二つ目です",
-        publishedAt: "2026-10-02T08:30:00+09:00",
-        articleTitle: "テスト記事",
-        articleUrl: "https://note.com/nero_notelover/n/test",
-        rootBody: "二つ目です",
-        rootAuthorUrlname: "other"
-      },
-      {
-        id: "note2:comment3",
-        authorName: "三人目",
-        authorUrlname: "third",
-        body: "別記事です",
-        publishedAt: "2026-10-02T08:00:00+09:00",
-        articleTitle: "別の記事",
-        articleUrl: "https://note.com/nero_notelover/n/test2",
-        rootBody: "別記事です",
-        rootAuthorUrlname: "third"
-      },
-      {
-        id: "note3:comment4",
-        authorName: "四人目",
-        authorUrlname: "fourth",
-        body: "三記事目です1",
-        publishedAt: "2026-10-02T07:50:00+09:00",
-        articleTitle: "三つ目の記事",
-        articleUrl: "https://note.com/nero_notelover/n/test3",
-        rootBody: "三記事目です1",
-        rootAuthorUrlname: "fourth"
-      },
-      {
-        id: "note3:comment5",
-        authorName: "五人目",
-        authorUrlname: "fifth",
-        body: "三記事目です2",
-        publishedAt: "2026-10-02T07:40:00+09:00",
-        articleTitle: "三つ目の記事",
-        articleUrl: "https://note.com/nero_notelover/n/test3",
-        rootBody: "三記事目です2",
-        rootAuthorUrlname: "fifth"
-      },
-      {
-        id: "note3:comment6",
-        authorName: "六人目",
-        authorUrlname: "sixth",
-        body: "三記事目です3",
-        publishedAt: "2026-10-02T07:30:00+09:00",
-        articleTitle: "三つ目の記事",
-        articleUrl: "https://note.com/nero_notelover/n/test3",
-        rootBody: "三記事目です3",
-        rootAuthorUrlname: "sixth"
-      },
-      {
-        id: "note3:comment7",
-        authorName: "七人目",
-        authorUrlname: "seventh",
-        body: "三記事目です4",
-        publishedAt: "2026-10-02T07:20:00+09:00",
-        articleTitle: "三つ目の記事",
-        articleUrl: "https://note.com/nero_notelover/n/test3",
-        rootBody: "三記事目です4",
-        rootAuthorUrlname: "seventh"
-      }
+globalThis.fetch = async (input) => {
+  const url=String(input);
+
+  if(url.includes("/data/state.json")){
+    return new Response(JSON.stringify({articles:{}}),{status:200,headers:{"content-type":"application/json"}});
+  }
+
+  if(url.includes("/api/v2/creators/nero_notelover/contents")){
+    return new Response(JSON.stringify({data:{
+      contents:[
+        {key:"note",name:"テスト記事",commentCount:2,publishAt:"2026-10-02T09:30:00+09:00"},
+        {key:"note2",name:"別の記事",commentCount:1,publishAt:"2026-10-02T08:10:00+09:00"},
+        {key:"note3",name:"三つ目の記事",commentCount:4,publishAt:"2026-10-02T07:55:00+09:00"}
+      ],
+      isLastPage:true
+    }}),{status:200,headers:{"content-type":"application/json"}});
+  }
+
+  const roots = {
+    note:[
+      {key:"comment1",comment:"こんにちは",is_root:true,reply_count:0,is_creator_liked:false,created_at:"2026-10-02T09:00:00+09:00",user:{urlname:"test",nickname:"テストさん"}},
+      {key:"comment2",comment:"二つ目です",is_root:true,reply_count:0,is_creator_liked:false,created_at:"2026-10-02T08:30:00+09:00",user:{urlname:"other",nickname:"別の人"}}
+    ],
+    note2:[
+      {key:"comment3",comment:"別記事です",is_root:true,reply_count:0,is_creator_liked:false,created_at:"2026-10-02T08:00:00+09:00",user:{urlname:"third",nickname:"三人目"}}
+    ],
+    note3:[
+      {key:"comment4",comment:"三記事目です1",is_root:true,reply_count:0,is_creator_liked:false,created_at:"2026-10-02T07:50:00+09:00",user:{urlname:"fourth",nickname:"四人目"}},
+      {key:"comment5",comment:"三記事目です2",is_root:true,reply_count:0,is_creator_liked:false,created_at:"2026-10-02T07:40:00+09:00",user:{urlname:"fifth",nickname:"五人目"}},
+      {key:"comment6",comment:"三記事目です3",is_root:true,reply_count:0,is_creator_liked:false,created_at:"2026-10-02T07:30:00+09:00",user:{urlname:"sixth",nickname:"六人目"}},
+      {key:"comment7",comment:"三記事目です4",is_root:true,reply_count:0,is_creator_liked:false,created_at:"2026-10-02T07:20:00+09:00",user:{urlname:"seventh",nickname:"七人目"}}
     ]
-  }), { status: 200, headers: { "content-type": "application/json" } });
+  };
+
+  for(const [key,comments] of Object.entries(roots)){
+    if(url.includes("/api/v3/notes/"+key+"/note_comments")){
+      return new Response(JSON.stringify({data:comments,next_page:null}),{status:200,headers:{"content-type":"application/json"}});
+    }
+  }
+
+  throw new Error("unexpected fetch "+url);
+};
 
 const call = await rpc("tools/call", {
   name: "list_unanswered_comments",
