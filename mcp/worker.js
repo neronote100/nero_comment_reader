@@ -364,6 +364,66 @@ async function buildLiveCommentBatch(offset = 0, batchSize = 10) {
   };
 }
 
+
+let liveSnapshotMemory = null;
+let liveSnapshotMemoryAt = 0;
+const LIVE_SNAPSHOT_TTL_MS = 15 * 1000;
+
+async function buildLiveInboxSnapshot() {
+  const { articles, candidates } = await getLiveCandidateArticles();
+  const items = [];
+  let failedArticles = 0;
+  const failedArticleKeys = [];
+
+  for (const article of candidates) {
+    try {
+      const unresolved = await scanLiveArticle(article);
+      for (const comment of unresolved) {
+        items.push(publicLiveItem(article, comment));
+      }
+    } catch (error) {
+      // 取得に失敗した記事は古い保存データで補完しない。
+      // 「返信済みなのに未返信」に戻すより、判定保留として除外する。
+      failedArticles += 1;
+      failedArticleKeys.push({
+        key: article.key,
+        title: article.title,
+        error: String(error?.message || error),
+      });
+    }
+  }
+
+  items.sort((a, b) => (Date.parse(b.publishedAt) || 0) - (Date.parse(a.publishedAt) || 0));
+
+  return {
+    version: 3,
+    source: "live",
+    owner: NOTE_OWNER,
+    updatedAt: new Date().toISOString(),
+    articleCount: articles.length,
+    unresolvedCount: items.length,
+    candidateArticles: candidates.length,
+    scannedArticles: candidates.length,
+    failedArticles,
+    failedArticleKeys,
+    items,
+  };
+}
+
+async function loadCurrentInbox() {
+  const now = Date.now();
+  if (liveSnapshotMemory && now - liveSnapshotMemoryAt < LIVE_SNAPSHOT_TTL_MS) {
+    return liveSnapshotMemory;
+  }
+
+  // GitHub Pages の data/inbox.json は手動更新前の保存スナップショットなので、
+  // ChatGPT からの未返信確認では使わない。note API をその場で再判定する。
+  const snapshot = await buildLiveInboxSnapshot();
+  liveSnapshotMemory = snapshot;
+  liveSnapshotMemoryAt = now;
+  return snapshot;
+}
+
 async function noteJson(path) {
   const response = await fetch("https://note.com" + path, {
     headers: {
@@ -553,7 +613,7 @@ const TOOLS = [
     name: "get_comment_reader_status",
     title: "王子 Comment Readerの状態",
     description:
-      "王子（nero_notelover）のComment Readerの最終同期日時、確認記事数、未対応コメント件数を取得します。未対応とは、王子が返信しておらず、かつ王子がコメントにスキを付けていないものです。",
+      "王子（nero_notelover）のnoteをその場で最新確認し、確認記事数と未対応コメント件数を返します。GitHub Pagesの古い保存スナップショットは使いません。未対応とは、王子が返信しておらず、かつ王子がコメントにスキを付けていないものです。",
     inputSchema: { type: "object", properties: {}, additionalProperties: false },
     annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
   },
@@ -561,7 +621,7 @@ const TOOLS = [
     name: "list_unanswered_comments",
     title: "王子の未対応コメント一覧",
     description:
-      "王子の記事に付いた未対応コメントを新しい順に取得します。王子が返信済み、または王子がスキ済みのコメントは除外済みです。返信案を考えるときは、このツールで対象コメントを取得してください。",
+      "王子の記事をnote APIでその場で再判定し、未対応コメントを新しい順に取得します。王子が返信済み、または王子がスキ済みのコメントは除外します。GitHub Pagesの古い保存データには依存しません。",
     inputSchema: {
       type: "object",
       properties: {
@@ -730,24 +790,32 @@ const TOOLS = [
 ];
 
 async function callTool(name, args, env) {
-  const inbox = await loadInbox(env);
+  let currentInboxPromise = null;
+  const currentInbox = () => {
+    if (!currentInboxPromise) currentInboxPromise = loadCurrentInbox();
+    return currentInboxPromise;
+  };
 
   if (name === "get_comment_reader_status") {
+    const inbox = await currentInbox();
     const result = {
       owner: inbox.owner,
       updatedAt: inbox.updatedAt,
       articleCount: inbox.articleCount,
       unresolvedCount: inbox.unresolvedCount,
       failedArticles: inbox.failedArticles,
-      definition: "未返信かつ王子がスキしていないコメント",
+      source: inbox.source || "live",
+      candidateArticles: Number(inbox.candidateArticles || 0),
+      definition: "note APIで現在時点を再判定した、未返信かつ王子がスキしていないコメント",
     };
     return {
-      content: [{ type: "text", text: "未対応コメントは " + result.unresolvedCount + " 件です。" }],
+      content: [{ type: "text", text: "noteを最新確認した結果、未対応コメントは " + result.unresolvedCount + " 件です。" + (result.failedArticles ? " " + result.failedArticles + "記事は判定保留です。" : "") }],
       structuredContent: result,
     };
   }
 
   if (name === "list_unanswered_comments") {
+    const inbox = await currentInbox();
     const limit = Math.min(50, Math.max(1, Number(args?.limit || 10)));
     const offset = Math.max(0, Number(args?.offset || 0));
     const query = String(args?.query || "").trim().toLowerCase();
@@ -763,6 +831,8 @@ async function callTool(name, args, env) {
     const selected = items.slice(offset, offset + limit).map(publicComment);
     const result = {
       updatedAt: inbox.updatedAt,
+      source: inbox.source || "live",
+      failedArticles: Number(inbox.failedArticles || 0),
       total: items.length,
       offset,
       returned: selected.length,
@@ -773,13 +843,14 @@ async function callTool(name, args, env) {
       content: [{
         type: "text",
         text:
-          "未対応コメントを " + selected.length + " 件取得しました。必要に応じて各コメントへの王子らしい返信案を作成してください。",
+          "noteを最新確認し、未対応コメントを " + selected.length + " 件取得しました。" + (Number(inbox.failedArticles || 0) ? " " + inbox.failedArticles + "記事は判定保留です。" : "") + " 必要に応じて各コメントへの王子らしい返信案を作成してください。",
       }],
       structuredContent: result,
     };
   }
 
   if (name === "list_unanswered_by_article") {
+    const inbox = await currentInbox();
     const minComments = Math.min(50, Math.max(1, Number(args?.min_comments || 5)));
     const maxArticles = Math.min(20, Math.max(1, Number(args?.max_articles || 20)));
     const offsetArticles = Math.max(0, Number(args?.offset_articles || 0));
@@ -907,6 +978,7 @@ async function callTool(name, args, env) {
   }
 
   if (name === "get_unanswered_comment") {
+    const inbox = await currentInbox();
     const id = String(args?.id || "");
     const item = inbox.items.find((candidate) => String(candidate?.id || "") === id);
     if (!item) {
