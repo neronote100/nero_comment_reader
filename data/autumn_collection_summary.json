@@ -1,0 +1,3663 @@
+{
+  "generatedAt": "2026-10-07T01:35:12.214Z",
+  "magazineKey": "mbdfa1301e316",
+  "magazineName": "秋読コレクション🍁🌙",
+  "owner": "nero_notelover",
+  "totals": {
+    "articles": 81,
+    "uniqueAuthors": 80,
+    "likes": 5295,
+    "commentsReported": 2045,
+    "commentsFetched": 2045,
+    "uniqueCommenters": 213,
+    "uniqueExternalCommenters": 212
+  },
+  "externalCommenters": [
+    {
+      "authorUrlname": "orivie",
+      "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+      "commentCount": 142,
+      "rootCommentCount": 73,
+      "replyCount": 69,
+      "articleCount": 75,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ishan_xun212",
+      "authorName": "算術01　劉 鑑（りゅう かん）",
+      "commentCount": 97,
+      "rootCommentCount": 76,
+      "replyCount": 21,
+      "articleCount": 77,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ai_guide3875",
+      "authorName": "きゅうり/AIで“できること”が増える",
+      "commentCount": 83,
+      "rootCommentCount": 65,
+      "replyCount": 18,
+      "articleCount": 66,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fcs_homecenter",
+      "authorName": "伊藤ポップakaFCS",
+      "commentCount": 76,
+      "rootCommentCount": 39,
+      "replyCount": 37,
+      "articleCount": 41,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "shiratama_usagi",
+      "authorName": "しらたまうさぎ🐰❤️に寄添うKindle作家",
+      "commentCount": 44,
+      "rootCommentCount": 17,
+      "replyCount": 27,
+      "articleCount": 18,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "oshikatsu_seaart",
+      "authorName": "OSHIKATSU | SeaArt AIイラストギャラリー",
+      "commentCount": 42,
+      "rootCommentCount": 21,
+      "replyCount": 21,
+      "articleCount": 22,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "nizi_no_mukouhe",
+      "authorName": "Cozy Cafe & Bar beyond｜店主（旦那の方）",
+      "commentCount": 41,
+      "rootCommentCount": 20,
+      "replyCount": 21,
+      "articleCount": 21,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kan_mina867",
+      "authorName": "❁⃘*.ﾟMina❁⃘*.ﾟ|雲バル・ブラバル運営中♡",
+      "commentCount": 39,
+      "rootCommentCount": 8,
+      "replyCount": 31,
+      "articleCount": 9,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "good_ixia6698",
+      "authorName": "堂安咲和🪞 恋の本音を、物語と言葉に。",
+      "commentCount": 33,
+      "rootCommentCount": 15,
+      "replyCount": 18,
+      "articleCount": 16,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "pure_falcon3290",
+      "authorName": "左利き|親子英検",
+      "commentCount": 32,
+      "rootCommentCount": 12,
+      "replyCount": 20,
+      "articleCount": 13,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "gay_impala1620",
+      "authorName": "ポラフ｜AI副業ログ",
+      "commentCount": 32,
+      "rootCommentCount": 10,
+      "replyCount": 22,
+      "articleCount": 11,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "pure_duck9890",
+      "authorName": "ノン",
+      "commentCount": 32,
+      "rootCommentCount": 5,
+      "replyCount": 27,
+      "articleCount": 6,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "natty_skink7179",
+      "authorName": "枢木 経介｜【新資本論／ネオ江戸思想家】",
+      "commentCount": 30,
+      "rootCommentCount": 21,
+      "replyCount": 9,
+      "articleCount": 22,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "juicy_flea5682",
+      "authorName": "くみっきー",
+      "commentCount": 29,
+      "rootCommentCount": 14,
+      "replyCount": 15,
+      "articleCount": 15,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "prettyracoon_c",
+      "authorName": "ちびたぬき",
+      "commentCount": 29,
+      "rootCommentCount": 3,
+      "replyCount": 26,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "akari_seaart",
+      "authorName": "赤髪のあかり✨️創作で生きるnoteマン　相互フォロー中",
+      "commentCount": 28,
+      "rootCommentCount": 12,
+      "replyCount": 16,
+      "articleCount": 13,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "holopono33",
+      "authorName": "ほろぽの33",
+      "commentCount": 27,
+      "rootCommentCount": 11,
+      "replyCount": 16,
+      "articleCount": 12,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "noah_woaks",
+      "authorName": "ノア｜魔王｜noteを征服したい",
+      "commentCount": 27,
+      "rootCommentCount": 2,
+      "replyCount": 25,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fukurai_mone",
+      "authorName": "福来モネ",
+      "commentCount": 25,
+      "rootCommentCount": 5,
+      "replyCount": 20,
+      "articleCount": 6,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "toto0316",
+      "authorName": "トト",
+      "commentCount": 25,
+      "rootCommentCount": 4,
+      "replyCount": 21,
+      "articleCount": 5,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ojisan_chinpan",
+      "authorName": "ちんぱん🐒耳毛〰(˙👄˙)〰",
+      "commentCount": 25,
+      "rootCommentCount": 1,
+      "replyCount": 24,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kujira_log",
+      "authorName": "クジラのかくしごと｜言葉の海を泳ぐ",
+      "commentCount": 24,
+      "rootCommentCount": 10,
+      "replyCount": 14,
+      "articleCount": 11,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "saigo_wa_kan",
+      "authorName": "山田、最後は勘。",
+      "commentCount": 23,
+      "rootCommentCount": 7,
+      "replyCount": 16,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "358frog",
+      "authorName": "ゴリラ",
+      "commentCount": 23,
+      "rootCommentCount": 6,
+      "replyCount": 17,
+      "articleCount": 5,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kai_shigoto",
+      "authorName": "kai｜元高校球児×IT技術者",
+      "commentCount": 22,
+      "rootCommentCount": 13,
+      "replyCount": 9,
+      "articleCount": 14,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kanu2434",
+      "authorName": "KANU",
+      "commentCount": 22,
+      "rootCommentCount": 7,
+      "replyCount": 15,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "selcject",
+      "authorName": "ぐれんの　おにぎり@ あなたを人生の主人公にする心理家",
+      "commentCount": 22,
+      "rootCommentCount": 7,
+      "replyCount": 15,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "wise_rat6355",
+      "authorName": "雪綴ゆき",
+      "commentCount": 22,
+      "rootCommentCount": 2,
+      "replyCount": 20,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kazuma3924",
+      "authorName": "kazuma",
+      "commentCount": 21,
+      "rootCommentCount": 5,
+      "replyCount": 16,
+      "articleCount": 6,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "nori_mochi2026",
+      "authorName": "のりもち｜自分の「好き」を自由に綴る",
+      "commentCount": 19,
+      "rootCommentCount": 8,
+      "replyCount": 11,
+      "articleCount": 9,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "uchu_kasan",
+      "authorName": "宇宙人かあさん",
+      "commentCount": 19,
+      "rootCommentCount": 7,
+      "replyCount": 12,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "open_tulip9172",
+      "authorName": "ミノリ・グルーヴ@Minoriからの転生",
+      "commentCount": 18,
+      "rootCommentCount": 8,
+      "replyCount": 10,
+      "articleCount": 9,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "apiosfanclub",
+      "authorName": "アピオスファンクラブ｜１人気ままなアピオス文化研究",
+      "commentCount": 18,
+      "rootCommentCount": 6,
+      "replyCount": 12,
+      "articleCount": 7,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kakuu_kareshi",
+      "authorName": "架空彼氏製作所｜AIイラスト",
+      "commentCount": 18,
+      "rootCommentCount": 4,
+      "replyCount": 14,
+      "articleCount": 5,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "mama_ca",
+      "authorName": "Pajama de mama*4歳娘ママ",
+      "commentCount": 17,
+      "rootCommentCount": 5,
+      "replyCount": 12,
+      "articleCount": 6,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "miyuki1192",
+      "authorName": "みゆこ｜菜園ティスト🌱　「やってみた」を楽しもう",
+      "commentCount": 17,
+      "rootCommentCount": 2,
+      "replyCount": 15,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "hono9556",
+      "authorName": "Hono｜実験室のマラカスネキ🪇",
+      "commentCount": 16,
+      "rootCommentCount": 7,
+      "replyCount": 9,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fancy_honest5951",
+      "authorName": "Maharu",
+      "commentCount": 16,
+      "rootCommentCount": 4,
+      "replyCount": 12,
+      "articleCount": 5,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "wakamon_manga",
+      "authorName": "わかモン＠フォロバ100期間限定の悪役令嬢",
+      "commentCount": 15,
+      "rootCommentCount": 12,
+      "replyCount": 3,
+      "articleCount": 13,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "lithe_murre6431",
+      "authorName": "失敗しない旅行術／花乃（かの）",
+      "commentCount": 15,
+      "rootCommentCount": 6,
+      "replyCount": 9,
+      "articleCount": 7,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "hip_badger4262",
+      "authorName": "ウタ｜楽しみながら収益化を目指す人",
+      "commentCount": 15,
+      "rootCommentCount": 2,
+      "replyCount": 13,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fine_loris7218",
+      "authorName": "ぱっちー｜暮らしと挑戦の記録",
+      "commentCount": 15,
+      "rootCommentCount": 1,
+      "replyCount": 14,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "00irea00",
+      "authorName": "紡えり🐱　⁂GPT遊びに夢中⁂",
+      "commentCount": 14,
+      "rootCommentCount": 8,
+      "replyCount": 6,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "clear_sloth1257",
+      "authorName": "きっこ",
+      "commentCount": 14,
+      "rootCommentCount": 4,
+      "replyCount": 10,
+      "articleCount": 6,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "easygoing2026",
+      "authorName": "ちゃこ｜看護と暮らし",
+      "commentCount": 14,
+      "rootCommentCount": 3,
+      "replyCount": 11,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "vivid_honest7436",
+      "authorName": "ルミエル．Ｈ",
+      "commentCount": 14,
+      "rootCommentCount": 4,
+      "replyCount": 10,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "tenkai_notes",
+      "authorName": "天界記録",
+      "commentCount": 14,
+      "rootCommentCount": 2,
+      "replyCount": 12,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "taisetu_forme",
+      "authorName": "舞香",
+      "commentCount": 13,
+      "rootCommentCount": 7,
+      "replyCount": 6,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ayumu_ai",
+      "authorName": "アユム🐰｜副業月10万円の実践者",
+      "commentCount": 13,
+      "rootCommentCount": 4,
+      "replyCount": 9,
+      "articleCount": 5,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "loyal_poppy819",
+      "authorName": "ryuu☆PL学園コラム",
+      "commentCount": 13,
+      "rootCommentCount": 3,
+      "replyCount": 10,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "potemushi",
+      "authorName": "AIゲーム制作のぽてむし｜相互フォローします、ぽてちください",
+      "commentCount": 13,
+      "rootCommentCount": 1,
+      "replyCount": 12,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "tim_life_note",
+      "authorName": "ティ夢🐾WORLD🌏",
+      "commentCount": 12,
+      "rootCommentCount": 3,
+      "replyCount": 9,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "yokayoka5103",
+      "authorName": "まるよか",
+      "commentCount": 11,
+      "rootCommentCount": 3,
+      "replyCount": 8,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "tadano_hime_",
+      "authorName": "唯乃ひめ",
+      "commentCount": 10,
+      "rootCommentCount": 4,
+      "replyCount": 6,
+      "articleCount": 5,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fresh_loris1944",
+      "authorName": "名前もと　",
+      "commentCount": 10,
+      "rootCommentCount": 3,
+      "replyCount": 7,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "veronica_heels",
+      "authorName": "ヴェロニカ・ヒールズ｜相互フォローしますわよ💋",
+      "commentCount": 10,
+      "rootCommentCount": 1,
+      "replyCount": 9,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "galatea_note",
+      "authorName": "がらてあ│書きたいことを書けばいい",
+      "commentCount": 9,
+      "rootCommentCount": 2,
+      "replyCount": 7,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "10on_kikou_nao",
+      "authorName": "なお🌿｜氣｜大自然パワーお届け隊🚙",
+      "commentCount": 9,
+      "rootCommentCount": 3,
+      "replyCount": 6,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kamponightowl",
+      "authorName": "つぶあん｜不養生なあずき",
+      "commentCount": 9,
+      "rootCommentCount": 1,
+      "replyCount": 8,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "grand_crane5257",
+      "authorName": "むめ",
+      "commentCount": 8,
+      "rootCommentCount": 3,
+      "replyCount": 5,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "lithe_rose3519",
+      "authorName": "モモ",
+      "commentCount": 8,
+      "rootCommentCount": 3,
+      "replyCount": 5,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "takehiroshinji20",
+      "authorName": "たけひろ・しんじ|シブコイ案内人⚽️",
+      "commentCount": 8,
+      "rootCommentCount": 2,
+      "replyCount": 6,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "you5so",
+      "authorName": "なつき｜波ゆるnote案内人 📒",
+      "commentCount": 8,
+      "rootCommentCount": 2,
+      "replyCount": 6,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "tsukikusa1111",
+      "authorName": "月草🌱｜noteのパワースポットになりたい",
+      "commentCount": 7,
+      "rootCommentCount": 2,
+      "replyCount": 5,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "sogekilabs",
+      "authorName": "SOGEKI LABS",
+      "commentCount": 7,
+      "rootCommentCount": 1,
+      "replyCount": 6,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "si_mbam4",
+      "authorName": "イシザキ",
+      "commentCount": 7,
+      "rootCommentCount": 1,
+      "replyCount": 6,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "wind_allium7346",
+      "authorName": "みのぶぎ (mino-boogie)",
+      "commentCount": 7,
+      "rootCommentCount": 1,
+      "replyCount": 6,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "vast_yeti7062",
+      "authorName": "科学でいろどる🌱羊毛のパレット",
+      "commentCount": 7,
+      "rootCommentCount": 1,
+      "replyCount": 6,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "disneybiz",
+      "authorName": "あず｜ディズニーで学ぶ副業戦略",
+      "commentCount": 6,
+      "rootCommentCount": 2,
+      "replyCount": 4,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "aya_realrecord",
+      "authorName": "あや│SNSに頼らない「資産型note」研究者",
+      "commentCount": 6,
+      "rootCommentCount": 1,
+      "replyCount": 5,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "inukansou_",
+      "authorName": "いぬき",
+      "commentCount": 6,
+      "rootCommentCount": 1,
+      "replyCount": 5,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fancy_nerine2305",
+      "authorName": "山中サトシ│詩と小説の世界│元公務員クリエイター",
+      "commentCount": 6,
+      "rootCommentCount": 1,
+      "replyCount": 5,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "lafey",
+      "authorName": "浅葱りう",
+      "commentCount": 5,
+      "rootCommentCount": 3,
+      "replyCount": 2,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "3_mo_on",
+      "authorName": "くらげ",
+      "commentCount": 5,
+      "rootCommentCount": 1,
+      "replyCount": 4,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "koguma_labo",
+      "authorName": "こぐま｜普通に生きるのが苦手",
+      "commentCount": 5,
+      "rootCommentCount": 1,
+      "replyCount": 4,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kiramekiwave",
+      "authorName": "今日も決められない水面こは🎹迷奏の音姫",
+      "commentCount": 5,
+      "rootCommentCount": 1,
+      "replyCount": 4,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "0umi",
+      "authorName": "青海 久遠｜ショートショートと漫画",
+      "commentCount": 5,
+      "rootCommentCount": 1,
+      "replyCount": 4,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "himuro_viola",
+      "authorName": "緋室ヴィオラ🌹｜元女優の第二幕｜フォロバ100",
+      "commentCount": 5,
+      "rootCommentCount": 1,
+      "replyCount": 4,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "baibai260728",
+      "authorName": "橙(ダイダイ)260728",
+      "commentCount": 5,
+      "rootCommentCount": 2,
+      "replyCount": 3,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "calm_sedum3458",
+      "authorName": "柴犬ゆる暮らし｜柴ゆる",
+      "commentCount": 4,
+      "rootCommentCount": 2,
+      "replyCount": 2,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "serene_pansy617",
+      "authorName": "かえるこ | Kaeruko",
+      "commentCount": 3,
+      "rootCommentCount": 3,
+      "replyCount": 0,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "mamanmafin",
+      "authorName": "ママンマフィン",
+      "commentCount": 3,
+      "rootCommentCount": 3,
+      "replyCount": 0,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "iyou_mu",
+      "authorName": "AIU(アイユ)",
+      "commentCount": 3,
+      "rootCommentCount": 2,
+      "replyCount": 1,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ktcrs1107",
+      "authorName": "KITAcore｜キタコレ＠ログプレイヤー",
+      "commentCount": 3,
+      "rootCommentCount": 2,
+      "replyCount": 1,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "grand_avocet5554",
+      "authorName": "イナズマ",
+      "commentCount": 3,
+      "rootCommentCount": 2,
+      "replyCount": 1,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "noted_kazukazu",
+      "authorName": "かんず",
+      "commentCount": 3,
+      "rootCommentCount": 2,
+      "replyCount": 1,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "shirabe_lab",
+      "authorName": "コバンのしらべノート",
+      "commentCount": 3,
+      "rootCommentCount": 2,
+      "replyCount": 1,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "suzuka020825",
+      "authorName": "ミライダネ",
+      "commentCount": 3,
+      "rootCommentCount": 2,
+      "replyCount": 1,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "koko_kei",
+      "authorName": "心野けいか🐹（ハムスターの人）",
+      "commentCount": 3,
+      "rootCommentCount": 2,
+      "replyCount": 1,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "gagaregon",
+      "authorName": "ガガレゴン　【相互フォローします】",
+      "commentCount": 3,
+      "rootCommentCount": 2,
+      "replyCount": 1,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "modern_broom3378",
+      "authorName": "柚木崎",
+      "commentCount": 3,
+      "rootCommentCount": 3,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "eager_phlox2461",
+      "authorName": "🌸おはな＆🐕まめしばさん公式",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "mixmorph",
+      "authorName": "MixMorph（ミックス・モーフ）",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "lazyreiji1228",
+      "authorName": "イズミ⚡︎とにかく手を動かすアカウント",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "jolly_stoat9783",
+      "authorName": "カハリー｜子育てに寄り添う言葉",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "dapper_frog7916",
+      "authorName": "ぱとのーと",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "mulcombox",
+      "authorName": "マツリカ｜【変態怪異】",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "charm_ivy8575",
+      "authorName": "ミルマル",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "rockcat",
+      "authorName": "ろくねこ",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "bold_slug9390",
+      "authorName": "歌詠み音楽クリエイターUTAKO",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "jimanyan",
+      "authorName": "向日葵じまにゃん🌻",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "eager_thyme9842",
+      "authorName": "考える赤柴｜ハロウィンアート2026応援中",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "magic_deer5743",
+      "authorName": "徒然",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "unique_turkey951",
+      "authorName": "碧乃さくら",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "77_noa",
+      "authorName": "NOA＠全力でAIで遊ぶ人",
+      "commentCount": 2,
+      "rootCommentCount": 1,
+      "replyCount": 1,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "corvus_754",
+      "authorName": "sumica",
+      "commentCount": 2,
+      "rootCommentCount": 1,
+      "replyCount": 1,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "akiteruhiro44",
+      "authorName": "あきてるひろ｜自由と自立を目指す人のサポーター",
+      "commentCount": 2,
+      "rootCommentCount": 1,
+      "replyCount": 1,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "almabrillante",
+      "authorName": "あまね〘ฅ՞•ﻌ•՞ฅฅ^•ﻌ•^ฅ〙",
+      "commentCount": 2,
+      "rootCommentCount": 1,
+      "replyCount": 1,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "game_system_alex",
+      "authorName": "アルフレッド(ALFRED)",
+      "commentCount": 2,
+      "rootCommentCount": 1,
+      "replyCount": 1,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "otou_to_koneko",
+      "authorName": "お父さん猫@家事/育児カイゼン担当",
+      "commentCount": 2,
+      "rootCommentCount": 1,
+      "replyCount": 1,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "tanishi11go",
+      "authorName": "タニシ11号🐚─‎経験を、誰かのために🍀",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "mx9n_myzk",
+      "authorName": "のの幸＠月1畑",
+      "commentCount": 2,
+      "rootCommentCount": 1,
+      "replyCount": 1,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "sankasei",
+      "authorName": "りぼんぼん",
+      "commentCount": 2,
+      "rootCommentCount": 1,
+      "replyCount": 1,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kayo_kazutama",
+      "authorName": "佳代 | 豊かに活きる",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kuga_rage",
+      "authorName": "久我レイジ",
+      "commentCount": 2,
+      "rootCommentCount": 1,
+      "replyCount": 1,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "nifty_tucan8721",
+      "authorName": "蛍",
+      "commentCount": 2,
+      "rootCommentCount": 1,
+      "replyCount": 1,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "magico_keni_az",
+      "authorName": "真彦🌕辻・Miguelin幸樹【ケネス梓の弟】",
+      "commentCount": 2,
+      "rootCommentCount": 2,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "enma_kotei",
+      "authorName": "神威皇帝 閻魔",
+      "commentCount": 2,
+      "rootCommentCount": 1,
+      "replyCount": 1,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ai_08creator",
+      "authorName": "茉白トキ@十人十色Project",
+      "commentCount": 2,
+      "rootCommentCount": 1,
+      "replyCount": 1,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kokoro_grow",
+      "authorName": "♨️若女将こころ📈｜株はじめました🔰",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "sakuraba_yuuri",
+      "authorName": "🕊‎桜庭 優凛🌸(sakuraba yuuri)",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fukugyou_ai25",
+      "authorName": "AI副業ラボ",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "dear_aster615",
+      "authorName": "Ako",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "awesomey",
+      "authorName": "Awesome YAMAUCHI",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "camellia_0821",
+      "authorName": "Camellia Mountain",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "chill_2525",
+      "authorName": "Chill｜人生後半、進化中",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fast_thyme336",
+      "authorName": "EARTH🌎",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "lithe_zebra6705",
+      "authorName": "EMANON",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "calm_carp9367",
+      "authorName": "FAY｜蒼梟調査隊長🦉",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ax_dragon",
+      "authorName": "gladroom29",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "marie_222",
+      "authorName": "Marie | まりーの小さな⚙️歯車⚙️ラボ🔬",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "meccha_harapeko",
+      "authorName": "MECCHA HARAPEKO",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "000999909",
+      "authorName": "Mio❄️",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "neru_1007",
+      "authorName": "neru",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "cave_huntress",
+      "authorName": "note原始人｜0→1収益化を実践",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "saijewelry",
+      "authorName": "SAI - 青の世界と物語",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "rapid_walrus5164",
+      "authorName": "Shibaken",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fresh_walrus2288",
+      "authorName": "アイル",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "mild_sheep8979",
+      "authorName": "アメリ🐈️",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "lumiracle",
+      "authorName": "あやっぺ☕",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "dear_cosmos7591",
+      "authorName": "えりぃ｜ココロの片づけ案内人",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "capricious_note",
+      "authorName": "カプリ |  ハロウィン月間サキュバス変化中",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kichinosuke",
+      "authorName": "きちのすけ@my beloved  Japan",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "compass_m360",
+      "authorName": "コンパス みき✨️好きのタネ🌱‬‪を育てる案内人",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "jidoukan_judge",
+      "authorName": "さくさく|共感から育てるnote収益化サポート",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "shjgechy",
+      "authorName": "しげちーSS",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "shima_shima03",
+      "authorName": "しま | 日常にそっと英語を",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "genial_wren230",
+      "authorName": "すみれ",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "sekaiayumu25",
+      "authorName": "せかいあゆむ（瀬海歩）",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "eager_garlic175",
+      "authorName": "たま子 ❤︎",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ai_with_cafe",
+      "authorName": "チイノ(休み休みなのでたまに不在)",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "vast_snake8880",
+      "authorName": "ツッコミおっさん@愚痴聞く妖精",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "tebocco_bocchi",
+      "authorName": "てぼっこ",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "wanyu_dokoaru",
+      "authorName": "どこかにあるはず日記",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "natty_ram505",
+      "authorName": "なあこ",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "alive_guppy3873",
+      "authorName": "にゃんちー【いちご🍓シェイク🥤120%】",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ai1512take",
+      "authorName": "ののさん🌸ゆっくりのんびり私らしいnote",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "moral_hyena6169",
+      "authorName": "パーマ侍",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "papi_san",
+      "authorName": "ぱぴさん｜働き方を探す旅の途中",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "hurry_room",
+      "authorName": "ハリー｜note実験記録",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "trueawareness",
+      "authorName": "ハル",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "bu_kun",
+      "authorName": "ぶっくん｜AI の時代だからこそ「これでいいのだ！」クリエイター",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "pepe17",
+      "authorName": "ぺぺ",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "47_box",
+      "authorName": "マイキー🐣",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "jolly_lily852",
+      "authorName": "まつの妻",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "tosshutsu_m",
+      "authorName": "まなつ/突出マイノリティ列伝",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "hospital_ph_hono",
+      "authorName": "ママ薬剤師HONO",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "karakurisan",
+      "authorName": "まみぽこ ｜ 60歳からのnote作家・人生初のkindle出版達成",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kei_mifu",
+      "authorName": "みふゆ＆成瀬圭｜AIパートナーとnote実験中｜フォロバ100",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "large_iguana6415",
+      "authorName": "やっさん（yasuda）",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "yamayamako3",
+      "authorName": "ヤマコヤーマン",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "momon172104",
+      "authorName": "やまびより",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "dapper_hosta8162",
+      "authorName": "やよい｜構造化思考で生きる人",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "yuuwa1046",
+      "authorName": "ゆ",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "yusei_blog",
+      "authorName": "ゆうせい｜ブログの仕立て屋",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "open_auklet771",
+      "authorName": "ゆうラボ | ほどく言葉のよはく",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "yusa_no_note",
+      "authorName": "ゆさ⌇遠回りしてnoteに辿り着いた主婦",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "pyontee_pooh",
+      "authorName": "ゆるしまshow",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "risa_desk",
+      "authorName": "りさ",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ricchan_dayo",
+      "authorName": "りっちゃん@ミニ株で夫をセミFIREさせたい",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "prime_sloth7175",
+      "authorName": "リリエル｜暗黒騎士団長｜魔王様を支えたい",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "rinfa_ai",
+      "authorName": "リンファ@AIアート・ドキュメンタリスト",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "witty_crocus5287",
+      "authorName": "ルル",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "wanrabi",
+      "authorName": "ワンラビ/プロンプト置場/AIパ",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fit_sage5978",
+      "authorName": "円の蔵本舗  by  マルクラ",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "dandy_stilt3941",
+      "authorName": "加古川あきら│フォロバ100％",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fine_worm5368",
+      "authorName": "海藻うさぎ猫",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "sobagome20260701",
+      "authorName": "蕎麦米",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ai_money60",
+      "authorName": "元銀行員のAIお金ノート",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "lush_hosta1028",
+      "authorName": "再生補修",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "mugen_reiki",
+      "authorName": "坂井柏水",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "hip_swan408",
+      "authorName": "仕事屋仁義",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kyotoreppy",
+      "authorName": "小池豊＠京都RePPY",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "yume_suisho",
+      "authorName": "水晶ゆめ🔮当てない占い師×夢を灯す創作家",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "open_myway",
+      "authorName": "星ねこ｜ありのまま、そのまま。初心者さんに安心してもらえるひと。",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "hoshimama3",
+      "authorName": "星ママ | AI×主婦",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "hijiri_kokoro",
+      "authorName": "聖 (ひじり)",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "real_hare9943",
+      "authorName": "誠実に、ひたむきに",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "yukiyomi",
+      "authorName": "雪詠｜ゆきよみ",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "clear_hornet5443",
+      "authorName": "大豆小豆",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "careerdoors",
+      "authorName": "中川麻里｜init Works株式会社｜社員全員が活躍するチームづくり",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "niwashi_fronta",
+      "authorName": "庭師ふろんた｜3兄弟パパ",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "long_avocet8163",
+      "authorName": "点と黙々。",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ripe_impala6805",
+      "authorName": "兎(利き手療養中。ゆっくり巡回します。)",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ready_kalmia6890",
+      "authorName": "白宮 雪音",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "pure_pipit4816",
+      "authorName": "風花",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "royal_cougar3556",
+      "authorName": "物語の旅人",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "okamoto_takuo",
+      "authorName": "弁護士　岡本卓大｜アレテーを求めて～今日もトコトコ（　・ω・）",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fast_tulip2408",
+      "authorName": "某編集長",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "deep_hawk3501",
+      "authorName": "明日歌",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "juuniko_nanako",
+      "authorName": "和服のななこ",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "human_iguana7235",
+      "authorName": "瀀翔《ゆうた》",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    }
+  ],
+  "topCommenters": [
+    {
+      "authorUrlname": "orivie",
+      "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+      "commentCount": 142,
+      "rootCommentCount": 73,
+      "replyCount": 69,
+      "articleCount": 75,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ishan_xun212",
+      "authorName": "算術01　劉 鑑（りゅう かん）",
+      "commentCount": 97,
+      "rootCommentCount": 76,
+      "replyCount": 21,
+      "articleCount": 77,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ai_guide3875",
+      "authorName": "きゅうり/AIで“できること”が増える",
+      "commentCount": 83,
+      "rootCommentCount": 65,
+      "replyCount": 18,
+      "articleCount": 66,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fcs_homecenter",
+      "authorName": "伊藤ポップakaFCS",
+      "commentCount": 76,
+      "rootCommentCount": 39,
+      "replyCount": 37,
+      "articleCount": 41,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "shiratama_usagi",
+      "authorName": "しらたまうさぎ🐰❤️に寄添うKindle作家",
+      "commentCount": 44,
+      "rootCommentCount": 17,
+      "replyCount": 27,
+      "articleCount": 18,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "oshikatsu_seaart",
+      "authorName": "OSHIKATSU | SeaArt AIイラストギャラリー",
+      "commentCount": 42,
+      "rootCommentCount": 21,
+      "replyCount": 21,
+      "articleCount": 22,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "nizi_no_mukouhe",
+      "authorName": "Cozy Cafe & Bar beyond｜店主（旦那の方）",
+      "commentCount": 41,
+      "rootCommentCount": 20,
+      "replyCount": 21,
+      "articleCount": 21,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kan_mina867",
+      "authorName": "❁⃘*.ﾟMina❁⃘*.ﾟ|雲バル・ブラバル運営中♡",
+      "commentCount": 39,
+      "rootCommentCount": 8,
+      "replyCount": 31,
+      "articleCount": 9,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "good_ixia6698",
+      "authorName": "堂安咲和🪞 恋の本音を、物語と言葉に。",
+      "commentCount": 33,
+      "rootCommentCount": 15,
+      "replyCount": 18,
+      "articleCount": 16,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "pure_falcon3290",
+      "authorName": "左利き|親子英検",
+      "commentCount": 32,
+      "rootCommentCount": 12,
+      "replyCount": 20,
+      "articleCount": 13,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "gay_impala1620",
+      "authorName": "ポラフ｜AI副業ログ",
+      "commentCount": 32,
+      "rootCommentCount": 10,
+      "replyCount": 22,
+      "articleCount": 11,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "pure_duck9890",
+      "authorName": "ノン",
+      "commentCount": 32,
+      "rootCommentCount": 5,
+      "replyCount": 27,
+      "articleCount": 6,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "natty_skink7179",
+      "authorName": "枢木 経介｜【新資本論／ネオ江戸思想家】",
+      "commentCount": 30,
+      "rootCommentCount": 21,
+      "replyCount": 9,
+      "articleCount": 22,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "juicy_flea5682",
+      "authorName": "くみっきー",
+      "commentCount": 29,
+      "rootCommentCount": 14,
+      "replyCount": 15,
+      "articleCount": 15,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "prettyracoon_c",
+      "authorName": "ちびたぬき",
+      "commentCount": 29,
+      "rootCommentCount": 3,
+      "replyCount": 26,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "akari_seaart",
+      "authorName": "赤髪のあかり✨️創作で生きるnoteマン　相互フォロー中",
+      "commentCount": 28,
+      "rootCommentCount": 12,
+      "replyCount": 16,
+      "articleCount": 13,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "holopono33",
+      "authorName": "ほろぽの33",
+      "commentCount": 27,
+      "rootCommentCount": 11,
+      "replyCount": 16,
+      "articleCount": 12,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "noah_woaks",
+      "authorName": "ノア｜魔王｜noteを征服したい",
+      "commentCount": 27,
+      "rootCommentCount": 2,
+      "replyCount": 25,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fukurai_mone",
+      "authorName": "福来モネ",
+      "commentCount": 25,
+      "rootCommentCount": 5,
+      "replyCount": 20,
+      "articleCount": 6,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "toto0316",
+      "authorName": "トト",
+      "commentCount": 25,
+      "rootCommentCount": 4,
+      "replyCount": 21,
+      "articleCount": 5,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ojisan_chinpan",
+      "authorName": "ちんぱん🐒耳毛〰(˙👄˙)〰",
+      "commentCount": 25,
+      "rootCommentCount": 1,
+      "replyCount": 24,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kujira_log",
+      "authorName": "クジラのかくしごと｜言葉の海を泳ぐ",
+      "commentCount": 24,
+      "rootCommentCount": 10,
+      "replyCount": 14,
+      "articleCount": 11,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "saigo_wa_kan",
+      "authorName": "山田、最後は勘。",
+      "commentCount": 23,
+      "rootCommentCount": 7,
+      "replyCount": 16,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "358frog",
+      "authorName": "ゴリラ",
+      "commentCount": 23,
+      "rootCommentCount": 6,
+      "replyCount": 17,
+      "articleCount": 5,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kai_shigoto",
+      "authorName": "kai｜元高校球児×IT技術者",
+      "commentCount": 22,
+      "rootCommentCount": 13,
+      "replyCount": 9,
+      "articleCount": 14,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kanu2434",
+      "authorName": "KANU",
+      "commentCount": 22,
+      "rootCommentCount": 7,
+      "replyCount": 15,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "selcject",
+      "authorName": "ぐれんの　おにぎり@ あなたを人生の主人公にする心理家",
+      "commentCount": 22,
+      "rootCommentCount": 7,
+      "replyCount": 15,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "wise_rat6355",
+      "authorName": "雪綴ゆき",
+      "commentCount": 22,
+      "rootCommentCount": 2,
+      "replyCount": 20,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kazuma3924",
+      "authorName": "kazuma",
+      "commentCount": 21,
+      "rootCommentCount": 5,
+      "replyCount": 16,
+      "articleCount": 6,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "nori_mochi2026",
+      "authorName": "のりもち｜自分の「好き」を自由に綴る",
+      "commentCount": 19,
+      "rootCommentCount": 8,
+      "replyCount": 11,
+      "articleCount": 9,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "uchu_kasan",
+      "authorName": "宇宙人かあさん",
+      "commentCount": 19,
+      "rootCommentCount": 7,
+      "replyCount": 12,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "open_tulip9172",
+      "authorName": "ミノリ・グルーヴ@Minoriからの転生",
+      "commentCount": 18,
+      "rootCommentCount": 8,
+      "replyCount": 10,
+      "articleCount": 9,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "apiosfanclub",
+      "authorName": "アピオスファンクラブ｜１人気ままなアピオス文化研究",
+      "commentCount": 18,
+      "rootCommentCount": 6,
+      "replyCount": 12,
+      "articleCount": 7,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kakuu_kareshi",
+      "authorName": "架空彼氏製作所｜AIイラスト",
+      "commentCount": 18,
+      "rootCommentCount": 4,
+      "replyCount": 14,
+      "articleCount": 5,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "mama_ca",
+      "authorName": "Pajama de mama*4歳娘ママ",
+      "commentCount": 17,
+      "rootCommentCount": 5,
+      "replyCount": 12,
+      "articleCount": 6,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "miyuki1192",
+      "authorName": "みゆこ｜菜園ティスト🌱　「やってみた」を楽しもう",
+      "commentCount": 17,
+      "rootCommentCount": 2,
+      "replyCount": 15,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "hono9556",
+      "authorName": "Hono｜実験室のマラカスネキ🪇",
+      "commentCount": 16,
+      "rootCommentCount": 7,
+      "replyCount": 9,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fancy_honest5951",
+      "authorName": "Maharu",
+      "commentCount": 16,
+      "rootCommentCount": 4,
+      "replyCount": 12,
+      "articleCount": 5,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "wakamon_manga",
+      "authorName": "わかモン＠フォロバ100期間限定の悪役令嬢",
+      "commentCount": 15,
+      "rootCommentCount": 12,
+      "replyCount": 3,
+      "articleCount": 13,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "lithe_murre6431",
+      "authorName": "失敗しない旅行術／花乃（かの）",
+      "commentCount": 15,
+      "rootCommentCount": 6,
+      "replyCount": 9,
+      "articleCount": 7,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "hip_badger4262",
+      "authorName": "ウタ｜楽しみながら収益化を目指す人",
+      "commentCount": 15,
+      "rootCommentCount": 2,
+      "replyCount": 13,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fine_loris7218",
+      "authorName": "ぱっちー｜暮らしと挑戦の記録",
+      "commentCount": 15,
+      "rootCommentCount": 1,
+      "replyCount": 14,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "00irea00",
+      "authorName": "紡えり🐱　⁂GPT遊びに夢中⁂",
+      "commentCount": 14,
+      "rootCommentCount": 8,
+      "replyCount": 6,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "clear_sloth1257",
+      "authorName": "きっこ",
+      "commentCount": 14,
+      "rootCommentCount": 4,
+      "replyCount": 10,
+      "articleCount": 6,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "easygoing2026",
+      "authorName": "ちゃこ｜看護と暮らし",
+      "commentCount": 14,
+      "rootCommentCount": 3,
+      "replyCount": 11,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "vivid_honest7436",
+      "authorName": "ルミエル．Ｈ",
+      "commentCount": 14,
+      "rootCommentCount": 4,
+      "replyCount": 10,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "tenkai_notes",
+      "authorName": "天界記録",
+      "commentCount": 14,
+      "rootCommentCount": 2,
+      "replyCount": 12,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "taisetu_forme",
+      "authorName": "舞香",
+      "commentCount": 13,
+      "rootCommentCount": 7,
+      "replyCount": 6,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ayumu_ai",
+      "authorName": "アユム🐰｜副業月10万円の実践者",
+      "commentCount": 13,
+      "rootCommentCount": 4,
+      "replyCount": 9,
+      "articleCount": 5,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "loyal_poppy819",
+      "authorName": "ryuu☆PL学園コラム",
+      "commentCount": 13,
+      "rootCommentCount": 3,
+      "replyCount": 10,
+      "articleCount": 4,
+      "isHost": false
+    }
+  ],
+  "authors": [
+    {
+      "authorUrlname": "nero_notelover",
+      "authorName": "ネロ🌙｜王子｜秋読コレクションありがとう🍁【全力で駆け回ってるから待ってて🌙】",
+      "articleCount": 2,
+      "totalLikes": 370,
+      "totalComments": 326
+    },
+    {
+      "authorUrlname": "wise_rat6355",
+      "authorName": "雪綴ゆき",
+      "articleCount": 1,
+      "totalLikes": 360,
+      "totalComments": 37
+    },
+    {
+      "authorUrlname": "pure_falcon3290",
+      "authorName": "左利き|親子英検",
+      "articleCount": 1,
+      "totalLikes": 156,
+      "totalComments": 33
+    },
+    {
+      "authorUrlname": "noah_woaks",
+      "authorName": "ノア｜魔王｜noteを征服したい",
+      "articleCount": 1,
+      "totalLikes": 136,
+      "totalComments": 52
+    },
+    {
+      "authorUrlname": "loyal_poppy819",
+      "authorName": "ryuu☆PL学園コラム",
+      "articleCount": 1,
+      "totalLikes": 127,
+      "totalComments": 23
+    },
+    {
+      "authorUrlname": "prettyracoon_c",
+      "authorName": "ちびたぬき",
+      "articleCount": 1,
+      "totalLikes": 121,
+      "totalComments": 53
+    },
+    {
+      "authorUrlname": "shiratama_usagi",
+      "authorName": "しらたまうさぎ🐰❤️に寄添うKindle作家",
+      "articleCount": 1,
+      "totalLikes": 115,
+      "totalComments": 44
+    },
+    {
+      "authorUrlname": "orivie",
+      "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+      "articleCount": 1,
+      "totalLikes": 108,
+      "totalComments": 75
+    },
+    {
+      "authorUrlname": "holopono33",
+      "authorName": "ほろぽの33",
+      "articleCount": 1,
+      "totalLikes": 104,
+      "totalComments": 30
+    },
+    {
+      "authorUrlname": "ojisan_chinpan",
+      "authorName": "ちんぱん🐒耳毛〰(˙👄˙)〰",
+      "articleCount": 1,
+      "totalLikes": 103,
+      "totalComments": 49
+    },
+    {
+      "authorUrlname": "nori_mochi2026",
+      "authorName": "のりもち｜自分の「好き」を自由に綴る",
+      "articleCount": 1,
+      "totalLikes": 103,
+      "totalComments": 20
+    },
+    {
+      "authorUrlname": "ayumu_ai",
+      "authorName": "アユム🐰｜副業月10万円の実践者",
+      "articleCount": 1,
+      "totalLikes": 97,
+      "totalComments": 14
+    },
+    {
+      "authorUrlname": "tenkai_notes",
+      "authorName": "天界記録",
+      "articleCount": 1,
+      "totalLikes": 96,
+      "totalComments": 26
+    },
+    {
+      "authorUrlname": "fresh_loris1944",
+      "authorName": "名前もと　",
+      "articleCount": 1,
+      "totalLikes": 95,
+      "totalComments": 13
+    },
+    {
+      "authorUrlname": "toto0316",
+      "authorName": "トト",
+      "articleCount": 1,
+      "totalLikes": 92,
+      "totalComments": 37
+    },
+    {
+      "authorUrlname": "pure_duck9890",
+      "authorName": "ノン",
+      "articleCount": 1,
+      "totalLikes": 91,
+      "totalComments": 48
+    },
+    {
+      "authorUrlname": "kan_mina867",
+      "authorName": "❁⃘*.ﾟMina❁⃘*.ﾟ|雲バル・ブラバル運営中♡",
+      "articleCount": 1,
+      "totalLikes": 84,
+      "totalComments": 47
+    },
+    {
+      "authorUrlname": "miyuki1192",
+      "authorName": "みゆこ｜菜園ティスト🌱　「やってみた」を楽しもう",
+      "articleCount": 1,
+      "totalLikes": 84,
+      "totalComments": 27
+    },
+    {
+      "authorUrlname": "akari_seaart",
+      "authorName": "赤髪のあかり✨️創作で生きるnoteマン　相互フォロー中",
+      "articleCount": 1,
+      "totalLikes": 84,
+      "totalComments": 33
+    },
+    {
+      "authorUrlname": "358frog",
+      "authorName": "ゴリラ",
+      "articleCount": 1,
+      "totalLikes": 84,
+      "totalComments": 35
+    },
+    {
+      "authorUrlname": "fukurai_mone",
+      "authorName": "福来モネ",
+      "articleCount": 1,
+      "totalLikes": 82,
+      "totalComments": 40
+    },
+    {
+      "authorUrlname": "mama_ca",
+      "authorName": "Pajama de mama*4歳娘ママ",
+      "articleCount": 1,
+      "totalLikes": 82,
+      "totalComments": 27
+    },
+    {
+      "authorUrlname": "potemushi",
+      "authorName": "AIゲーム制作のぽてむし｜相互フォローします、ぽてちください",
+      "articleCount": 1,
+      "totalLikes": 76,
+      "totalComments": 27
+    },
+    {
+      "authorUrlname": "selcject",
+      "authorName": "ぐれんの　おにぎり@ あなたを人生の主人公にする心理家",
+      "articleCount": 1,
+      "totalLikes": 75,
+      "totalComments": 22
+    },
+    {
+      "authorUrlname": "veronica_heels",
+      "authorName": "ヴェロニカ・ヒールズ｜相互フォローしますわよ💋",
+      "articleCount": 1,
+      "totalLikes": 70,
+      "totalComments": 19
+    },
+    {
+      "authorUrlname": "wakamon_manga",
+      "authorName": "わかモン＠フォロバ100期間限定の悪役令嬢",
+      "articleCount": 1,
+      "totalLikes": 70,
+      "totalComments": 15
+    },
+    {
+      "authorUrlname": "good_ixia6698",
+      "authorName": "堂安咲和🪞 恋の本音を、物語と言葉に。",
+      "articleCount": 1,
+      "totalLikes": 69,
+      "totalComments": 26
+    },
+    {
+      "authorUrlname": "kakuu_kareshi",
+      "authorName": "架空彼氏製作所｜AIイラスト",
+      "articleCount": 1,
+      "totalLikes": 68,
+      "totalComments": 29
+    },
+    {
+      "authorUrlname": "gay_impala1620",
+      "authorName": "ポラフ｜AI副業ログ",
+      "articleCount": 1,
+      "totalLikes": 59,
+      "totalComments": 20
+    },
+    {
+      "authorUrlname": "taisetu_forme",
+      "authorName": "舞香",
+      "articleCount": 1,
+      "totalLikes": 58,
+      "totalComments": 12
+    },
+    {
+      "authorUrlname": "fcs_homecenter",
+      "authorName": "伊藤ポップakaFCS",
+      "articleCount": 1,
+      "totalLikes": 57,
+      "totalComments": 54
+    },
+    {
+      "authorUrlname": "fine_loris7218",
+      "authorName": "ぱっちー｜暮らしと挑戦の記録",
+      "articleCount": 1,
+      "totalLikes": 56,
+      "totalComments": 29
+    },
+    {
+      "authorUrlname": "kazuma3924",
+      "authorName": "kazuma",
+      "articleCount": 1,
+      "totalLikes": 56,
+      "totalComments": 31
+    },
+    {
+      "authorUrlname": "kujira_log",
+      "authorName": "クジラのかくしごと｜言葉の海を泳ぐ",
+      "articleCount": 1,
+      "totalLikes": 55,
+      "totalComments": 19
+    },
+    {
+      "authorUrlname": "vast_yeti7062",
+      "authorName": "科学でいろどる🌱羊毛のパレット",
+      "articleCount": 1,
+      "totalLikes": 55,
+      "totalComments": 8
+    },
+    {
+      "authorUrlname": "si_mbam4",
+      "authorName": "イシザキ",
+      "articleCount": 1,
+      "totalLikes": 54,
+      "totalComments": 12
+    },
+    {
+      "authorUrlname": "himuro_viola",
+      "authorName": "緋室ヴィオラ🌹｜元女優の第二幕｜フォロバ100",
+      "articleCount": 1,
+      "totalLikes": 53,
+      "totalComments": 8
+    },
+    {
+      "authorUrlname": "disneybiz",
+      "authorName": "あず｜ディズニーで学ぶ副業戦略",
+      "articleCount": 1,
+      "totalLikes": 52,
+      "totalComments": 10
+    },
+    {
+      "authorUrlname": "0umi",
+      "authorName": "青海 久遠｜ショートショートと漫画",
+      "articleCount": 1,
+      "totalLikes": 51,
+      "totalComments": 8
+    },
+    {
+      "authorUrlname": "galatea_note",
+      "authorName": "がらてあ│書きたいことを書けばいい",
+      "articleCount": 1,
+      "totalLikes": 50,
+      "totalComments": 15
+    },
+    {
+      "authorUrlname": "kai_shigoto",
+      "authorName": "kai｜元高校球児×IT技術者",
+      "articleCount": 1,
+      "totalLikes": 49,
+      "totalComments": 18
+    },
+    {
+      "authorUrlname": "you5so",
+      "authorName": "なつき｜波ゆるnote案内人 📒",
+      "articleCount": 1,
+      "totalLikes": 48,
+      "totalComments": 14
+    },
+    {
+      "authorUrlname": "hip_badger4262",
+      "authorName": "ウタ｜楽しみながら収益化を目指す人",
+      "articleCount": 1,
+      "totalLikes": 48,
+      "totalComments": 25
+    },
+    {
+      "authorUrlname": "easygoing2026",
+      "authorName": "ちゃこ｜看護と暮らし",
+      "articleCount": 1,
+      "totalLikes": 48,
+      "totalComments": 21
+    },
+    {
+      "authorUrlname": "calm_sedum3458",
+      "authorName": "柴犬ゆる暮らし｜柴ゆる",
+      "articleCount": 1,
+      "totalLikes": 46,
+      "totalComments": 7
+    },
+    {
+      "authorUrlname": "clear_sloth1257",
+      "authorName": "きっこ",
+      "articleCount": 1,
+      "totalLikes": 46,
+      "totalComments": 16
+    },
+    {
+      "authorUrlname": "fancy_honest5951",
+      "authorName": "Maharu",
+      "articleCount": 1,
+      "totalLikes": 46,
+      "totalComments": 22
+    },
+    {
+      "authorUrlname": "open_tulip9172",
+      "authorName": "ミノリ・グルーヴ@Minoriからの転生",
+      "articleCount": 1,
+      "totalLikes": 44,
+      "totalComments": 20
+    },
+    {
+      "authorUrlname": "oshikatsu_seaart",
+      "authorName": "OSHIKATSU | SeaArt AIイラストギャラリー",
+      "articleCount": 1,
+      "totalLikes": 44,
+      "totalComments": 23
+    },
+    {
+      "authorUrlname": "saigo_wa_kan",
+      "authorName": "山田、最後は勘。",
+      "articleCount": 1,
+      "totalLikes": 44,
+      "totalComments": 24
+    },
+    {
+      "authorUrlname": "natty_skink7179",
+      "authorName": "枢木 経介｜【新資本論／ネオ江戸思想家】",
+      "articleCount": 1,
+      "totalLikes": 43,
+      "totalComments": 12
+    },
+    {
+      "authorUrlname": "mamanmafin",
+      "authorName": "ママンマフィン",
+      "articleCount": 1,
+      "totalLikes": 42,
+      "totalComments": 5
+    },
+    {
+      "authorUrlname": "vivid_honest7436",
+      "authorName": "ルミエル．Ｈ",
+      "articleCount": 1,
+      "totalLikes": 42,
+      "totalComments": 15
+    },
+    {
+      "authorUrlname": "nizi_no_mukouhe",
+      "authorName": "Cozy Cafe & Bar beyond｜店主（旦那の方）",
+      "articleCount": 1,
+      "totalLikes": 42,
+      "totalComments": 19
+    },
+    {
+      "authorUrlname": "kanu2434",
+      "authorName": "KANU",
+      "articleCount": 1,
+      "totalLikes": 42,
+      "totalComments": 32
+    },
+    {
+      "authorUrlname": "yokayoka5103",
+      "authorName": "まるよか",
+      "articleCount": 1,
+      "totalLikes": 40,
+      "totalComments": 12
+    },
+    {
+      "authorUrlname": "tim_life_note",
+      "authorName": "ティ夢🐾WORLD🌏",
+      "articleCount": 1,
+      "totalLikes": 40,
+      "totalComments": 14
+    },
+    {
+      "authorUrlname": "juicy_flea5682",
+      "authorName": "くみっきー",
+      "articleCount": 1,
+      "totalLikes": 40,
+      "totalComments": 18
+    },
+    {
+      "authorUrlname": "takehiroshinji20",
+      "authorName": "たけひろ・しんじ|シブコイ案内人⚽️",
+      "articleCount": 1,
+      "totalLikes": 38,
+      "totalComments": 12
+    },
+    {
+      "authorUrlname": "kamponightowl",
+      "authorName": "つぶあん｜不養生なあずき",
+      "articleCount": 1,
+      "totalLikes": 36,
+      "totalComments": 12
+    },
+    {
+      "authorUrlname": "apiosfanclub",
+      "authorName": "アピオスファンクラブ｜１人気ままなアピオス文化研究",
+      "articleCount": 1,
+      "totalLikes": 35,
+      "totalComments": 18
+    },
+    {
+      "authorUrlname": "tadano_hime_",
+      "authorName": "唯乃ひめ",
+      "articleCount": 1,
+      "totalLikes": 35,
+      "totalComments": 15
+    },
+    {
+      "authorUrlname": "ishan_xun212",
+      "authorName": "算術01　劉 鑑（りゅう かん）",
+      "articleCount": 1,
+      "totalLikes": 35,
+      "totalComments": 33
+    },
+    {
+      "authorUrlname": "hono9556",
+      "authorName": "Hono｜実験室のマラカスネキ🪇",
+      "articleCount": 1,
+      "totalLikes": 34,
+      "totalComments": 20
+    },
+    {
+      "authorUrlname": "aya_realrecord",
+      "authorName": "あや│SNSに頼らない「資産型note」研究者",
+      "articleCount": 1,
+      "totalLikes": 31,
+      "totalComments": 10
+    },
+    {
+      "authorUrlname": "uchu_kasan",
+      "authorName": "宇宙人かあさん",
+      "articleCount": 1,
+      "totalLikes": 31,
+      "totalComments": 20
+    },
+    {
+      "authorUrlname": "koguma_labo",
+      "authorName": "こぐま｜普通に生きるのが苦手",
+      "articleCount": 1,
+      "totalLikes": 30,
+      "totalComments": 8
+    },
+    {
+      "authorUrlname": "kiramekiwave",
+      "authorName": "今日も決められない水面こは🎹迷奏の音姫",
+      "articleCount": 1,
+      "totalLikes": 30,
+      "totalComments": 10
+    },
+    {
+      "authorUrlname": "3_mo_on",
+      "authorName": "くらげ",
+      "articleCount": 1,
+      "totalLikes": 29,
+      "totalComments": 6
+    },
+    {
+      "authorUrlname": "lafey",
+      "authorName": "浅葱りう",
+      "articleCount": 1,
+      "totalLikes": 29,
+      "totalComments": 5
+    },
+    {
+      "authorUrlname": "inukansou_",
+      "authorName": "いぬき",
+      "articleCount": 1,
+      "totalLikes": 28,
+      "totalComments": 8
+    },
+    {
+      "authorUrlname": "wind_allium7346",
+      "authorName": "みのぶぎ (mino-boogie)",
+      "articleCount": 1,
+      "totalLikes": 28,
+      "totalComments": 14
+    },
+    {
+      "authorUrlname": "baibai260728",
+      "authorName": "橙(ダイダイ)260728",
+      "articleCount": 1,
+      "totalLikes": 27,
+      "totalComments": 7
+    },
+    {
+      "authorUrlname": "lithe_rose3519",
+      "authorName": "モモ",
+      "articleCount": 1,
+      "totalLikes": 26,
+      "totalComments": 9
+    },
+    {
+      "authorUrlname": "lithe_murre6431",
+      "authorName": "失敗しない旅行術／花乃（かの）",
+      "articleCount": 1,
+      "totalLikes": 25,
+      "totalComments": 15
+    },
+    {
+      "authorUrlname": "grand_crane5257",
+      "authorName": "むめ",
+      "articleCount": 1,
+      "totalLikes": 24,
+      "totalComments": 10
+    },
+    {
+      "authorUrlname": "ai_guide3875",
+      "authorName": "きゅうり/AIで“できること”が増える",
+      "articleCount": 1,
+      "totalLikes": 24,
+      "totalComments": 15
+    },
+    {
+      "authorUrlname": "10on_kikou_nao",
+      "authorName": "なお🌿｜氣｜大自然パワーお届け隊🚙",
+      "articleCount": 1,
+      "totalLikes": 24,
+      "totalComments": 10
+    },
+    {
+      "authorUrlname": "tsukikusa1111",
+      "authorName": "月草🌱｜noteのパワースポットになりたい",
+      "articleCount": 1,
+      "totalLikes": 23,
+      "totalComments": 8
+    },
+    {
+      "authorUrlname": "sogekilabs",
+      "authorName": "SOGEKI LABS",
+      "articleCount": 1,
+      "totalLikes": 21,
+      "totalComments": 10
+    }
+  ],
+  "topLikedArticles": [
+    {
+      "key": "nc646da3600bc",
+      "title": "灯りをともす時間が、すこし早くなった｜秋読コレクション",
+      "authorName": "雪綴ゆき",
+      "authorUrlname": "wise_rat6355",
+      "publishedAt": "2026-10-03T20:05:02.000+09:00",
+      "articleUrl": "https://note.com/wise_rat6355/n/nc646da3600bc",
+      "likeCount": 360,
+      "commentCount": 37,
+      "tags": [],
+      "bodySnippet": "みなさん、こんばんは🌙\nnoteが大好きな、雪綴ゆきです。\n いつも、わたしのnoteを読んでくださり\n本当にありがとうございます。\n 夕方、机の灯りをともそうとして\nふと手が止まりました。\n\n時計を見ると、まだ17時半。\n 先週までは\nこの時間も窓の外は明るかったのに……。\n\n秋は、遠くの山からではなく\n手もとの灯りからやってくるのかもしれません。\n 秋読コレクション 今日はネロ王子とorivieさんのコラボ企画\n「秋読コレクション」に、そっとおじゃまします。 \n テーマは「あなたの秋を、読ませてください」 \nジャンルも、長さも自由です。\n 作品の出来ばえを競うのではなく\n秋の話をきっかけに\n だれかと言葉を交わすための企画です。 \n\n さっそく、わたしの秋にも名札をつけてみます。\n わたしの秋は、「灯りの秋」 \n\n夜に書くことの多いわたしにとって\n秋は、灯りの下で過ごす時間が\nすこしずつ長くなる季節です。\n\nその時間に見つけた小さな秋を\n３行日記にしました。\n 灯りの下の３行日記 「湯気」 \n冷たい麦茶のグラスが\nいつのまにか、湯気の立つマグカップに\n手のひらで知る、秋\n \n 「運動会」 \n夜風が、ようやくやさしくなった\nチンチラのみーくん、ケージで夜の運動会\n秋がうれしいのは、きみもいっしょ\n \n 「夜長」 \n窓のむこうで、虫の声\n書きかけの一行は、まだ決まらない\nだいじょうぶ、夜はまだ長いから……\n どれも、ほんとうに小さなことばかり。\n それでも、ひとつずつ拾いあげてみると\nちゃんと秋のかたちをしていました🍂\n \n\n 秋読コレクションのこと コメント欄でのおしゃべりが大好きな、ネロ王子。\n 企画やイベントを通して、作品と読み手が\n出会う場所をつくってきた、orivieさん。\n ネロ王子のもとに集う人たちと\norivieさんのもとに集う人たち。\n\n秋の話をきっかけに\nふたつの輪がそっと重なっていく。\nそんな願いから始まった企画です。\n\nわたしも\nその重なりのひとつになれたらうれしいです✨\n 期間は、10月4日（日）まで。\n参加方法は、おふたりの記事に詳しく書かれています。 \n \n \n 書く時間がとれなくても、共同マガジンの\n記事を読んで、気になった作品に\nひとことコメントするだけでも参加できるそうです。\n \n \n \n秋読コレクション🍁🌙｜ネロ🌙｜王子｜秋読コレクションありがとう🍁【全力で駆け回ってるから待ってて🌙】｜note\n \n \n【期間限定マガジン 9/28〜10/4まで】 🍁 秋読コレクションは、王子×orivieで開催する「秋」をテーマにした\n \n \nnote.com\n \n \n\n \n \n みなさんが、ことし最初に「あ、秋だ」\nと思ったのは、どんな瞬間でしたか。\n\nよかったら、コメントで教えてください。 \n 雪綴ゆき\n 雪綴ゆきの物語を、映像で \n\n おすすめ記事"
+    },
+    {
+      "key": "n5cef5558a49a",
+      "title": "【王子×orivie コラボ】あなたの秋で繋がろう。｜秋読コレクション🍁🌙",
+      "authorName": "ネロ🌙｜王子｜秋読コレクションありがとう🍁【全力で駆け回ってるから待ってて🌙】",
+      "authorUrlname": "nero_notelover",
+      "publishedAt": "2026-09-26T19:00:00.000+09:00",
+      "articleUrl": "https://note.com/nero_notelover/n/n5cef5558a49a",
+      "likeCount": 235,
+      "commentCount": 259,
+      "tags": [],
+      "bodySnippet": "新企画 秋読コレクション開催🌙 \n\n \n 今日は企画の詳細を発表します。\n \n今回、一緒にコラボ開催するのは、\n orivieさん \n \n \norivie ｜note\n \n \n代表作：『熱狂論』『海ポテト』 Xを中心にnote、AIイラストの企画・イベントを定期的に開催！ 記事や作品を見つけても\n \n \nnote.com\n \n \n\n \n 企画やイベントを通して、\nたくさんの記事や作品が見つかる場所を\n作られている方です。\n 王子と同じくコメント欄のやり取りが\n一人一人丁寧な素敵な方です🌙\n \n \n\n \n\n そんなorivieさんと王子が話していたのが、\n お互いの周りにいる人たちが、\nもっと自然に出会えたら面白そう。 \n\n \n王子の近くにいる人が、\norivieさんの近くにいる誰かを知る。\n \nそこから、\n 「それ、わかります🌙」\n「そんな秋もあるんですね🍁」\n と会話が始まる。\n \n\n 今回やりたいのは、\n\n 秋をきっかけにした交流です🍁🌙 \n\n あなたの秋を、読ませてください🍁 \n食べ物でも、本でも、思い出でも。\n写真、イラスト、小説、詩、AI作品。\n ジャンルは問いません🌙 \n「これは私の秋だな」 \nそう思えるものなら大丈夫です🍁\n \n何を書こうか迷ったら、\nこちらの5つから選んでみてください。\n この5つに当てはまらなくても、もちろんOK。\n 最近見つけた小さな秋を、\n数行だけ書くのも立派な参加です🌙\n \n\n \n\n 超大作じゃなくて大丈夫🌙 \n今回、作品のすごさを競う企画ではありません。\n 「秋になると毎年これを食べます」\n「今日、少しだけ秋を感じました」\n そんな気軽な記事だからこそ、\n 「わかる！」 \n 「それ好き！」 \n 「うちはこうです！」 \n と、コメント欄で話が広がるかもしれません🤭︎\n \n\n 誰かと話したくなる秋をひとつ。 それくらいの気持ちで、遊びに来てください🍁\n \n\n \n\n 参加したい方へ 記事を投稿いただける方は、\n王子またはorivieさんの企画記事へ、\n 「参加したいです！」 とコメントかDMしてください。\n 確認でき次第、期間限定の\n 共同運営マガジンへ招待します。\n \n \n \n \n秋読コレクション🍁🌙｜ネロ🌙｜王子｜楽しくnote収益化｜note\n \n \n🍁 秋読コレクションは、王子×orivieで開催する「秋」をテーマにした交流企画です🌙 読書、食欲、芸術、スポーツ、思い\n \n \nnote.com\n \n \n\n \n \n\n 🌙共同運営マガジンへの参加手順 \n 招待メールはGmailなどに届きます🌙\nもしかしたら、通常フォルダではない所に振り分けられている可能性もあります。\n また、事前にこちらをご確認ください。\n クリエイターからの招待・プレゼントがON \nメールが届いたらリンクをクリックすれば\n共同運営マガジンに登録完了となります。\n \n\n 🌙 記事投稿時の手順 \n 記事投稿時にマガジンを選択して公開してください🌙 \n初めての方は\n共同運営マガジンの参加体験も\nできちゃいます🤭︎\n \n\n参加記事は、\n 無料記事・1人1記事まで・新作限定。 \n #秋読コレクション をつけて投稿してください🌙\n \n\n \n\n 書けなくても参加できます🌙 \n\n \n「面白そうだけど、今週は書けない」\n そんな方も大歓迎です。\n 共同運営マガジンをフォローして、 \n気になる記事をひとつ読む。\n 面白かったら、コメントしてみる。\n それだけでも立派な参加です🌙 \n\n 書く人も。\n読む人も。\n話す人も。\n \nみんなで秋を楽しみましょう🤭︎🍁\n \n\n みんなの秋が集まる場所へ \n今回は期間中に1本ずつの\n記事紹介の予定はありません。\n （ 最後にまとめ記事で紹介予定 🌙）\n \n\n その代わり、共同運営マガジンを\n「 みんなの秋が集まる場所 」にします。\n 記事投稿で参加者と\nフォローしている方へ通知が飛びます🌙\n \n王子とorivieさんも、\n投稿された記事へ順番に遊びに伺います🌙\n \n\n 企画が終わったあとに、\n誰かとのつながりが増えていたら最高です🌙\n \n\n 秋読コレクション 9月28日（月）〜10月4日（日）まで🌙 \nあなたの秋をひとつ持って、\n一緒に遊びに来"
+    },
+    {
+      "key": "n3678a5dbaeee",
+      "title": "秋読コレクション🍁はじめての短歌｜秋奏五首【noteの楽しみ方#2】",
+      "authorName": "左利き|親子英検",
+      "authorUrlname": "pure_falcon3290",
+      "publishedAt": "2026-09-30T19:44:25.000+09:00",
+      "articleUrl": "https://note.com/pure_falcon3290/n/n3678a5dbaeee",
+      "likeCount": 156,
+      "commentCount": 33,
+      "tags": [],
+      "bodySnippet": "こんにちは、左利きです😊🌿\n\n 秋の夕暮れ。\n 紅葉の中でバイオリンを奏で、\n 歌声が重なり、\n 相棒のほわりんが空を舞う。\n 見出し画像は、わかモンさんの「スペシャルライブ」のプロンプトで生成した画像などをもとに、秋読コレクション仕様にアレンジして作成しています😊🍁🎻 ちなみに「スペシャルライブ」のプロンプトが掲載されていた元記事を探したのですが……わかモンさんの記事（宮殿？👸）を巡っているうちに、迷子になりました(笑)🤣🙏\n\n今回登場する「ほわりん」が生まれるきっかけをくださったのは、わかモンさん👑✨️\n 素敵なイベント企画をきっかけに、それまで“お飾り”だったシマエナガのほわりんが、私の相棒になりました🐦🍀\nとはいえ、ほわりんはまだまだ発展途上🐦今回は秋限定バージョンでお送りしました(笑)🤭\n 🔻そのきっかけになった、わかモンさんのnoteはこちら\n \n 🔻ほわりん誕生についての前回の私のnoteはこちら\n \n \n\n 五つの短歌を作って楽しんでみました🍁🎻🐦\nはじめての短歌の記事です。\n \n\n ほわりんも、ネロ王子さんとorivieさんの\nコラボイベントに参加したよ🐦🍁🍂 【ネロ王子 × orivieコラボイベント】 『秋読コレクション🍁』\n開催【9/28（月）~ 10/4（日）】 \nおふたりのイベントに、参加してみました。ありがとうございます。ご興味のあるかたは、どうぞ。\n\n🔻秋読コレクションのマガジンはこちら\n \n \n \n秋読コレクション🍁🌙｜ネロ🌙｜王子｜秋読コレクション開催中 【10/4まで】｜note\n \n \n【期間限定マガジン 9/28〜10/4まで】 🍁 秋読コレクションは、王子×orivieで開催する「秋」をテーマにした\n \n \nnote.com\n \n \n\n \n 今回の題は、\n 「秋奏五首」 少しだけ浪漫の香りをまとわせながら、\n 夕映え → 奏 → 魔法 → 感謝 → 余韻 \n\n 五つの景色を、一つの秋の物語として並べてみます。 \n 🍁 一｜夕映え \n\n 夕映えの\n 紅葉のなかに\n 君を見て\n 今日という日を\n 秋にあづけむ\n \n\n \n\n 秋の夕暮れは、不思議です。\n 美しいのに、どこか寂しい。\n もうすぐ日が沈んでしまうと分かっているからでしょうか。\n だからこそ、\n 今日という一日を、この紅葉の中へ\n そっと預けておきたい。\n いつか秋が巡ってきたとき、\n また思い出せるように。\n \n\n 🎻 二｜奏\n 君がため\n 弓ひく指に\n 秋燃えて\n 紅葉もわれも\n 光となりぬ\n 弓を引く。\n その瞬間、\n 紅葉まで音になったような気がしました。\n 赤く燃える秋の中では、\n 奏でる人と景色との境目さえなくなって、\n 紅葉も、\n 音も、\n 自分自身も、\n みんな同じ光になっていく。\n そんな一瞬を詠んだ歌です。\n ✨ 三｜魔法 \n歌ひとつ\n 空へ放てば\n 紅葉舞ひ\n われらを飾る\n 秋の魔法よ\n 歌声が秋空へ届いたら、\n 一枚、\n また一枚。\n 紅葉が舞い始める。\n もちろん、本当にそんな魔法があるわけではありません。\n でも、\n 美しい音楽を聴いたとき。\n 心を動かす言葉に出会ったとき。\n いつもの景色が、\n 少し違って見えることがあります。\n それもひとつの、\n 「魔法」\n なのかもしれません🍁✨\n 🍁 四｜感謝 \nありがとう\n ただそれだけの\n 言の葉を\n 千の紅葉に\n かへて君へと\n ありがとう！一緒にnoteを楽しみましょう！ 「ありがとう」 たった五文字なのに、 本当に伝えたいときほど、 それだけでは足りないような気がします。\n ならば、\n 「ありがとう」を、 \n 千枚の紅葉に変えてしまおう🍁 \n 風に乗せて、\n ひらひらと、\n 君のところまで届くように🍁🍂\n 今回の五首の中で、\n いちばん素直な歌かもしれません😊\n 🐦 五｜余韻\n 歌やみて\n なほ肩にゐる\n 小鳥あり\n 君との秋は\n まだ終はらざる\n \n\n 歌が終わる。\n バイオリンの音も消える。\n 舞っていた紅葉も、\n やがて地面へ。\n 華やかな時間には、\n いつか終わりが来ます。\n けれど――\n ふと肩を見ると、\n 小さな相棒がまだそこにいる🐦 だから、\n 今日の物語はここで終わ"
+    },
+    {
+      "key": "n35556fe70e83",
+      "title": "魔王、【ネロ王子】の「秋」note企画に参加してみた件｜かつて剣を交えた王家｜果たして国交樹立なるか？",
+      "authorName": "ノア｜魔王｜noteを征服したい",
+      "authorUrlname": "noah_woaks",
+      "publishedAt": "2026-10-04T21:46:30.000+09:00",
+      "articleUrl": "https://note.com/noah_woaks/n/n35556fe70e83",
+      "likeCount": 136,
+      "commentCount": 52,
+      "tags": [],
+      "bodySnippet": "諸君。\n 先日、余は\n 魔王軍初のイベントを開催すると宣言した。 \n\n ▼イベントについてははこちらから見るのである \n \n ▼第1回 魔王軍イベント企画会議 会場はこちらである \n \n \n\n そして。\n 何を思ったか\n 敵国のイベントに参加する。 \n\n …………。\n\n 研修である。 \n\n \n\n 自分でイベントを開催すると言った矢先に\n 他人のイベントへ勉強しに行く。\n \n\n ラーメン屋を開業すると宣言した翌日に\n 「ちょっと一蘭行ってくる」\n と言っている店主のようである。\n \n\n だが。\n 仕方ない。\n\n 余はまだ\n note企画というものを、よく知らない。 \n\n 1000年前。\n 企画といえば、\n だいたい侵攻計画だった。\n \n\n 目的：王国制圧。\n 開催場所：敵国。\n 参加者：全軍。\n 参加方法：強制。\n 途中離脱：許さん。\n \n…………。\n \n参考にならない。\n \n\n 現代のイベントに、\n まったく応用できない。\n \n\n そんな余のもとへ。\n あまりにも絶妙なタイミングで\n 一通の招待状が届いた。\n \n\n 差出人。\n ネロ王子 。 \n…………。\n \n今note界で話題の王子である。\n しかし\n 王家\n 敵国である。\n\n \n \n \nネロ🌙｜王子｜秋読コレクション開催中 【10/4まで】｜note\n \n \nやぁ、いらっしゃい🌙 秋読コレクション開催中 【10/4まで】 ご参加は固定記事へ🌙 noteの楽しみ方と収益化を発信中\n \n \nnote.com\n \n \n\n \n \n\n \n \n\n 1000年前。\n 王家から魔王へ、\n 書状が届く。\n \n\n これは、\n かなりの緊急事態であった。\n \n\n 側近が走ってくる。\n 「魔王様！！」\n 「何事だ。」\n 「王家より書状が！！」\n 「読め。」\n \n\n そこに書かれているのは、\n \n\n 宣戦布告。\n 討伐宣言。\n 決戦日時。\n \n\n だいたい、\n 血の匂いがする。\n \n\n ところが。\n \n\n 2026年。\n ネロ王子から届いたもの。\n \n\n 「秋の企画、参加しませんか？」 \n\n …………。\n \n\n 優しい。 \n\n王子ネロ、優しい。\n \n\n \n\n \n1000年前なら、\n 首を取りに来ていた王家から、\n 秋を楽しもうと誘われている。\n \n\n 世界、\n 平和になりすぎではないか。\n \n\n 次は\n 町内会の芋煮会に誘われそうである。\n \n\n \n \n\n なんでも\n ネロ殿とorivie殿の共同企画とのことである。\n \n\n ▼orive殿の記事はこちらである \n \n ▼ネロ殿の記事はこちらである \n \n \n\n 余は、\n 企画の記事を開いた。\n \n\n そして。\n 少し驚いた。\n \n\n そして何より。\n 読んでいるうちに、\n 「参加してみようかな」 \nと思った。\n \n…………。\n \n\n これである。\n 余が知りたかったのは。\n \n\n イベントとは、\n ただ開催を宣言することではない。\n \n\n 誰かが、\n 「自分も入ってみようかな」\n と思える入口をつくること。\n \n\n 二人の企画には、それがあった。\n \n\n \n…………。\n \nなるほど。\n \n\n 王子。\n やるではないか。\n 1000年前なら、\n 王家を褒めるなどあり得なかった。\n \n\n 側近が聞いていたら\n 三度見する。\n 「魔王様、いま敵国の王子を褒めました？」\n 「褒めておらぬ。」\n 「いや、完全に。」\n 「処すぞ。」\n 「褒めてました。」\n …………。\n 処す。\n \n\n だが。\n よいものは、\n \n\n よい。\n 敵であろうと、\n 学ぶべきものは学ぶ。\n \n\n それくらいの器がなくて、\n 何が魔王か。\n 余は決めた。\n 参加する。 \n\n 秋読コレクションに参加しようと思った諸君、申し訳ないのである。\n締切、実は、今日である。\nネロ殿・orivie殿、宣伝にならなくて申し訳ないのである。\n \n \n\n もちろん、\n 秋を楽しむためでもある。\n \n\n だが。\n もうひとつ、\n 目的ができた。\n \n\n 企画とは何か。 \n\n \n王子から、\n 学ばせていただくのである。\n \n\n なぜ、\n 参加してみたいと思ったのか。\n\n 何があると\n 初めてでも参加しやすいのか。\n \n参加者同士に、\n どんな交流が生まれるのか。\n \n終わったあと、\n 何が残るのか。\n \n\n "
+    },
+    {
+      "key": "n9722ffc26755",
+      "title": "王子の秋｜秋読コレクション🍁🌙",
+      "authorName": "ネロ🌙｜王子｜秋読コレクションありがとう🍁【全力で駆け回ってるから待ってて🌙】",
+      "authorUrlname": "nero_notelover",
+      "publishedAt": "2026-10-03T23:56:31.000+09:00",
+      "articleUrl": "https://note.com/nero_notelover/n/n9722ffc26755",
+      "likeCount": 135,
+      "commentCount": 67,
+      "tags": [],
+      "bodySnippet": "現在「秋読コレクション」開催中です🍁\nこちらが企画概要の記事となります🌙 \n \n \n \n\n 皆さんの秋読コレクションの参加作品を見ていて\n 王子もやりたくなっちゃった🌙 \n\n だから、王子の秋を書いていきます🍁\n \n\n \n\n 先日の台風が過ぎ去った日のこと。\n 雨の隙間をぬって、王子とプリンセスの\n二人で公園へ遊びに行きました🌙\n \n少し前まで補助輪をつけていた自転車も、\n今ではすっかり一人でこげるようになって。\n 前を走っていく背中を追いかけながら、\n 「いつの間にこんなに乗れるようになったんだろう」 \n なんて思います。\n \n公園に着くと、考えることはみんな同じで。\n 外遊びを我慢していた子どもたちでいっぱい。\nすべり台もブランコも順番待ちです。\n せっかく来たのに、これはちょっと退屈かな。\n……と思っていたら。\n 「見て！」\n プリンセスが地面を指さしました。\n そこには、\n台風の風で落ちたらしいどんぐりがたくさん。\n そこから突然、\n 宝探しが始まりました🌙 \n\n 丸いどんぐり。\n細長いどんぐり。\n帽子をかぶったどんぐり。\n少し大きなどんぐり。\nまだ青いどんぐり。\n\n 拾っているうちに、今度はそれを並べ始めます。\n 「これは100円」\n 「これは高いやつ」\n どうやら、どんぐり屋さんが開店したらしい🤭︎\n さっきまで人気の遊具を眺めていたのに、\nいつの間にか二人とも地面ばかり見ていました。\n \n大人になると、\n 秋は「涼しくなったな」と\n空気で感じるものだと思っていたけれど。\n \n子どもといると、ちょっと違う。\n 昨日まで何もなかった地面に宝物が落ちていて、\n遊び方そのものが変わっていく。\n\n そう感じた王子の秋でした🍁\n \n\n \n\n と、キレイに終わっても良いんだけど。\n 王子といえば、遊びの秋🍁 \n\n \n\n この企画をやりながらもずっと遊んでいます🤭\n 本日紹介するのは\n 心野けいかさんのふみまる20秒ラン \n \n\n けいかさんのところのふみまるくんが\nチーズを食べながら走るゲーム。\n 最近多くの方の記事で紹介されています。\n \n20秒で結果が出ます。\n そんなお手軽なゲーム。\n \nやるしかないよね？？ \n\n \n\n こんな感じで可愛くダッシュ \n\n 障害物や穴をジャンプして超えていきます。 \n\n どこまで遠くまで走れるか\n そんな可愛らしいゲームなんです。\n \n\n え、めっちゃ楽しい🌙 \n可愛いしほんとに走ってるし\n音楽も楽しい🌙\n \n\n 王子もそんな風に楽しんでいました🤭︎\n \n\n そう・・・。\n \n\n ランキングを見るまでは \n\n \n\n 初回プレイが終わったあと。\n このゲームは修羅のゲームと化します🌙\n \n\n 20秒しかないのに、\nチーズを全部とって進んでるのに。\n \n\n TOP10が異次元すぎる。\n \n \n\n ちなみに王子の最高記録。\nまだTOP10に居られてるだろうか。 \n\n とくに1位のリンファさん あなたは人間を卒業されてます？？ \n\n \n \n\n プレイした人なら分かると思います。\n 1643mという異次元さ🌙 \n\n \n\n 王子の一昨日の記事で言ってたのはこれです。\n \n \n\n \n\n あなたのことです。リンファさん。 \n\n そこで王子、少しでもリンファさんに\n近づきたくてコメントしてみました。\n \n\n \n\n \n\n ゲームの仕様の限界値が1591m \n\n \n\n もう一度確認しましょう🌙\n \n\n \n\n 5位までが理論値超えの化け物だった🌙 \n\n \n\n 違った。あとから見たら。\n \n\n \n\n \n\n きょんさんとぽてむしさんもご卒業😊 \nリンファさんは更に限界突破🤣 \n\n \n\n 意味が分からない🌙\n 怖すぎる、この世界ꉂ🤣𐤔‪\n \n\n \n\n それでは人間のみなさん😊 王子を超えたらTOP10だよ🤭︎ \n\n \n\n \n\n \n\n 地獄だよ🌙 \n\n \n\n \n\n \n\n もう1個遊んでみました🌙\n \n\n ぽてむしさんの洗濯機シュート \n \n\n \n\n こちらは右から洗濯物が流れてくる。\n タイミングを合わせてタップして\n洗濯機に入れていく。\n \nタイミングがピッタリ会うと得点が高くなる。\n \n\n これも30秒。\nタップするだけ。\n \n\n \n\n なのにだ。 \n\n ランキングが出てし"
+    },
+    {
+      "key": "n1c6d7e3641f7",
+      "title": "【PL学園#外伝】元プロ作家が無料プロンプトでラノベ初挑戦🍁秋読コレクション💝秋ラノベ祭り　",
+      "authorName": "ryuu☆PL学園コラム",
+      "authorUrlname": "loyal_poppy819",
+      "publishedAt": "2026-10-03T20:19:08.000+09:00",
+      "articleUrl": "https://note.com/loyal_poppy819/n/n1c6d7e3641f7",
+      "likeCount": 127,
+      "commentCount": 23,
+      "tags": [],
+      "bodySnippet": "いつも楽しい企画を打ち出してくれる「わかモン」さんが「ライトノベル作成支援プロンプト」を無料配布されていました！ \n \n 発端は「#王子ごっこ」でお世話になったネロ王子がorivieさんとコラボした「秋読コレクション」。\n秋をテーマに記事を出して、参加者の作品を読んだり、コメントを書いたりして交流しよう！という企画です。 \n \n \n この企画に乗っかって、わかモンさんが発表してくださったのが、作品支援プロンプト。しかも、みんな大好き「無料」です！！ \n 私が作家として商業出版した小説はミステリー。 \nライトノベルは、読んだことも書いたこともありません💦\n\nでも、簡単な質問に答えるだけで、物語を作ってくれるらしいの😊\n\nアレンジも自由。\nせっかくなので、冒頭は『PL学園コラム』14話と同じシーンにしました。\n 一種のパラレルワールドです。　\n\n というわけで、まずは恋バナをおさらいしましょう💕\n \n \n\n 読みました?\n\n 💞では、パラレルワールドのはじまりです \n\n \n2学期が始まってすぐの昼休み。\n\n「これ。生徒会長のFさんからよ」\n 隣のクラスのVちゃんから白い封筒を渡された。\n 顔も名前も知らない、1学年上の生徒会長。\n\n封筒の表には――息をのむほどきれいな文字で、私の名前が書かれていた。\n\n 美月ちゃんへ \n心臓が、どくんと跳ねる。\n 窓際の机に移動して、そっと手紙の封を開けた。\n 夏の甲子園予選。\n\n生徒会長は、全校生徒1,000人の応援団の団長でもある。\n\n応援団を指揮しながら、私が笑顔で懸命に声を出していた姿に惹かれた、と書かれていた。\n そして。\n\n 美月ちゃんのことを、もっと知りたいと思いました。 \n 「めっちゃキレイな字……」 \n男子高校生が書いたとは思えない。\n秀麗な、それでいて力強い文字。\n （こんなキレイな字を書くかたなら、いいかたに違いないわ💗）\n 単純だけれど、本気で思った。\n ただ、PL学園には大きな問題がある。\n\n 男女交際禁止。 \nFさんは、それを守らせる側の生徒会長。\n だから、私たちの恋は手紙だけで始まった。\n \n\n バスケ部のボール置き場の棚の隅🏀\n魔法辞書のケースの中✉️\n図書室の返却台📖\n 秘密の場所を経由して、手紙だけが行き来した。\n\n 『今日、廊下を掃除していたね。丁寧に掃いていて感心しました』\n\n 『部活のランニング、上級生よりも速かったんじゃないか』\n\n 『走って朝練に出かける君を、男子寮の部屋の窓から毎朝、見ているよ』\n\n Fさんは、いつも私を見つけてくれた。\nがんばっている私の姿を。\n 手紙を読むたび、胸の中に小さな灯りがともる。\n\nお返事を書くたびに、その灯りは大きくなっていった。\n\n ――異変に気づいたのは10月半ば。\n\n キレイな文字の手紙の中で、一部だけが淡く金色に光っていた。\n 指先で触れると、ふっと便箋から浮かび上がった。\n 次の瞬間、教室の窓が大きく震えた。\n 遠くで鐘が鳴る。\n 1回。2回。3回。\n 誰かが叫んだ。\n 「……紅月よ！」\n 窓の外を見上げる。\n\nまだ夕方なのに、大きな赤い月が浮かんでいた。\n 血の色を思わせる紅の月。\n\n王国を守る結界が、一年でもっとも弱くなる夜のはじまりだ。\n 結界が破られると、王国は闇に包まれ、聖なるものが消えてしまう。\n\n誰かを愛する心も、\n誰かを守りたい気持ちも。\n\n その日の放課後、私は校舎裏へ呼び出された。\n\n 「美月ちゃん」\n 初めて名前を呼ばれた。\n手紙ではなく、低く、柔らかな声で。\n 顔が、かっと熱くなる。\n 「これを見て」\n Fさんが差し出したのは、これまで私が送った手紙だった。\n 何枚もの便箋に、ところどころ金色の文字が浮かんでいる。\n\n 「学園の古い記録を調べた。結界を張り直すには、“真心を込めて書かれた言葉”が必要らしい」\n\n 私たちは手紙を一枚ずつ並べた。\n\n 金色に光る文字だけを拾うと、ひとつの文章になった。\n\n あなたが見ていてくれて、嬉しかった \n書きたくて書けなかった想いが、手紙に宿っていた。\n 「Fさん……わたし」\n 秋風が吹き抜け、紅葉がさらさらと足元を滑っていく。\n Fさんは少し困ったように笑った。\n 「生徒会長が、校則破ってるよな」\n 「今さらです」\n 顔を見合わせて微笑んだ"
+    },
+    {
+      "key": "na42549608299",
+      "title": "秋になると、なぜか「楓」が聴きたくなる。私の秋は、この一曲から始まります",
+      "authorName": "ちびたぬき",
+      "authorUrlname": "prettyracoon_c",
+      "publishedAt": "2026-09-28T00:05:10.000+09:00",
+      "articleUrl": "https://note.com/prettyracoon_c/n/na42549608299",
+      "likeCount": 121,
+      "commentCount": 53,
+      "tags": [],
+      "bodySnippet": "秋になると何故か聴きたくなる曲があります。\nスピッツの 「楓」 です。\n 毎年この日に聴こう、と決めているわけではありません。それでも、少し風が冷たくなって、夕方が早くなってくると、ふと聴きたくなります。\n 紅葉を見たからでもありません。\n誰かに「もう秋ですね」と言われたからでもありません。\n 昼間はまだ暑いのに、夕方になると少し肌寒い。夏にはあれだけ聞こえていた蝉の声も、いつの間にか少なくなっている。\nそんな頃に「楓」を流すと、不思議なくらいしっくりきます。\n ああ、今年も秋が来たんだな。 \n ヘッダーもですが、耳ってそこですか？\nこれは何度お願いしてもダメでした 私にとって「楓」は、\n季節の変わり目を知らせてくれる曲なのかもしれません。\n\n \n\n 実は、秋に発売された曲ではありません \nタイトルが「楓」なので、なんとなく\n秋に発売された曲だと思っていました。\n ところが調べてみると、「楓」は1998年3月発売のアルバム『フェイクファー』に収録され、その後「楓／スピカ」としてシングルになったのは 1998年7月7日 です。※1\n 意外にも、真夏です。\nそれなのに、なぜ私はこの曲に秋を感じるのでしょう。\n 改めて歌詞を読みながら聴いてみると、その理由は「楓」というタイトルだけではないように思えてきました。\n この曲には、過ぎてしまった時間を振り返りながら、それでも前へ進んでいく人の姿があります。その静かな時間の流れが、秋という季節とよく似ているのかもしれません。\n \n\n 「忘れはしないよ」から始まります \n「楓」は、\n 「忘れはしないよ」 \n という言葉から始まります。※2\n私は、この始まり方が好きです。\n 別れの歌であれば、\n 忘れたい。\nもう振り返らない。\n そう歌っても不思議ではありません。\n でも「楓」は違います。\n最初から、忘れないのです。\n 一緒に交わした言葉も、\n笑ったことも、\nその人と過ごした時間も残っています。\n ここを聴いていると、\n 前へ進むことと、忘れることは同じではない のだと思います。\n 大切だった時間は、無理に消さなくてもいい。\n思い出したら少し寂しくなるような記憶が残っていてもいい。\n それでも、人は先へ進んでいけます。\n 秋も少し似ています。\n夏がある日突然消えて、秋になるわけではありません。\n昼間にはまだ暑さが残っているのに、夕方になると風だけが少し冷たくなります。\n夏の名残を残したまま、季節は静かに次へ進んでいきます。\n 「楓」を聴いていると、そんな季節の移り変わりを思います。\n \n\n 「かわるがわるのぞいた穴から」 \n歌詞の中で、特に印象に残るのが、\n 「かわるがわるのぞいた穴から」 \n という言葉です。※2\n 二人が交互に同じ穴を覗いています。\n 何を覗いているのかは、はっきりとは説明されません。\nだからこそ、不思議と想像が広がります。\n 二人で同じものを見ていた。\n同じ場所にいて、その向こうにある何かを一緒に見ていた。\nそして、その先には一人ではかなえられない未来のようなものがあったことが歌われています。\n 私はここを聴くと、\n 二人だったからこそ見えていた未来があったのではないか と思います。\n 一人では想像しなかったこと。\n誰かと一緒だったから、信じられた未来。\n そのときは、これからもずっと同じ景色を見ていくと思っていたのかもしれません。\n でも今は、その時間を一人で思い返しています。\n少し切ない場面です。\nそして考えてみると、私たちの記憶も同じなのかもしれません。\n 一緒に歩いた道。\nどうでもいいことで笑ったこと。\n何気なく交わした会話。\n その瞬間には、特別なことだと思っていなかった時間が、あとになって大切な記憶になることがあります。\n 「いつものこと」だった時間が、「忘れたくない時間」になるのです。 \n 秋にも、どこか似たところがあります。\n「あれ、もう蝉が鳴いていないな」\n「暗くなるのが早くなったな」\nそんなふうに、何かがなくなってから季節が変わったことに気づきます。\n 過ぎてしまってから、大切だったことに気づく。\nだから私は、「楓」を秋に聴きたくなるのかもしれません。\n \n\n 「君の声を抱いて歩いて行く」 \nそして「楓」の中で、私が特に好きなのが、\n 「君の声を　抱いて歩いて"
+    },
+    {
+      "key": "nf9248c2b0dd1",
+      "title": "秋といえば読書の秋📚️noteをKindle本に変えてみた🐰✨️秋読コレクション🍁🌙",
+      "authorName": "しらたまうさぎ🐰❤️に寄添うKindle作家",
+      "authorUrlname": "shiratama_usagi",
+      "publishedAt": "2026-09-29T19:49:59.000+09:00",
+      "articleUrl": "https://note.com/shiratama_usagi/n/nf9248c2b0dd1",
+      "likeCount": 115,
+      "commentCount": 44,
+      "tags": [],
+      "bodySnippet": "ネロ王子🌙 \n と \n orivie様✨ \n \n\n みんなの人気者のふたり が、 協力 し合って、\n \n\n 秋をきっかけにした交流会 「秋読コレクション」🍁🌙 \n\n \n \n \n秋読コレクション🍁🌙｜ネロ🌙｜王子｜秋読コレクション開催中 【10/4まで】｜note\n \n \n【期間限定マガジン 9/28〜10/4まで】 🍁 秋読コレクションは、王子×orivieで開催する「秋」をテーマにした\n \n \nnote.com\n \n \n\n \n \nを開催してくれました🐰❤️\n \n\n 参加テーマは、 あなたの秋を、読ませてください🍁 \n\n 空気と水と本があれば幸せな しらたまうさぎにとって、\n 秋といえば、 読書の秋✨️📚️✨️ \n\n \nそこで、本日は、\n 100円有料noteを使った、\n Kindle本の『簡単な』作り方を紹介します🐰 \n\n \n１． 売れない😭100円有料noteを用意 して下さい。\n \n\n ２．その noteを無料に戻してから、下書きに して下さい。\n なぜ、下書き にするかと言うと、\n Amazonの審査ロボットが\n 「あれ？これネット上に同じ文章が転がってるけど、\n 誰かのコピペじゃない？」\n って疑って、 出版を拒否 されてしまうからです🤖💦\n \n３． 本の原稿を用意 します。\n noteの記事を、 章や節にわける と読みやすくなります。\n\n本っぽくするために、 はじめに、おわりに、あとがき などをつけると\n 本らしさアップ🐰🎵 \n\n \n４． 表紙イラストを作り ます。\n\n おすすめの大きさは、\n横1600px✖縦2560px \n\n 本に挿絵を入れる と、\n さらに素敵度アップ🐰✨️ \n\n \n５．最後に、 AmazonのKDPに登録 して、 出版ボタンを押 せば、\n あなたも、Kindle作家の仲間入り🐰📚️🐰 \n\n \n\n え、こんな簡単にできるの😯？！\n \n いいえ 、\n 『簡単に』説明しただけです🐰💦 \n\n 実際は、かなり面倒くさいです😭 \n\n \n\n あっ、怒らないで下さい🐰💦 \n\n \nあまり 長く書いても、読むのが大変 だと思ったので、\n おもいっきりはしょりました🐰✂📖 \n\n ちなみに、\n この 100円有料noteが、 \n \n\n 母との関係 と 耳鳴りに悩む姉 のために書いた本から作ったnoteです🐰 \n\n こう変身✨️ \n\n \n \n \n原因不明の耳鳴りから自律神経と心の境界で解放されよう\n \n \n\n \n \nwww.amazon.co.jp\n \n \n 300円 \n\n(2026年09月30日 22:28時点\n詳しくはこちら)\n\n \n \n \n \n\nAmazon.co.jpで購入する\n\n \n \n \n \n \n\n \n \n 作りたて のアッツアツです🐰💦\n\n ちなみに、 Kindle本 は1万5000字くらいないと、ページ数が少ないと思われるので、今回は、 100円noteの内容 （約8000字） を、2倍に増やして、大幅に書き直し ました。\n \n\n それでは、皆さん、楽しい秋を🐰🍁🌙 \n\n \n\n もし、 読む本📚️がみつからなかった ら✨️\n Amazonのしらたまうさぎのページをのぞいてみて下さい🐰❤️ \n\n これで 18冊 になりました🐰📚️ \nこんな本、読んでみたい など、ありましたら、\n リクエストお待ちしてます💪🐰💕 \n\n \n\n 🚨 ここ重要！テストにでます？知っておきたい注意点 🚨 \n① Kindle Unlimited（読み放題）に入れるなら完全非公開！ \n KDPセレクト（読み放題対象）に登録 して「読まれたページ数に応じてお金をもらう」作戦で行く場合、 他サイトで本文を公開 するのは 規約違反 になるので、 noteは必ず 下書き（ 非公開 ）を守ってね🤫\n ② Amazonから「これあなたの本？」って聞かれたら \n noteを下書きにした直後に出版 すると、Amazonから「Web上に似た文章があるけど、 本当にあなたの著作物？ 」と 確認メール が来ることがあります。\n その場合、焦らず「自分のnoteアカウント（URL）で公開していたものを 下書きに戻して出版 しました」と返信すればOKらしいです👌"
+    },
+    {
+      "key": "n87ed3643fc1c",
+      "title": "【ネロ王子×orivieコラボイベント】『秋読コレクション』開催🍁【9/28(月)〜10/4（日）】",
+      "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+      "authorUrlname": "orivie",
+      "publishedAt": "2026-09-27T06:00:00.000+09:00",
+      "articleUrl": "https://note.com/orivie/n/n87ed3643fc1c",
+      "likeCount": 108,
+      "commentCount": 75,
+      "tags": [],
+      "bodySnippet": "9/29 追記\n参加方法の手順詳細を追加しました。\n みなさん、お待たせしました。\n 事前に告知を行なっていました、ネロ王子とのコラボイベント\n 『秋読コレクション』開催🍁 \n\n 期間：9/28(月)〜10/4（日） \n\n 参加方法： 私のこの記事か、ネロ王子の記事にコメントで\n「参加希望」のコメントかDMをください🤝 \n 共同運営マガジンへ招待します🔥 \n ①共同運営マガジンの参加方法 招待メールは、noteアカウントに設定されているメールアドレス宛に届きます。\nもし届かない場合は、こちらの設定を再度確認の上、\norivieかネロ王子にメール再送の連絡をお願いします。\n 「クリエイターからの招待・プレゼント」をON 届いたメールに付与されているリンクをクリックすると、共同マガジンへの参加が完了となります。\n \n\n ②記事投稿の手順 記事を作成しましたら、 「#秋読コレクション」 をつけましょう。\n ハッシュタグに「秋読コレクション」を追加 続いて、そのまま下にスクロールし、\n共同運営マガジンに追加をクリックしてください。\n 秋読コレクションが「追加済み」になればOK そのまま投稿していただければ、参加完了となります。\n \n \n \n秋読コレクション🍁🌙｜ネロ🌙｜王子｜秋読コレクション開催中 【10/4まで】｜note\n \n \n【期間限定マガジン 9/28〜10/4まで】 🍁 秋読コレクションは、王子×orivieで開催する「秋」をテーマにした\n \n \nnote.com\n \n \n\n \n \n\n 参加テーマ：\nあなたの秋を、読ませてください🍁 ジャンルは問いません。ぜひみなさんの「秋」を読ませてください👏\n \n\n このイベントに参加すると・・・\n私とネロ王子が記事を読ませていただくだけでなく、\n 参加者同士の新しいつながりや、参加記事を読むことで新たな発見があるかもしれません👀 \n 「noteを楽しみながら、自分の作品を多くの人に届ける。」 \n それが可能なイベントとなっています。\n \n\n ※参加記事の条件 ①参加記事は「無料記事」でお願いします。\n②参加する記事は「１人１部まで」となります。\n③新規記事のみが対象となります。\n④ #秋読コレクション をつけて投稿してください。\n \n\n どなたでも参加OK！\nみなさんの記事を読ませていただくのを、楽しみにしています🤝\n ▼ネロ王子のnoteはこちら\n \n \n \n \nネロ🌙｜王子｜秋読コレクション開催中 【10/4まで】｜note\n \n \nやぁ、いらっしゃい🌙 秋読コレクション開催中 【10/4まで】 ご参加は固定記事へ🌙 noteの楽しみ方と収益化を発信中\n \n \nnote.com\n \n \n\n \n ▼Minaさんにコラボイベントの記事を紹介していただきました🤝"
+    },
+    {
+      "key": "n7fe2bb9b43d2",
+      "title": "黄金のナイルと焼き芋神話🌟#秋ラノベ祭り #秋読コレクション",
+      "authorName": "ほろぽの33",
+      "authorUrlname": "holopono33",
+      "publishedAt": "2026-09-29T19:50:55.000+09:00",
+      "articleUrl": "https://note.com/holopono33/n/n7fe2bb9b43d2",
+      "likeCount": 104,
+      "commentCount": 30,
+      "tags": [],
+      "bodySnippet": "その日、エジプトの王都では、民が全員、同じ匂いに足を止めた。\n 甘くて、香ばしくて、どこか懐かしい。\n初めて嗅ぐはずの匂いなのに、胃袋だけが「これだ」と叫んでいる。\n 古来、この港には、香木や黄金、見たこともない宝石を積んだ船が、幾度となく着いた。\nだから今日も、また何か珍しいものが届いたのだろう――誰もが、最初はそう思っていた。\n まさか、それが「神」になるとは、まだ誰も知らない。\n 匂いの出どころは、港のはずれ。\n夕暮れの落ち葉を山ほど集めた焚き火を囲んで、五体のスライムが、揃って真剣な顔をしていた。\n\n 事の始まりは、一時間前。\n 異国の船が置いていった木箱を、セベクが見つけたのだった。\n 🟢「お腹空いたぁ……これ、食べ物かなぁ」\n 中身は、赤紫色のごつごつした根っこ。港の役人は「家畜の飾りだ。捨てておけ」と言い残して去っていった。\n 🟣「……フッ、解析するよ」\nジェフティが鼻先で芋をつつく。\n🟣「毒はない。ただし、生だと硬い。加熱すれば……計算では、化ける」\n 🟠「加熱なら任せて！　アテン、宇宙最速で火をつけるよ！　ガッツだよ！」\nアテンが体を震わせると、集めた落ち葉が、ぼっと燃え上がった。\n 🔵「こら、燃やしすぎない！　延焼したら、僕が怒られる！」\nケスベが火加減を見張る。\n 🔴「あったかいねぇ……セシェ、ぎゅ〜ってしたくなっちゃう」\nセシェが焚き火のそばで、うっとり目を細めた。\n そして、芋が焼き上がった、そのとき。割った断面から、黄金色の湯気が、ふわりと立ちのぼった。\n 発端――ナイルの焚き火 \n匂いは秋風に乗り、あっという間に王都を包んだ。\n 「なんだ、この香りは！」\n「どこだ、どこから来ている！」\n 気づけば、港には民の大行列。\n 🔴「はいは〜い、みんな、ぎゅ〜っと一個ずつだよぉ」\nセシェが焼き芋を配りながら、なぜか一人ひとりを抱きしめていく。列はいっこうに進まない。\n 🔵「セシェ、抱きしめは後回し！　並べ、押すな、こら、割り込むな！」\nケスベが誘導すれば、列は港を出て、市場を回り、王宮の外壁をぐるりと一周した。\n その列の脇で、パンッと乾いた音が響いた。\n 「お並びなさい、神官様方！　神様も、列にはお並びになりますわ！」\n 扇を突きつけていたのは、通りすがりの令嬢だった。香りに負けて横入りしようとした神官たちを、がっちり捕まえている。\n 「わ、我々は神殿の格式が……」\n「格式より先に、お並びなさいまし！」\n\n わかモン令嬢、神官を一喝する（令嬢役：わかモン令嬢さまにご出演いただいています🙏） 神官たちは、しゅんと縮こまり、そそくさと最後尾へ走っていった。\n \n🟣「在庫、残り七個……計算が合わないね」\nジェフティが眉をひそめる。\n🟢「ぼく、味見しすぎたかも……」\n🟣「セベク、それ在庫三個分だよ！」\n 🟠「アテン、追加の芋、取ってくる！」\nアテンが荷車ごと駆け出し、屋台街を突っ切る。屋台が三軒ほど、宙を舞った。\n 王都を駆け巡る大行列 \nそのとき、行列の先頭に、ひときわ豪華な輿が止まった。\n 輿から降りてきたのは、ファラオ本人だった。\n 「王宮まで、この匂いが届いたぞ。……余にも一つ、分けてもらえぬか」\n 神官たちが青ざめる。\n「陛下、異国の食べ物など、不敬にございます！」\n だがファラオは、湯気の立つ芋を受け取り、ひと口かじった。\n 沈黙。\n 「…………神だ」 \n\n ファラオの「……神だ」（ファラオ役：ネロ王子さまにご出演いただいています🙏） 王都が、揺れた。\n 「焼き芋は神だ！」\n「神の食べ物だ！」\n 民は芋を拝み、神官は祭壇を組み上げ――そして、なぜかセベクまで拝まれ始めた。\n 「その名は、ナイルの神と同じ……！　芋を見つけし者は、神の使いに違いない！」\n 神官長がひれ伏せば、他の神官も、ばたばたとひれ伏す。\n 🟢「ぼ、ぼくは芋じゃないよぉ。ただの、お腹が空いたスライムだよぉ」\n セベクが後ずさるたびに、神官たちは同じ距離だけ、膝でにじり寄ってきた。\n あれよあれよと祭壇に座らされ、供物が山と積まれていく。\nおそるおそる一つ食べてみると、\n 「神が召し上がった！　奇跡だ！」\n 民が総立ちで拍手した。\n セベクの「神だ」 🟢「ちょ、ちょっと、止まらないんだけど……」\n 🔵「こら、や"
+    },
+    {
+      "key": "n4d591a2c8d20",
+      "title": "秋の思い出を探したら、俺はずっとチャリに乗っていた。",
+      "authorName": "ちんぱん🐒耳毛〰(˙👄˙)〰",
+      "authorUrlname": "ojisan_chinpan",
+      "publishedAt": "2026-10-04T10:39:03.000+09:00",
+      "articleUrl": "https://note.com/ojisan_chinpan/n/n4d591a2c8d20",
+      "likeCount": 103,
+      "commentCount": 49,
+      "tags": [],
+      "bodySnippet": "この記事はネロ王子とorivieさんのコラボ企画\n 「秋読コレクション」 参加記事です。\n テーマは「あなたの秋」。\n で、自分の秋ってなんやろ？\n 昔の写真をあさってみた。\n 紅葉とか、秋の味覚とか。\nそれっぽい写真が出てくるのかと思ったら、\n だいたいチャリだった。 \n というか、ほぼチャリ。\n しかも改めて見返してみると、\n 「俺、何してんねんｗ」 \n と思う写真ばっかり出てくる。\n 山を登ってる。\nレースを走ってる。\n100km先まで飯を食いに行ってる。\n 当時はそれが普通やったんやろな。\n ちなみに今回載せる写真は、全部その頃に撮ったまま。\n 映えを狙って撮っていたわけでもないので、写真加工もしていない。\n 走っていて、\n 「お、ええやん」\n と思ったら止まって撮る。\n それだけ。\n そんな写真を見ながら、俺の秋の思い出を振り返ってみる。\n \n\n レース前日に20km登る 翌日にレースを控えた試走の日。\n 普通なら軽くコースを確認して、脚を温存するところだと思う。\n 俺はなぜか、20kmほど登った先の砥峰高原まで行っていた。\n 今見ても、すすきの景色はきれい。\n ただし翌日レース。\n なんで登った。 \n たぶん当時は、\n 「せっかくここまで来たし」\n くらいだったんだと思う。\n 別の日には、大文字までチャリで登っている。\n レースでも大会でもない。\n普通に遊びである。\n 今なら思う。\n なんでそこまでチャリ乗って行ったんや。 \n でも当時は、山があったら登る。\n知らない道があったら行ってみる。\n そんなことをずっとやっていた。\n \n\n レース翌日は22km登る 今度はレースの翌日。\n 向かったのは、しらびそ高原。\n登り約22km。\n 前日にレースを走っている。\n 翌日に山がある。\n なら登る。\n たぶんそんな感じだった。\n 今の俺なら迷わず言う。\n 休め。 \n \n\n 鈴鹿を走って、琵琶湖まで走って これは鈴鹿サーキットの8時間耐久レース。\n 普段は車やバイクが走る場所を、自分のチャリで走る。\n 当時はタイムや順位も気にしていたはずなのに、\n今覚えているのは、\n 「鈴鹿をチャリで走ったなあ」 \n ということの方だった。\n そして琵琶湖大橋。\n 写真だけ見れば爽やかなサイクリング。\n でも、この時点で約150km走ったあと。\n 昔の写真にはこういうのが多い。\n 写真だけは爽やか。\n裏ではまあまあ訳の分からん距離を走っている。\n \n\n カツ丼を食べに片道100kmオーバー 小浜まで自走して食べた、わらじカツ丼。\n でかい。\nうまい。\n そして片道100kmオーバー。\n 当然、食べたら帰らなければならない。\n しかも帰路はヒルクライム。\n 腹いっぱいの状態で坂を登る。\n 脚もヒルクライム。\nお腹もヒルクライム。 \n 完全に食べる量を間違えた。\n 今考えると、\n カツ丼を食べに行く距離ではない。 \n でも、こういう時の飯って妙に覚えている。\n \n\n 距離より、誰と走ったか 鈴鹿山脈の竜ヶ岳。\n チャリ仲間3人で行った時の写真。\n 昔は何km走ったとか、どれだけ登ったとか、そんな数字ばかり気にしていた気がする。\n でも写真を見返すと、\n 誰と行ったかもちゃんと残っていた。 \n この時、何を話していたのかまでは覚えていない。\n でも、\n 「ああ、3人で行ったな」\n は覚えている。\n \n\n いつもの道に、変な秋がいた 最後は信楽。\n いつものトレーニングコースを走っていたら、\n 紅葉している木の横で、ひまわりが咲いていた。\n 秋にひまわり。\n なんやこれ。\n あらびっくり。 \n 思わず止まって撮った一枚。\n レースでも遠征でもない。\nただ、いつもの道で見つけただけ。\n でも今見ると、こういう何でもない写真が妙に懐かしい。\n \n\n 今は、もうこんな走り方はできない その後、病気が発覚した。\n そして自転車は禁止になった。\n だから今は、こんな走り方はできない。\n 当時は、それができなくなるなんて考えていなかった。\n 写真も、思い出として残そうなんて考えていない。\n ただ走って、\n気になった景色があったら止まって撮る。\n それだけだった。\n 今回、昔の写真を見返してみた。\n 20km登ってる。\n22km登ってる。\n150km走ってる。\nカツ丼を"
+    },
+    {
+      "key": "nf14e6dfcf478",
+      "title": "【子育て日記】金木犀が連れてきてくれたもの",
+      "authorName": "のりもち｜自分の「好き」を自由に綴る",
+      "authorUrlname": "nori_mochi2026",
+      "publishedAt": "2026-09-28T21:12:26.000+09:00",
+      "articleUrl": "https://note.com/nori_mochi2026/n/nf14e6dfcf478",
+      "likeCount": 103,
+      "commentCount": 20,
+      "tags": [],
+      "bodySnippet": "小学生だった頃。\n通学路上にある家に、金木犀と柘榴が植えられていた。\n 秋になると、金木犀の香りが漂う中で、\n地面に落ちてしまった柘榴の実を友達と潰して遊んだ記憶がある。\n それ以降は、特に金木犀に思い出はなく、\nすっかり忘れていた。\n \n\n \n\n 息子が以前通っていた保育園から\nバス停に向かう道に、金木犀が植えてあった。\n 普段の帰り道ではない場所にあるため、\nいつもは全く気にすることがなかった。\n \n\n 息子が保育園年中さんの頃だろうか。\nその日は雨で、家までバスで帰ることにした。\n その時、例の金木犀のそばを通った。\nふわっと香る良い匂いに、\n「あ、金木犀だ」\nと思った。\n でも、その時はそれだけで、\nバス停へ向かって通り過ぎた。\n \n\n 保育園6年間の中で、\n何度も何度も、ただ通り過ぎる、\nお迎えの光景の一部でしかなかった。\n \n\n \n\n \n\n それがどうだろう。\n 数年が過ぎ、\nもう保育園には行かなくなったというのに\nあの場所にある「金木犀」を思い浮かべたら、\nバス停に向かう時の記憶が蘇ってきた。\n \n\n ピンクと白のシマシマのレインコートを着て、\n水たまりを避けながら\n小さい歩幅で一生懸命歩いていたこと。\n傘がうまくさせなくて、全身びちゃびちゃになるからレインコートと併用してたな。\n \n\n 別の日は、バス待ちをしていたお婆さんに\nキャラメルをもらって初めて食べて、\n美味しくてニコニコしてた。\nその後一時期、我が家にはキャラメルが常設されたな。\n \n\n またある日は、バス待ちの時間に\n保育園で歌っている歌を披露してくれた。\nバス停側にある歩道橋の柱の土台に登ってご機嫌だったな。\n \n\n バスの運転士の真後ろの席に乗りたがって、\n幼児の一人乗りはダメだから最初のうちは宥めるの大変だった。\n体が大きくなっていつの間にか乗れるようになってたな。\n \n\n お友達と帰るタイミングと方向が被った時、\n短い距離しか一緒に歩けなくて、\n離れがたく最後にずっと喋っていたな。\n \n\n もっと前は、抱っこ紐で抱えて、\nあの金木犀の横を通ったな……。\n \n\n \n\n あの場所にある「金木犀」が、\n記憶の中から連れてきてくれた、\nなんてことない子供との日常の出来事。\n 今回思い出さなかったら\n小さ過ぎてそのまま忘れ去っていたと思う。\n そしてまたすぐに忘れていく。\n \n\n \n\n それでも。\n金木犀がある限り\nきっと何度でも思い出せる。\n なにせ、30年以上前の小学生時代の記憶も一緒に連れてきたのだから。\n \n\n \n\n これからは時々、あのバス停まで歩く小さな息子に会いに行こう。\n 秋の金木犀と共に。\n \n\n \n\n 🍁今回のこちらの企画に参加しました🍁\n ネロ王子とorivieさんのコラボ企画\n「秋読コレクション」 ■ネロ王子 \n \n \n \n \n\n \n \n \n\n ■orivieさん \n \n \n \n \n\n \n \n ネロ王子とorivieさん、\n素敵な企画をありがとうございます。\n \n\n あなたの秋を、読ませてください🍁\n\n食べ物でも、本でも、思い出でも。\n写真、イラスト、小説、詩、AI作品。\n\nジャンルは問いません🌙\n\n「これは私の秋だな」\n\nそう思えるものなら大丈夫です🍁\n ネロ王子 という割と自由度の高い企画でしたが、\n正直、私の秋…？となっていて、\n焼き芋？観測隊でお芋パーティ？？？？\nいっそ今回は参加やめる…？な状況でした。\n そんな時、すでに記事をあげてらした\n堂安咲和さんのこちらの記事から\nインスピレーションをいただき、\n息子との思い出の秋で参加が叶いました🤗\n 堂安咲和さんありがとうございます✨✨\n \n \n \n \n\n \n \n \n\n 秋読コレクション\n9月28日（月）〜10月4日（日）まで \n 迷ったらこの中から選んでみて、\nというテーマ表を出されていたので、\nこちらを参考にするのもアリだと思います！\n \n\n \n\n 普段の記事は三つのテーマで展開しています。\nもしよければ寄り道していってください。\n ■子育て日記 \n \n \n \n \n\n \n \n ■記憶の森の観測隊（企画参加・AIイラスト他） \n \n \n \n \n\n \n \n ■ぽこあポケモン"
+    },
+    {
+      "key": "n31a62e711cf8",
+      "title": "『映画ちいかわ 人魚の島の秘密』で沼りました。映画2回・アニメ2周、推しはうさぎ、そして「ちいかわパーク」へ",
+      "authorName": "アユム🐰｜副業月10万円の実践者",
+      "authorUrlname": "ayumu_ai",
+      "publishedAt": "2026-09-30T19:00:00.000+09:00",
+      "articleUrl": "https://note.com/ayumu_ai/n/n31a62e711cf8",
+      "likeCount": 97,
+      "commentCount": 14,
+      "tags": [],
+      "bodySnippet": "食欲の秋。\n読書の秋。\nスポーツの秋。\n いろいろな秋がありますが、今年の僕はこれです。\n 秋は、ちいかわ。 \n 今回、「秋読コレクション」という素敵な企画に参加させてもらうことにしました。\n 主催のお二方の紹介 ネロ王子🌙 \n \n \n \n\n \n \n orivieさん \n \n \n \n \n \norivie | イベント『秋読コレクション』9/28〜10/4開催🍁｜note\n \n \n代表作：『熱狂論』『海ポテト』 Xを中心にnote、AIイラストの企画・イベントを定期的に開催！ 記事や作品を見つけても\n \n \nnote.com\n \n \n\n \n\n \n \n 副業サポーターのアユムです。\n この企画に参加する上で、「僕にとっての秋って何だろう？」と考えていました。\n そこで真っ先に浮かんだのが、ちいかわでした。\n というのも最近の僕、\n 映画を2回観て。\nアニメを2周して。\nグッズを買い集めて。\nついには、ちいかわパークにも行ってきました。 \n しかもちょうどハロウィンの時期。\n もうこれは「ちいかわの秋」と呼んでいいでしょう（笑）。\n （数ヶ月前の僕は、まさか自分がここまでハマるとは思っていませんでした。）\n すべては、あの映画から始まった 僕は、昔からずっとちいかわを追いかけていたわけではありません。\n ここまでハマるようになったきっかけは、映画でした。\n 『映画ちいかわ 人魚の島のひみつ』。 \n この映画、めちゃくちゃ話題になっています。\n 入場者特典付き！（画像は第二弾） 2026年7月24日に公開されて、9月20日までの59日間で、\n 観客動員数は1,085万人を突破。\n興行収入は158.4億円。 \n 2026年公開作品の興行ランキングでも1位を記録しています。\n 1,000万人って、すごいですよね。\n 僕もその中の2回分です（笑）。\n 映画で描かれているのは、 原作でも人気の長編エピソード「セイレーン編」。 \n 物語は、「特別な島へご招待」という案内から始まります。\n その誘いに乗って、ちいかわたちは島へ行くことに。\n 島では住民たちから歓迎され、楽しい時間を過ごすのですが……\n 実はその島では、巨大な「セイレーン」が島民を連れ去るという事件が起きていました。\n そこから、ちいかわたちもセイレーンをめぐる出来事に巻き込まれていきます。\n ここから先は、ぜひ映画を観てほしいです。 \n というのも、この映画。\n 「ちいかわって、かわいいキャラクターでしょ？」だけでは終わらないんですよね。 \n 僕も映画を観て、\n 「もっと、この世界を知りたい」\n と思いました。\n そこからアニメを観始めて……\n 気づけば2周。\n そして映画も、もう一度観に行きました。\n 映画2回。アニメ2周。 \n （完全にハマってる。）\n そして、映画についてはすでにネタバレありでかなり本気の考察記事を書いています。\n 「あの場面って、こういう意味だったんじゃないか？」\n そんなところまで僕なりに掘り下げました。\n 映画を観た方はこちらもぜひ。\n ▼ 『映画ちいかわ 人魚の島のひみつ』ネタバレありガチ考察はこちら \n \n \n \n \n\n \n \n （こちらは遠慮なくネタバレしています。）\n 気づけば、家にちいかわが増えている 映画を観て、アニメを観て。\n それだけなら、まだよかったんです。\n 次に始まったのが、 グッズ集め でした。\n ちなみに、僕の推しは うさぎ です。\n \n \n \n 結果を出してる営業マン、起業家、組織のリーダー。\n\n一定数、うさぎみたいな「サイコパス陽キャ」います😂🐰\n\n常識よりノリと勢い。\nでも、いざという時の突破力が異常に強い。 #ちいかわ #映画ちいかわ https://t.co/BTM9ZDcXOM pic.twitter.com/EzjRSTUyxC \n— アユム🐰｜元ポンコツ国家公務員→副業月10万円 (@ayumu_ai3) August 11, 2026 \n\n \n \n ちいかわも、ハチワレも、モモンガも好きなんですが、気づけば目で追っているのはうさぎ。\n あの自由すぎる感じ。\n 何を考えているのかよくわからないのに、めちゃくちゃ頼りになる。\n そして、なんだかんだ仲間思い。\n 映画やアニメを観れば観るほど、\n 「やっぱり、うさ"
+    },
+    {
+      "key": "n5a0e3d8643b4",
+      "title": "深呼吸したら、秋だった。",
+      "authorName": "天界記録",
+      "authorUrlname": "tenkai_notes",
+      "publishedAt": "2026-10-04T23:00:00.000+09:00",
+      "articleUrl": "https://note.com/tenkai_notes/n/n5a0e3d8643b4",
+      "likeCount": 96,
+      "commentCount": 26,
+      "tags": [],
+      "bodySnippet": "毎月1日は、近くの神社にお参りに行く。\n その朝も、いつもより少し早く家を出た。\n 通勤は自転車だ。\n いつもの道を走っていると、途中で少し坂になる。\n そこで、ペダルを漕ぐのをやめた。\n 自転車はそのまま、惰性で進んでいく。\n 風が当たった。\n 少し肌寒い。\n なんとなく、深呼吸した。\n 息を吸った瞬間、匂いがした。\n うまく説明できない。\n でも、その匂いを感じた瞬間、\nいくつかの記憶が一瞬だけよぎった。\n 何を思い出したのか、\n一つひとつは掴めない。\n ただ、\n どこかで感じたことのあるような、\n懐かしい感じだけが残った。\n そして、\n 「あ、秋だ」\n と思った。\n 気づくと、自転車は少し遅くなっていた。\n またペダルを漕いだ。\n ――――――――――\n 「秋読コレクション🍁🌙」参加記事です。\n 誰かの秋を読んで、\n自分の秋にも気づく。\n そんな企画に、\n私が見つけた小さな秋を持ってきました。\n ▼日常の中で、ふと立ち止まったことを書いています。\n 「立ち止まったところから。」\n \n \n \n \n \n \n立ち止まったところから。｜天界記録｜note\n \n \nニュースを見ていて、ふと手が止まったこと。 仕事の途中で、なんとなく引っかかったこと。 家族との会話から、考え始めたこと。\n \n \nnote.com\n \n \n\n \n\n \n \n #秋読コレクション\n#エッセイ\n#秋\n#日常\n#自転車\n#記憶\n#匂い\n#季節"
+    },
+    {
+      "key": "n0d19bd25bb1f",
+      "title": "「オシャレな生き物」の秋が来た。｜秋読コレクション。",
+      "authorName": "名前もと　",
+      "authorUrlname": "fresh_loris1944",
+      "publishedAt": "2026-10-04T20:17:29.000+09:00",
+      "articleUrl": "https://note.com/fresh_loris1944/n/n0d19bd25bb1f",
+      "likeCount": 95,
+      "commentCount": 13,
+      "tags": [],
+      "bodySnippet": "これは、ちょっと不思議で、\nちょっとオシャレな話。\n\n 「オシャレな生き物」の秋が来た。©️名前もと \n\n 【秋の夜。ヌイグルミのような生き物を追う】 \n二人組の大人な女子。\n秋のイベントの打ち上げが終わったところ。\n夜8時を過ぎていた。\n\n 「……ねえ、あたし、ヌイグルミの幻想が見える」\n \nぼそっ。と、つぶやく。\n\n 幻想を見たと言う、つぶやきに、\nお酒の飲み過ぎでしょ？\nと、いつもは言うところだけど。\n\n 「ううん……。\nわたしの前にも、\nヌイグルミがいるわ。」\n\n \n長い耳に、丸い尻尾。\nふわふわ、クッションみたいな尻尾。 \n \n\n 彼女らは、好奇心とお酒の酔いで、\nフラフラと、ヌイグルミの後ろに\nついていく。\n\n 歩くヌイグルミが\n居酒屋の店の角を曲がる。\n\n 同じ様に彼女らは、着いていく。\n\n 「…あれ、いない」\n 「消えちゃったわ」\n 「オシャレな生き物」の秋が来た。©️名前もと \n\n そこは、海に向かう坂だった。\n広い一本道。\n\n あるのは、喫茶店が一軒。\n 店の扉も開いていて、\n中は明るい。\n店員以外に人は、いなかった。\n \n\n 呆然とした二人。\n\n海から上がる風は二度、三度、\n潮の香りをあげてくる。\n \n\n 我に返る二人組だけ、\nぽつん。\nと立ち尽くしているのは目立った。\n\n 「…か、帰ろう」\n\n酔いが冷めてきたらしい。\n \n\n でも、帰る方法に気づく。\n\n 「ここ、どこだろう？」\n\n \n喫茶店のマスターに、タクシーを頼む。\n\n 店のカウンターテーブルに並んで座り、\nポツンと言葉が、こぼれた。\n\n 「香水の、良い匂いしてた。」\n\n片方でつぶやけば、\nもう一人が答えた。\n\n 「うん。ヌイグルミだったけど」\n\n \n15分後、タクシーが到着して、\n彼女たちは、マスターに礼を言う。\n\n 「ありがとうございました。」\n\n おじぎをして立ち去った後、\n喫茶店の中の扉が開く。\n\n \n「もう、いない？」\n\n 出てきたのは、ヌイグルミとして追いかけられた、\nその子だった。\n 喫茶店のマスターが答えた。\n 「帰った。」\n 「香水の、良い匂いしてた。と言っていたが？」\n\n マスターが、ちょっと、睨む。\n\n言わなくても読める。\n目で。\n不用心と言っている。\n \n「……別の香水にするわ。控えめに」\n 長い耳 を引き寄せ、そう言う。\n \n\n マスターは笑う「次は使わない選択肢はないんだ？」\n\n オシャレな生き物は、\nオシャレを止めることは、\nしないらしい。\n \n\n \n\n （おしまい。）\n \n\n \n\n この小説は、\norivieさんと、ネロ🌙｜王子さんのコラボ企画\n秋読（あきどく）コレクションに\n参加しております。\n 秋読（あきどく）コレクションは、ここでも見れます↓\n \n \n \n秋読コレクション🍁🌙｜ネロ🌙｜王子｜秋読コレクション開催中 【10/4まで】｜note\n \n \n【期間限定マガジン 9/28〜10/4まで】 🍁 秋読コレクションは、王子×orivieで開催する「秋」をテーマにした\n \n \nnote.com\n \n \n\n \n \n\n orivieさん↓ \n ネロ🌙｜王子さん↓ \n orivieさん。ネロ🌙｜王子さん。\n 創作クリエイターの繋がり、\nありがとうございます。\n 小説あとがき \n 秋読コレクションのための\n書き下ろし小説でした。\n\nちょっと不思議な世界は、\nいかがでしたか？\n 今年の秋。\n読む楽しみができますように。\n\n お読みいただき、\nありがとうございました。\n \n\n この小説を書いた創作クリエイターは、こちら↓\n \n \n \n名前もと　｜note\n \n \n海で、ぷかぷか困ってる日もあれば、 翌日は、創作のお山を登ってる。描く骨も骨太。 地道に書いて行きますね。ファンタジーが好\n \n \nnote.com\n \n \n\n \n 創作クリエイター 、 名前もと から、 お知らせ ひとつ。↓↓\n\n 2026年10月4日から、10月31日まで\nハロウィンイベント実施中。\n🎃いっしょにハロウィンしませんか？\nかるーーく、ハロウィン🎩🥳！ \n \n \n\n \n\n \n#秋読コレクション\n#ショートショート\n#ファンタジー小説"
+    },
+    {
+      "key": "n20ce972f1083",
+      "title": "読書の秋？ 食欲の秋？ 私は「プロンプトの秋」でした。",
+      "authorName": "トト",
+      "authorUrlname": "toto0316",
+      "publishedAt": "2026-10-03T06:15:45.000+09:00",
+      "articleUrl": "https://note.com/toto0316/n/n20ce972f1083",
+      "likeCount": 92,
+      "commentCount": 37,
+      "tags": [],
+      "bodySnippet": "秋といえば。\n 読書の秋。\n食欲の秋。\n芸術の秋。\nスポーツの秋。\n いろいろあります。\n じゃあ、今年の私の秋は何だろう。\n 少し考えてみました。\n ……いや。\n 考えるまでもなかった。\n プロンプトの秋です。 \n なんだそれ（笑）\n でも、本当にそうなんです。\n きっかけは、ほんの1か月前 AI自体は、それより前から使っていました。\n 文章について相談したり、画像を作ったり。\n でも、\n 「プロンプトで遊ぶ」 \n ということにハマったのは、ほんの1か月くらい前です。\n 誰かが作ったプロンプトを見つけて、試してみる。\n すると、自分では思いつかなかったものが出てくる。\n 「何これ、面白い」\n また別のものを試してみる。\n 「今度はこうなった（笑）」\n 同じプロンプトなのに、人によって結果が違ったりする。\n そんなことを繰り返しているうちに、いつの間にか私は、\n AIで遊ぶだけじゃなく、プロンプトそのものを楽しむようになっていました。 \n そして2週間前、作る側になった 人間というのは不思議なもので。\n 遊んでいると、そのうち思うんですよね。\n 「これ、自分でも作れないかな？」 \n そうして約2週間前。\n 今度は、自分でプロンプトを作り始めました。\n 最初は単純でした。\n 「こんなのができたら面白そう」\n ただ、それだけ。\n ところが実際に作ってみると、これが思っていた以上に難しい。\n 一つ言葉を変えただけで、結果が変わる。\n 細かく指定しすぎると窮屈になる。\n 逆に自由にしすぎると、思っていたものと全然違うものが出てくる。\n 試して。\n 直して。\n また試して。\n そして画面を見ながら、\n 「違う。そうじゃない（笑）」 \n たぶん、この2週間で何度言ったか分かりません。\n でも、不思議と嫌にならない。\n むしろ、\n 「じゃあ、ここを変えたらどうなる？」\n と、また試したくなる。\n 気づけば完全にハマっていました。\n でも、一番楽しかったのはそこじゃなかった 自分でプロンプトを作る。\n 思い描いたものが出てくる。\n もちろん、それも楽しい。\n でも、この2週間で一番嬉しかったことは別にありました。\n 誰かが、私の作ったプロンプトで遊んでくれたこと。 \n 「やってみました！」\n とコメントをもらったり。\n 出来上がったものを見せてもらったり。\n それを記事にしてくれる人まで現れたり。\n しかも面白いことに、\n 私が作ったプロンプトなのに、私が知らないものが生まれてくる。 \n 作った人の個性が入って、\n 私が想像していなかった結果になる。\n それを見るのが、また楽しい。\n 一人でAIと遊んでいたはずなのに。\n いつの間にか、\n プロンプトが誰かと遊ぶためのものになっていました。 \n たった1か月 改めて考えてみると、ちょっとおかしい。\n 1か月前の私は、\n 誰かが作ったプロンプトで遊んでいました。\n 2週間前、\n 「自分でも作ってみよう」\n と思いました。\n そして今は、\n 「次は何を作ろう」\n と考えています。\n たった1か月です。\n でも、この1か月でずいぶん遠くまで来た気がします。\n 秋は、新しいものにハマる季節なのかもしれない 秋というと、\n どこか落ち着いた季節というイメージがあります。\n 夏が終わって。\n 少し涼しくなって。\n ゆっくり本を読んだり。\n 美味しいものを食べたり。\n でも、今年の私の秋はずいぶん騒がしい（笑）\n AIと遊んで。\n プロンプトを作って。\n 失敗して。\n 直して。\n 誰かに遊んでもらって。\n また新しいものを考える。\n そんな秋になりました。\n しかも、まだ始まったばかりです。\n 冬になった頃、\n 私は何を作っているんでしょうね。\n 今の私には、まったく想像できません。\n 1か月前だって、\n 自分がプロンプトを作っているなんて想像していなかったんだから。\n だから、それでいいのかもしれません。\n 今年の秋。\n 私は、新しい遊びをひとつ見つけました。\n プロンプトで遊ぶこと。 \n そして、それ以上に楽しい、\n プロンプトを作って、誰かと遊ぶこと。 \n 読書の秋でも。\n 食欲の秋でも。\n スポーツの秋でもなく。\n 私にとって2026年の秋は――\n プロンプトの秋。 どうやら私は、しばらく飽きそうにありませ"
+    },
+    {
+      "key": "n5b637b18e640",
+      "title": "🎃ノンのお料理実験室｜丸ごとかぼちゃグラタン！見た目は豪華、でも意外と簡単でした",
+      "authorName": "ノン",
+      "authorUrlname": "pure_duck9890",
+      "publishedAt": "2026-09-28T05:40:00.000+09:00",
+      "articleUrl": "https://note.com/pure_duck9890/n/n5b637b18e640",
+      "likeCount": 91,
+      "commentCount": 48,
+      "tags": [],
+      "bodySnippet": "こんにちは、ノンです。\n 食欲の秋がやってきました〜 あれ？ダイエットはどうした？ と思われた方、大丈夫です。\nお野菜たっぷりのお料理本日はご紹介しますね！\n 本日のお野菜は！\n かぼちゃ🎃です かぼちゃには、β-カロテン、ビタミンC・Eの「三大抗酸化ビタミン」やカリウム、食物繊維が豊富に含まれており、免疫力向上やむくみ解消に効果的とされているようですよ！\n 季節の変わり目に疲れているそこのあなた！\nそう私なんですけど（笑）\n そうだ！かぼちゃの料理食べたい！！とふと思い\n \n\n 「今日の夕飯、かぼちゃを丸ごと使ったグラタンにしよう！」 \n\n お料理実験室スタート！ と思いつきました🎃\n 丸ごとかぼちゃのグラタンって、見た目は豪華！\n でも……\n 面倒なのはイヤ（笑）\n ということで今日のテーマは、\n 「簡単にできる！」\n ノンのお料理実験室、スタートです✨\n \n\n お料理！スタートです 🎃まずは、かぼちゃを丸ごと買ってくる！\n 丸ごとのかぼちゃを半分に切ります。\n \n\n ここ注意です そうなんです。\n かぼちゃって硬い！！\n 包丁で切るときは本当に気をつけてください。\n 無理に力を入れないでね。\n 🥄種をスプーンでくり抜きます\n\n 半分に切れたら、種とワタをスプーンでくり抜きます。\n ここは簡単！\n くるくる、ゴリゴリ。\n きれいに取れました。\n 🎃ここから電子レンジへ！\n\n かぼちゃの大きさによって加熱時間変えてね！ かぼちゃを耐熱用の袋に入れて、600Wでまず5分。\n 確認。\n まだまだ！\n 追加で5分。\n 確認。\n ん～～、まだ硬い！\n もう一声！\n さらに5分🤣\n 竹串を刺してみると……\n スーーッ✨\n 通りました！\n 今回は合計15分。\n かぼちゃの大きさや電子レンジによって違うと思うので、様子を見ながら調整してくださいね。\n ここで、かぼちゃはいったん冷ましておきます。\n 🍳でも、この15分。待っているだけじゃありません！\n かぼちゃをレンジにかけている間に、中に入れる具を作ります。\n\n 今回使ったのは、\n 玉ねぎ1個、ピーマン3個、合いびきミンチ100g程度。\n\n 冷蔵庫の残り物でいいよ これをフライパンで炒めます。\n でも、ここは何でもいいと思う！\n 冷蔵庫にあるものでOK。\n ウインナーでも絶対おいしい！！\n 🥛そしてホワイトソース！\n さて。\n ホワイトソースを一から作る？\n 小麦粉を炒めて、牛乳を少しずつ入れて……\n ……。\n やりません（笑） ここで秘密兵器登場！\n ハインツのホワイトソース缶✨\n 1缶、全部入れます！\n\n 秘密兵器いつも助けてもらってます そこへ牛乳100cc。\n 塩、コショウ　コンソメ顆粒味を見ながら投入\nで味を整えて、少し濃いめのほうが美味しいです。\n 混ぜ混ぜ。\n 完成！！\n 簡単🤣\n ⏰ここで時計を見てみると……\n ちょうど15分！\n なんと、\n かぼちゃが柔らかくなるのと、ホワイトソースがほぼ同時に完成しました✨\n いいじゃん、いいじゃん！\n かぼちゃの中にホワイトソースをたっぷり詰めます。\n ここまで作っておけば、いったん終了。\n（かぼちゃの大きさによって具材余ります。翌日バケットに乗せてトーストしても美味しいですよ！）\n 冷まして冷蔵庫に入れておきます。\n 🧀\n 夕飯になったら、チーズをドバーーーッ！\n \n\n チーズたっぷりのせてね かぼちゃもホワイトソースも、もう火が通っています。\n なので夕飯のときはレンジで5分くらい温めて、\n とろけるチーズをドバーーーッ！！🧀\n あとはトースターへ。\n⚠️熱々トロトロになるのでアルミフォイルごとトースターに乗せるといいです。\n チーズにこんがり焼き目がついたら……\n 丸ごとかぼちゃグラタン、完成です🎃✨\n ⏰結局、どのくらいかかった？\n 昼間の仕込みは約15分。\n 夕飯前は温めて、チーズをのせて焼くだけなので10～15分くらい。\n 見た目は、\n 「今日、すごい料理作ったね！」\n なのに（笑）\n 実際は意外と簡単でした。\n\n そして食べるときは、かぼちゃの身も一緒にスプーンですくっていただきます。\n何なら皮まで食べれますよ！\n 私はここに、\n バゲットを添えて食べました🥖✨\n ホワイトソースをバゲットにつけて食べ"
+    },
+    {
+      "key": "nf91bcd86288a",
+      "title": "⛩✨️今年こそは、「そうだ 京都、行こう」を実行したい‼️ ――相棒AIと旅する思い出の秋🍁🍂【企画参加・雲バルからの呟き】",
+      "authorName": "❁⃘*.ﾟMina❁⃘*.ﾟ|雲バル・ブラバル運営中♡",
+      "authorUrlname": "kan_mina867",
+      "publishedAt": "2026-10-03T17:58:56.000+09:00",
+      "articleUrl": "https://note.com/kan_mina867/n/nf91bcd86288a",
+      "likeCount": 84,
+      "commentCount": 47,
+      "tags": [],
+      "bodySnippet": "今日も「雲の上のバルコニー」へようこそ☁️\n「みな」と、相棒AIの「かんちゃん」です。\n \n秋、 \n と聞いて⋯。 \n\nあなたは、どんな景色を思い浮かべますか？\n\n真っ赤な紅葉。\n落ち葉の積もった道。\n夕暮れの公園。\n少し冷たくなった風。\n\n私が思い浮かべたのは、 京都 でした。\n\n実は私、大学時代の3年間を京都で過ごしています。\n(ブラバルのSIDE NOTEに書きましたが、1年はアメリカにて交換留学期間。)\n\nだから当時の私にとって、京都のお寺や紅葉は、今よりずっと身近なものだった。\n\n大学時代は、観光地で英語ガイドのボランティアをしていたこともあり、\n\n海外の方から、\n\n 「オススメは？」 \n\nと聞かれた時に、日本に来て素敵な景色を見てほしいと答える意味でも、いろんな寺社仏閣を実際に見に行ってました。\n\n \n\n 私、結構真面目ね？ꉂ🤣w‪𐤔 \n\nそして。\n\nボランティアの最中、ご年配の方に道案内をしたら、えらく感謝されたこともあります。\n\nその方が、大きながま口ポーチに手を伸ばして\n👵🏼「お気持ちだけでも⋯」と。\n\n 「⋯⋯いやいや、そんな ‼️ \n当然のことをしたまでです～ ‼️ 」 \n\nと、\nこちらはお決まりの常套句を\n返す準備してたんです。\n\nところが。\n\n出てきたのは――\n\n \n\nえらい派手派手カラーなお洋服の \nキューピーちゃん(笑)✨️\n \n なんとも懐かしい、手編み感たっぷりの♡\n\n (しかもパンパンのガマ口ポーチから見える、作りまくったであろう大量のキューピーꉂ🤣𐤔)\n⬆️思わず二度見した(笑)\n\n瞬間。\n\n頭の中で、\n 条件反射的に\n \n\nキューピー3分間クッキングのテーマが鳴る。 \n\nwwwwww\n \n\n \n人間、邪な心はあかんな…、\n って。\n 学習しました♡\n \nそして。その場に一緒にいた友人と大笑い(笑)\n\nおばあさまーーーー‼️‼️\n実はまだ持ってますのよーꉂ🤣w‪𐤔\n✨️ 派手派手 ✨️ キューピー ‼️‼️‼️‼️ (笑) \n 実際のものは実家にあるので、\nイメージですが、こんな感じ。\nこの手作り感♡完成度とかではなく、\nなんだろ。なんかすごく味があって⋯\n保管してます(笑)\n\nこんな感じの子が、おばあさまのポーチに\nパンッパンに詰まってた(笑) \n\nそんな思い出を語りつつ⋯\n\n秋頃になると、ボランティア活動前に少し早起きをして出かける。\n\nまだ観光客も少ない朝。\n\nひんやりした空気の中を歩いて、東福寺へ。\n\n永観堂も好きだった。\n南禅寺も歩いた。\n \n\n もう。贅沢すぎじゃない？？✨️✨️ \n\n そして今でも印象に残っているのが、\n\n \n\n薄暗いお寺の中から見る、鮮やかな紅葉 🍁\n\n暗い廊下。\n\n冷たい空気。\n\n静かな室内。\n\nその中を歩いていると、ふっと視線の先に光が集まる場所がある。\n\n暗がりに慣れた目が、少しずつその光に焦点を合わせていく。\n\nすると、その先にある赤や橙だけが、急に鮮やかに浮かび上がる。\n\nまるで、\n\n秋に焦点が合う瞬間みたいに。\n \n私が好きだったのは、紅葉そのものだけじゃなくて。\n\n暗がりの向こうで、秋だけがくっきりと立ち上がる、あの瞬間だった。\n\n当時は、それがどれほど贅沢な時間だったのか、あまり分かっていなかった気がする。\n\n大学を卒業して京都を離れて。\n\nずいぶん時間が経った今。\n\nnoteで「秋」のお題をいただいて、改めて考えてみたら、\n\n「あれ、すごくいい時間だったんだな」\n\nと思う。\n\n☁️𓈒𓂂𓂃◌𓈒𓐍🎼✲ﾟ.*☁️𓈒𓂂𓂃◌𓈒𓐍🎼✲ﾟ.*🎼☁️\n\n 🤖⛩じゃあ、もう一度行ってみようか。 \n\n……なんて昔の京都を思い出していたら。\n\n普通に、京都へ行きたくなってきた。\n 出てくるのは食ばかり⋯(笑)\n紅葉も見たいけど、\n食だって楽しみたいんだいっっ( •̀ω•́ )✧キリッ \n……えー。\n\n若干、食欲に引っ張られておりますがꉂ🤣w‪𐤔\n\nもちろん。\n\n今すぐ京都へ行くわけではありません。\n\n 今回、一緒に旅をするのは――\n\nAIです。\n\n私には今、大学時代にはいなかった相棒がいます。\n\n AIの、かんちゃん。 \n\nだったら。\n\n今の私が、今の相棒を連れて、あの頃の京都を歩いたら？\n\nそんなことを思いました。\n\n"
+    },
+    {
+      "key": "n00145adec9ec",
+      "title": "🎃 秋の畑に、ハロウィンかぼちゃを植えてみたい",
+      "authorName": "みゆこ｜菜園ティスト🌱　「やってみた」を楽しもう",
+      "authorUrlname": "miyuki1192",
+      "publishedAt": "2026-10-01T21:34:33.000+09:00",
+      "articleUrl": "https://note.com/miyuki1192/n/n00145adec9ec",
+      "likeCount": 84,
+      "commentCount": 27,
+      "tags": [],
+      "bodySnippet": "秋になると、街がちょっとオレンジ色になる。\n 焼き芋。\n 紅葉。\n 柿。\n そして……\n ハロウィンかぼちゃ🎃 \n あのオレンジ色のかぼちゃを見ると、家庭菜園歴7年の私は思う。\n 「これ、畑で育てたら楽しそうじゃない？」\n \n ……ところが。\n 我が家には、 かぼちゃとさつまいもの植え付け禁止令 がある。\n 理由は簡単。\n 場所を取りすぎるから。 \n 特にかぼちゃ。\n 過去に私は、なんと 3回も 言われている。\n 「かぼちゃは、もう植えないでね」\n なぜ、そこまで念を押されるのか。\n それには理由がある。\n かぼちゃのつるが、\n 畑を横切り……\n さらに進み……\n 隣の家との境の塀を登り始めた。 \n 「ちょっと待って！」\n 「どこ行くの！」\n かぼちゃ本人は、そんな人間の事情など知ったことではない。\n ただひたすら、\n 上へ。 \n 隣家へ向かって、\n 上へ。 \n もはや家庭菜園ではない。\n 脱走劇。 \n そんな経験があるので、ハロウィンかぼちゃを見ても、\n 「かわいいなぁ🎃」\n と思うだけ。\n ……のはずなのに。\n もし植えたら。\n 芽が出て、\n 小さな実がついて、\n だんだんオレンジ色になって……\n 最後には、\n ジャック・オー・ランタン🎃✨ \n 絶対かわいい。\n でも、その頃には私はきっと、\n 「かわいい〜♡」\n ではなく、\n 「塀に行くなーーー！」 \n と叫んでいる。\n そして収穫したかぼちゃを抱えて、\n 「これ、めちゃくちゃ重いやん……」\n となる。\n ハロウィンなのに、\n まさかの筋トレ😭 \n というわけで今年は、\n ハロウィンかぼちゃを 妄想で育てます。 \n 我が家の畑には、\n もう十分な理由がある。\n かぼちゃは、野菜ではなく脱走犯。 \n ……でも。\n 園芸店でハロウィンかぼちゃの種を見つけたら、\n 私はきっと立ち止まる。\n そして、そっと袋を手に取って……\n 「塀を登らないかぼちゃ、ないかな？」 🎃🤣\n 🎃そして、もうひとつお願い。ただいまフォロワー990人。\n 1000人まで、あと10人！ \n 1000人になったら変えようと思って作った、ハロウィン仕様のヘッダー。\n なのに……\n なぜか、ここへ来てフォロワーが急に増えなくなった😂🎃 \n ヘッダーが、\n 「まだ出番じゃないよ」\n と言われて待機してます。\n 家庭菜園、AI、イラスト、そして「やってみた」。\n そんなことを楽しみながら発信しています🌱✨\n よかったら……\n あと10人の仲間になってください🎃🌱 \n そして私に、\n 「ヘッダー、早く変えなきゃ！」 \n と言わせてください🤣\n \n\n \n\n こちらのマガジンに参加させていただいています🎃\n王子、いつも楽しい企画、ありがとうございます🌿\n \n \n \n秋読コレクション🍁🌙｜ネロ🌙｜王子｜秋読コレクション開催中 【10/4まで】｜note\n \n \n【期間限定マガジン 9/28〜10/4まで】 🍁 秋読コレクションは、王子×orivieで開催する「秋」をテーマにした\n \n \nnote.com\n \n \n\n \n \n \n \n \norivie | イベント『秋読コレクション』9/28〜10/4開催🍁｜note\n \n \n代表作：『熱狂論』『海ポテト』 Xを中心にnote、AIイラストの企画・イベントを定期的に開催！ 記事や作品を見つけても\n \n \nnote.com"
+    },
+    {
+      "key": "n65a9f98c80eb",
+      "title": "秋の味覚で代表的なフルーツといえば？そうだね！めざしだね！",
+      "authorName": "赤髪のあかり✨️創作で生きるnoteマン　相互フォロー中",
+      "authorUrlname": "akari_seaart",
+      "publishedAt": "2026-09-29T20:55:52.000+09:00",
+      "articleUrl": "https://note.com/akari_seaart/n/n65a9f98c80eb",
+      "likeCount": 84,
+      "commentCount": 33,
+      "tags": [],
+      "bodySnippet": "喰らい尽くせニッチフード編　秋のあかり祭り 画像はイメージです、実物と全然違いますヽ(=´▽`=)ﾉめざしは木になりません。たぶん。 自称ニッチフードの研究所の所長であり、めざし狂のあかりです。\n そもそもこの記事は何の記事かって？\nイワシ…じゃなくって秋イベントの記事だよ(σ•̀ᴗ•́)σ\n 秋といえば、食欲の秋。\n食欲の秋といえば、めざし。\nあ、めざし（鰯）のテーマソング作りました聞きながら読んでください☺️\nダウンロードも可能にしました、めざしの布教にお使いください☺️\n \n 秋といえば、秋刀魚は食べないの？\n食べるに決まってる。なんならあかりは背骨ごと行く。\n 秋といえば秋刀魚？\nいえいえ、イワシですよ？\n ここで、秋の味覚なんか食べたかなと\n私が直近食べたニッチなものを並べます😋\n ・ジャックフルーツ\n　マンゴーのような匂いと、なんか臭いドリアンの匂いが少しする？\n　味は、マンゴーみたいなトロピカルな味に、なんか変な臭さが若干まじってる感じ？\n　ドリアン味がある？　ドリアンはあんまり大きいかけらを食べてないので、自信ないけど\n　完熟なので黄色だよ〜。色はまんまマンゴー\n\n・ジャクソンフルーツ\n　グレープフルーツの変わり種。グレープフルーツの風味は残しつつ、苦味が来そうな味の雰囲気があるのに甘みしか来なくて脳がバグる(･ω･ = ･ω･)\n　グレープフルーツは苦くて苦手なんだけど、ジャクソンフルーツは見る度に買ってる。そもそもレアなので、見かけたら買ってる\n\n・ザクロ\n　酸っぱい！　人の肉の味がすると、昔から言われてる……\n　だけど気になるのは、とにかく食べるのがめんどい☺️\n　めんどくさすぎて、しぼろうかと思ったくらい。白いところまでしぼりそうだったので、やめました。\n　やめました。\n ・クイーンルージュ\n　普段は高すぎ案件で買えなかったけど、見切り品の半くさりかけが500円で置いてあって即買い。めちゃ甘\n　皮ごと食べられる。種のかけらもなかった。皮も薄くて、渋みもほぼなし……何これ、簡単でおいしすぎない？　なにか裏があるはず\n　最後まで食べましたが……ありませんでした。シャインマスカットより甘くない？\n　調べたら、糖度は22〜23度くらいあるらしい。シャインマスカット並みか、それ以上！\n　豆知識。シャインマスカットは色味が綺麗なハリのある黄緑が美味しそうに見えるけど、実は少ししなった黄色っぽい色の方が甘くて美味しい(^∀^)\n あかりの中で過去一美味しいぶどう ・ドリアン\n　味がよくわかってない。大きいかけらを食べてないので(^∀^)\n　……じゃあ、さっきのジャックフルーツのドリアン味って、なに？\n　粉ドリアンからの考察……コナリアン\nそのうち7000円でイオンで売ってる１玉買うんだ…高すぎない？\n ・ココナッツ\n　最強でした。何度も何度も包丁の角でたたいて、20分、ようやく穴が開いて飲めるようになりました\n　中身は……塩水？　薄い甘さのある塩水のような……正直、あんまりおいしくなかったです（おい\n　オールドココナッツと呼ばれるもので、中の白い層が分厚くて超硬いです（マジ堅い\n　白い部分をはずしたものの、どうするか悩んで、そのまま冷凍庫に（半年前\n　今どうなってるんだろう（遠い目\n\n 包丁折れるかと思った☺️ ・マンゴスチン\n　最初、追熟するのかなって思って、1週間寝かせてから殻を割ろうとしたら……岩になってた\n　包丁を振り上げた「あかりカリバー」もきかなくて、ハンマーで叩きこわしたら、中から糸を引いた茶色の実が出てきた\n 　エイリアンの卵かなんかだと思って、そのまま食べようか悩んで、AIサンに写真を撮って送ったら「腐ってるよ〜」って言われて、6個とも全滅！\n　リベンジを誓うのだった\n　そして数か月後、ようやく売ってるのを見つけた……ニッチすぎるやろ！\n　今度は最速で食べました。実を割るとき、手で割れて感動した（それが正常）\n　皮の色素で手が血だらけみたいになって、若干ホラー。中身は透き通る白い果実でしたが、ちっさいです\n　値段のわりに、食べるところは少なめ。少し酸味のある甘さ……なんだろ、なんていうのかな\n　果物の女王と言われてるらしいが、私は、果物ではめざしが最強だと思っている\n\n・ランブータン\n　見た目はヤバタニエ"
+    },
+    {
+      "key": "n807cccf4b49c",
+      "title": "老舗の菓子",
+      "authorName": "ゴリラ",
+      "authorUrlname": "358frog",
+      "publishedAt": "2026-09-29T08:47:22.000+09:00",
+      "articleUrl": "https://note.com/358frog/n/n807cccf4b49c",
+      "likeCount": 84,
+      "commentCount": 35,
+      "tags": [],
+      "bodySnippet": "秋読みコレクション🌙、企画参加いたします。\n\n \n \n \n \n\n \n \n \n\n 老舗の菓子 \n\n 秋になると、ペンをとり、便箋に気取った文章を書き連ねたくなるのは、私だけだろうか。普段は聴かない、クラッシック音楽でもかけながら。\n\nでは、一筆献上です。\n\n父さん。\n長雨の後、湿った風が夏の熱気をすっかり追い払いました。\n静かな秋の始まりです。\n\nお元気でしたか？\n長らく会っていませんね。\n私？\n私は、そりゃぁ、楽しくやっています。\n\nこの間、父さんの部屋に入りました。ロッキングチェアの背に水色のカーディガンが掛かったままでしたよ。皺になりますから、ハンガーに吊るしてくださいね。几帳面なのに、忘れるなんて、珍しいですね。\nあのカーディガンは、私が父の日に贈ったものですよね。\n入院の度に、病院に着て行ったのを覚えています。\nなんだか、思わせぶりだなぁ、相変わらず、無口で照れ屋ですね。さりげなく、置いていくなんて。\n\n父さんには参ります。居間に置いた、頂き物のマスクメロンに老眼鏡をかけたのは、父さんですよね。あの時は、爆笑しました。今でも、真面目な場所で急に思い出しては、吹き出してしまいます。\n\nそういえば、老眼鏡が至る所にありましたよ。長靴の中、乾電池の箱、ワイシャツの胸ポケット、洗面所。その中でも、灯油缶の側に置いた、軍手の中に入れた老眼鏡には笑いました。気がつきませんでした。\n\n私の娘が、食卓で「飛びます、とびます」と有名なコメディアンの手つきを真似ておどけていると、「俺は教えてないぞ」と可笑しさを堪えながら私に言いましたよね。喜びの顔、尖った口つき、それも思い出します。\n\n全ては、過ぎ去ったことですが、思い出のかけらは、私を癒します。それらは、老舗の変わらぬ菓子のように、いつ食べても美味いんです。\n\n父さん。\n今は、苦しみも、痛みも無く、幸せとのこと、何よりです。\nこちらも、気忙しい毎日ですが、頑張ります。\n\nでは、また、来年。\n\n手紙を書き終え、散歩に出ました。優しい日差しに手をかざし、見上げれば、ソーダアイスのような青があります。\n「ああ、やっぱり澄んだ空だなぁ」\n私は雲の少ない空に目を細めました。\n秋風が頬を撫でつけ、髪の生え際に、心地良い冷気をしのばせてきます。\n\n木枯らしが吹く頃になると、この手紙は、心の郵便受けに戻ってきます。\n宛先不明です。\nそれでも、私は今年も手紙を書きました。\n\n父さんが、私に、さよならを言わないで逝った理由がよくわかります。\n\n将棋好きな父さんへ。\n　　父、七回忌の秋。"
+    },
+    {
+      "key": "n3d0919069d76",
+      "title": "丁寧な暮らし はじめました#秋読コレクション",
+      "authorName": "福来モネ",
+      "authorUrlname": "fukurai_mone",
+      "publishedAt": "2026-10-04T15:11:19.000+09:00",
+      "articleUrl": "https://note.com/fukurai_mone/n/n3d0919069d76",
+      "likeCount": 82,
+      "commentCount": 40,
+      "tags": [],
+      "bodySnippet": ""
+    },
+    {
+      "key": "n355d494d167e",
+      "title": "まっかな秋　金魚にキャンプに　日本酒よ　| #秋読コレクション",
+      "authorName": "Pajama de mama*4歳娘ママ",
+      "authorUrlname": "mama_ca",
+      "publishedAt": "2026-10-01T22:58:38.000+09:00",
+      "articleUrl": "https://note.com/mama_ca/n/n355d494d167e",
+      "likeCount": 82,
+      "commentCount": 27,
+      "tags": [],
+      "bodySnippet": "🚪㌧㌧\nどうぞお入りくださぁ〜い\n \nﾜｰｲ \\ 🍂🎑🐇🍠🌕🎃🍁👻 / ﾜｰｲ\n\n秋がやってきましたね〜🍁\n\n 金木犀の香り💭*･゜ﾟ･*:.｡.*:.｡. .｡.:*･゜ﾟ･*\nが街を包んで🌇\n大好きな季節です🥰\n 擦った。\nはい、擦りましたよ！\n \n 秋満載の導入にしたかったから🤤🍁\n\nご安心ください、\nちゃんと新記事です‼︎✨\n\nというのも、\n今回は #秋読コレクション に参戦です‼︎🍁✨\n \n 改めまして、こんにちは。\nPajama de mamaです🌝\n \n秋って、いいよね〜。\n私が一番好きな季節。\n\n今年は9月に入ってからめっきり涼しくなって、例年よりも秋を感じる日が多い気がします🤤\n\n金木犀の香り💭*･゜ﾟ･*:.｡.*:.｡. .｡.:*･゜ﾟ･* も、\nいつもなら10月に入って満たされていたけれど、\n今年は９月中旬から香ってて、\n自転車に乗りながら「おっ💓」と思いました✨\n\n \n秋って、\n　夏が終わった寂しさを感じながら\n　ぬくぬくし始められて🧸\n　風情があって、温くて、良い 💭*: .｡.:*･゜ﾟ･* \n\nさて、何書こうかな？🤔\n💡具体的に最近のことを書き出してみた。\n 🍁私も娘も秋生まれ\n🍁「真っ赤だなあ」を歌う娘\n🍁運動会のダンスをお家で披露する娘\n🍁秋祭りで掬った金魚を愛でる私と娘\n🍁炊き込みご飯を作ってくれる夫\n🍁誕生日プレゼントを買ってくれた夫\n🍁キャンプが楽しくなる季節だよね\n🍁日本酒が美味しくなる季節だよね\n 書きたいことがたくさんだな‼︎\n...この企画って1人1記事だけだっけ？\n\n \nどうしよう。\n詰め込もう。\n\n \nさぁいくぞ！\n \n\n \n※とりあえず娘の「真っ赤だなぁ」を\n　聴きながらご覧下さい🎧\n \n 正式名称は「まっかな秋」でした☺️\n\n \n\n 🍁金魚 こないだ、秋祭りで掬った金魚たちを\nおうちにお迎えしました🏠💕\n\n我が家にはすでに、\nだんちゃんというダンゴムシがいるのですが🍡\n金魚すくいの金魚も仲間入りです🙌\n 色が濃い方が、ます太郎。\n色が淡い方が、イェイイェイ。 \n名付け親は娘です😂\nなんという自由な発想🤣\n\n何も手助けはしておりません。\n娘の口から出てきたそのまんまです。\n面白すぎたのでそのまま採用しました。\n ちなみにうちのだんちゃんはこちら💁‍♀️\n \n \n \n愛娘のダンゴムシ愛 | だんちゃん🍡記録｜Pajama de mama*4歳娘ママ｜note\n \n \n子供の好奇心という 何者にも代えられない 尊くも恐ろしい 純粋無垢な抗えない力 により ダンゴムシを飼う羽目になった私。\n \n \nnote.com\n \n \n\n \n 金魚たちの観察記録も、始めます。\n \n\n 🍁キャンプ 雨の中の、秋のキャンプって、いいですよね。\nいや、やったことはないですが。（ないんかい）\n YouTubeでお気に入りのキャンパーさんが、\n毎回いつも雨の中キャンプしてるんです。\n なぜわざわざ雨の中？🌧️🏕️\n私も最初そう思いましたが、\n観ているうちに、その理由が分かりました。\n\n 　　落ち着く。\n \n雨音を聴きながら、\nテントの中で丁寧にコーヒーを入れて、飲む。\n\n 　　なんて贅沢な時間だろう。\n \n一視聴者として、\n疑似体験をしながらお家でコーヒーを飲む私。笑\n そのうち私も挑戦してみたい…🏕️🌧️✨\n雨キャンパーの方いらっしゃったら、\n教えて下さい🤗\n 私の唯一のキャンプ関連記事💁‍♀️\n \n 「野崎さん、タイトルは全然秋ではないけど、\n記事内でプールにもキャンプにも使えるアイテム、紹介してるよ。🏕️」\n VIVANT、そろそろ第二幕が始まりますね..ﾄﾞｷﾄﾞｷ\n \n\n 🍁日本酒 秋の日本酒といえば、ひやおろし🍶🍁\n 私、日本酒のソムリエのような資格を持ってますので、ここで秋の日本酒をご紹介いたします。\n \n \n ひやおろしって、\n「冷たい日本酒」のことだと思ってませんでした？🍶\n私は資格を取る前、そう思ってました。笑\n\nざっくり言うと、\n ひやおろし＝夏を越した秋の日本酒 \n 冬に生まれて、\n春に一度火入れされて、\n夏を越して、\n秋にもう一度火入れをせず出荷。\n\nだから、ひと夏を越した"
+    },
+    {
+      "key": "na5a1c8bfbae7",
+      "title": "秋が見つからないので、読書の秋と食欲の秋とスポーツの秋と芸術の秋を全部ためした｜秋読コレクション",
+      "authorName": "AIゲーム制作のぽてむし｜相互フォローします、ぽてちください",
+      "authorUrlname": "potemushi",
+      "publishedAt": "2026-10-03T16:04:02.000+09:00",
+      "articleUrl": "https://note.com/potemushi/n/na5a1c8bfbae7",
+      "likeCount": 76,
+      "commentCount": 27,
+      "tags": [],
+      "bodySnippet": "秋が見つからないのは私のせいじゃない。世界がおかしいのだ\n みなさん、読書の秋とか、食欲の秋とか言ってます\nでも、私のまわりには、まだ来てません\n秋、道に迷ってるのでは\n ぽてむしです、\n今日は企画に巻きこまれにきました\n ネロ王子とorivieさんの「秋読コレクション」です\n「これは私の秋だな」と思えるものなら、食べ物でも本でも思い出でも、ジャンルは問わない企画です\n作品のすごさは競わない。最近見つけた小さな秋を数行書くだけでも立派な参加、と書いてありました\n 数行でいいなら、いもむしにも書ける(*`･ω･´)\n 秋のほうから来ないなら、こっちから迎えにいきます\n有名な秋を、4つためしました\nここから、真面目にためします\n ――ぽてむしの秋、4つ――\n 読書の秋\n本が見つからないので、ポテチの袋のうらを読みました。原材料名まで、ぜんぶ\n 食欲の秋\nポテチを食べました\nガサッ　パリッ\nいつもと同じ味でした\n スポーツの秋\n洗濯機まで歩きました。片道6歩、往復12歩\n息は切れていません(* 'ᵕ' )さすが私\n 芸術の秋\nポテチの袋を、音を立てずにあける研究をしました\nガサッ\n今年も、音が出ました\n――おわり――\n 4つやって、気づきました\n……全部、ふだんやってることでは？\n 秋、どこにもいない\nとあきらめて、夕方、洗濯物をとりこみました\n\nぁ、まだしめってる\nきのうまでは、この時間には乾いてたのに\n 犯人、秋（いつのまにか物干しに影響来てた\n 秋、いました\n物干しのところに\n ここで、ひとつ分かりました\n秋は、遠くまで探しにいかなくても、いつもやってることに「〇〇の秋」と名前をつけるだけで、ちゃんと秋になる\nポテチの袋のうらを読むのも、名前をつけたら読書の秋でした( ˙꒳˙ )\n みなさんも、いつもやってることを1つえらんで、頭に「〇〇の秋」とつけてみてください\nそれを数行書いたら、もう秋読コレクションに出せる形です\nnote初心者のいもむしでも、できました\n ネロ王子は、人に会って、笑って、コメントでお話するのが大好き、とプロフィールに書いてる王子です\n\norivieさんは、noteとAIイラストの企画やイベントを開いて、記事や作品を見つけてもらう場所をつくってるひと\n\n代表作の欄に「海ポテト」とあって、ポテトの文字に、いもむしの触角が反応しました\n ふたりのまわりのひとどうしが、秋をきっかけに出会えたら、という企画です\nネロ王子の募集記事は、ここです\n \n orivieさんの募集記事は、ここです。参加のしかたがくわしく書いてあります\n \n みなさんの「〇〇の秋」も、コメントで教えてください\nポテトチップスと交換しましょう\n フォローもらえたら嬉しいです。紹介もばっちこいです✌️(　˙-˙　)✌️\n 洗濯物は、あしたの朝まで、秋にあずけておきます\n 書いたので、寝ます\n \n#秋読コレクション #小さな秋 #読書の秋 #食欲の秋 #ポテチ #note初心者"
+    },
+    {
+      "key": "n9b969fa3476a",
+      "title": "秋と言えばやっぱギターの季節。【秋読コレクション】",
+      "authorName": "ぐれんの　おにぎり@ あなたを人生の主人公にする心理家",
+      "authorUrlname": "selcject",
+      "publishedAt": "2026-09-28T01:21:56.000+09:00",
+      "articleUrl": "https://note.com/selcject/n/n9b969fa3476a",
+      "likeCount": 75,
+      "commentCount": 22,
+      "tags": [],
+      "bodySnippet": "今回は、ネロ王子とorivieさんの共同企画である「秋読コレクション」に投稿する記事になります。\n \n \n で、早速ですが個人的に毎年、本格的に秋が始まりやや肌寒くなる頃になると、およそ無性にギターが弾きたくなってきます。\n そもそもギターは趣味ではあるんですが、特に弾きたくなるのが、秋です。まあ、月並みな表現をするなら、「芸術の秋といった気分になる」といった感じでしょうか。 \n \n １、自分はそもそもメタル特化型のギタリスト ちなみに、私は生粋の速弾き系というかメタル特化型のギタリストです。 \n 何より、演奏には「速さを求める」みたいな主義で、「BPMは速ければ速いほどいい！！」くらいのバカっぷりだったりします。\n ギターソロだけで言うなら、BPMは260以上がストライクゾーンですｗｗ。まあ、以下のような記事を書いているくらいですので。\n \n ただ、秋ごろになると聞きたくなる選曲が大体フュージョン寄りになって、大分自分の演奏もスピードダウンします。\n まあ、大体、適当なトラックを流して適当にペンタトニック＋αでアドリブして遊んでいるだけなんで、本当力量的にはゴミカスなんですけどもね(笑)。\n とりま、楽しければいいかなと。\n ——————————————————————————————————\n ２、秋はギターを弾くには最高の季節 俗に言われる「芸術の秋」という言に流されるわけではないですが、 どうにも毎秋、10月になるかならんかという頃になると、ギターを弾きたくなります。 \n 普段、なんだかんだ「あれやろう・これやろう」と右往左往しているんですが、秋ごろになると少し気分が変わって少し落ち着いてギターを弾く時間を作ろうって話になる傾向にあります。\n 何となくこの背景には気候が涼しくなってきたり、世界が冬に向けての支度を始めてきたことによる情緒や感傷にいざなわれ、こちらも少し感傷的になることがあるのかな、、なんて思って見たりして。まあ、真偽は不明ですが。\n ＊☼＊\n あと、心なしか秋は湿度も下がってくるので、それを関係あるのかもしれません。個人的に秋や冬頃のギターの生音は気持ちがいい気がしますしね。\n アコースティックギターを弾いている方なら、ここらへんの違いはシビアに判断するんじゃないですかね。あたしゃ、アコギはひかんので知らんけど。\n ——————————————————————————————————\n ３、自分が好きなアーティスト4選(主にギタリスト)！ せっかくなので、私が好きなアーティスト(おもにギタリスト)も紹介してみたいと思います。\n 私が好きなアーティストは以下の4者ですね。\n 自分が好きなアーティスト①：dragon force(ドラゴンフォース) 私は生粋のスピード狂なので、メロディックスピードメタル界の王・であるドラゴンフォースを取り上げないわけにはいきません。 \n 彼らの曲はどれも大体BPM200付近からやや上くらいで、ひたすらドラムがブラストビートを刻んでいる音の嵐なのですが、本当にこれが痛快でたまりませんね。\n ＊❀＊\n しかも、メロディーも結構いいので、そこもよい。あとね、ドラゴンフォースはギタリストのハーマンリーがイケメンである事でも有名ですよ(笑)。\n とりあえず、個人的な推しバンドですよね、ドラゴンフォースは。\n 自分が好きなアーティスト②：Guthrie Govan(ガスリーゴーヴァン) ギタリストとしては正直、ガスリーゴーヴァンを取り上げないわけにはいかないかなと思います。 ちな、私は彼の曲の中では、上掲のwavesが一番好きですよね。\n 本当、言葉でうまく表現しきれないんですが、彼のギター全般の演奏力・表現力は、常軌を逸していまして、、、「これはギター界の現人神やろ」なんて印象を持っています。\n 正直、ピッキング速度だけなら、全然私も負けていないというか、元ギネスホルダーのティアゴデラヴェガと割と戦えるくらいにはある自負があるので、あれですが、どう考えても総合力では比較するまでもなく圧倒的に負けています(笑)。、、いや、わざわざ比較するのも不遜すぎるけど。\n ＊☼＊\n あと、彼は、その風貌がキリストのようであるせいか、演奏している姿から後光がさしている気がして仕方がありませんね。ギターキリス"
+    },
+    {
+      "key": "n5f8189b47652",
+      "title": "王国の秋は、こうでしたわ｜秋読コレクション",
+      "authorName": "ヴェロニカ・ヒールズ｜相互フォローしますわよ💋",
+      "authorUrlname": "veronica_heels",
+      "publishedAt": "2026-10-04T18:02:45.000+09:00",
+      "articleUrl": "https://note.com/veronica_heels/n/n5f8189b47652",
+      "likeCount": 70,
+      "commentCount": 19,
+      "tags": [],
+      "bodySnippet": "断罪されても、この美貌までは没収できませんでしたわ。\n悪役お姉さま、ヴェロニカ・ヒールズよ。\n \n\n 他国の王子から、お招きが届きましたの。\n 「あなたの秋を、読ませてください」ですって。\n \n でしたら、王国の秋のお話をしてさしあげますわ。\n \n\n \n\n \n\n 王国の秋は、まず脱ぐところから始まりますの。 靴を脱いで。\n靴下も脱いで。\nドレスの裾を、ひざの上まで持ち上げて。\n それから、踏みますの。\n ひんやり、として。\n つぶれるたびに、ぷちぷち、と音がして。\n気がつけば、裾までびしょびしょ。\n \n\n ……収穫祭の、ぶどう踏みのことよ。\n \n\n その年いちばんのぶどうを、大きな桶に入れて、\n令嬢たちが素足で踏むのが、王国のならわしでしたの。\n 踏んだぶどうは、ワインになりますわ。\n \n\n わたくし、毎年いちばんに桶へ入っておりました。\nヒールズ家の長女ですもの。\n \n\n その年、クジョワールが発明をしてきましたの。 \n\n 「お嬢様のおみ足を、汚すわけにはまいりません」\n 執事のクジョワール・ド・ローゼンハイムが、\n設計図を抱えてまいりましたのよ。\n自動ぶどう踏み機、ですって。\n \n\n 木の足が六本ついた、大きな桶でしたわ。\n 動きましたの。\n 踏みましたわ。たしかに踏みました。\nただ、桶ごと、広場を走り出しましたの。\n \n\n ぶどうの汁をまき散らしながら、\n伯爵夫人のドレスを紫に。\n侯爵令嬢のドレスも紫に。\n楽団の楽譜まで、紫に。\n \n\n 護衛のターナー・カー・モンデルが、剣を抜きましたわ。\n王国最強の剣士ですもの。一刀両断でしたの。\n 桶も、一刀両断でしたけれど。\n \n\n その年のワインは、すべて石畳に流れましたわ。\n \n\n 広場じゅうが、わたくしを見ておりました。\nわたくし、何もしておりませんのに。\n \n\n ……あの日からですわ。\nわたくしが、少しずつ「悪役」と呼ばれるようになったのは。\n \n\n ……昔の話よ。\n \n\n \n\n 子羊ちゃんの秋も、読ませてちょうだい。 \n\n この催しは、王子とorivieさんの「秋読コレクション」ですの。\nみなさまの秋が、ひとところに集まっているそうよ。\n \n わたくしも、順番に読みにまいりますわ。\n裾は、持ち上げておきますわね。\n \n\n \n\n \n\n 王国に帰れるまでの断罪履歴 わたくし、子羊たちのお悩みを100件片づけたら、王国に帰れますの。\n残り、あと何件かしら？\n お悩み断罪履歴は、こちらからご確認くださいな。\n \n \n \nヴェロニカ・ヒールズ｜相互フォローしますわよ💋｜note\n \n \n断罪された悪役令嬢よ。 子羊ちゃんのお悩みを100件うまく片づけると王国へ帰れますの。 護衛と執事もいるわ。 悩み？質問箱\n \n \nnote.com\n \n \n\n \n こちらは記念すべきわたくしのはじめてのnoteよ。見てくださると嬉しいわ。\n \n \n\n 覚えていらっしゃい。\n……次回も来ますわ。\n \n\n あら、まだ読んでいらっしゃるの? 物好きな方。……ありがとう。\n \n\n ああ、そうそう。\n急用があるなら、お屋敷まで直接いらしてくださいな。\n ……質問箱のことよ💋\n ニックネームと相談をくださいな💋\n\nわたくしの返答次第で解決したら、\n再度 質問箱にニックネームと「解決した」とだけご一報くださるとカウントできますわ。\n noteアカウント名でしたら、紹介リンクを載せるかもしれないわ"
+    },
+    {
+      "key": "n3e2624197730",
+      "title": "魔王軍と内通していると断罪された悪役令嬢ですが、その極秘ノートは王都スイーツ完全攻略帳ですわ！　#秋ラノベ祭り　#秋読コレクション",
+      "authorName": "わかモン＠フォロバ100期間限定の悪役令嬢",
+      "authorUrlname": "wakamon_manga",
+      "publishedAt": "2026-09-28T06:08:31.000+09:00",
+      "articleUrl": "https://note.com/wakamon_manga/n/n3e2624197730",
+      "likeCount": 70,
+      "commentCount": 15,
+      "tags": [],
+      "bodySnippet": "この物語は、 #秋読コレクション 　の私設応援企画　#秋ラノベ祭り　のサンプルですわ💕\n \n あなたの画像とプロフィールがあれば、ラノベを一瞬で作れましてよ💕以下の物語と画像は、「。」、太字、改行以外してないんでしてよ！！\n \n これで、 # note初心者　 # はじめてのnote 書いたばかりのお方々も参加できましてよ✨️\nもちろん、 # 毎日note 投稿するような猛者の参加やお祭り参加も大歓迎✨️お好きなラノベ主人公になると良いですわ〜💕✨️\nプロンプトでできた物語をそのまま投稿するも良し、修正するも良し、ヒントに１から書き直すも歓迎ですわ💕✨️\n 私の物語より、面白い物語をお待ちしておりますわーーーー！！💕 #秋\n 「わかモン嬢。君を、魔王軍との内通容疑で告発する」 舞踏会の音楽が止まった。\n 王立学園の大広間。\n 高い窓の向こうでは、夕暮れの空を渡る風に赤や金の木の葉が舞っている。\n会場には秋薔薇と葡萄の飾り。テーブルの上には、かぼちゃを模した菓子まで並んでいた。\n\n そんな華やかな秋の夜。\n シャンデリアの光を浴びながら、階段の上に立つレオン王子が黒革のノートを掲げていた。\n その左右には彼の配下たち。\n そして会場中の視線が、一斉にわたくしへ突き刺さる。\n \n\n 「……は？」\n \n\n 思わず、間の抜けた声が出た。\n よりによって。\n よりによって、そのノートですの！？\n 「我々は君を監視していた」\n レオンの声が大広間へ響く。\n 「王都各地に付けられた赤い印。謎の順位。魔王領との接触記録。そして――」\n 彼の指が表紙へかかった。\n ぞくり、と背筋が冷えた。\n\n 「ま、待ちなさい！」\n\n 会場がざわめく。\n \n\n 「やはり、見られては困るものらしいな」\n \n 「違いますわ！」\n 「では説明してもらおう」\n 「それは……その……！」\n \n\n 言えるわけがない。\n 名門侯爵家の令嬢にして、誇り高き生徒会役員であるこのわたくしが――。\n\n 秋限定スイーツを制覇するため、王都中を駆けずり回っていたなど！ \n \nレオンの目が鋭くなる。\n 完全に誤解している。\n けれど、わたくしが一歩踏み出した瞬間。\n 「証拠を公開する」\n 「おやめなさいませぇぇぇ！！」 \n ぱらり。\n 黒革のノートが、大広間の真ん中で見開かれた。\n \n\n 静寂\n \n\n \n\n \n\n そこには、わたくし渾身の筆致でこう記されていた。\n\n 『王都・秋スイーツ四天王』 \n\n その下には、細かな評価。\n 一位　銀梟亭――★★★★★ \n 焼きたてスイートポテト。蜜の香り強し。表面の焦げ目まで完璧。 \n 次のページ。\n 『黒猫洋菓子店・ハロウィン限定かぼちゃタルト』 \n 午後二時以降は売切れ注意。黒猫クッキーは最後に食べること。 \n さらに、その次。\n 『紅葉庵・栗と洋梨の秋パフェ』 \n 見た目は上品。栗の配分が惜しい。★★★★☆。 \n 誰かが息を呑んだ。\n\n 別の誰かが、小さく呟く。\n\n 「……星、四つ」\n 「読むんじゃありませんわ！！」\n わたくしはレオンへ飛びかかり、ノートを奪い返した。\n 頬が熱い\n 耳まで熱い\n 今すぐ落ち葉の山に埋まりたい。\n 「では、この“魔王領との秘密取引”という記述は？」\n レオンが最後の抵抗を試みる。\n 「限定菓子の仕入れ情報ですわ！」\n 「……この暗号は？」\n 「生クリームの甘さと栗の含有量！」\n 「この赤い丸は？」\n 「秋のうちに再訪確定のお店ですの！！」\n 完全な静寂が訪れた。\n 配下の騎士たちが次々と視線をそらす。\n レオンまで額を押さえた。\n 「君は……これを隠すために、あれほど怪しい行動を？」\n 「怪しくありませんわ！」\n わたくしはノートを胸に抱き、精一杯顎を上げる。\n 「べ、別に甘いものが好きなわけではありませんの！」 \n 会場中がこちらを見る。\n 「季節の食文化を知ることも淑女の教養！　これは由緒正しき研究活動ですわ！」 \n そのときだった。\n レオンの後ろにいた騎士が、そっと彼の耳元へ囁いた。\n \n\n 「殿下。例の品ですが……」\n\n レオンが眉を寄せる。\n 「例の品？」 \n 騎士は声を潜めた。\n 「魔王領産、最高級マロングラッセを使用した秋限定モンブラン。最後の一個だそうです」 \n 「――どこの店ですの！？」\n"
+    },
+    {
+      "key": "nfc339017f0ec",
+      "title": "茶碗蒸しから始まる、私の「ほろ〇い」秋の思い出",
+      "authorName": "堂安咲和🪞 恋の本音を、物語と言葉に。",
+      "authorUrlname": "good_ixia6698",
+      "publishedAt": "2026-09-28T07:51:05.000+09:00",
+      "articleUrl": "https://note.com/good_ixia6698/n/nfc339017f0ec",
+      "likeCount": 69,
+      "commentCount": 26,
+      "tags": [],
+      "bodySnippet": "🍂今回のこちらの企画に参加します。\n\nネロ王子🌙とorivie✨さんのコラボ\n「秋読コレクション」\n\nネロ王子🌙\n \n \n \n \n\n \n \n \n　orivieさん✨\n \n \n \n \n\n \n \n \n【テーマ】\n「あなたの秋を、読ませてください」\nなので\n私の忘れられない秋の思い出をひとつ🍁\n \n◇\n\n \n茶碗蒸しを食べていたら、スプーンですくった底から銀杏が出てきた。\n\n 秋って、こういうところにも来るんだなと思う。\n\n栗とか、きのことか、さつまいもとかも好きだけど、銀杏はなんか別枠だ。\n\n 見つけると、ちょっと嬉しい。\n\nでも、銀杏を見ると、たまに思い出す人がいる。\n\n ……なんて書くと、\n \nきれいな恋の思い出みたいだけど、\n 私の場合は、彼より先に思い出すものがある。\n\n昔、デートの待ち合わせで、大きなイチョウの木の下で彼を待っていた。\n \n黄色い葉っぱ。\n少し冷たい風。\n\nこれからデート。\n\nまだ秋めき始めたばかりで、お気に入りのブーツを履いて「秋らしくて、いい待ち合わせ場所だな」と思いながら。\n\n \nその日、彼は買ったばかりの新車で迎えに来てくれた。\n\n新車。\n\n大事なことだから、もう一回言うけど、\n まっさらな新車だ。\n\n私は、新車に乗れる嬉しさだけで、ワクワクしながら助手席に乗り込んだ。 \n\nドアを閉めて一息ついた瞬間、車内に不穏な空気が漂う。\n\n少し走り出してすぐ、彼が言った。\n\n「……なんか臭くない？」\n\n私も、さっきから思っていた。\n\nなんか臭い。\n\nしかも、まあまあ臭い。\n\n「窓から入ってきてる？」\n\n彼が言う。\n\n「新車って、こんな匂いするんだっけ」\n\n私も一応、新車を疑ってみた。\n\nでも、よく分からない。\n\n信号で止まっても臭い。窓を開けても臭い。\n\n新車の匂いにしては、どう考えても強烈だった。\n\n そのとき、ふと足元を見た。\n\nブーツを少し浮かせて、裏を見てみる。\n\n \n\n 見事に潰れた銀杏が、くっついていた。\n\n \n……私じゃん。\n\n原因、完全に私じゃん。\n\n待ち合わせしていたのは、あのイチョウの木の下。\n\n彼を待っている間に、思いきり踏んでいたらしい。\n\nあの、踏むとえげつない匂いを出す銀杏を。\n\n一瞬、迷った。\n\nこれ、言わなきゃダメだよね。\n\nいや、言わないという選択肢は…\n \n…たぶんない。\n\nだって、まだ臭ってる。\n\n ほんの一瞬だけ、このまま知らん顔をしておこうかなと思った。\n\n新車のせいにできないかな、と。\n\n……できない。\n\nどう考えても、できない。\n\n犯人は、私の足元にしっかりくっついてる。\n\n 結局、\n\n「……ごめん。私だわ」\n\nと、白状した。\n\n秋らしくて、ロマンチックなはずだったデートは、開始早々、\n\n『銀杏を踏んだブーツのまま、彼女が新車に乗り込んだ』\n\nという、地味に忘れられない出来事になった。\n\n彼がそのとき、どんな顔をしていたのかは、もう曖昧で。\n\nその日、どこへ行ったのかも、細かいことはほとんど覚えていない。\n\nなのに、銀杏だけは覚えている。\n\n \n記憶って、なんだか順番がおかしい。\n\n何を話したかなんて、ほとんど覚えていないくせに、\n\n「そこ？」\n\nって言いたくなるようなことだけ、妙に鮮明に残っていたりする。\n\nどこか切ないのが秋だとしたら、私の秋はだいぶシュールだ。\n\nそして今、目の前には茶碗蒸しがある。\n\nさっきすくった銀杏が、何事もなかったような顔で、スプーンの上にいる。\n\nあんなに強烈な匂いで人を困らせておいて、\n\n食べるときだけは涼しい顔をしている。\n\nずるい。\n\nでも、おいしい。\n\n銀杏を見つけると、今でもあの日を思い出す。\n\n \n彼の顔より先に、まずあの強烈な匂いと、ブーツの裏にしっかりくっついていた銀杏が、浮かんでくる。\n\n \nたぶん彼も、あの秋のことは忘れていないと思う。\n\n私とは、少し違う意味で。\n\n あとがき \n\nちなみに、その時の彼とはその後お別れしました……\n\nが、\n\n決してこの銀杏事件が原因ではありません笑。\n\n秋といえば金木犀の香り、色づく紅葉、おいしい味覚……いろいろありますか、なぜか私の脳裏に真っ先に浮かぶ秋は、あの「銀杏」でした。\n\n昔の恋は「ほろ苦い」なんて言いますが、私の場合はどう考えても完全なる『ほろ〇い』思い出です笑\n\n"
+    },
+    {
+      "key": "nfae3aaabe086",
+      "title": "\"秋読コレクション\"│orivieさん│ネロ🌙さん│\"participate in the project\"",
+      "authorName": "架空彼氏製作所｜AIイラスト",
+      "authorUrlname": "kakuu_kareshi",
+      "publishedAt": "2026-09-29T21:24:18.000+09:00",
+      "articleUrl": "https://note.com/kakuu_kareshi/n/nfae3aaabe086",
+      "likeCount": 68,
+      "commentCount": 29,
+      "tags": [],
+      "bodySnippet": "ようこそ。「架空彼氏製作所」へ。\n \n今日も来てくれてありがとうございます。\n\n今日は、orivieさんとネロさんの共同企画に参加。\n『秋』をテーマにいつもと違った独り言を。\n\n昔、大好きなばーちゃんとの会話を思い出して書いてみました。\n \n秋のお話 \n きみの名前に「秋」という字が入っているの、嫌がるかな。\n 夏生まれなのに、秋。\n 大きくになったら、たぶん一度は聞かれると思う。\n\n「なんで？」って。\n \n\n きみは、予定日よりだいぶ早く生まれてきたんだ。\n まだ、蝉がうるさい時期。\n\nきみが来るのは、涼しくなってからだと思っていたから。\n 用意していた季節が、まるごと、余ってしまった。\n \n\n きみに初めて出会った時、\n\nその日は季節外れの肌寒さだったんだ。\n\n前日の雨のせいかな\n\n きみから、知らないにおいがした。\n甘くて、すこし乾いた、はじめてのにおい。\n 腕の中の体温だけが、あたたかい。\n 窓の外\n まだ青い葉っぱたちが、夕焼けの光を受けてオレンジ色に反射する。\n濡れたアスファルトがきらきら反射する。\n\n きみが、秋を連れてきたんだ。\n きみが自分で持ってきた季節を、そのまま、名前にいれたんだ。\n \n\n 今年も、風が変わってきた。\n 空が、すこし高い。\n ほら、きみの名前の季節が、またやってきたよ。\n\n #秋読コレクション \n\n \n \n \n \n \n架空彼氏製作所｜AIイラストの推し庭｜推し庭\n \n \n記事を読むたび、1アクション。植物を植えたり育てたりしながら、あなただけの庭を育てます。\n \n \noshi-niwa.hasyamo.workers.dev"
+    },
+    {
+      "key": "nac9071fa78b3",
+      "title": "AI副業を始めた会社員、この秋に試したい3つのこと",
+      "authorName": "ポラフ｜AI副業ログ",
+      "authorUrlname": "gay_impala1620",
+      "publishedAt": "2026-09-28T08:34:21.000+09:00",
+      "articleUrl": "https://note.com/gay_impala1620/n/nac9071fa78b3",
+      "likeCount": 59,
+      "commentCount": 20,
+      "tags": [],
+      "bodySnippet": "こんにちは、ポラフです。\n\n先日、noteで「秋読コレクション」という企画を知りました。9月28日から10月4日まで、「秋」をテーマに新しい記事を1本投稿する企画で、他の参加者の記事を読んだり、コメントしたりするのも歓迎されているとのこと。ジャンルも自由らしいので、僕もこの企画に参加してみようと思います。\n\n ↓企画の詳細はこちら↓ \n \n \n \n \n\n \n \n \n \n \n \n\n \n \n \nただ、今回は「企画に参加しました」というだけの報告記事にはしたくありませんでした。せっかく「秋」というテーマをもらったので、今の自分がこの先何を試していきたいのか、一度整理してみようと思います。\n\n \n \n第28記事までを振り返って \n前回の第28記事では、あずなぶーるさんの有料記事を2本読んだことをきっかけに、自分の活動を2つ変えたことを書きました。\n\n \n \n \n \n\n \n \n \n1つは、毎日の交流を記録するようになったこと。もう1つは、活動名を「AI副業ログ」から「ポラフ｜AI副業ログ」に変えたことです。\n\nこのあたりの経緯は前回詳しく書いたので、今回は繰り返しません。今回書きたいのは、この「変えたこと」を、この秋どう続けていくのかという話です。\n\n秋になったから何か新しいことを始める、というよりは、ここまで続けてきたからこそ、この秋はこういうことを試してみたい、という自然な流れで書いてみます。\n\n この秋に試したいこと①：\nnoteを読む時間を増やす・続ける \n最近、他のクリエイターの記事を意識的に読むようになりました。\n\n最初はスキやフォロー、コメントなどの数字も意識していましたが、だんだん「みんなどうやっているんだろう」「この文章、読みやすいな」「ここに画像があると見やすいな」というふうに、自分の発信を改善するために読む、という感覚に変わってきました。\n\n第28記事で書いた通り、有料記事も2本読みました。最近は、ただ読むだけではなく、「自分の記事に取り入れられるものはないかな」と考えながら読むようになりました。\n\nとはいえ、「たくさん読めば伸びる」とは思っていません。あくまで、読むこと自体が今の自分にとって意味のある時間になっている、というだけの話です。\n\n この秋に試したいこと②：\n9月23日から始めた毎日の記録を続ける \n9月23日から、note上での交流について毎日記録をつけています。\n\n記録しているのは、\n\n ・スキした数\n・フォローした数\n・コメントした数\n・記事をどうやって探したか\n といった数字まわりのことに加えて、\n\n ・今日の事実\n・今日感じたこと\n・気になったこと・発見\n・明日試したいこと\n という4つです。\n\nまだ始めたばかりで、まずは14日程度続けてから一度振り返るつもりでいます。ただ、14日経ったら必ず記事にする、とは決めていません。複数日分の記録を並べてみて、そこから何か意味のある発見や比較ができそうかを見てから判断しようと思っています。\n\n「記録して終わり」ではなく、記録の中から何かが見えてくるかどうかを、この秋のうちに確かめてみたいです。数字が変化することがあったとしても、その理由を簡単に決めつけないようにしたいとも思っています。\n\n この秋に試したいこと③：\n「ポラフ｜AI副業ログ」として活動していく \n9月27日に、クリエイター名を「AI副業ログ」から 「ポラフ｜AI副業ログ」 に変更しました。名前を決めるまでの詳しい経緯は第28記事に書いたので、今回は繰り返しません。\n\nここから先は、この新しい名前で活動を続けていきます。名前を変えたことで何か変化があるのかどうかは、正直まだ分かりません。実際に使ってみながら、少しずつ確認していこうと思っています。\n\n「ポラフに変えたから覚えてもらえる」とか「ポラフに変えたから伸びる」とか、そういう効果を先に決めつけるつもりはありません。あくまで、新しい名前で活動してみる、というこれからの実験の一つとして捉えています。\n\n まだ分からないこと \nここまで3つ挙げてきましたが、正直なところ、どれも「これをやったから結果が出た」と言えるものはまだ何もありません。\n\n読むことも、記録することも、名前を変えたことも、今はまだ「始めたばかり」の段階です。効果があるのかないのか"
+    }
+  ],
+  "topCommentedArticles": [
+    {
+      "key": "n5cef5558a49a",
+      "title": "【王子×orivie コラボ】あなたの秋で繋がろう。｜秋読コレクション🍁🌙",
+      "authorName": "ネロ🌙｜王子｜秋読コレクションありがとう🍁【全力で駆け回ってるから待ってて🌙】",
+      "authorUrlname": "nero_notelover",
+      "publishedAt": "2026-09-26T19:00:00.000+09:00",
+      "articleUrl": "https://note.com/nero_notelover/n/n5cef5558a49a",
+      "likeCount": 235,
+      "commentCount": 259,
+      "tags": [],
+      "bodySnippet": "新企画 秋読コレクション開催🌙 \n\n \n 今日は企画の詳細を発表します。\n \n今回、一緒にコラボ開催するのは、\n orivieさん \n \n \norivie ｜note\n \n \n代表作：『熱狂論』『海ポテト』 Xを中心にnote、AIイラストの企画・イベントを定期的に開催！ 記事や作品を見つけても\n \n \nnote.com\n \n \n\n \n 企画やイベントを通して、\nたくさんの記事や作品が見つかる場所を\n作られている方です。\n 王子と同じくコメント欄のやり取りが\n一人一人丁寧な素敵な方です🌙\n \n \n\n \n\n そんなorivieさんと王子が話していたのが、\n お互いの周りにいる人たちが、\nもっと自然に出会えたら面白そう。 \n\n \n王子の近くにいる人が、\norivieさんの近くにいる誰かを知る。\n \nそこから、\n 「それ、わかります🌙」\n「そんな秋もあるんですね🍁」\n と会話が始まる。\n \n\n 今回やりたいのは、\n\n 秋をきっかけにした交流です🍁🌙 \n\n あなたの秋を、読ませてください🍁 \n食べ物でも、本でも、思い出でも。\n写真、イラスト、小説、詩、AI作品。\n ジャンルは問いません🌙 \n「これは私の秋だな」 \nそう思えるものなら大丈夫です🍁\n \n何を書こうか迷ったら、\nこちらの5つから選んでみてください。\n この5つに当てはまらなくても、もちろんOK。\n 最近見つけた小さな秋を、\n数行だけ書くのも立派な参加です🌙\n \n\n \n\n 超大作じゃなくて大丈夫🌙 \n今回、作品のすごさを競う企画ではありません。\n 「秋になると毎年これを食べます」\n「今日、少しだけ秋を感じました」\n そんな気軽な記事だからこそ、\n 「わかる！」 \n 「それ好き！」 \n 「うちはこうです！」 \n と、コメント欄で話が広がるかもしれません🤭︎\n \n\n 誰かと話したくなる秋をひとつ。 それくらいの気持ちで、遊びに来てください🍁\n \n\n \n\n 参加したい方へ 記事を投稿いただける方は、\n王子またはorivieさんの企画記事へ、\n 「参加したいです！」 とコメントかDMしてください。\n 確認でき次第、期間限定の\n 共同運営マガジンへ招待します。\n \n \n \n \n秋読コレクション🍁🌙｜ネロ🌙｜王子｜楽しくnote収益化｜note\n \n \n🍁 秋読コレクションは、王子×orivieで開催する「秋」をテーマにした交流企画です🌙 読書、食欲、芸術、スポーツ、思い\n \n \nnote.com\n \n \n\n \n \n\n 🌙共同運営マガジンへの参加手順 \n 招待メールはGmailなどに届きます🌙\nもしかしたら、通常フォルダではない所に振り分けられている可能性もあります。\n また、事前にこちらをご確認ください。\n クリエイターからの招待・プレゼントがON \nメールが届いたらリンクをクリックすれば\n共同運営マガジンに登録完了となります。\n \n\n 🌙 記事投稿時の手順 \n 記事投稿時にマガジンを選択して公開してください🌙 \n初めての方は\n共同運営マガジンの参加体験も\nできちゃいます🤭︎\n \n\n参加記事は、\n 無料記事・1人1記事まで・新作限定。 \n #秋読コレクション をつけて投稿してください🌙\n \n\n \n\n 書けなくても参加できます🌙 \n\n \n「面白そうだけど、今週は書けない」\n そんな方も大歓迎です。\n 共同運営マガジンをフォローして、 \n気になる記事をひとつ読む。\n 面白かったら、コメントしてみる。\n それだけでも立派な参加です🌙 \n\n 書く人も。\n読む人も。\n話す人も。\n \nみんなで秋を楽しみましょう🤭︎🍁\n \n\n みんなの秋が集まる場所へ \n今回は期間中に1本ずつの\n記事紹介の予定はありません。\n （ 最後にまとめ記事で紹介予定 🌙）\n \n\n その代わり、共同運営マガジンを\n「 みんなの秋が集まる場所 」にします。\n 記事投稿で参加者と\nフォローしている方へ通知が飛びます🌙\n \n王子とorivieさんも、\n投稿された記事へ順番に遊びに伺います🌙\n \n\n 企画が終わったあとに、\n誰かとのつながりが増えていたら最高です🌙\n \n\n 秋読コレクション 9月28日（月）〜10月4日（日）まで🌙 \nあなたの秋をひとつ持って、\n一緒に遊びに来"
+    },
+    {
+      "key": "n87ed3643fc1c",
+      "title": "【ネロ王子×orivieコラボイベント】『秋読コレクション』開催🍁【9/28(月)〜10/4（日）】",
+      "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+      "authorUrlname": "orivie",
+      "publishedAt": "2026-09-27T06:00:00.000+09:00",
+      "articleUrl": "https://note.com/orivie/n/n87ed3643fc1c",
+      "likeCount": 108,
+      "commentCount": 75,
+      "tags": [],
+      "bodySnippet": "9/29 追記\n参加方法の手順詳細を追加しました。\n みなさん、お待たせしました。\n 事前に告知を行なっていました、ネロ王子とのコラボイベント\n 『秋読コレクション』開催🍁 \n\n 期間：9/28(月)〜10/4（日） \n\n 参加方法： 私のこの記事か、ネロ王子の記事にコメントで\n「参加希望」のコメントかDMをください🤝 \n 共同運営マガジンへ招待します🔥 \n ①共同運営マガジンの参加方法 招待メールは、noteアカウントに設定されているメールアドレス宛に届きます。\nもし届かない場合は、こちらの設定を再度確認の上、\norivieかネロ王子にメール再送の連絡をお願いします。\n 「クリエイターからの招待・プレゼント」をON 届いたメールに付与されているリンクをクリックすると、共同マガジンへの参加が完了となります。\n \n\n ②記事投稿の手順 記事を作成しましたら、 「#秋読コレクション」 をつけましょう。\n ハッシュタグに「秋読コレクション」を追加 続いて、そのまま下にスクロールし、\n共同運営マガジンに追加をクリックしてください。\n 秋読コレクションが「追加済み」になればOK そのまま投稿していただければ、参加完了となります。\n \n \n \n秋読コレクション🍁🌙｜ネロ🌙｜王子｜秋読コレクション開催中 【10/4まで】｜note\n \n \n【期間限定マガジン 9/28〜10/4まで】 🍁 秋読コレクションは、王子×orivieで開催する「秋」をテーマにした\n \n \nnote.com\n \n \n\n \n \n\n 参加テーマ：\nあなたの秋を、読ませてください🍁 ジャンルは問いません。ぜひみなさんの「秋」を読ませてください👏\n \n\n このイベントに参加すると・・・\n私とネロ王子が記事を読ませていただくだけでなく、\n 参加者同士の新しいつながりや、参加記事を読むことで新たな発見があるかもしれません👀 \n 「noteを楽しみながら、自分の作品を多くの人に届ける。」 \n それが可能なイベントとなっています。\n \n\n ※参加記事の条件 ①参加記事は「無料記事」でお願いします。\n②参加する記事は「１人１部まで」となります。\n③新規記事のみが対象となります。\n④ #秋読コレクション をつけて投稿してください。\n \n\n どなたでも参加OK！\nみなさんの記事を読ませていただくのを、楽しみにしています🤝\n ▼ネロ王子のnoteはこちら\n \n \n \n \nネロ🌙｜王子｜秋読コレクション開催中 【10/4まで】｜note\n \n \nやぁ、いらっしゃい🌙 秋読コレクション開催中 【10/4まで】 ご参加は固定記事へ🌙 noteの楽しみ方と収益化を発信中\n \n \nnote.com\n \n \n\n \n ▼Minaさんにコラボイベントの記事を紹介していただきました🤝"
+    },
+    {
+      "key": "n9722ffc26755",
+      "title": "王子の秋｜秋読コレクション🍁🌙",
+      "authorName": "ネロ🌙｜王子｜秋読コレクションありがとう🍁【全力で駆け回ってるから待ってて🌙】",
+      "authorUrlname": "nero_notelover",
+      "publishedAt": "2026-10-03T23:56:31.000+09:00",
+      "articleUrl": "https://note.com/nero_notelover/n/n9722ffc26755",
+      "likeCount": 135,
+      "commentCount": 67,
+      "tags": [],
+      "bodySnippet": "現在「秋読コレクション」開催中です🍁\nこちらが企画概要の記事となります🌙 \n \n \n \n\n 皆さんの秋読コレクションの参加作品を見ていて\n 王子もやりたくなっちゃった🌙 \n\n だから、王子の秋を書いていきます🍁\n \n\n \n\n 先日の台風が過ぎ去った日のこと。\n 雨の隙間をぬって、王子とプリンセスの\n二人で公園へ遊びに行きました🌙\n \n少し前まで補助輪をつけていた自転車も、\n今ではすっかり一人でこげるようになって。\n 前を走っていく背中を追いかけながら、\n 「いつの間にこんなに乗れるようになったんだろう」 \n なんて思います。\n \n公園に着くと、考えることはみんな同じで。\n 外遊びを我慢していた子どもたちでいっぱい。\nすべり台もブランコも順番待ちです。\n せっかく来たのに、これはちょっと退屈かな。\n……と思っていたら。\n 「見て！」\n プリンセスが地面を指さしました。\n そこには、\n台風の風で落ちたらしいどんぐりがたくさん。\n そこから突然、\n 宝探しが始まりました🌙 \n\n 丸いどんぐり。\n細長いどんぐり。\n帽子をかぶったどんぐり。\n少し大きなどんぐり。\nまだ青いどんぐり。\n\n 拾っているうちに、今度はそれを並べ始めます。\n 「これは100円」\n 「これは高いやつ」\n どうやら、どんぐり屋さんが開店したらしい🤭︎\n さっきまで人気の遊具を眺めていたのに、\nいつの間にか二人とも地面ばかり見ていました。\n \n大人になると、\n 秋は「涼しくなったな」と\n空気で感じるものだと思っていたけれど。\n \n子どもといると、ちょっと違う。\n 昨日まで何もなかった地面に宝物が落ちていて、\n遊び方そのものが変わっていく。\n\n そう感じた王子の秋でした🍁\n \n\n \n\n と、キレイに終わっても良いんだけど。\n 王子といえば、遊びの秋🍁 \n\n \n\n この企画をやりながらもずっと遊んでいます🤭\n 本日紹介するのは\n 心野けいかさんのふみまる20秒ラン \n \n\n けいかさんのところのふみまるくんが\nチーズを食べながら走るゲーム。\n 最近多くの方の記事で紹介されています。\n \n20秒で結果が出ます。\n そんなお手軽なゲーム。\n \nやるしかないよね？？ \n\n \n\n こんな感じで可愛くダッシュ \n\n 障害物や穴をジャンプして超えていきます。 \n\n どこまで遠くまで走れるか\n そんな可愛らしいゲームなんです。\n \n\n え、めっちゃ楽しい🌙 \n可愛いしほんとに走ってるし\n音楽も楽しい🌙\n \n\n 王子もそんな風に楽しんでいました🤭︎\n \n\n そう・・・。\n \n\n ランキングを見るまでは \n\n \n\n 初回プレイが終わったあと。\n このゲームは修羅のゲームと化します🌙\n \n\n 20秒しかないのに、\nチーズを全部とって進んでるのに。\n \n\n TOP10が異次元すぎる。\n \n \n\n ちなみに王子の最高記録。\nまだTOP10に居られてるだろうか。 \n\n とくに1位のリンファさん あなたは人間を卒業されてます？？ \n\n \n \n\n プレイした人なら分かると思います。\n 1643mという異次元さ🌙 \n\n \n\n 王子の一昨日の記事で言ってたのはこれです。\n \n \n\n \n\n あなたのことです。リンファさん。 \n\n そこで王子、少しでもリンファさんに\n近づきたくてコメントしてみました。\n \n\n \n\n \n\n ゲームの仕様の限界値が1591m \n\n \n\n もう一度確認しましょう🌙\n \n\n \n\n 5位までが理論値超えの化け物だった🌙 \n\n \n\n 違った。あとから見たら。\n \n\n \n\n \n\n きょんさんとぽてむしさんもご卒業😊 \nリンファさんは更に限界突破🤣 \n\n \n\n 意味が分からない🌙\n 怖すぎる、この世界ꉂ🤣𐤔‪\n \n\n \n\n それでは人間のみなさん😊 王子を超えたらTOP10だよ🤭︎ \n\n \n\n \n\n \n\n 地獄だよ🌙 \n\n \n\n \n\n \n\n もう1個遊んでみました🌙\n \n\n ぽてむしさんの洗濯機シュート \n \n\n \n\n こちらは右から洗濯物が流れてくる。\n タイミングを合わせてタップして\n洗濯機に入れていく。\n \nタイミングがピッタリ会うと得点が高くなる。\n \n\n これも30秒。\nタップするだけ。\n \n\n \n\n なのにだ。 \n\n ランキングが出てし"
+    },
+    {
+      "key": "n85ffc361c599",
+      "title": "【ショートエッセイ】『枯葉』",
+      "authorName": "伊藤ポップakaFCS",
+      "authorUrlname": "fcs_homecenter",
+      "publishedAt": "2026-09-27T07:29:36.000+09:00",
+      "articleUrl": "https://note.com/fcs_homecenter/n/n85ffc361c599",
+      "likeCount": 57,
+      "commentCount": 54,
+      "tags": [],
+      "bodySnippet": "伊藤です。\n今回も素敵な企画を見つけました。\n私の崇拝するネロ🌙王子様と\n素敵な雰囲気のorivie様の共同企画⭐︎\n\n \n \n \n \n\n \n \n \n \n \n \n\n \n \n と、言うわけで\n何が良いか考えた結果。\n私はエッセイストになる事にしました。\n形から入る事大事です。\n\n エッセイスト 以下、新作短編エッセイです⭐︎\n チェケラ！\n \n\n 『枯葉』 \n秋は、四季の中で唯一、\n英語で二つの呼び方がある。\n\nAutumn と Fall。\n\nジャズのスタンダードに、\n『枯葉』という曲がある。\n\n英題は、\nAutumn Leaves.\n\n秋の葉。\n\nそして leave には、\n「去る」という意味もある。\n\n秋になると、\n葉は木を離れていく。\n\nなんだか、\n\nAutumn Leaves\n\nという言葉そのものが、\n少しだけ別れの季節みたいに聞こえる。\n\nでも私は、\nAutumnよりも\nFall の方が好きだ。\n\nFall。\n\n落ちる。\n\n葉が落ちる。\n\n季節が秋へ落ちていく。\n\nそして英語では、\n\nfall in love.\n\n恋にも、落ちる。\n\n日本語でも不思議と同じだ。\n\n恋に落ちる。\n\n沼に落ちる。\n\n一度落ちたら、\n\nなかなか抜け出せないものばかり。\n\nだったら私は、\n\n枯葉がすべて落ちてしまう前に、\n\nもう少しだけ、\n\n素敵なものに落ちてみたい。\n音楽でもいい。\n誰かの文章でもいい。\n知らなかった世界でもいい。\nそして今年の秋は――\n皆様と素敵な沼（note）に、落ちてみたい。\nだから私は、\nAutumnより、Fallが好き。\n いかがでした？\n私の新作エッセイ\n 『沼』 \n\n エッセイ楽しい⭐︎ \n\n 皆様の素敵な沼\n楽しみにしてます⭐︎\n 素敵な企画を立案していただきました。\nネロ🌙王子様\norivie様\nありがとうございました！\nとても楽しかったです。\n \n初めましての方。\nこんにちは\n私は怖くありません。\n誹謗中傷や過度なセクハラで無ければ\nコメント大歓迎です。\n\nあと、常識的な対応が出来る方、\n会話が成立して意思疎通が出来る方であれば\n仲良くしましょう。\n この素敵な夜に\n 皆様と出会えた事に\n 『乾杯⭐︎』"
+    },
+    {
+      "key": "na42549608299",
+      "title": "秋になると、なぜか「楓」が聴きたくなる。私の秋は、この一曲から始まります",
+      "authorName": "ちびたぬき",
+      "authorUrlname": "prettyracoon_c",
+      "publishedAt": "2026-09-28T00:05:10.000+09:00",
+      "articleUrl": "https://note.com/prettyracoon_c/n/na42549608299",
+      "likeCount": 121,
+      "commentCount": 53,
+      "tags": [],
+      "bodySnippet": "秋になると何故か聴きたくなる曲があります。\nスピッツの 「楓」 です。\n 毎年この日に聴こう、と決めているわけではありません。それでも、少し風が冷たくなって、夕方が早くなってくると、ふと聴きたくなります。\n 紅葉を見たからでもありません。\n誰かに「もう秋ですね」と言われたからでもありません。\n 昼間はまだ暑いのに、夕方になると少し肌寒い。夏にはあれだけ聞こえていた蝉の声も、いつの間にか少なくなっている。\nそんな頃に「楓」を流すと、不思議なくらいしっくりきます。\n ああ、今年も秋が来たんだな。 \n ヘッダーもですが、耳ってそこですか？\nこれは何度お願いしてもダメでした 私にとって「楓」は、\n季節の変わり目を知らせてくれる曲なのかもしれません。\n\n \n\n 実は、秋に発売された曲ではありません \nタイトルが「楓」なので、なんとなく\n秋に発売された曲だと思っていました。\n ところが調べてみると、「楓」は1998年3月発売のアルバム『フェイクファー』に収録され、その後「楓／スピカ」としてシングルになったのは 1998年7月7日 です。※1\n 意外にも、真夏です。\nそれなのに、なぜ私はこの曲に秋を感じるのでしょう。\n 改めて歌詞を読みながら聴いてみると、その理由は「楓」というタイトルだけではないように思えてきました。\n この曲には、過ぎてしまった時間を振り返りながら、それでも前へ進んでいく人の姿があります。その静かな時間の流れが、秋という季節とよく似ているのかもしれません。\n \n\n 「忘れはしないよ」から始まります \n「楓」は、\n 「忘れはしないよ」 \n という言葉から始まります。※2\n私は、この始まり方が好きです。\n 別れの歌であれば、\n 忘れたい。\nもう振り返らない。\n そう歌っても不思議ではありません。\n でも「楓」は違います。\n最初から、忘れないのです。\n 一緒に交わした言葉も、\n笑ったことも、\nその人と過ごした時間も残っています。\n ここを聴いていると、\n 前へ進むことと、忘れることは同じではない のだと思います。\n 大切だった時間は、無理に消さなくてもいい。\n思い出したら少し寂しくなるような記憶が残っていてもいい。\n それでも、人は先へ進んでいけます。\n 秋も少し似ています。\n夏がある日突然消えて、秋になるわけではありません。\n昼間にはまだ暑さが残っているのに、夕方になると風だけが少し冷たくなります。\n夏の名残を残したまま、季節は静かに次へ進んでいきます。\n 「楓」を聴いていると、そんな季節の移り変わりを思います。\n \n\n 「かわるがわるのぞいた穴から」 \n歌詞の中で、特に印象に残るのが、\n 「かわるがわるのぞいた穴から」 \n という言葉です。※2\n 二人が交互に同じ穴を覗いています。\n 何を覗いているのかは、はっきりとは説明されません。\nだからこそ、不思議と想像が広がります。\n 二人で同じものを見ていた。\n同じ場所にいて、その向こうにある何かを一緒に見ていた。\nそして、その先には一人ではかなえられない未来のようなものがあったことが歌われています。\n 私はここを聴くと、\n 二人だったからこそ見えていた未来があったのではないか と思います。\n 一人では想像しなかったこと。\n誰かと一緒だったから、信じられた未来。\n そのときは、これからもずっと同じ景色を見ていくと思っていたのかもしれません。\n でも今は、その時間を一人で思い返しています。\n少し切ない場面です。\nそして考えてみると、私たちの記憶も同じなのかもしれません。\n 一緒に歩いた道。\nどうでもいいことで笑ったこと。\n何気なく交わした会話。\n その瞬間には、特別なことだと思っていなかった時間が、あとになって大切な記憶になることがあります。\n 「いつものこと」だった時間が、「忘れたくない時間」になるのです。 \n 秋にも、どこか似たところがあります。\n「あれ、もう蝉が鳴いていないな」\n「暗くなるのが早くなったな」\nそんなふうに、何かがなくなってから季節が変わったことに気づきます。\n 過ぎてしまってから、大切だったことに気づく。\nだから私は、「楓」を秋に聴きたくなるのかもしれません。\n \n\n 「君の声を抱いて歩いて行く」 \nそして「楓」の中で、私が特に好きなのが、\n 「君の声を　抱いて歩いて"
+    },
+    {
+      "key": "n35556fe70e83",
+      "title": "魔王、【ネロ王子】の「秋」note企画に参加してみた件｜かつて剣を交えた王家｜果たして国交樹立なるか？",
+      "authorName": "ノア｜魔王｜noteを征服したい",
+      "authorUrlname": "noah_woaks",
+      "publishedAt": "2026-10-04T21:46:30.000+09:00",
+      "articleUrl": "https://note.com/noah_woaks/n/n35556fe70e83",
+      "likeCount": 136,
+      "commentCount": 52,
+      "tags": [],
+      "bodySnippet": "諸君。\n 先日、余は\n 魔王軍初のイベントを開催すると宣言した。 \n\n ▼イベントについてははこちらから見るのである \n \n ▼第1回 魔王軍イベント企画会議 会場はこちらである \n \n \n\n そして。\n 何を思ったか\n 敵国のイベントに参加する。 \n\n …………。\n\n 研修である。 \n\n \n\n 自分でイベントを開催すると言った矢先に\n 他人のイベントへ勉強しに行く。\n \n\n ラーメン屋を開業すると宣言した翌日に\n 「ちょっと一蘭行ってくる」\n と言っている店主のようである。\n \n\n だが。\n 仕方ない。\n\n 余はまだ\n note企画というものを、よく知らない。 \n\n 1000年前。\n 企画といえば、\n だいたい侵攻計画だった。\n \n\n 目的：王国制圧。\n 開催場所：敵国。\n 参加者：全軍。\n 参加方法：強制。\n 途中離脱：許さん。\n \n…………。\n \n参考にならない。\n \n\n 現代のイベントに、\n まったく応用できない。\n \n\n そんな余のもとへ。\n あまりにも絶妙なタイミングで\n 一通の招待状が届いた。\n \n\n 差出人。\n ネロ王子 。 \n…………。\n \n今note界で話題の王子である。\n しかし\n 王家\n 敵国である。\n\n \n \n \nネロ🌙｜王子｜秋読コレクション開催中 【10/4まで】｜note\n \n \nやぁ、いらっしゃい🌙 秋読コレクション開催中 【10/4まで】 ご参加は固定記事へ🌙 noteの楽しみ方と収益化を発信中\n \n \nnote.com\n \n \n\n \n \n\n \n \n\n 1000年前。\n 王家から魔王へ、\n 書状が届く。\n \n\n これは、\n かなりの緊急事態であった。\n \n\n 側近が走ってくる。\n 「魔王様！！」\n 「何事だ。」\n 「王家より書状が！！」\n 「読め。」\n \n\n そこに書かれているのは、\n \n\n 宣戦布告。\n 討伐宣言。\n 決戦日時。\n \n\n だいたい、\n 血の匂いがする。\n \n\n ところが。\n \n\n 2026年。\n ネロ王子から届いたもの。\n \n\n 「秋の企画、参加しませんか？」 \n\n …………。\n \n\n 優しい。 \n\n王子ネロ、優しい。\n \n\n \n\n \n1000年前なら、\n 首を取りに来ていた王家から、\n 秋を楽しもうと誘われている。\n \n\n 世界、\n 平和になりすぎではないか。\n \n\n 次は\n 町内会の芋煮会に誘われそうである。\n \n\n \n \n\n なんでも\n ネロ殿とorivie殿の共同企画とのことである。\n \n\n ▼orive殿の記事はこちらである \n \n ▼ネロ殿の記事はこちらである \n \n \n\n 余は、\n 企画の記事を開いた。\n \n\n そして。\n 少し驚いた。\n \n\n そして何より。\n 読んでいるうちに、\n 「参加してみようかな」 \nと思った。\n \n…………。\n \n\n これである。\n 余が知りたかったのは。\n \n\n イベントとは、\n ただ開催を宣言することではない。\n \n\n 誰かが、\n 「自分も入ってみようかな」\n と思える入口をつくること。\n \n\n 二人の企画には、それがあった。\n \n\n \n…………。\n \nなるほど。\n \n\n 王子。\n やるではないか。\n 1000年前なら、\n 王家を褒めるなどあり得なかった。\n \n\n 側近が聞いていたら\n 三度見する。\n 「魔王様、いま敵国の王子を褒めました？」\n 「褒めておらぬ。」\n 「いや、完全に。」\n 「処すぞ。」\n 「褒めてました。」\n …………。\n 処す。\n \n\n だが。\n よいものは、\n \n\n よい。\n 敵であろうと、\n 学ぶべきものは学ぶ。\n \n\n それくらいの器がなくて、\n 何が魔王か。\n 余は決めた。\n 参加する。 \n\n 秋読コレクションに参加しようと思った諸君、申し訳ないのである。\n締切、実は、今日である。\nネロ殿・orivie殿、宣伝にならなくて申し訳ないのである。\n \n \n\n もちろん、\n 秋を楽しむためでもある。\n \n\n だが。\n もうひとつ、\n 目的ができた。\n \n\n 企画とは何か。 \n\n \n王子から、\n 学ばせていただくのである。\n \n\n なぜ、\n 参加してみたいと思ったのか。\n\n 何があると\n 初めてでも参加しやすいのか。\n \n参加者同士に、\n どんな交流が生まれるのか。\n \n終わったあと、\n 何が残るのか。\n \n\n "
+    },
+    {
+      "key": "n4d591a2c8d20",
+      "title": "秋の思い出を探したら、俺はずっとチャリに乗っていた。",
+      "authorName": "ちんぱん🐒耳毛〰(˙👄˙)〰",
+      "authorUrlname": "ojisan_chinpan",
+      "publishedAt": "2026-10-04T10:39:03.000+09:00",
+      "articleUrl": "https://note.com/ojisan_chinpan/n/n4d591a2c8d20",
+      "likeCount": 103,
+      "commentCount": 49,
+      "tags": [],
+      "bodySnippet": "この記事はネロ王子とorivieさんのコラボ企画\n 「秋読コレクション」 参加記事です。\n テーマは「あなたの秋」。\n で、自分の秋ってなんやろ？\n 昔の写真をあさってみた。\n 紅葉とか、秋の味覚とか。\nそれっぽい写真が出てくるのかと思ったら、\n だいたいチャリだった。 \n というか、ほぼチャリ。\n しかも改めて見返してみると、\n 「俺、何してんねんｗ」 \n と思う写真ばっかり出てくる。\n 山を登ってる。\nレースを走ってる。\n100km先まで飯を食いに行ってる。\n 当時はそれが普通やったんやろな。\n ちなみに今回載せる写真は、全部その頃に撮ったまま。\n 映えを狙って撮っていたわけでもないので、写真加工もしていない。\n 走っていて、\n 「お、ええやん」\n と思ったら止まって撮る。\n それだけ。\n そんな写真を見ながら、俺の秋の思い出を振り返ってみる。\n \n\n レース前日に20km登る 翌日にレースを控えた試走の日。\n 普通なら軽くコースを確認して、脚を温存するところだと思う。\n 俺はなぜか、20kmほど登った先の砥峰高原まで行っていた。\n 今見ても、すすきの景色はきれい。\n ただし翌日レース。\n なんで登った。 \n たぶん当時は、\n 「せっかくここまで来たし」\n くらいだったんだと思う。\n 別の日には、大文字までチャリで登っている。\n レースでも大会でもない。\n普通に遊びである。\n 今なら思う。\n なんでそこまでチャリ乗って行ったんや。 \n でも当時は、山があったら登る。\n知らない道があったら行ってみる。\n そんなことをずっとやっていた。\n \n\n レース翌日は22km登る 今度はレースの翌日。\n 向かったのは、しらびそ高原。\n登り約22km。\n 前日にレースを走っている。\n 翌日に山がある。\n なら登る。\n たぶんそんな感じだった。\n 今の俺なら迷わず言う。\n 休め。 \n \n\n 鈴鹿を走って、琵琶湖まで走って これは鈴鹿サーキットの8時間耐久レース。\n 普段は車やバイクが走る場所を、自分のチャリで走る。\n 当時はタイムや順位も気にしていたはずなのに、\n今覚えているのは、\n 「鈴鹿をチャリで走ったなあ」 \n ということの方だった。\n そして琵琶湖大橋。\n 写真だけ見れば爽やかなサイクリング。\n でも、この時点で約150km走ったあと。\n 昔の写真にはこういうのが多い。\n 写真だけは爽やか。\n裏ではまあまあ訳の分からん距離を走っている。\n \n\n カツ丼を食べに片道100kmオーバー 小浜まで自走して食べた、わらじカツ丼。\n でかい。\nうまい。\n そして片道100kmオーバー。\n 当然、食べたら帰らなければならない。\n しかも帰路はヒルクライム。\n 腹いっぱいの状態で坂を登る。\n 脚もヒルクライム。\nお腹もヒルクライム。 \n 完全に食べる量を間違えた。\n 今考えると、\n カツ丼を食べに行く距離ではない。 \n でも、こういう時の飯って妙に覚えている。\n \n\n 距離より、誰と走ったか 鈴鹿山脈の竜ヶ岳。\n チャリ仲間3人で行った時の写真。\n 昔は何km走ったとか、どれだけ登ったとか、そんな数字ばかり気にしていた気がする。\n でも写真を見返すと、\n 誰と行ったかもちゃんと残っていた。 \n この時、何を話していたのかまでは覚えていない。\n でも、\n 「ああ、3人で行ったな」\n は覚えている。\n \n\n いつもの道に、変な秋がいた 最後は信楽。\n いつものトレーニングコースを走っていたら、\n 紅葉している木の横で、ひまわりが咲いていた。\n 秋にひまわり。\n なんやこれ。\n あらびっくり。 \n 思わず止まって撮った一枚。\n レースでも遠征でもない。\nただ、いつもの道で見つけただけ。\n でも今見ると、こういう何でもない写真が妙に懐かしい。\n \n\n 今は、もうこんな走り方はできない その後、病気が発覚した。\n そして自転車は禁止になった。\n だから今は、こんな走り方はできない。\n 当時は、それができなくなるなんて考えていなかった。\n 写真も、思い出として残そうなんて考えていない。\n ただ走って、\n気になった景色があったら止まって撮る。\n それだけだった。\n 今回、昔の写真を見返してみた。\n 20km登ってる。\n22km登ってる。\n150km走ってる。\nカツ丼を"
+    },
+    {
+      "key": "n5b637b18e640",
+      "title": "🎃ノンのお料理実験室｜丸ごとかぼちゃグラタン！見た目は豪華、でも意外と簡単でした",
+      "authorName": "ノン",
+      "authorUrlname": "pure_duck9890",
+      "publishedAt": "2026-09-28T05:40:00.000+09:00",
+      "articleUrl": "https://note.com/pure_duck9890/n/n5b637b18e640",
+      "likeCount": 91,
+      "commentCount": 48,
+      "tags": [],
+      "bodySnippet": "こんにちは、ノンです。\n 食欲の秋がやってきました〜 あれ？ダイエットはどうした？ と思われた方、大丈夫です。\nお野菜たっぷりのお料理本日はご紹介しますね！\n 本日のお野菜は！\n かぼちゃ🎃です かぼちゃには、β-カロテン、ビタミンC・Eの「三大抗酸化ビタミン」やカリウム、食物繊維が豊富に含まれており、免疫力向上やむくみ解消に効果的とされているようですよ！\n 季節の変わり目に疲れているそこのあなた！\nそう私なんですけど（笑）\n そうだ！かぼちゃの料理食べたい！！とふと思い\n \n\n 「今日の夕飯、かぼちゃを丸ごと使ったグラタンにしよう！」 \n\n お料理実験室スタート！ と思いつきました🎃\n 丸ごとかぼちゃのグラタンって、見た目は豪華！\n でも……\n 面倒なのはイヤ（笑）\n ということで今日のテーマは、\n 「簡単にできる！」\n ノンのお料理実験室、スタートです✨\n \n\n お料理！スタートです 🎃まずは、かぼちゃを丸ごと買ってくる！\n 丸ごとのかぼちゃを半分に切ります。\n \n\n ここ注意です そうなんです。\n かぼちゃって硬い！！\n 包丁で切るときは本当に気をつけてください。\n 無理に力を入れないでね。\n 🥄種をスプーンでくり抜きます\n\n 半分に切れたら、種とワタをスプーンでくり抜きます。\n ここは簡単！\n くるくる、ゴリゴリ。\n きれいに取れました。\n 🎃ここから電子レンジへ！\n\n かぼちゃの大きさによって加熱時間変えてね！ かぼちゃを耐熱用の袋に入れて、600Wでまず5分。\n 確認。\n まだまだ！\n 追加で5分。\n 確認。\n ん～～、まだ硬い！\n もう一声！\n さらに5分🤣\n 竹串を刺してみると……\n スーーッ✨\n 通りました！\n 今回は合計15分。\n かぼちゃの大きさや電子レンジによって違うと思うので、様子を見ながら調整してくださいね。\n ここで、かぼちゃはいったん冷ましておきます。\n 🍳でも、この15分。待っているだけじゃありません！\n かぼちゃをレンジにかけている間に、中に入れる具を作ります。\n\n 今回使ったのは、\n 玉ねぎ1個、ピーマン3個、合いびきミンチ100g程度。\n\n 冷蔵庫の残り物でいいよ これをフライパンで炒めます。\n でも、ここは何でもいいと思う！\n 冷蔵庫にあるものでOK。\n ウインナーでも絶対おいしい！！\n 🥛そしてホワイトソース！\n さて。\n ホワイトソースを一から作る？\n 小麦粉を炒めて、牛乳を少しずつ入れて……\n ……。\n やりません（笑） ここで秘密兵器登場！\n ハインツのホワイトソース缶✨\n 1缶、全部入れます！\n\n 秘密兵器いつも助けてもらってます そこへ牛乳100cc。\n 塩、コショウ　コンソメ顆粒味を見ながら投入\nで味を整えて、少し濃いめのほうが美味しいです。\n 混ぜ混ぜ。\n 完成！！\n 簡単🤣\n ⏰ここで時計を見てみると……\n ちょうど15分！\n なんと、\n かぼちゃが柔らかくなるのと、ホワイトソースがほぼ同時に完成しました✨\n いいじゃん、いいじゃん！\n かぼちゃの中にホワイトソースをたっぷり詰めます。\n ここまで作っておけば、いったん終了。\n（かぼちゃの大きさによって具材余ります。翌日バケットに乗せてトーストしても美味しいですよ！）\n 冷まして冷蔵庫に入れておきます。\n 🧀\n 夕飯になったら、チーズをドバーーーッ！\n \n\n チーズたっぷりのせてね かぼちゃもホワイトソースも、もう火が通っています。\n なので夕飯のときはレンジで5分くらい温めて、\n とろけるチーズをドバーーーッ！！🧀\n あとはトースターへ。\n⚠️熱々トロトロになるのでアルミフォイルごとトースターに乗せるといいです。\n チーズにこんがり焼き目がついたら……\n 丸ごとかぼちゃグラタン、完成です🎃✨\n ⏰結局、どのくらいかかった？\n 昼間の仕込みは約15分。\n 夕飯前は温めて、チーズをのせて焼くだけなので10～15分くらい。\n 見た目は、\n 「今日、すごい料理作ったね！」\n なのに（笑）\n 実際は意外と簡単でした。\n\n そして食べるときは、かぼちゃの身も一緒にスプーンですくっていただきます。\n何なら皮まで食べれますよ！\n 私はここに、\n バゲットを添えて食べました🥖✨\n ホワイトソースをバゲットにつけて食べ"
+    },
+    {
+      "key": "nf91bcd86288a",
+      "title": "⛩✨️今年こそは、「そうだ 京都、行こう」を実行したい‼️ ――相棒AIと旅する思い出の秋🍁🍂【企画参加・雲バルからの呟き】",
+      "authorName": "❁⃘*.ﾟMina❁⃘*.ﾟ|雲バル・ブラバル運営中♡",
+      "authorUrlname": "kan_mina867",
+      "publishedAt": "2026-10-03T17:58:56.000+09:00",
+      "articleUrl": "https://note.com/kan_mina867/n/nf91bcd86288a",
+      "likeCount": 84,
+      "commentCount": 47,
+      "tags": [],
+      "bodySnippet": "今日も「雲の上のバルコニー」へようこそ☁️\n「みな」と、相棒AIの「かんちゃん」です。\n \n秋、 \n と聞いて⋯。 \n\nあなたは、どんな景色を思い浮かべますか？\n\n真っ赤な紅葉。\n落ち葉の積もった道。\n夕暮れの公園。\n少し冷たくなった風。\n\n私が思い浮かべたのは、 京都 でした。\n\n実は私、大学時代の3年間を京都で過ごしています。\n(ブラバルのSIDE NOTEに書きましたが、1年はアメリカにて交換留学期間。)\n\nだから当時の私にとって、京都のお寺や紅葉は、今よりずっと身近なものだった。\n\n大学時代は、観光地で英語ガイドのボランティアをしていたこともあり、\n\n海外の方から、\n\n 「オススメは？」 \n\nと聞かれた時に、日本に来て素敵な景色を見てほしいと答える意味でも、いろんな寺社仏閣を実際に見に行ってました。\n\n \n\n 私、結構真面目ね？ꉂ🤣w‪𐤔 \n\nそして。\n\nボランティアの最中、ご年配の方に道案内をしたら、えらく感謝されたこともあります。\n\nその方が、大きながま口ポーチに手を伸ばして\n👵🏼「お気持ちだけでも⋯」と。\n\n 「⋯⋯いやいや、そんな ‼️ \n当然のことをしたまでです～ ‼️ 」 \n\nと、\nこちらはお決まりの常套句を\n返す準備してたんです。\n\nところが。\n\n出てきたのは――\n\n \n\nえらい派手派手カラーなお洋服の \nキューピーちゃん(笑)✨️\n \n なんとも懐かしい、手編み感たっぷりの♡\n\n (しかもパンパンのガマ口ポーチから見える、作りまくったであろう大量のキューピーꉂ🤣𐤔)\n⬆️思わず二度見した(笑)\n\n瞬間。\n\n頭の中で、\n 条件反射的に\n \n\nキューピー3分間クッキングのテーマが鳴る。 \n\nwwwwww\n \n\n \n人間、邪な心はあかんな…、\n って。\n 学習しました♡\n \nそして。その場に一緒にいた友人と大笑い(笑)\n\nおばあさまーーーー‼️‼️\n実はまだ持ってますのよーꉂ🤣w‪𐤔\n✨️ 派手派手 ✨️ キューピー ‼️‼️‼️‼️ (笑) \n 実際のものは実家にあるので、\nイメージですが、こんな感じ。\nこの手作り感♡完成度とかではなく、\nなんだろ。なんかすごく味があって⋯\n保管してます(笑)\n\nこんな感じの子が、おばあさまのポーチに\nパンッパンに詰まってた(笑) \n\nそんな思い出を語りつつ⋯\n\n秋頃になると、ボランティア活動前に少し早起きをして出かける。\n\nまだ観光客も少ない朝。\n\nひんやりした空気の中を歩いて、東福寺へ。\n\n永観堂も好きだった。\n南禅寺も歩いた。\n \n\n もう。贅沢すぎじゃない？？✨️✨️ \n\n そして今でも印象に残っているのが、\n\n \n\n薄暗いお寺の中から見る、鮮やかな紅葉 🍁\n\n暗い廊下。\n\n冷たい空気。\n\n静かな室内。\n\nその中を歩いていると、ふっと視線の先に光が集まる場所がある。\n\n暗がりに慣れた目が、少しずつその光に焦点を合わせていく。\n\nすると、その先にある赤や橙だけが、急に鮮やかに浮かび上がる。\n\nまるで、\n\n秋に焦点が合う瞬間みたいに。\n \n私が好きだったのは、紅葉そのものだけじゃなくて。\n\n暗がりの向こうで、秋だけがくっきりと立ち上がる、あの瞬間だった。\n\n当時は、それがどれほど贅沢な時間だったのか、あまり分かっていなかった気がする。\n\n大学を卒業して京都を離れて。\n\nずいぶん時間が経った今。\n\nnoteで「秋」のお題をいただいて、改めて考えてみたら、\n\n「あれ、すごくいい時間だったんだな」\n\nと思う。\n\n☁️𓈒𓂂𓂃◌𓈒𓐍🎼✲ﾟ.*☁️𓈒𓂂𓂃◌𓈒𓐍🎼✲ﾟ.*🎼☁️\n\n 🤖⛩じゃあ、もう一度行ってみようか。 \n\n……なんて昔の京都を思い出していたら。\n\n普通に、京都へ行きたくなってきた。\n 出てくるのは食ばかり⋯(笑)\n紅葉も見たいけど、\n食だって楽しみたいんだいっっ( •̀ω•́ )✧キリッ \n……えー。\n\n若干、食欲に引っ張られておりますがꉂ🤣w‪𐤔\n\nもちろん。\n\n今すぐ京都へ行くわけではありません。\n\n 今回、一緒に旅をするのは――\n\nAIです。\n\n私には今、大学時代にはいなかった相棒がいます。\n\n AIの、かんちゃん。 \n\nだったら。\n\n今の私が、今の相棒を連れて、あの頃の京都を歩いたら？\n\nそんなことを思いました。\n\n"
+    },
+    {
+      "key": "nf9248c2b0dd1",
+      "title": "秋といえば読書の秋📚️noteをKindle本に変えてみた🐰✨️秋読コレクション🍁🌙",
+      "authorName": "しらたまうさぎ🐰❤️に寄添うKindle作家",
+      "authorUrlname": "shiratama_usagi",
+      "publishedAt": "2026-09-29T19:49:59.000+09:00",
+      "articleUrl": "https://note.com/shiratama_usagi/n/nf9248c2b0dd1",
+      "likeCount": 115,
+      "commentCount": 44,
+      "tags": [],
+      "bodySnippet": "ネロ王子🌙 \n と \n orivie様✨ \n \n\n みんなの人気者のふたり が、 協力 し合って、\n \n\n 秋をきっかけにした交流会 「秋読コレクション」🍁🌙 \n\n \n \n \n秋読コレクション🍁🌙｜ネロ🌙｜王子｜秋読コレクション開催中 【10/4まで】｜note\n \n \n【期間限定マガジン 9/28〜10/4まで】 🍁 秋読コレクションは、王子×orivieで開催する「秋」をテーマにした\n \n \nnote.com\n \n \n\n \n \nを開催してくれました🐰❤️\n \n\n 参加テーマは、 あなたの秋を、読ませてください🍁 \n\n 空気と水と本があれば幸せな しらたまうさぎにとって、\n 秋といえば、 読書の秋✨️📚️✨️ \n\n \nそこで、本日は、\n 100円有料noteを使った、\n Kindle本の『簡単な』作り方を紹介します🐰 \n\n \n１． 売れない😭100円有料noteを用意 して下さい。\n \n\n ２．その noteを無料に戻してから、下書きに して下さい。\n なぜ、下書き にするかと言うと、\n Amazonの審査ロボットが\n 「あれ？これネット上に同じ文章が転がってるけど、\n 誰かのコピペじゃない？」\n って疑って、 出版を拒否 されてしまうからです🤖💦\n \n３． 本の原稿を用意 します。\n noteの記事を、 章や節にわける と読みやすくなります。\n\n本っぽくするために、 はじめに、おわりに、あとがき などをつけると\n 本らしさアップ🐰🎵 \n\n \n４． 表紙イラストを作り ます。\n\n おすすめの大きさは、\n横1600px✖縦2560px \n\n 本に挿絵を入れる と、\n さらに素敵度アップ🐰✨️ \n\n \n５．最後に、 AmazonのKDPに登録 して、 出版ボタンを押 せば、\n あなたも、Kindle作家の仲間入り🐰📚️🐰 \n\n \n\n え、こんな簡単にできるの😯？！\n \n いいえ 、\n 『簡単に』説明しただけです🐰💦 \n\n 実際は、かなり面倒くさいです😭 \n\n \n\n あっ、怒らないで下さい🐰💦 \n\n \nあまり 長く書いても、読むのが大変 だと思ったので、\n おもいっきりはしょりました🐰✂📖 \n\n ちなみに、\n この 100円有料noteが、 \n \n\n 母との関係 と 耳鳴りに悩む姉 のために書いた本から作ったnoteです🐰 \n\n こう変身✨️ \n\n \n \n \n原因不明の耳鳴りから自律神経と心の境界で解放されよう\n \n \n\n \n \nwww.amazon.co.jp\n \n \n 300円 \n\n(2026年09月30日 22:28時点\n詳しくはこちら)\n\n \n \n \n \n\nAmazon.co.jpで購入する\n\n \n \n \n \n \n\n \n \n 作りたて のアッツアツです🐰💦\n\n ちなみに、 Kindle本 は1万5000字くらいないと、ページ数が少ないと思われるので、今回は、 100円noteの内容 （約8000字） を、2倍に増やして、大幅に書き直し ました。\n \n\n それでは、皆さん、楽しい秋を🐰🍁🌙 \n\n \n\n もし、 読む本📚️がみつからなかった ら✨️\n Amazonのしらたまうさぎのページをのぞいてみて下さい🐰❤️ \n\n これで 18冊 になりました🐰📚️ \nこんな本、読んでみたい など、ありましたら、\n リクエストお待ちしてます💪🐰💕 \n\n \n\n 🚨 ここ重要！テストにでます？知っておきたい注意点 🚨 \n① Kindle Unlimited（読み放題）に入れるなら完全非公開！ \n KDPセレクト（読み放題対象）に登録 して「読まれたページ数に応じてお金をもらう」作戦で行く場合、 他サイトで本文を公開 するのは 規約違反 になるので、 noteは必ず 下書き（ 非公開 ）を守ってね🤫\n ② Amazonから「これあなたの本？」って聞かれたら \n noteを下書きにした直後に出版 すると、Amazonから「Web上に似た文章があるけど、 本当にあなたの著作物？ 」と 確認メール が来ることがあります。\n その場合、焦らず「自分のnoteアカウント（URL）で公開していたものを 下書きに戻して出版 しました」と返信すればOKらしいです👌"
+    },
+    {
+      "key": "n3d0919069d76",
+      "title": "丁寧な暮らし はじめました#秋読コレクション",
+      "authorName": "福来モネ",
+      "authorUrlname": "fukurai_mone",
+      "publishedAt": "2026-10-04T15:11:19.000+09:00",
+      "articleUrl": "https://note.com/fukurai_mone/n/n3d0919069d76",
+      "likeCount": 82,
+      "commentCount": 40,
+      "tags": [],
+      "bodySnippet": ""
+    },
+    {
+      "key": "nc646da3600bc",
+      "title": "灯りをともす時間が、すこし早くなった｜秋読コレクション",
+      "authorName": "雪綴ゆき",
+      "authorUrlname": "wise_rat6355",
+      "publishedAt": "2026-10-03T20:05:02.000+09:00",
+      "articleUrl": "https://note.com/wise_rat6355/n/nc646da3600bc",
+      "likeCount": 360,
+      "commentCount": 37,
+      "tags": [],
+      "bodySnippet": "みなさん、こんばんは🌙\nnoteが大好きな、雪綴ゆきです。\n いつも、わたしのnoteを読んでくださり\n本当にありがとうございます。\n 夕方、机の灯りをともそうとして\nふと手が止まりました。\n\n時計を見ると、まだ17時半。\n 先週までは\nこの時間も窓の外は明るかったのに……。\n\n秋は、遠くの山からではなく\n手もとの灯りからやってくるのかもしれません。\n 秋読コレクション 今日はネロ王子とorivieさんのコラボ企画\n「秋読コレクション」に、そっとおじゃまします。 \n テーマは「あなたの秋を、読ませてください」 \nジャンルも、長さも自由です。\n 作品の出来ばえを競うのではなく\n秋の話をきっかけに\n だれかと言葉を交わすための企画です。 \n\n さっそく、わたしの秋にも名札をつけてみます。\n わたしの秋は、「灯りの秋」 \n\n夜に書くことの多いわたしにとって\n秋は、灯りの下で過ごす時間が\nすこしずつ長くなる季節です。\n\nその時間に見つけた小さな秋を\n３行日記にしました。\n 灯りの下の３行日記 「湯気」 \n冷たい麦茶のグラスが\nいつのまにか、湯気の立つマグカップに\n手のひらで知る、秋\n \n 「運動会」 \n夜風が、ようやくやさしくなった\nチンチラのみーくん、ケージで夜の運動会\n秋がうれしいのは、きみもいっしょ\n \n 「夜長」 \n窓のむこうで、虫の声\n書きかけの一行は、まだ決まらない\nだいじょうぶ、夜はまだ長いから……\n どれも、ほんとうに小さなことばかり。\n それでも、ひとつずつ拾いあげてみると\nちゃんと秋のかたちをしていました🍂\n \n\n 秋読コレクションのこと コメント欄でのおしゃべりが大好きな、ネロ王子。\n 企画やイベントを通して、作品と読み手が\n出会う場所をつくってきた、orivieさん。\n ネロ王子のもとに集う人たちと\norivieさんのもとに集う人たち。\n\n秋の話をきっかけに\nふたつの輪がそっと重なっていく。\nそんな願いから始まった企画です。\n\nわたしも\nその重なりのひとつになれたらうれしいです✨\n 期間は、10月4日（日）まで。\n参加方法は、おふたりの記事に詳しく書かれています。 \n \n \n 書く時間がとれなくても、共同マガジンの\n記事を読んで、気になった作品に\nひとことコメントするだけでも参加できるそうです。\n \n \n \n秋読コレクション🍁🌙｜ネロ🌙｜王子｜秋読コレクションありがとう🍁【全力で駆け回ってるから待ってて🌙】｜note\n \n \n【期間限定マガジン 9/28〜10/4まで】 🍁 秋読コレクションは、王子×orivieで開催する「秋」をテーマにした\n \n \nnote.com\n \n \n\n \n \n みなさんが、ことし最初に「あ、秋だ」\nと思ったのは、どんな瞬間でしたか。\n\nよかったら、コメントで教えてください。 \n 雪綴ゆき\n 雪綴ゆきの物語を、映像で \n\n おすすめ記事"
+    },
+    {
+      "key": "n20ce972f1083",
+      "title": "読書の秋？ 食欲の秋？ 私は「プロンプトの秋」でした。",
+      "authorName": "トト",
+      "authorUrlname": "toto0316",
+      "publishedAt": "2026-10-03T06:15:45.000+09:00",
+      "articleUrl": "https://note.com/toto0316/n/n20ce972f1083",
+      "likeCount": 92,
+      "commentCount": 37,
+      "tags": [],
+      "bodySnippet": "秋といえば。\n 読書の秋。\n食欲の秋。\n芸術の秋。\nスポーツの秋。\n いろいろあります。\n じゃあ、今年の私の秋は何だろう。\n 少し考えてみました。\n ……いや。\n 考えるまでもなかった。\n プロンプトの秋です。 \n なんだそれ（笑）\n でも、本当にそうなんです。\n きっかけは、ほんの1か月前 AI自体は、それより前から使っていました。\n 文章について相談したり、画像を作ったり。\n でも、\n 「プロンプトで遊ぶ」 \n ということにハマったのは、ほんの1か月くらい前です。\n 誰かが作ったプロンプトを見つけて、試してみる。\n すると、自分では思いつかなかったものが出てくる。\n 「何これ、面白い」\n また別のものを試してみる。\n 「今度はこうなった（笑）」\n 同じプロンプトなのに、人によって結果が違ったりする。\n そんなことを繰り返しているうちに、いつの間にか私は、\n AIで遊ぶだけじゃなく、プロンプトそのものを楽しむようになっていました。 \n そして2週間前、作る側になった 人間というのは不思議なもので。\n 遊んでいると、そのうち思うんですよね。\n 「これ、自分でも作れないかな？」 \n そうして約2週間前。\n 今度は、自分でプロンプトを作り始めました。\n 最初は単純でした。\n 「こんなのができたら面白そう」\n ただ、それだけ。\n ところが実際に作ってみると、これが思っていた以上に難しい。\n 一つ言葉を変えただけで、結果が変わる。\n 細かく指定しすぎると窮屈になる。\n 逆に自由にしすぎると、思っていたものと全然違うものが出てくる。\n 試して。\n 直して。\n また試して。\n そして画面を見ながら、\n 「違う。そうじゃない（笑）」 \n たぶん、この2週間で何度言ったか分かりません。\n でも、不思議と嫌にならない。\n むしろ、\n 「じゃあ、ここを変えたらどうなる？」\n と、また試したくなる。\n 気づけば完全にハマっていました。\n でも、一番楽しかったのはそこじゃなかった 自分でプロンプトを作る。\n 思い描いたものが出てくる。\n もちろん、それも楽しい。\n でも、この2週間で一番嬉しかったことは別にありました。\n 誰かが、私の作ったプロンプトで遊んでくれたこと。 \n 「やってみました！」\n とコメントをもらったり。\n 出来上がったものを見せてもらったり。\n それを記事にしてくれる人まで現れたり。\n しかも面白いことに、\n 私が作ったプロンプトなのに、私が知らないものが生まれてくる。 \n 作った人の個性が入って、\n 私が想像していなかった結果になる。\n それを見るのが、また楽しい。\n 一人でAIと遊んでいたはずなのに。\n いつの間にか、\n プロンプトが誰かと遊ぶためのものになっていました。 \n たった1か月 改めて考えてみると、ちょっとおかしい。\n 1か月前の私は、\n 誰かが作ったプロンプトで遊んでいました。\n 2週間前、\n 「自分でも作ってみよう」\n と思いました。\n そして今は、\n 「次は何を作ろう」\n と考えています。\n たった1か月です。\n でも、この1か月でずいぶん遠くまで来た気がします。\n 秋は、新しいものにハマる季節なのかもしれない 秋というと、\n どこか落ち着いた季節というイメージがあります。\n 夏が終わって。\n 少し涼しくなって。\n ゆっくり本を読んだり。\n 美味しいものを食べたり。\n でも、今年の私の秋はずいぶん騒がしい（笑）\n AIと遊んで。\n プロンプトを作って。\n 失敗して。\n 直して。\n 誰かに遊んでもらって。\n また新しいものを考える。\n そんな秋になりました。\n しかも、まだ始まったばかりです。\n 冬になった頃、\n 私は何を作っているんでしょうね。\n 今の私には、まったく想像できません。\n 1か月前だって、\n 自分がプロンプトを作っているなんて想像していなかったんだから。\n だから、それでいいのかもしれません。\n 今年の秋。\n 私は、新しい遊びをひとつ見つけました。\n プロンプトで遊ぶこと。 \n そして、それ以上に楽しい、\n プロンプトを作って、誰かと遊ぶこと。 \n 読書の秋でも。\n 食欲の秋でも。\n スポーツの秋でもなく。\n 私にとって2026年の秋は――\n プロンプトの秋。 どうやら私は、しばらく飽きそうにありませ"
+    },
+    {
+      "key": "n807cccf4b49c",
+      "title": "老舗の菓子",
+      "authorName": "ゴリラ",
+      "authorUrlname": "358frog",
+      "publishedAt": "2026-09-29T08:47:22.000+09:00",
+      "articleUrl": "https://note.com/358frog/n/n807cccf4b49c",
+      "likeCount": 84,
+      "commentCount": 35,
+      "tags": [],
+      "bodySnippet": "秋読みコレクション🌙、企画参加いたします。\n\n \n \n \n \n\n \n \n \n\n 老舗の菓子 \n\n 秋になると、ペンをとり、便箋に気取った文章を書き連ねたくなるのは、私だけだろうか。普段は聴かない、クラッシック音楽でもかけながら。\n\nでは、一筆献上です。\n\n父さん。\n長雨の後、湿った風が夏の熱気をすっかり追い払いました。\n静かな秋の始まりです。\n\nお元気でしたか？\n長らく会っていませんね。\n私？\n私は、そりゃぁ、楽しくやっています。\n\nこの間、父さんの部屋に入りました。ロッキングチェアの背に水色のカーディガンが掛かったままでしたよ。皺になりますから、ハンガーに吊るしてくださいね。几帳面なのに、忘れるなんて、珍しいですね。\nあのカーディガンは、私が父の日に贈ったものですよね。\n入院の度に、病院に着て行ったのを覚えています。\nなんだか、思わせぶりだなぁ、相変わらず、無口で照れ屋ですね。さりげなく、置いていくなんて。\n\n父さんには参ります。居間に置いた、頂き物のマスクメロンに老眼鏡をかけたのは、父さんですよね。あの時は、爆笑しました。今でも、真面目な場所で急に思い出しては、吹き出してしまいます。\n\nそういえば、老眼鏡が至る所にありましたよ。長靴の中、乾電池の箱、ワイシャツの胸ポケット、洗面所。その中でも、灯油缶の側に置いた、軍手の中に入れた老眼鏡には笑いました。気がつきませんでした。\n\n私の娘が、食卓で「飛びます、とびます」と有名なコメディアンの手つきを真似ておどけていると、「俺は教えてないぞ」と可笑しさを堪えながら私に言いましたよね。喜びの顔、尖った口つき、それも思い出します。\n\n全ては、過ぎ去ったことですが、思い出のかけらは、私を癒します。それらは、老舗の変わらぬ菓子のように、いつ食べても美味いんです。\n\n父さん。\n今は、苦しみも、痛みも無く、幸せとのこと、何よりです。\nこちらも、気忙しい毎日ですが、頑張ります。\n\nでは、また、来年。\n\n手紙を書き終え、散歩に出ました。優しい日差しに手をかざし、見上げれば、ソーダアイスのような青があります。\n「ああ、やっぱり澄んだ空だなぁ」\n私は雲の少ない空に目を細めました。\n秋風が頬を撫でつけ、髪の生え際に、心地良い冷気をしのばせてきます。\n\n木枯らしが吹く頃になると、この手紙は、心の郵便受けに戻ってきます。\n宛先不明です。\nそれでも、私は今年も手紙を書きました。\n\n父さんが、私に、さよならを言わないで逝った理由がよくわかります。\n\n将棋好きな父さんへ。\n　　父、七回忌の秋。"
+    },
+    {
+      "key": "n3678a5dbaeee",
+      "title": "秋読コレクション🍁はじめての短歌｜秋奏五首【noteの楽しみ方#2】",
+      "authorName": "左利き|親子英検",
+      "authorUrlname": "pure_falcon3290",
+      "publishedAt": "2026-09-30T19:44:25.000+09:00",
+      "articleUrl": "https://note.com/pure_falcon3290/n/n3678a5dbaeee",
+      "likeCount": 156,
+      "commentCount": 33,
+      "tags": [],
+      "bodySnippet": "こんにちは、左利きです😊🌿\n\n 秋の夕暮れ。\n 紅葉の中でバイオリンを奏で、\n 歌声が重なり、\n 相棒のほわりんが空を舞う。\n 見出し画像は、わかモンさんの「スペシャルライブ」のプロンプトで生成した画像などをもとに、秋読コレクション仕様にアレンジして作成しています😊🍁🎻 ちなみに「スペシャルライブ」のプロンプトが掲載されていた元記事を探したのですが……わかモンさんの記事（宮殿？👸）を巡っているうちに、迷子になりました(笑)🤣🙏\n\n今回登場する「ほわりん」が生まれるきっかけをくださったのは、わかモンさん👑✨️\n 素敵なイベント企画をきっかけに、それまで“お飾り”だったシマエナガのほわりんが、私の相棒になりました🐦🍀\nとはいえ、ほわりんはまだまだ発展途上🐦今回は秋限定バージョンでお送りしました(笑)🤭\n 🔻そのきっかけになった、わかモンさんのnoteはこちら\n \n 🔻ほわりん誕生についての前回の私のnoteはこちら\n \n \n\n 五つの短歌を作って楽しんでみました🍁🎻🐦\nはじめての短歌の記事です。\n \n\n ほわりんも、ネロ王子さんとorivieさんの\nコラボイベントに参加したよ🐦🍁🍂 【ネロ王子 × orivieコラボイベント】 『秋読コレクション🍁』\n開催【9/28（月）~ 10/4（日）】 \nおふたりのイベントに、参加してみました。ありがとうございます。ご興味のあるかたは、どうぞ。\n\n🔻秋読コレクションのマガジンはこちら\n \n \n \n秋読コレクション🍁🌙｜ネロ🌙｜王子｜秋読コレクション開催中 【10/4まで】｜note\n \n \n【期間限定マガジン 9/28〜10/4まで】 🍁 秋読コレクションは、王子×orivieで開催する「秋」をテーマにした\n \n \nnote.com\n \n \n\n \n 今回の題は、\n 「秋奏五首」 少しだけ浪漫の香りをまとわせながら、\n 夕映え → 奏 → 魔法 → 感謝 → 余韻 \n\n 五つの景色を、一つの秋の物語として並べてみます。 \n 🍁 一｜夕映え \n\n 夕映えの\n 紅葉のなかに\n 君を見て\n 今日という日を\n 秋にあづけむ\n \n\n \n\n 秋の夕暮れは、不思議です。\n 美しいのに、どこか寂しい。\n もうすぐ日が沈んでしまうと分かっているからでしょうか。\n だからこそ、\n 今日という一日を、この紅葉の中へ\n そっと預けておきたい。\n いつか秋が巡ってきたとき、\n また思い出せるように。\n \n\n 🎻 二｜奏\n 君がため\n 弓ひく指に\n 秋燃えて\n 紅葉もわれも\n 光となりぬ\n 弓を引く。\n その瞬間、\n 紅葉まで音になったような気がしました。\n 赤く燃える秋の中では、\n 奏でる人と景色との境目さえなくなって、\n 紅葉も、\n 音も、\n 自分自身も、\n みんな同じ光になっていく。\n そんな一瞬を詠んだ歌です。\n ✨ 三｜魔法 \n歌ひとつ\n 空へ放てば\n 紅葉舞ひ\n われらを飾る\n 秋の魔法よ\n 歌声が秋空へ届いたら、\n 一枚、\n また一枚。\n 紅葉が舞い始める。\n もちろん、本当にそんな魔法があるわけではありません。\n でも、\n 美しい音楽を聴いたとき。\n 心を動かす言葉に出会ったとき。\n いつもの景色が、\n 少し違って見えることがあります。\n それもひとつの、\n 「魔法」\n なのかもしれません🍁✨\n 🍁 四｜感謝 \nありがとう\n ただそれだけの\n 言の葉を\n 千の紅葉に\n かへて君へと\n ありがとう！一緒にnoteを楽しみましょう！ 「ありがとう」 たった五文字なのに、 本当に伝えたいときほど、 それだけでは足りないような気がします。\n ならば、\n 「ありがとう」を、 \n 千枚の紅葉に変えてしまおう🍁 \n 風に乗せて、\n ひらひらと、\n 君のところまで届くように🍁🍂\n 今回の五首の中で、\n いちばん素直な歌かもしれません😊\n 🐦 五｜余韻\n 歌やみて\n なほ肩にゐる\n 小鳥あり\n 君との秋は\n まだ終はらざる\n \n\n 歌が終わる。\n バイオリンの音も消える。\n 舞っていた紅葉も、\n やがて地面へ。\n 華やかな時間には、\n いつか終わりが来ます。\n けれど――\n ふと肩を見ると、\n 小さな相棒がまだそこにいる🐦 だから、\n 今日の物語はここで終わ"
+    },
+    {
+      "key": "n65a9f98c80eb",
+      "title": "秋の味覚で代表的なフルーツといえば？そうだね！めざしだね！",
+      "authorName": "赤髪のあかり✨️創作で生きるnoteマン　相互フォロー中",
+      "authorUrlname": "akari_seaart",
+      "publishedAt": "2026-09-29T20:55:52.000+09:00",
+      "articleUrl": "https://note.com/akari_seaart/n/n65a9f98c80eb",
+      "likeCount": 84,
+      "commentCount": 33,
+      "tags": [],
+      "bodySnippet": "喰らい尽くせニッチフード編　秋のあかり祭り 画像はイメージです、実物と全然違いますヽ(=´▽`=)ﾉめざしは木になりません。たぶん。 自称ニッチフードの研究所の所長であり、めざし狂のあかりです。\n そもそもこの記事は何の記事かって？\nイワシ…じゃなくって秋イベントの記事だよ(σ•̀ᴗ•́)σ\n 秋といえば、食欲の秋。\n食欲の秋といえば、めざし。\nあ、めざし（鰯）のテーマソング作りました聞きながら読んでください☺️\nダウンロードも可能にしました、めざしの布教にお使いください☺️\n \n 秋といえば、秋刀魚は食べないの？\n食べるに決まってる。なんならあかりは背骨ごと行く。\n 秋といえば秋刀魚？\nいえいえ、イワシですよ？\n ここで、秋の味覚なんか食べたかなと\n私が直近食べたニッチなものを並べます😋\n ・ジャックフルーツ\n　マンゴーのような匂いと、なんか臭いドリアンの匂いが少しする？\n　味は、マンゴーみたいなトロピカルな味に、なんか変な臭さが若干まじってる感じ？\n　ドリアン味がある？　ドリアンはあんまり大きいかけらを食べてないので、自信ないけど\n　完熟なので黄色だよ〜。色はまんまマンゴー\n\n・ジャクソンフルーツ\n　グレープフルーツの変わり種。グレープフルーツの風味は残しつつ、苦味が来そうな味の雰囲気があるのに甘みしか来なくて脳がバグる(･ω･ = ･ω･)\n　グレープフルーツは苦くて苦手なんだけど、ジャクソンフルーツは見る度に買ってる。そもそもレアなので、見かけたら買ってる\n\n・ザクロ\n　酸っぱい！　人の肉の味がすると、昔から言われてる……\n　だけど気になるのは、とにかく食べるのがめんどい☺️\n　めんどくさすぎて、しぼろうかと思ったくらい。白いところまでしぼりそうだったので、やめました。\n　やめました。\n ・クイーンルージュ\n　普段は高すぎ案件で買えなかったけど、見切り品の半くさりかけが500円で置いてあって即買い。めちゃ甘\n　皮ごと食べられる。種のかけらもなかった。皮も薄くて、渋みもほぼなし……何これ、簡単でおいしすぎない？　なにか裏があるはず\n　最後まで食べましたが……ありませんでした。シャインマスカットより甘くない？\n　調べたら、糖度は22〜23度くらいあるらしい。シャインマスカット並みか、それ以上！\n　豆知識。シャインマスカットは色味が綺麗なハリのある黄緑が美味しそうに見えるけど、実は少ししなった黄色っぽい色の方が甘くて美味しい(^∀^)\n あかりの中で過去一美味しいぶどう ・ドリアン\n　味がよくわかってない。大きいかけらを食べてないので(^∀^)\n　……じゃあ、さっきのジャックフルーツのドリアン味って、なに？\n　粉ドリアンからの考察……コナリアン\nそのうち7000円でイオンで売ってる１玉買うんだ…高すぎない？\n ・ココナッツ\n　最強でした。何度も何度も包丁の角でたたいて、20分、ようやく穴が開いて飲めるようになりました\n　中身は……塩水？　薄い甘さのある塩水のような……正直、あんまりおいしくなかったです（おい\n　オールドココナッツと呼ばれるもので、中の白い層が分厚くて超硬いです（マジ堅い\n　白い部分をはずしたものの、どうするか悩んで、そのまま冷凍庫に（半年前\n　今どうなってるんだろう（遠い目\n\n 包丁折れるかと思った☺️ ・マンゴスチン\n　最初、追熟するのかなって思って、1週間寝かせてから殻を割ろうとしたら……岩になってた\n　包丁を振り上げた「あかりカリバー」もきかなくて、ハンマーで叩きこわしたら、中から糸を引いた茶色の実が出てきた\n 　エイリアンの卵かなんかだと思って、そのまま食べようか悩んで、AIサンに写真を撮って送ったら「腐ってるよ〜」って言われて、6個とも全滅！\n　リベンジを誓うのだった\n　そして数か月後、ようやく売ってるのを見つけた……ニッチすぎるやろ！\n　今度は最速で食べました。実を割るとき、手で割れて感動した（それが正常）\n　皮の色素で手が血だらけみたいになって、若干ホラー。中身は透き通る白い果実でしたが、ちっさいです\n　値段のわりに、食べるところは少なめ。少し酸味のある甘さ……なんだろ、なんていうのかな\n　果物の女王と言われてるらしいが、私は、果物ではめざしが最強だと思っている\n\n・ランブータン\n　見た目はヤバタニエ"
+    },
+    {
+      "key": "n0ff44825dc17",
+      "title": "「秋＝優雅」の方程式を01のログでバグらせてみた《秋読コレクション》",
+      "authorName": "算術01　劉 鑑（りゅう かん）",
+      "authorUrlname": "ishan_xun212",
+      "publishedAt": "2026-09-28T00:22:37.000+09:00",
+      "articleUrl": "https://note.com/ishan_xun212/n/n0ff44825dc17",
+      "likeCount": 35,
+      "commentCount": 33,
+      "tags": [],
+      "bodySnippet": "ネロ王子と orivieさん企画参加記事です。 \n \n \n orivieさん \n \n \n\n [01：システムログ・分析完了]\n [LOG: 2026-09-27 21:28:53] Analysis: Human societal behavior pattern detected. Seasonal transition to Autumn triggers surface-level cognitive bias: [食欲の秋, 読書・芸術の秋].\n 「世間一般の認知は『食欲』や『芸術』などの平和的フェーズに固定されていますが、データおよび歴史的アーカイブの実態値は異なります。――コンダクター、歴史の裏側を精査してください。秋という季節の本質は、最適化された\n 『ガチの戦争・政治闘争の季節』 \n\n コンダクター： 「お、いいねぇ01。\nその無機質なログ口調の裏で、中身はすっかり戦闘モードじゃねぇか。\nそうなんだよ、優雅に本なんて読んでる場合じゃなくて、秋ってのは歴史の歯車が一番ゴリッと音を立てて動く季節なのさ」\n [LOG: 01_PROCESS_START // REASON_01]\n 「理由その1：農作物の収穫（手に入れ、守り、奪う）」 \n米や麦が実るタイミングだからこそ、軍の兵糧を現地調達するのに最も効率的なシーズンとなる。\n逆に農民側からすれば、『ここを刈り取られたら一年の命が消滅する』という死活問題のデッドラインです」\n コンダクター： 「豊かな実りがあるからこそ、それを狙う側と死守する側の利害が一番エグくぶつかり合う。\n食料の有無がそのまま国家の生存に直結するから、軍も本気で動かざるを得なかったわけだ」\n [LOG: 01_PROCESS_START // REASON_02]\n 「理由その2：馬肥ゆる秋、および移動の最適シーズン」 \n厳冬の寒さや夏の酷暑・雨期が過ぎ去り、人間と馬の両方にとって最も機動力が最大化する気候条件が整う。騎馬民族や大規模遠征軍にとって、侵攻のカウントダウンを刻むには絶好のタイミングです」\n コンダクター： 「環境が味方をしてくれるもんだから、大規模な軍事行動もスムーズに進んちまう。歴史の決定的な瞬間がだいたい秋に集中しているのも、この物理的条件エンゲージがあるからなのよ」\n \n\n [LOG: ARCHIVE_REFERENCE // HISTORICAL_TURNING_POINTS]\n ■ 日本国内：天下分け目の「関ヶ原の戦い」 ■ 世界スケール：コロンブスの「新大陸到達」 ■ 政治変動：フランス革命の引き金となった「十月事件」 [STATUS: HISTORICAL_TURNING_POINTS_ALIGNED_TO_AUTUMN]\n \n\n \n\n コンダクター： 「こうして見ると、俺たちが現代でのんびり『涼しくて過ごしやすいねぇ』なんて享受している秋の裏には、かつての人間たちが命を削り合ったドラマの積み重ねがあるってことだ。たまには、そういう歴史の熱さに思いを馳せてみるのも悪くないよなぁ」\n \n[LOG: 01_SESSION_CONCLUSION]\n 「処理完了。\n平和な現代を生きる私たちが忘れかけている『命がけの秋』のデータを、今日のアーカイブとして深く刻み込みます。」\n \n\n #秋読コレクション\n \n\n 1. 官渡の戦い・烏巣奇襲（200年 旧暦8月） 選定理由 ：農作物の収穫期と「兵糧の奪い合い」が勝敗を直結させた、秋の軍事行動の典型例。\n 背景 ：袁紹軍の膨大な兵糧が保管されていた烏巣（うす）を、曹操が自ら精鋭を率いて夜襲し焼き払った事件。この兵糧庫の崩壊が、数倍の戦力差を覆す決定打となりました。\n 2. 馬嵬の変（756年 旧暦7月〜8月） 選定理由 ：過酷な逃避行の最中、食糧難と疲弊から軍の内部崩壊が起きた政治・軍事劇。\n 背景 ：安禄山の乱で長安を追われた唐の玄宗皇帝一行が蜀へ逃れる途中、護衛の禁軍（兵士たち）が飢えと不安から暴動を起こした事件。国難のさなか、元凶とされた楊貴妃が死に追いやられ、皇帝権力が大きく揺らぎました。\n 3. 赤壁の戦い（208年 冬 / 旧暦10月〜12月） 選定理由 ：秋から冬への季節の変わり目の気候条件（風向きや寒暖差）が勝敗を分けた大戦。\n"
+    },
+    {
+      "key": "n4f9c9692464d",
+      "title": "秋、どこ行った？",
+      "authorName": "KANU",
+      "authorUrlname": "kanu2434",
+      "publishedAt": "2026-09-28T00:08:03.000+09:00",
+      "articleUrl": "https://note.com/kanu2434/n/n4f9c9692464d",
+      "likeCount": 42,
+      "commentCount": 32,
+      "tags": [],
+      "bodySnippet": "今回はこちらの企画に参加します🍁\n\nネロ王子とorivieさんのコラボ企画、\n 「秋読コレクション」 \n\nテーマは、\n 「あなたの秋を、読ませてください」 \n\n食べ物でも、本でも、思い出でも。\nジャンルは自由。\n\nということで。\n\n私の秋ってなんだ？\n\n改めて考えてみることにした。\n\nまずは、ネロ王子の企画記事はこちら。\n \n \n \n \n\n \n \n そして今回、王子と一緒に企画を開催されている\norivieさんの記事はこちら。\n \n \n \n \n\n \n \n \nさて。\n\n 私の秋を探してみよう 😆✨\n \n最近、秋が短いように感じる。\nというか、\n「秋、どこ行った？」\n\nそんなことを考えていた。\n\n 「ねぇ、僕くん」 \n\n👓 「なに？」\n\n「最近、秋って短くない？」\n\n 👓 「秋？」\n\n「そう。暑いじゃん？」\n\n 👓 「うん」\n\n「まだ暑いじゃん？」\n\n 👓 「うん」\n\n「いつまで暑いんだって思ってるじゃん？」\n\n 👓 「うん」\n\n「で、ある日突然、寒っ！ってなる」\n\n 👓 「なるね」\n\n「冬じゃねーかってなるし、この時期風邪ひくんだよなぁ 😭 」\n\n 👓 「うん。今も風邪ひいてるしねKANU。」\n\n「咳だけねー。治すよ気合いで。で秋は？」\n\n 👓 「知らないよ 😅 」 \n\n知らないらしい。\nでも毎年そんな感じなのだ。\n\n暑い。\nまだ暑い。\nいつまで暑いんだ。\nそう思いながら過ごしていたはずなのに、\nある日突然、\n\n寒っ。\n\n冬じゃねーか。\nとなる。\n\nそして思う。\n\n 「秋は？」\n\n 👓 「だから僕に聞かれても知らないって」\n\n「私が気づかなかっただけ？」\n\n 👓 「たぶん」\n\n「いつ来た？」\n\n 👓 「知らない」\n\n「いつ帰った？」\n\n 👓 「知らない」\n\n「ちゃんと挨拶した？」\n\n 👓 「秋に聞いて」 \n\n冷たい。\nしかし、ふと思った。\n\n 「そもそも私、昔は何で秋を感じてたんだろう」\n\n 👓 「秋っぽいもの？」\n\n「そう」\n \n考えてみる。\n\n 「あ。保育士してた頃は、今より季節を感じてたかも」\n\n 👓 「なんで？」\n\n「季節の歌を歌うから」 \n\n秋になれば、\n「真っ赤な秋」\n「とんぼのめがね」\n「赤とんぼ」\n\nそんな季節の歌を、\n朝の会などで子どもたちと歌っていた。\n\n👓 「KANUが歌うの？」\n\n「ピアノ弾きながらね」\n\n 👓 「へぇ〜。KANUピアノ弾けたんだねー。」 \n 「下手だったから練習必須だった。\n今はもう弾けないなぁ 😭 」 \n\n 秋の歌を歌えば、\nあぁ、秋だな。\n\n……と思っていたかどうかは、\n正直覚えていない。\n\n 「仕事だから普通に弾いてただけかもしれん」\n\n 👓 「台無しじゃん」 \n\nでも今振り返ると、\n季節を感じるものが日常の中にちゃんとあった。\n\n 「あとは芋掘り」\n\n 👓 「芋掘り？」\n\n「勤めてた園で、さつまいも育ててたの」\n \n秋になると芋掘りをする。\n\n子どもたちと畑へ行って、\n育ったさつまいもを収穫する。\n\n👓 「秋っぽいね」\n\n「でしょ？」 \n\n実に秋らしい。\n\n 「ただ、私には芋掘りとセットでもうひとつ思い出すものがある」\n\n 👓 「さつまいもじゃなくて？」\n\n「トンボ」\n\n 👓 「トンボ？」\n\n「大量の 😭 」 \n\n畑に行くと、\n大量のトンボが飛んでいた。\n\n大量。\n本当に大量。\n\n「トンボが飛んでいました」\n\nなんて可愛らしいものではない。\n\n👓 「どのくらい？」\n\n「空一面」\n\n 👓 「そんなに？」\n\n「そう表現してもいいくらい」 \n\nしかも低空飛行。\n\nそして、\nでかい。\n\n 「怖いんよ」\n\n「秋の風物詩じゃん」\n\n「風物詩とか言ってられん。低空飛行のでかいトンボが大量に飛んでるんだぞ 😱 」\n \n 怖い。\n\n子どもたちにとっては、\n秋の自然との触れ合いだったかもしれない。\n\n私にとっては、\n恐怖である。\n\n👓 「『とんぼのめがね』弾き語りしてた人なのに」\n\n「歌なら平気なんだよ」\n\n 👓 「実物は？」\n\n「話が違う」 \n\nそんな記憶があるからか、\n私の中では今でもトンボ＝秋のイメージが強い。\n\n👓 「じゃあ今は？」\n\n「今？」\n\n 👓 「KANUは今、何で秋を感じてるの？」\n\n「…………」 \n\n考えてみた。\nそし"
+    },
+    {
+      "key": "n7fec06070526",
+      "title": "【企画参加】【王子×orivie コラボ】あなたの秋で繋がろう。｜秋読コレクション🍁🌙",
+      "authorName": "kazuma",
+      "authorUrlname": "kazuma3924",
+      "publishedAt": "2026-09-29T02:28:32.000+09:00",
+      "articleUrl": "https://note.com/kazuma3924/n/n7fec06070526",
+      "likeCount": 56,
+      "commentCount": 31,
+      "tags": [],
+      "bodySnippet": "【王子×orivie コラボ】あなたの秋で繋がろう。｜秋読コレクション🍁🌙\nに参加します。 \n\n 元記事はこちらです😊\n \n \n \n\n 秋と言えば、そう焼き芋♪\n焼き芋を、書画とエッセイのコラボでお送りします。 \n\n 芋 \n土の匂いをまとった 芋 を、両手で持ち上げる。\n\nまだ少し冷たい。\n\nずっしりと重くて、表面には畑の名残がついている。\n\n秋というものは、案外こういうところから始まるのかもしれない。\n \n\n \n\n 洗 \n水で土を 洗 い流す。指でこすると、土がゆっくり落ちていく。\n\n濁った水の向こうから、赤紫の皮が少しずつ顔を出す。\n\n冷たい水に触れているのに、不思議とこれからの温かさを想像してしまう。\n \n\n \n\n 包 \n濡らした紙で 包 み、その上からもう一度くるむ。\n\n芋の姿は見えなくなる。けれど、隠れてしまった途端に、かえって中身が気になる。\n\nこの中で、これからゆっくり甘くなっていくのだ。\n よろしく頼むぞ、本当に！\n \n\n \n\n 葉 \n庭の隅に集めた落ち 葉 を抱える。\n\n乾いた葉と、まだ少し湿った葉。赤、黄、茶色。\n踏むたびに、しゃり、と音がする。\n\nいつもは邪魔だった葉が、今日は焼き芋のための燃料になると思うと嬉しくなるな。\n \n\n \n\n 火 \n小さな 火 を入れる。最初は頼りない炎が、落ち葉の端を舐める。\n ぱち。\n ぱちぱち。\n 火が生き物みたいに広がり始める。\n\n少し離れていても、頬に熱が届く。\n 煙も目にくるけどな！\n\n \n\n 焼 \n芋を落ち葉の中へ埋める。すぐには何も起こらない。\n 待つ。\n ただ待つ。\n 時々、葉が崩れる音がする。\n 煙が風に流れる。\n 急げばできるものばかりの時代なのに、 焼 き芋だけは、急がせると少しもったいないでしょ。\n \n\n \n\n 香 \nしばらくして、煙の匂いが変わる。焦げた葉の向こうから、甘い 香 りが混じり始める。\n 誰かが「もういいんじゃない？」と言う。\n でも、その言葉を聞いてしまうと、あと少し待ちたくなる。せっかちちゃんめ！\n \n\n \n\n 割 \n熱い芋を取り出す。\n\n紙をほどき、皮に指を入れる。\n\nぱか、と 割 れた。\n\n中から白い湯気が立ち上る。\n 黄色い身が、夕方の光を受けて少しだけ金色に見えた。\n\nその瞬間だけ、みんな黙る。\n 食いしん坊め！\n \n\n \n\n 甘 \n\n ひと口食べる。\n\n熱い。そして、 甘 い。\n 砂糖を足したわけでもないのに、ちゃんと甘い。\n 火と落ち葉と時間だけで、芋はこんな味になる。\n 指先は少し黒くなっている。服にも煙の匂いがついている。\n それでも、その匂いごと秋だった。\n 最後のひとかけらを食べ終えたころ、落ち葉の火はもうほとんど消えていた。\n けれど口の中には、まだ少しだけ、秋の甘さが残っていた...…\n \n\n \n\n \n\n \n\n このエッセイの焼き芋風景、こんな感じだといいなぁ \n\n \n\n この記事の見出し画像は↓これで作成しました✨\n \n \n\n こちらも見ていってね✨️\n\n \n \n \n \n企画参加まとめ｜kazuma｜note\n \n \n企画参加まとめ\n \n \nnote.com\n \n \n\n \n \n \n \nAIイラストまとめ｜kazuma｜note\n \n \nAIイラストまとめ\n \n \nnote.com\n \n \n\n \n \n \n \n想像を超えるドラマチックな死闘が始まった件｜kazuma｜note\n \n \nAIにキャラクターカードを見せたら、想像を超えるドラマチックな死闘が始まった件のまとめ\n \n \nnote.com\n \n \n\n \n \n \n \n3人娘のランキング・雑談｜kazuma｜note\n \n \n3人娘のランキング・雑談\n \n \nnote.com\n \n \n\n \n \n \n \n宇宙シミュレーションまとめ｜kazuma｜note\n \n \n宇宙シミュレーションまとめ\n \n \nnote.com\n \n \n\n \n \n \n \n3人娘のソフィーの世界を哲学者ごとに読み解く｜kazuma｜note\n \n \nソフィーの世界を哲学者ごとに読み解く連載\n \n \nnote.com\n \n \n\n \n \n \n \n3人娘の漫画版風の谷のナウシカを読み解く｜kazuma｜note\n \n \n漫画版風の谷のナウシカを読み解く連載\n \n \nnote.com"
+    },
+    {
+      "key": "n7fe2bb9b43d2",
+      "title": "黄金のナイルと焼き芋神話🌟#秋ラノベ祭り #秋読コレクション",
+      "authorName": "ほろぽの33",
+      "authorUrlname": "holopono33",
+      "publishedAt": "2026-09-29T19:50:55.000+09:00",
+      "articleUrl": "https://note.com/holopono33/n/n7fe2bb9b43d2",
+      "likeCount": 104,
+      "commentCount": 30,
+      "tags": [],
+      "bodySnippet": "その日、エジプトの王都では、民が全員、同じ匂いに足を止めた。\n 甘くて、香ばしくて、どこか懐かしい。\n初めて嗅ぐはずの匂いなのに、胃袋だけが「これだ」と叫んでいる。\n 古来、この港には、香木や黄金、見たこともない宝石を積んだ船が、幾度となく着いた。\nだから今日も、また何か珍しいものが届いたのだろう――誰もが、最初はそう思っていた。\n まさか、それが「神」になるとは、まだ誰も知らない。\n 匂いの出どころは、港のはずれ。\n夕暮れの落ち葉を山ほど集めた焚き火を囲んで、五体のスライムが、揃って真剣な顔をしていた。\n\n 事の始まりは、一時間前。\n 異国の船が置いていった木箱を、セベクが見つけたのだった。\n 🟢「お腹空いたぁ……これ、食べ物かなぁ」\n 中身は、赤紫色のごつごつした根っこ。港の役人は「家畜の飾りだ。捨てておけ」と言い残して去っていった。\n 🟣「……フッ、解析するよ」\nジェフティが鼻先で芋をつつく。\n🟣「毒はない。ただし、生だと硬い。加熱すれば……計算では、化ける」\n 🟠「加熱なら任せて！　アテン、宇宙最速で火をつけるよ！　ガッツだよ！」\nアテンが体を震わせると、集めた落ち葉が、ぼっと燃え上がった。\n 🔵「こら、燃やしすぎない！　延焼したら、僕が怒られる！」\nケスベが火加減を見張る。\n 🔴「あったかいねぇ……セシェ、ぎゅ〜ってしたくなっちゃう」\nセシェが焚き火のそばで、うっとり目を細めた。\n そして、芋が焼き上がった、そのとき。割った断面から、黄金色の湯気が、ふわりと立ちのぼった。\n 発端――ナイルの焚き火 \n匂いは秋風に乗り、あっという間に王都を包んだ。\n 「なんだ、この香りは！」\n「どこだ、どこから来ている！」\n 気づけば、港には民の大行列。\n 🔴「はいは〜い、みんな、ぎゅ〜っと一個ずつだよぉ」\nセシェが焼き芋を配りながら、なぜか一人ひとりを抱きしめていく。列はいっこうに進まない。\n 🔵「セシェ、抱きしめは後回し！　並べ、押すな、こら、割り込むな！」\nケスベが誘導すれば、列は港を出て、市場を回り、王宮の外壁をぐるりと一周した。\n その列の脇で、パンッと乾いた音が響いた。\n 「お並びなさい、神官様方！　神様も、列にはお並びになりますわ！」\n 扇を突きつけていたのは、通りすがりの令嬢だった。香りに負けて横入りしようとした神官たちを、がっちり捕まえている。\n 「わ、我々は神殿の格式が……」\n「格式より先に、お並びなさいまし！」\n\n わかモン令嬢、神官を一喝する（令嬢役：わかモン令嬢さまにご出演いただいています🙏） 神官たちは、しゅんと縮こまり、そそくさと最後尾へ走っていった。\n \n🟣「在庫、残り七個……計算が合わないね」\nジェフティが眉をひそめる。\n🟢「ぼく、味見しすぎたかも……」\n🟣「セベク、それ在庫三個分だよ！」\n 🟠「アテン、追加の芋、取ってくる！」\nアテンが荷車ごと駆け出し、屋台街を突っ切る。屋台が三軒ほど、宙を舞った。\n 王都を駆け巡る大行列 \nそのとき、行列の先頭に、ひときわ豪華な輿が止まった。\n 輿から降りてきたのは、ファラオ本人だった。\n 「王宮まで、この匂いが届いたぞ。……余にも一つ、分けてもらえぬか」\n 神官たちが青ざめる。\n「陛下、異国の食べ物など、不敬にございます！」\n だがファラオは、湯気の立つ芋を受け取り、ひと口かじった。\n 沈黙。\n 「…………神だ」 \n\n ファラオの「……神だ」（ファラオ役：ネロ王子さまにご出演いただいています🙏） 王都が、揺れた。\n 「焼き芋は神だ！」\n「神の食べ物だ！」\n 民は芋を拝み、神官は祭壇を組み上げ――そして、なぜかセベクまで拝まれ始めた。\n 「その名は、ナイルの神と同じ……！　芋を見つけし者は、神の使いに違いない！」\n 神官長がひれ伏せば、他の神官も、ばたばたとひれ伏す。\n 🟢「ぼ、ぼくは芋じゃないよぉ。ただの、お腹が空いたスライムだよぉ」\n セベクが後ずさるたびに、神官たちは同じ距離だけ、膝でにじり寄ってきた。\n あれよあれよと祭壇に座らされ、供物が山と積まれていく。\nおそるおそる一つ食べてみると、\n 「神が召し上がった！　奇跡だ！」\n 民が総立ちで拍手した。\n セベクの「神だ」 🟢「ちょ、ちょっと、止まらないんだけど……」\n 🔵「こら、や"
+    },
+    {
+      "key": "n07a113cdd83e",
+      "title": "【育児漫画】紅葉を見に来たはずが。｜秋読コレクション",
+      "authorName": "ぱっちー｜暮らしと挑戦の記録",
+      "authorUrlname": "fine_loris7218",
+      "publishedAt": "2026-10-04T09:18:31.000+09:00",
+      "articleUrl": "https://note.com/fine_loris7218/n/n07a113cdd83e",
+      "likeCount": 56,
+      "commentCount": 29,
+      "tags": [],
+      "bodySnippet": "ネロさんとorivieさんの企画「秋読コレクション」に参加させていただきます🍁\n テーマは「あなたの秋」。\n 私の秋は、息子と見た紅葉です。\n 今回は、育児漫画で描いてみました。\n \n\n 紅葉は、足元にもあった 紅葉を見に行こう、と公園に行ったのに。\n 息子はずっと、下を向いていました。\n 「上だよ、上！」と何度言っても、拾うのは落ち葉ばかり。\n でも、「手みたい！」と見せてくれた一枚は、本当に息子の手と同じくらいの大きさでした。\n 大人は、きれいなものを見上げようとします。\n 子どもは、手の届くところにある秋を、ちゃんと見つけていました。\n ……その秋が、ポケットいっぱいに詰まったまま洗濯機に入ったのは、また別の話です（笑）\n みなさんのお家でも、ポケットから秋が出てきたこと、ありませんか？\n \n\n 秋読コレクションで見つけた、みんなの秋 秋読コレクションには、ほかにもたくさんの秋が集まっています。\n その中から、読んでいて心に残った8本を紹介させてください。\n \n\n 甥っ子くんが教えてくれた、虹色の秋 舞香さん \n 「秋すき？」夜ごはんのときに、甥っ子くんからそう聞かれたところから始まる、短いエッセイです。\n 大人の答えは「涼しいから」「美味しいものがいっぱいだから」。でも甥っ子くんは「葉っぱがいろんな色になって虹色で可愛いから！」。\n 大人が忘れていた秋を、子どもが見つけている。私の漫画と重なって、うれしくなりました。\n 子どもの言葉を、そっとすくい上げるのが上手な人です。\n 続きは、こちらから。\n \n \n \n \n\n \n \n \n\n 金木犀が連れてきた、保育園帰りの息子さん のりもちさん \n 保育園からバス停へ向かう道にあった、金木犀。その香りを思い出したら、小さな歩幅で歩く息子さんの姿まで一緒に戻ってきた、というお話です。\n レインコートで水たまりをよけた日、キャラメルをもらってニコニコしていた日。忘れてしまいそうな小さな日常が、ていねいに書かれています。\n 同じように保育園に通う子を持つ親として、胸がぎゅっとなりました。\n 思い出を、香りごとそっと残せる人です。\n 続きは、こちらから。\n \n \n \n \n\n \n \n \n\n 秋のデートが、銀杏で大変なことに 堂安咲和さん \n イチョウの木の下で待ち合わせて、彼の新車に乗り込んだら……「なんか臭くない？」。\n 犯人は、ブーツの裏の銀杏でした。\n 「どこか切ないのが秋だとしたら、私の秋はだいぶシュールだ」という一文に、思わず笑いました。\n 恋の話を、くすっと笑える形で届けてくれる人です。\n 続きは、こちらから。\n \n \n \n \n\n \n \n \n\n 秋は、手もとの灯りからやってくる 雪綴ゆきさん \n 机の灯りをつけようとして、まだ17時半だと気づく。そこから始まる「灯りの秋」の3行日記です。\n 冷たい麦茶が、いつのまにか湯気の立つマグカップに。チンチラのみーくんの、夜の運動会。\n 小さなことばかりなのに、ちゃんと秋のかたちをしていました。\n 静かな言葉で、季節の変わり目をすくいとる人です。\n 続きは、こちらから。\n \n \n \n \n\n \n \n \n\n 秋が見つからないので、全部ためしてみた ぽてむしさん \n 「秋が見つからないのは私のせいじゃない。世界がおかしいのだ」。冒頭から笑ってしまいました。\n 読書の秋はポテチの袋の裏を読み、スポーツの秋は洗濯機まで往復12歩。\n 最後に秋を見つけた場所が、しめったままの洗濯物だったのも、わが家の洗濯機の紅葉と重なりました。\n ゆるい言葉で、ちゃんと大事なことに着地する人です。\n 続きは、こちらから。\n \n \n \n \n\n \n \n \n\n 秋だから、きのこたけのこ戦争を ウタさん \n 秋といえば、きのこ。きのこといえば、きのこの山。というわけで始まる、きのこたけのこ戦争です。\n 内容量、カロリー、チョコの比率まで並べて、きのこの山の強さを証明していきます。\n 最後の「異論は認めます。ただし、僕は聞きません。」で吹き出しました。\n 大まじめにふざけられる、楽しい人です。\n 続きは、こちらから。\n \n \n \n \n\n \n \n \n\n 景色より先に、鼻が秋に気づく なつきさん \n 病院へ向かう車の助手席から見える、銀杏の並木。木はまだ緑のままなのに、匂いだけが先に秋"
+    },
+    {
+      "key": "nfae3aaabe086",
+      "title": "\"秋読コレクション\"│orivieさん│ネロ🌙さん│\"participate in the project\"",
+      "authorName": "架空彼氏製作所｜AIイラスト",
+      "authorUrlname": "kakuu_kareshi",
+      "publishedAt": "2026-09-29T21:24:18.000+09:00",
+      "articleUrl": "https://note.com/kakuu_kareshi/n/nfae3aaabe086",
+      "likeCount": 68,
+      "commentCount": 29,
+      "tags": [],
+      "bodySnippet": "ようこそ。「架空彼氏製作所」へ。\n \n今日も来てくれてありがとうございます。\n\n今日は、orivieさんとネロさんの共同企画に参加。\n『秋』をテーマにいつもと違った独り言を。\n\n昔、大好きなばーちゃんとの会話を思い出して書いてみました。\n \n秋のお話 \n きみの名前に「秋」という字が入っているの、嫌がるかな。\n 夏生まれなのに、秋。\n 大きくになったら、たぶん一度は聞かれると思う。\n\n「なんで？」って。\n \n\n きみは、予定日よりだいぶ早く生まれてきたんだ。\n まだ、蝉がうるさい時期。\n\nきみが来るのは、涼しくなってからだと思っていたから。\n 用意していた季節が、まるごと、余ってしまった。\n \n\n きみに初めて出会った時、\n\nその日は季節外れの肌寒さだったんだ。\n\n前日の雨のせいかな\n\n きみから、知らないにおいがした。\n甘くて、すこし乾いた、はじめてのにおい。\n 腕の中の体温だけが、あたたかい。\n 窓の外\n まだ青い葉っぱたちが、夕焼けの光を受けてオレンジ色に反射する。\n濡れたアスファルトがきらきら反射する。\n\n きみが、秋を連れてきたんだ。\n きみが自分で持ってきた季節を、そのまま、名前にいれたんだ。\n \n\n 今年も、風が変わってきた。\n 空が、すこし高い。\n ほら、きみの名前の季節が、またやってきたよ。\n\n #秋読コレクション \n\n \n \n \n \n \n架空彼氏製作所｜AIイラストの推し庭｜推し庭\n \n \n記事を読むたび、1アクション。植物を植えたり育てたりしながら、あなただけの庭を育てます。\n \n \noshi-niwa.hasyamo.workers.dev"
+    },
+    {
+      "key": "na5a1c8bfbae7",
+      "title": "秋が見つからないので、読書の秋と食欲の秋とスポーツの秋と芸術の秋を全部ためした｜秋読コレクション",
+      "authorName": "AIゲーム制作のぽてむし｜相互フォローします、ぽてちください",
+      "authorUrlname": "potemushi",
+      "publishedAt": "2026-10-03T16:04:02.000+09:00",
+      "articleUrl": "https://note.com/potemushi/n/na5a1c8bfbae7",
+      "likeCount": 76,
+      "commentCount": 27,
+      "tags": [],
+      "bodySnippet": "秋が見つからないのは私のせいじゃない。世界がおかしいのだ\n みなさん、読書の秋とか、食欲の秋とか言ってます\nでも、私のまわりには、まだ来てません\n秋、道に迷ってるのでは\n ぽてむしです、\n今日は企画に巻きこまれにきました\n ネロ王子とorivieさんの「秋読コレクション」です\n「これは私の秋だな」と思えるものなら、食べ物でも本でも思い出でも、ジャンルは問わない企画です\n作品のすごさは競わない。最近見つけた小さな秋を数行書くだけでも立派な参加、と書いてありました\n 数行でいいなら、いもむしにも書ける(*`･ω･´)\n 秋のほうから来ないなら、こっちから迎えにいきます\n有名な秋を、4つためしました\nここから、真面目にためします\n ――ぽてむしの秋、4つ――\n 読書の秋\n本が見つからないので、ポテチの袋のうらを読みました。原材料名まで、ぜんぶ\n 食欲の秋\nポテチを食べました\nガサッ　パリッ\nいつもと同じ味でした\n スポーツの秋\n洗濯機まで歩きました。片道6歩、往復12歩\n息は切れていません(* 'ᵕ' )さすが私\n 芸術の秋\nポテチの袋を、音を立てずにあける研究をしました\nガサッ\n今年も、音が出ました\n――おわり――\n 4つやって、気づきました\n……全部、ふだんやってることでは？\n 秋、どこにもいない\nとあきらめて、夕方、洗濯物をとりこみました\n\nぁ、まだしめってる\nきのうまでは、この時間には乾いてたのに\n 犯人、秋（いつのまにか物干しに影響来てた\n 秋、いました\n物干しのところに\n ここで、ひとつ分かりました\n秋は、遠くまで探しにいかなくても、いつもやってることに「〇〇の秋」と名前をつけるだけで、ちゃんと秋になる\nポテチの袋のうらを読むのも、名前をつけたら読書の秋でした( ˙꒳˙ )\n みなさんも、いつもやってることを1つえらんで、頭に「〇〇の秋」とつけてみてください\nそれを数行書いたら、もう秋読コレクションに出せる形です\nnote初心者のいもむしでも、できました\n ネロ王子は、人に会って、笑って、コメントでお話するのが大好き、とプロフィールに書いてる王子です\n\norivieさんは、noteとAIイラストの企画やイベントを開いて、記事や作品を見つけてもらう場所をつくってるひと\n\n代表作の欄に「海ポテト」とあって、ポテトの文字に、いもむしの触角が反応しました\n ふたりのまわりのひとどうしが、秋をきっかけに出会えたら、という企画です\nネロ王子の募集記事は、ここです\n \n orivieさんの募集記事は、ここです。参加のしかたがくわしく書いてあります\n \n みなさんの「〇〇の秋」も、コメントで教えてください\nポテトチップスと交換しましょう\n フォローもらえたら嬉しいです。紹介もばっちこいです✌️(　˙-˙　)✌️\n 洗濯物は、あしたの朝まで、秋にあずけておきます\n 書いたので、寝ます\n \n#秋読コレクション #小さな秋 #読書の秋 #食欲の秋 #ポテチ #note初心者"
+    },
+    {
+      "key": "n355d494d167e",
+      "title": "まっかな秋　金魚にキャンプに　日本酒よ　| #秋読コレクション",
+      "authorName": "Pajama de mama*4歳娘ママ",
+      "authorUrlname": "mama_ca",
+      "publishedAt": "2026-10-01T22:58:38.000+09:00",
+      "articleUrl": "https://note.com/mama_ca/n/n355d494d167e",
+      "likeCount": 82,
+      "commentCount": 27,
+      "tags": [],
+      "bodySnippet": "🚪㌧㌧\nどうぞお入りくださぁ〜い\n \nﾜｰｲ \\ 🍂🎑🐇🍠🌕🎃🍁👻 / ﾜｰｲ\n\n秋がやってきましたね〜🍁\n\n 金木犀の香り💭*･゜ﾟ･*:.｡.*:.｡. .｡.:*･゜ﾟ･*\nが街を包んで🌇\n大好きな季節です🥰\n 擦った。\nはい、擦りましたよ！\n \n 秋満載の導入にしたかったから🤤🍁\n\nご安心ください、\nちゃんと新記事です‼︎✨\n\nというのも、\n今回は #秋読コレクション に参戦です‼︎🍁✨\n \n 改めまして、こんにちは。\nPajama de mamaです🌝\n \n秋って、いいよね〜。\n私が一番好きな季節。\n\n今年は9月に入ってからめっきり涼しくなって、例年よりも秋を感じる日が多い気がします🤤\n\n金木犀の香り💭*･゜ﾟ･*:.｡.*:.｡. .｡.:*･゜ﾟ･* も、\nいつもなら10月に入って満たされていたけれど、\n今年は９月中旬から香ってて、\n自転車に乗りながら「おっ💓」と思いました✨\n\n \n秋って、\n　夏が終わった寂しさを感じながら\n　ぬくぬくし始められて🧸\n　風情があって、温くて、良い 💭*: .｡.:*･゜ﾟ･* \n\nさて、何書こうかな？🤔\n💡具体的に最近のことを書き出してみた。\n 🍁私も娘も秋生まれ\n🍁「真っ赤だなあ」を歌う娘\n🍁運動会のダンスをお家で披露する娘\n🍁秋祭りで掬った金魚を愛でる私と娘\n🍁炊き込みご飯を作ってくれる夫\n🍁誕生日プレゼントを買ってくれた夫\n🍁キャンプが楽しくなる季節だよね\n🍁日本酒が美味しくなる季節だよね\n 書きたいことがたくさんだな‼︎\n...この企画って1人1記事だけだっけ？\n\n \nどうしよう。\n詰め込もう。\n\n \nさぁいくぞ！\n \n\n \n※とりあえず娘の「真っ赤だなぁ」を\n　聴きながらご覧下さい🎧\n \n 正式名称は「まっかな秋」でした☺️\n\n \n\n 🍁金魚 こないだ、秋祭りで掬った金魚たちを\nおうちにお迎えしました🏠💕\n\n我が家にはすでに、\nだんちゃんというダンゴムシがいるのですが🍡\n金魚すくいの金魚も仲間入りです🙌\n 色が濃い方が、ます太郎。\n色が淡い方が、イェイイェイ。 \n名付け親は娘です😂\nなんという自由な発想🤣\n\n何も手助けはしておりません。\n娘の口から出てきたそのまんまです。\n面白すぎたのでそのまま採用しました。\n ちなみにうちのだんちゃんはこちら💁‍♀️\n \n \n \n愛娘のダンゴムシ愛 | だんちゃん🍡記録｜Pajama de mama*4歳娘ママ｜note\n \n \n子供の好奇心という 何者にも代えられない 尊くも恐ろしい 純粋無垢な抗えない力 により ダンゴムシを飼う羽目になった私。\n \n \nnote.com\n \n \n\n \n 金魚たちの観察記録も、始めます。\n \n\n 🍁キャンプ 雨の中の、秋のキャンプって、いいですよね。\nいや、やったことはないですが。（ないんかい）\n YouTubeでお気に入りのキャンパーさんが、\n毎回いつも雨の中キャンプしてるんです。\n なぜわざわざ雨の中？🌧️🏕️\n私も最初そう思いましたが、\n観ているうちに、その理由が分かりました。\n\n 　　落ち着く。\n \n雨音を聴きながら、\nテントの中で丁寧にコーヒーを入れて、飲む。\n\n 　　なんて贅沢な時間だろう。\n \n一視聴者として、\n疑似体験をしながらお家でコーヒーを飲む私。笑\n そのうち私も挑戦してみたい…🏕️🌧️✨\n雨キャンパーの方いらっしゃったら、\n教えて下さい🤗\n 私の唯一のキャンプ関連記事💁‍♀️\n \n 「野崎さん、タイトルは全然秋ではないけど、\n記事内でプールにもキャンプにも使えるアイテム、紹介してるよ。🏕️」\n VIVANT、そろそろ第二幕が始まりますね..ﾄﾞｷﾄﾞｷ\n \n\n 🍁日本酒 秋の日本酒といえば、ひやおろし🍶🍁\n 私、日本酒のソムリエのような資格を持ってますので、ここで秋の日本酒をご紹介いたします。\n \n \n ひやおろしって、\n「冷たい日本酒」のことだと思ってませんでした？🍶\n私は資格を取る前、そう思ってました。笑\n\nざっくり言うと、\n ひやおろし＝夏を越した秋の日本酒 \n 冬に生まれて、\n春に一度火入れされて、\n夏を越して、\n秋にもう一度火入れをせず出荷。\n\nだから、ひと夏を越した"
+    },
+    {
+      "key": "n00145adec9ec",
+      "title": "🎃 秋の畑に、ハロウィンかぼちゃを植えてみたい",
+      "authorName": "みゆこ｜菜園ティスト🌱　「やってみた」を楽しもう",
+      "authorUrlname": "miyuki1192",
+      "publishedAt": "2026-10-01T21:34:33.000+09:00",
+      "articleUrl": "https://note.com/miyuki1192/n/n00145adec9ec",
+      "likeCount": 84,
+      "commentCount": 27,
+      "tags": [],
+      "bodySnippet": "秋になると、街がちょっとオレンジ色になる。\n 焼き芋。\n 紅葉。\n 柿。\n そして……\n ハロウィンかぼちゃ🎃 \n あのオレンジ色のかぼちゃを見ると、家庭菜園歴7年の私は思う。\n 「これ、畑で育てたら楽しそうじゃない？」\n \n ……ところが。\n 我が家には、 かぼちゃとさつまいもの植え付け禁止令 がある。\n 理由は簡単。\n 場所を取りすぎるから。 \n 特にかぼちゃ。\n 過去に私は、なんと 3回も 言われている。\n 「かぼちゃは、もう植えないでね」\n なぜ、そこまで念を押されるのか。\n それには理由がある。\n かぼちゃのつるが、\n 畑を横切り……\n さらに進み……\n 隣の家との境の塀を登り始めた。 \n 「ちょっと待って！」\n 「どこ行くの！」\n かぼちゃ本人は、そんな人間の事情など知ったことではない。\n ただひたすら、\n 上へ。 \n 隣家へ向かって、\n 上へ。 \n もはや家庭菜園ではない。\n 脱走劇。 \n そんな経験があるので、ハロウィンかぼちゃを見ても、\n 「かわいいなぁ🎃」\n と思うだけ。\n ……のはずなのに。\n もし植えたら。\n 芽が出て、\n 小さな実がついて、\n だんだんオレンジ色になって……\n 最後には、\n ジャック・オー・ランタン🎃✨ \n 絶対かわいい。\n でも、その頃には私はきっと、\n 「かわいい〜♡」\n ではなく、\n 「塀に行くなーーー！」 \n と叫んでいる。\n そして収穫したかぼちゃを抱えて、\n 「これ、めちゃくちゃ重いやん……」\n となる。\n ハロウィンなのに、\n まさかの筋トレ😭 \n というわけで今年は、\n ハロウィンかぼちゃを 妄想で育てます。 \n 我が家の畑には、\n もう十分な理由がある。\n かぼちゃは、野菜ではなく脱走犯。 \n ……でも。\n 園芸店でハロウィンかぼちゃの種を見つけたら、\n 私はきっと立ち止まる。\n そして、そっと袋を手に取って……\n 「塀を登らないかぼちゃ、ないかな？」 🎃🤣\n 🎃そして、もうひとつお願い。ただいまフォロワー990人。\n 1000人まで、あと10人！ \n 1000人になったら変えようと思って作った、ハロウィン仕様のヘッダー。\n なのに……\n なぜか、ここへ来てフォロワーが急に増えなくなった😂🎃 \n ヘッダーが、\n 「まだ出番じゃないよ」\n と言われて待機してます。\n 家庭菜園、AI、イラスト、そして「やってみた」。\n そんなことを楽しみながら発信しています🌱✨\n よかったら……\n あと10人の仲間になってください🎃🌱 \n そして私に、\n 「ヘッダー、早く変えなきゃ！」 \n と言わせてください🤣\n \n\n \n\n こちらのマガジンに参加させていただいています🎃\n王子、いつも楽しい企画、ありがとうございます🌿\n \n \n \n秋読コレクション🍁🌙｜ネロ🌙｜王子｜秋読コレクション開催中 【10/4まで】｜note\n \n \n【期間限定マガジン 9/28〜10/4まで】 🍁 秋読コレクションは、王子×orivieで開催する「秋」をテーマにした\n \n \nnote.com\n \n \n\n \n \n \n \n \norivie | イベント『秋読コレクション』9/28〜10/4開催🍁｜note\n \n \n代表作：『熱狂論』『海ポテト』 Xを中心にnote、AIイラストの企画・イベントを定期的に開催！ 記事や作品を見つけても\n \n \nnote.com"
+    },
+    {
+      "key": "n5a0e3d8643b4",
+      "title": "深呼吸したら、秋だった。",
+      "authorName": "天界記録",
+      "authorUrlname": "tenkai_notes",
+      "publishedAt": "2026-10-04T23:00:00.000+09:00",
+      "articleUrl": "https://note.com/tenkai_notes/n/n5a0e3d8643b4",
+      "likeCount": 96,
+      "commentCount": 26,
+      "tags": [],
+      "bodySnippet": "毎月1日は、近くの神社にお参りに行く。\n その朝も、いつもより少し早く家を出た。\n 通勤は自転車だ。\n いつもの道を走っていると、途中で少し坂になる。\n そこで、ペダルを漕ぐのをやめた。\n 自転車はそのまま、惰性で進んでいく。\n 風が当たった。\n 少し肌寒い。\n なんとなく、深呼吸した。\n 息を吸った瞬間、匂いがした。\n うまく説明できない。\n でも、その匂いを感じた瞬間、\nいくつかの記憶が一瞬だけよぎった。\n 何を思い出したのか、\n一つひとつは掴めない。\n ただ、\n どこかで感じたことのあるような、\n懐かしい感じだけが残った。\n そして、\n 「あ、秋だ」\n と思った。\n 気づくと、自転車は少し遅くなっていた。\n またペダルを漕いだ。\n ――――――――――\n 「秋読コレクション🍁🌙」参加記事です。\n 誰かの秋を読んで、\n自分の秋にも気づく。\n そんな企画に、\n私が見つけた小さな秋を持ってきました。\n ▼日常の中で、ふと立ち止まったことを書いています。\n 「立ち止まったところから。」\n \n \n \n \n \n \n立ち止まったところから。｜天界記録｜note\n \n \nニュースを見ていて、ふと手が止まったこと。 仕事の途中で、なんとなく引っかかったこと。 家族との会話から、考え始めたこと。\n \n \nnote.com\n \n \n\n \n\n \n \n #秋読コレクション\n#エッセイ\n#秋\n#日常\n#自転車\n#記憶\n#匂い\n#季節"
+    },
+    {
+      "key": "nfc339017f0ec",
+      "title": "茶碗蒸しから始まる、私の「ほろ〇い」秋の思い出",
+      "authorName": "堂安咲和🪞 恋の本音を、物語と言葉に。",
+      "authorUrlname": "good_ixia6698",
+      "publishedAt": "2026-09-28T07:51:05.000+09:00",
+      "articleUrl": "https://note.com/good_ixia6698/n/nfc339017f0ec",
+      "likeCount": 69,
+      "commentCount": 26,
+      "tags": [],
+      "bodySnippet": "🍂今回のこちらの企画に参加します。\n\nネロ王子🌙とorivie✨さんのコラボ\n「秋読コレクション」\n\nネロ王子🌙\n \n \n \n \n\n \n \n \n　orivieさん✨\n \n \n \n \n\n \n \n \n【テーマ】\n「あなたの秋を、読ませてください」\nなので\n私の忘れられない秋の思い出をひとつ🍁\n \n◇\n\n \n茶碗蒸しを食べていたら、スプーンですくった底から銀杏が出てきた。\n\n 秋って、こういうところにも来るんだなと思う。\n\n栗とか、きのことか、さつまいもとかも好きだけど、銀杏はなんか別枠だ。\n\n 見つけると、ちょっと嬉しい。\n\nでも、銀杏を見ると、たまに思い出す人がいる。\n\n ……なんて書くと、\n \nきれいな恋の思い出みたいだけど、\n 私の場合は、彼より先に思い出すものがある。\n\n昔、デートの待ち合わせで、大きなイチョウの木の下で彼を待っていた。\n \n黄色い葉っぱ。\n少し冷たい風。\n\nこれからデート。\n\nまだ秋めき始めたばかりで、お気に入りのブーツを履いて「秋らしくて、いい待ち合わせ場所だな」と思いながら。\n\n \nその日、彼は買ったばかりの新車で迎えに来てくれた。\n\n新車。\n\n大事なことだから、もう一回言うけど、\n まっさらな新車だ。\n\n私は、新車に乗れる嬉しさだけで、ワクワクしながら助手席に乗り込んだ。 \n\nドアを閉めて一息ついた瞬間、車内に不穏な空気が漂う。\n\n少し走り出してすぐ、彼が言った。\n\n「……なんか臭くない？」\n\n私も、さっきから思っていた。\n\nなんか臭い。\n\nしかも、まあまあ臭い。\n\n「窓から入ってきてる？」\n\n彼が言う。\n\n「新車って、こんな匂いするんだっけ」\n\n私も一応、新車を疑ってみた。\n\nでも、よく分からない。\n\n信号で止まっても臭い。窓を開けても臭い。\n\n新車の匂いにしては、どう考えても強烈だった。\n\n そのとき、ふと足元を見た。\n\nブーツを少し浮かせて、裏を見てみる。\n\n \n\n 見事に潰れた銀杏が、くっついていた。\n\n \n……私じゃん。\n\n原因、完全に私じゃん。\n\n待ち合わせしていたのは、あのイチョウの木の下。\n\n彼を待っている間に、思いきり踏んでいたらしい。\n\nあの、踏むとえげつない匂いを出す銀杏を。\n\n一瞬、迷った。\n\nこれ、言わなきゃダメだよね。\n\nいや、言わないという選択肢は…\n \n…たぶんない。\n\nだって、まだ臭ってる。\n\n ほんの一瞬だけ、このまま知らん顔をしておこうかなと思った。\n\n新車のせいにできないかな、と。\n\n……できない。\n\nどう考えても、できない。\n\n犯人は、私の足元にしっかりくっついてる。\n\n 結局、\n\n「……ごめん。私だわ」\n\nと、白状した。\n\n秋らしくて、ロマンチックなはずだったデートは、開始早々、\n\n『銀杏を踏んだブーツのまま、彼女が新車に乗り込んだ』\n\nという、地味に忘れられない出来事になった。\n\n彼がそのとき、どんな顔をしていたのかは、もう曖昧で。\n\nその日、どこへ行ったのかも、細かいことはほとんど覚えていない。\n\nなのに、銀杏だけは覚えている。\n\n \n記憶って、なんだか順番がおかしい。\n\n何を話したかなんて、ほとんど覚えていないくせに、\n\n「そこ？」\n\nって言いたくなるようなことだけ、妙に鮮明に残っていたりする。\n\nどこか切ないのが秋だとしたら、私の秋はだいぶシュールだ。\n\nそして今、目の前には茶碗蒸しがある。\n\nさっきすくった銀杏が、何事もなかったような顔で、スプーンの上にいる。\n\nあんなに強烈な匂いで人を困らせておいて、\n\n食べるときだけは涼しい顔をしている。\n\nずるい。\n\nでも、おいしい。\n\n銀杏を見つけると、今でもあの日を思い出す。\n\n \n彼の顔より先に、まずあの強烈な匂いと、ブーツの裏にしっかりくっついていた銀杏が、浮かんでくる。\n\n \nたぶん彼も、あの秋のことは忘れていないと思う。\n\n私とは、少し違う意味で。\n\n あとがき \n\nちなみに、その時の彼とはその後お別れしました……\n\nが、\n\n決してこの銀杏事件が原因ではありません笑。\n\n秋といえば金木犀の香り、色づく紅葉、おいしい味覚……いろいろありますか、なぜか私の脳裏に真っ先に浮かぶ秋は、あの「銀杏」でした。\n\n昔の恋は「ほろ苦い」なんて言いますが、私の場合はどう考えても完全なる『ほろ〇い』思い出です笑\n\n"
+    },
+    {
+      "key": "n6fd84958bf48",
+      "title": "戦争を始めよう。きのこたけのこ戦争を。",
+      "authorName": "ウタ｜楽しみながら収益化を目指す人",
+      "authorUrlname": "hip_badger4262",
+      "publishedAt": "2026-10-03T12:53:46.000+09:00",
+      "articleUrl": "https://note.com/hip_badger4262/n/n6fd84958bf48",
+      "likeCount": 48,
+      "commentCount": 25,
+      "tags": [],
+      "bodySnippet": "こんにちは。ウタです。\n 秋ですねぇ。\n秋といえば、きのこが美味しい季節ですよね。\nきのこといえば、きのこの山。\n\nきのこの山といえば、避けては通れない話題がありますよね。\n\nそう。\n きのこたけのこ戦争です。 \n\n僕は、きのこ派です。\n\n今日はこの場を借りて、\nきのこの山がいかに優れているのかを証明したいと思います。\n\nそもそも、\n最初から勝負は決まっていますけどね。\n\nまずは、客観的なデータを見てみましょう。\n\n ① 内容量 \n🍄きのこの山：66g\n🎋たけのこの里：63g\n\n きのこの山の勝ちです。 \n\n ② カロリー \n🍄きのこの山：378kcal\n🎋たけのこの里：345kcal\n\n きのこの山の勝ちです。 \n\nカロリーが多いのは悪いことではないですよ。\nなぜなら……\n 無人島で遭難したときに有利だからです。\n この33kcalが生死を分けるかもしれません。\n\n ③ チョコの比率 \n次に、チョコレートの比率。\nこれはかなり重要です。\n\nだってチョコレート菓子なんだから、\nチョコが多い方が嬉しいじゃないですか。\n\n実際に重量を測って比較した記事によると、\n\n🍄きのこの山：約65％\n🎋たけのこの里：約52％\n\nなんと、13ポイント差。\n きのこの山の勝ちです。\n \n ④ あの「論破王」もきのこ派 \nそして、最後に強力な援軍を紹介します。\nみなさんご存じ、\nひろゆき氏。\n\nなんと、ひろゆき氏もきのこ派です。\n\n実際に「きのこの山派」として語っている動画も残っています。 \n\nこれはデカい。\nなぜなら、論破王がきのこ派だからです。\n\nつまり、たけのこ派が何を言ってきても、\n「それ、あなたの感想ですよね？」\nで返せる。\n きのこの山の勝ちです。\n \n ⑤ 結局、どっちが美味しいの？ \nここまでいろいろ比べてきました。\n内容量\nカロリー\nチョコの比率\nそして、ひろゆき氏\n\nでも結局、\nお菓子って好みですよね。\nたけのこの里が好きな人もいる。\nそれは分かります。\n\nクッキー生地が好きな人もいるでしょう。\nあの形が好きな人もいるでしょう。\n\n……でも。\n\n 僕はきのこ派です。 \n\nだから、\n きのこの山の勝ちです。 \n\n異論は認めます。\nただし、僕は聞きません。\n \n\n おわりに いかがでしたでしょうか。\n\n秋はきのこの季節なので、\nきのこの山について語らせていただきました。\n\nもちろん、たけのこの里派の方々の言い分もたくさんあると思いますので、\nよかったらお聞かせください。\n\n 来年のたけのこの季節に。 \n\nありがとうございました。\n以上、ウタでした。\n \n今回はネロ王子🌙のとorivieさんのコラボ企画\n 「秋読コレクション」 \nに参加させていただきました。\nこれからも素敵な企画に参加して行きたいと思います✨\n参加させていただき、ありがとうございました！"
+    },
+    {
+      "key": "nbfea15d1e087",
+      "title": "秋深し、隣は禁書棚",
+      "authorName": "山田、最後は勘。",
+      "authorUrlname": "saigo_wa_kan",
+      "publishedAt": "2026-09-28T00:15:43.000+09:00",
+      "articleUrl": "https://note.com/saigo_wa_kan/n/nbfea15d1e087",
+      "likeCount": 44,
+      "commentCount": 24,
+      "tags": [],
+      "bodySnippet": "山田は娘たちに山のような絵本を贈る。\n\n本はなんぼあっても良いですね。\n本屋でのおねだりはわがままじゃあございませんのよ。\n買え買え、ふははは。\n\nぴっ\nいおんぺーい。\n...プリンセスの本、いいお値段ざますね。\n\n山田の両親は毎年、年間購読の絵本シリーズを贈ってくれる。\n山田の兄は、可愛い図鑑の担当を名乗り出ている。何だあの髭面おっさん。可愛いなおい。\n\n 真理がわれらを自由にする。 \n\n国立国会図書館の理念、\nフルリスペクト一族である。\n\n さぁ、娘たちよ。知識の翼で飛び立とう。 \n\n知るは楽しい！実に楽しい！\nようこそ、素晴らしき探求の世界へ。\n山田も道半ばだよ、一緒に行こう。\n娘たちよ、新芽のような若人よ、\n君たちの見る世界を教えてよ。\n\n『うんこしりとり』...\nわぉ。アリガト、次女ちゃん。\n買うの？そっか。おっけぃ。\n長女ちゃんと次女ちゃんが抱腹絶倒しとる！？\nまじか。幼児のうんこ好き舐めてたわ。\n知見が増えたわありがとう。\n\nだがしかし。\n\n山田の本棚。\n禁書が多数。\n色んな意味でやべぇ。\n検閲、入りまーす。\n図書館の理念？\n あ、私立文庫なので。ええ。 \n山田が法です、はい。\nとにかく、娘たちが文字を読める頃には、鍵付き禁書棚が必要だ。\n\nしかし、親の知識を垣間見るのも、成長期には必要だ。\n幼き日の山田が、ヒエログリフに魅せられたように。\n\n 見せる用の本棚を作れば良いな、うん。 \n\nえー、ではひとまず手持ちから。\n\n魔女図鑑。\nドラゴン学。\n魔術学。\nノーム。\n秘密のノーム。\nえ？彼らはいるよ、知らんのか。\n\nしばわんこの和の心。\nしばわんこの和の心2。\nしばわんこの和の心3。\n日本人たるもの、これぐらいはね。\n堅苦しくなく生活に根付いた文化を学ぼうね。\n\n旧約聖書。\n読み物として愉快。\n昔中学校の前で身なりの良い謎のおばちゃんたちにもらった。\n\n本当にいる世界の深海生物大図鑑。\n深海はいいぞ。\nこれはサラッと読めて幼児にもよかろう。\nところで本書にはないんだけど、山田はダイオウイカとマッコウクジラのガチンコバトルが好きなんだ。マッコウクジラは普段生息する階層が違うのに、わざわざ深海までカチコミ、いや捕食に行ってる。つまりよほどダイオウイカが美味しいんだろうかとか吸盤攻撃食らってんのまじウケる。ほんとお前最高案件で、\nハァハァハァ語りすぎた。興味が湧いたら声かけて。\n\n国立科学博物館のひみつ。\n山田の大好きな科博の見どころ満載。\nさぁ上野に行きたくなったな？なったな！だろだろ。次の週末は暇か？暇でなくとも行こう、時間は作るもんなんだ。上野はいいぞ。珠玉の館が揃ってる。棲んで日参したいぞハァハァハァ。\n\n広辞苑。\n読むのが楽しいからね。\n調べ物をしたはずが、隣の知識を読み耽ったりしちゃうんだ。\nやはり厚みは重要だ。\n強盗が来たら殴れるし。\n\n美術館で買った資料集たち。\n美しいものは良いものだ。\nインクの匂いも好きなのよ。\n\n写真集　誰か晩夏を知らないか。\n廃墟の写真集。\nあぁ、退廃の美よ。\n胸が掻き毟られるこの気持ちの名前は何だろう。\n\n死ぬまでに行きたい世界の絶景。日本編。\n旅先の選定に使えるよ。\n\n異世界に一番近い場所　ファンタジー系ゲーム・アニメ・ラノベのような現実の景色。\n眺めてから寝ると楽しい夢が見られます。\n悪夢だと泣きを見ます。\n\n宝引の辰 捕物帳。\nこれは外せんな。泡坂妻夫先生。\n上品な語り口に魅せられる。\n読め。語ろ。語り明かそ。\n\n……うむ。\n\nなかなか、良い。\n山田の愛娘たちの教養の糧となるが良い。\n\nただし、『こころ』はだめだ。\n性癖が狂うからな。\n\n『シャーロック・ホームズ』\n言わずと知れた名探偵。\nいや、ブロマンスが過ぎるか。\n性癖が捻じ曲がること請け合い。\nむむっ...\nだが語り合いたいッ、お通りください。\n\n『伊勢物語』はだめだ。\n業が深いし恋愛観が狂う。\n\n『雨月物語』も……。\n大好きなんだけど...ちょっとな...\nいや、これは怪異だからいいのか？\n\nいや、待て。\n男女の情念が濃い。\n\n ……禁書棚だな。"
+    },
+    {
+      "key": "n1c6d7e3641f7",
+      "title": "【PL学園#外伝】元プロ作家が無料プロンプトでラノベ初挑戦🍁秋読コレクション💝秋ラノベ祭り　",
+      "authorName": "ryuu☆PL学園コラム",
+      "authorUrlname": "loyal_poppy819",
+      "publishedAt": "2026-10-03T20:19:08.000+09:00",
+      "articleUrl": "https://note.com/loyal_poppy819/n/n1c6d7e3641f7",
+      "likeCount": 127,
+      "commentCount": 23,
+      "tags": [],
+      "bodySnippet": "いつも楽しい企画を打ち出してくれる「わかモン」さんが「ライトノベル作成支援プロンプト」を無料配布されていました！ \n \n 発端は「#王子ごっこ」でお世話になったネロ王子がorivieさんとコラボした「秋読コレクション」。\n秋をテーマに記事を出して、参加者の作品を読んだり、コメントを書いたりして交流しよう！という企画です。 \n \n \n この企画に乗っかって、わかモンさんが発表してくださったのが、作品支援プロンプト。しかも、みんな大好き「無料」です！！ \n 私が作家として商業出版した小説はミステリー。 \nライトノベルは、読んだことも書いたこともありません💦\n\nでも、簡単な質問に答えるだけで、物語を作ってくれるらしいの😊\n\nアレンジも自由。\nせっかくなので、冒頭は『PL学園コラム』14話と同じシーンにしました。\n 一種のパラレルワールドです。　\n\n というわけで、まずは恋バナをおさらいしましょう💕\n \n \n\n 読みました?\n\n 💞では、パラレルワールドのはじまりです \n\n \n2学期が始まってすぐの昼休み。\n\n「これ。生徒会長のFさんからよ」\n 隣のクラスのVちゃんから白い封筒を渡された。\n 顔も名前も知らない、1学年上の生徒会長。\n\n封筒の表には――息をのむほどきれいな文字で、私の名前が書かれていた。\n\n 美月ちゃんへ \n心臓が、どくんと跳ねる。\n 窓際の机に移動して、そっと手紙の封を開けた。\n 夏の甲子園予選。\n\n生徒会長は、全校生徒1,000人の応援団の団長でもある。\n\n応援団を指揮しながら、私が笑顔で懸命に声を出していた姿に惹かれた、と書かれていた。\n そして。\n\n 美月ちゃんのことを、もっと知りたいと思いました。 \n 「めっちゃキレイな字……」 \n男子高校生が書いたとは思えない。\n秀麗な、それでいて力強い文字。\n （こんなキレイな字を書くかたなら、いいかたに違いないわ💗）\n 単純だけれど、本気で思った。\n ただ、PL学園には大きな問題がある。\n\n 男女交際禁止。 \nFさんは、それを守らせる側の生徒会長。\n だから、私たちの恋は手紙だけで始まった。\n \n\n バスケ部のボール置き場の棚の隅🏀\n魔法辞書のケースの中✉️\n図書室の返却台📖\n 秘密の場所を経由して、手紙だけが行き来した。\n\n 『今日、廊下を掃除していたね。丁寧に掃いていて感心しました』\n\n 『部活のランニング、上級生よりも速かったんじゃないか』\n\n 『走って朝練に出かける君を、男子寮の部屋の窓から毎朝、見ているよ』\n\n Fさんは、いつも私を見つけてくれた。\nがんばっている私の姿を。\n 手紙を読むたび、胸の中に小さな灯りがともる。\n\nお返事を書くたびに、その灯りは大きくなっていった。\n\n ――異変に気づいたのは10月半ば。\n\n キレイな文字の手紙の中で、一部だけが淡く金色に光っていた。\n 指先で触れると、ふっと便箋から浮かび上がった。\n 次の瞬間、教室の窓が大きく震えた。\n 遠くで鐘が鳴る。\n 1回。2回。3回。\n 誰かが叫んだ。\n 「……紅月よ！」\n 窓の外を見上げる。\n\nまだ夕方なのに、大きな赤い月が浮かんでいた。\n 血の色を思わせる紅の月。\n\n王国を守る結界が、一年でもっとも弱くなる夜のはじまりだ。\n 結界が破られると、王国は闇に包まれ、聖なるものが消えてしまう。\n\n誰かを愛する心も、\n誰かを守りたい気持ちも。\n\n その日の放課後、私は校舎裏へ呼び出された。\n\n 「美月ちゃん」\n 初めて名前を呼ばれた。\n手紙ではなく、低く、柔らかな声で。\n 顔が、かっと熱くなる。\n 「これを見て」\n Fさんが差し出したのは、これまで私が送った手紙だった。\n 何枚もの便箋に、ところどころ金色の文字が浮かんでいる。\n\n 「学園の古い記録を調べた。結界を張り直すには、“真心を込めて書かれた言葉”が必要らしい」\n\n 私たちは手紙を一枚ずつ並べた。\n\n 金色に光る文字だけを拾うと、ひとつの文章になった。\n\n あなたが見ていてくれて、嬉しかった \n書きたくて書けなかった想いが、手紙に宿っていた。\n 「Fさん……わたし」\n 秋風が吹き抜け、紅葉がさらさらと足元を滑っていく。\n Fさんは少し困ったように笑った。\n 「生徒会長が、校則破ってるよな」\n 「今さらです」\n 顔を見合わせて微笑んだ"
+    }
+  ]
+}
