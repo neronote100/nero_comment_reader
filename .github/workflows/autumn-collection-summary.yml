@@ -1,0 +1,34 @@
+name: Autumn Collection Summary
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'data/autumn_collection_snapshot.json'
+      - 'scripts/summarize-autumn-collection.mjs'
+      - '.github/workflows/autumn-collection-summary.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  summary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build compact summary files
+        run: node scripts/summarize-autumn-collection.mjs
+      - name: Commit compact files
+        run: |
+          if [ -z "$(git status --porcelain -- data/autumn_collection_summary.json data/autumn_collection_articles.json data/autumn_collection_baseline_2026-10-07.json)" ]; then
+            echo 'No changes'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/autumn_collection_summary.json data/autumn_collection_articles.json data/autumn_collection_baseline_2026-10-07.json
+          git commit -m 'Update Autumn Collection compact summary'
+          git push
