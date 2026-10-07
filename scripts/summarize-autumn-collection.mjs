@@ -4,6 +4,7 @@ const inputPath = process.env.INPUT || 'data/autumn_collection_snapshot.json';
 const summaryPath = process.env.SUMMARY || 'data/autumn_collection_summary.json';
 const articlePath = process.env.ARTICLES || 'data/autumn_collection_articles.json';
 const tsvPath = process.env.ARTICLES_TSV || 'data/autumn_collection_articles_compact.tsv';
+const minTsvPath = process.env.ARTICLES_MIN_TSV || 'data/autumn_collection_articles_min.tsv';
 const statsPath = process.env.COMMENT_STATS || 'data/autumn_collection_comment_stats.json';
 const baselinePath = process.env.BASELINE || 'data/autumn_collection_baseline_2026-10-07.json';
 
@@ -63,10 +64,15 @@ const tsv = [
   ['key','title','authorName','authorUrlname','likeCount','commentCount','articleUrl','bodySnippet'].join('\t'),
   ...compactArticles.map(a => [a.key,a.title,a.authorName,a.authorUrlname,a.likeCount,a.commentCount,a.articleUrl,String(a.bodySnippet||'').slice(0,500)].map(esc).join('\t'))
 ].join('\n') + '\n';
+const minTsv = [
+  ['key','title','authorName','authorUrlname','likeCount','commentCount','articleUrl'].join('\t'),
+  ...compactArticles.map(a => [a.key,a.title,a.authorName,a.authorUrlname,a.likeCount,a.commentCount,a.articleUrl].map(esc).join('\t'))
+].join('\n') + '\n';
 
 await fs.writeFile(summaryPath, JSON.stringify(summary, null, 2) + '\n', 'utf8');
 await fs.writeFile(articlePath, JSON.stringify({ generatedAt: raw.generatedAt, articles: compactArticles }, null, 2) + '\n', 'utf8');
 await fs.writeFile(tsvPath, tsv, 'utf8');
+await fs.writeFile(minTsvPath, minTsv, 'utf8');
 await fs.writeFile(statsPath, JSON.stringify({ generatedAt: raw.generatedAt, totalExternalCommenters: externalCommenters.length, buckets, exactCounts }, null, 2) + '\n', 'utf8');
 try {
   await fs.access(baselinePath);
