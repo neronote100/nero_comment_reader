@@ -23,12 +23,12 @@ jobs:
         run: node scripts/summarize-autumn-collection.mjs
       - name: Commit compact files
         run: |
-          if [ -z "$(git status --porcelain -- data/autumn_collection_summary.json data/autumn_collection_articles.json data/autumn_collection_baseline_2026-10-07.json)" ]; then
+          if [ -z "$(git status --porcelain -- data/autumn_collection_summary.json data/autumn_collection_articles.json data/autumn_collection_articles_compact.tsv data/autumn_collection_comment_stats.json data/autumn_collection_baseline_2026-10-07.json)" ]; then
             echo 'No changes'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/autumn_collection_summary.json data/autumn_collection_articles.json data/autumn_collection_baseline_2026-10-07.json
+          git add data/autumn_collection_summary.json data/autumn_collection_articles.json data/autumn_collection_articles_compact.tsv data/autumn_collection_comment_stats.json data/autumn_collection_baseline_2026-10-07.json
           git commit -m 'Update Autumn Collection compact summary'
           git push
