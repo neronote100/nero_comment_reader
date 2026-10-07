@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'scripts/snapshot-autumn-collection.mjs'
+      - 'scripts/filter-autumn-collection-entries.mjs'
       - '.github/workflows/autumn-collection-snapshot.yml'
       - 'data/autumn_collection_refresh_trigger.txt'
 
@@ -25,6 +26,10 @@ jobs:
           MAGAZINE_KEY: mbdfa1301e316
           OUTPUT: data/autumn_collection_snapshot.json
         run: node scripts/snapshot-autumn-collection.mjs
+      - name: Exclude non-entry kickoff articles
+        env:
+          INPUT: data/autumn_collection_snapshot.json
+        run: node scripts/filter-autumn-collection-entries.mjs
       - name: Commit snapshot if changed
         run: |
           if [ -z "$(git status --porcelain -- data/autumn_collection_snapshot.json)" ]; then
