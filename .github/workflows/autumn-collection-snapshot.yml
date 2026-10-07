@@ -6,6 +6,7 @@ on:
     paths:
       - 'scripts/snapshot-autumn-collection.mjs'
       - '.github/workflows/autumn-collection-snapshot.yml'
+      - 'data/autumn_collection_refresh_trigger.txt'
 
 permissions:
   contents: write
@@ -26,7 +27,7 @@ jobs:
         run: node scripts/snapshot-autumn-collection.mjs
       - name: Commit snapshot if changed
         run: |
-          if git diff --quiet -- data/autumn_collection_snapshot.json; then
+          if [ -z "$(git status --porcelain -- data/autumn_collection_snapshot.json)" ]; then
             echo 'No changes'
             exit 0
           fi
