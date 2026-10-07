@@ -1,0 +1,37 @@
+name: Autumn Collection Snapshot
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/snapshot-autumn-collection.mjs'
+      - '.github/workflows/autumn-collection-snapshot.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Collect current Autumn Collection data
+        env:
+          MAGAZINE_KEY: mbdfa1301e316
+          OUTPUT: data/autumn_collection_snapshot.json
+        run: node scripts/snapshot-autumn-collection.mjs
+      - name: Commit snapshot if changed
+        run: |
+          if git diff --quiet -- data/autumn_collection_snapshot.json; then
+            echo 'No changes'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/autumn_collection_snapshot.json
+          git commit -m 'Update Autumn Collection snapshot'
+          git push
