@@ -29,6 +29,8 @@ for (const expected of [
   "get_comment_reader_status",
   "list_unanswered_comments",
   "list_unanswered_by_article",
+  "list_event_source_page",
+  "check_event_article",
   "find_event_articles_by_hashtag",
   "find_event_articles_by_magazine",
   "list_live_comment_check_articles",
