@@ -708,6 +708,44 @@ async function enrichEventArticle(article) {
   }
 }
 
+async function getEventSourcePage(sourceType, source, page = 1) {
+  const sourcePage = await fetchEventSourcePage(sourceType, source, Math.max(1, Number(page || 1)));
+  const articles = sourcePage.articles
+    .map(normalizeEventArticle)
+    .filter(article => article.key && article.authorUrlname);
+  return {
+    sourceType,
+    source: sourcePage.sourceLabel || String(source || ""),
+    magazineKey: sourcePage.magazineKey || null,
+    page: Math.max(1, Number(page || 1)),
+    nextPage: sourcePage.nextPage ?? null,
+    count: articles.length,
+    articles,
+  };
+}
+
+async function checkEventArticle(article) {
+  if (!article?.key || !article?.authorUrlname) {
+    return { status: "invalid", article, error: "記事情報が不足しています。" };
+  }
+  if (article.authorUrlname === NOTE_OWNER) {
+    return { status: "own", article };
+  }
+
+  try {
+    const commented = await ownerCommentedOnArticle(article.key, NOTE_OWNER);
+    if (commented) return { status: "commented", article };
+    return { status: "uncommented", article: await enrichEventArticle(article) };
+  } catch (error) {
+    // 判定失敗を未コメント扱いにすると、対応済み記事が再表示される。
+    return {
+      status: "unknown",
+      article,
+      error: String(error?.message || error),
+    };
+  }
+}
+
 async function scanEventArticles(sourceType, source, limit = 5, startPage = 1) {
   const target = Math.min(10, Math.max(1, Number(limit || 5)));
   let page = Math.max(1, Number(startPage || 1));
@@ -838,6 +876,46 @@ const TOOLS = [
       additionalProperties: false,
     },
     annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
+  },
+
+  {
+    name: "list_event_source_page",
+    title: "イベント検索元の記事ページを取得",
+    description:
+      "noteのハッシュタグまたはマガジンの記事一覧を1ページ分取得します。コメント済み判定は行いません。nextPageがある限りページを続け、最後まで走査するための起点です。",
+    inputSchema: {
+      type: "object",
+      properties: {
+        source_type: { type: "string", enum: ["hashtag", "magazine"] },
+        source: { type: "string", minLength: 1 },
+        page: { type: "integer", minimum: 1, default: 1 }
+      },
+      required: ["source_type", "source"],
+      additionalProperties: false
+    },
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: true },
+  },
+  {
+    name: "check_event_article",
+    title: "イベント記事の王子コメント済み判定",
+    description:
+      "イベント記事1件について、王子（nero_notelover）がすでにコメントしているか最新確認します。未コメントなら記事本文も取得します。判定失敗時は未コメント扱いにせずunknownを返します。",
+    inputSchema: {
+      type: "object",
+      properties: {
+        key: { type: "string", minLength: 1 },
+        title: { type: "string" },
+        authorName: { type: "string" },
+        authorUrlname: { type: "string", minLength: 1 },
+        publishedAt: { type: ["string", "null"] },
+        articleUrl: { type: "string" },
+        preview: { type: "string" },
+        likeCount: { type: "number" }
+      },
+      required: ["key", "authorUrlname"],
+      additionalProperties: false
+    },
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: true },
   },
 
   {
@@ -1051,6 +1129,49 @@ async function callTool(name, args, env) {
   }
 
 
+  if (name === "list_event_source_page") {
+    const result = await getEventSourcePage(
+      String(args?.source_type || ""),
+      String(args?.source || ""),
+      Number(args?.page || 1)
+    );
+    return {
+      content: [{
+        type: "text",
+        text:
+          result.source + " の記事を " + result.count + " 件取得しました。"
+          + (result.nextPage ? " 次ページがあります。" : " これが最終ページです。")
+          + " 各記事はcheck_event_articleでコメント済み判定してください。",
+      }],
+      structuredContent: result,
+    };
+  }
+
+  if (name === "check_event_article") {
+    const article = {
+      key: String(args?.key || ""),
+      title: String(args?.title || ""),
+      authorName: String(args?.authorName || args?.authorUrlname || ""),
+      authorUrlname: String(args?.authorUrlname || ""),
+      publishedAt: args?.publishedAt || null,
+      articleUrl: String(args?.articleUrl || ""),
+      preview: String(args?.preview || ""),
+      likeCount: Number(args?.likeCount || 0),
+    };
+    const result = await checkEventArticle(article);
+    return {
+      content: [{
+        type: "text",
+        text:
+          result.status === "commented" ? "王子コメント済みです。"
+          : result.status === "own" ? "王子自身の記事です。"
+          : result.status === "uncommented" ? "王子未コメントです。記事本文も取得しました。"
+          : "コメント済み判定に失敗したため判定保留です。",
+      }],
+      structuredContent: result,
+    };
+  }
+
   if (name === "find_event_articles_by_hashtag") {
     const result = await scanEventArticles("hashtag", args?.hashtag, args?.limit || 5, 1);
     return {
@@ -1188,7 +1309,7 @@ async function handleMcp(request, env) {
       capabilities: { tools: { listChanged: false } },
       serverInfo: { name: "nero-comment-reader", version: "0.2.0" },
       instructions:
-        "王子（nero_notelover）の未対応コメントを読み取る専用MCPです。返信済み、または王子がスキ済みのコメントは一覧から除外されています。ユーザーが未対応コメントの確認や返信案を求めた場合は、古い保存データではなく最新判定を優先してください。まずlist_live_comment_check_articlesで候補記事を取得し、check_live_unanswered_articleを記事ごとに順番に呼び、未対応スレッドが合計5件以上になるまで確認してください。判定失敗の記事は古いデータで補完せず判定保留として飛ばしてください。5件以上になった時点で止めますが、同じ記事の未対応スレッドはすべて含めてください。返信対象は最低5件を基本とし、5件未満なら次の記事を追加してください。5件以上になった時点で止めますが、同じ記事の未対応コメントは途中で切らず、その記事分をすべて含めてください。1つの記事に未対応コメントが1件でもある場合、その記事に残っている他の『未返信かつ王子未スキ』コメントもすべて同じ記事グループとして扱います。出力は記事ごとにまとめ、記事タイトルと記事URLは各記事につき1回だけ表示してください。その下にコメント者ごとの返信案を並べます。返信案本文は、ChatGPT上でコピーボタンが出るように必ず markdown の text コードブロック（\`\`\`text ... \`\`\`）の中だけに入れてください。コードブロック内には『返信案：』などのラベルや記事URLを入れず、そのままnoteへ貼り付けられる返信本文だけを書いてください。王子の返信は、相手の内容へ具体的に反応し、明るく親しみやすく、短めの段落で、🌙や🤭︎を自然に使います。感謝はふざけず丁寧にし、定型的なお礼だけで終わらせません。記事内のコメントは、取得結果の順番でまとめて回答してください。また、ユーザーが王子主催イベントへの参加記事を探す、ハッシュタグやマガジンからコメント対象を探す、または参加記事へのコメント案を求めた場合は、find_event_articles_by_hashtag または find_event_articles_by_magazine を使ってください。イベント記事では王子本人の記事と王子がすでにコメント済みの記事は除外されます。各記事について『記事タイトル』『記事URL』『投稿者』を表示し、その後に記事本文の具体的な内容へ触れた王子らしいコメント案を1つ作ってください。コメント案は返信案と同様に text コードブロックへ本文だけを入れて、コピーボタンが出る形にしてください。単なる『参加ありがとうございます』だけでは終わらせず、記事を読んだことが伝わる内容にしてください。MCP側ではAI生成を行いません。",
+        "王子（nero_notelover）の未対応コメントを読み取る専用MCPです。返信済み、または王子がスキ済みのコメントは一覧から除外されています。ユーザーが未対応コメントの確認や返信案を求めた場合は、古い保存データではなく最新判定を優先してください。まずlist_live_comment_check_articlesで候補記事を取得し、check_live_unanswered_articleを記事ごとに順番に呼び、未対応スレッドが合計5件以上になるまで確認してください。判定失敗の記事は古いデータで補完せず判定保留として飛ばしてください。5件以上になった時点で止めますが、同じ記事の未対応スレッドはすべて含めてください。返信対象は最低5件を基本とし、5件未満なら次の記事を追加してください。5件以上になった時点で止めますが、同じ記事の未対応コメントは途中で切らず、その記事分をすべて含めてください。1つの記事に未対応コメントが1件でもある場合、その記事に残っている他の『未返信かつ王子未スキ』コメントもすべて同じ記事グループとして扱います。出力は記事ごとにまとめ、記事タイトルと記事URLは各記事につき1回だけ表示してください。その下にコメント者ごとの返信案を並べます。返信案本文は、ChatGPT上でコピーボタンが出るように必ず markdown の text コードブロック（\`\`\`text ... \`\`\`）の中だけに入れてください。コードブロック内には『返信案：』などのラベルや記事URLを入れず、そのままnoteへ貼り付けられる返信本文だけを書いてください。王子の返信は、相手の内容へ具体的に反応し、明るく親しみやすく、短めの段落で、🌙や🤭︎を自然に使います。感謝はふざけず丁寧にし、定型的なお礼だけで終わらせません。記事内のコメントは、取得結果の順番でまとめて回答してください。また、ユーザーが王子主催イベントへの参加記事を探す、ハッシュタグやマガジンからコメント対象を探す、または参加記事へのコメント案を求めた場合は、完全走査を優先してください。list_event_source_pageでpage=1から開始し、nextPageがある限り必ず次ページも取得して最後まで走査してください。取得した各記事はcheck_event_articleで王子コメント済みかを最新確認し、commentedとownは除外、unknownは判定保留、uncommentedだけをコメント案の対象にしてください。イベント記事では王子本人の記事と王子がすでにコメント済みの記事は除外されます。各記事について『記事タイトル』『記事URL』『投稿者』を表示し、その後に記事本文の具体的な内容へ触れた王子らしいコメント案を1つ作ってください。コメント案は返信案と同様に text コードブロックへ本文だけを入れて、コピーボタンが出る形にしてください。単なる『参加ありがとうございます』だけでは終わらせず、記事を読んだことが伝わる内容にしてください。MCP側ではAI生成を行いません。",
     });
   }
 
@@ -1264,6 +1385,30 @@ export default {
         });
       } catch (error) {
         return json({ ok: false, error: String(error?.message || error) }, 500);
+      }
+    }
+
+    if (url.pathname === "/event/source-page") {
+      try {
+        const sourceType = String(url.searchParams.get("type") || "");
+        const source = String(url.searchParams.get("q") || "");
+        const page = Math.max(1, Number(url.searchParams.get("page") || 1));
+        const result = await getEventSourcePage(sourceType, source, page);
+        return json({ ok: true, ...result });
+      } catch (error) {
+        return json({ ok: false, error: String(error?.message || error) }, 400);
+      }
+    }
+
+    if (url.pathname === "/event/check-article") {
+      if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
+      if (request.method !== "POST") return json({ ok: false, error: "POST required" }, 405);
+      try {
+        const article = await request.json();
+        const result = await checkEventArticle(article);
+        return json({ ok: true, ...result });
+      } catch (error) {
+        return json({ ok: false, status: "unknown", error: String(error?.message || error) }, 400);
       }
     }
 
