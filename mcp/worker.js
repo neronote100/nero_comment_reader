@@ -675,7 +675,12 @@ async function fetchEventSourcePage(sourceType, source, page) {
 
 async function ownerCommentedOnArticle(noteKey, owner = NOTE_OWNER) {
   let page = 1;
-  for (let guard = 0; guard < 8; guard += 1) {
+  const seenPages = new Set();
+
+  while (true) {
+    if (seenPages.has(page)) throw new Error("コメントページが循環しました: " + page);
+    seenPages.add(page);
+
     const payload = await noteJson(
       "/api/v3/notes/" + encodeURIComponent(noteKey) + "/note_comments?order=newest&per_page=100&page=" + page
     );
@@ -684,11 +689,17 @@ async function ownerCommentedOnArticle(noteKey, owner = NOTE_OWNER) {
       : Array.isArray(payload?.data?.comments)
         ? payload.data.comments
         : [];
+
     if (comments.some((comment) => String(comment?.user?.urlname || "") === owner)) return true;
+
     const nextPage = payload?.next_page ?? payload?.data?.next_page ?? null;
-    if (!nextPage) break;
-    page = Number(nextPage) || page + 1;
+    if (nextPage === null || nextPage === undefined) break;
+
+    const next = Number(nextPage);
+    if (!Number.isFinite(next) || next < 1) throw new Error("次のコメントページ番号が不正です。");
+    page = next;
   }
+
   return false;
 }
 
@@ -948,7 +959,7 @@ const TOOLS = [
     name: "find_event_articles_by_magazine",
     title: "イベント記事をマガジンから探す",
     description:
-      "指定したnoteマガジンから、王子本人の記事と王子がすでにコメント済みの記事を除外し、未コメント記事を取得します。マガジンURLまたはmから始まるキーを指定できます。記事本文も返すのでコメント案作成に使ってください。",
+      "互換用の簡易検索です。完全走査が必要な場合はlist_event_source_pageで最終ページまで取得し、各記事をcheck_event_articleで判定してください。マガジンURLまたはmから始まるキーを指定できます。",
     inputSchema: {
       type: "object",
       properties: {
