@@ -1,0 +1,44 @@
+name: Autumn Nero Comments
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/extract-autumn-nero-comments.mjs'
+      - '.github/workflows/autumn-nero-comments.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Collect latest data
+        env:
+          MAGAZINE_KEY: mbdfa1301e316
+          OUTPUT: data/autumn_collection_snapshot.json
+        run: node scripts/snapshot-autumn-collection.mjs
+      - name: Exclude kickoff articles
+        env:
+          INPUT: data/autumn_collection_snapshot.json
+        run: node scripts/filter-autumn-collection-entries.mjs
+      - name: Extract Nero comments
+        env:
+          INPUT: data/autumn_collection_snapshot.json
+          CATEGORIES: data/autumn_collection_categories_2026-10-07.json
+          OUTPUT: data/autumn_collection_nero_comments.json
+        run: node scripts/extract-autumn-nero-comments.mjs
+      - name: Commit data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/autumn_collection_snapshot.json data/autumn_collection_nero_comments.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Update Autumn Nero comment data'
+          git push
