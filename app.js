@@ -326,6 +326,39 @@ function switchView(view){
   $('#refreshBtn').style.display=view==='comments'?'':'none';
 }
 
+async function checkEventArticlesFully(articles,onProgress){
+  const results=new Array(articles.length);
+  let cursor=0;
+  let completed=0;
+  const concurrency=Math.min(3,Math.max(1,articles.length));
+
+  async function worker(){
+    while(true){
+      const index=cursor++;
+      if(index>=articles.length)return;
+      const article=articles[index];
+      try{
+        const res=await fetch(WORKER+'/event/check-article',{
+          method:'POST',
+          cache:'no-store',
+          headers:{'content-type':'application/json'},
+          body:JSON.stringify(article)
+        });
+        const data=await res.json();
+        results[index]=res.ok&&data.ok?data:{status:'unknown',article,error:data.error||('HTTP '+res.status)};
+      }catch(error){
+        results[index]={status:'unknown',article,error:String(error.message||error)};
+      }finally{
+        completed++;
+        onProgress?.(completed,articles.length,results[index]);
+      }
+    }
+  }
+
+  await Promise.all(Array.from({length:concurrency},()=>worker()));
+  return results;
+}
+
 async function searchEvent(sourceType){
   const input=sourceType==='hashtag'?$('#hashtagInput'):$('#magazineInput');
   const source=input.value.trim();
@@ -335,31 +368,81 @@ async function searchEvent(sourceType){
   }
 
   localStorage.setItem(sourceType==='hashtag'?'nero-event-hashtag':'nero-event-magazine',source);
-  eventStatusEl.textContent='王子がすでにコメントした記事を確認しながら検索しています…';
-  eventResultsEl.innerHTML='<div class="empty">検索中…🌙</div>';
+  eventStatusEl.textContent='検索元の記事を最後まで取得しています…';
+  eventResultsEl.innerHTML='<div class="empty">全記事を走査中…🌙</div>';
   $('#copyEventBatchBtn').classList.add('hidden');
 
   const buttons=[$('#hashtagSearchBtn'),$('#magazineSearchBtn')];
   buttons.forEach(button=>button.disabled=true);
 
-  try{
-    const url=WORKER+'/event/search?type='+encodeURIComponent(sourceType)+'&q='+encodeURIComponent(source)+'&limit=5&t='+Date.now();
-    const res=await fetch(url,{cache:'no-store'});
-    const data=await res.json();
-    if(!res.ok||!data.ok)throw new Error(data.error||('HTTP '+res.status));
+  state.eventArticles=[];
+  state.eventSourceType=sourceType;
+  state.eventSource=source;
 
-    state.eventArticles=Array.isArray(data.articles)?data.articles:[];
-    state.eventSourceType=sourceType;
-    state.eventSource=data.source||source;
+  let inspected=0;
+  let skippedCommented=0;
+  let skippedOwn=0;
+  let unknown=0;
+  let sourcePageNumber=1;
+  const seenPages=new Set();
+
+  try{
+    while(true){
+      if(seenPages.has(sourcePageNumber))throw new Error('ページ番号が循環したため停止しました。');
+      seenPages.add(sourcePageNumber);
+
+      const sourceUrl=WORKER+'/event/source-page?type='+encodeURIComponent(sourceType)
+        +'&q='+encodeURIComponent(source)
+        +'&page='+encodeURIComponent(sourcePageNumber)
+        +'&t='+Date.now();
+      const sourceRes=await fetch(sourceUrl,{cache:'no-store'});
+      const sourceData=await sourceRes.json();
+      if(!sourceRes.ok||!sourceData.ok)throw new Error(sourceData.error||('HTTP '+sourceRes.status));
+
+      state.eventSource=sourceData.source||state.eventSource;
+      const articles=Array.isArray(sourceData.articles)?sourceData.articles:[];
+      const pageTotal=articles.length;
+
+      eventStatusEl.textContent=String(state.eventSource)+'：このページ '+pageTotal+'記事を確認します…';
+
+      const checked=await checkEventArticlesFully(articles,(done,total)=>{
+        eventStatusEl.textContent=
+          String(state.eventSource)+'：確認 '+(inspected+done)+'件'
+          +'（現在ページ '+done+' / '+total+'）'
+          +' / 未コメント '+state.eventArticles.length+'件';
+      });
+
+      for(const result of checked){
+        inspected++;
+        if(result?.status==='uncommented'&&result.article){
+          state.eventArticles.push(result.article);
+        }else if(result?.status==='commented'){
+          skippedCommented++;
+        }else if(result?.status==='own'){
+          skippedOwn++;
+        }else{
+          unknown++;
+        }
+      }
+
+      // 途中経過も表示しておく。最後まで走査しても未コメントが0件なら空表示になる。
+      renderEventArticles();
+
+      if(sourceData.nextPage===null||sourceData.nextPage===undefined)break;
+      sourcePageNumber=Number(sourceData.nextPage);
+      if(!Number.isFinite(sourcePageNumber)||sourcePageNumber<1)throw new Error('次ページ番号を取得できませんでした。');
+    }
 
     eventStatusEl.textContent=
-      String(data.source||source)+'：未コメント '+state.eventArticles.length+'件表示'
-      +'（確認 '+Number(data.inspected||0)+'件 / コメント済み除外 '+Number(data.skippedCommented||0)+'件）';
+      String(state.eventSource)+'：全記事の走査完了。未コメント '+state.eventArticles.length+'件'
+      +'（全確認 '+inspected+'件 / コメント済み '+skippedCommented+'件'
+      +(skippedOwn?' / 王子自身 '+skippedOwn+'件':'')
+      +(unknown?' / 判定保留 '+unknown+'件':'')+'）';
     renderEventArticles();
   }catch(error){
-    state.eventArticles=[];
-    eventResultsEl.innerHTML='';
-    eventStatusEl.textContent='検索に失敗しました：'+String(error.message||error);
+    eventStatusEl.textContent='走査に失敗しました：'+String(error.message||error)
+      +(inspected?'（'+inspected+'件までは確認済み）':'');
+    renderEventArticles();
   }finally{
     buttons.forEach(button=>button.disabled=false);
   }
