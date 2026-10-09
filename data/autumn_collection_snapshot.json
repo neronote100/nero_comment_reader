@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "generatedAt": "2026-10-08T05:46:32.243Z",
+  "generatedAt": "2026-10-09T00:18:22.955Z",
   "magazineKey": "mbdfa1301e316",
   "magazineName": "秋読コレクション🍁🌙",
   "owner": "nero_notelover",
   "totals": {
     "articles": 79,
     "uniqueAuthors": 79,
-    "likes": 5118,
-    "commentsReported": 1759,
-    "commentsFetched": 1759,
-    "uniqueCommenters": 214,
-    "uniqueExternalCommenters": 213
+    "likes": 5185,
+    "commentsReported": 1776,
+    "commentsFetched": 1776,
+    "uniqueCommenters": 217,
+    "uniqueExternalCommenters": 216
   },
   "authors": [
     {
@@ -25,15 +25,15 @@
       "authorUrlname": "pure_falcon3290",
       "authorName": "左利き|親子英検",
       "articleCount": 1,
-      "totalLikes": 163,
-      "totalComments": 33
+      "totalLikes": 171,
+      "totalComments": 35
     },
     {
       "authorUrlname": "noah_woaks",
       "authorName": "ノア｜魔王｜noteを征服したい",
       "articleCount": 1,
-      "totalLikes": 150,
-      "totalComments": 55
+      "totalLikes": 162,
+      "totalComments": 60
     },
     {
       "authorUrlname": "nero_notelover",
@@ -46,7 +46,7 @@
       "authorUrlname": "loyal_poppy819",
       "authorName": "ryuu☆PL学園コラム",
       "articleCount": 1,
-      "totalLikes": 137,
+      "totalLikes": 140,
       "totalComments": 23
     },
     {
@@ -67,14 +67,14 @@
       "authorUrlname": "ojisan_chinpan",
       "authorName": "ちんぱん🐒耳毛〰(˙👄˙)〰",
       "articleCount": 1,
-      "totalLikes": 109,
-      "totalComments": 52
+      "totalLikes": 111,
+      "totalComments": 53
     },
     {
       "authorUrlname": "holopono33",
       "authorName": "ほろぽの33",
       "articleCount": 1,
-      "totalLikes": 106,
+      "totalLikes": 107,
       "totalComments": 30
     },
     {
@@ -95,7 +95,7 @@
       "authorUrlname": "fresh_loris1944",
       "authorName": "名前もと　",
       "articleCount": 1,
-      "totalLikes": 101,
+      "totalLikes": 102,
       "totalComments": 13
     },
     {
@@ -106,18 +106,18 @@
       "totalComments": 14
     },
     {
+      "authorUrlname": "fukurai_mone",
+      "authorName": "福来モネ",
+      "articleCount": 1,
+      "totalLikes": 96,
+      "totalComments": 46
+    },
+    {
       "authorUrlname": "toto0316",
       "authorName": "トト",
       "articleCount": 1,
       "totalLikes": 96,
       "totalComments": 39
-    },
-    {
-      "authorUrlname": "fukurai_mone",
-      "authorName": "福来モネ",
-      "articleCount": 1,
-      "totalLikes": 91,
-      "totalComments": 43
     },
     {
       "authorUrlname": "pure_duck9890",
@@ -130,22 +130,29 @@
       "authorUrlname": "kan_mina867",
       "authorName": "❁⃘*.ﾟMina❁⃘*.ﾟ|雲バル・ブラバル運営中♡",
       "articleCount": 1,
-      "totalLikes": 88,
+      "totalLikes": 90,
       "totalComments": 47
     },
     {
       "authorUrlname": "358frog",
       "authorName": "ゴリラ",
       "articleCount": 1,
-      "totalLikes": 85,
+      "totalLikes": 86,
       "totalComments": 35
     },
     {
-      "authorUrlname": "miyuki1192",
-      "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+      "authorUrlname": "mama_ca",
+      "authorName": "Pajama de mama*4歳娘ママ",
       "articleCount": 1,
-      "totalLikes": 84,
-      "totalComments": 27
+      "totalLikes": 85,
+      "totalComments": 28
+    },
+    {
+      "authorUrlname": "miyuki1192",
+      "authorName": "みゆこ｜菜園ティスト🌱　",
+      "articleCount": 1,
+      "totalLikes": 85,
+      "totalComments": 29
     },
     {
       "authorUrlname": "akari_seaart",
@@ -155,24 +162,17 @@
       "totalComments": 33
     },
     {
-      "authorUrlname": "mama_ca",
-      "authorName": "Pajama de mama*4歳娘ママ",
-      "articleCount": 1,
-      "totalLikes": 83,
-      "totalComments": 28
-    },
-    {
       "authorUrlname": "potemushi",
       "authorName": "AIゲーム制作のぽてむし｜相互フォローします、ぽてちください",
       "articleCount": 1,
-      "totalLikes": 78,
+      "totalLikes": 79,
       "totalComments": 27
     },
     {
       "authorUrlname": "selcject",
       "authorName": "ぐれんの　おにぎり@ あなたを人生の主人公にする心理家",
       "articleCount": 1,
-      "totalLikes": 76,
+      "totalLikes": 78,
       "totalComments": 22
     },
     {
@@ -186,7 +186,7 @@
       "authorUrlname": "wakamon_manga",
       "authorName": "わかモン＠フォロバ100期間限定の悪役令嬢",
       "articleCount": 1,
-      "totalLikes": 70,
+      "totalLikes": 71,
       "totalComments": 15
     },
     {
@@ -214,15 +214,29 @@
       "authorUrlname": "fcs_homecenter",
       "authorName": "伊藤ポップakaFCS",
       "articleCount": 1,
-      "totalLikes": 64,
+      "totalLikes": 66,
       "totalComments": 55
+    },
+    {
+      "authorUrlname": "kujira_log",
+      "authorName": "クジラのかくしごと｜言葉の海を泳ぐ",
+      "articleCount": 1,
+      "totalLikes": 64,
+      "totalComments": 23
     },
     {
       "authorUrlname": "disneybiz",
       "authorName": "あず｜ディズニーで学ぶ副業戦略",
       "articleCount": 1,
-      "totalLikes": 60,
+      "totalLikes": 62,
       "totalComments": 14
+    },
+    {
+      "authorUrlname": "fine_loris7218",
+      "authorName": "ぱっちー｜暮らしと挑戦の記録",
+      "articleCount": 1,
+      "totalLikes": 59,
+      "totalComments": 29
     },
     {
       "authorUrlname": "gay_impala1620",
@@ -230,20 +244,6 @@
       "articleCount": 1,
       "totalLikes": 59,
       "totalComments": 20
-    },
-    {
-      "authorUrlname": "fine_loris7218",
-      "authorName": "ぱっちー｜暮らしと挑戦の記録",
-      "articleCount": 1,
-      "totalLikes": 58,
-      "totalComments": 29
-    },
-    {
-      "authorUrlname": "kujira_log",
-      "authorName": "クジラのかくしごと｜言葉の海を泳ぐ",
-      "articleCount": 1,
-      "totalLikes": 57,
-      "totalComments": 22
     },
     {
       "authorUrlname": "si_mbam4",
@@ -260,18 +260,18 @@
       "totalComments": 31
     },
     {
+      "authorUrlname": "himuro_viola",
+      "authorName": "緋室ヴィオラ🌹｜元女優の第二幕｜フォロバ100",
+      "articleCount": 1,
+      "totalLikes": 56,
+      "totalComments": 10
+    },
+    {
       "authorUrlname": "galatea_note",
       "authorName": "がらてあ│書きたいことを書けばいい",
       "articleCount": 1,
       "totalLikes": 55,
       "totalComments": 16
-    },
-    {
-      "authorUrlname": "himuro_viola",
-      "authorName": "緋室ヴィオラ🌹｜元女優の第二幕｜フォロバ100",
-      "articleCount": 1,
-      "totalLikes": 55,
-      "totalComments": 10
     },
     {
       "authorUrlname": "vast_yeti7062",
@@ -281,6 +281,20 @@
       "totalComments": 8
     },
     {
+      "authorUrlname": "you5so",
+      "authorName": "なつき｜波ゆるnote案内人 📒",
+      "articleCount": 1,
+      "totalLikes": 54,
+      "totalComments": 17
+    },
+    {
+      "authorUrlname": "hip_badger4262",
+      "authorName": "ウタ｜楽しみながら収益化を目指す✨",
+      "articleCount": 1,
+      "totalLikes": 54,
+      "totalComments": 25
+    },
+    {
       "authorUrlname": "0umi",
       "authorName": "青海 久遠｜ショートショートと漫画",
       "articleCount": 1,
@@ -288,24 +302,10 @@
       "totalComments": 8
     },
     {
-      "authorUrlname": "hip_badger4262",
-      "authorName": "ウタ｜楽しみながら収益化を目指す人",
-      "articleCount": 1,
-      "totalLikes": 52,
-      "totalComments": 25
-    },
-    {
-      "authorUrlname": "you5so",
-      "authorName": "なつき｜波ゆるnote案内人 📒",
-      "articleCount": 1,
-      "totalLikes": 51,
-      "totalComments": 17
-    },
-    {
       "authorUrlname": "open_tulip9172",
       "authorName": "ミノリ・グルーヴ@Minoriからの転生",
       "articleCount": 1,
-      "totalLikes": 50,
+      "totalLikes": 52,
       "totalComments": 20
     },
     {
@@ -314,6 +314,13 @@
       "articleCount": 1,
       "totalLikes": 50,
       "totalComments": 18
+    },
+    {
+      "authorUrlname": "clear_sloth1257",
+      "authorName": "きっこ",
+      "articleCount": 1,
+      "totalLikes": 48,
+      "totalComments": 16
     },
     {
       "authorUrlname": "easygoing2026",
@@ -326,15 +333,8 @@
       "authorUrlname": "calm_sedum3458",
       "authorName": "柴犬ゆる暮らし｜柴ゆる",
       "articleCount": 1,
-      "totalLikes": 47,
+      "totalLikes": 46,
       "totalComments": 8
-    },
-    {
-      "authorUrlname": "clear_sloth1257",
-      "authorName": "きっこ",
-      "articleCount": 1,
-      "totalLikes": 47,
-      "totalComments": 16
     },
     {
       "authorUrlname": "fancy_honest5951",
@@ -379,6 +379,13 @@
       "totalComments": 12
     },
     {
+      "authorUrlname": "nizi_no_mukouhe",
+      "authorName": "Cozy Cafe & Bar beyond｜店主（旦那の方）",
+      "articleCount": 1,
+      "totalLikes": 43,
+      "totalComments": 19
+    },
+    {
       "authorUrlname": "kanu2434",
       "authorName": "KANU",
       "articleCount": 1,
@@ -386,17 +393,10 @@
       "totalComments": 35
     },
     {
-      "authorUrlname": "nizi_no_mukouhe",
-      "authorName": "Cozy Cafe & Bar beyond｜店主（旦那の方）",
-      "articleCount": 1,
-      "totalLikes": 42,
-      "totalComments": 19
-    },
-    {
       "authorUrlname": "yokayoka5103",
       "authorName": "まるよか",
       "articleCount": 1,
-      "totalLikes": 41,
+      "totalLikes": 42,
       "totalComments": 12
     },
     {
@@ -424,8 +424,8 @@
       "authorUrlname": "baibai260728",
       "authorName": "橙(ダイダイ)260728",
       "articleCount": 1,
-      "totalLikes": 36,
-      "totalComments": 9
+      "totalLikes": 37,
+      "totalComments": 10
     },
     {
       "authorUrlname": "kamponightowl",
@@ -484,6 +484,20 @@
       "totalComments": 20
     },
     {
+      "authorUrlname": "3_mo_on",
+      "authorName": "くらげ",
+      "articleCount": 1,
+      "totalLikes": 30,
+      "totalComments": 6
+    },
+    {
+      "authorUrlname": "lafey",
+      "authorName": "浅葱りう",
+      "articleCount": 1,
+      "totalLikes": 30,
+      "totalComments": 8
+    },
+    {
       "authorUrlname": "kiramekiwave",
       "authorName": "今日も決められない水面こは🎹迷奏の音姫",
       "articleCount": 1,
@@ -493,20 +507,6 @@
     {
       "authorUrlname": "inukansou_",
       "authorName": "いぬき",
-      "articleCount": 1,
-      "totalLikes": 29,
-      "totalComments": 8
-    },
-    {
-      "authorUrlname": "3_mo_on",
-      "authorName": "くらげ",
-      "articleCount": 1,
-      "totalLikes": 29,
-      "totalComments": 6
-    },
-    {
-      "authorUrlname": "lafey",
-      "authorName": "浅葱りう",
       "articleCount": 1,
       "totalLikes": 29,
       "totalComments": 8
@@ -523,7 +523,7 @@
       "authorName": "モモ",
       "articleCount": 1,
       "totalLikes": 27,
-      "totalComments": 10
+      "totalComments": 11
     },
     {
       "authorUrlname": "ai_guide3875",
@@ -537,7 +537,7 @@
       "authorName": "むめ",
       "articleCount": 1,
       "totalLikes": 25,
-      "totalComments": 11
+      "totalComments": 12
     },
     {
       "authorUrlname": "lithe_murre6431",
@@ -590,15 +590,15 @@
     {
       "authorUrlname": "ai_guide3875",
       "authorName": "きゅうり/AIで“できること”が増える",
-      "commentCount": 84,
+      "commentCount": 85,
       "rootCommentCount": 65,
-      "replyCount": 19,
+      "replyCount": 20,
       "articleCount": 66,
       "isHost": false
     },
     {
       "authorUrlname": "orivie",
-      "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+      "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
       "commentCount": 76,
       "rootCommentCount": 76,
       "replyCount": 0,
@@ -662,9 +662,9 @@
     {
       "authorUrlname": "pure_falcon3290",
       "authorName": "左利き|親子英検",
-      "commentCount": 30,
+      "commentCount": 31,
       "rootCommentCount": 11,
-      "replyCount": 19,
+      "replyCount": 20,
       "articleCount": 12,
       "isHost": false
     },
@@ -684,6 +684,15 @@
       "rootCommentCount": 9,
       "replyCount": 19,
       "articleCount": 10,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "noah_woaks",
+      "authorName": "ノア｜魔王｜noteを征服したい",
+      "commentCount": 28,
+      "rootCommentCount": 1,
+      "replyCount": 27,
+      "articleCount": 2,
       "isHost": false
     },
     {
@@ -732,12 +741,21 @@
       "isHost": false
     },
     {
-      "authorUrlname": "noah_woaks",
-      "authorName": "ノア｜魔王｜noteを征服したい",
+      "authorUrlname": "kujira_log",
+      "authorName": "クジラのかくしごと｜言葉の海を泳ぐ",
       "commentCount": 25,
-      "rootCommentCount": 1,
-      "replyCount": 24,
-      "articleCount": 2,
+      "rootCommentCount": 9,
+      "replyCount": 16,
+      "articleCount": 10,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ojisan_chinpan",
+      "authorName": "ちんぱん🐒耳毛〰(˙👄˙)〰",
+      "commentCount": 25,
+      "rootCommentCount": 0,
+      "replyCount": 25,
+      "articleCount": 1,
       "isHost": false
     },
     {
@@ -750,21 +768,12 @@
       "isHost": false
     },
     {
-      "authorUrlname": "ojisan_chinpan",
-      "authorName": "ちんぱん🐒耳毛〰(˙👄˙)〰",
-      "commentCount": 24,
-      "rootCommentCount": 0,
-      "replyCount": 24,
-      "articleCount": 1,
-      "isHost": false
-    },
-    {
-      "authorUrlname": "kujira_log",
-      "authorName": "クジラのかくしごと｜言葉の海を泳ぐ",
+      "authorUrlname": "fukurai_mone",
+      "authorName": "福来モネ",
       "commentCount": 23,
-      "rootCommentCount": 8,
-      "replyCount": 15,
-      "articleCount": 9,
+      "rootCommentCount": 4,
+      "replyCount": 19,
+      "articleCount": 5,
       "isHost": false
     },
     {
@@ -774,15 +783,6 @@
       "rootCommentCount": 7,
       "replyCount": 15,
       "articleCount": 8,
-      "isHost": false
-    },
-    {
-      "authorUrlname": "fukurai_mone",
-      "authorName": "福来モネ",
-      "commentCount": 22,
-      "rootCommentCount": 4,
-      "replyCount": 18,
-      "articleCount": 5,
       "isHost": false
     },
     {
@@ -858,6 +858,15 @@
       "isHost": false
     },
     {
+      "authorUrlname": "miyuki1192",
+      "authorName": "みゆこ｜菜園ティスト🌱　",
+      "commentCount": 17,
+      "rootCommentCount": 1,
+      "replyCount": 16,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
       "authorUrlname": "hono9556",
       "authorName": "Hono｜実験室のマラカスネキ🪇",
       "commentCount": 16,
@@ -891,15 +900,6 @@
       "rootCommentCount": 3,
       "replyCount": 13,
       "articleCount": 4,
-      "isHost": false
-    },
-    {
-      "authorUrlname": "miyuki1192",
-      "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
-      "commentCount": 16,
-      "rootCommentCount": 1,
-      "replyCount": 15,
-      "articleCount": 2,
       "isHost": false
     },
     {
@@ -940,7 +940,7 @@
     },
     {
       "authorUrlname": "hip_badger4262",
-      "authorName": "ウタ｜楽しみながら収益化を目指す人",
+      "authorName": "ウタ｜楽しみながら収益化を目指す✨",
       "commentCount": 14,
       "rootCommentCount": 1,
       "replyCount": 13,
@@ -1101,6 +1101,15 @@
       "isHost": false
     },
     {
+      "authorUrlname": "grand_crane5257",
+      "authorName": "むめ",
+      "commentCount": 8,
+      "rootCommentCount": 2,
+      "replyCount": 6,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
       "authorUrlname": "fresh_loris1944",
       "authorName": "名前もと　",
       "commentCount": 8,
@@ -1110,8 +1119,8 @@
       "isHost": false
     },
     {
-      "authorUrlname": "grand_crane5257",
-      "authorName": "むめ",
+      "authorUrlname": "lithe_rose3519",
+      "authorName": "モモ",
       "commentCount": 7,
       "rootCommentCount": 2,
       "replyCount": 5,
@@ -1130,15 +1139,6 @@
     {
       "authorUrlname": "10on_kikou_nao",
       "authorName": "なお🌿｜氣｜大自然パワーお届け隊🚙",
-      "commentCount": 6,
-      "rootCommentCount": 2,
-      "replyCount": 4,
-      "articleCount": 3,
-      "isHost": false
-    },
-    {
-      "authorUrlname": "lithe_rose3519",
-      "authorName": "モモ",
       "commentCount": 6,
       "rootCommentCount": 2,
       "replyCount": 4,
@@ -1236,12 +1236,30 @@
       "isHost": false
     },
     {
+      "authorUrlname": "baibai260728",
+      "authorName": "橙(ダイダイ)260728",
+      "commentCount": 5,
+      "rootCommentCount": 1,
+      "replyCount": 4,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
       "authorUrlname": "suzuka020825",
       "authorName": "ミライダネ",
       "commentCount": 4,
       "rootCommentCount": 3,
       "replyCount": 1,
       "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "tanishi11go",
+      "authorName": "タニシ11号🐚─‎経験を、誰かのために🍀",
+      "commentCount": 4,
+      "rootCommentCount": 4,
+      "replyCount": 0,
+      "articleCount": 2,
       "isHost": false
     },
     {
@@ -1277,15 +1295,6 @@
       "commentCount": 4,
       "rootCommentCount": 0,
       "replyCount": 4,
-      "articleCount": 1,
-      "isHost": false
-    },
-    {
-      "authorUrlname": "baibai260728",
-      "authorName": "橙(ダイダイ)260728",
-      "commentCount": 4,
-      "rootCommentCount": 1,
-      "replyCount": 3,
       "articleCount": 1,
       "isHost": false
     },
@@ -1340,15 +1349,6 @@
       "commentCount": 3,
       "rootCommentCount": 2,
       "replyCount": 1,
-      "articleCount": 2,
-      "isHost": false
-    },
-    {
-      "authorUrlname": "tanishi11go",
-      "authorName": "タニシ11号🐚─‎経験を、誰かのために🍀",
-      "commentCount": 3,
-      "rootCommentCount": 3,
-      "replyCount": 0,
       "articleCount": 2,
       "isHost": false
     },
@@ -1974,6 +1974,15 @@
       "isHost": false
     },
     {
+      "authorUrlname": "agri_ai",
+      "authorName": "なぜそうするのか｜野菜づくり",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
       "authorUrlname": "alive_guppy3873",
       "authorName": "にゃんちー【いちご🍓シェイク🥤120%】",
       "commentCount": 1,
@@ -2028,6 +2037,15 @@
       "isHost": false
     },
     {
+      "authorUrlname": "bloom_toucan160",
+      "authorName": "ふじこ",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
       "authorUrlname": "bu_kun",
       "authorName": "ぶっくん｜AI の時代だからこそ「これでいいのだ！」クリエイター",
       "commentCount": 1,
@@ -2039,6 +2057,15 @@
     {
       "authorUrlname": "pepe17",
       "authorName": "ぺぺ",
+      "commentCount": 1,
+      "rootCommentCount": 1,
+      "replyCount": 0,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ho_hi_fu",
+      "authorName": "ホーヒーフ",
       "commentCount": 1,
       "rootCommentCount": 1,
       "replyCount": 0,
@@ -2585,7 +2612,7 @@
           "key": "nc5877620416b8",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "がらてあさん、秋読コレクションに参加いただきありがとうございます🤝\n\nイワシの話からnote戦略まで、楽しみながら読ませていただきました👏\n最近はnoteで個性的な方が増えていて、みなさん見せ方が上手だなと感じています🤭\n\n私は群れるのは得意ではないですが、みなさんが楽しめるイベントの開催を始めてから伸び始めました🍁\n\n素敵な記事をありがとうございました🔥",
           "publishedAt": "2026-10-07T12:33:45.780+09:00",
           "isRoot": true,
@@ -2841,7 +2868,7 @@
           "key": "ncd8b724f04c28",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "天界記録さん、秋読コレクションに参加いただきありがとうございます🤝\n\n「秋になった」ことを、匂いや風、肌寒さを通して感じさせているところが素敵です🍁\n\n「匂い」をきっかけに記憶がよみがえるものの、その記憶をあえて具体的には書いていないことで、読者自身の記憶や経験を重ねられる余白がありますね✨\n\n素敵な記事をありがとうございました💐",
           "publishedAt": "2026-10-07T12:25:21.848+09:00",
           "isRoot": true,
@@ -3006,7 +3033,7 @@
       "authorUrlname": "himuro_viola",
       "publishedAt": "2026-10-04T18:48:06.000+09:00",
       "articleUrl": "https://note.com/himuro_viola/n/ne10b27681a5f",
-      "likeCount": 55,
+      "likeCount": 56,
       "commentCountReported": 10,
       "commentCountFetched": 10,
       "tags": [],
@@ -3057,7 +3084,7 @@
           "key": "nc4d43bcef83b5",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ヴィオラさん、秋読コレクションに参加いただきありがとうございます🤝\n\n「自分には何もない」という感覚を、単純な自己肯定ではなく「積み重ねた時間が見えなくなっているだけかもしれない」と捉えているところが素敵ですね✨\n\n「一つを尖らせろ」という師匠の言葉も、この文章の軸になっていると感じました。\n\n周囲の人と比較して「自分にはあれがない、これがない」と考えるのではなく、自分が長く向き合ってきたものを掘り下げていくことが大事ですね🔥\n\n素敵な記事をありがとうございました💐",
           "publishedAt": "2026-10-07T12:22:17.111+09:00",
           "isRoot": true,
@@ -3122,9 +3149,9 @@
       "authorUrlname": "noah_woaks",
       "publishedAt": "2026-10-04T21:46:30.000+09:00",
       "articleUrl": "https://note.com/noah_woaks/n/n35556fe70e83",
-      "likeCount": 150,
-      "commentCountReported": 55,
-      "commentCountFetched": 55,
+      "likeCount": 162,
+      "commentCountReported": 60,
+      "commentCountFetched": 60,
       "tags": [],
       "preview": "",
       "body": "諸君。\n 先日、余は\n 魔王軍初のイベントを開催すると宣言した。 \n\n ▼イベントについてははこちらから見るのである \n \n ▼第1回 魔王軍イベント企画会議 会場はこちらである \n \n \n\n そして。\n 何を思ったか\n 敵国のイベントに参加する。 \n\n …………。\n\n 研修である。 \n\n \n\n 自分でイベントを開催すると言った矢先に\n 他人のイベントへ勉強しに行く。\n \n\n ラーメン屋を開業すると宣言した翌日に\n 「ちょっと一蘭行ってくる」\n と言っている店主のようである。\n \n\n だが。\n 仕方ない。\n\n 余はまだ\n note企画というものを、よく知らない。 \n\n 1000年前。\n 企画といえば、\n だいたい侵攻計画だった。\n \n\n 目的：王国制圧。\n 開催場所：敵国。\n 参加者：全軍。\n 参加方法：強制。\n 途中離脱：許さん。\n \n…………。\n \n参考にならない。\n \n\n 現代のイベントに、\n まったく応用できない。\n \n\n そんな余のもとへ。\n あまりにも絶妙なタイミングで\n 一通の招待状が届いた。\n \n\n 差出人。\n ネロ王子 。 \n…………。\n \n今note界で話題の王子である。\n しかし\n 王家\n 敵国である。\n\n \n \n \nネロ🌙｜王子｜秋読コレクションありがとう🍁【全力で駆け回ってるから待ってて🌙】｜note\n \n \nやぁ、いらっしゃい🌙 秋読コレクション終了🍁 ご参加いただきありがとうございました🌙 noteの楽しみ方と収益化を発信\n \n \nnote.com\n \n \n\n \n \n\n \n \n\n 1000年前。\n 王家から魔王へ、\n 書状が届く。\n \n\n これは、\n かなりの緊急事態であった。\n \n\n 側近が走ってくる。\n 「魔王様！！」\n 「何事だ。」\n 「王家より書状が！！」\n 「読め。」\n \n\n そこに書かれているのは、\n \n\n 宣戦布告。\n 討伐宣言。\n 決戦日時。\n \n\n だいたい、\n 血の匂いがする。\n \n\n ところが。\n \n\n 2026年。\n ネロ王子から届いたもの。\n \n\n 「秋の企画、参加しませんか？」 \n\n …………。\n \n\n 優しい。 \n\n王子ネロ、優しい。\n \n\n \n\n \n1000年前なら、\n 首を取りに来ていた王家から、\n 秋を楽しもうと誘われている。\n \n\n 世界、\n 平和になりすぎではないか。\n \n\n 次は\n 町内会の芋煮会に誘われそうである。\n \n\n \n \n\n なんでも\n ネロ殿とorivie殿の共同企画とのことである。\n \n\n ▼orive殿の記事はこちらである \n \n ▼ネロ殿の記事はこちらである \n \n \n\n 余は、\n 企画の記事を開いた。\n \n\n そして。\n 少し驚いた。\n \n\n そして何より。\n 読んでいるうちに、\n 「参加してみようかな」 \nと思った。\n \n…………。\n \n\n これである。\n 余が知りたかったのは。\n \n\n イベントとは、\n ただ開催を宣言することではない。\n \n\n 誰かが、\n 「自分も入ってみようかな」\n と思える入口をつくること。\n \n\n 二人の企画には、それがあった。\n \n\n \n…………。\n \nなるほど。\n \n\n 王子。\n やるではないか。\n 1000年前なら、\n 王家を褒めるなどあり得なかった。\n \n\n 側近が聞いていたら\n 三度見する。\n 「魔王様、いま敵国の王子を褒めました？」\n 「褒めておらぬ。」\n 「いや、完全に。」\n 「処すぞ。」\n 「褒めてました。」\n …………。\n 処す。\n \n\n だが。\n よいものは、\n \n\n よい。\n 敵であろうと、\n 学ぶべきものは学ぶ。\n \n\n それくらいの器がなくて、\n 何が魔王か。\n 余は決めた。\n 参加する。 \n\n 秋読コレクションに参加しようと思った諸君、申し訳ないのである。\n締切、実は、今日である。\nネロ殿・orivie殿、宣伝にならなくて申し訳ないのである。\n \n \n\n もちろん、\n 秋を楽しむためでもある。\n \n\n だが。\n もうひとつ、\n 目的ができた。\n \n\n 企画とは何か。 \n\n \n王子から、\n 学ばせていただくのである。\n \n\n なぜ、\n 参加してみたいと思ったのか。\n\n 何があると\n 初めてでも参加しやすいのか。\n \n参加者同士に、\n どんな交流が生まれるのか。\n \n終わったあと、\n 何が残るのか。\n \n\n 外から眺めているだけでは、\n 分からない。\n \n\n ならば。\n 自分が参加者になればよい。\n \n\n つまり。\n 研修である。 \n\n \n1000年前。\n 敵国へ送り込んだもの。\n 密偵。\n \n\n 2026年。\n 敵国へ送り込むもの。\n 余。 \n\n …………。\n \n\n 最高責任者が行くな。\n \n\n 社長自ら競合他社へ行って、\n 「すみません、新人研修だけ受けてもいいですか」\n と言っている。\n \n\n しかも帰ったら\n 自社イベントに活用する予定である。\n 堂々としすぎた視察である。\n \n…………。\n \nいや。\n 視察ではない。\n せっかく王子が、\n 余を誘ってくれたのである。\n \n\n まずは、\n 一人の参加者として楽しもう。\n \n\n そして、\n その中で学ぼう。\n \n\n 魔王、 短期留学。 \n\n ホームステイ先。 王家。\n …………。\n \n\n \n \n\n さて。\n 企画に参加することは決まった。\n \n\n 次は、\n 秋について書けばよい。\n 秋。 \n\n …………。\n \nそういえば。\n \n\n 1000年前にも、\n 秋はあった。\n そして余には、\n 忘れられぬ秋がある。\n\n \n\n 王家との戦いが、\n もっとも激しかった頃。\n \n\n 余の軍勢は、\n 五人の白馬の騎士に追い詰められていた。\n \n\n 場所は、\n 黄金色に染まった森。\n \n\n 風が吹くたび、\n 無数の葉が舞っていた。\n 美しい秋である。\n \n\n あの日。\n \n\n 余はそこで、\n 一体の召喚獣を呼んだ。\n \n\n その名も、\n 暮秋の神獣　ヴェル・アウレア。 \n\n 普段は、\n 鹿。\n 森にいる。\n 草を食う。\n かわいい。\n 奈良公園にいそう。\n \n\n だが。\n 余が詠唱を終えた瞬間。\n \n\n 黄金の葉が、\n 空を覆った。\n \n\n そして。\n 鹿は、\n 巨大化した。\n \n\n \n\n …………。\n \n\n めちゃくちゃ巨大化した。\n もう鹿ではない。\n 山である。\n \n\n 白馬の騎士たちを見下ろし、\n 大地を揺らし、\n 黄金の落葉とともに、\n 戦場を駆けた。\n \n\n これが、\n 1000年前。\n 王家と魔王軍が戦った、\n 「秋の戦い」である。 \n\n そして今回。\n ネロ王子に、\n 「秋について書こう」\n と言われ。\n \n\n 1000年前の記憶を、\n 久しぶりに掘り起こした。\n \n\n せっかくなので。\n あの日の戦いを、\n 映像にしてみた。\n \n\n \n\n これが、 魔王にとっての「秋」である。 \n\n \n\n …………。\n \n\n 秋について記事を書けと言われて\n 召喚獣が王家の騎士を\n 蹂躙する動画を提出する魔王。\n \n\n ネロ王子。\n これは合っているのであろうか。\n \n\n 締切ギリギリの投稿、\n 申し訳ないのである。\n\n 《暮秋の神獣 ヴェル・アウレア》召喚詠唱 \n\n黄昏を統べる、古き獣。紅き月を喰らい、蒼き空を閉ざし、万象を静寂へと還せ。枯れゆく森よ、跪け。渡りゆく鳥よ、沈黙せよ。風よ、その息を止めよ。時よ。その歩みを忘れよ。生まれしものには終焉を。栄えしものには黄昏を。去りゆくものには、黄金の眠りを。千の季節を葬りし角で、世界の境界を引き裂け。 すべてを、秋へ還せ。暮秋の神獣――《ヴェル・アウレア》 \n \n\n \n\n でも。\n 秋の葉を見ていて、\n 少しだけ思った。\n \n\n 秋が美しいのは、\n 完成しているからではないのかもしれない。\n \n\n 緑でもない。\n 落ち葉でもない。\n \n\n その途中。\n 昨日とは違う。\n \n\n そして、\n 明日はもっと違う。\n \n\n 人間は、\n その変わっていく途中を見て、「きれいだ」\n と言う。\n \n\n ならば。\n 変わるということは、\n 前失うことだけではないのかもしれない。\n \n\n 余も、\n この二週間でずいぶん変わった。\n \n\n だが。\n 変わったから、\n 出会えた者がいる。\n \n\n 変わったから、\n 1000年前なら絶対に交わらなかった者たちと、\n 今こうして、\n 言葉を交わしている。\n \n\n そして。\n その象徴のような者がいる。\n ネロ王子である。 \n\n \n\n \n \n\n 1000年前。\n 王家と魔王は、\n 敵だった。\n \n\n 出会えば、\n 剣を抜く。\n 城を奪う。\n 領土を奪う。\n どちらかが勝ち、\n どちらかが負ける。\n \n\n それが、\n 当たり前だった。\n \n\n だが。\n 1000年後。\n 王子は余を、\n 自らの企画へ誘ってくれた。\n \n\n 余は、\n その企画から学ぼうとしている。\n \n\n 互いの記事を読み、\n 言葉を交わし、\n 笑っている。\n \n…………。\n \n\n 1000年前の兵士たちよ。\n 聞いているか。\n \n\n 王家と魔王、 \nめちゃくちゃ仲良くなったぞ。 \n\n すまぬ。\n 墓の中が、\n 少しざわついている気がする。\n \n\n \n\n だが。\n 余は思う。\n これでいいのだ。\n \n\n 戦って、\n どちらかの世界を消すより。\n \n\n 互いの世界を持ったまま、\n 交わったほうが面白い。\n \n\n 王子には、\n 王子の世界がある。\n \n\n 余には、\n 余の世界がある。\n \n\n 同じになる必要などない。\n 違うからこそ、\n 出会ったときに、\n 新しいものが生まれる。\n \n\n \nそして。\n 王子から届いた、\n たった一通の招待状。\n それが、\n 1000年前ならあり得なかった関係を、\n ひとつ先へ進めた。\n \n\n ならば。\n この場を借りて、\n 正式に歴史を動かす。 \n\n \n \n\n ネロ王子。 時は来た。 \n 1000年前。\n 王国は、\n 魔王を討たんとした。\n 魔王は、\n 王国を滅ぼさんとした。\n \n\n 長きにわたり、\n 決して交わることのなかった二つの勢力。\n \n\n しかし。\n 西暦2026年。\n ひとつの時代が、\n 終わる。\n \n\n \n\n これより。\n \n\n 王国と魔王軍による、 同盟条約締結式を執り行う。 \n\n \n\n 王国代表。\n ネロ王子。\n \n魔王軍代表。\n 余。\n \n\n 立会人。\n …………。\n note読者諸君。\n \n\n 会場。\n …………。\n コメント欄。\n\n 急に規模が小さくなった。\n \n\n まあよい。\n では。\n \n\n 条約を読み上げる。\n 王魔同盟条約 \n\n 第一条。 \n\n 第二条。 \n\n 第三条。 …………。\n ここだけ、\n 余に有利である。\n \n\n 第四条。 \n\n 第五条。 …………。\n 1000年前の余が見たら、\n 泣く。\n \n\n 第六条。 \n\n 以上\n …………。\n \n最後だけ、\n 急にふわっとした。\n \n\n \nだが。\n よい。\n これをもって。\n \n\n 1000年にわたり続いた、\n 王家と魔王の因縁を終結する。\n \n\n 余は、\n 漆黒の魔王ノアの名において。\n この条約に署名する。\n \n\n \n\n ネロ王子。\n あとは、\n 貴殿の署名だけである。\n \n…………。\n \nちなみに。\n この調印書をどのようにして\n 貴殿に届ければ良いかわからぬ。\n\n 仕方ない。\n コメント欄に「締結」と書けば成立とする。 \n\n …………。\n \n\n 国際条約の締結方法として、\n たぶん史上最も軽い。\n \n\n だが。\n ネロ王子。\n 余は、\n 貴殿の世界を尊重する。\n \n\n 1000年前。\n 王家から奪ったもの。\n 領土。\n 2026年。\n 王家からもらったもの。\n 学びと、つながり。 \n\n \nずいぶん変わった。\n \n\n 秋とは、\n 変わっていく途中を楽しむ季節なのであろう。\n \n\n ならば。\n 1000年間敵だった王家と魔王が、 こうして同じ企画を楽しむようになったことも、 ひとつの紅葉なのかもしれない。 \n \n\n…………。\n \n\n 今。\n 余、\n かなり上手いことを言った。\n \n\n 記録官。\n 今のところ、\n 太字にしておけ。\n \n読者諸君\n スクショしてもいいのである。\n \n…………。\n \n\n では。\n 西暦2026年。\n \n\n ここに。\n 王国・魔王軍同盟条約 \n\n 締結。 \n\n これより。\n \n\n ネロ王子は、\n 敵国の王子ではない。\n 盟友である。 \n\n ネロ王子。\n これから、\n よろしく頼むである。\n \n\n 魔王軍、万歳。 王国に栄光あれ。 \n\n そして。\n 我らの同盟に、永き繁栄あれ。 \n\n \n\n \n\n …………。\n \n\n では王子。\n まず、\n 企画について教えてくれ。\n \n\n 条約締結から、\n 約4秒。\n 早速、\n 同盟国を頼る魔王である。\n \n…………。\n \n 順調である。 \n\n さて―― 漆黒の風がまた鳴き始めた。 \n\n この世界を、 もっと面白くするとしようか。 \n\n ――漆黒の魔王 ノア \n\n \n\n ▼企画を考えてくれた諸君へ向けて手紙を書いたのである \n 魔王書簡20261004.pdf 629 KB ファイルダウンロードについて \n\nダウンロード\n \n\n \n\n ▼入軍証の発行方法はこちらの記事を見るのである \n ＼志願兵募集／ \n魔王軍への入軍方法はかんたん\n余をフォローするだけなのである。\n \n #魔王軍万歳 \n #魔王軍 \n #魔王 \n #秋読コレクション",
@@ -3343,7 +3370,7 @@
           "key": "nc9ac9cc15a0d0",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ノアさん、秋読コレクションに参加いただきありがとうございます🤝\n\n私たちのコラボイベントを研修としていただき、嬉しい限りです🍁\nイベント・企画によって盛り上がるだけでなく、参加者同士でつながりができたり、新しい記事にチャレンジするきっかけとしてもらえます。\n\n主催者として、みなさんの記事が伸びるようになったと連絡いただけるのは、それ以上に嬉しいことはないです👏\n今後の活動も応援しています📣\n私のイベントもぜひまた参加してくださいね🔥",
           "publishedAt": "2026-10-06T20:53:48.178+09:00",
           "isRoot": true,
@@ -3367,7 +3394,27 @@
           "body": "陛下、おはようございます、コロッケノスケでございます。\n\n同盟締結おめでとう御座います🎊㊗️\n\n陛下、召喚術かっこいいです🥰\n\n暮秋の神獣　ヴェル・アウレア。\n\nかっこいい😎何故、鹿？\n\n私も九尾の猫と共に参戦しますぞ〜",
           "publishedAt": "2026-10-08T08:27:49.887+09:00",
           "isRoot": true,
-          "replyCount": 0
+          "replyCount": 1
+        },
+        {
+          "key": "nc28c15fbe9106",
+          "parentKey": "",
+          "authorUrlname": "bloom_toucan160",
+          "authorName": "ふじこ",
+          "body": "「秋に関する記事を書こう！」というネロ王子様の爽やかな企画に対して、  \n「余には、忘れられぬ秋がある」  からの異色の秋の記事🤣。\n締結内容も「コメント欄。荒らさない」ノア様の人柄が出て最高でした！\n\nファイリングさせていだきますね！",
+          "publishedAt": "2026-10-08T23:34:48.368+09:00",
+          "isRoot": true,
+          "replyCount": 1
+        },
+        {
+          "key": "nc4485c1759d53",
+          "parentKey": "",
+          "authorUrlname": "tanishi11go",
+          "authorName": "タニシ11号🐚─‎経験を、誰かのために🍀",
+          "body": "魔王様✨\nおはようございます☀️\n\n内密に願いたいのですが……\n\n【魔王軍😈猫様館】もOPEN 致しましたꉂ🤣𐤔\n\n猫様万歳🙌✨",
+          "publishedAt": "2026-10-09T07:47:41.867+09:00",
+          "isRoot": true,
+          "replyCount": 1
         },
         {
           "key": "nc427d5f665b05",
@@ -3678,6 +3725,36 @@
           "publishedAt": "2026-10-07T20:32:37.905+09:00",
           "isRoot": false,
           "replyCount": 0
+        },
+        {
+          "key": "nc5a4ca90e4c30",
+          "parentKey": "",
+          "authorUrlname": "noah_woaks",
+          "authorName": "ノア｜魔王｜noteを征服したい",
+          "body": "コロッケノスケ殿！！\n\n同盟締結のお祝い、ありがとうなのである！🍁\n\n召喚術も褒めてもらえて嬉しいぞ☺️\nなぜ鹿なのか。\n\n…………。\n\n余にも分からぬ。\n\nしかし、九尾の猫とは！！\n\n……待て。\n\n九尾の猫。\n\n猫好きの余、戦わせるより先にモフモフしたいのである🤣\n\n魔王軍万歳🙌",
+          "publishedAt": "2026-10-09T08:01:14.311+09:00",
+          "isRoot": false,
+          "replyCount": 0
+        },
+        {
+          "key": "nc5a7bf9591600",
+          "parentKey": "",
+          "authorUrlname": "noah_woaks",
+          "authorName": "ノア｜魔王｜noteを征服したい",
+          "body": "ふじこ殿\n\nそうなのである！！\n\nネロ王子の爽やかな秋の企画に、\n余だけ1000年前の戦闘記録を持ち込んでしまったのである🍁🤣\n\nしかも、かつて七つの王国を征服した魔王が、\n今では「コメント欄を荒らさない」と条約に明記しておる。\n\n……1000年でずいぶん丸くなったものである🤣\n\n大切にファイリングで残してくれて嬉しいぞ☺️✨\n\nふじこ殿、ありがとうなのである😈",
+          "publishedAt": "2026-10-09T08:03:17.861+09:00",
+          "isRoot": false,
+          "replyCount": 0
+        },
+        {
+          "key": "nc45790e1c8a3a",
+          "parentKey": "",
+          "authorUrlname": "noah_woaks",
+          "authorName": "ノア｜魔王｜noteを征服したい",
+          "body": "タニシ殿！！🐚\n\nおはようなのである☀️\n\n内密に……承知したぞ。\n\n…………。\n\n猫様館、開館おめでとうなのである！！！🤣\n\n猫好きの余には、たまらぬ施設である🐈‍⬛",
+          "publishedAt": "2026-10-09T07:58:34.516+09:00",
+          "isRoot": false,
+          "replyCount": 0
         }
       ]
     },
@@ -3729,7 +3806,7 @@
           "key": "nc753c5a1a8b61",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "いぬきさん、秋読コレクションに参加いただきありがとうございます🤝\n\n「裏社会で文化祭」という設定だけでもかなり面白いのですが、実際に読んでみると、物騒な題材と普通の文化祭らしい空気とのギャップが素敵でした🍁\n\n射撃や潜入・情報収集を「お仕事体験」として教えているのに、本人たちは妙に真面目に文化祭をやっているところがシュールですね✨\n\n裏社会という設定なのに、読み終わった後には不思議とほっこりする作品でした。\n素敵な記事をありがとうございました🙌",
           "publishedAt": "2026-10-06T20:48:16.541+09:00",
           "isRoot": true,
@@ -3784,7 +3861,7 @@
       "authorUrlname": "fresh_loris1944",
       "publishedAt": "2026-10-04T20:17:29.000+09:00",
       "articleUrl": "https://note.com/fresh_loris1944/n/n0d19bd25bb1f",
-      "likeCount": 101,
+      "likeCount": 102,
       "commentCountReported": 13,
       "commentCountFetched": 13,
       "tags": [],
@@ -3855,7 +3932,7 @@
           "key": "nc79d04a0b8ad0",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "名前もとさん、秋読コレクションに参加いただきありがとうございます🤝\n\n最初は「ヌイグルミを見た」という不思議な出来事として進んでいくのに、最後になって実はその生き物が普通に喫茶店を利用していて、しかも香水まで気にしているという展開が素敵ですね✨\n\n「別の香水にする」と言いながらも、おしゃれ自体はやめる気がないところに、可愛らしさを感じました🍁\n\n海へ向かう坂道や夜の喫茶店という舞台も雰囲気があって、短いお話の中に独特の世界観がしっかり作られていますね🌸\n素敵な記事をありがとうございました🙌",
           "publishedAt": "2026-10-06T20:42:27.129+09:00",
           "isRoot": true,
@@ -3971,7 +4048,7 @@
           "key": "nc142fdf015026",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "月草さん、秋読コレクションに参加いただきありがとうございます🤝\n\n収穫祭の雰囲気がすごく秋らしくていいですね🍁\n\n少女が「おばあちゃんのお店の匂い」と気づいて、金木犀を手がかりに匂いから人を探す、というのが素敵ですね💐\n\n最後にエリーが固まって逃げ出すところと、それを追いかけるレオンのやり取りが微笑ましかったです🤭\n\n心温まる人助けから、最後は二人の関係性もしっかり見える、秋らしい番外編をありがとうございました✨",
           "publishedAt": "2026-10-06T20:02:08.590+09:00",
           "isRoot": true,
@@ -4127,7 +4204,7 @@
           "key": "nc5f4745bf7f2d",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ヴェロニカさん、秋読コレクションに参加いただきありがとうございます🤝\n\n王国の秋、「ぶどう踏み」から始まるのは素敵ですね🍇\n\n自動ぶどう踏み機が桶ごと走り出して、最後は剣士に一刀両断される流れが面白かったです✨\n\nその出来事をきっかけに「悪役」と呼ばれるようになったというオチまで含めて、ヴェロニカさんらしい『秋』のですね🤭\n\n素敵な記事をありがとうございました👏",
           "publishedAt": "2026-10-06T19:57:02.594+09:00",
           "isRoot": true,
@@ -4232,7 +4309,7 @@
       "authorUrlname": "3_mo_on",
       "publishedAt": "2026-10-04T14:45:03.000+09:00",
       "articleUrl": "https://note.com/3_mo_on/n/n8cc7d878c1fc",
-      "likeCount": 29,
+      "likeCount": 30,
       "commentCountReported": 6,
       "commentCountFetched": 6,
       "tags": [],
@@ -4263,7 +4340,7 @@
           "key": "nc8a1f0deac444",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "クラゲさん、秋読コレクションに参加いただきありがとうございます🤝\n\n「文章を読みながら、人物の姿や表情、声色、その場面の景色を頭の中に思い浮かべる」という部分、私も共感しました✨\n\n表紙や映像で具体的に見えるものとは違って、小説だからこそ自分の中で自由に世界を作れる楽しさがありますよね🍁\n\n好きな作家さんの新刊を見つけると、他の本が目に入らなくなるというのも、読書好きならではで素敵です💐\n\nぜひ他の参加者の方の記事も読んでみてくださいね👏",
           "publishedAt": "2026-10-06T19:53:14.698+09:00",
           "isRoot": true,
@@ -4308,7 +4385,7 @@
       "authorUrlname": "yokayoka5103",
       "publishedAt": "2026-10-04T15:14:33.000+09:00",
       "articleUrl": "https://note.com/yokayoka5103/n/n31817c349bff",
-      "likeCount": 41,
+      "likeCount": 42,
       "commentCountReported": 12,
       "commentCountFetched": 12,
       "tags": [],
@@ -4369,7 +4446,7 @@
           "key": "ncc68ed5114122",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "まるよかさん、秋読コレクションに参加いただきありがとうございます🤝\n\n言葉が消える、という現象に哀愁を感じますね。\n\n消えていたのが「ごめん」「ありがとう」「好き」など、誰かに伝えられなかった言葉だったというところに、響くものがあります✨\n\nAIで初めて書いたとは思えないくらい、最後までちゃんと物語としてまとまっていて素敵です🍁\n\nぜひ他の参加者の方の記事も読んでみてくださいね💐",
           "publishedAt": "2026-10-06T19:50:18.469+09:00",
           "isRoot": true,
@@ -4444,9 +4521,9 @@
       "authorUrlname": "fukurai_mone",
       "publishedAt": "2026-10-04T15:11:19.000+09:00",
       "articleUrl": "https://note.com/fukurai_mone/n/n3d0919069d76",
-      "likeCount": 91,
-      "commentCountReported": 43,
-      "commentCountFetched": 43,
+      "likeCount": 96,
+      "commentCountReported": 46,
+      "commentCountFetched": 46,
       "tags": [],
       "preview": "",
       "body": "",
@@ -4525,7 +4602,7 @@
           "key": "nc0d0e9c3db937",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "ほっこりしてたのに、最後のスペースモネチャンに全部持っていかれたっ　（笑）\n片頭痛はマシになったのかな？　ぼちぼちねっ",
           "publishedAt": "2026-10-04T16:54:45.131+09:00",
           "isRoot": true,
@@ -4605,7 +4682,7 @@
           "key": "nc68dbe8e9b5a3",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "モネさん、秋読コレクションに参加いただきありがとうございます🤝\n\n可愛らしいイラストで、楽しく読ませていただきました✨\nスイートポテトも秋らしくて、とても美味しそうです🍁\n漫画の作り方がお上手ですね👏\n\n素敵な記事をありがとうございました🔥",
           "publishedAt": "2026-10-06T07:09:49.111+09:00",
           "isRoot": true,
@@ -4638,6 +4715,16 @@
           "authorName": "きゅうり/AIで“できること”が増える",
           "body": "こんにちは！きゅうりです🥒\n秋読みコレクション巡り真っ只中です🍁\n\n合間合間の絵面？（表現違ったらすみません）が最高！！🤣\n「顔！！！ｗｗｗｗｗ」って、ニヤニヤしながら読んじゃいました😂\nカボチャ切る時のあの顔！！！🎃🤣\n\nそしてスイートポテトのリアリティ感！！\nめちゃくちゃ美味しそう～～～～！！！！\nよだれダラダラもんでした🤤🍠✨\n\nきゅうりは、キャベツの芯を取る時にマイ包丁の先端をポキっと言わせたことがあります←\n包丁がカボチャの犠牲になりませんように！！🙏🤣",
           "publishedAt": "2026-10-08T13:11:13.562+09:00",
+          "isRoot": true,
+          "replyCount": 2
+        },
+        {
+          "key": "nc0eccb52c80cb",
+          "parentKey": "",
+          "authorUrlname": "ho_hi_fu",
+          "authorName": "ホーヒーフ",
+          "body": "モネさん、面白いです🤣🤣🤣\nAIを使いこなされてて尊敬です✨\nいくつか記事を拝見しましたが、挿絵や漫画が作れるってすごいです✨\n私は人様のプロンプトにお世話になりっぱなしなので…(*/□＼*)💦\nいきなりベルサイユのばらになる所とか、さっきまで個性だと言ってたのに職人になる所とか😂😂読んでて楽しいです✨",
+          "publishedAt": "2026-10-09T03:16:11.941+09:00",
           "isRoot": true,
           "replyCount": 0
         },
@@ -4735,7 +4822,7 @@
           "key": "ncaba7939b7fe0",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "復活おめでとう🎊　天気関係あるかな？今後も無理しないでね😊\nスペースモネチャン面白かったからいいと思う！",
           "publishedAt": "2026-10-04T21:22:57.240+09:00",
           "isRoot": false,
@@ -4880,6 +4967,26 @@
           "publishedAt": "2026-10-08T08:15:33.394+09:00",
           "isRoot": false,
           "replyCount": 0
+        },
+        {
+          "key": "nc7527e2d427c1",
+          "parentKey": "",
+          "authorUrlname": "fukurai_mone",
+          "authorName": "福来モネ",
+          "body": "きゅうりさん、こんにちわ！\n\nコロコロコミックのようなギャグセンスなのですが\nお楽しみいただけたのでしたら最高です！\n\nええっ、包丁がキャベツに負けたんですか！？\nド根性キャベツすぎますね。",
+          "publishedAt": "2026-10-08T16:10:42.265+09:00",
+          "isRoot": false,
+          "replyCount": 1
+        },
+        {
+          "key": "nc8d2f3ecd93ba",
+          "parentKey": "",
+          "authorUrlname": "ai_guide3875",
+          "authorName": "きゅうり/AIで“できること”が増える",
+          "body": "コロコロ大好きです←\n最高のギャグセンスですやん。\n\nど根性キャベツww\n言葉選びのセンスしか感じない🤣w\nキャベツの芯、侮るべからず。笑",
+          "publishedAt": "2026-10-08T18:10:45.644+09:00",
+          "isRoot": false,
+          "replyCount": 0
         }
       ]
     },
@@ -4890,9 +4997,9 @@
       "authorUrlname": "ojisan_chinpan",
       "publishedAt": "2026-10-04T10:39:03.000+09:00",
       "articleUrl": "https://note.com/ojisan_chinpan/n/n4d591a2c8d20",
-      "likeCount": 109,
-      "commentCountReported": 52,
-      "commentCountFetched": 52,
+      "likeCount": 111,
+      "commentCountReported": 53,
+      "commentCountFetched": 53,
       "tags": [],
       "preview": "",
       "body": "この記事はネロ王子とorivieさんのコラボ企画\n 「秋読コレクション」 参加記事です。\n テーマは「あなたの秋」。\n で、自分の秋ってなんやろ？\n 昔の写真をあさってみた。\n 紅葉とか、秋の味覚とか。\nそれっぽい写真が出てくるのかと思ったら、\n だいたいチャリだった。 \n というか、ほぼチャリ。\n しかも改めて見返してみると、\n 「俺、何してんねんｗ」 \n と思う写真ばっかり出てくる。\n 山を登ってる。\nレースを走ってる。\n100km先まで飯を食いに行ってる。\n 当時はそれが普通やったんやろな。\n ちなみに今回載せる写真は、全部その頃に撮ったまま。\n 映えを狙って撮っていたわけでもないので、写真加工もしていない。\n 走っていて、\n 「お、ええやん」\n と思ったら止まって撮る。\n それだけ。\n そんな写真を見ながら、俺の秋の思い出を振り返ってみる。\n \n\n レース前日に20km登る 翌日にレースを控えた試走の日。\n 普通なら軽くコースを確認して、脚を温存するところだと思う。\n 俺はなぜか、20kmほど登った先の砥峰高原まで行っていた。\n 今見ても、すすきの景色はきれい。\n ただし翌日レース。\n なんで登った。 \n たぶん当時は、\n 「せっかくここまで来たし」\n くらいだったんだと思う。\n 別の日には、大文字までチャリで登っている。\n レースでも大会でもない。\n普通に遊びである。\n 今なら思う。\n なんでそこまでチャリ乗って行ったんや。 \n でも当時は、山があったら登る。\n知らない道があったら行ってみる。\n そんなことをずっとやっていた。\n \n\n レース翌日は22km登る 今度はレースの翌日。\n 向かったのは、しらびそ高原。\n登り約22km。\n 前日にレースを走っている。\n 翌日に山がある。\n なら登る。\n たぶんそんな感じだった。\n 今の俺なら迷わず言う。\n 休め。 \n \n\n 鈴鹿を走って、琵琶湖まで走って これは鈴鹿サーキットの8時間耐久レース。\n 普段は車やバイクが走る場所を、自分のチャリで走る。\n 当時はタイムや順位も気にしていたはずなのに、\n今覚えているのは、\n 「鈴鹿をチャリで走ったなあ」 \n ということの方だった。\n そして琵琶湖大橋。\n 写真だけ見れば爽やかなサイクリング。\n でも、この時点で約150km走ったあと。\n 昔の写真にはこういうのが多い。\n 写真だけは爽やか。\n裏ではまあまあ訳の分からん距離を走っている。\n \n\n カツ丼を食べに片道100kmオーバー 小浜まで自走して食べた、わらじカツ丼。\n でかい。\nうまい。\n そして片道100kmオーバー。\n 当然、食べたら帰らなければならない。\n しかも帰路はヒルクライム。\n 腹いっぱいの状態で坂を登る。\n 脚もヒルクライム。\nお腹もヒルクライム。 \n 完全に食べる量を間違えた。\n 今考えると、\n カツ丼を食べに行く距離ではない。 \n でも、こういう時の飯って妙に覚えている。\n \n\n 距離より、誰と走ったか 鈴鹿山脈の竜ヶ岳。\n チャリ仲間3人で行った時の写真。\n 昔は何km走ったとか、どれだけ登ったとか、そんな数字ばかり気にしていた気がする。\n でも写真を見返すと、\n 誰と行ったかもちゃんと残っていた。 \n この時、何を話していたのかまでは覚えていない。\n でも、\n 「ああ、3人で行ったな」\n は覚えている。\n \n\n いつもの道に、変な秋がいた 最後は信楽。\n いつものトレーニングコースを走っていたら、\n 紅葉している木の横で、ひまわりが咲いていた。\n 秋にひまわり。\n なんやこれ。\n あらびっくり。 \n 思わず止まって撮った一枚。\n レースでも遠征でもない。\nただ、いつもの道で見つけただけ。\n でも今見ると、こういう何でもない写真が妙に懐かしい。\n \n\n 今は、もうこんな走り方はできない その後、病気が発覚した。\n そして自転車は禁止になった。\n だから今は、こんな走り方はできない。\n 当時は、それができなくなるなんて考えていなかった。\n 写真も、思い出として残そうなんて考えていない。\n ただ走って、\n気になった景色があったら止まって撮る。\n それだけだった。\n 今回、昔の写真を見返してみた。\n 20km登ってる。\n22km登ってる。\n150km走ってる。\nカツ丼を食べるために片道100km超えてる。\n大文字にもチャリで登ってる。\n仲間と山にも行ってる。\n ・・・\n ほんまによく走ってたな、俺。 \n 今はもうできない。\n でも、できないから消えるわけでもない。\n 走った距離も。\n登った山も。\n一緒に走った人も。\n途中で見つけた景色も。\n腹を空かせて食った飯も。\n ちゃんと残っている。\n これはこれで、\n 良き思い出である。 \n \n\n 「秋読コレクション」に参加しました この記事は、ネロ🌙王子さん × orivieさんの企画\n 「秋読コレクション」 への参加記事です。\n テーマは「あなたの秋」。\n 何を書こうかと思って昔の写真を探したら、紅葉より先にチャリの写真が大量に出てきました。\n ということで、俺は「思い出」で参加します。\n \n 素敵な企画をありがとうございます。\n \n\n \n \n \nちんぱん🐒耳毛〰(˙👄˙)〰の推し庭｜推し庭\n \n \n記事を読むたび、1アクション。植物を植えたり育てたりしながら、あなただけの庭を育てます。\n \n \noshi-niwa.hasyamo.workers.dev\n \n \n\n \n \n\n 耳毛の裏側 表の記事では書ききれなかった話は、メンシプ 「耳毛の裏側」 に置いてます。\n 制作の裏話、やらかし、あとがき。\n最近はAIで何か作ったり、思いついたことを実験したり。\n 相変わらず、何が育つかは俺にも分からんｗ\n 月500円。 \n ちょっと覗いてみようかな、くらいの人はどうぞ。\n \n\n \n\n note仕上げ代行ツール。by KOTAYA様👇\n絵本作成にも使用\n \n \n \n「あとは、私にお任せください」──note仕上げ代行AI執事【Codex向けスキル】 | こたや | 会社員のnote副業実験 | Brain\n \n \n本文は書けた。でも、そこから動けない。見出し画像、どうしよう。このタイトルで、ちゃんと読まれる？挿絵、あったほうがいいのは\n \n \nbrain-market.com\n \n \n\n \n ※上記はBrainの紹介リンクです。こちらのリンク経由で購入されると、俺に紹介報酬が入ります\n \n\n 👇 はじめましての人はこちら \n \n 文章では67面相\n文章魔改造ツール\n転生者におすすめ🤣👇\n \n 絵本作り出しました👇\n \n YouTubeはじめました👇\n \n \n\n #自転車\n#サイクリング\n#ヒルクライム\n#秋の思い出\n#秋読コレクション\n#山であそぶ\n#旅のフォトアルバム",
@@ -5101,7 +5208,7 @@
           "key": "ncd73829eb99aa",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ちんぱんさん、秋読コレクションに参加いただきありがとうございます🤝\n\n写真を見返して「何km走ったか」よりも「誰と走ったか」が残っている、というところが素敵ですね✨\n\n今はもう同じように走れないからこそ、当時は何気なく撮っていた写真や、そのときに見た景色、一緒に走った人、空腹で食べたご飯まで、全部が大切な思い出になっているんですね🍁\n\n素敵な記事をありがとうございました💐",
           "publishedAt": "2026-10-06T07:05:09.390+09:00",
           "isRoot": true,
@@ -5135,7 +5242,7 @@
           "body": "はじめまして！きゅうりです🥒\n秋読コレクション巡り真っ只中です🤭🍁\n\nちんぱんさんとお呼びしてよいのでしょうか？\nわらじカツ丼すご！！めっちゃ美味しそう！！🤤✨\n\n「あの頃だからできたこと」って、思い返すといっぱいありますよね🥹\n\nオールもそうだし、はしご酒に1日ユニバ🤣\n今思うと「よくやってたなぁ」ってことばっかり😂\n\nこの記事を読んで、きゅうりも思い返してみたら、\n思い出ってこんなに転がってるのか！と気づきました🍁\n\nなんだか、昔の自分にちょっと会いに行けたような気分です☺️✨",
           "publishedAt": "2026-10-08T13:04:06.895+09:00",
           "isRoot": true,
-          "replyCount": 0
+          "replyCount": 1
         },
         {
           "key": "nc25807fbb704d",
@@ -5416,6 +5523,16 @@
           "publishedAt": "2026-10-07T20:18:10.948+09:00",
           "isRoot": false,
           "replyCount": 0
+        },
+        {
+          "key": "ncc220a3a9e677",
+          "parentKey": "",
+          "authorUrlname": "ojisan_chinpan",
+          "authorName": "ちんぱん🐒耳毛〰(˙👄˙)〰",
+          "body": "きゅうり🥒さんはじめまして☀\n\nちんぱんでも耳毛でもOKですよ🤣\nわらじカツ丼めっちゃ美味しいです😆\n\nこの写真たちは数年前ですが、思い返すと、昔のDVDビデオだったり、失恋して友達呼んで海に行ったときとか、いらいろ思い出しますね✨",
+          "publishedAt": "2026-10-08T18:09:21.153+09:00",
+          "isRoot": false,
+          "replyCount": 0
         }
       ]
     },
@@ -5426,7 +5543,7 @@
       "authorUrlname": "open_tulip9172",
       "publishedAt": "2026-10-04T08:55:30.000+09:00",
       "articleUrl": "https://note.com/open_tulip9172/n/n9ed4b3bf04d7",
-      "likeCount": 50,
+      "likeCount": 52,
       "commentCountReported": 20,
       "commentCountFetched": 20,
       "tags": [],
@@ -5507,7 +5624,7 @@
           "key": "nc47388cae18e7",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ミノリさん、秋読コレクションに参加いただきありがとうございます🤝\n\n「いつか絶対に逢いにきて。信用させて欲しい」と言われて、本当に会いに行ったところが素敵だなと思いました✨\n\nそこで終わらず、ちゃんと約束を果たしたからこそ、今は「彼女」ではなく「妻」として隣にいるんですね👏\n\nまた、3人の息子さんたちそれぞれの秋も素敵です🍁\n\nぜひ他の参加者の方の記事も読んでみてくださいね🔥",
           "publishedAt": "2026-10-06T07:02:29.478+09:00",
           "isRoot": true,
@@ -5642,7 +5759,7 @@
       "authorUrlname": "fine_loris7218",
       "publishedAt": "2026-10-04T09:18:31.000+09:00",
       "articleUrl": "https://note.com/fine_loris7218/n/n07a113cdd83e",
-      "likeCount": 58,
+      "likeCount": 59,
       "commentCountReported": 29,
       "commentCountFetched": 29,
       "tags": [],
@@ -5653,7 +5770,7 @@
           "key": "ncad85de24e230",
           "parentKey": "",
           "authorUrlname": "hip_badger4262",
-          "authorName": "ウタ｜楽しみながら収益化を目指す人",
+          "authorName": "ウタ｜楽しみながら収益化を目指す✨",
           "body": "ぱっちーさん、はじめまして！\n\n記事をご紹介いただいてありがとうございます！\nこれからも大真面目にふざけていきたいとおもいます！😆",
           "publishedAt": "2026-10-04T09:29:58.290+09:00",
           "isRoot": true,
@@ -5753,7 +5870,7 @@
           "key": "ncda154f3faf95",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ぱっちーさん、秋読コレクションに参加いただきありがとうございます🤝\n\n紅葉を見に行ったのに、ずっと下を向いて落ち葉を拾っているというところが微笑ましいですね🍁\n\n大人からすると「せっかく紅葉を見に来たのに」と思ってしまいそうですが、子どもにとっては足元の一枚一枚もちゃんとした秋なんですね✨\n\n素敵な記事をありがとうございました💐",
           "publishedAt": "2026-10-06T06:58:19.432+09:00",
           "isRoot": true,
@@ -5793,7 +5910,7 @@
           "key": "nc37ff8cc4da43",
           "parentKey": "",
           "authorUrlname": "hip_badger4262",
-          "authorName": "ウタ｜楽しみながら収益化を目指す人",
+          "authorName": "ウタ｜楽しみながら収益化を目指す✨",
           "body": "是非食べてください！\n\n実は、きのこたけのこ両方入りのアソートパックがオススメです（ﾎﾞｿｯ",
           "publishedAt": "2026-10-04T10:25:02.387+09:00",
           "isRoot": false,
@@ -6665,7 +6782,7 @@
           "key": "ncb75c489356c3",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "SOGEKI LABSさん、秋読コレクションに参加いただきありがとうございます🤝\n\n誰かを守ることばかり考えて、自分自身を守ることを忘れているハルトに対して、「守りたいもの」の中に自分だけではなくハルト自身も入れてあげようとするアイリスの優しさが、とても素敵ですね🍁\n\n最初は収穫祭で過ごす穏やかな秋の一日として読んでいたのに、最後の一文で「この二人にこれから何が起こるんだろう」と一気に本編への興味を持たされました🔥\n\n素敵な記事をありがとうございました💐",
           "publishedAt": "2026-10-06T06:38:05.884+09:00",
           "isRoot": true,
@@ -6750,7 +6867,7 @@
       "authorUrlname": "loyal_poppy819",
       "publishedAt": "2026-10-03T20:19:08.000+09:00",
       "articleUrl": "https://note.com/loyal_poppy819/n/n1c6d7e3641f7",
-      "likeCount": 137,
+      "likeCount": 140,
       "commentCountReported": 23,
       "commentCountFetched": 23,
       "tags": [],
@@ -6841,7 +6958,7 @@
           "key": "ncf669b87f6844",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ryuuさん、秋読コレクションに参加いただきありがとうございます🤝\n\n手紙に込められた「真心」が二人の気持ちだけでなく、王国を守る力になるというのが素敵です🍁\n\n好きな人に想いを伝えることと、大切なものを守ることが一本につながっているのですね💐\n\n素敵な記事をありがとうございました👏",
           "publishedAt": "2026-10-06T06:34:54.479+09:00",
           "isRoot": true,
@@ -7147,7 +7264,7 @@
           "key": "ncb4dab20878ca",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ゆきさん、秋読コレクションに参加いただきありがとうございます🤝\n\n17時半の灯りから秋を感じるというのが素敵です🍁\n\n「湯気」「運動会」「夜長」の3行日記も、それぞれ全く違う場面なのに、どれも秋の空気が感じられますね💐\n\n素敵な記事をありがとうございました👏",
           "publishedAt": "2026-10-06T06:30:36.027+09:00",
           "isRoot": true,
@@ -7382,7 +7499,7 @@
       "authorUrlname": "kan_mina867",
       "publishedAt": "2026-10-03T17:58:56.000+09:00",
       "articleUrl": "https://note.com/kan_mina867/n/nf91bcd86288a",
-      "likeCount": 88,
+      "likeCount": 90,
       "commentCountReported": 47,
       "commentCountFetched": 47,
       "tags": [],
@@ -7533,7 +7650,7 @@
           "key": "ncd0824976892a",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "Minaさん、秋読コレクションに参加いただきありがとうございます🤝\n\nAIと一緒に「記憶の京都」を旅していくのがとても素敵です✨️\n\n暗いお寺の中から光の先に紅葉が浮かび上がる場面に、「秋に焦点が合う瞬間」という表現も、その景色が目に浮かぶようです🍁\n\n今の自分とAIという相棒を加えて、新しい記憶の景色を作るのは楽しそうです👏\n\n素敵な記事をありがとうございました💐",
           "publishedAt": "2026-10-06T06:28:15.660+09:00",
           "isRoot": true,
@@ -7868,7 +7985,7 @@
       "authorUrlname": "potemushi",
       "publishedAt": "2026-10-03T16:04:02.000+09:00",
       "articleUrl": "https://note.com/potemushi/n/na5a1c8bfbae7",
-      "likeCount": 78,
+      "likeCount": 79,
       "commentCountReported": 27,
       "commentCountFetched": 27,
       "tags": [],
@@ -7969,7 +8086,7 @@
           "key": "nc669aa715676b",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ぽてむしさん、秋読コレクションに参加いただきありがとうございます🤝\n\nポテチの袋の裏を読む「読書の秋」も素敵ですね✨\n\n最後に、洗濯物の乾き具合という何気ない変化から秋を見つけていて、「秋は遠くまで探しに行かなくてもいい」という結論に、納得できました🔥\n\n素敵な秋をありがとうございました🍁",
           "publishedAt": "2026-10-06T06:05:08.318+09:00",
           "isRoot": true,
@@ -8154,7 +8271,7 @@
       "authorUrlname": "lafey",
       "publishedAt": "2026-10-03T02:32:55.000+09:00",
       "articleUrl": "https://note.com/lafey/n/n389f5106d14f",
-      "likeCount": 29,
+      "likeCount": 30,
       "commentCountReported": 8,
       "commentCountFetched": 8,
       "tags": [],
@@ -8175,7 +8292,7 @@
           "key": "nc860545ba79b6",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "浅葱りうさん、秋読コレクション参加いただきありがとうございます🤝\n\n普段何気なく食べているものでも、少し調べてみると意外と長い歴史や背景があるんですね👀\n\n秋の味覚を楽しむだけでなく、そこから「もっと知りたい」に繋がっていくのが素敵です💐\n\n他の方の記事もぜひ読みにいってみてくださいね🍁",
           "publishedAt": "2026-10-06T06:02:04.708+09:00",
           "isRoot": true,
@@ -8250,7 +8367,7 @@
       "authorUrlname": "you5so",
       "publishedAt": "2026-10-03T13:29:46.000+09:00",
       "articleUrl": "https://note.com/you5so/n/nc7ee509a91e7",
-      "likeCount": 51,
+      "likeCount": 54,
       "commentCountReported": 17,
       "commentCountFetched": 17,
       "tags": [],
@@ -8311,7 +8428,7 @@
           "key": "ncda2ed299145b",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "なつきさん、秋読コレクション参加いただきありがとうございます🤝\n\n「季節を感じる」のではなく「知る」という表現がすごく素敵ですね✨\n\n同じ道を通っていても、先月とは違う匂いがすることで、時間がちゃんと進んでいることに気づけますよね🍁\n\nぜひ他の方の記事も覗いてみてくださいね💐",
           "publishedAt": "2026-10-06T05:59:00.214+09:00",
           "isRoot": true,
@@ -8432,11 +8549,11 @@
     {
       "key": "n6fd84958bf48",
       "title": "戦争を始めよう。きのこたけのこ戦争を。",
-      "authorName": "ウタ｜楽しみながら収益化を目指す人",
+      "authorName": "ウタ｜楽しみながら収益化を目指す✨",
       "authorUrlname": "hip_badger4262",
       "publishedAt": "2026-10-03T12:53:46.000+09:00",
       "articleUrl": "https://note.com/hip_badger4262/n/n6fd84958bf48",
-      "likeCount": 52,
+      "likeCount": 54,
       "commentCountReported": 25,
       "commentCountFetched": 25,
       "tags": [],
@@ -8537,7 +8654,7 @@
           "key": "ncf3d1a36928f0",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ウタさん、秋読コレクションに参加いただきありがとうございます🤝\n\n私の周りはたけのこ派ばかりだったので、きのこ派の方は珍しいです🍄\n私はどちらも好きですが、どちらか片方を選ぶとしたら、手に粉が付きづらく、かつチョコを触らなくても持てるきのこの方がありがたいですね。\n\nみなさんがどのような観点で、どっち派なのか気になりますよね👀\n素敵な記事をありがとうございました🍁",
           "publishedAt": "2026-10-04T12:23:55.650+09:00",
           "isRoot": true,
@@ -8567,7 +8684,7 @@
           "key": "ncfe6ef616bbe0",
           "parentKey": "",
           "authorUrlname": "hip_badger4262",
-          "authorName": "ウタ｜楽しみながら収益化を目指す人",
+          "authorName": "ウタ｜楽しみながら収益化を目指す✨",
           "body": "伊藤ポップさん、はじめまして！\n\n永遠のテーマですよねぇ🧐\n\nアルフォート、お菓子の中で一番好きです笑\nビバ！ブルボン！",
           "publishedAt": "2026-10-03T13:23:53.713+09:00",
           "isRoot": false,
@@ -8577,7 +8694,7 @@
           "key": "nc655e3f171a5e",
           "parentKey": "",
           "authorUrlname": "hip_badger4262",
-          "authorName": "ウタ｜楽しみながら収益化を目指す人",
+          "authorName": "ウタ｜楽しみながら収益化を目指す✨",
           "body": "くみっきーさん、はじめまして！\n\nどっちもどっち、間違いないです。\nただ、それを言っちゃあおしまいです。笑",
           "publishedAt": "2026-10-03T13:27:32.001+09:00",
           "isRoot": false,
@@ -8587,7 +8704,7 @@
           "key": "ncf2d1e216f39a",
           "parentKey": "",
           "authorUrlname": "hip_badger4262",
-          "authorName": "ウタ｜楽しみながら収益化を目指す人",
+          "authorName": "ウタ｜楽しみながら収益化を目指す✨",
           "body": "ハリーさん、こんにちは！\n\nなるほど……\nチョコとクッキーのバランスですか。\nたしかに、分かります。\nそして「見た目がちょっと森っぽい」も分かる。笑\n\nなかなかの強敵ですね…。",
           "publishedAt": "2026-10-03T13:43:23.113+09:00",
           "isRoot": false,
@@ -8597,7 +8714,7 @@
           "key": "nc7e59375252ed",
           "parentKey": "",
           "authorUrlname": "hip_badger4262",
-          "authorName": "ウタ｜楽しみながら収益化を目指す人",
+          "authorName": "ウタ｜楽しみながら収益化を目指す✨",
           "body": "ちびたぬきさん、こんにちは！\n\nあのポリポリとチョコが一体化しすぎてないのが、逆にいいんですよね！\n\nなるほど、イラストがたぬきなら\nもうそれは運命です！笑",
           "publishedAt": "2026-10-03T13:47:58.152+09:00",
           "isRoot": false,
@@ -8607,7 +8724,7 @@
           "key": "ncd510709a4cad",
           "parentKey": "",
           "authorUrlname": "hip_badger4262",
-          "authorName": "ウタ｜楽しみながら収益化を目指す人",
+          "authorName": "ウタ｜楽しみながら収益化を目指す✨",
           "body": "クジラさんはじめまして！\nよろしくお願いします✨\n\nおっとっと いいですねぇ！！\nおっとっと派はツウですね😏",
           "publishedAt": "2026-10-03T18:45:32.128+09:00",
           "isRoot": false,
@@ -8627,7 +8744,7 @@
           "key": "nc858f96ed1f7e",
           "parentKey": "",
           "authorUrlname": "hip_badger4262",
-          "authorName": "ウタ｜楽しみながら収益化を目指す人",
+          "authorName": "ウタ｜楽しみながら収益化を目指す✨",
           "body": "宇宙人かあさんさん！はじめまして！\nコメントありがとうございます！\n\n\nきのこ派へ寝返ってもいいんですよ😏🍄\n\nしかも今回の分析を見て「やっぱりきのこは強い」と感じていただけたとは……\nこの記事を書いた甲斐がありました😂\n\nクリスマスツリー！！🎄\nそんな使い道があるとは知りませんでした。笑\n\nまたぜひ遊びに来てください！\nこれからよろしくお願いします😊",
           "publishedAt": "2026-10-03T18:55:22.153+09:00",
           "isRoot": false,
@@ -8637,7 +8754,7 @@
           "key": "ncabb20d0232dd",
           "parentKey": "",
           "authorUrlname": "hip_badger4262",
-          "authorName": "ウタ｜楽しみながら収益化を目指す人",
+          "authorName": "ウタ｜楽しみながら収益化を目指す✨",
           "body": "算術01さん、こんばんは！\nはじめまして😊☕️\n\n無茶苦茶な二段構えの論法に食いついていただけて嬉しいです😆\n\n完璧？無茶苦茶？なロジックでなんとか「きのこの勝ち」に持っていきたい所存です😂\n\nそして算術01さんも、きのこ派への転向を検討されている……！？🍄\nこれはぜひ、こちら側へお越しください。笑",
           "publishedAt": "2026-10-03T22:32:37.975+09:00",
           "isRoot": false,
@@ -8647,7 +8764,7 @@
           "key": "ncd098228b8b12",
           "parentKey": "",
           "authorUrlname": "hip_badger4262",
-          "authorName": "ウタ｜楽しみながら収益化を目指す人",
+          "authorName": "ウタ｜楽しみながら収益化を目指す✨",
           "body": "はじめまして、山田さん！\n\n飛びついていただきありがとうございます！😂\n\n身も蓋もない話にはなりますが、実は私も家族用に買う時は、アソート袋を買っています。笑",
           "publishedAt": "2026-10-04T06:06:49.944+09:00",
           "isRoot": false,
@@ -8657,7 +8774,7 @@
           "key": "ncd3cedaf36d0e",
           "parentKey": "",
           "authorUrlname": "hip_badger4262",
-          "authorName": "ウタ｜楽しみながら収益化を目指す人",
+          "authorName": "ウタ｜楽しみながら収益化を目指す✨",
           "body": "のりもちさん、はじめまして！\nコメントありがとうございます！\n\nそうなんですよ……\n今回のデータを見ていただければ、きのこの強さが分かっていただけるかと🍄🤣\n※個人の感想となります。笑\n\nとはいえ、気分で食べ分けるのもめちゃくちゃ分かります。\nどっちも美味しいんですよね😂\n\nアソートパック……\nそこに着地する気持ち分かります…！\n\nでも息子さんにほとんど食べられるんですね🤣\nそれならもう、きのこ派とかたけのこ派とか言ってる場合じゃないですね。",
           "publishedAt": "2026-10-04T09:58:54.295+09:00",
           "isRoot": false,
@@ -8667,7 +8784,7 @@
           "key": "ncbd959b2fdb6f",
           "parentKey": "",
           "authorUrlname": "hip_badger4262",
-          "authorName": "ウタ｜楽しみながら収益化を目指す人",
+          "authorName": "ウタ｜楽しみながら収益化を目指す✨",
           "body": "orivieさん、コメントありがとうございます！\nこちらこそ、素敵な企画に参加させていただきありがとうございます🤝\n\n「手に粉が付きづらい」「かつチョコを触らなくても持てる」\nこれは、完全にきのこの山の強みですね🍄\n\nこうやって皆さんのコメントを読んでいると、同じお菓子でも見るところが全然違って面白いです😂\n\n素敵な企画をありがとうございました🍁\nまた面白そうな企画があれば、ぜひ参加させてください😊",
           "publishedAt": "2026-10-04T13:13:52.066+09:00",
           "isRoot": false,
@@ -8677,7 +8794,7 @@
           "key": "ncb3c859298402",
           "parentKey": "",
           "authorUrlname": "hip_badger4262",
-          "authorName": "ウタ｜楽しみながら収益化を目指す人",
+          "authorName": "ウタ｜楽しみながら収益化を目指す✨",
           "body": "堂安咲和さん、はじめまして！\nコメントありがとうございます✨\n\n無人島で遭難理論に反応していただけるとは🤣\nあそこは自分でも、無茶苦茶だなと思いながら書いてました。笑\n\n楽しんでいただけたようで嬉しいです！\nこれからも、たまにこういうくだらない記事も書いていこうと思います🍄",
           "publishedAt": "2026-10-04T17:05:03.853+09:00",
           "isRoot": false,
@@ -8687,7 +8804,7 @@
           "key": "nc45a505dc9ac6",
           "parentKey": "",
           "authorUrlname": "hip_badger4262",
-          "authorName": "ウタ｜楽しみながら収益化を目指す人",
+          "authorName": "ウタ｜楽しみながら収益化を目指す✨",
           "body": "ネロ王子🌙、こちらこそ素敵な企画に参加させていただきありがとうございます！😊🍁\n\nしっかり読んでいただいてありがとうございます😂\n\nそうなんです。\n最終的には、\n「僕がきのこ派だから。」\n\n最初から勝負は決まってました🍄🤣\n\nそして王子……\nたけのこ派だったんですね💣💥\n\nなるほど。\n\nこれは……\n\n異論は認めます。\nでも僕は聞きません。\n\n秋読コレクション、\n色々な方と交流できましたし、\nめちゃくちゃ楽しませていただきました！\n素敵な企画をありがとうございました🍁🌙",
           "publishedAt": "2026-10-06T12:20:37.052+09:00",
           "isRoot": false,
@@ -8733,7 +8850,7 @@
           "key": "nceb859e3ba100",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ママンマフィンさん、秋読コレクションに参加いただきありがとうございます🤝\n\n秋は短いですが、落ち着く季節ですよね☕️\nコーヒーを片手にくつろぐリームルンデさんが素敵です✨\nぜひ他の参加者の方の記事も覗いてみて、秋を楽しんでいってくださいね🍁",
           "publishedAt": "2026-10-04T11:32:47.078+09:00",
           "isRoot": true,
@@ -8879,7 +8996,7 @@
           "key": "ncffb99c2ad755",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "トトさん、秋読コレクションに参加いただきありがとうございます🤝\n\n最近はプロンプトで遊んでいらっしゃる方も増えて、一人で考えるだけでなくたくさんの方と繋がって盛り上がることができますよね🍁\n楽しいプロンプト、私も使用してみますね👏\n\nぜひ他の参加者の方の記事も覗いてみてくださいね✨",
           "publishedAt": "2026-10-04T11:20:41.208+09:00",
           "isRoot": true,
@@ -9184,7 +9301,7 @@
       "authorUrlname": "calm_sedum3458",
       "publishedAt": "2026-10-01T21:38:36.000+09:00",
       "articleUrl": "https://note.com/calm_sedum3458/n/n5098094e659c",
-      "likeCount": 47,
+      "likeCount": 46,
       "commentCountReported": 8,
       "commentCountFetched": 8,
       "tags": [],
@@ -9215,7 +9332,7 @@
           "key": "nccaf246190e4d",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "柴ゆるさん、秋読コレクションに参加いただきありがとうございます🤝\n\n秋といえば、で思い当たるものがたくさんあって、全部堪能したくなりますね✨\n過ごしやすい季節になって、noteも夏より盛り上がっているような感じさえします🔥\n\n「出会いと繋がりの秋」として、ぜひこの企画を通して他の参加者の方と仲良くなってくださいね🍁",
           "publishedAt": "2026-10-04T11:18:31.510+09:00",
           "isRoot": true,
@@ -9280,9 +9397,9 @@
       "authorUrlname": "kujira_log",
       "publishedAt": "2026-10-02T20:52:06.000+09:00",
       "articleUrl": "https://note.com/kujira_log/n/n97e71f58405c",
-      "likeCount": 57,
-      "commentCountReported": 22,
-      "commentCountFetched": 22,
+      "likeCount": 64,
+      "commentCountReported": 23,
+      "commentCountFetched": 23,
       "tags": [],
       "preview": "",
       "body": "晴れた日の秋空は、\n青々と澄んで、どこまでも高くて。\n \n\n あまりにさみしいから、\nカラスでも飛んで欲しいとおもう。\n \n\n けれどかえって、\n空の広さを感じてしまって。\n \n\n どこか、もの悲しくなりました。\n \n\n 秋の空　|廓寥《かくりょう》として　影もなし\nあまりにさびし　|鳥《からす》など飛べ\n 石川啄木『一握の砂』より \n\n 短歌で有名な石川|啄木《たくぼく》は、\n 秋の空をみて、\n |廓寥《かくりょう》＝ 広大で虚しく、ものさみしい様子 \n と詠みました。\n \n\n 今日はそんな、\n秋の訪れのお話はいかがでしょう。\n \n\n ひといちばい考えすぎて、\nいろんなことを感じ取ってしまう、\n無気力でHSPなボクがみつけた小さな秋です。 \n \n\n \n\n 季節が急加速する秋 \n\n いつからだろう。\n秋がこんなにも短くなったのは。 \n \n\n 以前は緩やかで、\n雨が降るたび少しずつ秋に近づいたのに。\n \n\n いまはギリギリまで暑さが残り、\n慌てるように寒さが訪れます。\n \n\n けれど、\nどんなに短くなったとしても。\n \n\n 目や耳は季節の移ろいを逃さず、\n気温や気圧の変化を、肌で感じています。\n \n\n 時にはそれで、\n不調をきたしてしまうけれど。\n \n\n 空気や温度に敏感なボクは、\n目に見えない季節の変化を、\n全身の感覚で、しっかりと捉えています。\n \n\n \n\n 朝起きて、肌寒さに少し震える \n\n その朝は、目が覚めてすぐ、\n手足が冷えていることに気づきました。\n \n\n 寝るときは少し暑くて半袖だったけれど、\nタオルケット1枚ではちょっと寒い。\n \n\n 鼻もむずむずして、くしゃみが３連発。\n \n\n それで頭は一気に覚醒したものの、\n冷え切った体はすぐに動いてくれない。\n \n\n 布団を引っ張り出し、\nうずもれるように、ちいさく丸まります。\n \n\n 半袖から出る 二の腕 に、\n布団がさわさわ触れて。\n\n夏でも冬でもない、\n不思議な感覚が少し、こそばゆい。 \n \n\n お布団の魔力 … \n\n \n\n 急激に変化する、気圧と気温 \n\n しばらくして体は温まっても、\n起き上がるのがちょっと億劫で、ずんっと重い。\n \n\n 「そういえば、いつもより外が暗い…」 \n \n\n そう呟きながら、\nカーテンの隙間から窓を見ます。\n \n\n 日の出の時間はとうに過ぎてて、\n明るい陽の光が注いでくる、はずだった。\n \n\n そこでやっと、\n窓や屋根を叩く音に気付きました。\n \n\n 「ああ、また雨か…」 \n \n\n 時計を見ると、きっかり就寝から6時間。\n今日もアラームより先に目が覚めてしまう。\n \n\n 4日ほど、\nしとしと続く、長い雨。\n \n\n 身体も頭も、思考もどんよりと重くて。\n \n\n ため息と一緒に、\nもういちど布団に全身を預けます。\n \n\n 秋の長雨のあいだは、\n地球の重力に勝てそうにありません…\n \n\n 秋の空は、七度半変わる \n \n\n 夏から秋に変わるころ、\n気圧の変化は非常に激しくて。\n \n\n 気温や気圧の急激な変化に、\n自律神経は乱れてしまいます。\n \n\n 頭痛や倦怠感。\n鼻詰まりや、止まらない せき。\n \n\n 風邪とは違う、ちょっとした体の変化に、\nああ、そんな季節かなんて、ため息を吐きます。\n \n\n \n\n 風がはこぶ、季節の香り \n\n 日が変わり、\n長い雨もやっと終わって。\n \n\n 久しぶりに太陽が顔を出しました。\n \n\n 体調も回復しつつあったから。\n 後回しにした用事を\n済ませるために部屋をでます。\n \n\n 夏の間の空気を、\n時間をかけて洗い流して。\n \n\n すっかり空気は、あおく澄んでいました。\n \n\n 秋風が運ぶのは、\nどこかで咲く |金木犀《きんもくせい》の香り。 \n \n\n 満開を迎えると、\n1週間ほどで散ってしまうその花は。\n \n\n 甘くやわらかで、\n華やかな香りがします。\n \n\n …じつは正直、強すぎるその香りは、\nボクはあまり得意ではありません。\n \n\n （ 好きな方がいたら、ごめんねっ。）\n \n\n においにも敏感なものだから。\n\n香水や、強い花の香りに、\n車酔いするような感覚になるんです。\n \n\n けれど、\nそれほど強い香りだから。\n \n\n 風に乗っても消えることなく、\n秋を知らせにきてくれるんですね。\n \n\n \n\n レジ横に並ぶ、秋の誘惑 \n\n 秋の香りをほんのり身にまとって、\nいつものコンビニへと入ります。\n \n\n 少し前までは、\nオアシスのように涼しくて。\n \n\n 店内に入ると急激に汗が引くほどだったのに、\n今日は、そこまで冷えてなくて。\n \n\n おにぎりコーナーの冷気が、\n歩いて少し火照った体に、やさしく触れます。\n \n\n 少し遅い朝ごはんに、\nおにぎりを2つ手に取り、レジへ向かう途中。\n \n\n アイスコーヒーが詰められた、\n冷凍ボックスがないことに気が付きました。\n \n\n 代わりに視界に入ったのは、\nほかほかに温まった、 中華まん たち。\n \n\n 数秒、考えて。\n \n\n ボクはおにぎりを棚に戻しに行きました。\n \n\n \n\n 踏みしめる落ち葉に、潜む銀杏 \n\n 手には肉まんと、ホットコーヒー。\n \n\n このまま外で食べたくなって、\n近くの公園に入りました。\n \n\n 車も、自転車も入れない公園は、\nほんの少しだけ、特別な空間。\n \n\n ブランコ、シーソー。\n動物がモチーフの小さな滑り台。\n \n\n 遊具の横を通り過ぎて、\n落ち葉の先にあるベンチに腰掛けました。\n \n\n 猫舌だから、 あつあつ は苦手。\n \n\n 少し冷めるまで、\n座りながら空を見上げてみます。\n \n\n 夏の間に生い茂った葉は、\nすっかり色を変えて、地面におりて。 \n 代わりに広くなった空を、\n１羽のカラスが、鳴きながら飛んでいきました。 \n \n\n その一瞬だけ。\n あとに残ったのは、どこまでも抜ける青でした。\n \n\n 舌を やけど しました。あちち… \n\n 肉まんとホットコーヒーを、\n美味しくいただいたあと。\n \n\n 公園をぐるっと回って出ようとして、\nおもわず足を止めてしまいました。\n \n\n 黄金色に輝くイチョウの絨毯。\n陽の光を反射して煌いて、すごい魅力的。\n \n\n だけど。\n \n\n イチョウの実 …\n|銀杏《ぎんなん》 の強烈なにおい！！ \n \n\n 勘弁して～！\n \n\n ボクは逃げるように、\nでも銀杏を踏まないように、\n \n\n 怪しげなステップを踏みながら、\n公園をあとにするのでした。\n \n\n \n\n あわてて沈む太陽、のんびり長い夜 \n\n 用事を済ませた帰り道。\n 外はすっかり、夕方のにおい。\n \n\n お迎えに急ぐお母さん。\n\n買い物帰りのおばあちゃん。\n 疲れたような、ほっとしたような、\n今日をやりきったような顔の会社員。\n \n\n その間を、\nまだまだ遊び足りなさそうに、\nランドセルを揺らして走り抜ける子どもたち。\n \n\n 夕飯の支度も、あちこちではじまって。\n今日は魚かな？あっちはカレーかな？\n \n\n いろんなひとの一日が、生活が、\nゆっくりと終わろうとしている。 \n 冬に向けて、\nまた ひとつ、季節は歩む。 \n \n\n いつもよりも、陽が落ちるのが早くて。\n風は冷たい夜の色。\n \n\n ちょっとした寂しさをおぼえながら、\n帰る方向へ足をむけます。\n \n\n ぽつぽつと点き始めた街灯のなか、\n見つけたのは素敵な眼鏡屋さん。\n \n\n 「眼鏡、新調しようかな。」 \n \n\n ふいに思い付いて、\n何気なくショーケースを眺めていると。\n \n\n また、金木犀の香りが、\n風にのってほんのり香ります。\n \n\n 終わりに近づく季節のはずなのに、\nどこか新しいことが始まりそうで。 \n やわらかな甘い風に、\n少し、胸が高鳴る気がしました 。\n \n\n 細くてクラシカルな、ボストン・フレーム …憧れるなぁ \n\n 10月が始まります。\n秋はもうすぐそこ。 \n さわやかに吹く、|律《りち》の風にのって。\nあとすこし、みんなで今年を駆け抜けよう。 \n \n\n ー ー ー お し ま い ー ー ー \n \n\n \n\n 🐳こんな記事も書いています🌊 \n\n ▼今年の９月、ひどく無気力になった話。\n \n \n\n \n\n ▼今年の８月は繊細な夏の記憶をたどりました。",
@@ -9331,7 +9448,7 @@
           "key": "ncf8cd0d6dfe96",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "クジラちゃん、秋読コレクションに参加いただきありがとうございます🤝\n\n秋の風の冷たさ、香り、静けさが好きで一番好きな季節ですが、1日が短くなることと1年の終わりが見え始めることから、哀愁も感じる季節でもありますよね。\n\n秋読コレクションを通して、たくさんの方にクジラちゃんの素敵な文章が届くことを願っています✨\n今年も秋を楽しみましょうね🍁",
           "publishedAt": "2026-10-04T11:15:02.917+09:00",
           "isRoot": true,
@@ -9395,7 +9512,7 @@
           "body": "クジラさん、はじめまして🌙\n秋読コレクションへのご参加ありがとうございます🍁✨\n\n肌寒さ、雨の音、金木犀、中華まん、銀杏まで。\n\n秋って目で見るだけじゃなく、五感全部で感じる季節だなって改めて思いました☺️\n\n特におにぎりを棚に戻して中華まんを選ぶところ、うわ凄いわかるって思いました🌙\n\n最後にカラスが飛ぶ青空が、冒頭の啄木にも繋がっていて綺麗でした🌙",
           "publishedAt": "2026-10-08T09:34:26.480+09:00",
           "isRoot": true,
-          "replyCount": 0
+          "replyCount": 1
         },
         {
           "key": "nceeb2690436e1",
@@ -9506,6 +9623,16 @@
           "publishedAt": "2026-10-07T11:36:58.933+09:00",
           "isRoot": false,
           "replyCount": 0
+        },
+        {
+          "key": "ncee65536c2c51",
+          "parentKey": "",
+          "authorUrlname": "kujira_log",
+          "authorName": "クジラのかくしごと｜言葉の海を泳ぐ",
+          "body": "ネロ🌙王子！はじめまして✨\nこんばんは🐳\n\n素敵な企画ありがとうございます！\nこんなにたくさんの人が、\n素晴らしいnoteを書いていたなんて！✨\n\n読んで頂き、ありがとうございます。\n短くて、小さい秋を感じてもらえて嬉しいです。\nおにぎりからの中華まん、好評ポイントです🤭゛\n\n今後もいろんな企画に参加していきたいとおもいます✨\nよろしくおねがいしますね🐳゛",
+          "publishedAt": "2026-10-08T18:19:37.900+09:00",
+          "isRoot": false,
+          "replyCount": 0
         }
       ]
     },
@@ -9516,7 +9643,7 @@
       "authorUrlname": "disneybiz",
       "publishedAt": "2026-10-02T19:48:14.000+09:00",
       "articleUrl": "https://note.com/disneybiz/n/na55b2d1b5388",
-      "likeCount": 60,
+      "likeCount": 62,
       "commentCountReported": 14,
       "commentCountFetched": 14,
       "tags": [],
@@ -9557,7 +9684,7 @@
           "key": "nc990434f2fb73",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "あずさん、秋読コレクションに参加いただきありがとうございます🤝\n\nディズニーの気づきをnoteの気づきに変換して考える、あずさんらしい記事が素敵ですね✨\n他人と比較して、自慢できる実績がないと感じている方は多いと思うので、この記事を通して自分の飾り方を見つめ直すきっかけにしてもらえたら嬉しいですね🙌\n\nぜひ他の参加者の方の記事も覗いてみてくださいね🍁",
           "publishedAt": "2026-10-04T10:58:06.651+09:00",
           "isRoot": true,
@@ -9673,8 +9800,8 @@
       "publishedAt": "2026-10-02T18:42:41.000+09:00",
       "articleUrl": "https://note.com/lithe_rose3519/n/n678081b25b93",
       "likeCount": 27,
-      "commentCountReported": 10,
-      "commentCountFetched": 10,
+      "commentCountReported": 11,
+      "commentCountFetched": 11,
       "tags": [],
       "preview": "",
       "body": "こんにちは、こんばんは、初めまして。\nnoteを始めて1ヶ月ほど経ったモモです。\n\n刺激的な皆さまのおかげで、数年ぶりに創作意欲がモリモリ湧いていまして、\nその勢いでいろいろな企画に参加させていただいています。\n\n今回はこちらです！↓\n\n \n \n \n \n\n \n \n \n \n \n \n\n \n \n \n\n 私にとっての秋を考えた時、\n思い浮かんだのは 金木犀の香り でした。\n\nそこから、昔から気になっていたことを思い出しました。\n\n 【どうして金木犀は木のすぐ近くより、\n離れた場所の方が香りが強いんだろう？】\n\n 相棒のジピティさん(Chat GPT)と調べ始めたところ、\n 離れるほど香りが強くなるわけではない ことが分かりました。\n ──ほうほう👀\n\n香りは風や空気の流れによって、均一に広がるものではなく、\n 濃淡をつくりながら運ばれる のだそうです。\n\n──香りが強いゾーンと弱いゾーンが、薄い帯のように揺れながら流れてくるイメージ〰️〰️\n そうすることで、\n少し離れた場所で濃い香りに出会うことがあります。\n\nさらに、人間の嗅覚が香りに慣れる 「順応」 も\n関係している可能性があるんだとか。\n\n──なるほどね〜！ スッキリ！\n\n ……したかと思いきや、\nこれまた昔から気になっていたことを思い出しました。\n\n 【どうして金木犀は\n団地内によく植えられているんだろう？】 \n──私の主観が入っていますが、\n昔ながらの家や、公園にもよく植えられている気がします。\n ジピティさんと調べていくと、\n\n常緑で葉が茂る／剪定に比較的強い／形を整えやすい／生け垣などにも使える／秋には香りも楽しめる……\n\nなど、 植栽として扱いやすい特徴を、 \n 金木犀がいくつも持っている ことが分かりました。\n\n──なるほど〜👀\nだから身近な場所でよく見かけるのかぁ。\n\n と、ここまでは真面目な調査でした。\n ここまではね。 \n 金木犀の特徴をさらに調べていく中で、\n私の嗜好がとある事故を起こしました。\n 「金木犀は雌雄異株」\n「日本で栽培されている金木犀は、 ほとんどが雄株 。」\n \n………雄株………男子………\n\n \n\n ほほう？？？\n \n\n つまり、秋になると日本各地でいい香りを漂わせる男子がいると………\n \n\n なるほどね、理解した。 \n\n ほんのりいい香り(石鹸、柔軟剤、整髪剤、コロンなど、\n清潔感や整えられた身だしなみを感じられる香り)をまとった男性が嗜好に突き刺さる私には、 見過ごせない事実(ネタ) でした。\n\n \nこれは擬人化するしかない。 \nでもですね、顔がよければいいということではないのです。\nとても大事なことです、メモをお願いします。\n\nここまで調べてきた金木犀の特徴を、\n自然な形(金木犀なだけに)で人物像へと融合させることこそが擬人化の醍醐味…！\n\n──派手に主張する香りではなく、少し離れたところでふっと気づく。\n\nそこから、\n\n静かで落ち着いた大人／身なりが整っている／コロンは控えめ／通り過ぎたあとに香りが残る\n\nようなイメージが湧いてきました。\nそして生まれた彼がこちら。↓\n \n\n \n\n \n\n 日本語モドキが混ざっているのはご愛嬌 \n\n ﾋｪｪｪ……好き……… \n\n 脳内で、両手で顔を覆いました。\n\nパレットくん(Chat GPT内の画像生成AIの愛称)……近頃私の好み把握しすぎでは？？\n 素敵な男子にホクホク満足☺️\n \n\n では終わりません、私の妄想は。 \n画像左上の振り返っている構図と、\n金木犀の香りが重なり………\n \n\n 架空の香水の広告作りたい。 \n\n こんな思いが湧いてきました。\nだってこの構図、そうとしか見えない、きっとそうだ。\n\nジピティさん、パレットくんとあれこれこねくり回し、\n完成した広告がこちら。↓\n \n\n \n\n \nブランド名：秋読コレクション\n商品名：KINMOKUSEI\nキャッチコピー：秋に、あなたを見つける。\n \n本企画と絡めて遊んでみました🍁\n\n見つけたものや人は皆さまそれぞれですが、\nよき出会いになったことはたしかなのではないでしょうか？✨\n \nそして、広告を作って思ったのですが……\n\n 架空ブランド作るの、楽しくない？ \n香水だけじゃなくて、洋服やお菓子や文房具など幅広いジャンルの商品はもちろん、\n喫茶店や雑貨屋、映画館とかジムとかのお店や施設、\n商社や芸能事務所とか、会社を立ち上げてもいいなぁ……\n\nそのあと、\n\n 皆さまのそれぞれ架空ブランドをコラボさせたら、めちゃくちゃおもしろくない？？ \n\n「AさんのカフェでBさんのお菓子を販売」\n「Cさんのデザインした服をDさんが着て、\nEさんのライブハウスで演奏」\n\nみたいに、つながって広がっていく。\n 既にその方独自の世界観があれば、\nそちらとコラボさせてもらうのもありだなぁ……\n\n最終的には、\n 新しい街や国ができるかも しれない……😳\n\n私のバイタリティでは企画主催までもっていけるか正直自信がないため、\nこれは正式な募集ではありませんが……\n\nせっかく芽吹いたおもしろそうな種は、\nひとまず陽に当てておいてあげようかなと、そんな気持ちでこちらに置いておきます🌱\n\nいつかこんな遊びもやってみたいです✨\n興味がある方がいましたら、ぜひ気軽にお声がけください☺️\n \n最後に、\n新しい方とつながるきっかけを用意してくださったネロ王子、orivie様、\n素敵な企画をありがとうございました✨\n\n #秋読コレクション",
@@ -9703,7 +9830,7 @@
           "key": "nc0870149fe71e",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "モモさん、秋読コレクションに参加いただきありがとうございます🤝\n\n「金木犀」について、なぜ遠くまで香りが強く届くのか、団地によく植えられてるのかと疑問を持たれる着眼点が素晴らしいですね👏\nそして、素敵な「秋読コレクション」香水もデザインを作っていただきありがとうございます🍁\n金木犀の香りがする、メンズ用香水かもしれないですね👀\n\nぜひ他の参加者の方の記事も覗いてみてくださいね✨",
           "publishedAt": "2026-10-04T10:49:34.579+09:00",
           "isRoot": true,
@@ -9727,7 +9854,7 @@
           "body": "モモさん、おはようございます🌙\n遅くなってすみません💦\n\nモモさんの記事\n王子めちゃくちゃ好きかも知れないꉂ🤣𐤔‪\n\n金木犀を調べてたはずなのに\n雄株だけ…ほほぅ？がもう最高でした🌙\n擬人化するしかない（間違いないです🌙）\n\nイケメンが現れて最高すぎました😊\n\nそこから金木犀の香水ブランドまで飛んでいくの最高です🤣\n\nしかも「秋に、あなたを見つける。」が普通に広告として最高すぎる🌙\n\n最高しか言ってないな王子🌙\nボキャブラリー不足で良さが表現しきれず悔しいばかり、モモさんの作品めっちゃ好きです🤭︎\n\n秋読コレクションへのご参加ありがとうございます🍁✨",
           "publishedAt": "2026-10-08T09:48:19.100+09:00",
           "isRoot": true,
-          "replyCount": 0
+          "replyCount": 1
         },
         {
           "key": "ncc90545aa9a89",
@@ -9778,6 +9905,16 @@
           "publishedAt": "2026-10-06T12:32:19.424+09:00",
           "isRoot": false,
           "replyCount": 0
+        },
+        {
+          "key": "nc52b83fea5a1f",
+          "parentKey": "",
+          "authorUrlname": "lithe_rose3519",
+          "authorName": "モモ",
+          "body": "ネロ王子、忙しいなかコメントありがとうございます！✨\n\n「最高」をたくさんもらえて、\n私の作品を好きだと言ってもらえたことが\nすごく嬉しいです！！😂💖\n\n秋読コレクションに参加させてもらえたおかげで、\nいろんな方とつながることもできたので、\nこちらこそ素敵な企画をありがとうございました🍁✨",
+          "publishedAt": "2026-10-08T17:31:41.215+09:00",
+          "isRoot": false,
+          "replyCount": 0
         }
       ]
     },
@@ -9789,8 +9926,8 @@
       "publishedAt": "2026-10-02T09:28:52.000+09:00",
       "articleUrl": "https://note.com/grand_crane5257/n/nd481c76e3368",
       "likeCount": 25,
-      "commentCountReported": 11,
-      "commentCountFetched": 11,
+      "commentCountReported": 12,
+      "commentCountFetched": 12,
       "tags": [],
       "preview": "",
       "body": "私にとって「10月の訪れ」を感じる大切な恒例行事があります。\n それは、郵便局で発売される「星のカービィ」限定グッズを買うこと！\n 実は去年も10月に購入していて、すっかりわが家の「秋の風物詩」になっています。\n （ちなみに去年買った『ころ鈴根付』は娘のリュックにつけて愛用していたのですが、ちょうど最近壊れてしまったところ……まさに最高のタイミングでの新作登場でした！）\n そして今年も……無事にゲットしてきました！\n 今朝は「何としてでも仕事前に郵便局でゲットするぞ！」と意気込み、朝から子どもたちに「カービィ買うから早く歩いて〜！」と一致団結（笑）。\n いつもは朝ぐずりがちな子どもたちですが、今朝は「カービィ」のワードに反応してサクサク歩き、保育園の支度まで完璧にこなして協力してくれました！カービィ様々です。\n 無事にゲットできた今年のカービィがこちら！\n 会社に着いて嬉しさのあまり、ロッカーで思わずパシャリ。\n 今年のニット風デザインも、モチモチの鏡餅感があってたまらなく可愛いです。\n わが家はもともとカービィグッズであふれているのですが、こうして毎年10月に新しい仲間が増えていくのが密かな楽しみ。\n カービィといえば、「なんでも吸い込む食いしん坊」！\n 秋といえば美味しいものがたくさんの「食欲の秋」ですし、そういった意味でもカービィはまさにこの季節にぴったりなキャラクターだなと感じます。\n まんまるフォルムのカービィはとっても可愛くて癒やされますが……私自身はカービィみたいに丸くなりすぎないよう、この秋の食べ過ぎには十分気をつけたいと思います（笑）。\n 季節の変わり目で少し肌寒くなる秋ですが、大好きなキャラクターと子どもたちの成長（と朝の協力！）を感じられる、とても温かい秋のスタートになりました。\n 皆さんは「毎年この季節になるとついやっちゃうこと」や「秋を感じるお買い物」ってありますか？\n わが家のカービィコレクション。並べてみると壮観！",
@@ -9829,7 +9966,7 @@
           "key": "nc2cf6eb1a0b73",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "むめさん、秋読コレクションに参加いただきありがとうございます🤝\n\n郵便局で星のカービィの限定グッズが販売されるのですね、知りませんでした👀\nカービィグッズがたくさんで、大好きなことが伝わってきます✨\nまんまるなフォルムが愛らしいですよね👏\n\n素敵な記事をありがとうございました🍁",
           "publishedAt": "2026-10-04T10:45:55.336+09:00",
           "isRoot": true,
@@ -9853,7 +9990,7 @@
           "body": "むめさん、はじめまして🌙\n\n秋読コレクションへのご参加ありがとうございます🍁✨\n\n「カービィ買うから早く歩いて〜！」の魔法の言葉、可愛すぎます😊\n\n毎年10月に新しいカービィが増えるって、もう立派な家族の秋の風物詩ですね☺️\n\nというか、王子もカービィ大好きなので普通に欲しくなりました🌙\n知らなかった💦\n\nクレーンゲームでだいたい何かしらのカービィに挑戦しちゃってます🤭︎",
           "publishedAt": "2026-10-08T09:56:19.912+09:00",
           "isRoot": true,
-          "replyCount": 0
+          "replyCount": 1
         },
         {
           "key": "nc3d982520c708",
@@ -9904,6 +10041,16 @@
           "publishedAt": "2026-10-06T09:32:09.493+09:00",
           "isRoot": false,
           "replyCount": 0
+        },
+        {
+          "key": "ncb2d240e6885c",
+          "parentKey": "",
+          "authorUrlname": "grand_crane5257",
+          "authorName": "むめ",
+          "body": "ネロ王子様\nコメントありがとうございます。\nカービィのおかげでこの日は支度早く出来ました！このところ、毎年鏡餅カービィは出しているので、チェックしてみてくださいね。\nクレーンゲームでゲットできるのはすごい！\nまたイベントあれば是非参加させてくださいね",
+          "publishedAt": "2026-10-09T07:01:57.011+09:00",
+          "isRoot": false,
+          "replyCount": 0
         }
       ]
     },
@@ -9914,9 +10061,9 @@
       "authorUrlname": "baibai260728",
       "publishedAt": "2026-10-01T20:23:52.000+09:00",
       "articleUrl": "https://note.com/baibai260728/n/n23c8170ad2fe",
-      "likeCount": 36,
-      "commentCountReported": 9,
-      "commentCountFetched": 9,
+      "likeCount": 37,
+      "commentCountReported": 10,
+      "commentCountFetched": 10,
       "tags": [],
       "preview": "",
       "body": "こんにちは、橙です。\n 以前私は、\n文章を書くことや理解することが\n苦手だという話を書きました。\n 今回は少し違う話です。\n 自分の実家のお通夜やお葬式に\n出たときのお話を書こうと思います。\n 私の実家の宗派は仏教なのですが、\n少し珍しい宗派になります。\n そのため、\n私は父方の宗派のお葬式というものに、\nほとんど出たことがありませんでした。\n 幼い頃に祖母のお葬式へ出たことは\nあったと思うのですが、\n当時は小さかったため\n記憶がほとんど残っていません。\n 一方で、\n母方の宗派や夫の家の宗派の\nお通夜やお葬式には出たことがありました。\n だからこそ今回、\n大人になって初めて父方の宗派の\nお通夜やお葬式に出たとき、\nとても驚きました。\n まず、その宗派のお坊さんが近くには\nあまりおられず、\n少し遠方から来ていただく形でした。\n そして最初にお経を聞いた時点で、\n「あれ？」と思いました。\n 私が今まで聞いたことのあるお経とは、\n雰囲気が違ったのです。\n お通夜が始まると、\nお坊さんはお経を唱えるだけではなく、\n今どのような段階なのか、\nなぜこの儀式を行うのか\nといった説明もしてくださいました。\n その様子を見ながら、\n私はあることを思いました。\n これは、一つの舞台みたいだ。 \n もちろんお通夜ですし、\n故人を偲ぶ大切な時間です。\n それでも私には、\n目の前で一つの作品が進んでいるように見えました。\n お坊さんはお経を唱えながら、\n仏具を使い、\n説明を行い、\n場を進行していきます。\n 私から見ると、\n一人で何役もこなしているようでした。\n そしてお葬式になると、\nその印象はさらに強くなりました。\n 私には ミュージカルに近いようにも見えました。 \n お経を唱え、\n仏具を鳴らし、\n場面ごとに意味を説明する。\n 戒名についても、\n一文字一文字の意味を話してくださいました。\n その中には、\nまるで舞台の役者さんが振り向いて\nセリフを言うような場面や、\n決めポーズのように見える場面もありました。\n もちろん本来は宗教的な意味のある所作です。\n ですが初めてその宗派のお葬式を見た私には、\nとても印象的に映りました。\n みんなでお経を唱える場面もありましたが、\n私はついお坊さんの動きや声に\n見入ってしまいました。\n 気付けば、\nお通夜とお葬式を通して、\n一人のお坊さんによる 二夜連続の舞台 を\n見ているような気持ちになっていました。\n しかもそのお坊さんのお経は本当に上手でした。\n 後で聞いたところ、\nとても評判の良い方だったそうです。\n 喪主の挨拶を聞いている時には、\n少し涙ぐんでいるようにも見えました。\n 故人やご家族に対して真剣に向き合って\nおられることが伝わってきました。\n また、お経を唱えた後には\n汗を拭いておられる場面もありました。\n それを見ているうちに、\n私は別のことを考えていました。\n このお坊さんは、\nこの後も法事があると言っていた。\n いったい一日に何回、\nこの舞台をしているんだろう。\n もちろん舞台ではありません。\n ですが私には、\n本当に一人芝居をしながら、\n楽器を演奏し、歌い、\n進行もしているように見えたのです。\n さらにその一つ一つが、\n故人やご家族ごとに違うはずです。\n そのことを考えると、\nお坊さんという仕事は\nとても大変な仕事だなと思いました。\n 後で姉妹ともその話をしました。\n すると姉妹も、\n初めて父方の宗派のお葬式に出た時は\n驚いたそうです。\n 「あのときはちょっとびっくりしたんだよ」\n 「かっこいいよね、あのお経」\n そう言っていました。\n 私だけではなかったようです。\n 私も本当にそう思いました。\n ちゃんと故人を偲び、\nお見送りをしていたはずなのですが、\nそれと同じくらい、\nお坊さんの姿が印象に残りました。\n そしてもう一つ、\n印象に残ったことがあります。\n それは 戒名 です。\n 戒名について説明される時、\nお坊さんは一文字ずつ意味を話してくださいました。\n 私は読み方は分からなくても、\n漢字の意味は分かりました。\n その説明を聞いていると、\nとても故人らしい名前だと思いました。\n 戒名というものは、\n亡くなった後につけられる新しい名前です。\n でもその 名前 には、\n その人がどんな人生を歩いてきたのか、\nその人を知る人たちがどんな人だったと \n 思っているのか が込められているように\n感じました。\n 私は普段、文字が苦手です。\n それでも今回、\n名前というものについて少し考えさせられました。\n たった数文字の組み合わせなのに、\nその人を知る人が見れば\n「ああ、この人だ」と思える。\n 不思議な仕組みだなと思います。\n 故人を見送るために出席した\nお通夜とお葬式でしたが、\nお坊さんという仕事のことや、\n名前や文字についても考える時間になりました。\n 最後まで読んでいただき、\nありがとうございました。\n また日々気づいたことがあれば\n書いていきたいと思います。\n #最近の学び #名前の由来 #ディスレクシア #学習障害 #葬式 #お坊さん #戒名 #名前 #秋読コレクション #参加記事",
@@ -9955,7 +10102,7 @@
           "key": "ncb87ac471f5d5",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "橙さん、秋読コレクション参加いただきありがとうございます🤝\n\nお通夜とお葬式について、二夜連続の舞台のように感じられるのはお仕事の様子をよく観察していらっしゃるからこそですね。\n文字が苦手と書かれていますが、読みやすく伝わりやすい文章だと感じました✨\n\nぜひ他の参加者の方の記事も覗いてみてくださいね🍁",
           "publishedAt": "2026-10-04T10:43:03.504+09:00",
           "isRoot": true,
@@ -9979,7 +10126,7 @@
           "body": "橙さん、はじめまして🌙\nコメントが遅くなりました💦\n\n「二夜連続の舞台」という捉え方が、\nとても印象に残りました。\n\nお経だけでなく、仏具や説明、所作まで含めて一人で場を作っていく姿、本当に魅力的な方だったのですね🌙\n\nそして戒名の数文字から、その人の人生や人柄まで感じられたというお話も素敵でした。\n\n文字が苦手だからこそ見つけた「名前の力」ですね🌙\n\n秋読コレクションへのご参加ありがとうございます🍁",
           "publishedAt": "2026-10-08T10:03:59.241+09:00",
           "isRoot": true,
-          "replyCount": 0
+          "replyCount": 1
         },
         {
           "key": "nceacc9606bc14",
@@ -10008,6 +10155,16 @@
           "authorName": "橙(ダイダイ)260728",
           "body": "きゅうりさん、コメントありがとうございます!\n\n私も今まで出たお葬式では、ずっと座ってお経を唱えておられる印象だったので、とても驚きました。\nお棺の頭や足の方に移動しながらお経を唱えたり、仏具を鳴らしたり、ほうきのような仏具を大きく動かしたりしていて、見ていて本当に一人で舞台をしているようだと思いました。\n\n途中で振り返って、いきなり台詞のように始まるお経もあって、今まで経験したお葬式とはかなり違いました。\n\n戒名についても、一文字ずつ意味を説明してくださったので、とても印象に残っています。 たった数文字なのに、その人の人生や人柄が込められているのだなと改めて思いました。",
           "publishedAt": "2026-10-07T22:38:38.731+09:00",
+          "isRoot": false,
+          "replyCount": 0
+        },
+        {
+          "key": "ncd9eecacb1f6f",
+          "parentKey": "",
+          "authorUrlname": "baibai260728",
+          "authorName": "橙(ダイダイ)260728",
+          "body": "ネロさん、コメントありがとうございます。\nまた、秋読コレクションに参加させていただき、とても感謝しております🍁\n\nお坊さんは「とてもお経の上手い方だよね」と知り合いの葬儀でも話題になっていた方だったのですが、後から姉妹の友人のご家族だったことが分かり、そのようなご縁で今回遠方からお引き受けいただいたという経緯がありました。\n戒名については、一文字ずつ意味や由来を丁寧に説明してくださったことがとても印象に残っています。\n\n秋読コレクションでは、普段出会えない記事もたくさん読ませていただき楽しんでおります。\nこの度はありがとうございました！",
+          "publishedAt": "2026-10-08T18:21:49.104+09:00",
           "isRoot": false,
           "replyCount": 0
         }
@@ -10051,7 +10208,7 @@
           "key": "nc489b6af0fe78",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "きゅうりさん、秋読コレクション参加いただきありがとうございます🤝\n\nハロウィンの夜の冒険、素敵ですね✨\n登場するキャラクターもみんな可愛らしいです👏\n私もプロンプトで遊んでみますね。\n\nぜひ他の参加者の記事にも遊びに行ってみてくださいね🍁",
           "publishedAt": "2026-10-04T10:35:47.982+09:00",
           "isRoot": true,
@@ -10267,7 +10424,7 @@
           "key": "ncd7c7fd5fe476",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "kaiさん、秋読コレクションへ参加いただきありがとうございます🤝\n\n一緒にいる時間は長いのに、きっかけがなくてなかなか話せない人っていますよね。\nこの企画も、認知はしていたけど話してはなかった方と仲良くなるきっかけにしてもらえたら嬉しいと思います🔥\n\n素敵な記事をありがとうございました🍁",
           "publishedAt": "2026-10-04T10:21:52.269+09:00",
           "isRoot": true,
@@ -10443,7 +10600,7 @@
           "key": "nc50ae218b9778",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "イシザキさん、秋読コレクションに参加いただきありがとうございます🤝\n\nワンちゃんとの秋の公園をお散歩、素敵なイラストです✨\n黄緑色のカーディガンも秋らしくておしゃれですね👏\nぜひ他の参加者の方の記事も覗いてみてくださいね🍁",
           "publishedAt": "2026-10-04T10:14:42.110+09:00",
           "isRoot": true,
@@ -10538,7 +10695,7 @@
       "authorUrlname": "mama_ca",
       "publishedAt": "2026-10-01T22:58:38.000+09:00",
       "articleUrl": "https://note.com/mama_ca/n/n355d494d167e",
-      "likeCount": 83,
+      "likeCount": 85,
       "commentCountReported": 28,
       "commentCountFetched": 28,
       "tags": [],
@@ -10629,7 +10786,7 @@
           "key": "nc1a547ba7ab95",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "Pajama de mamaさん、秋読コレクションに参加いただきありがとうございます🤝\n\n「ます太郎」に「イェイイェイ」可愛らしいですね✨\n私はお酒を飲んだことがないので日本酒のことは全く知らなかったのですが、たくさん種類があってそれぞれに特徴があるのですね🍶\n勉強になりました📕\n\nぜひ他の参加者の方の記事も覗いて行ってくださいね👏",
           "publishedAt": "2026-10-04T08:17:48.354+09:00",
           "isRoot": true,
@@ -10830,13 +10987,13 @@
     {
       "key": "n00145adec9ec",
       "title": "🎃 秋の畑に、ハロウィンかぼちゃを植えてみたい",
-      "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+      "authorName": "みゆこ｜菜園ティスト🌱　",
       "authorUrlname": "miyuki1192",
       "publishedAt": "2026-10-01T21:34:33.000+09:00",
       "articleUrl": "https://note.com/miyuki1192/n/n00145adec9ec",
-      "likeCount": 84,
-      "commentCountReported": 27,
-      "commentCountFetched": 27,
+      "likeCount": 85,
+      "commentCountReported": 29,
+      "commentCountFetched": 29,
       "tags": [],
       "preview": "",
       "body": "秋になると、街がちょっとオレンジ色になる。\n 焼き芋。\n 紅葉。\n 柿。\n そして……\n ハロウィンかぼちゃ🎃 \n あのオレンジ色のかぼちゃを見ると、家庭菜園歴7年の私は思う。\n 「これ、畑で育てたら楽しそうじゃない？」\n \n ……ところが。\n 我が家には、 かぼちゃとさつまいもの植え付け禁止令 がある。\n 理由は簡単。\n 場所を取りすぎるから。 \n 特にかぼちゃ。\n 過去に私は、なんと 3回も 言われている。\n 「かぼちゃは、もう植えないでね」\n なぜ、そこまで念を押されるのか。\n それには理由がある。\n かぼちゃのつるが、\n 畑を横切り……\n さらに進み……\n 隣の家との境の塀を登り始めた。 \n 「ちょっと待って！」\n 「どこ行くの！」\n かぼちゃ本人は、そんな人間の事情など知ったことではない。\n ただひたすら、\n 上へ。 \n 隣家へ向かって、\n 上へ。 \n もはや家庭菜園ではない。\n 脱走劇。 \n そんな経験があるので、ハロウィンかぼちゃを見ても、\n 「かわいいなぁ🎃」\n と思うだけ。\n ……のはずなのに。\n もし植えたら。\n 芽が出て、\n 小さな実がついて、\n だんだんオレンジ色になって……\n 最後には、\n ジャック・オー・ランタン🎃✨ \n 絶対かわいい。\n でも、その頃には私はきっと、\n 「かわいい〜♡」\n ではなく、\n 「塀に行くなーーー！」 \n と叫んでいる。\n そして収穫したかぼちゃを抱えて、\n 「これ、めちゃくちゃ重いやん……」\n となる。\n ハロウィンなのに、\n まさかの筋トレ😭 \n というわけで今年は、\n ハロウィンかぼちゃを 妄想で育てます。 \n 我が家の畑には、\n もう十分な理由がある。\n かぼちゃは、野菜ではなく脱走犯。 \n ……でも。\n 園芸店でハロウィンかぼちゃの種を見つけたら、\n 私はきっと立ち止まる。\n そして、そっと袋を手に取って……\n 「塀を登らないかぼちゃ、ないかな？」 🎃🤣\n 🎃そして、もうひとつお願い。ただいまフォロワー990人。\n 1000人まで、あと10人！ \n 1000人になったら変えようと思って作った、ハロウィン仕様のヘッダー。\n なのに……\n なぜか、ここへ来てフォロワーが急に増えなくなった😂🎃 \n ヘッダーが、\n 「まだ出番じゃないよ」\n と言われて待機してます。\n 家庭菜園、AI、イラスト、そして「やってみた」。\n そんなことを楽しみながら発信しています🌱✨\n よかったら……\n あと10人の仲間になってください🎃🌱 \n そして私に、\n 「ヘッダー、早く変えなきゃ！」 \n と言わせてください🤣\n \n\n \n\n こちらのマガジンに参加させていただいています🎃\n王子、いつも楽しい企画、ありがとうございます🌿\n \n \n \n秋読コレクション🍁🌙｜ネロ🌙｜王子｜秋読コレクション開催中 【10/4まで】｜note\n \n \n【期間限定マガジン 9/28〜10/4まで】 🍁 秋読コレクションは、王子×orivieで開催する「秋」をテーマにした\n \n \nnote.com\n \n \n\n \n \n \n \n \norivie | イベント『秋読コレクション』9/28〜10/4開催🍁｜note\n \n \n代表作：『熱狂論』『海ポテト』 Xを中心にnote、AIイラストの企画・イベントを定期的に開催！ 記事や作品を見つけても\n \n \nnote.com",
@@ -10925,7 +11082,7 @@
           "key": "nc41e0c41c5443",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "みゆこさん、秋読コレクションに参加いただきありがとうございます🤝\n\nかぼちゃを育てるのは場所をとって大変なのですね😞\nでも自分で育てたかぼちゃでジャック・オー・ランタン作れたら可愛らしいですよね🌸\nそして、1000フォロワー達成おめでとうございます🎉\n\nぜひ他の参加者の方の記事も覗いてみてくださいね✨",
           "publishedAt": "2026-10-04T08:12:27.991+09:00",
           "isRoot": true,
@@ -10962,10 +11119,20 @@
           "replyCount": 1
         },
         {
+          "key": "nc7b401ea8676a",
+          "parentKey": "",
+          "authorUrlname": "agri_ai",
+          "authorName": "なぜそうするのか｜野菜づくり",
+          "body": "3回も「もう植えないで」と言われるの、笑ってしまいました🎃\n\n塀を越えて隣家へ向かうかぼちゃ、まさに脱走劇ですね。\n\nそれでもハロウィンかぼちゃには心惹かれてしまう、その気持ちがよく分かります。\n\n今年は省スペース品種で、こっそり挑戦してみますか🎃",
+          "publishedAt": "2026-10-08T18:18:04.521+09:00",
+          "isRoot": true,
+          "replyCount": 1
+        },
+        {
           "key": "nc05e3c714419a",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "わーーい！！　ありがとうございますっ　スタンバイしてるヘッダーと私がめちゃ喜びます。よろしくお願いします！😄😄😄",
           "publishedAt": "2026-10-01T22:02:43.684+09:00",
           "isRoot": false,
@@ -10975,7 +11142,7 @@
           "key": "nc1b9831f6748c",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "ありがとうございますーっ。ちょっと前に1000が気になってしまって、ついつい新しいヘッダーにフライングで🎉1000人入れてしまい。。。。結果、すごくすごく気になって困ってます💦　応援感謝です💕",
           "publishedAt": "2026-10-01T22:42:15.317+09:00",
           "isRoot": false,
@@ -10985,7 +11152,7 @@
           "key": "ncb3d81682f306",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "01 りゅうかんさん、はじめまして☺️ \nあっ　かぼちゃが01さんを捕獲（笑）してくれた💕\n\n嬉しいです、よろしくお願いします😆",
           "publishedAt": "2026-10-02T04:56:30.060+09:00",
           "isRoot": false,
@@ -10995,7 +11162,7 @@
           "key": "nc92919dbe5a2f",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "えっ　知らなかった、偶然だよ💦",
           "publishedAt": "2026-10-02T10:04:00.580+09:00",
           "isRoot": false,
@@ -11015,7 +11182,7 @@
           "key": "ncbbbacc2b75da",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "バスタオル買ってこようか？",
           "publishedAt": "2026-10-02T12:05:31.162+09:00",
           "isRoot": false,
@@ -11025,7 +11192,7 @@
           "key": "ncfb003e37d858",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "マミーさんが分けてくれました！",
           "publishedAt": "2026-10-02T21:01:52.143+09:00",
           "isRoot": false,
@@ -11035,7 +11202,7 @@
           "key": "nc927b81761f52",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "やはり、そうなんだ！　ありがとうございます。妄想楽しんどきます😆",
           "publishedAt": "2026-10-02T12:25:02.019+09:00",
           "isRoot": false,
@@ -11045,7 +11212,7 @@
           "key": "nc47d486a852e1",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "ありがとうございます😊　今ちがう種類のかぼちゃを育てていますが、ほんとうに一瞬で脱走します！　最初は「元気がいいなぁ～」と思っていたけど、今は、かぼちゃの蔓を週末ごとに塀から外す作業が発生しています！",
           "publishedAt": "2026-10-02T23:14:04.061+09:00",
           "isRoot": false,
@@ -11055,7 +11222,7 @@
           "key": "nc49d97c617f2b",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "すごい　わかモンさん、気づいてた！！　超忙しいのに、どんだけnoteの皆をみているの！　とっても嬉しいです！(^^)/　\nそうですね、私らしくnote育てていけたらいいかな。ほんとにありがとう！",
           "publishedAt": "2026-10-02T23:19:29.158+09:00",
           "isRoot": false,
@@ -11065,7 +11232,7 @@
           "key": "nc952f2da65140",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "わぁ　カハリーさん💕　お祝いコメントありがとうございます😭　\nわたし、一つのことを貫き、コツコツとしてると思っていただけてるんですね、嬉しいです。　\nアイコンも褒めてくださってありがとうございます。かぼちゃ思い切りかぶってみたら面白かったです（笑）\n\nかぼちゃプランターで作ったのですね。めちゃ逃げ出した気がする。。。（笑）\nもうカボチャは妄想のみ楽しみます😆😆",
           "publishedAt": "2026-10-03T10:14:49.692+09:00",
           "isRoot": false,
@@ -11075,7 +11242,7 @@
           "key": "nc3f48909c1259",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "orivieさん、こちらこそ素敵な企画に参加させていただき、ありがとうございました🥰💕\nかぼちゃ、ほんとに場所を取るんです〜😂\nでも、自分で育てたかぼちゃでジャック・オー・ランタンを作れたら、絶対かわいいですよね🎃✨\n来年も「場所がない！」と言いながら、また植えてしまいそうな自分が怖いです🤣\nそして1000フォロワーのお祝いまでありがとうございます😭💕\nこれからも楽しく畑とnoteを続けていきたいと思います🌱✨\n\nはい、ほかの参加者の方の記事ものぞかせていただきますねっ✨",
           "publishedAt": "2026-10-06T07:21:00.487+09:00",
           "isRoot": false,
@@ -11085,7 +11252,7 @@
           "key": "nc8160ce4304a7",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "ネロ王子さん、こちらこそ秋読コレクションに参加させていただき、ありがとうございました🥰🍁\n「かぼちゃの植え付け禁止令」🤣🤣\nそうなんです、場所をめちゃくちゃ取るんです……。\nなのに、あの暴れっぷりを見ると、また植えたくなってしまうんですよね🎃😂\n「かぼちゃは、野菜ではなく脱走犯。」気に入っていただけてうれしいです🤣💕\nそして1000フォロワーのお祝いまでありがとうございます！✨\nハロウィン仕様も楽しんでもらえてうれしいです🎃🧡",
           "publishedAt": "2026-10-06T07:21:50.469+09:00",
           "isRoot": false,
@@ -11095,7 +11262,7 @@
           "key": "nc34969dd2f203",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "かいさんには、「そんなかぼちゃがあったら育ててみて！」に乗っかりつつ、ちょっと笑える感じがよさそう🤣🎃\nかいさん、コメントありがとうございます😊✨\n「ハロウィンかぼちゃを妄想で育ててます」なんて言いながら、実際のかぼちゃは畑を縦横無尽に駆け回っております🤣🎃\nそうなんです、まさか塀まで登るとは……私もびっくりでした😂\n「塀を登らないかぼちゃ」、私もぜひ見てみたいです！\nもしそんな品種があったら、来年こそ……いや、もう植える場所がない🤣🌱",
           "publishedAt": "2026-10-06T07:24:15.658+09:00",
           "isRoot": false,
@@ -11105,9 +11272,19 @@
           "key": "ncfe0f7fb7179c",
           "parentKey": "",
           "authorUrlname": "miyuki1192",
-          "authorName": "みゆこ｜菜園ティスト🌱　捕獲完了🚂🏳️",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
           "body": "はじめまして😊\nコメントありがとうございます！\n「菜園ティスト」、拾っていただけてうれしいです🤣🌱\n私も「ご立派な肩書き」にはあまり縁がないので、これくらい遊び心のある肩書きがちょうどいいかなと😂  \nかぼちゃは本当に……家庭菜園ではなかなかの暴れん坊です🎃🤣\nでも、自分で育てた野菜を収穫して食べる瞬間は、やっぱり最高なんですよね✨  \n仕切り線も見てくださってありがとうございます🥰\n「記事の途中に、ちょっと野菜を挟みたい！」という気持ちから作ってみました🌱✨",
           "publishedAt": "2026-10-06T07:23:55.274+09:00",
+          "isRoot": false,
+          "replyCount": 0
+        },
+        {
+          "key": "nc314a0c825aef",
+          "parentKey": "",
+          "authorUrlname": "miyuki1192",
+          "authorName": "みゆこ｜菜園ティスト🌱　",
+          "body": "ありがとうございます😄\n省スペース品種ってもしかして空中栽培できる小型の坊ちゃんかぼちゃのことですか？　だとしたらですね、去年試したんですよ。きれいにネットを覆いつくし。。。最終的に塀まで行きましたね（笑）（笑）",
+          "publishedAt": "2026-10-08T20:21:12.105+09:00",
           "isRoot": false,
           "replyCount": 0
         }
@@ -11151,7 +11328,7 @@
           "key": "nc465542bc0886",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "羊毛のパレットさん、秋読コレクション参加いただきありがとうございます🤝\n\n秋はやりたいこと増えてしまいますよね👀\n私も秋はやっぱり栗やかぼちゃを食べたくなります🍁\nやりたいことをリスト化すると、計画的に自分がしたいことを実施できますね✨\n\n素敵な記事をありがとうございました🙌",
           "publishedAt": "2026-10-04T08:08:25.988+09:00",
           "isRoot": true,
@@ -11257,7 +11434,7 @@
           "key": "ncd74dcf7b5d55",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "つぶあんさん、秋読コレクションの参加と、記事内での紹介ありがとうございます🤝\n\nコスモスの写真どれも素敵で、写真を撮るのがお上手なのですね📷\nそして、100フォロワーおめでとうございます🎉\nぜひ秋読コレクションで他の参加者の方とも交流して行ってくださいね🍁",
           "publishedAt": "2026-10-04T07:57:09.916+09:00",
           "isRoot": true,
@@ -11352,7 +11529,7 @@
       "authorUrlname": "clear_sloth1257",
       "publishedAt": "2026-10-01T13:58:47.000+09:00",
       "articleUrl": "https://note.com/clear_sloth1257/n/n472ad9d9026e",
-      "likeCount": 47,
+      "likeCount": 48,
       "commentCountReported": 16,
       "commentCountFetched": 16,
       "tags": [],
@@ -11413,7 +11590,7 @@
           "key": "nc4472b45a5c02",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "きっこさん、秋読コレクション参加いただきありがとうございます🤝\n\n焼き芋のために頑張る柴子ちゃんとっても可愛らしいですね✨\n世界観も素敵な、まさに秋のラノベですね👏\n最後の写真も素敵でした📷\n\nぜひ他の方の記事も覗いてみてくださいね🍁",
           "publishedAt": "2026-10-04T07:54:37.469+09:00",
           "isRoot": true,
@@ -11549,7 +11726,7 @@
           "key": "nc14f14e9d9952",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "こぐまさん、秋読コレクションに参加いただきありがとうございます🤝\n\n私もハンドメイドやってるんですよ、いっしょですね🤭\n私の今年も初めて初めて尽くしで、発信者として企画を立ち上げたり、配信したりといろいろチャレンジできました👏\n\n2026年を振り返るきっかけをくれた、素敵な記事でした🍁",
           "publishedAt": "2026-10-02T19:43:20.993+09:00",
           "isRoot": true,
@@ -11665,7 +11842,7 @@
           "key": "nc5794569575a2",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "青海 久遠さん、秋読コレクションに参加いただきありがとうございます🤝\n\n書いたものが出てくるスケッチブック欲しくなりますね🤭\nそしてチャッピーが可愛らしいです🥳\nいっしょに秋を満喫されているのですね🍁\n\n素敵な記事をありがとうございました✨",
           "publishedAt": "2026-10-02T19:39:52.703+09:00",
           "isRoot": true,
@@ -11781,7 +11958,7 @@
           "key": "nc1413f75c8a63",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "みのぶきさん、秋読コレクションに参加いただきありがとうございます🤝\n\n私たちの企画が、書き物作品を書くきっかけとしてもらえたことが嬉しいです🍁\n楽しく読ませていただきました🤭\n\n他の記事も読ませていただきますね👏",
           "publishedAt": "2026-10-02T19:36:05.397+09:00",
           "isRoot": true,
@@ -11927,7 +12104,7 @@
           "key": "ncf222737a35bc",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "水面こはさん、参加いただきありがとうございます🤝\n\n『迷い』はどんな場面でもついて回りますが、肯定的に捉える考え方が素敵ですね🍁\nYouTubeも聴きに行きますね👏\n\n新たな音と出会える秋になるといいですね💐\n素敵な記事をありがとうございました✨",
           "publishedAt": "2026-10-01T07:19:26.513+09:00",
           "isRoot": true,
@@ -12053,7 +12230,7 @@
           "key": "ncff5c27f2286f",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ルミエル.Hさん、参加いただきありがとうございます🤝\n\n素敵なイラストをありがとうございます🤭\n私がプレゼンしている秋刀魚に1票入れます🍁\n秋刀魚は『秋』が名前に入っているので、外せないですね。\n\n素敵な記事をありがとうございました🔥",
           "publishedAt": "2026-10-01T07:13:39.917+09:00",
           "isRoot": true,
@@ -12178,9 +12355,9 @@
       "authorUrlname": "pure_falcon3290",
       "publishedAt": "2026-09-30T19:44:25.000+09:00",
       "articleUrl": "https://note.com/pure_falcon3290/n/n3678a5dbaeee",
-      "likeCount": 163,
-      "commentCountReported": 33,
-      "commentCountFetched": 33,
+      "likeCount": 171,
+      "commentCountReported": 35,
+      "commentCountFetched": 35,
       "tags": [],
       "preview": "",
       "body": "こんにちは、左利きです😊🌿\n\n 秋の夕暮れ。\n 紅葉の中でバイオリンを奏で、\n 歌声が重なり、\n 相棒のほわりんが空を舞う。\n 見出し画像は、わかモンさんの「スペシャルライブ」のプロンプトで生成した画像などをもとに、秋読コレクション仕様にアレンジして作成しています😊🍁🎻 ちなみに「スペシャルライブ」のプロンプトが掲載されていた元記事を探したのですが……わかモンさんの記事（宮殿？👸）を巡っているうちに、迷子になりました(笑)🤣🙏\n\n今回登場する「ほわりん」が生まれるきっかけをくださったのは、わかモンさん👑✨️\n 素敵なイベント企画をきっかけに、それまで“お飾り”だったシマエナガのほわりんが、私の相棒になりました🐦🍀\nとはいえ、ほわりんはまだまだ発展途上🐦今回は秋限定バージョンでお送りしました(笑)🤭\n 🔻そのきっかけになった、わかモンさんのnoteはこちら\n \n 🔻ほわりん誕生についての前回の私のnoteはこちら\n \n \n\n 五つの短歌を作って楽しんでみました🍁🎻🐦\nはじめての短歌の記事です。\n \n\n ほわりんも、ネロ王子さんとorivieさんの\nコラボイベントに参加したよ🐦🍁🍂 【ネロ王子 × orivieコラボイベント】 『秋読コレクション🍁』\n開催【9/28（月）~ 10/4（日）】 \nおふたりのイベントに、参加してみました。ありがとうございます。ご興味のあるかたは、どうぞ。\n\n🔻秋読コレクションのマガジンはこちら\n \n \n \n秋読コレクション🍁🌙｜ネロ🌙｜王子｜秋読コレクション開催中 【10/4まで】｜note\n \n \n【期間限定マガジン 9/28〜10/4まで】 🍁 秋読コレクションは、王子×orivieで開催する「秋」をテーマにした\n \n \nnote.com\n \n \n\n \n 今回の題は、\n 「秋奏五首」 少しだけ浪漫の香りをまとわせながら、\n 夕映え → 奏 → 魔法 → 感謝 → 余韻 \n\n 五つの景色を、一つの秋の物語として並べてみます。 \n 🍁 一｜夕映え \n\n 夕映えの\n 紅葉のなかに\n 君を見て\n 今日という日を\n 秋にあづけむ\n \n\n \n\n 秋の夕暮れは、不思議です。\n 美しいのに、どこか寂しい。\n もうすぐ日が沈んでしまうと分かっているからでしょうか。\n だからこそ、\n 今日という一日を、この紅葉の中へ\n そっと預けておきたい。\n いつか秋が巡ってきたとき、\n また思い出せるように。\n \n\n 🎻 二｜奏\n 君がため\n 弓ひく指に\n 秋燃えて\n 紅葉もわれも\n 光となりぬ\n 弓を引く。\n その瞬間、\n 紅葉まで音になったような気がしました。\n 赤く燃える秋の中では、\n 奏でる人と景色との境目さえなくなって、\n 紅葉も、\n 音も、\n 自分自身も、\n みんな同じ光になっていく。\n そんな一瞬を詠んだ歌です。\n ✨ 三｜魔法 \n歌ひとつ\n 空へ放てば\n 紅葉舞ひ\n われらを飾る\n 秋の魔法よ\n 歌声が秋空へ届いたら、\n 一枚、\n また一枚。\n 紅葉が舞い始める。\n もちろん、本当にそんな魔法があるわけではありません。\n でも、\n 美しい音楽を聴いたとき。\n 心を動かす言葉に出会ったとき。\n いつもの景色が、\n 少し違って見えることがあります。\n それもひとつの、\n 「魔法」\n なのかもしれません🍁✨\n 🍁 四｜感謝 \nありがとう\n ただそれだけの\n 言の葉を\n 千の紅葉に\n かへて君へと\n ありがとう！一緒にnoteを楽しみましょう！ 「ありがとう」 たった五文字なのに、 本当に伝えたいときほど、 それだけでは足りないような気がします。\n ならば、\n 「ありがとう」を、 \n 千枚の紅葉に変えてしまおう🍁 \n 風に乗せて、\n ひらひらと、\n 君のところまで届くように🍁🍂\n 今回の五首の中で、\n いちばん素直な歌かもしれません😊\n 🐦 五｜余韻\n 歌やみて\n なほ肩にゐる\n 小鳥あり\n 君との秋は\n まだ終はらざる\n \n\n 歌が終わる。\n バイオリンの音も消える。\n 舞っていた紅葉も、\n やがて地面へ。\n 華やかな時間には、\n いつか終わりが来ます。\n けれど――\n ふと肩を見ると、\n 小さな相棒がまだそこにいる🐦 だから、\n 今日の物語はここで終わっても、 「君との秋」は、まだ終わらない。 最後には、\n そんな余韻を残してみました。\n 🍁 五首を並べてみたら \n\n 一首ずつ作っていたはずなのに、\n 並べてみると、\n 夕暮れに出会い、\n 音楽を奏で、\n 秋の魔法に包まれ、\n 「ありがとう」を届け、\n 静かな余韻へ帰っていく。\n いつの間にか、\n 一つの物語になっていました。\n 短歌って面白いですね。 わずかな言葉で、 書かなかった景色まで、 読む人の中に広がっていく。 \n 今回の「秋奏五首」も、 \n 私が見ている秋と、 \n 読んでくださった方が思い浮かべる秋は、 \n きっと少し違うのでしょう。 \n それでいいのだと思います。\n むしろ、\n その違いを想像するのも楽しい😊🍁 最後に、もう一度。 \n ありがとう\n ただそれだけの\n 言の葉を\n 千の紅葉に\n かへて君へと\n \n\n この秋に出会えた「好き」や「楽しい」に。\n\n そして、\n ここでつながったご縁に。\n 千の紅葉ぶんの「ありがとう」を🍁 \n#秋読コレクション\n\n🔻ネロ🌙｜王子さんのnoteはこちら\n \n 🔻orivieさんのnoteはこちら\n \n \n最後まで読んでくださり、 \n ありがとうございました😊🌿 \n ところで……君は何番目の短歌が好き？🤣🍁\n「1！」「2！」だけでもOK（笑）\nよかったらコメント欄で教えてね🐦✨",
@@ -12249,7 +12426,7 @@
           "key": "nc0e84dc41580f",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "左利きさん、参加いただきありがとうございます🤝\n\nどれも素敵な短歌で、秋の美しさと余韻が感じられます🍁\n短い文章でも、ちゃんと伝えたい描写のイメージを伝えられる短歌はすごいですね👏\n\n素敵な作品をありがとうございました🍂",
           "publishedAt": "2026-10-01T07:08:15.893+09:00",
           "isRoot": true,
@@ -12342,6 +12519,16 @@
           "authorName": "きゅうり/AIで“できること”が増える",
           "body": "左利きさん、はじめまして！\nきゅうりです🥒\n\nようやく秋読コレクションを巡りはじめて、今まさに真っ只中です🍁笑\n\nサムネから秋を感じる、素敵な作品ですね🍂✨\n紅葉の中でバイオリンを奏でる姿に、ほわりんが加わっているのも可愛いです🐦🎻\n\n5首それぞれに秋の景色が浮かびました😊\n「ありがとう」を千の紅葉に変える、という表現も素敵～～🍁\n\n楽しく読ませていただきました！\n素敵な秋をありがとうございます✨️",
           "publishedAt": "2026-10-05T08:55:53.235+09:00",
+          "isRoot": true,
+          "replyCount": 1
+        },
+        {
+          "key": "nc46ef88806f75",
+          "parentKey": "",
+          "authorUrlname": "kujira_log",
+          "authorName": "クジラのかくしごと｜言葉の海を泳ぐ",
+          "body": "左利きさん、はじめまして！\n企画からこんばんは🐳\n\nマガジンに登録して頂いて、\nありがとうございます✨️\n\n素敵な短歌がいっぱい！\n\nじつは短歌、\n特に石川啄木は、\n思い入れがあるんです…😌゛",
+          "publishedAt": "2026-10-09T01:01:30.592+09:00",
           "isRoot": true,
           "replyCount": 1
         },
@@ -12514,6 +12701,16 @@
           "publishedAt": "2026-10-05T09:37:49.555+09:00",
           "isRoot": false,
           "replyCount": 0
+        },
+        {
+          "key": "nc2d62af3196f7",
+          "parentKey": "",
+          "authorUrlname": "pure_falcon3290",
+          "authorName": "左利き|親子英検",
+          "body": "クジラのかくしごとさん、はじめまして😊🐳🍁\nコメントありがとうございます✨️\n\n秋読コレクションから遊びに来てくださったんですね🤭🍁\n短歌も読んでいただけて嬉しいです🥰\n\nおおっ！😳✨️\n石川啄木に思い入れがあるんですね！\n私は今回、短歌に初めて挑戦してみたのですが、限られた言葉の中に情景や気持ちを込められるところが、とても面白いなぁと感じました😊🌿\n\nマガジンのことも、そう言っていただけて嬉しいです✨️\nこちらこそ、素敵な作品をありがとうございます😊\n\nこれからもどうぞよろしくお願いします😊🍀",
+          "publishedAt": "2026-10-09T07:52:00.011+09:00",
+          "isRoot": false,
+          "replyCount": 0
         }
       ]
     },
@@ -12545,7 +12742,7 @@
           "key": "ncd27e883627bc",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "あやさん、参加いただきありがとうございます🤝\n\nついにゲームが終了してしまったのですね😭\nいつか終わりが来てしまうからこそ、楽しめるうちに楽しむべきですね😣\n身につけた継続力を様々な場面で活かしていきたいですね🍁",
           "publishedAt": "2026-10-01T07:02:40.105+09:00",
           "isRoot": true,
@@ -12681,7 +12878,7 @@
           "key": "nc73a176153d00",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "アユムさん、参加いただきありがとうございます🤝\n\nちいかわの映画、私も2回見に行きました👏\n映画は特に音響がよく、セイレーンの歌声や序盤のお祭りの雰囲気が魅力的でしたね✨\n\nアニメはまだ全部見れていないので、見てみようと思います。\n\n秋のお裾分けをありがとうございました🍁",
           "publishedAt": "2026-10-01T06:59:32.134+09:00",
           "isRoot": true,
@@ -12827,7 +13024,7 @@
           "key": "nc24d9f3ef1fdd",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "舞香さん、参加ありがとうございます🤝\n\n秋の中でも『色』に注目する甥っ子さんの感性が素敵ですね🤭\nふとした一言に気づかされることもありますね🍁\n\n素敵な秋のお裾分けをありがとうございました👏",
           "publishedAt": "2026-10-01T06:55:20.591+09:00",
           "isRoot": true,
@@ -12973,7 +13170,7 @@
           "key": "ncc98426ec5483",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ティ夢さん、参加いただきありがとうございます🤝\n\nnoteと出会って世界が広がった感じ、私も同じです。\n半年前に始めた時は何もなかったのに、今となってはネロ王子とイベントを開催して、たくさんの方に楽しんでもらいながら、『秋』を振り返るきっかけとしてくださっているのが嬉しい限りです🍁\n\nきっとこれから、さらに新しい出会いや人生の選択肢がふと訪れると思うと、楽しみですね✨\n素敵な記事をありがとうございました💐",
           "publishedAt": "2026-09-30T21:24:49.358+09:00",
           "isRoot": true,
@@ -13139,7 +13336,7 @@
           "key": "ncaf43816ca8af",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ちゃこさん、参加いただきありがとうございます🤝\n\nアイコンがハロウィン仕様で可愛らしいですね👏\n秋仕様のヘッダーもおしゃれですね🍁\n他の記事も読ませていただきますね。\n\n素敵な記事をありがとうございました💐",
           "publishedAt": "2026-09-30T21:13:11.035+09:00",
           "isRoot": true,
@@ -13355,7 +13552,7 @@
           "key": "nc3f8ba3390ab7",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "なおさん、参加いただきありがとうございます🤝\n\nお裁縫が凄すぎて素晴らしいです👏👏\n私も学生の時にぬいぐるみ作りなどチャレンジしていましたが、なかなかうまくいかず諦めてしまいました😣\n\nご縁あって、私たちの企画を通して初めての記事を書いていただけて嬉しい限りです🤝\nぜひ他の方の記事も読んで楽しんで行ってくださいね🍁",
           "publishedAt": "2026-09-30T21:06:09.338+09:00",
           "isRoot": true,
@@ -13481,7 +13678,7 @@
           "key": "nc54bb5561a43b",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "Honoさん、参加いただきありがとうございます🤝\n\n元恋人同士の距離感を秋が近づけてくれているようですね🍁\n以前付き合っていた人との距離感・接し方が一番難しいですね。\n呼び方や話す内容一つ気を遣ってしまうので、側から見たらきっとぎこちなさが伝わってしまいますね😣\n\n素敵な記事をありがとうございました🍂",
           "publishedAt": "2026-09-30T07:16:18.980+09:00",
           "isRoot": true,
@@ -13707,7 +13904,7 @@
           "key": "ncd4518ab53072",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "架空彼氏製作所さん、参加いただきありがとうございます🤝\n\n『名前をつける』時、名をつける側はとてもいろんな思いを乗せて付けますよね。\n名前の由来を聞くことで、秋が来るたびに自分の季節を感じられますね🍁\n\n素敵な記事をありがとうございました👏",
           "publishedAt": "2026-09-30T07:09:08.106+09:00",
           "isRoot": true,
@@ -14063,7 +14260,7 @@
           "key": "nc7efca8576a80",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "あかりさん、参加いただきありがとうございます🤝\n\nめざしの歌、通勤中に聴かせていただきました。\n明るい曲調で記憶に残る歌詞が魅力ですね👏\n\n焼きめざし美味しそうですね、この機会に今度食べてみようと思います🍁\n素敵な記事をありがとうございました💐",
           "publishedAt": "2026-09-30T07:05:13.973+09:00",
           "isRoot": true,
@@ -14329,7 +14526,7 @@
           "key": "nc40a87a64ac40",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "たけひろさん、参加いただきありがとうございます🤝\n\n秋になると聴きたくなる曲ありますよね。\n紹介いただいた名曲はどれも聞いたことがなかったので、休みの日に聞いてみますね🍁\n歌詞も込みで曲は好きになりますよね👏\n\n素敵な記事をありがとうございました🍂",
           "publishedAt": "2026-09-30T06:59:18.595+09:00",
           "isRoot": true,
@@ -14434,7 +14631,7 @@
       "authorUrlname": "holopono33",
       "publishedAt": "2026-09-29T19:50:55.000+09:00",
       "articleUrl": "https://note.com/holopono33/n/n7fe2bb9b43d2",
-      "likeCount": 106,
+      "likeCount": 107,
       "commentCountReported": 30,
       "commentCountFetched": 30,
       "tags": [],
@@ -14515,7 +14712,7 @@
           "key": "nc46a976300c0f",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ほろぽのさん、参加いただきありがとうございます🤝\n\nスライムたちの賑やかで楽しい物語、素敵でした🍁\nネロ王子、わかモンさんのお二人もゲスト出演でいいですね👏\n次回はぜひ私と海ポテトも出演させていただきたいですね🤝\n\n素敵な記事をありがとうございました🍂",
           "publishedAt": "2026-09-30T06:55:12.117+09:00",
           "isRoot": true,
@@ -14871,7 +15068,7 @@
           "key": "nc5bc71eb24e90",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "しらたまうさぎさん、参加ありがとうございます🤝\n\nKindleは周りに出している方はいらっしゃいますが、自分では出したことがなかったので、出版の機会があれば参考にさせていただきます。\n\nまずは読み放題で読んでもらえるような作品を書き上げることから、頑張ってみます🍂\n\n素敵な記事をありがとうございました🍁",
           "publishedAt": "2026-09-30T06:37:19.665+09:00",
           "isRoot": true,
@@ -15277,7 +15474,7 @@
           "key": "ncc20845a815e0",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "OSHIKATSUさん、参加いただきありがとうございます🤝\n\n病み上がりの中、記事を書いていただきありがとうございます😣\nどちらも秋を感じさせるコーデで素敵ですね🍁\n私はマスタードカラーのニット帽に魅力を感じました👏\n\n素敵な記事をありがとうございました🍁",
           "publishedAt": "2026-09-30T06:32:53.886+09:00",
           "isRoot": true,
@@ -15533,7 +15730,7 @@
           "key": "nc5d1ac596ec91",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "Maharuさん、参加いただきありがとうございます🤝\n\nマンガ愛の伝わってくる素敵な記事ですね🔥\n私はマンガはあまり読むことはないですが、好きな本が本棚に入りきらない状態は私も同じです😣\n\nおすすめいただいたマンガ、探して読んでみようと思います👏\n素敵な秋をありがとうございました🍁",
           "publishedAt": "2026-09-30T05:35:36.545+09:00",
           "isRoot": true,
@@ -15759,7 +15956,7 @@
           "key": "ncc150a0c9a7a1",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "アピオスファンクラブさん、参加いただきありがとうございます🤝\n\n国立国会図書館は利用したことがなかったので、探してみたい本があれば参考に利用してみたいと思います👏\n今はネットで検索すれば見つけられる便利な時代となりましたね。\n\nまさに読者の秋を感じさせてくれる、素敵な記事をありがとうございました🍁",
           "publishedAt": "2026-09-30T05:29:36.199+09:00",
           "isRoot": true,
@@ -15894,7 +16091,7 @@
       "authorUrlname": "358frog",
       "publishedAt": "2026-09-29T08:47:22.000+09:00",
       "articleUrl": "https://note.com/358frog/n/n807cccf4b49c",
-      "likeCount": 85,
+      "likeCount": 86,
       "commentCountReported": 35,
       "commentCountFetched": 35,
       "tags": [],
@@ -15965,7 +16162,7 @@
           "key": "nc8e2968857162",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ゴリラさん、秋読コレクション参加いただきありがとうございます🤝\n\nお手紙からお父様の人柄が伝わってきました。\n小さなの行動・言動のかけらが具体的にその時の様子を思い出させてくれますね。\n\n私もゴリラさんのように、暖かさのある、思いの込めた文章を書けるようになって、大切な人に届けたいと感じました🍁\n\n素敵な秋を、ありがとうございました🍂",
           "publishedAt": "2026-09-29T12:19:32.920+09:00",
           "isRoot": true,
@@ -16311,7 +16508,7 @@
           "key": "nc4f96fc1fcc31",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "kazumaさん、参加いただきありがとうございます🍁\n\n書道から感じられる『和』が、日本の秋と焼き芋の美味しさを引き立てていますね。\n\n焼き芋を作り、食べるまでの全ての工程に秋が詰め込まれていますね🍂\n\n久々に焼き芋が食べたくなるような、素敵な記事をありがとうございました🤝",
           "publishedAt": "2026-09-29T12:13:21.569+09:00",
           "isRoot": true,
@@ -16773,7 +16970,7 @@
           "key": "ncd0bab6b1afe5",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "のりもちさん、参加いただきありがとうございます🤝\n\n『香り』は記憶と感情に結びつきます。\n金木犀の香りが当時の出来事とその時の気持ちまで思い出させてくれるのですね。\n\n『秋』の感情や思い出は人それぞれだと感じさせてくれる、素敵な記事をありがとうございました🍁",
           "publishedAt": "2026-09-29T07:06:18.173+09:00",
           "isRoot": true,
@@ -16969,7 +17166,7 @@
           "key": "nc66bb7ddf5602",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "宇宙人かあさん、参加いただきありがとうございます🤝\n\n家の庭に栗の木とはすごいですね🌰\n私も栗は好きで、特にモンブランは好物です。\n秋になると美味しいものが増えて困りますね。\n\n秋の訪れを感じさせてくれる、素敵な記事をありがとうございました🍁",
           "publishedAt": "2026-09-29T07:00:03.192+09:00",
           "isRoot": true,
@@ -17185,7 +17382,7 @@
           "key": "ncceee24a492d6",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "花乃さん、参加いただきありがとうございます🤝\n\n誰にでもうまくいかないとき、気分が落ち込む時はありますよね。\n無理に変わろうと焦らずに、ゆっくり時間をかけて気持ちを落ち着かせることが大事ですね。\n\nうまく行く時は必ず来ると、背中を押してくれるような素敵な記事ですね🍁",
           "publishedAt": "2026-09-29T06:56:11.155+09:00",
           "isRoot": true,
@@ -17381,7 +17578,7 @@
           "key": "nc28ddfa570d71",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "くみっきーさん、参加いただきありがとうございます🤝\n\n私もキノコは、食べるのはあまり好みではないのですが、イラストや図鑑を見る分には可愛らしさを感じていいですね🍄\n\nまさに秋ならではの記事ですね🍁\n素敵な記事をありがとうございました🤝",
           "publishedAt": "2026-09-29T06:51:48.443+09:00",
           "isRoot": true,
@@ -17516,7 +17713,7 @@
       "authorUrlname": "wakamon_manga",
       "publishedAt": "2026-09-28T06:08:31.000+09:00",
       "articleUrl": "https://note.com/wakamon_manga/n/n3e2624197730",
-      "likeCount": 70,
+      "likeCount": 71,
       "commentCountReported": 15,
       "commentCountFetched": 15,
       "tags": [],
@@ -17723,7 +17920,7 @@
           "key": "nca1af698087fb",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ポラフさん、参加いただきありがとうございます🤝\n\n交流が増えると、名前で呼んでもらう機会が増えるので呼びやすさは大事ですよね。\n\nこの秋はぜひ『秋読コレクション』で他の方の記事を読む季節にしてくださいね🍁\n\n素敵な記事をありがとうございました🤝",
           "publishedAt": "2026-09-29T06:31:03.736+09:00",
           "isRoot": true,
@@ -17919,7 +18116,7 @@
           "key": "nc5c45e1d85b6f",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "咲和さん、参加いただきありがとうございます🤝\n\n秋になるとふと思い出してしまう、恋愛の思い出なのですね😣\n茶碗蒸しから出てくる銀杏のように、身近なところから秋は顔を出してくれますよね。\n\n私は銀杏を見ると、大学がひどく銀杏まみれだったことを思い出します😣\n\n読みやすく、楽しく読ませていただきました👏\n素敵な記事をありがとうございました🍁",
           "publishedAt": "2026-09-28T08:08:24.823+09:00",
           "isRoot": true,
@@ -18245,7 +18442,7 @@
           "key": "nc5479d58c918e",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ノンさん、参加いただきありがとうございます🤝\n\nイラストだけでも美味しそうなのが伝わってきますね🤭\nかぼちゃと温かみのあるイラストが、『秋』を感じさせてくれます🍁\n\n私は料理は全くできないですが、このレシピを料理上手な友達に見せて、作ってもらいたいと思いました👏\n\n素敵な記事をありがとうございました💐",
           "publishedAt": "2026-09-28T08:03:21.161+09:00",
           "isRoot": true,
@@ -18670,7 +18867,7 @@
       "authorUrlname": "nizi_no_mukouhe",
       "publishedAt": "2026-09-28T02:27:35.000+09:00",
       "articleUrl": "https://note.com/nizi_no_mukouhe/n/n4367f6035c2c",
-      "likeCount": 42,
+      "likeCount": 43,
       "commentCountReported": 19,
       "commentCountFetched": 19,
       "tags": [],
@@ -18691,7 +18888,7 @@
           "key": "nc63222de16b21",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "企画参加いただきありがとうございます🤝\n\n私もnoteを始めたのは今年の2月からで、noteでは始めての秋になります🍁\n\n『腸活の秋』いいですね。\n健康・美容のためにできることを、過ごしやすい季節からなら始めやすいですよね👏\n\n一時期ヨーグルトを食べるようにしてましたが、最近は全く意識できてなかったのでこの機会にまた健康に気をつけていこうと思います🤛\n\n素敵な記事をありがとうございました🤝",
           "publishedAt": "2026-09-28T07:59:52.173+09:00",
           "isRoot": true,
@@ -18907,7 +19104,7 @@
           "key": "nc46c808a8b867",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "唯乃ひめさん、企画参加いただきありがとうございます🤝\n\nひめさんの『秋』は、ゲームと夜の静けさから感じられるのですね🍁\n最近はあまりゲーム自体しないのですが、対戦ゲームで負けて終われないのは私も一緒です👏\n\nこれから始まる秋の静かな夜と、白熱したゲームを楽しんでくださいね🔥\n素敵な記事をありがとうございました🤝",
           "publishedAt": "2026-09-28T07:53:46.864+09:00",
           "isRoot": true,
@@ -19042,7 +19239,7 @@
       "authorUrlname": "selcject",
       "publishedAt": "2026-09-28T01:21:56.000+09:00",
       "articleUrl": "https://note.com/selcject/n/n9b969fa3476a",
-      "likeCount": 76,
+      "likeCount": 78,
       "commentCountReported": 22,
       "commentCountFetched": 22,
       "tags": [],
@@ -19053,7 +19250,7 @@
           "key": "nc1836ace74ffb",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "おにぎりさん、企画参加いただきありがとうございます🤝\n\nギターをされているのですね🔥\n私は楽器はリコーダーくらいしか弾けないですが、秋になると音楽に興味が出る感覚は一緒です。\n\nギターは楽器も音もかっこよくて、一度はやはり憧れますね🎸\n素敵な記事をありがとうございました🍁",
           "publishedAt": "2026-09-28T07:49:26.369+09:00",
           "isRoot": true,
@@ -19299,7 +19496,7 @@
           "key": "nc269ecb267a90",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "01さん、参加ありがとうございます🤝\n\n『秋』は豊かのイメージですが、歴史を辿るとその豊かさが争奪の引き金にもなっていたのですね。\n\n歴史についても学べる、面白い記事ですね🔥\n素敵な記事をありがとうございました🍁",
           "publishedAt": "2026-09-28T07:00:27.061+09:00",
           "isRoot": true,
@@ -19665,7 +19862,7 @@
           "key": "ncbfe8ab013625",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "山田さん、参加いただきありがとうございます🤝\nまさに『読者の秋』ですね🍂\n本からは知識と表現を学べるので、幼い頃から本に恵まれるのはとても素敵なことですよね👏\n\n私は幼少期、読者はそこまで好みではなかったですが、noteで数あるエッセイを読む中で『文章が持つ魅力』に引き込まれました。\n\n禁書棚というものがあるのですね🤭\nいつか封印が解かれてしまうかもしれないですね😣\n\n素敵なお話をありがとうございました🍁",
           "publishedAt": "2026-09-28T05:51:54.782+09:00",
           "isRoot": true,
@@ -19921,7 +20118,7 @@
           "key": "nc2a1f077d6650",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "KANUさん、企画参加ありがとうございます🍁\n\n最近は季節の変わり目が急に訪れてしまい、秋服の出番がどんどんなくなってきました。\n\n何に『秋』を感じるかを振り返ると、いろんな思い出と一緒にいろいろと浮かび上がってきますね🤝\n\n私が秋で思い出すのは、大学に銀杏が大量に落ちてたことですね🤭\n\n素敵な記事をありがとうございました👏",
           "publishedAt": "2026-09-28T05:31:49.349+09:00",
           "isRoot": true,
@@ -20297,7 +20494,7 @@
           "key": "nc91d6e425493d",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "ちびたぬきさん、企画参加いただきありがとうございます🤝\n\n秋になると聴きたくなる曲をテーマにした記事、素敵ですね🔥\nスピッツの『楓』は聞いたことなかったので、これから聞いてみます。\n\n新しい曲との出会いをありがとうございました👏\nまた、記事の話ではないのですが、私もカープは好きです⚾️",
           "publishedAt": "2026-09-28T05:40:58.625+09:00",
           "isRoot": true,
@@ -20792,7 +20989,7 @@
       "authorUrlname": "fcs_homecenter",
       "publishedAt": "2026-09-27T07:29:36.000+09:00",
       "articleUrl": "https://note.com/fcs_homecenter/n/n85ffc361c599",
-      "likeCount": 64,
+      "likeCount": 66,
       "commentCountReported": 55,
       "commentCountFetched": 55,
       "tags": [],
@@ -20813,7 +21010,7 @@
           "key": "nc662abaa3b445",
           "parentKey": "",
           "authorUrlname": "orivie",
-          "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+          "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
           "body": "伊藤ポップさん、早速ありがとうございます🤝\n\n『秋』を感じられる、伊藤ポップさんらしい素敵なエッセイですね。\nnoteの沼に落ちていくのは悪い気はしないですね🤭\n\n企画を通して、出会いの秋にしていきましょうね🍁",
           "publishedAt": "2026-09-27T07:56:57.027+09:00",
           "isRoot": true,
@@ -21368,7 +21565,7 @@
       {
         "key": "n87ed3643fc1c",
         "title": "【ネロ王子×orivieコラボイベント】『秋読コレクション』開催🍁【9/28(月)〜10/4（日）】",
-        "authorName": "orivie | 『秋読コレクション』まとめ記事10/10（土）公開🍁",
+        "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
         "authorUrlname": "orivie",
         "publishedAt": "2026-09-27T06:00:00.000+09:00",
         "articleUrl": "https://note.com/orivie/n/n87ed3643fc1c",
