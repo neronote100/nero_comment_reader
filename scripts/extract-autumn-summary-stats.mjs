@@ -1,15 +1,18 @@
 import fs from 'node:fs/promises';
 
 const INPUT = 'data/autumn_collection_snapshot.json';
+const CATEGORY_INPUT = 'data/autumn_collection_categories_2026-10-07.json';
 const OUTPUT = 'data/autumn_collection_summary_stats.json';
 
 const d = JSON.parse(await fs.readFile(INPUT, 'utf8'));
+const categoryData = JSON.parse(await fs.readFile(CATEGORY_INPUT, 'utf8'));
+const categoryMap = new Map(Array.isArray(categoryData.articles) ? categoryData.articles : []);
 const articles = Array.isArray(d.articles) ? d.articles : [];
 const commenters = Array.isArray(d.commenters) ? d.commenters : [];
 
 const byCategory = {};
 for (const a of articles) {
-  const category = a.category || '未分類';
+  const category = categoryMap.get(a.key) || '未分類';
   const row = byCategory[category] || { articles: 0, likes: 0, comments: 0 };
   row.articles += 1;
   row.likes += Number(a.likeCount || 0);
