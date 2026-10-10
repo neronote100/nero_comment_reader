@@ -1,0 +1,36 @@
+name: Autumn Summary Stats
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/extract-autumn-summary-stats.mjs'
+      - '.github/workflows/autumn-summary-stats.yml'
+      - 'data/autumn_collection_snapshot.json'
+
+permissions:
+  contents: write
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build compact summary stats
+        run: node scripts/extract-autumn-summary-stats.mjs
+      - name: Commit summary stats
+        run: |
+          if [ -z "$(git status --porcelain -- data/autumn_collection_summary_stats.json)" ]; then
+            echo 'No changes'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/autumn_collection_summary_stats.json
+          git commit -m 'Update Autumn Collection summary stats'
+          git pull --rebase
+          git push
