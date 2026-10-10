@@ -1,0 +1,370 @@
+{
+  "generatedAt": "2026-10-10T01:08:09.639Z",
+  "entryFilter": {
+    "rule": "王子（nero_notelover）とorivieさんの最初の記事を、企画応募記事ではないため母集団ごと除外",
+    "excludedCount": 2,
+    "excluded": [
+      {
+        "key": "n5cef5558a49a",
+        "title": "【王子×orivie コラボ】あなたの秋で繋がろう。｜秋読コレクション🍁🌙",
+        "authorName": "ネロ🌙｜王子｜メンシプ始めました🌙",
+        "authorUrlname": "nero_notelover",
+        "publishedAt": "2026-09-26T19:00:00.000+09:00",
+        "articleUrl": "https://note.com/nero_notelover/n/n5cef5558a49a",
+        "reason": "企画応募記事ではないため集計対象外（当該作者の最初の記事）"
+      },
+      {
+        "key": "n87ed3643fc1c",
+        "title": "【ネロ王子×orivieコラボイベント】『秋読コレクション』開催🍁【9/28(月)〜10/4（日）】",
+        "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
+        "authorUrlname": "orivie",
+        "publishedAt": "2026-09-27T06:00:00.000+09:00",
+        "articleUrl": "https://note.com/orivie/n/n87ed3643fc1c",
+        "reason": "企画応募記事ではないため集計対象外（当該作者の最初の記事）"
+      }
+    ]
+  },
+  "totals": {
+    "articles": 79,
+    "uniqueAuthors": 79,
+    "likes": 5268,
+    "commentsReported": 1786,
+    "commentsFetched": 1786,
+    "uniqueCommenters": 218,
+    "uniqueExternalCommenters": 217
+  },
+  "topExternalCommenters": [
+    {
+      "authorUrlname": "ishan_xun212",
+      "authorName": "算術01　劉 鑑（りゅう かん）",
+      "commentCount": 96,
+      "rootCommentCount": 75,
+      "replyCount": 21,
+      "articleCount": 76,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ai_guide3875",
+      "authorName": "きゅうり/AIで“できること”が増える",
+      "commentCount": 85,
+      "rootCommentCount": 65,
+      "replyCount": 20,
+      "articleCount": 66,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "orivie",
+      "authorName": "orivie | 海ポテト探してくれますか？開催中 〜10/23まで",
+      "commentCount": 76,
+      "rootCommentCount": 76,
+      "replyCount": 0,
+      "articleCount": 76,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fcs_homecenter",
+      "authorName": "伊藤ポップakaFCS",
+      "commentCount": 72,
+      "rootCommentCount": 38,
+      "replyCount": 34,
+      "articleCount": 40,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "oshikatsu_seaart",
+      "authorName": "OSHIKATSU | SeaArt AIイラストギャラリー",
+      "commentCount": 39,
+      "rootCommentCount": 20,
+      "replyCount": 19,
+      "articleCount": 21,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "shiratama_usagi",
+      "authorName": "しらたまうさぎ🐰❤️に寄添うKindle作家",
+      "commentCount": 37,
+      "rootCommentCount": 15,
+      "replyCount": 22,
+      "articleCount": 16,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "nizi_no_mukouhe",
+      "authorName": "Cozy Cafe & Bar beyond｜店主（旦那の方）",
+      "commentCount": 35,
+      "rootCommentCount": 19,
+      "replyCount": 16,
+      "articleCount": 20,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kan_mina867",
+      "authorName": "❁⃘*.ﾟMina❁⃘*.ﾟ|雲バル・ブラバル運営中♡",
+      "commentCount": 35,
+      "rootCommentCount": 7,
+      "replyCount": 28,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "pure_falcon3290",
+      "authorName": "左利き|親子英検",
+      "commentCount": 32,
+      "rootCommentCount": 12,
+      "replyCount": 20,
+      "articleCount": 13,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "good_ixia6698",
+      "authorName": "堂安咲和🪞 恋の本音を、物語と言葉に。",
+      "commentCount": 31,
+      "rootCommentCount": 14,
+      "replyCount": 17,
+      "articleCount": 15,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "pure_duck9890",
+      "authorName": "ノン",
+      "commentCount": 30,
+      "rootCommentCount": 5,
+      "replyCount": 25,
+      "articleCount": 6,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "gay_impala1620",
+      "authorName": "ポラフ｜AI副業ログ",
+      "commentCount": 28,
+      "rootCommentCount": 9,
+      "replyCount": 19,
+      "articleCount": 10,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "noah_woaks",
+      "authorName": "ノア｜魔王｜noteを征服したい",
+      "commentCount": 28,
+      "rootCommentCount": 1,
+      "replyCount": 27,
+      "articleCount": 2,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kujira_log",
+      "authorName": "クジラのかくしごと｜言葉の海を泳ぐ",
+      "commentCount": 27,
+      "rootCommentCount": 9,
+      "replyCount": 18,
+      "articleCount": 10,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "juicy_flea5682",
+      "authorName": "くみっきー",
+      "commentCount": 26,
+      "rootCommentCount": 13,
+      "replyCount": 13,
+      "articleCount": 14,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "akari_seaart",
+      "authorName": "赤髪のあかり✨️創作で生きるnoteマン　相互フォロー中",
+      "commentCount": 26,
+      "rootCommentCount": 11,
+      "replyCount": 15,
+      "articleCount": 12,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "holopono33",
+      "authorName": "ほろぽの33",
+      "commentCount": 26,
+      "rootCommentCount": 10,
+      "replyCount": 16,
+      "articleCount": 11,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "prettyracoon_c",
+      "authorName": "ちびたぬき",
+      "commentCount": 26,
+      "rootCommentCount": 2,
+      "replyCount": 24,
+      "articleCount": 3,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "natty_skink7179",
+      "authorName": "枢木 経介｜【新資本論／ネオ江戸思想家】",
+      "commentCount": 25,
+      "rootCommentCount": 19,
+      "replyCount": 6,
+      "articleCount": 20,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "ojisan_chinpan",
+      "authorName": "ちんぱん🐒耳毛〰(˙👄˙)〰",
+      "commentCount": 25,
+      "rootCommentCount": 0,
+      "replyCount": 25,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "fukurai_mone",
+      "authorName": "福来モネ",
+      "commentCount": 24,
+      "rootCommentCount": 4,
+      "replyCount": 20,
+      "articleCount": 5,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "toto0316",
+      "authorName": "トト",
+      "commentCount": 24,
+      "rootCommentCount": 3,
+      "replyCount": 21,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "selcject",
+      "authorName": "ぐれんの　おにぎり@ あなたを人生の主人公にする心理家",
+      "commentCount": 22,
+      "rootCommentCount": 7,
+      "replyCount": 15,
+      "articleCount": 8,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kai_shigoto",
+      "authorName": "kai｜元高校球児×IT技術者",
+      "commentCount": 21,
+      "rootCommentCount": 12,
+      "replyCount": 9,
+      "articleCount": 13,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kanu2434",
+      "authorName": "KANU",
+      "commentCount": 21,
+      "rootCommentCount": 6,
+      "replyCount": 15,
+      "articleCount": 7,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "358frog",
+      "authorName": "ゴリラ",
+      "commentCount": 21,
+      "rootCommentCount": 5,
+      "replyCount": 16,
+      "articleCount": 4,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "saigo_wa_kan",
+      "authorName": "山田、最後は勘。",
+      "commentCount": 20,
+      "rootCommentCount": 6,
+      "replyCount": 14,
+      "articleCount": 7,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "nori_mochi2026",
+      "authorName": "のりもち｜自分の「好き」を自由に綴る",
+      "commentCount": 19,
+      "rootCommentCount": 8,
+      "replyCount": 11,
+      "articleCount": 9,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "wise_rat6355",
+      "authorName": "雪綴ゆき",
+      "commentCount": 19,
+      "rootCommentCount": 0,
+      "replyCount": 19,
+      "articleCount": 1,
+      "isHost": false
+    },
+    {
+      "authorUrlname": "kazuma3924",
+      "authorName": "kazuma",
+      "commentCount": 18,
+      "rootCommentCount": 3,
+      "replyCount": 15,
+      "articleCount": 4,
+      "isHost": false
+    }
+  ],
+  "commentBuckets": {
+    "1": 100,
+    "100+": 0,
+    "50-99": 4,
+    "30-49": 7,
+    "20-29": 16,
+    "10-19": 24,
+    "5-9": 23,
+    "2-4": 43
+  },
+  "categories": {
+    "挑戦・スポーツの秋": {
+      "articles": 8,
+      "likes": 400,
+      "comments": 150
+    },
+    "自然・行楽の秋": {
+      "articles": 10,
+      "likes": 968,
+      "comments": 303
+    },
+    "思い出・人生の秋": {
+      "articles": 4,
+      "likes": 176,
+      "comments": 49
+    },
+    "音楽の秋": {
+      "articles": 6,
+      "likes": 340,
+      "comments": 123
+    },
+    "読書・学びの秋": {
+      "articles": 6,
+      "likes": 329,
+      "comments": 130
+    },
+    "遊び・ユーモアの秋": {
+      "articles": 6,
+      "likes": 364,
+      "comments": 134
+    },
+    "食欲・実りの秋": {
+      "articles": 10,
+      "likes": 612,
+      "comments": 236
+    },
+    "創作・芸術の秋": {
+      "articles": 20,
+      "likes": 1286,
+      "comments": 363
+    },
+    "暮らし・家族の秋": {
+      "articles": 5,
+      "likes": 470,
+      "comments": 177
+    },
+    "交流・noteの秋": {
+      "articles": 4,
+      "likes": 323,
+      "comments": 121
+    }
+  }
+}
