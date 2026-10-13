@@ -7,21 +7,22 @@
 <link rel="stylesheet" href="/site.css"></head>
 <body><div class="wrap">
 <header><div><div class="eyebrow">NERO NOTE HUB · MEMBERS</div>
-<h1>Comment Reader <span>🌙</span></h1><p>あなたのnoteコメントを、差分更新で確認する会員専用ページ。</p></div>
-<div class="account"><div id="login">ログイン情報を確認中…</div>
-<a id="logout" href="/cdn-cgi/access/logout">ログアウト ↗</a></div></header>
+<h1>Comment Reader <span>🌙</span></h1><p>noteのIDを入力するだけで、未対応コメントを差分チェックできます。</p></div>
+<div class="account"><div id="login">ご利用のnote ID：未設定</div>
+<button id="logout" type="button" class="secondary">ログアウト</button></div></header>
 <main>
 <section class="panel"><h2>noteアカウント設定</h2><p>プロフィールURLの「note.com/」以降のユーザー名を入力してください。</p>
 <form id="profileForm"><label for="owner">noteユーザー名</label>
 <div class="controls"><input id="owner" autocomplete="off" spellcheck="false" placeholder="例：nero_notelover" required>
 <button type="submit">保存</button></div></form>
-<small>ログインはCloudflare Accessが管理します。noteのパスワードは入力しないでください。</small></section>
+<small>メール認証・noteのパスワードは不要。入力したIDはこの端末に紐付けて保存されます。ログアウトで解除できます。</small></section>
 <section class="panel"><div class="line"><div><h2>未対応コメント</h2>
 <div class="sub"><span id="updated">前回取得：—</span> ・ <span id="articleCount">記事：—</span></div></div>
 <button id="refresh" disabled>↻ 最新を確認</button></div>
 <div class="stats"><strong id="count">—</strong> 件 <span id="details"></span></div>
 <div class="bar"><div id="progress"></div></div><p id="status" aria-live="polite">ログイン確認中…</p></section>
 <div id="comments"></div>
+<div class="more-area"><button id="more" class="secondary" hidden>さらに100件を表示</button></div>
 </main>
 <footer>城下町の仲間が、コメントを大切にできる場所へ 🌙</footer>
 </div><script src="/site.js" defer></script></body></html>

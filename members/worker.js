@@ -9,6 +9,8 @@ const validOwner = value => /^[a-zA-Z0-9_-]{2,80}$/.test(value);
 const safeText = value => String(value ?? "").trim();
 const MAX_ARTICLES = 5000;
 const AUDIT_DAYS = 7;
+const MAX_NOTE_REQUESTS_PER_STEP = 8;
+const SCAN_EXPIRATION_MS = 24 * 60 * 60 * 1000;
 
 function parseRows(payload) {
   if (Array.isArray(payload?.data)) return payload.data;
@@ -31,7 +33,7 @@ function norm(comment) {
     parentKey: String(comment.parent_key || ""),
     authorUrlname: String(user.urlname || comment.urlname || "").toLowerCase(),
     authorName: String(user.nickname || user.name || ""),
-    body: safeText(flatten(comment.comment ?? comment.body ?? comment.content ?? "")),
+    body: safeText(flatten(comment.comment ?? comment.body ?? comment.content ?? "")).slice(0,1600),
     publishedAt: String(comment.published_at || comment.created_at || ""),
     replyCount: Number(comment.reply_count ?? comment.replyCount ?? 0),
     isRoot: comment.is_root !== false,
@@ -99,7 +101,7 @@ function unresolvedForThread(root, replies, owner) {
   if (!pending.length) return [];
   const current = pending[pending.length - 1];
   return [{ ...current, rootKey: root.key, rootBody: root.body, pendingCount: pending.length,
-    pendingBodies: pending.map(x => x.body).filter(Boolean) }];
+    pendingBodies: pending.slice(-6).map(x => x.body.slice(0,800)).filter(Boolean) }];
 }
 async function scanArticle(article, owner) {
   const roots = (await fetchComments(article.key)).filter(x => x.isRoot);
@@ -129,152 +131,333 @@ function publicItem(article, comment) {
     rootBody: comment.rootBody, pendingCount: comment.pendingCount,
     pendingBodies: comment.pendingBodies };
 }
+
+async function fetchArticlePage(owner, page) {
+  const params = new URLSearchParams({ kind: "note", disabled_pinned: "true", page: String(page) });
+  const payload = await noteJson("/api/v2/creators/" + encodeURIComponent(owner) + "/contents?" + params);
+  const rows = Array.isArray(payload?.data?.contents) ? payload.data.contents
+    : Array.isArray(payload?.contents) ? payload.contents : [];
+  const articles = rows.map(row => ({
+    key: String(row.key || row.noteKey || row.note_key || ""),
+    title: String(row.name || row.title || "").slice(0,300),
+    commentCount: Number(row.commentCount ?? row.comment_count ?? 0),
+    publishedAt: String(row.publishAt || row.publishedAt || ""),
+    url: NOTE + "/" + owner + "/n/" + String(row.key || row.noteKey || row.note_key || "")
+  })).filter(row => row.key && Number.isFinite(row.commentCount));
+  const last = Boolean(payload?.data?.isLastPage ?? payload?.isLastPage ?? false) || rows.length === 0;
+  return { articles, last };
+}
+async function fetchArticleIndexChunk(owner, startPage) {
+  const result = [];
+  let page = startPage;
+  let last = false;
+  for (let i = 0; i < MAX_NOTE_REQUESTS_PER_STEP; i++) {
+    if(page>500) throw new Error("記事一覧のページ数が上限を超えました");
+    const fetched = await fetchArticlePage(owner, page++);
+    result.push(...fetched.articles);
+    if (fetched.last) { last = true; break; }
+  }
+  return { articles: result, nextPage: page, last };
+}
+async function fetchCommentPage(noteKey, parentKey, page) {
+  const params = new URLSearchParams({order:"oldest",per_page:"100",page:String(page)});
+  if (parentKey) params.set("parent_key",parentKey);
+  const payload = await noteJson("/api/v3/notes/" + encodeURIComponent(noteKey) + "/note_comments?" + params);
+  const rows = parseRows(payload).map(norm);
+  const next = payload?.next_page ?? payload?.nextPage ?? payload?.data?.next_page ?? payload?.data?.nextPage ?? null;
+  const n = Number(next);
+  return { rows, nextPage: next && rows.length ? (Number.isFinite(n) && n > page ? n : page+1) : null };
+}
+function initialWork() {
+  return { rootPage:1, roots:null, nextRootPage:null, rootIndex:0,
+    thread:null, replyPage:1, pending:[] };
+}
+// Each HTTP request uses at most eight calls to note.com, even for hundreds of reply threads.
+// This prevents a 400-article creator's busiest article from hitting Workers Free's 50-subrequest cap.
+export async function scanArticleChunk(article, owner, previousWork) {
+  const work = previousWork || initialWork();
+  const previousKeys = new Set((article.previousUnresolved || []).map(item => item.rootKey || item.key));
+  const pendingOnly = article.scanMode === "pending_only" && previousKeys.size > 0;
+  let calls = 0;
+  while (calls < MAX_NOTE_REQUESTS_PER_STEP) {
+    if (!work.roots) {
+      if (work.rootPage > 1000) throw new Error("コメントのページ数が上限を超えました");
+      const page = await fetchCommentPage(article.key, "", work.rootPage);
+      calls++;
+      work.roots = page.rows.filter(item => item.isRoot);
+      work.nextRootPage = page.nextPage;
+      work.rootIndex = 0;
+    }
+    if (work.rootIndex >= work.roots.length) {
+      if (!work.nextRootPage) return { done:true, unresolved:work.pending, work:null, requests:calls };
+      work.rootPage = work.nextRootPage;
+      work.roots = null;
+      work.nextRootPage = null;
+      continue;
+    }
+    const root = work.roots[work.rootIndex];
+    if (!root.authorUrlname || root.authorUrlname === owner || (pendingOnly && !previousKeys.has(root.key))) {
+      work.rootIndex++; continue;
+    }
+    if (root.replyCount === 0) {
+      if (!root.creatorLiked) work.pending.push({
+        ...root, rootKey:root.key, rootBody:root.body, pendingCount:1, pendingBodies:[root.body]
+      });
+      work.rootIndex++; continue;
+    }
+    if (work.replyPage > 1000) throw new Error("返信のページ数が上限を超えました");
+    const repliesPage = await fetchCommentPage(article.key, root.key, work.replyPage);
+    calls++;
+    if (!work.thread) {
+      work.thread = { count:root.creatorLiked?0:1,
+        latest:root.creatorLiked?null:root,
+        bodies:root.creatorLiked?[]:[root.body.slice(0,800)] };
+    }
+    for (const reply of repliesPage.rows.filter(item => !item.isRoot)) {
+      if (!reply.authorUrlname) continue;
+      if (reply.authorUrlname === owner) {
+        work.thread = { count:0,latest:null,bodies:[] };
+      } else if (!reply.creatorLiked) {
+        work.thread.count++;
+        work.thread.latest=reply;
+        work.thread.bodies.push(reply.body.slice(0,800));
+        if(work.thread.bodies.length>6)work.thread.bodies.shift();
+      }
+    }
+    if (repliesPage.nextPage) {
+      work.replyPage = repliesPage.nextPage;
+    } else {
+      if (work.thread.count>0 && work.thread.latest) {
+        work.pending.push({ ...work.thread.latest, rootKey:root.key,
+          rootBody:root.body, pendingCount:work.thread.count,
+          pendingBodies:work.thread.bodies });
+      }
+      work.thread = null;
+      work.replyPage = 1;
+      work.rootIndex++;
+    }
+  }
+  return { done:false, work, requests:calls };
+}
+const articleStoreKey = key => "article:" + key;
 export class MemberStateStore {
   constructor(state) { this.storage = state.storage; }
-  async finalize(scan) {
-    const failures = new Set(scan.failed.map(x => x.key));
-    const items = [];
-    for (const article of scan.articles) {
-      if (failures.has(article.key)) continue;
-      for (const comment of scan.states[article.key]?.unresolved || []) items.push(publicItem(article, comment));
+
+  async savedSnapshot(offset=0, limit=100) {
+    const cached = await this.storage.list({prefix:"article:"});
+    const all = [];
+    for (const state of cached.values()) {
+      if (state.error) continue;
+      for (const c of state.unresolved || []) all.push(publicItem(state, c));
     }
-    items.sort((a, b) => (Date.parse(b.publishedAt) || 0) - (Date.parse(a.publishedAt) || 0));
-    const snapshot = { owner: scan.owner, updatedAt: new Date().toISOString(),
-      articleCount: scan.articles.length, scannedArticles: scan.index,
-      candidateArticles: scan.candidates.length, failedArticles: scan.failed.length,
-      failedArticleKeys: scan.failed, items, unresolvedCount: items.length };
-    await this.storage.put("articles", scan.states);
-    await this.storage.put("latest", snapshot);
-    await this.storage.delete("scan");
-    return snapshot;
+    all.sort((a,b)=>(Date.parse(b.publishedAt)||0)-(Date.parse(a.publishedAt)||0));
+    const owner = await this.storage.get("owner") || "";
+    const latest = await this.storage.get("latestStats") || null;
+    return {owner, latest, items:all.slice(offset,offset+limit),
+      nextOffset:offset+limit<all.length?offset+limit:null, totalItems:all.length};
   }
+
+  async complete(scan) {
+    const checked = await this.storage.list({prefix:"article:"});
+    let pending = 0;
+    for (const article of scan.articles) {
+      if (scan.failed.some(f => f.key===article.key)) continue;
+      pending += (checked.get(articleStoreKey(article.key))?.unresolved || []).length;
+    }
+    const stats = {
+      updatedAt:new Date().toISOString(), articleCount:scan.articles.length,
+      candidateArticles:scan.candidates.length, scannedArticles:scan.index,
+      failedArticles:scan.failed.length, failedArticleKeys:scan.failed.slice(0,100),
+      unresolvedCount:pending
+    };
+    await this.storage.put("latestStats", stats);
+    await this.storage.delete("scan");
+    return stats;
+  }
+
   async fetch(request) {
     const url = new URL(request.url);
-    if (request.method === "GET" && url.pathname === "/state") {
-      return respond({ ok: true, owner: await this.storage.get("owner") || "",
-        latest: await this.storage.get("latest") || null });
+    const method=request.method;
+    if (method === "GET" && url.pathname === "/state") {
+      return respond({ok:true,...await this.savedSnapshot(0,100),
+        hasScan:Boolean(await this.storage.get("scan"))});
     }
-    if (request.method === "POST" && url.pathname === "/profile") {
-      const { owner } = await request.json();
-      const id = String(owner || "").toLowerCase();
-      if (!validOwner(id)) return respond({ ok: false, error: "noteユーザー名が不正です" }, 400);
-      if ((await this.storage.get("owner")) !== id) {
-        await this.storage.put("owner", id);
-        await this.storage.delete("articles");
-        await this.storage.delete("latest");
+    if (method === "GET" && url.pathname === "/comments") {
+      const offset = Math.max(0,Number(url.searchParams.get("offset"))||0);
+      return respond({ok:true,...await this.savedSnapshot(offset,100)});
+    }
+    if (method === "POST" && url.pathname === "/profile") {
+      const {owner} = await request.json();
+      const chosen=String(owner||"").toLowerCase().trim();
+      if (!validOwner(chosen)) return respond({ok:false,error:"noteユーザー名を確認してください"},400);
+      if (chosen !== (await this.storage.get("owner"))) {
+        const articles=await this.storage.list({prefix:"article:"});
+        await Promise.all([...articles.keys()].map(key=>this.storage.delete(key)));
+        await this.storage.put("owner",chosen);
+        await this.storage.delete("latestStats");
         await this.storage.delete("scan");
       }
-      return respond({ ok: true, owner: id });
+      return respond({ok:true,owner:chosen});
     }
-    if (request.method === "POST" && url.pathname === "/start") {
-      const { owner, articles } = await request.json();
-      if (owner !== await this.storage.get("owner")) return respond({ ok: false, error: "Profile changed" }, 409);
-      if (!Array.isArray(articles) || articles.length > MAX_ARTICLES) return respond({ ok: false, error: "Invalid article list" }, 400);
-      const oldStates = await this.storage.get("articles") || {};
-      const states = {};
-      const candidates = [];
-      const day = Math.floor(Date.now() / 86400000);
-      for (const article of articles) {
-        const old = oldStates[article.key];
-        states[article.key] = old ? { ...old, ...article } : { ...article, unresolved: [], checkedAt: 0 };
-        if (article.commentCount <= 0) {
-          states[article.key] = { ...article, unresolved: [], checkedAt: Date.now() };
-          continue;
+    if (method === "POST" && url.pathname === "/start") {
+      const owner=await this.storage.get("owner");
+      if (!owner) return respond({ok:false,error:"noteユーザー名を登録してください"},400);
+      const existing=await this.storage.get("scan");
+      if (existing && Date.now()-existing.startedAt<SCAN_EXPIRATION_MS) {
+        return respond({ok:true,done:false,scanId:existing.id,
+          phase:existing.phase, scannedArticles:existing.index, candidateArticles:existing.candidates?.length||0,
+          articleCount:existing.articles.length});
+      }
+      const quota=await this.storage.get("quota")||{day:0,count:0};
+      const day=Math.floor(Date.now()/86400000);
+      if (quota.day!==day) {quota.day=day;quota.count=0;}
+      if (quota.count>=12) return respond({ok:false,error:"1日の更新上限（12回）に達しました。翌日に再開してください"},429);
+      quota.count++;
+      await this.storage.put("quota",quota);
+      const scan={id:crypto.randomUUID(),owner,startedAt:Date.now(),
+        phase:"listing",articles:[],listPage:1,candidates:[],index:0,work:null,failed:[]};
+      await this.storage.put("scan",scan);
+      return respond({ok:true,done:false,scanId:scan.id,phase:"listing",
+        scannedArticles:0,candidateArticles:0,articleCount:0});
+    }
+    if (method === "GET" && url.pathname === "/peek") {
+      const scan=await this.storage.get("scan");
+      const id=url.searchParams.get("scan_id");
+      if (!scan || scan.id!==id || Date.now()-scan.startedAt>SCAN_EXPIRATION_MS)
+        return respond({ok:false,error:"更新状態の有効期限が切れました。再実行してください"},409);
+      return respond({ok:true,scanId:scan.id,phase:scan.phase,
+        owner:scan.owner,index:scan.index,listPage:scan.listPage,work:scan.work,
+        article:scan.candidates[scan.index]||null});
+    }
+    if (method === "POST" && url.pathname === "/index") {
+      const {scanId,listPage,articles,nextPage,last} = await request.json();
+      const scan=await this.storage.get("scan");
+      if (!scan || scan.id!==scanId || scan.phase!=="listing" || scan.listPage!==listPage)
+        return respond({ok:false,error:"取得状態が更新されました"},409);
+      const merged=new Map(scan.articles.map(a=>[a.key,a]));
+      for (const article of articles||[]) merged.set(article.key,article);
+      scan.articles=[...merged.values()];
+      if (scan.articles.length>MAX_ARTICLES)
+        return respond({ok:false,error:"記事数が上限を超えています"},400);
+      scan.listPage=nextPage;
+      if (last) {
+        const previous=await this.storage.list({prefix:"article:"});
+        const day=Math.floor(Date.now()/86400000);
+        for (const article of scan.articles) {
+          const old=previous.get(articleStoreKey(article.key));
+          if (article.commentCount<=0) {
+            await this.storage.put(articleStoreKey(article.key),{...article,unresolved:[],checkedAt:Date.now()});
+            continue;
+          }
+          const changed=!old || old.commentCount!==article.commentCount;
+          const pending=Boolean(old?.unresolved?.length);
+          const failed=!old||old.error||!old.checkedAt;
+          let hash=0;
+          for(const char of article.key)hash=(hash*31+char.charCodeAt(0))>>>0;
+          const audit=!pending&&old?.checkedAt&&Date.now()-old.checkedAt>AUDIT_DAYS*86400000&&hash%7===day%7;
+          if(changed||pending||failed||audit)scan.candidates.push({...article,
+            scanMode:pending&&!changed&&!failed&&!audit?"pending_only":"full",
+            previousUnresolved:(old?.unresolved||[]).map(c=>({rootKey:c.rootKey||c.key}))});
         }
-        let hash = 0;
-        for (const c of article.key) hash = (hash * 31 + c.charCodeAt(0)) >>> 0;
-        const countChanged = !old || Number(old.commentCount || 0) !== Number(article.commentCount || 0);
-        const pending = Boolean(old?.unresolved?.length);
-        const failed = !old || old.error || !Number(old.checkedAt);
-        const audit = !pending && old?.checkedAt && Date.now() - old.checkedAt > AUDIT_DAYS * 86400000 && hash % 7 === day % 7;
-        if (countChanged || pending || failed || audit) {
-          candidates.push({ ...article, previousUnresolved: old?.unresolved || [],
-            scanMode: pending && !countChanged && !failed && !audit ? "pending_only" : "full" });
+        scan.phase="scanning";
+        if(!scan.candidates.length){
+          const stats=await this.complete(scan);
+          return respond({ok:true,done:true,phase:"complete",...stats});
         }
       }
-      const scan = { id: crypto.randomUUID(), owner, articles, candidates, states,
-        index: 0, failed: [], startedAt: Date.now() };
-      if (!candidates.length) return respond({ ok: true, done: true, ...await this.finalize(scan) });
-      await this.storage.put("scan", scan);
-      return respond({ ok: true, done: false, scanId: scan.id, scannedArticles: 0, candidateArticles: candidates.length });
+      await this.storage.put("scan",scan);
+      return respond({ok:true,done:false,phase:scan.phase,scanId,
+        articleCount:scan.articles.length, candidateArticles:scan.candidates.length,scannedArticles:scan.index});
     }
-    if (request.method === "GET" && url.pathname === "/peek") {
-      const scan = await this.storage.get("scan");
-      const id = url.searchParams.get("scan_id");
-      if (!scan || scan.id !== id || Date.now() - scan.startedAt > 3600000) return respond({ ok: false, error: "Scan expired" }, 409);
-      return respond({ ok: true, index: scan.index, article: scan.candidates[scan.index] || null, owner: scan.owner });
-    }
-    if (request.method === "POST" && url.pathname === "/commit") {
-      const { scanId, index, unresolved, error } = await request.json();
-      const scan = await this.storage.get("scan");
-      if (!scan || scan.id !== scanId || scan.index !== index) return respond({ ok: false, error: "Scan conflict" }, 409);
-      const article = scan.candidates[scan.index];
-      if (!article) return respond({ ok: false, error: "No article" }, 409);
-      if (error) {
-        scan.failed.push({ key: article.key, title: article.title, error: String(error) });
-        scan.states[article.key] = { ...scan.states[article.key], error: true, checkedAt: 0 };
-      } else {
-        scan.states[article.key] = { ...article, unresolved, checkedAt: Date.now(), error: false };
+    if(method==="POST"&&url.pathname==="/commit"){
+      const {scanId,index,done,work,unresolved,error}=await request.json();
+      const scan=await this.storage.get("scan");
+      if(!scan||scan.id!==scanId||scan.index!==index||scan.phase!=="scanning")
+        return respond({ok:false,error:"更新状態が変更されました"},409);
+      const article=scan.candidates[index];
+      if(!article)return respond({ok:false,error:"走査対象がありません"},409);
+      if(error){
+        scan.failed.push({key:article.key,title:article.title,error:String(error)});
+        const old=await this.storage.get(articleStoreKey(article.key));
+        await this.storage.put(articleStoreKey(article.key),{...article,unresolved:old?.unresolved||[],
+          checkedAt:0,error:true});
+        scan.work=null;scan.index++;
+      }else if(done){
+        await this.storage.put(articleStoreKey(article.key),{...article,unresolved:unresolved||[],
+          checkedAt:Date.now(),error:false});
+        scan.work=null;scan.index++;
+      }else{
+        scan.work=work;
       }
-      scan.index++;
-      if (scan.index === scan.candidates.length) return respond({ ok: true, done: true, ...await this.finalize(scan) });
-      await this.storage.put("scan", scan);
-      return respond({ ok: true, done: false, scanId: scan.id, scannedArticles: scan.index,
-        candidateArticles: scan.candidates.length, failedArticles: scan.failed.length });
+      if(scan.index>=scan.candidates.length){
+        const stats=await this.complete(scan);
+        return respond({ok:true,done:true,phase:"complete",...stats});
+      }
+      await this.storage.put("scan",scan);
+      return respond({ok:true,done:false,scanId,phase:"scanning",
+        candidateArticles:scan.candidates.length,scannedArticles:scan.index,
+        failedArticles:scan.failed.length});
     }
-    return respond({ ok: false, error: "Not Found" }, 404);
+    if(method==="POST"&&url.pathname==="/logout"){
+      // No authentication: logout only revokes this browser's anonymous session data.
+      await this.storage.deleteAll();
+      return respond({ok:true});
+    }
+    return respond({ok:false,error:"Not found"},404);
   }
 }
+
 export default {
-  async fetch(request, env, ctx) {
-    // fail closed: never trust a client-supplied email or auth header
-    if (!ctx.access) return respond({ ok: false, error: "Cloudflare Access protection is required" }, 403);
-    const identity = await ctx.access.getIdentity();
-    const email = String(identity?.email || "").trim().toLowerCase();
-    if (!email || !email.includes("@")) return respond({ ok: false, error: "Verified email required" }, 403);
-    if (!env.MEMBER_STATE) return respond({ ok: false, error: "Member storage unavailable" }, 503);
-    const stub = env.MEMBER_STATE.get(env.MEMBER_STATE.idFromName(email));
-    const url = new URL(request.url);
-    const path = url.pathname;
-    if (request.method === "GET" && path === "/") return new Response(html, { headers: {
-      "content-type": "text/html; charset=utf-8", "cache-control": "no-store",
-      "content-security-policy": "default-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; img-src 'self' https://assets.st-note.com data:; base-uri 'none'; frame-ancestors 'none'"
-    } });
-    if (request.method === "GET" && path === "/site.css") return new Response(css, { headers: { "content-type": "text/css; charset=utf-8" } });
-    if (request.method === "GET" && path === "/site.js") return new Response(script, { headers: { "content-type": "application/javascript; charset=utf-8" } });
-    if (request.method === "GET" && path === "/api/me") {
-      const response = await stub.fetch("https://member-state/state");
-      const state = await response.json();
-      return respond({ ...state, email });
+  async fetch(request,env) {
+    const url=new URL(request.url);
+    if(request.method==="GET"&&url.pathname==="/")return new Response(html,{
+      headers:{"content-type":"text/html; charset=utf-8","cache-control":"no-store",
+        "content-security-policy":"default-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; img-src 'self' https://assets.st-note.com data:; base-uri 'none'; frame-ancestors 'none'"}
+    });
+    if(request.method==="GET"&&url.pathname==="/site.css")
+      return new Response(css,{headers:{"content-type":"text/css; charset=utf-8"}});
+    if(request.method==="GET"&&url.pathname==="/site.js")
+      return new Response(script,{headers:{"content-type":"application/javascript; charset=utf-8"}});
+    if(!url.pathname.startsWith("/api/"))return respond({ok:false,error:"Not found"},404);
+    if(!env.MEMBER_STATE)return respond({ok:false,error:"Member storage unavailable"},503);
+    const token=request.headers.get("x-nero-client")||"";
+    if(!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(token))
+      return respond({ok:false,error:"ブラウザIDが無効です"},400);
+    const stub=env.MEMBER_STATE.get(env.MEMBER_STATE.idFromName("anon:"+token));
+    if(request.method==="GET"&&url.pathname==="/api/me")
+      return stub.fetch("https://member-state/state");
+    if(request.method==="GET"&&url.pathname==="/api/comments"){
+      const offset=Math.max(0,Number(url.searchParams.get("offset"))||0);
+      return stub.fetch("https://member-state/comments?offset="+offset);
     }
-    if (request.method === "POST" && path === "/api/profile") {
-      return stub.fetch(new Request("https://member-state/profile", request));
+    if(request.method==="POST"&&url.pathname==="/api/profile")
+      return stub.fetch(new Request("https://member-state/profile",request));
+    if(request.method==="POST"&&url.pathname==="/api/logout")
+      return stub.fetch("https://member-state/logout",{method:"POST"});
+    if(request.method==="POST"&&url.pathname==="/api/sync/start")
+      return stub.fetch("https://member-state/start",{method:"POST"});
+    if(request.method==="POST"&&url.pathname==="/api/sync/next"){
+      try{
+        const {scanId}=await request.json();
+        if(!/^[0-9a-f-]{36}$/i.test(String(scanId)))return respond({ok:false,error:"Invalid scan"},400);
+        const peekResponse=await stub.fetch("https://member-state/peek?scan_id="+encodeURIComponent(scanId));
+        if(!peekResponse.ok)return respond({ok:false,error:"Scan expired"},409);
+        const peek=await peekResponse.json();
+        if(peek.phase==="listing"){
+          let result;
+          try{result=await fetchArticleIndexChunk(peek.owner,peek.listPage);}
+          catch(error){return respond({ok:false,error:"記事一覧の取得に失敗しました："+String(error?.message||error)},502);}
+          return stub.fetch("https://member-state/index",{method:"POST",headers:{"content-type":"application/json"},
+            body:JSON.stringify({scanId,listPage:peek.listPage,...result})});
+        }
+        if(peek.phase!=="scanning"||!peek.article)return respond({ok:false,error:"Invalid scan phase"},409);
+        let result;
+        try{result=await scanArticleChunk(peek.article,peek.owner,peek.work);}
+        catch(error){result={done:true,error:String(error?.message||error)};}
+        return stub.fetch("https://member-state/commit",{method:"POST",headers:{"content-type":"application/json"},
+          body:JSON.stringify({scanId,index:peek.index,...result})});
+      }catch(error){return respond({ok:false,error:String(error?.message||error)},502);}
     }
-    if (request.method === "POST" && path === "/api/sync/start") {
-      try {
-        const state = await (await stub.fetch("https://member-state/state")).json();
-        if (!validOwner(state.owner)) return respond({ ok: false, error: "noteユーザー名を先に登録してください" }, 400);
-        const articles = await fetchArticles(state.owner);
-        return stub.fetch("https://member-state/start", { method: "POST",
-          headers: { "content-type": "application/json" }, body: JSON.stringify({ owner: state.owner, articles }) });
-      } catch (error) { return respond({ ok: false, error: String(error?.message || error) }, 502); }
-    }
-    if (request.method === "POST" && path === "/api/sync/next") {
-      try {
-        const { scanId } = await request.json();
-        if (!/^[0-9a-f-]{36}$/i.test(String(scanId))) return respond({ ok: false, error: "Invalid scan" }, 400);
-        const peekResponse = await stub.fetch("https://member-state/peek?scan_id=" + encodeURIComponent(scanId));
-        if (!peekResponse.ok) return respond({ ok: false, error: "Scan expired" }, 409);
-        const { article, owner, index } = await peekResponse.json();
-        let unresolved = [];
-        let error = "";
-        try { unresolved = await scanArticle(article, owner); }
-        catch (caught) { error = String(caught?.message || caught); }
-        return stub.fetch("https://member-state/commit", { method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ scanId, index, unresolved, error }) });
-      } catch (error) { return respond({ ok: false, error: String(error?.message || error) }, 502); }
-    }
-    return respond({ ok: false, error: "Not found" }, 404);
+    return respond({ok:false,error:"Not found"},404);
   }
 };

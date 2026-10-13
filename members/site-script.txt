@@ -1,89 +1,166 @@
 "use strict";
 const $=id=>document.getElementById(id);
+const CLIENT_KEY="nero-member-anonymous-client-id-v1";
+let clientId=localStorage.getItem(CLIENT_KEY);
+if(!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(clientId||"")){
+  clientId=crypto.randomUUID();
+  localStorage.setItem(CLIENT_KEY,clientId);
+}
 let owner="";
 let busy=false;
+let nextOffset=null;
 const setStatus=text=>$("status").textContent=text;
-async function call(url,body){
-  const options=body===undefined?{cache:"no-store"}:{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body),cache:"no-store"};
-  const response=await fetch(url,options);
-  const data=await response.json();
-  if(!response.ok||!data.ok)throw new Error(data.error||"接続できませんでした");
-  return data;
-}
 const percent=n=>$("progress").style.width=Math.max(0,Math.min(100,n))+"%";
 function prettyDate(value){
   if(!value)return "—";
-  const date=new Date(value);return Number.isNaN(date.getTime())?"—":date.toLocaleString("ja-JP");
+  const d=new Date(value);
+  return Number.isNaN(d.getTime())?"—":d.toLocaleString("ja-JP");
 }
-function render(data){
-  const items=Array.isArray(data?.items)?data.items:[];
-  $("count").textContent=items.length;
-  $("updated").textContent="前回取得："+prettyDate(data?.updatedAt);
-  $("articleCount").textContent="記事："+String(data?.articleCount??"—");
-  $("details").textContent=data?.failedArticles?String(data.failedArticles)+"記事は判定保留です":"";
-  const root=$("comments");root.replaceChildren();
-  if(!items.length){
-    const empty=document.createElement("div");empty.className="panel";
-    empty.textContent=data?.updatedAt?"未対応コメントはありません🌙":"noteユーザー名を登録して、初回取得してください。";
-    root.append(empty);return;
+async function call(url,body){
+  const options={
+    headers:{"x-nero-client":clientId},
+    cache:"no-store"
+  };
+  if(body!==undefined){
+    options.method="POST";
+    options.headers["Content-Type"]="application/json";
+    options.body=JSON.stringify(body);
+  }
+  const res=await fetch(url,options);
+  const data=await res.json();
+  if(!res.ok||!data.ok)throw new Error(data.error||"接続できませんでした");
+  return data;
+}
+function addItems(items,append=false){
+  const root=$("comments");
+  if(!append)root.replaceChildren();
+  if(!items.length && !append){
+    const empty=document.createElement("div");
+    empty.className="panel";
+    empty.textContent=owner?"未対応コメントはありません🌙":"note IDを登録して初回取得してください。";
+    root.append(empty);
+    return;
   }
   for(const item of items){
     const card=document.createElement("article");card.className="comment";
-    const who=document.createElement("div");who.className="who";who.textContent=item.authorName||item.authorUrlname||"ゲスト";
-    const date=document.createElement("div");date.className="date";date.textContent=prettyDate(item.publishedAt);
+    const who=document.createElement("div");who.className="who";
+    who.textContent=item.authorName||item.authorUrlname||"ゲスト";
+    const date=document.createElement("div");date.className="date";
+    date.textContent=prettyDate(item.publishedAt);
     const title=document.createElement("h3");title.textContent=item.articleTitle||"記事";
     const body=document.createElement("p");body.textContent=item.body||"";
     const actions=document.createElement("div");actions.className="actions";
-    const link=document.createElement("a");link.href=item.articleUrl;link.target="_blank";link.rel="noopener noreferrer";link.textContent="noteで開く ↗";
+    const link=document.createElement("a");
+    link.href=item.articleUrl;link.target="_blank";link.rel="noopener noreferrer";
+    link.textContent="noteで開く ↗";
     const copy=document.createElement("button");copy.textContent="ChatGPT用にコピー";
     copy.addEventListener("click",async()=>{
-      const prompt=["次のnoteコメントへの返信案を日本語で作成してください。","記事："+(item.articleTitle||""),
-        "URL："+(item.articleUrl||""),"投稿者："+(item.authorName||""),
-        "コメント："+(item.body||""),"先に返信した内容：" +(item.rootBody||""),
-        "相手の内容に具体的に触れ、適切な長さで丁寧かつ自然に返信してください。"].join("\n");
+      const prompt=[
+        "次のnoteコメントへの返信案を日本語で作成してください。",
+        "記事："+(item.articleTitle||""),"URL："+(item.articleUrl||""),
+        "投稿者："+(item.authorName||""),"コメント："+(item.body||""),
+        "元コメント："+(item.rootBody||""),
+        "相手の内容に具体的に触れ、適切な長さで丁寧かつ自然に返信してください。"
+      ].join("\n");
       try{await navigator.clipboard.writeText(prompt);copy.textContent="コピーしました ✓";}
       catch{copy.textContent="コピーできませんでした";}
     });
     actions.append(copy,link);card.append(who,date,title,body,actions);root.append(card);
   }
 }
+function render(data){
+  owner=data?.owner||owner;
+  const latest=data?.latest||null;
+  $("login").textContent="ご利用のnote ID："+(owner||"未設定");
+  $("count").textContent=latest?.unresolvedCount??"—";
+  $("updated").textContent="前回取得："+prettyDate(latest?.updatedAt);
+  $("articleCount").textContent="記事："+String(latest?.articleCount??"—");
+  $("details").textContent=latest?.failedArticles?latest.failedArticles+"記事は判定保留です":"";
+  $("refresh").disabled=!owner||busy;
+  nextOffset=data?.nextOffset??null;
+  $("more").hidden=nextOffset===null;
+  addItems(Array.isArray(data?.items)?data.items:[]);
+}
+async function loadSnapshot(){
+  const snapshot=await call("/api/me");
+  owner=snapshot.owner||"";
+  $("owner").value=owner;
+  render(snapshot);
+  return snapshot;
+}
 async function initial(){
   try{
-    const data=await call("/api/me");
-    $("login").textContent="ログイン中："+data.email;
-    owner=data.owner||"";
-    $("owner").value=owner;
-    $("refresh").disabled=!owner;
-    render(data.latest);
-    setStatus(owner?"準備完了。ボタンを押すと変更分を確認します。":"noteユーザー名を登録してください。");
-  }catch(error){setStatus("認証・読み込みに失敗："+error.message);}
+    const snapshot=await loadSnapshot();
+    setStatus(!owner?"note IDを登録してください。":
+      snapshot.hasScan?"前回の取得が途中です。「最新を確認」で続きから再開できます。":
+      "準備完了。最新を確認すると差分だけ処理します。");
+  }catch(error){setStatus("読み込みに失敗："+error.message);}
 }
 $("profileForm").addEventListener("submit",async event=>{
   event.preventDefault();
   if(busy)return;
   try{
-    const data=await call("/api/profile",{owner:$("owner").value.trim()});
-    owner=data.owner;$("owner").value=owner;$("refresh").disabled=false;
-    render(null);setStatus("登録しました。初回取得を実行してください。");
-  }catch(error){setStatus("保存できませんでした："+error.message);}
+    const requested=$("owner").value.trim().replace(/^https?:\/\/note\.com\//i,"").split("/")[0];
+    const data=await call("/api/profile",{owner:requested});
+    owner=data.owner;
+    await loadSnapshot();
+    setStatus("note IDを登録しました。初回取得を実行してください。");
+  }catch(error){setStatus("IDの保存に失敗："+error.message);}
 });
 $("refresh").addEventListener("click",async()=>{
   if(busy||!owner)return;
-  busy=true;$("refresh").disabled=true;percent(4);
+  busy=true;$("refresh").disabled=true;percent(3);
   try{
-    setStatus("記事一覧を確認しています…");
+    setStatus("差分確認を開始しています…");
     let data=await call("/api/sync/start",{});
-    let rounds=0;
+    let loops=0;
     while(!data.done){
-      if(++rounds>10000)throw new Error("走査上限に到達しました");
-      const total=Number(data.candidateArticles||0),finished=Number(data.scannedArticles||0);
-      percent(total?5+90*finished/total:95);
-      setStatus("コメントを確認中："+finished+" / "+total+"記事");
+      if(++loops>100000)throw new Error("安全上限に達しました。もう一度再開してください。");
+      if(data.phase==="listing"){
+        setStatus("記事一覧を取得中："+Number(data.articleCount||0)+"記事を確認済み");
+        percent(3);
+      }else{
+        const total=Number(data.candidateArticles||0);
+        const finished=Number(data.scannedArticles||0);
+        percent(total?10+87*finished/total:94);
+        setStatus("コメントを確認中："+finished+" / "+total+"記事（途中から再開できます）");
+      }
       data=await call("/api/sync/next",{scanId:data.scanId});
     }
-    render(data);percent(100);
-    setStatus("差分更新が完了しました。"+(data.failedArticles?"取得失敗 "+data.failedArticles+"記事は次回再確認します。":""));
-  }catch(error){setStatus("更新失敗："+error.message+"。前回の結果は保持されています。");percent(0);}
-  finally{busy=false;$("refresh").disabled=false;}
+    const snapshot=await loadSnapshot();
+    percent(100);
+    setStatus("更新完了：未対応 "+(snapshot.latest?.unresolvedCount??0)+"件。"+
+      (snapshot.latest?.failedArticles?"取得失敗 "+snapshot.latest.failedArticles+"記事は次回再確認します。":""));
+  }catch(error){
+    setStatus("更新を中断しました："+error.message+"。同じ端末で再度押せば途中から再開できます。");
+    percent(0);
+  }finally{busy=false;$("refresh").disabled=!owner;}
+});
+$("more").addEventListener("click",async()=>{
+  if(nextOffset===null)return;
+  $("more").disabled=true;
+  try{
+    const page=await call("/api/comments?offset="+nextOffset);
+    addItems(page.items||[],true);
+    nextOffset=page.nextOffset??null;
+    $("more").hidden=nextOffset===null;
+  }catch(error){setStatus("追加読み込みに失敗："+error.message);}
+  finally{$("more").disabled=false;}
+});
+$("logout").addEventListener("click",async()=>{
+  if(busy)return;
+  try{
+    await call("/api/logout",{});
+    localStorage.removeItem(CLIENT_KEY);
+    owner="";$("owner").value="";
+    $("login").textContent="ご利用のnote ID：未設定";
+    $("refresh").disabled=true;$("count").textContent="—";
+    $("updated").textContent="前回取得：—";$("articleCount").textContent="記事：—";
+    $("details").textContent="";$("comments").replaceChildren();
+    $("more").hidden=true;
+    setStatus("ログアウトしました。この端末に保存した利用情報は解除されました。");
+    clientId=crypto.randomUUID();
+    localStorage.setItem(CLIENT_KEY,clientId);
+  }catch(error){setStatus("ログアウトに失敗："+error.message);}
 });
 initial();
