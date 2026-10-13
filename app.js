@@ -212,28 +212,37 @@ function applyInboxSnapshot(data){
 }
 
 async function loadData(){
-  statusEl.textContent='前回の手動取得データを確認しています…';
+  statusEl.textContent='保存済みデータを確認しています…';
   let cached=null;
-  try{
-    cached=JSON.parse(localStorage.getItem('nero-live-comments-cache')||'null');
-  }catch(_){}
-
-  // 旧判定ロジックのキャッシュは再利用しない。
-  if(cached?.classifierVersion!==2)cached=null;
-
-  if(cached){
+  try{cached=JSON.parse(localStorage.getItem('nero-live-comments-cache')||'null');}catch(_){}
+  if(cached?.classifierVersion>=2 && Array.isArray(cached.items)){
     applyInboxSnapshot(cached);
     statusEl.textContent='';
-    return;
   }
-
-  state.items=[];
-  state.filtered=[];
-  $('#count').textContent='—';
-  $('#articleCount').textContent='—';
-  $('#updatedAt').textContent='未取得';
-  commentsEl.innerHTML='<div class="empty">判定方法を更新しました。<br>「最新コメントを取得」を押して、現在の状態を確認してください🌙</div>';
-  statusEl.textContent='';
+  try{
+    const response=await fetch(WORKER+'/comments/snapshot?t='+Date.now(),{cache:'no-store'});
+    const result=await response.json();
+    if(!response.ok||!result.ok)throw new Error(result.error||'スナップショット取得失敗');
+    const snapshot=result.snapshot;
+    if(snapshot?.version>=5 && Array.isArray(snapshot.items) &&
+       (!cached?.updatedAt||Date.parse(snapshot.updatedAt)>=Date.parse(cached.updatedAt))){
+      localStorage.setItem('nero-live-comments-cache',JSON.stringify({...snapshot,classifierVersion:3}));
+      applyInboxSnapshot(snapshot);
+      statusEl.textContent='';
+      return;
+    }
+  }catch(error){
+    console.warn('snapshot unavailable:',error);
+  }
+  if(!cached){
+    state.items=[];
+    state.filtered=[];
+    $('#count').textContent='—';
+    $('#articleCount').textContent='—';
+    $('#updatedAt').textContent='未取得';
+    commentsEl.innerHTML='<div class="empty">「最新コメントを取得」を押して確認してください🌙</div>';
+    statusEl.textContent='';
+  }
 }
 
 function setSyncUi(label,detail,percent){
@@ -245,75 +254,43 @@ function setSyncUi(label,detail,percent){
 async function manualRefresh(){
   const btn=$('#refreshBtn');
   btn.disabled=true;
-  btn.textContent='↻ note確認中…';
-  statusEl.textContent='最新コメントを取得しています…';
-  setSyncUi('取得中','noteの記事とコメントを確認しています。',8);
-
-  const merged=new Map();
-  let offset=0;
-  let candidateTotal=0;
-  let articleCount=0;
-  let failedArticles=0;
-  let updatedAt=new Date().toISOString();
-  let scanId='';
-
+  btn.textContent='↻ 差分更新中…';
+  statusEl.textContent='コメントの変更があった記事を確認しています…';
+  setSyncUi('差分確認中','記事一覧と保存済み状態を比較しています。',5);
   try{
-    for(let guard=0;guard<30;guard++){
-      const scanParam=scanId?'&scan_id='+encodeURIComponent(scanId):'';
-      const url=WORKER+'/comments/live?offset='+offset+'&batch=1'+scanParam+'&t='+Date.now();
-      const res=await fetch(url,{cache:'no-store'});
+    const request=async(path,body)=>{
+      const res=await fetch(WORKER+path,{
+        method:'POST',cache:'no-store',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(body)
+      });
       const data=await res.json();
       if(!res.ok||!data.ok)throw new Error(data.error||('HTTP '+res.status));
-      scanId=String(data.scanId||scanId||'');
-
-      candidateTotal=Number(data.candidateArticles||0);
-      articleCount=Number(data.articleCount||articleCount||0);
-      failedArticles+=Number(data.failedArticles||0);
-      updatedAt=data.updatedAt||updatedAt;
-
-      for(const item of Array.isArray(data.items)?data.items:[]){
-        merged.set(item.id,item);
-      }
-
-      const completed=Math.min(candidateTotal,Number(data.offset||0)+Number(data.scannedArticles||0));
-      const percent=candidateTotal?Math.min(94,10+Math.round((completed/candidateTotal)*84)):94;
-      setSyncUi(
-        '取得中',
-        candidateTotal
-          ? '確認対象 '+completed+' / '+candidateTotal+'記事。未対応コメント '+merged.size+'件。'
-          : '更新が必要な記事はありません。',
-        percent
-      );
-
-      if(data.nextOffset===null||data.nextOffset===undefined)break;
-      offset=Number(data.nextOffset);
-    }
-
-    const items=[...merged.values()].sort((a,b)=>(Date.parse(b.publishedAt)||0)-(Date.parse(a.publishedAt)||0));
-    const snapshot={
-      version:3,
-      classifierVersion:2,
-      owner:'nero_notelover',
-      updatedAt,
-      articleCount,
-      unresolvedCount:items.length,
-      failedArticles,
-      items
+      return data;
     };
-
+    let data=await request('/comments/fast/start',{});
+    let rounds=0;
+    while(!data.done){
+      if(++rounds>10000)throw new Error('安全上限を超えました。更新を中断します。');
+      const total=Number(data.candidateArticles||0);
+      const completed=Number(data.scannedArticles||0);
+      const progress=total?Math.round(8+88*completed/total):94;
+      setSyncUi('差分更新中','確認対象 '+completed+' / '+total+' 記事',progress);
+      data=await request('/comments/fast/next',{scanId:data.scanId});
+    }
+    const snapshot={...data,classifierVersion:3};
+    if(!Array.isArray(snapshot.items))throw new Error('取得結果が不正です');
     localStorage.setItem('nero-live-comments-cache',JSON.stringify(snapshot));
     applyInboxSnapshot(snapshot);
+    const failed=Number(snapshot.failedArticles||0);
+    setSyncUi(failed?'完了（判定保留あり）':'更新完了',
+      '詳細確認 '+Number(snapshot.scannedArticles||0)+'記事。未対応 '+snapshot.items.length+'件。'
+      +(failed?' '+failed+'記事は再確認が必要です。':''),
+      100);
     statusEl.textContent='';
-    setSyncUi(
-      failedArticles?'取得完了（判定保留あり）':'取得完了',
-      '今この時点の未対応コメントは '+items.length+'件です。'
-        +(failedArticles?' '+failedArticles+'記事は取得に失敗したため未返信一覧へ混ぜず、判定保留にしました。もう一度更新すると再確認します。':''),
-      100
-    );
-    showToast('最新コメントを取得しました🌙');
+    showToast('差分更新が完了しました🌙');
   }catch(error){
-    setSyncUi('取得失敗','最新コメントを取得できませんでした：'+String(error.message||error),0);
-    statusEl.textContent='取得に失敗しました。少し待ってからもう一度お試しください。';
+    setSyncUi('更新中断','取得に失敗しました：'+String(error.message||error),0);
+    statusEl.textContent='前回までの結果を保持しています。再度お試しください。';
   }finally{
     btn.disabled=false;
     btn.textContent='↻ 最新コメントを取得';
