@@ -38,6 +38,11 @@ export class CommentSnapshotStore {
     const url = new URL(request.url);
 
 
+    if (url.pathname === "/fast/states" && request.method === "GET") {
+      const articles = await this.state.storage.get("fastArticleStates");
+      return Response.json({ articles: articles || null });
+    }
+
     if (url.pathname === "/fast/snapshot" && request.method === "GET") {
       return new Response(JSON.stringify(await this.state.storage.get("latest") || null), {
         headers: { "content-type": "application/json; charset=utf-8" }
@@ -320,7 +325,15 @@ async function noteJsonFresh(path) {
   return response.json();
 }
 
-async function loadSavedState() {
+async function loadSavedState(env) {
+  if (env?.COMMENT_SNAPSHOT) {
+    try {
+      const stub = env.COMMENT_SNAPSHOT.get(env.COMMENT_SNAPSHOT.idFromName(NOTE_OWNER));
+      const response = await stub.fetch("https://comment-snapshot/fast/states");
+      const saved = await response.json();
+      if (saved?.articles && Object.keys(saved.articles).length) return { articles: saved.articles };
+    } catch (error) { console.warn("Durable state unavailable", String(error)); }
+  }
   try {
     const response = await fetch(DEFAULT_STATE_URL + "?t=" + Date.now(), {
       headers: { Accept: "application/json" },
@@ -522,9 +535,9 @@ function publicLiveItem(article, comment) {
   };
 }
 
-async function getLiveCandidateArticles() {
+async function getLiveCandidateArticles(env) {
   const [savedState, articles] = await Promise.all([
-    loadSavedState(),
+    loadSavedState(env),
     fetchCreatorArticlesLive(),
   ]);
   const oldArticles = savedState?.articles && typeof savedState.articles === "object" ? savedState.articles : {};
@@ -549,8 +562,8 @@ async function getLiveCandidateArticles() {
   return { articles, candidates };
 }
 
-async function buildLiveCommentBatch(offset = 0, batchSize = 10) {
-  const { articles, candidates } = await getLiveCandidateArticles();
+async function buildLiveCommentBatch(offset = 0, batchSize = 10, env) {
+  const { articles, candidates } = await getLiveCandidateArticles(env);
   const start = Math.max(0, Number(offset || 0));
   // 1記事内に長い返信スレッドが数十本あることがある。
   // Workersの外部サブリクエスト上限を超えないよう、ライブ判定は1記事ずつ処理する。
@@ -631,8 +644,8 @@ let liveSnapshotMemory = null;
 let liveSnapshotMemoryAt = 0;
 const LIVE_SNAPSHOT_TTL_MS = 15 * 1000;
 
-async function buildLiveInboxSnapshot() {
-  const { articles, candidates } = await getLiveCandidateArticles();
+async function buildLiveInboxSnapshot(env) {
+  const { articles, candidates } = await getLiveCandidateArticles(env);
   const items = [];
   let failedArticles = 0;
   const failedArticleKeys = [];
@@ -683,7 +696,7 @@ async function loadCurrentInbox(env) {
 
   // GitHub Pages の data/inbox.json は手動更新前の保存スナップショットなので、
   // ChatGPT からの未返信確認では使わない。note API をその場で再判定する。
-  const snapshot = await buildLiveInboxSnapshot();
+  const snapshot = await buildLiveInboxSnapshot(env);
   liveSnapshotMemory = snapshot;
   liveSnapshotMemoryAt = now;
   return snapshot;
@@ -1320,7 +1333,7 @@ async function callTool(name, args, env) {
   if (name === "list_live_comment_check_articles") {
     const limit = Math.min(50, Math.max(1, Number(args?.limit || 20)));
     const offset = Math.max(0, Number(args?.offset || 0));
-    const { articles, candidates } = await getLiveCandidateArticles();
+    const { articles, candidates } = await getLiveCandidateArticles(env);
     const selected = candidates.slice(offset, offset + limit);
     const result = {
       articleCount: articles.length,
@@ -1502,7 +1515,7 @@ export default {
       if (request.method !== "POST") return json({ ok: false, error: "POST required" }, 405);
       try {
         if (!env?.COMMENT_SNAPSHOT) throw new Error("COMMENT_SNAPSHOT is missing");
-        const [articles, fallbackState] = await Promise.all([fetchCreatorArticlesLive(), loadSavedState()]);
+        const [articles, fallbackState] = await Promise.all([fetchCreatorArticlesLive(), loadSavedState(env)]);
         const stub = env.COMMENT_SNAPSHOT.get(env.COMMENT_SNAPSHOT.idFromName(NOTE_OWNER));
         const response = await stub.fetch("https://comment-snapshot/fast/start", {
           method: "POST", headers: { "content-type": "application/json" },
@@ -1549,7 +1562,7 @@ export default {
         const batch = Number(url.searchParams.get("batch") || 10);
         const incomingScanId = String(url.searchParams.get("scan_id") || "");
         const scanId = incomingScanId || crypto.randomUUID();
-        const result = await buildLiveCommentBatch(offset, batch);
+        const result = await buildLiveCommentBatch(offset, batch, env);
         let snapshotRecord = { ok: false, error: null };
         try {
           snapshotRecord = await recordLiveBatch(env, scanId, result, !incomingScanId || offset === 0);
