@@ -152,6 +152,7 @@ async function fetchArticleIndexChunk(owner, startPage) {
   let page = startPage;
   let last = false;
   for (let i = 0; i < MAX_NOTE_REQUESTS_PER_STEP; i++) {
+    if(page>500) throw new Error("記事一覧のページ数が上限を超えました");
     const fetched = await fetchArticlePage(owner, page++);
     result.push(...fetched.articles);
     if (fetched.last) { last = true; break; }
@@ -227,6 +228,7 @@ export class MemberStateStore {
     const cached = await this.storage.list({prefix:"article:"});
     const all = [];
     for (const state of cached.values()) {
+      if (state.error) continue;
       for (const c of state.unresolved || []) all.push(publicItem(state, c));
     }
     all.sort((a,b)=>(Date.parse(b.publishedAt)||0)-(Date.parse(a.publishedAt)||0));
