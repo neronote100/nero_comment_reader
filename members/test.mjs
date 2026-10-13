@@ -119,4 +119,39 @@ try{
   assert.equal(result.unresolved.length,120);
   assert.ok(chunks>12);
 }finally{globalThis.fetch=rawFetch;}
+// A thread with 3,000 replies should retain only its latest unresolved context, not all messages.
+const originalFetch=globalThis.fetch;
+let pageCalls=0;
+globalThis.fetch=async url=>{
+  const parsed=new URL(url);
+  const page=Number(parsed.searchParams.get("page"));
+  pageCalls++;
+  if(!parsed.searchParams.has("parent_key"))return Response.json({
+    data:[{key:"root",is_root:true,reply_count:3000,comment:"Start",
+      user:{urlname:"guest",nickname:"Guest"}}],next_page:null
+  });
+  const rows=Array.from({length:100},(_,i)=>({
+    key:"reply"+((page-1)*100+i),is_root:false,comment:"Reply",
+    user:{urlname:page===29&&i===99?"writer":"guest",nickname:"Reader"}
+  }));
+  return Response.json({data:rows,next_page:page<30?page+1:null});
+};
+try{
+  let work=null,finished=false,out,chunks=0;
+  while(!finished){
+    const before=pageCalls;
+    out=await scanArticleChunk({key:"huge",scanMode:"full"},"writer",work);
+    assert.ok(pageCalls-before<=8);
+    work=out.work;finished=out.done;
+    if(work){
+      assert.ok(JSON.stringify(work).length<30000,
+        "Thousands of replies must not accumulate in the scan cursor");
+    }
+    assert.ok(++chunks<15);
+  }
+  assert.equal(out.unresolved.length,1);
+  assert.equal(out.unresolved[0].pendingCount,100,
+    "Owner reply should reset earlier pending comments");
+}finally{globalThis.fetch=originalFetch;}
+
 console.log("425+ article scalability, anonymous sessions, sync resume, retries, chunk budgets and logout passed");
