@@ -173,7 +173,7 @@ function initialWork() {
 }
 // Each HTTP request uses at most eight calls to note.com, even for hundreds of reply threads.
 // This prevents a 400-article creator's busiest article from hitting Workers Free's 50-subrequest cap.
-async function scanArticleChunk(article, owner, previousWork) {
+export async function scanArticleChunk(article, owner, previousWork) {
   const work = previousWork || initialWork();
   const previousKeys = new Set((article.previousUnresolved || []).map(item => item.rootKey || item.key));
   const pendingOnly = article.scanMode === "pending_only" && previousKeys.size > 0;
@@ -336,7 +336,7 @@ export class MemberStateStore {
           const audit=!pending&&old?.checkedAt&&Date.now()-old.checkedAt>AUDIT_DAYS*86400000&&hash%7===day%7;
           if(changed||pending||failed||audit)scan.candidates.push({...article,
             scanMode:pending&&!changed&&!failed&&!audit?"pending_only":"full",
-            previousUnresolved:old?.unresolved||[]});
+            previousUnresolved:(old?.unresolved||[]).map(c=>({rootKey:c.rootKey||c.key}))});
         }
         scan.phase="scanning";
         if(!scan.candidates.length){
