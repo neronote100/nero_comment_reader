@@ -102,9 +102,9 @@ globalThis.fetch=async url=>{
   if(parent)return Response.json({data:[{key:"reply_"+parent,parent_key:parent,is_root:false,
     user:{urlname:"reader",nickname:"Reader"},comment:"New reply"}],next_page:null});
   const rows=page===1?Array.from({length:100},(_,i)=>({key:"root"+i,is_root:true,
-    reply_count:1,user:{urlname:"writer",nickname:"Writer"},comment:"Hello"})):
+    reply_count:1,user:{urlname:"guest",nickname:"Guest"},comment:"Hello"})):
     Array.from({length:20},(_,i)=>({key:"root"+(100+i),is_root:true,
-    reply_count:1,user:{urlname:"writer",nickname:"Writer"},comment:"Hello"}));
+    reply_count:1,user:{urlname:"guest",nickname:"Guest"},comment:"Hello"}));
   return Response.json({data:rows,next_page:page===1?2:null});
 };
 try{
