@@ -263,6 +263,7 @@ async function manualRefresh(){
         method:'POST',cache:'no-store',headers:{'Content-Type':'application/json'},
         body:JSON.stringify(body)
       });
+      if(res.status===404){const error=new Error('差分API未配備');error.httpStatus=404;throw error;}
       const data=await res.json();
       if(!res.ok||!data.ok)throw new Error(data.error||('HTTP '+res.status));
       return data;
@@ -289,6 +290,7 @@ async function manualRefresh(){
     statusEl.textContent='';
     showToast('差分更新が完了しました🌙');
   }catch(error){
+    if(error.httpStatus===404)return legacyRefresh();
     setSyncUi('更新中断','取得に失敗しました：'+String(error.message||error),0);
     statusEl.textContent='前回までの結果を保持しています。再度お試しください。';
   }finally{
@@ -296,6 +298,87 @@ async function manualRefresh(){
     btn.textContent='↻ 最新コメントを取得';
   }
 }
+
+async function legacyRefresh(){
+  const btn=$('#refreshBtn');
+  btn.disabled=true;
+  btn.textContent='↻ note確認中…';
+  statusEl.textContent='最新コメントを取得しています…';
+  setSyncUi('取得中','noteの記事とコメントを確認しています。',8);
+
+  const merged=new Map();
+  let offset=0;
+  let candidateTotal=0;
+  let articleCount=0;
+  let failedArticles=0;
+  let updatedAt=new Date().toISOString();
+  let scanId='';
+
+  try{
+    let finished=false;
+    for(let guard=0;guard<1000;guard++){
+      const scanParam=scanId?'&scan_id='+encodeURIComponent(scanId):'';
+      const url=WORKER+'/comments/live?offset='+offset+'&batch=1'+scanParam+'&t='+Date.now();
+      const res=await fetch(url,{cache:'no-store'});
+      const data=await res.json();
+      if(!res.ok||!data.ok)throw new Error(data.error||('HTTP '+res.status));
+      scanId=String(data.scanId||scanId||'');
+
+      candidateTotal=Number(data.candidateArticles||0);
+      articleCount=Number(data.articleCount||articleCount||0);
+      failedArticles+=Number(data.failedArticles||0);
+      updatedAt=data.updatedAt||updatedAt;
+
+      for(const item of Array.isArray(data.items)?data.items:[]){
+        merged.set(item.id,item);
+      }
+
+      const completed=Math.min(candidateTotal,Number(data.offset||0)+Number(data.scannedArticles||0));
+      const percent=candidateTotal?Math.min(94,10+Math.round((completed/candidateTotal)*84)):94;
+      setSyncUi(
+        '取得中',
+        candidateTotal
+          ? '確認対象 '+completed+' / '+candidateTotal+'記事。未対応コメント '+merged.size+'件。'
+          : '更新が必要な記事はありません。',
+        percent
+      );
+
+      if(data.nextOffset===null||data.nextOffset===undefined){finished=true;break;}
+      offset=Number(data.nextOffset);
+    }
+
+    if(!finished)throw new Error('全記事の確認が完了していません');
+    const items=[...merged.values()].sort((a,b)=>(Date.parse(b.publishedAt)||0)-(Date.parse(a.publishedAt)||0));
+    const snapshot={
+      version:3,
+      classifierVersion:2,
+      owner:'nero_notelover',
+      updatedAt,
+      articleCount,
+      unresolvedCount:items.length,
+      failedArticles,
+      items
+    };
+
+    localStorage.setItem('nero-live-comments-cache',JSON.stringify(snapshot));
+    applyInboxSnapshot(snapshot);
+    statusEl.textContent='';
+    setSyncUi(
+      failedArticles?'取得完了（判定保留あり）':'取得完了',
+      '今この時点の未対応コメントは '+items.length+'件です。'
+        +(failedArticles?' '+failedArticles+'記事は取得に失敗したため未返信一覧へ混ぜず、判定保留にしました。もう一度更新すると再確認します。':''),
+      100
+    );
+    showToast('従来方式で更新しました。Workerの新バージョンをデプロイすると差分更新に切り替わります🌙');
+  }catch(error){
+    setSyncUi('取得失敗','最新コメントを取得できませんでした：'+String(error.message||error),0);
+    statusEl.textContent='取得に失敗しました。少し待ってからもう一度お試しください。';
+  }finally{
+    btn.disabled=false;
+    btn.textContent='↻ 最新コメントを取得';
+  }
+}
+
 
 function switchView(view){
   document.querySelectorAll('.view').forEach(el=>el.classList.toggle('active',el.id===view+'View'));
