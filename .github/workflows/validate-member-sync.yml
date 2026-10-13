@@ -33,6 +33,8 @@ jobs:
           node --check app.js
           node --check members/worker.js
           node --check members/test.mjs
+          cp members/site-script.txt /tmp/nero-member-site.js
+          node --check /tmp/nero-member-site.js
       - name: Existing MCP regression tests
         run: node mcp/test.mjs
       - name: Main Worker incremental-state tests
