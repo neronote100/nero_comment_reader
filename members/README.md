@@ -1,48 +1,81 @@
-# 王子 Comment Reader 会員版 🌙
+# 王子 Comment Reader 🌙｜メンバーシップ限定記事で配る版
 
-## 設計
+## 利用の流れ（登録不要）
 
-既存の `nero-comment-reader`（王子本人用API／MCP）を壊さず、別の
-`nero-comment-reader-members` Worker として会員向けサイトを用意しています。
+1. 王子のメンバーシップ限定記事に専用サイトのURLを貼る
+2. 利用者はサイトに自分の `note ID`（例：`nero_notelover`）を入力
+3. 「最新を確認」を押すと、自分の記事・コメントを調べて未対応一覧を表示
+4. 次回は同じ端末・ブラウザならnote IDの再入力不要。前回の結果を使った差分取得
+5. 「ログアウト」は**このブラウザの利用情報の解除**。noteアカウント自体のログアウトではありません
 
-- **Cloudflare Access** の認証画面でメール認証ログイン。未認証アクセスは Worker 内でも403拒否（fail closed）
-- `ctx.access.getIdentity()` で **Cloudflareが認証済みのメール**を取得。クライアントからメールを送ってもユーザーを変更できません
-- メール単位のDurable Objectにnoteユーザー名、差分判定状態、未対応コメントを保存。アカウント間でのデータ混在を防止
-- noteのユーザー名だけ登録。**noteのパスワード、Cookie、セッションキーは不要**
-- ログアウトは `/cdn-cgi/access/logout`。Cloudflare Accessがセッションを終了します
-- 記事一覧の取得は更新操作につき1回。コメント増減がある記事、前回未対応スレッド、過去の失敗、分散した定期検査記事のみ走査
-- 1つの記事の読み込みに失敗しても全体停止はせず、該当記事を保留とし次回再検査
-- 更新を開始するボタンを押したときだけnoteへ通信。日次定期取得は行いません
+Cloudflare Accessもメール認証も設定しません。noteのログイン情報、パスワード、Cookieを収集しません。
+共有URLを知った人なら利用可能な方式です。**会員資格の自動確認はありません。**
+公開コメントを扱います。note ID入力だけで本人確認したことにはなりません。
 
-## 安全なセットアップ手順（**Access設定前に会員URLを配布しない**）
+## 大規模アカウントへの対応
 
-1. Cloudflare Zero Trust を有効化
-2. `cd members && npx wrangler deploy -c wrangler.jsonc` で**別Worker**としてデプロイ
-3. Cloudflare → **Workers & Pages** → `nero-comment-reader-members` → **Access** →
-   **Protect this Worker behind Access** → **All traffic** を選択
-4. Cloudflare Zero Trust → Access → Applications の会員専用アプリを開き、
-   **Allow対象を現役会員のメールアドレスだけ**に限定。
-   メールドメイン全体や Everyone を許可しない。OTPのメールログインを設定する
-5. 自分の許可メールでログインを試し、別ブラウザの非許可メールは拒否されること、
-   `/api/me` が拒否されること、ログアウトすると再認証になることを確認
-6. 退会した会員はAccessポリシーの許可リストから外し、Accessセッションを失効させる
-7. 上記確認後に初めて会員URLを告知する
+- 400記事超でも、記事一覧は1通信あたり最大8ページずつ取得し、途中進捗を保存
+- 各記事の返信スレッドは1通信あたりnoteへの外部通信を最大8回に制限
+- 更新中断した場合、同じブラウザで「最新を確認」を押すと24時間以内なら再開
+- 取得したスレッドの結果は記事ごとのDurable Objectsキーに保存。全員分を1つの巨大JSONにまとめない
+- コメント数が変わった記事＋前回未対応＋取得失敗＋分散定期監査を再スキャン
+- 未返信結果は100件ずつ追加表示
+- 安全のため、利用端末ごとに更新開始は1日最大12回。進行中の更新再開は回数に数えない
+- 記事は最大5,000件までをガードとしています（400件なら範囲内）
+- 返信のない記事・コメント0件の記事は詳細取得を省略します
 
-**注意**：noteメンバーシップの会員資格をAPIで自動照合する機能は実装していません。
-入退会の管理者による許可メール更新が必要です。
+**注意**：note側の非公式APIがアクセスを制限した場合は取得不能・判定保留になることがあります。
+誤判定を防ぐため取得失敗記事は次回再取得。noteが返すコメント件数が不正確な場合はスキップ誤判定の可能性があるため、週単位の分散再チェックで補います。
 
-## 重要な制約
+## Cloudflare Workers 無料枠の目安（2026年10月時点）
 
-- 無料公開されているnote APIから取得できるコメントのみ対象です。非公開のコメント情報は取得しません
-- noteのユーザー名は自己申告です。noteアカウント本人確認を行っているわけではありません
-- 会員版は今回 **自分の記事の未対応コメント一覧／返信案コピー**から提供します。
-  元サイトの企画ハッシュタグ・マガジン検索機能を会員ユーザー向けに一般化するのは次の段階です
-- **GitHub Pages の元URLは引き続き公開サイト**です。GitHub Pagesに見た目だけログイン画面を足しても会員限定にはなりません
-- 既存のMCP Worker（王子用）をAccess保護するとChatGPTとの接続が切れるため、**会員版だけを保護**してください
-- Cloudflare Access はログアウトで同じチームの他のAccessアプリのセッションにも影響することがあります
-- 本WorkerをデプロイしてもAccess設定は自動では完了しません。サイトはAccess未設定の間、Worker側で403を返します
-- `wrangler dev` で認証を模擬する際は `access.dev` の設定が必要です（本番には含めない）
+公式制限：
+- Workers Free: 100,000リクエスト/日（アカウント全体）、外部サブリクエスト50回/Worker実行、CPU 10ms/実行
+- SQLite-backed Durable Objects Free: 100,000 DOリクエスト/日、100,000 SQL行書込/日、5GBストレージ
+- SQLite-backed DOの1つのkey/value合計最大2MB
 
-公式ドキュメント：
-- https://developers.cloudflare.com/workers/configuration/cloudflare-access/
-- https://developers.cloudflare.com/cloudflare-one/access-controls/access-settings/session-management/
+公式:
+- https://developers.cloudflare.com/workers/platform/limits/
+- https://developers.cloudflare.com/durable-objects/platform/limits/
+- https://developers.cloudflare.com/durable-objects/platform/pricing/
+
+50人 × 400記事は20,000記事。初回は各記事のコメント量に応じて最低でも数万回規模の通信が必要になりえます。
+「無料で必ず大丈夫」とは保証できません。特に公開初日のアクセス集中、コメントの多い記事、note APIの429エラーに注意。
+日ごとの利用量はCloudflareのWorkers AnalyticsとDurable Objectsのメトリクスで確認してください。
+Cloudflareの課金設定（Workers Paidへアップグレード）をしなければFree枠超過で制限・失敗する運用です。
+
+## デプロイ
+
+既存の王子用Worker / GitHub Pagesはそのままです。別Workerで会員版を公開します。
+
+```sh
+cd members
+npx wrangler deploy
+```
+
+`wrangler.jsonc`は別名 `nero-comment-reader-members` のWorkerを作成する設定。
+`/members/site.html`などの静的ファイルはWorkerが同一オリジンで配信します。
+
+**Cloudflare Accessの保護設定は不要。以前に設定していた場合は会員版WorkerのAccessを外す必要があります。**
+会員限定記事だけに公開URLを掲載してください。
+
+既存の王子用MCP、GitHub PagesのURLにはパスワード機能やログイン機能を追加しません。
+
+## 情報とリスク
+
+- メール認証なしのため、リンクが広がると会員以外も利用できます。IP単位の攻撃防御は必要になればCloudflareのWAFで設定可能
+- ブラウザが生成したランダムなIDを利用者データの保存先として使います。**本人認証ではありません**
+- IDや同一端末に保存されたデータを他人が読むことを防ぐ強い秘密保護はありません。公共端末は使用しないでください
+- ブラウザのデータ削除やログアウトで前回の差分データは失われ、再取得が必要です
+- 退会者の利用を確実に停止する機能はありません。URLの漏えいを防げません
+- noteの仕様・利用規約の変更によりサービスが動かなくなる場合があります
+
+## 公開前の試験
+
+1. 王子のIDで登録し、既存の公開記事と照合する
+2. 400記事以上のテスト利用者で初回の全ページ取得と途中再開を確認
+3. 更新ボタンを再押下したとき、記事数が同じなら詳細取得が減ることを確認
+4. スキ・返信後、前回未対応が一覧から消えることを確認
+5. ログアウトしてIDの入力画面に戻り、再登録できることを確認
+6. Workers/DO無料枠のメトリクスを数日監視してから最大50人まで告知
+
