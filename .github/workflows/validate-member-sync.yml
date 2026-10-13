@@ -1,0 +1,45 @@
+name: Validate incremental sync and member portal
+
+on:
+  pull_request:
+    paths:
+      - "app.js"
+      - "mcp/**"
+      - "members/**"
+      - ".github/workflows/validate-member-sync.yml"
+  push:
+    branches: ["main"]
+    paths:
+      - "app.js"
+      - "mcp/**"
+      - "members/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: JavaScript syntax
+        run: |
+          node --check mcp/worker.js
+          node --check app.js
+          node --check members/worker.js
+          node --check members/test.mjs
+      - name: Existing MCP regression tests
+        run: node mcp/test.mjs
+      - name: Main Worker incremental-state tests
+        run: node mcp/fast-sync.test.mjs
+      - name: Member auth and incremental-state tests
+        run: node members/test.mjs
+      - name: Install Wrangler for dry-run build
+        run: npm install --prefix mcp --no-package-lock --no-audit --no-fund
+      - name: Member Worker dry-run (no deployment)
+        run: ./mcp/node_modules/.bin/wrangler deploy --dry-run -c members/wrangler.jsonc
