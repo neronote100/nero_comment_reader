@@ -1,0 +1,16 @@
+:root{color-scheme:dark;--bg:#11131a;--panel:#1c2030;--border:#363c51;--text:#f3f0fb;--muted:#b2b6cd;--accent:#a89bfa}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% -10%,#302950,transparent 42%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif;line-height:1.65}
+.wrap{max-width:960px;margin:auto;padding:20px 18px 80px}header{display:flex;justify-content:space-between;gap:20px;align-items:start;padding:30px 0 24px}
+.eyebrow{color:var(--accent);font-size:12px;letter-spacing:.2em;font-weight:700}h1{font-size:clamp(27px,5vw,40px);margin:5px 0}h1 span{font-size:.75em}h2{font-size:18px;margin:0 0 7px}
+p{margin:7px 0;color:var(--muted)}.account{display:flex;align-items:flex-end;flex-direction:column;gap:7px;font-size:13px;color:var(--muted)}
+a{color:var(--accent)}.panel,.comment{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:22px;margin:14px 0}
+.controls,.line{display:flex;gap:12px;align-items:center;justify-content:space-between}
+input{min-width:0;flex:1;border:1px solid var(--border);border-radius:8px;padding:12px;background:#151926;color:var(--text);font-size:16px}
+label{display:block;font-weight:700;margin:8px 0}button{border:0;border-radius:9px;padding:12px 17px;background:var(--accent);color:#141323;font-weight:700;cursor:pointer;white-space:nowrap}
+button:disabled{opacity:.5;cursor:not-allowed}small,.sub{color:var(--muted);font-size:12px}.stats{margin:12px 0}.stats strong{font-size:35px;color:#e5dfff}
+.bar{height:8px;border-radius:8px;overflow:hidden;background:#2e3349}.bar>div{width:0;height:100%;background:var(--accent);transition:width .25s}
+#details{color:var(--muted);font-size:13px;margin-left:15px}.comment h3{font-size:15px;margin:0}
+.comment .who{color:var(--accent);font-weight:700}.comment p{white-space:pre-wrap;color:var(--text);margin:13px 0;overflow-wrap:anywhere}
+.comment .actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.comment .date{font-size:12px;color:var(--muted)}
+footer{color:var(--muted);text-align:center;font-size:12px;margin-top:42px}
+@media(max-width:650px){header{flex-direction:column}.account{align-items:flex-start}.line{align-items:flex-start;flex-direction:column}.controls{flex-direction:column;align-items:stretch}.controls input{width:100%}.panel,.comment{padding:16px}}
