@@ -1,0 +1,35 @@
+{
+  "$schema": "../mcp/node_modules/wrangler/config-schema.json",
+  "name": "nero-comment-reader-members",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-13",
+  "workers_dev": true,
+  "preview_urls": false,
+  "rules": [
+    {
+      "type": "Text",
+      "globs": [
+        "**/*.html",
+        "**/*.css",
+        "**/*.txt"
+      ],
+      "fallthrough": true
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "MEMBER_STATE",
+        "class_name": "MemberStateStore"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "MemberStateStore"
+      ]
+    }
+  ]
+}
