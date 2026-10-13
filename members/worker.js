@@ -170,7 +170,7 @@ async function fetchCommentPage(noteKey, parentKey, page) {
 }
 function initialWork() {
   return { rootPage:1, roots:null, nextRootPage:null, rootIndex:0,
-    replies:[], replyPage:1, pending:[], fetchedPages:0 };
+    thread:null, replyPage:1, pending:[] };
 }
 // Each HTTP request uses at most eight calls to note.com, even for hundreds of reply threads.
 // This prevents a 400-article creator's busiest article from hitting Workers Free's 50-subrequest cap.
@@ -208,12 +208,31 @@ export async function scanArticleChunk(article, owner, previousWork) {
     if (work.replyPage > 1000) throw new Error("返信のページ数が上限を超えました");
     const repliesPage = await fetchCommentPage(article.key, root.key, work.replyPage);
     calls++;
-    work.replies.push(...repliesPage.rows.filter(item => !item.isRoot));
+    if (!work.thread) {
+      work.thread = { count:root.creatorLiked?0:1,
+        latest:root.creatorLiked?null:root,
+        bodies:root.creatorLiked?[]:[root.body.slice(0,800)] };
+    }
+    for (const reply of repliesPage.rows.filter(item => !item.isRoot)) {
+      if (!reply.authorUrlname) continue;
+      if (reply.authorUrlname === owner) {
+        work.thread = { count:0,latest:null,bodies:[] };
+      } else if (!reply.creatorLiked) {
+        work.thread.count++;
+        work.thread.latest=reply;
+        work.thread.bodies.push(reply.body.slice(0,800));
+        if(work.thread.bodies.length>6)work.thread.bodies.shift();
+      }
+    }
     if (repliesPage.nextPage) {
       work.replyPage = repliesPage.nextPage;
     } else {
-      work.pending.push(...unresolvedForThread(root, work.replies, owner));
-      work.replies = [];
+      if (work.thread.count>0 && work.thread.latest) {
+        work.pending.push({ ...work.thread.latest, rootKey:root.key,
+          rootBody:root.body, pendingCount:work.thread.count,
+          pendingBodies:work.thread.bodies });
+      }
+      work.thread = null;
       work.replyPage = 1;
       work.rootIndex++;
     }
