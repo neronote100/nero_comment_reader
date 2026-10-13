@@ -7,8 +7,118 @@ export class CommentSnapshotStore {
     this.env = env;
   }
 
+
+  // 手動更新専用の差分状態。1回の操作で記事一覧を1度だけ取得する。
+  async finalizeFastScan(scan) {
+    const failedKeys = new Set(scan.failed.map(entry => entry.key));
+    const items = [];
+    for (const article of scan.articles) {
+      const saved = scan.states[article.key];
+      if (!saved || failedKeys.has(article.key)) continue;
+      for (const comment of Array.isArray(saved.unresolved) ? saved.unresolved : []) {
+        items.push(publicLiveItem(article, comment));
+      }
+    }
+    items.sort((a,b) => (Date.parse(b.publishedAt)||0) - (Date.parse(a.publishedAt)||0));
+    const snapshot = {
+      version: 5, source: "incremental", owner: NOTE_OWNER,
+      updatedAt: new Date().toISOString(),
+      articleCount: scan.articles.length, unresolvedCount: items.length,
+      candidateArticles: scan.candidates.length, scannedArticles: scan.index,
+      failedArticles: scan.failed.length, failedArticleKeys: scan.failed,
+      items
+    };
+    await this.state.storage.put("fastArticleStates", scan.states);
+    await this.state.storage.put("latest", snapshot);
+    await this.state.storage.delete("fast:" + scan.id);
+    return snapshot;
+  }
+
   async fetch(request) {
     const url = new URL(request.url);
+
+
+    if (url.pathname === "/fast/snapshot" && request.method === "GET") {
+      return new Response(JSON.stringify(await this.state.storage.get("latest") || null), {
+        headers: { "content-type": "application/json; charset=utf-8" }
+      });
+    }
+
+    if (url.pathname === "/fast/start" && request.method === "POST") {
+      const { articles, fallbackStates } = await request.json();
+      if (!Array.isArray(articles) || articles.length > 10000) return new Response("Invalid article list", { status: 400 });
+      const previous = await this.state.storage.get("fastArticleStates") || fallbackStates || {};
+      const states = {};
+      const candidates = [];
+      const day = Math.floor(Date.now() / 86400000);
+      for (const article of articles) {
+        const old = previous[article.key];
+        if (old) states[article.key] = { ...old, ...article };
+        else states[article.key] = { ...article, unresolved: [], checkedAt: 0 };
+        if (article.commentCount <= 0) {
+          states[article.key] = { ...article, unresolved: [], checkedAt: Date.now() };
+          continue;
+        }
+        const countChanged = !old || Number(old.commentCount || 0) !== Number(article.commentCount || 0);
+        const pending = Array.isArray(old?.unresolved) && old.unresolved.length > 0;
+        const failed = !old || Boolean(old.error) || !Number(old.checkedAt);
+        // 再検証は7日超過した記事を日ごとに分散し、一度に全件走査しない。
+        let hash = 0;
+        for (const ch of article.key) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
+        const auditDue = !pending && Number(old?.checkedAt || 0) > 0 &&
+          Date.now() - Number(old.checkedAt) > 7 * 86400000 && hash % 7 === day % 7;
+        if (countChanged || pending || failed || auditDue) {
+          candidates.push({
+            ...article, scanMode: pending && !countChanged && !failed && !auditDue ? "pending_only" : "full",
+            previousUnresolved: Array.isArray(old?.unresolved) ? old.unresolved : []
+          });
+        }
+      }
+      const scan = {
+        id: crypto.randomUUID(), articles, states, candidates,
+        index: 0, failed: [], startedAt: Date.now()
+      };
+      if (!candidates.length) {
+        const snapshot = await this.finalizeFastScan(scan);
+        return Response.json({ ok: true, done: true, scanId: scan.id, ...snapshot });
+      }
+      await this.state.storage.put("fast:" + scan.id, scan);
+      return Response.json({ ok: true, done: false, scanId: scan.id,
+        articleCount: articles.length, candidateArticles: candidates.length, scannedArticles: 0 });
+    }
+
+    if (url.pathname === "/fast/peek" && request.method === "GET") {
+      const scanId = url.searchParams.get("scan_id") || "";
+      const scan = await this.state.storage.get("fast:" + scanId);
+      if (!scan || Date.now() - Number(scan.startedAt || 0) > 3600000) {
+        return Response.json({ ok: false, error: "Scan expired or missing" }, { status: 404 });
+      }
+      return Response.json({ ok: true, index: scan.index, article: scan.candidates[scan.index] || null });
+    }
+
+    if (url.pathname === "/fast/commit" && request.method === "POST") {
+      const { scanId, index, unresolved, error } = await request.json();
+      const scan = await this.state.storage.get("fast:" + scanId);
+      if (!scan || Number(index) !== Number(scan.index)) return Response.json({ ok: false, error: "Scan offset conflict" }, { status: 409 });
+      const article = scan.candidates[scan.index];
+      if (!article) return Response.json({ ok: false, error: "No pending article" }, { status: 409 });
+      if (error) {
+        scan.failed.push({ key: article.key, title: article.title, error: String(error) });
+        scan.states[article.key] = { ...scan.states[article.key], error: true, checkedAt: 0 };
+      } else {
+        scan.states[article.key] = { ...article, unresolved: Array.isArray(unresolved) ? unresolved : [],
+          checkedAt: Date.now(), error: false };
+      }
+      scan.index++;
+      if (scan.index >= scan.candidates.length) {
+        const snapshot = await this.finalizeFastScan(scan);
+        return Response.json({ ok: true, done: true, scanId, ...snapshot });
+      }
+      await this.state.storage.put("fast:" + scanId, scan);
+      return Response.json({ ok: true, done: false, scanId,
+        articleCount: scan.articles.length, candidateArticles: scan.candidates.length,
+        scannedArticles: scan.index, failedArticles: scan.failed.length });
+    }
 
     if (request.method === "GET" && url.pathname === "/latest") {
       const latest = await this.state.storage.get("latest");
