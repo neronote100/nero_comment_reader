@@ -151,12 +151,14 @@ function unresolvedFromThread(root,replies){
   }];
 }
 
-async function scanArticle(article){
+async function scanArticle(article, old, pendingOnly=false){
+  const priorRoots=new Set((old?.unresolved||[]).map(c=>c.rootKey||c.key).filter(Boolean));
   const roots=(await fetchComments(article.key)).filter(c=>c.isRoot!==false);
   const unresolved=[];
 
   for(const root of roots){
     if(!root.authorUrlname||root.authorUrlname===OWNER)continue;
+    if(pendingOnly && !priorRoots.has(root.key))continue;
 
     // 返信が一切ない根コメントは、王子スキ済みなら対応済み。
     if(root.replyCount<=0){
@@ -208,8 +210,11 @@ for(const article of articles){
 
   const oldChecked=Number(old?.checkedAt||0);
   const pending=Array.isArray(old?.unresolved)&&old.unresolved.length>0;
-  const maxAge=pending?60*60*1000:24*60*60*1000;
-  const shouldScan=FORCE||!old||Number(old.commentCount||0)!==article.commentCount||now-oldChecked>=maxAge;
+  const changed=!old||Number(old.commentCount||0)!==article.commentCount;
+  let hash=0;
+  for(const char of article.key)hash=(hash*31+char.charCodeAt(0))>>>0;
+  const audit=!pending&&oldChecked>0&&now-oldChecked>7*86400000&&hash%7===Math.floor(now/86400000)%7;
+  const shouldScan=FORCE||changed||pending||Boolean(old?.error)||!oldChecked||audit;
 
   if(!shouldScan){
     nextArticles[article.key]={...old,...article};
@@ -217,7 +222,7 @@ for(const article of articles){
   }
 
   try{
-    const unresolved=await scanArticle(article);
+    const unresolved=await scanArticle(article, old, pending&&!changed&&!audit&&!FORCE);
     nextArticles[article.key]={...article,unresolved,checkedAt:Date.now()};
   }catch(error){
     failedArticles++;
