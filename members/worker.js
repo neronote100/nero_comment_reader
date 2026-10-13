@@ -72,7 +72,7 @@ async function fetchArticles(owner) {
       });
     }
     if (map.size >= MAX_ARTICLES) throw new Error("記事数が上限を超えています");
-    if (data?.data?.isLastPage ?? data?.isLastPage ?? !rows.length) break;
+    if (Boolean(data?.data?.isLastPage ?? data?.isLastPage ?? false) || !rows.length) break;
   }
   return [...map.values()];
 }
