@@ -6,7 +6,7 @@ on:
       force:
         description: Force rescan
         required: false
-        default: "true"
+        default: "false"
 
 permissions:
   contents: write
