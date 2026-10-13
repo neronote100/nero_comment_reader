@@ -1483,6 +1483,65 @@ export default {
     }
 
 
+
+    // Incremental sync: fetch article index once, persist every result in a DO.
+    if (url.pathname === "/comments/snapshot") {
+      try {
+        if (!env?.COMMENT_SNAPSHOT) throw new Error("COMMENT_SNAPSHOT is missing");
+        const stub = env.COMMENT_SNAPSHOT.get(env.COMMENT_SNAPSHOT.idFromName(NOTE_OWNER));
+        const response = await stub.fetch("https://comment-snapshot/fast/snapshot");
+        const saved = await response.json();
+        return json({ ok: true, snapshot: saved && Array.isArray(saved.items) ? saved : null });
+      } catch (error) {
+        return json({ ok: false, error: String(error?.message || error) }, 503);
+      }
+    }
+
+    if (url.pathname === "/comments/fast/start") {
+      if (request.method !== "POST") return json({ ok: false, error: "POST required" }, 405);
+      try {
+        if (!env?.COMMENT_SNAPSHOT) throw new Error("COMMENT_SNAPSHOT is missing");
+        const [articles, fallbackState] = await Promise.all([fetchCreatorArticlesLive(), loadSavedState()]);
+        const stub = env.COMMENT_SNAPSHOT.get(env.COMMENT_SNAPSHOT.idFromName(NOTE_OWNER));
+        const response = await stub.fetch("https://comment-snapshot/fast/start", {
+          method: "POST", headers: { "content-type": "application/json" },
+          body: JSON.stringify({ articles, fallbackStates: fallbackState?.articles || {} })
+        });
+        return json(await response.json(), response.status);
+      } catch (error) {
+        return json({ ok: false, error: String(error?.message || error) }, 503);
+      }
+    }
+
+    if (url.pathname === "/comments/fast/next") {
+      if (request.method !== "POST") return json({ ok: false, error: "POST required" }, 405);
+      try {
+        if (!env?.COMMENT_SNAPSHOT) throw new Error("COMMENT_SNAPSHOT is missing");
+        const payload = await request.json();
+        const scanId = String(payload?.scanId || "");
+        if (!/^[a-f0-9-]{36}$/i.test(scanId)) return json({ ok: false, error: "Invalid scan" }, 400);
+        const stub = env.COMMENT_SNAPSHOT.get(env.COMMENT_SNAPSHOT.idFromName(NOTE_OWNER));
+        const peekResponse = await stub.fetch("https://comment-snapshot/fast/peek?scan_id=" + encodeURIComponent(scanId));
+        if (!peekResponse.ok) return json({ ok: false, error: "Scan expired. Start again." }, 409);
+        const peek = await peekResponse.json();
+        if (!peek.article) return json({ ok: false, error: "No next article" }, 409);
+        let unresolved = [];
+        let error = "";
+        try {
+          unresolved = await scanLiveArticle(peek.article);
+        } catch (caught) {
+          error = String(caught?.message || caught);
+        }
+        const result = await stub.fetch("https://comment-snapshot/fast/commit", {
+          method: "POST", headers: { "content-type": "application/json" },
+          body: JSON.stringify({ scanId, index: peek.index, unresolved, error })
+        });
+        return json(await result.json(), result.status);
+      } catch (error) {
+        return json({ ok: false, error: String(error?.message || error) }, 503);
+      }
+    }
+
     if (url.pathname === "/comments/live") {
       try {
         const offset = Number(url.searchParams.get("offset") || 0);
