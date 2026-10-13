@@ -21,7 +21,7 @@ function flatten(node) {
   if (Array.isArray(node)) return node.map(flatten).join("");
   if (!node || typeof node !== "object") return "";
   if (node.type === "text") return String(node.value ?? node.text ?? "");
-  const content = (node.children || []).map(flatten).join("");
+  const content = (Array.isArray(node.children) ? node.children : []).map(flatten).join("");
   return ["p", "div", "li"].includes(node.tag_name) ? content + "\n" : content;
 }
 function norm(comment) {
