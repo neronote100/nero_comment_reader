@@ -35,6 +35,8 @@ jobs:
           node --check members/test.mjs
       - name: Existing MCP regression tests
         run: node mcp/test.mjs
+      - name: Main Worker incremental-state tests
+        run: node mcp/fast-sync.test.mjs
       - name: Member auth and incremental-state tests
         run: node members/test.mjs
       - name: Install Wrangler for dry-run build
