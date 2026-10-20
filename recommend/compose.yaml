@@ -1,0 +1,9 @@
+services:
+  library:
+    build: .
+    ports: ["8787:8787"]
+    volumes:
+      - ./.dev.vars:/app/.dev.vars:ro
+      - library-data:/app/.wrangler
+volumes:
+  library-data:

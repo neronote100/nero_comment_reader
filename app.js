@@ -17,6 +17,20 @@ const eventStatusEl=$('#eventStatus');
 
 const WORKER='https://nero-comment-reader.nero-prince.workers.dev';
 
+const libraryUrlInput=document.querySelector('#libraryUrl');
+if(libraryUrlInput){
+  libraryUrlInput.value=localStorage.getItem('nero-library-url')||'';
+  document.querySelector('#libraryLaunchForm').addEventListener('submit',event=>{
+    event.preventDefault();
+    try{
+      const url=new URL(libraryUrlInput.value);
+      if(url.protocol!=='https:'||url.username||url.password)throw new Error('HTTPSの管理画面URLを入力してください');
+      localStorage.setItem('nero-library-url',url.origin);
+      window.open(url.origin,'_blank','noopener,noreferrer');
+    }catch(error){showToast(error.message||'管理画面URLを確認してください');}
+  });
+}
+
 function dateText(v){
   if(!v)return '日時不明';
   const d=new Date(v);

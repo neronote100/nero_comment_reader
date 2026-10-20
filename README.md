@@ -13,7 +13,14 @@ note「nero_notelover」専用の未返信コメント管理サイトです。
 - GitHub Actionsで定期同期
 - GitHub Pagesで表示
 
-AI API、Cloudflare、有料DBは使いません。
+既存の静的コメント一覧はAI API・有料DBを使いません。MCP/会員版はCloudflareを使用します。
+
+## ネロ王立図書館レコメンドシステム 🌙
+
+メンバーの記事発掘・AI分析・紹介文とコメントの下書き・紹介履歴管理を `recommend/` に追加しました。既存画面の「王立図書館」タブから設置した管理画面を開けます。
+
+Next.js / TypeScript / Tailwind / Workers / D1 / Cron / Google OAuth / OpenAIを利用します。既存コメント機能とは別に初期設定・配置が必要です。
+**[セットアップ手順・設計書はこちら](recommend/README.md)**。
 
 ## 今後
 

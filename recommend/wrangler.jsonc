@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "nero-library-api",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-10-20",
+  "workers_dev": false,
+  "assets": {
+    "directory": "web/out",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "nero-library",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations",
+    },
+  ],
+  "triggers": { "crons": ["* * * * *"] },
+  "vars": {
+    "APP_ORIGIN": "http://localhost:8787",
+    "ADMIN_EMAIL": "",
+    "NOTE_OWNER": "nero_notelover",
+    "MEMBERSHIP_NAME": "王子の城下町",
+    "GMAIL_FROM": "noreply@note.com",
+    "OPENAI_MODEL": "gpt-4.1-mini",
+    "AUTO_AI_LIMIT": "6",
+  },
+}
