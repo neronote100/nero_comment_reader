@@ -234,3 +234,13 @@ assert(failedThread.items.length===0,"stale unresolved data was revived after sc
 
 globalThis.fetch = originalFetch;
 console.log("MCP tests passed");
+
+// The existing reader URL forwards its native library tab to the background service.
+let forwarded;
+const libraryResponse=await worker.fetch(new Request('https://worker.test/library/api/members',{method:'POST',headers:{Origin:'https://neronote100.github.io','Content-Type':'application/json'},body:JSON.stringify({name:'Member'})}),{LIBRARY_API:{fetch:async request=>{forwarded={path:new URL(request.url).pathname,origin:request.headers.get('origin'),body:await request.json()};return Response.json({ok:true});}}});
+assert(libraryResponse.status===200,'library proxy status');
+assert(forwarded.path==='/api/members','library prefix removed');
+assert(forwarded.origin==='https://neronote100.github.io','frontend origin preserved');
+assert(forwarded.body.name==='Member','library body forwarded');
+assert((await worker.fetch(new Request('https://worker.test/library/api/dashboard'),{})).status===503,'missing service binding is actionable');
+console.log('Integrated library service proxy passed');

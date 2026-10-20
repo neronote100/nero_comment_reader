@@ -17,6 +17,22 @@ const eventStatusEl=$('#eventStatus');
 
 const WORKER='https://nero-comment-reader.nero-prince.workers.dev';
 
+let libraryMounted=false;
+let libraryLoading=false;
+async function openLibrary(){
+  if(libraryMounted||libraryLoading)return;
+  libraryLoading=true;
+  const host=document.querySelector('#libraryApp');
+  try{
+    const {mountLibrary}=await import('./library.js');
+    const local=['localhost','127.0.0.1'].includes(location.hostname);
+    mountLibrary(host,local?location.origin:WORKER+'/library');
+    libraryMounted=true;
+  }catch(error){
+    host.textContent='図書館の読み込みに失敗しました。もう一度タブを開いてください。';
+  }finally{libraryLoading=false;}
+}
+
 function dateText(v){
   if(!v)return '日時不明';
   const d=new Date(v);
@@ -381,6 +397,7 @@ async function legacyRefresh(){
 
 
 function switchView(view){
+  if(view==='library')void openLibrary();
   document.querySelectorAll('.view').forEach(el=>el.classList.toggle('active',el.id===view+'View'));
   document.querySelectorAll('.tab[data-view]').forEach(el=>el.classList.toggle('active',el.dataset.view===view));
   $('#refreshBtn').style.display=view==='comments'?'':'none';

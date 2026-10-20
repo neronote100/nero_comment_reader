@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+.wrangler/
+.dev.vars
+.env*
+!.env.example
+!*.example
+coverage/
+*.tsbuildinfo
+recommend/dist/
+recommend/site/

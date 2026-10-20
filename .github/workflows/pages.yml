@@ -34,10 +34,20 @@ jobs:
         with:
           enablement: true
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: recommend/package-lock.json
+
+      - name: Build original site with library tab
+        run: npm ci --no-audit --no-fund && npm run build
+        working-directory: recommend
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "recommend/site"
 
       - name: Deploy
         id: deployment

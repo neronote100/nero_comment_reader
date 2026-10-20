@@ -1480,6 +1480,12 @@ async function handleMcp(request, env) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if(url.pathname.startsWith("/library/")){
+      if(!env?.LIBRARY_API)return json({error:"図書館の連携設定が未完了です"},503);
+      const target=new URL(request.url);
+      target.pathname=target.pathname.slice("/library".length);
+      return env.LIBRARY_API.fetch(new Request(target,request));
+    }
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
 
     if (url.pathname === "/health") {

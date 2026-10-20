@@ -1,0 +1,9 @@
+node_modules
+web/.next
+web/out
+.wrangler
+.dev.vars
+.env*
+*.tsbuildinfo
+dist
+site

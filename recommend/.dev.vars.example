@@ -1,0 +1,7 @@
+# サイトへのログイン設定は不要。Gmail API用の接続情報だけサーバーに設定。
+APP_ORIGIN="http://localhost:8787"
+GOOGLE_CLIENT_ID=""
+GOOGLE_CLIENT_SECRET=""
+GOOGLE_REFRESH_TOKEN=""
+OPENAI_API_KEY=""
+DISCORD_WEBHOOK_URL=""
