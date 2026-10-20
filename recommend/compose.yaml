@@ -1,9 +1,11 @@
 services:
   library:
-    build: .
+    build:
+      context: ..
+      dockerfile: recommend/Dockerfile
     ports: ["8787:8787"]
     volumes:
-      - ./.dev.vars:/app/.dev.vars:ro
-      - library-data:/app/.wrangler
+      - ./.dev.vars:/app/recommend/.dev.vars:ro
+      - library-data:/app/recommend/.wrangler
 volumes:
   library-data:

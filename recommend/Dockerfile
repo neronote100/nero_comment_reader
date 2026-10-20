@@ -1,8 +1,10 @@
 FROM node:24-bookworm-slim
-WORKDIR /app
-COPY package.json package-lock.json ./
+WORKDIR /app/recommend
+COPY recommend/package.json recommend/package-lock.json ./
 RUN npm ci --no-audit --no-fund
-COPY . .
+COPY recommend/ /app/recommend/
+COPY index.html app.js styles.css /app/
+COPY data/ /app/data/
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 EXPOSE 8787

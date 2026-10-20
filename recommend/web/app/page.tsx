@@ -42,26 +42,28 @@ const datetime = (s: string | null) =>
   s
     ? new Date(s).toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })
     : "未実施";
+let apiBase = "";
+export function setLibraryApiBase(value: string) {
+  apiBase = value.replace(/\/$/, "");
+}
 async function api<T>(
   path: string,
   data?: unknown,
   method = "POST",
 ): Promise<T> {
   const response = await fetch(
-    path,
+    apiBase + path,
     data === undefined
-      ? { cache: "no-store" }
+      ? { cache: "no-store", credentials: "omit" }
       : {
           method,
+          credentials: "omit",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
         },
   );
   const result = (await response.json()) as T & { error?: string };
-  if (!response.ok)
-    throw new Error(
-      response.status === 401 ? "LOGIN" : result.error || "処理に失敗しました",
-    );
+  if (!response.ok) throw new Error(result.error || "処理に失敗しました");
   return result as T;
 }
 function ArticleCard({
@@ -119,7 +121,6 @@ function Empty({ children }: { children: React.ReactNode }) {
 export default function Home() {
   const [data, setData] = useState<Dashboard | null>(null),
     [setup, setSetup] = useState<Setup | null>(null),
-    [login, setLogin] = useState(false),
     [error, setError] = useState(""),
     [message, setMessage] = useState(""),
     [busy, setBusy] = useState(false);
@@ -149,12 +150,10 @@ export default function Home() {
       ]);
       setData(d);
       setSetup(s);
-      setLogin(false);
       setError("");
     } catch (e) {
       const text = (e as Error).message;
-      if (text === "LOGIN") setLogin(true);
-      else setError(text);
+      setError(text);
     }
   }, []);
   useEffect(() => {
@@ -203,31 +202,6 @@ export default function Home() {
       setError("コピーできませんでした。本文を選択してコピーしてください");
     }
   }
-  if (login)
-    return (
-      <main className="login-screen">
-        <div className="login-card">
-          <div className="seal">☾</div>
-          <p className="eyebrow">NERO ROYAL LIBRARY</p>
-          <h1>
-            いい記事に、
-            <br />
-            出会うための編集室。
-          </h1>
-          <p className="muted">
-            城下町のみんなの記事を見つけて、
-            <br />
-            王子の言葉で紹介しよう。
-          </p>
-          <a className="primary inline-block mt-8" href="/auth/login">
-            Googleでログイン・Gmailを接続
-          </a>
-          <p className="muted text-xs mt-4">
-            管理者専用。メンバーシップ通知の読み取りに使います。
-          </p>
-        </div>
-      </main>
-    );
   const list = data
     ? (tab === "ranking"
         ? data.weekly[ranking]
@@ -247,7 +221,7 @@ export default function Home() {
   return (
     <div className="shell">
       <aside className="sidebar">
-        <a className="brand" href="/">
+        <a className="brand" href="#library">
           <span>☾</span>
           <div>
             ネロ王立図書館<small>ARTICLE DISCOVERY</small>
@@ -284,17 +258,6 @@ export default function Home() {
         <div className="sidebar-foot">
           みんなの魅力を、次の出会いへ。
           <br />
-          <button
-            className="text-xs mt-4"
-            onClick={() =>
-              void action(async () => {
-                await api("/api/logout", {});
-                setLogin(true);
-              }, "ログアウトしました")
-            }
-          >
-            ログアウト
-          </button>
         </div>
       </aside>
       <main className="workspace">
@@ -643,12 +606,7 @@ export default function Home() {
                       <small>
                         最終同期 {datetime(setup?.gmailSyncedAt || null)}
                       </small>
-                      <a
-                        className="secondary inline-block mt-4"
-                        href="/auth/login"
-                      >
-                        接続を更新
-                      </a>
+                      <small>Gmailの連携情報はサーバーに設定します。</small>
                     </div>
                     <div>
                       <strong>OpenAI</strong>

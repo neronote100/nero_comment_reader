@@ -71,9 +71,6 @@ erDiagram
 | article_snapshots | 記事ID＋UTC日付を複合PK。日内の最新測定に更新。90日保持                                                                       |
 | analyses          | 1記事1行。概要・要約・魅力・良かったところ・推薦・想定読者・紹介案・コメント・引用・0〜5評価をJSON保存                        |
 | introductions     | 掲載URLごとの紹介履歴。members.last_introduced_atと同一transactionで記録                                                      |
-| credentials       | GoogleリフレッシュトークンのAES-GCM暗号文のみ                                                                                 |
-| sessions          | ランダムトークンのSHA-256、管理者メール、有効期限。期限切れを日次削除                                                         |
-| oauth_states      | stateのSHA-256、PKCE verifier、10分期限。callbackで原子的に消費                                                               |
 | jobs              | 固有ジョブID、種別、対象JSON、状態、試行回数、再開時刻、リース期限、エラー。完了は30日保持                                    |
 | settings          | 同期日時、通知日時、通知成功日、通知エラー                                                                                    |
 
@@ -82,3 +79,5 @@ erDiagram
 分析・本文・履歴には外部キーを設定。通知からの会員更新、本文＋スナップショット、履歴＋最終紹介日の更新はD1 batchのtransactionを利用する。ジョブは単一UPDATE…RETURNINGで原子的に取得する。
 
 完全な定義は [0001_library.sql](../migrations/0001_library.sql)。初期構築用の追加DBであり、既存Durable Objectsやコメントデータの移行は不要。
+
+サイト認証用テーブルは作りません。Gmail接続情報はWorkers Secretsに置きます。

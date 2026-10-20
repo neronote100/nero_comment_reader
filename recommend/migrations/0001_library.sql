@@ -43,9 +43,6 @@ CREATE TABLE introductions (
  introduced_at TEXT NOT NULL
 );
 CREATE INDEX introductions_member ON introductions(member_id, introduced_at);
-CREATE TABLE credentials (id TEXT PRIMARY KEY, encrypted_token TEXT NOT NULL);
-CREATE TABLE sessions (token_hash TEXT PRIMARY KEY, email TEXT NOT NULL, expires_at INTEGER NOT NULL);
-CREATE TABLE oauth_states (state_hash TEXT PRIMARY KEY, verifier TEXT NOT NULL, expires_at INTEGER NOT NULL);
 CREATE TABLE jobs (
  id TEXT PRIMARY KEY, kind TEXT NOT NULL, target TEXT NOT NULL DEFAULT '',
  state TEXT NOT NULL DEFAULT 'queued', attempts INTEGER NOT NULL DEFAULT 0,

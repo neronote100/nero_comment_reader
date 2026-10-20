@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { database, member, article, authenticatedEnv } from "./helpers";
+import { database, member, article, siteEnv } from "./helpers";
 import {
   DAY,
   score,
@@ -12,16 +12,12 @@ import {
 } from "../src/domain";
 import { Library } from "../src/application/library";
 import {
+  GmailClient,
   parseNotification,
   resolveProfileLink,
 } from "../src/infrastructure/gmail";
 import { NoteClient } from "../src/infrastructure/note";
-import {
-  encrypt,
-  decrypt,
-  randomToken,
-  hash,
-} from "../src/infrastructure/security";
+import { hash } from "../src/infrastructure/security";
 import worker, { report } from "../src/worker";
 const analysis: Analysis = {
   overview: "概要",
@@ -344,9 +340,9 @@ test("定期処理の外部呼出しをジョブ数で制限、継続ページ�
     2,
   );
 });
-test("認証・Origin・型・不正URLの境界をAPIで検証", async () => {
+test("ログインなしで利用でき、Origin・型・不正URLの境界をAPIで検証", async () => {
   const { db } = database();
-  const { env, request } = await authenticatedEnv(db);
+  const { env, request } = await siteEnv(db);
   assert.equal(
     (
       await worker.fetch(
@@ -354,7 +350,7 @@ test("認証・Origin・型・不正URLの境界をAPIで検証", async () => {
         env,
       )
     ).status,
-    401,
+    200,
   );
   assert.equal(
     (
@@ -426,7 +422,7 @@ test("note ID変更で旧アカウント記事を候補から外す", async () =
   const { db, repo } = database();
   await repo.saveMember(member());
   await repo.saveArticle(article());
-  const { env, request } = await authenticatedEnv(db);
+  const { env, request } = await siteEnv(db);
   const r = await worker.fetch(
     request(
       "/api/members/note%3Awriter",
@@ -442,7 +438,7 @@ test("保存済みAI分析を再利用し、AI未設定は503", async () => {
   const { db, repo } = database();
   await repo.saveMember(member());
   await repo.saveArticle(article());
-  const { env, request } = await authenticatedEnv(db);
+  const { env, request } = await siteEnv(db);
   assert.equal(
     (await worker.fetch(request("/api/analyze", { id: article().id }), env))
       .status,
@@ -458,27 +454,76 @@ test("保存済みAI分析を再利用し、AI未設定は503", async () => {
   assert.equal(((await r.json()) as { cached: boolean }).cached, true);
   assert.equal((await repo.jobs()).length, 0);
 });
-test("OAuthのstate欠落・Cookie不一致はトークン交換前に拒否", async () => {
+test("ログイン用エンドポイントを設けず、Cookieなしで初回表示と編集ができる", async () => {
   const { db } = database();
-  const { env, request } = await authenticatedEnv(db);
-  assert.equal(
-    (await worker.fetch(request("/auth/callback?state=wrong&code=code"), env))
-      .status,
-    400,
+  const { env, request } = await siteEnv(db);
+  for (const path of ["/auth/login", "/auth/callback", "/api/logout"])
+    assert.equal((await worker.fetch(request(path), env)).status, 404);
+  const created = await worker.fetch(
+    request("/api/members", { name: "作者", note_username: "writer" }),
+    env,
   );
-  const login = await worker.fetch(request("/auth/login"), env);
-  assert.equal(login.status, 302);
-  const url = new URL(login.headers.get("Location")!);
-  assert.equal(url.searchParams.get("code_challenge_method"), "S256");
-  assert.ok(url.searchParams.get("scope")?.includes("gmail.readonly"));
+  assert.equal(created.status, 201);
+  assert.equal(created.headers.get("set-cookie"), null);
+  assert.equal(
+    (await worker.fetch(request("/api/dashboard"), env)).status,
+    200,
+  );
 });
-test("セッショントークンはハッシュ、Googleトークンは暗号化して復元できる", async () => {
-  const key = randomToken(),
-    encrypted = await encrypt("refresh-secret", key);
-  assert.ok(!encrypted.includes("refresh-secret"));
-  assert.equal(await decrypt(encrypted, key), "refresh-secret");
-  await assert.rejects(() => decrypt(encrypted, randomToken()));
-  assert.notEqual(await hash("session"), "session");
+test("Gmailの接続情報はWorkers Secretsから読み、ブラウザに返さない", async () => {
+  const { db } = database();
+  const { env, request } = await siteEnv(db);
+  env.GOOGLE_REFRESH_TOKEN = "private-refresh";
+  const response = await worker.fetch(request("/api/setup"), env);
+  const text = await response.text();
+  assert.equal(JSON.parse(text).googleConnected, true);
+  assert.ok(!text.includes("private-refresh"));
+  assert.ok(!text.includes(env.GOOGLE_CLIENT_SECRET));
+  const original = globalThis.fetch;
+  let calls = 0;
+  try {
+    globalThis.fetch = async (url, init) => {
+      calls++;
+      assert.equal(String(url), "https://oauth2.googleapis.com/token");
+      assert.equal(
+        new URLSearchParams(String(init?.body)).get("refresh_token"),
+        "private-refresh",
+      );
+      return Response.json({ access_token: "access" });
+    };
+    const gmail = new GmailClient(env);
+    assert.equal(await gmail.accessToken(), "access");
+    await gmail.accessToken();
+    assert.equal(calls, 1);
+  } finally {
+    globalThis.fetch = original;
+  }
+});
+test("既存サイト向けのCORSとエラー応答を返す", async () => {
+  const { db } = database();
+  const { env, request } = await siteEnv(db);
+  const preflight = await worker.fetch(
+    new Request("https://worker.test/api/members", {
+      method: "OPTIONS",
+      headers: {
+        Origin: env.APP_ORIGIN,
+        "Access-Control-Request-Method": "PATCH",
+      },
+    }),
+    env,
+  );
+  assert.equal(preflight.status, 204);
+  assert.equal(
+    preflight.headers.get("Access-Control-Allow-Origin"),
+    env.APP_ORIGIN,
+  );
+  const bad = await worker.fetch(
+    request("/api/members", { name: "作者", note_username: "../bad" }),
+    env,
+  );
+  assert.equal(bad.status, 400);
+  assert.equal(bad.headers.get("Access-Control-Allow-Origin"), env.APP_ORIGIN);
+  assert.notEqual(await hash("article"), "article");
 });
 test("note記事は投稿者を確認し、有料記事を公開プレビュー扱いにする", async () => {
   const original = globalThis.fetch;
@@ -509,7 +554,7 @@ test("Discord朝レポートは同日再送を避け、メンションを無効�
   const { db, repo } = database();
   await repo.saveMember(member());
   await repo.saveArticle(article());
-  const { env } = await authenticatedEnv(db);
+  const { env } = await siteEnv(db);
   env.DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/test/token";
   const original = globalThis.fetch;
   let calls = 0;

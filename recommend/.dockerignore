@@ -5,3 +5,5 @@ web/out
 .dev.vars
 .env*
 *.tsbuildinfo
+dist
+site

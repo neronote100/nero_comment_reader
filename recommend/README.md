@@ -1,6 +1,6 @@
 # ネロ王立図書館レコメンドシステム 🌙
 
-メンバーの記事発掘 → 魅力の確認 → 紹介文・コメントの下書き → 掲載履歴の記録を行う、王子専用の管理画面です。既存のコメントリーダー、MCP、会員用Workerと独立して設置します。既存画面の「王立図書館」タブに設置先URLを一度保存すると開けます。
+メンバーの記事発掘 → 魅力の確認 → 紹介文・コメントの下書き → 掲載履歴の記録を行う、王子専用の管理画面です。既存コメントリーダーの「王立図書館」タブでそのまま利用します。サイトへのログインはありません。
 
 ## できること
 
@@ -17,19 +17,19 @@
 
 ## 構成
 
-Next.js / React / TypeScript / Tailwindの静的出力をCloudflare Pagesに配置します。Pages FunctionsのService bindingが同一オリジンの `/api/*` と `/auth/*` をWorkersに転送。D1、Cron、Google OAuth、OpenAI Responses APIを利用します。
+既存GitHub Pagesの「コメント」「イベント」と並ぶ「王立図書館」タブにReact画面を直接マウントします。別URLの入力・別窓・iframe・サイトログインはありません。CSSはShadow DOMで分離し、コメント画面の見た目や動作と干渉させません。Next.jsの画面コンポーネントをTypeScript / Tailwindとともにビルドして既存サイトに同梱します。
 
-```text
-src/domain.ts                 会員・記事・分析型、スコア、引用検証
-src/ports.ts                  リポジトリ・外部APIの契約
-src/application/library.ts    紹介候補・ダッシュボード・収集ジョブ
-src/infrastructure/           D1、note、Gmail、OpenAI、OAuth
-src/worker.ts                 HTTPルート、Cron、通知
-web/app/                      Next.js管理画面
-migrations/                   D1スキーマ
-test/                         実SQLiteとHTTP境界のテスト
-docs/                         DB・ER・API・画面設計
+ブラウザは従来のMCP Workerの `/library/api/*` にアクセスします。MCP Workerは `LIBRARY_API` Service bindingで収集用Workerに転送します。追加のフロントエンドサイトやPagesプロジェクトは作りません。
+
+```mermaid
+flowchart TD
+  A["既存コメントリーダー"] --> B["王立図書館タブ"]
+  B --> C["既存MCP Worker /library/api"]
+  C --> D["収集Worker + D1 + Cron"]
+  D --> E["Gmail・note・OpenAI"]
 ```
+
+`src/domain.ts` が型・スコア・引用検証、`ports.ts` が契約、`application/` が推薦・収集処理、`infrastructure/` がD1と外部API、`worker.ts` がHTTP・Cronを担当します。`web/entry.tsx` がタブのマウント、`scripts/build.mjs` が既存サイトとの一括ビルドを担当します。
 
 ## ローカルセットアップ
 
@@ -39,41 +39,23 @@ Node.js 24を使用します。
 cd recommend
 npm ci
 cp .dev.vars.example .dev.vars
-# .dev.vars に管理者・OAuth・暗号鍵を設定する
 npm run build
 npm run db:local
 npm run dev
 ```
 
-`http://localhost:8787` を開きます。Google Cloud Consoleで、Gmail APIを有効化し、OAuthクライアントを「ウェブアプリケーション」で作成してください。リダイレクトURIは `http://localhost:8787/auth/callback`。同意画面のテストユーザーに管理者Googleアカウントを追加し、`openid email https://www.googleapis.com/auth/gmail.readonly` を使用します。
+`http://localhost:8787` を開き、「王立図書館」を押します。Gmail等を未設定でも会員の手動登録と管理画面は使えます。Gmail自動同期にはサーバー側の接続情報が必要です。
 
-OAuthのテスト公開ではリフレッシュトークンが短期間で失効する場合があります。継続運用時はGoogle側の公開・検証要件を確認してください。管理画面の「接続を更新」で再同意できます。ChatGPTのGmail接続とは別のOAuth設定です。
-
-暗号鍵を生成:
-
-```sh
-node -e 'console.log(require("node:crypto").randomBytes(32).toString("base64url"))'
-```
-
-鍵は再デプロイ時にも維持します。変更すると保存済みGoogleトークンを復号できなくなるため、Google接続をやり直してください。
-
-Dockerは `.dev.vars` を設定してから:
-
-```sh
-docker compose up --build
-```
-
-ローカルDBは名前付きvolumeに永続化します。Docker内でもホストからは同じ `http://localhost:8787` を利用します。
+Dockerは `.dev.vars` を用意してから `docker compose up --build`。ローカルDBはvolumeに保存します。
 
 ## 本番セットアップ
 
 1. `npx wrangler login` でCloudflareへログイン。
-2. `npx wrangler d1 create nero-library` でD1を作り、表示されたdatabase_idを `wrangler.jsonc` に設定。
-3. Pagesプロジェクト `nero-royal-library` を作成し、利用する本番URLを確定。
-4. `wrangler.jsonc` の `APP_ORIGIN` を本番の `https://…pages.dev` または独自ドメイン（末尾スラッシュなし）、`ADMIN_EMAIL` を管理者のGoogleアドレスに変更。
-5. `MEMBERSHIP_NAME` と `GMAIL_FROM` を実通知の表記に合わせて確認。
-6. Google OAuthに本番URLの `/auth/callback` を登録。
-7. 次のコマンドで保存・配置:
+2. `npx wrangler d1 create nero-library` でD1を作成し、database_idを `recommend/wrangler.jsonc` に設定。
+3. 同ファイルの `APP_ORIGIN` を既存サイトのオリジン `https://neronote100.github.io` に設定（リポジトリパスと末尾スラッシュは付けない）。`SITE_URL` は `https://neronote100.github.io/nero_comment_reader/` に設定。
+4. `MEMBERSHIP_NAME` と `GMAIL_FROM` を実通知に合わせて確認。
+5. Gmailを自動取得する場合、Google Cloud ConsoleでGmail APIを有効にし、`https://www.googleapis.com/auth/gmail.readonly` のリフレッシュトークンを取得。Google OAuth Playgroundを利用する場合は自分のOAuthクライアントを使い、offlineアクセスを許可する。これはGmail API用の初回接続で、サイトへのログイン機能ではありません。テスト公開中のトークン失効時はSecretsを更新します。
+6. 接続情報をサーバーに設定し、収集Workerと既存MCP Workerを配置:
 
 ```sh
 cd recommend
@@ -82,18 +64,18 @@ npm run build
 npm run db:remote
 npx wrangler secret put GOOGLE_CLIENT_ID
 npx wrangler secret put GOOGLE_CLIENT_SECRET
-npx wrangler secret put TOKEN_ENCRYPTION_KEY
+npx wrangler secret put GOOGLE_REFRESH_TOKEN
 npx wrangler secret put OPENAI_API_KEY
-# Discord通知を有効にするときのみ設定
+# Discordを使う場合のみ
 npx wrangler secret put DISCORD_WEBHOOK_URL
 npx wrangler deploy
-cd web
-../node_modules/.bin/wrangler pages deploy out --project-name nero-royal-library
+cd ../mcp
+npx wrangler deploy
 ```
 
-Pagesの `RECOMMEND_API` Service bindingが `nero-library-api` を指すことを確認します。Workerの直接公開は既定で無効です。Googleリダイレクト先・APP_ORIGIN・実際の管理画面URLは一致させてください。PagesプレビューURLで本番の認証を使い回さず、検証用は別Worker / D1 / OAuthクライアントを設定します。
+既存MCP Workerの `LIBRARY_API` は `nero-library-api` を指します。図書館Workerは直接公開せず、既存MCP経由で呼び出します。フロントは既存の `Deploy GitHub Pages` ワークフローがビルド・配置します。図書館用のURL設定・Googleログイン・パスワード入力はありません。
 
-初回ログイン後、「Gmailからメンバー同期」→「メンバー管理」の確認待ちを処理→記事収集→記事を開いて分析、の順で確認します。DiscordはWebhook設定後の朝7時から送信対象です。実際のメール書式・noteレスポンスは運用開始時に実データと照合してください。
+Gmailの認可情報やAPIキーはWorkers Secretsのみに保存し、静的JSや公開JSONへ埋め込みません。GitHubへのコード反映だけではWorkerとD1は更新されないため、初回だけ上記の設置が必要です。
 
 ## 定期処理・費用・運用
 
@@ -110,9 +92,9 @@ Pagesの `RECOMMEND_API` Service bindingが `nero-library-api` を指すこと�
 - メール通知が届かない・通知設定を変更した場合はGmailだけでは会員状態を完全には再現できません。入会日・会員状態は管理画面で修正できます。再入会時も入会順は初回入会日を保持します。
 - Discordは当日成功後の再送を避けます。配信成功直後の保存失敗や同時実行時は重複する可能性があり、厳密な一度だけの配信保証はありません。エラーは連携画面に表示されます。
 
-## セキュリティ
+## 接続情報の扱い
 
-管理者Googleアカウント1名だけを許可。メール認証済みアドレスをGoogle UserInfoで確認します。OAuthはPKCE・state・10分の一時Cookie、管理セッションはHttpOnly・本番Secure・SameSite=Lax・7日有効・DBにはハッシュを保存。GmailのリフレッシュトークンはAES-GCM暗号化でD1に保存し、鍵・APIキー・WebhookはWorkers Secretsへ配置します。更新APIはOrigin検証。会員・メールのデータは公開リポジトリへ出力しません。
+サイトのログイン・Cookie・セッションは使用しません。ブラウザのAPIリクエストは `credentials: omit` で送ります。Gmailのリフレッシュトークン・クライアント情報・OpenAIキー・WebhookはWorkers Secretsに置きます。データの更新は既存サイトのOriginから受け付けます。これはログイン認証ではありません。
 
 ## 検証
 
@@ -120,14 +102,13 @@ Pagesの `RECOMMEND_API` Service bindingが `nero-library-api` を指すこと�
 cd recommend
 npm run check
 npx wrangler d1 migrations apply nero-library --local
-npx wrangler pages functions build web/functions --outdir /tmp/library-functions
 cd ..
 node mcp/test.mjs
 node mcp/fast-sync.test.mjs
 node members/test.mjs
 ```
 
-GitHub Actionsの `Royal library checks` が同じ検証を実行します。自動本番デプロイは設定していません。セットアップに必要な外部アカウントの設定・Secrets登録後に、本番OAuth・実通知メール・note・OpenAI・Discordの受入確認を行ってください。
+GitHub Actionsの `Royal library checks` が同じ検証を実行します。フロントは既存のGitHub Pagesワークフローで更新します。WorkerとD1の自動デプロイは設定していません。セットアップに必要な外部アカウントの設定・Secrets登録後に、Gmail接続・実通知メール・note・OpenAI・Discordの受入確認を行ってください。
 
 設計は [DB・ER](docs/database.md)、[API](docs/api.md)、[画面と要件対応](docs/screens.md) を参照。
 

@@ -8,3 +8,5 @@ out/
 !*.example
 coverage/
 *.tsbuildinfo
+recommend/dist/
+recommend/site/

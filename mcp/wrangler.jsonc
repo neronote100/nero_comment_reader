@@ -5,6 +5,7 @@
   "compatibility_date": "2026-10-02",
   "workers_dev": true,
   "preview_urls": false,
+  "services": [{"binding":"LIBRARY_API","service":"nero-library-api"}],
   "vars": {
     "INBOX_URL": "https://neronote100.github.io/nero_comment_reader/data/inbox.json"
   },

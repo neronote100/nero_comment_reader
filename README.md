@@ -17,9 +17,9 @@ note「nero_notelover」専用の未返信コメント管理サイトです。
 
 ## ネロ王立図書館レコメンドシステム 🌙
 
-メンバーの記事発掘・AI分析・紹介文とコメントの下書き・紹介履歴管理を `recommend/` に追加しました。既存画面の「王立図書館」タブから設置した管理画面を開けます。
+メンバーの記事発掘・AI分析・紹介文とコメントの下書き・紹介履歴管理を `recommend/` に追加しました。既存画面の「王立図書館」タブ内で、ログインなしでそのまま利用できます。別サイトのURL入力は不要です。
 
-Next.js / TypeScript / Tailwind / Workers / D1 / Cron / Google OAuth / OpenAIを利用します。既存コメント機能とは別に初期設定・配置が必要です。
+Next.js / TypeScript / Tailwind / Workers / D1 / Cron / Gmail API / OpenAIを利用します。既存GitHub Pagesに同梱し、既存MCPから収集用Workerを呼び出します。D1・APIの初回設定は必要です。
 **[セットアップ手順・設計書はこちら](recommend/README.md)**。
 
 ## 今後

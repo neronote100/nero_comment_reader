@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @source "./**/*.{ts,tsx}";
-:root {
+:host,
+.library-root {
   color-scheme: dark;
   --bg: #10131b;
   --panel: #191e2a;
@@ -13,7 +14,7 @@
 * {
   box-sizing: border-box;
 }
-body {
+.library-root {
   margin: 0;
   background: var(--bg);
   color: var(--text);
@@ -584,29 +585,6 @@ footer span {
 .edit-drawer {
   width: 520px;
 }
-.login-screen {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 24px;
-  background: radial-gradient(ellipse at 50% 30%, #292838 0, transparent 65%);
-}
-.login-card {
-  text-align: center;
-  max-width: 600px;
-}
-.seal {
-  font-size: 90px;
-  color: var(--gold);
-  line-height: 1.5;
-}
-.login-card h1 {
-  font-size: 36px;
-  margin: 24px 0;
-}
-.login-card .muted {
-  line-height: 2;
-}
 @media (min-width: 1500px) {
   .article-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -744,8 +722,5 @@ footer span {
   footer span {
     display: block;
     margin-top: 8px;
-  }
-  .login-card h1 {
-    font-size: 30px;
   }
 }

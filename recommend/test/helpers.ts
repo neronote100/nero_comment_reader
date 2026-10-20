@@ -1,7 +1,6 @@
 import { DatabaseSync } from "node:sqlite";
 import { readFileSync } from "node:fs";
 import { D1Repository } from "../src/infrastructure/repository";
-import { hash, randomToken } from "../src/infrastructure/security";
 import type { Env } from "../src/env";
 import type { Article, Member } from "../src/domain";
 export function database() {
@@ -100,25 +99,18 @@ export function article(
     ...overrides,
   };
 }
-export async function authenticatedEnv(db: D1Database) {
+export async function siteEnv(db: D1Database) {
   const env: Env = {
     DB: db,
     APP_ORIGIN: "https://library.test",
-    ADMIN_EMAIL: "admin@example.test",
     NOTE_OWNER: "nero_notelover",
     MEMBERSHIP_NAME: "王子の城下町",
     GMAIL_FROM: "noreply@note.com",
     GOOGLE_CLIENT_ID: "client",
     GOOGLE_CLIENT_SECRET: "secret",
-    TOKEN_ENCRYPTION_KEY: randomToken(),
     OPENAI_MODEL: "test-model",
     AUTO_AI_LIMIT: "6",
   };
-  const token = randomToken();
-  await db
-    .prepare("INSERT INTO sessions VALUES (?,?,?)")
-    .bind(await hash(token), env.ADMIN_EMAIL, Date.now() + 100000)
-    .run();
   const request = (
     path: string,
     data?: unknown,
@@ -129,9 +121,9 @@ export async function authenticatedEnv(db: D1Database) {
       headers: {
         "Content-Type": "application/json",
         Origin: options.origin || env.APP_ORIGIN,
-        Cookie: options.cookie ?? "nero_session=" + token,
+        Cookie: options.cookie ?? "",
       },
       body: data === undefined ? undefined : JSON.stringify(data),
     });
-  return { env, request, token };
+  return { env, request };
 }

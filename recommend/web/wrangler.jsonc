@@ -1,6 +1,0 @@
-{
-  "name": "nero-royal-library",
-  "pages_build_output_dir": "./out",
-  "compatibility_date": "2026-10-20",
-  "services": [{ "binding": "RECOMMEND_API", "service": "nero-library-api" }],
-}

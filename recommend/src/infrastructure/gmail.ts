@@ -1,7 +1,7 @@
 import { plainText, usernameValid, type MembershipEvent } from "../domain";
 import type { MailProvider } from "../ports";
 import type { Env } from "../env";
-import { decrypt, jsonFetch } from "./security";
+import { jsonFetch } from "./security";
 interface Part {
   mimeType?: string;
   body?: { data?: string };
@@ -163,15 +163,9 @@ export class GmailClient implements MailProvider {
   }
   async accessToken() {
     if (this.token) return this.token;
-    const credential = await this.env.DB.prepare(
-      "SELECT encrypted_token FROM credentials WHERE id='google'",
-    ).first<{ encrypted_token: string }>();
-    if (!credential)
-      throw new Error("管理画面でGoogle・Gmailを接続してください");
-    const refresh = await decrypt(
-      credential.encrypted_token,
-      this.env.TOKEN_ENCRYPTION_KEY,
-    );
+    const refresh = this.env.GOOGLE_REFRESH_TOKEN;
+    if (!refresh)
+      throw new Error("Gmailの連携情報をサーバーに設定してください");
     const t = await jsonFetch<{ access_token: string }>(
       "https://oauth2.googleapis.com/token",
       {
@@ -222,7 +216,7 @@ export class GmailClient implements MailProvider {
         this.env.GMAIL_FROM,
       );
       if (event.reason === "noteアカウントを一意に特定できません") {
-        // Authenticated Gmail + expected sender/community checked before resolving any link.
+        // Gmail API + expected sender/community checked before resolving any link.
         try {
           const profile = await resolveProfileLink(
             parts(mail.payload).join("\n"),

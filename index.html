@@ -32,14 +32,7 @@
         <h2>メンバーの記事を、次の出会いへ 🌙</h2>
         <p>入会順・未紹介のメンバーから記事を探して、魅力の分析、紹介文・コメントの下書き、掲載履歴の管理まで。</p>
       </section>
-      <form id="libraryLaunchForm" class="eventSearchBox">
-        <label for="libraryUrl">王立図書館の管理画面URL</label>
-        <p>初回だけ、設置した管理画面のURLを保存してください。Googleの管理者ログインが必要です。</p>
-        <div class="eventSearchRow">
-          <input id="libraryUrl" type="url" required placeholder="https://nero-royal-library.pages.dev">
-          <button class="primaryAction" type="submit">図書館を開く ↗</button>
-        </div>
-      </form>
+      <div id="libraryApp" aria-live="polite"><p class="status">王立図書館タブを開くと記事候補を読み込みます。</p></div>
     </section>
     <section id="commentsView" class="view active">
       <section class="summary">

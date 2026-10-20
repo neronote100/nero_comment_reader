@@ -1,9 +1,7 @@
-# Copy to .dev.vars (never commit). Local admin origin is http://localhost:8787.
+# サイトへのログイン設定は不要。Gmail API用の接続情報だけサーバーに設定。
 APP_ORIGIN="http://localhost:8787"
-ADMIN_EMAIL="your-google-account@example.com"
 GOOGLE_CLIENT_ID=""
 GOOGLE_CLIENT_SECRET=""
-# node -e 'console.log(require("node:crypto").randomBytes(32).toString("base64url"))'
-TOKEN_ENCRYPTION_KEY=""
+GOOGLE_REFRESH_TOKEN=""
 OPENAI_API_KEY=""
 DISCORD_WEBHOOK_URL=""

@@ -5,7 +5,6 @@ import { D1Repository } from "./infrastructure/repository";
 import { NoteClient } from "./infrastructure/note";
 import { GmailClient } from "./infrastructure/gmail";
 import { OpenAIClient } from "./infrastructure/ai";
-import { authenticated, callback, login, logout } from "./infrastructure/auth";
 const json = (value: unknown, status = 200) =>
   new Response(JSON.stringify(value), {
     status,
@@ -85,30 +84,21 @@ export async function handle(request: Request, env: Env): Promise<Response> {
   const url = new URL(request.url),
     p = url.pathname,
     method = request.method;
-  if (p.startsWith("/auth/") || p.startsWith("/api/")) {
-    if (url.origin !== env.APP_ORIGIN)
-      return json({ error: "設定された管理画面からアクセスしてください" }, 403);
-  }
-  if (method === "GET" && p === "/auth/login") return login(env);
-  if (method === "GET" && p === "/auth/callback") return callback(request, env);
   if (!p.startsWith("/api/"))
     return env.ASSETS
       ? env.ASSETS.fetch(request)
       : new Response("Not found", { status: 404 });
-  if (!(await authenticated(request, env)))
-    return json({ error: "Googleで管理者ログインしてください" }, 401);
   if (method !== "GET" && request.headers.get("origin") !== env.APP_ORIGIN)
     return json({ error: "Originが一致しません" }, 403);
-  if (method === "POST" && p === "/api/logout") return logout(request, env);
   const { repo, library } = services(env);
   if (method === "GET" && p === "/api/dashboard")
     return json(await library.dashboard());
   if (method === "GET" && p === "/api/setup")
     return json({
       googleConnected: Boolean(
-        await env.DB.prepare(
-          "SELECT id FROM credentials WHERE id='google'",
-        ).first(),
+        env.GOOGLE_REFRESH_TOKEN &&
+        env.GOOGLE_CLIENT_ID &&
+        env.GOOGLE_CLIENT_SECRET,
       ),
       aiConfigured: Boolean(env.OPENAI_API_KEY),
       discordConfigured: Boolean(env.DISCORD_WEBHOOK_URL),
@@ -351,7 +341,7 @@ export async function report(env: Env) {
             "）",
         )
         .join("、"),
-    env.APP_ORIGIN,
+    env.SITE_URL || env.APP_ORIGIN,
   ];
   const webhook = new URL(env.DISCORD_WEBHOOK_URL);
   if (
@@ -376,21 +366,39 @@ export async function report(env: Env) {
 }
 export default {
   async fetch(request: Request, env: Env) {
+    const origin = request.headers.get("origin");
+    if (origin && origin !== env.APP_ORIGIN)
+      return json({ error: "Originが一致しません" }, 403);
+    const cors = {
+      "Access-Control-Allow-Origin": env.APP_ORIGIN,
+      "Access-Control-Allow-Methods": "GET, POST, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+      Vary: "Origin",
+    };
+    if (request.method === "OPTIONS")
+      return new Response(null, { status: 204, headers: cors });
+    const decorate = (result: Response) => {
+      const response = new Response(result.body, result);
+      for (const [key, value] of Object.entries(cors))
+        response.headers.set(key, value);
+      return response;
+    };
     try {
-      return await handle(request, env);
+      return decorate(await handle(request, env));
     } catch (e) {
       if (e instanceof Invalid || e instanceof RangeError)
-        return json({ error: e.message }, 400);
+        return decorate(json({ error: e.message }, 400));
       if (e instanceof Error && /UNIQUE constraint/.test(e.message))
-        return json({ error: "同じnote IDは登録済みです" }, 409);
-      // Never return upstream bodies, tokens, email contents, or D1 errors.
+        return decorate(json({ error: "同じnote IDは登録済みです" }, 409));
       console.error(
         "library request failed",
         e instanceof Error ? e.name : "Error",
       );
-      return json(
-        { error: "処理に失敗しました。設定とジョブ履歴を確認してください" },
-        502,
+      return decorate(
+        json(
+          { error: "処理に失敗しました。設定とジョブ履歴を確認してください" },
+          502,
+        ),
       );
     }
   },
@@ -407,11 +415,7 @@ export default {
       (async () => {
         if (hm === "06:00" || hm === "18:00") {
           await library.scheduleCollection(batch);
-          if (
-            await env.DB.prepare(
-              "SELECT id FROM credentials WHERE id='google'",
-            ).first()
-          )
+          if (env.GOOGLE_REFRESH_TOKEN)
             await repo.enqueue(
               batch + ":gmail",
               "gmail",
@@ -431,15 +435,9 @@ export default {
               e instanceof Error ? e.message : "通知失敗",
             );
           }
-        // Remove expired auth data, old metrics and completed queue data once per day.
+        // Remove old metrics and completed queue data once per day.
         if (hm === "03:00")
           await env.DB.batch([
-            env.DB.prepare("DELETE FROM sessions WHERE expires_at<?").bind(
-              Date.now(),
-            ),
-            env.DB.prepare("DELETE FROM oauth_states WHERE expires_at<?").bind(
-              Date.now(),
-            ),
             env.DB.prepare(
               "DELETE FROM article_snapshots WHERE sampled_at<?",
             ).bind(new Date(Date.now() - 90 * DAY).toISOString()),

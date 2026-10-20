@@ -17,18 +17,20 @@ const eventStatusEl=$('#eventStatus');
 
 const WORKER='https://nero-comment-reader.nero-prince.workers.dev';
 
-const libraryUrlInput=document.querySelector('#libraryUrl');
-if(libraryUrlInput){
-  libraryUrlInput.value=localStorage.getItem('nero-library-url')||'';
-  document.querySelector('#libraryLaunchForm').addEventListener('submit',event=>{
-    event.preventDefault();
-    try{
-      const url=new URL(libraryUrlInput.value);
-      if(url.protocol!=='https:'||url.username||url.password)throw new Error('HTTPSの管理画面URLを入力してください');
-      localStorage.setItem('nero-library-url',url.origin);
-      window.open(url.origin,'_blank','noopener,noreferrer');
-    }catch(error){showToast(error.message||'管理画面URLを確認してください');}
-  });
+let libraryMounted=false;
+let libraryLoading=false;
+async function openLibrary(){
+  if(libraryMounted||libraryLoading)return;
+  libraryLoading=true;
+  const host=document.querySelector('#libraryApp');
+  try{
+    const {mountLibrary}=await import('./library.js');
+    const local=['localhost','127.0.0.1'].includes(location.hostname);
+    mountLibrary(host,local?location.origin:WORKER+'/library');
+    libraryMounted=true;
+  }catch(error){
+    host.textContent='図書館の読み込みに失敗しました。もう一度タブを開いてください。';
+  }finally{libraryLoading=false;}
 }
 
 function dateText(v){
@@ -395,6 +397,7 @@ async function legacyRefresh(){
 
 
 function switchView(view){
+  if(view==='library')void openLibrary();
   document.querySelectorAll('.view').forEach(el=>el.classList.toggle('active',el.id===view+'View'));
   document.querySelectorAll('.tab[data-view]').forEach(el=>el.classList.toggle('active',el.dataset.view===view));
   $('#refreshBtn').style.display=view==='comments'?'':'none';

@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "next build web",
+    "build": "node scripts/build.mjs",
+    "build:standalone": "next build web",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test test/*.test.ts",
     "dev": "wrangler dev --test-scheduled",
@@ -22,6 +23,8 @@
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "esbuild": "0.28.2",
+    "postcss": "8.5.31",
     "prettier": "3.9.10",
     "tailwindcss": "latest",
     "tsx": "^4.20.0",

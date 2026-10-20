@@ -1,12 +1,9 @@
 # API設計
 
-同一オリジンのPages Functions → Service binding → Worker。`/api/*` は全て管理者セッション必須。更新は `Origin: APP_ORIGIN`、JSON入力（32KBまで）。200成功、201作成、202予約、400入力不正、401未認証、403権限/Origin、404なし、409重複、503未設定、502処理失敗。バックエンドエラーやトークンは返さない。
+既存サイトの王立図書館タブ → 既存MCPの `/library/api/*` → Service binding → 図書館Worker。以下はWorker内のパスです。サイトログイン・セッション・Cookieは使いません。更新は `Origin: APP_ORIGIN`、JSON入力（32KBまで）。既存サイト向けCORSを返します。200成功、201作成、202予約、400入力不正、403不一致Origin、404なし、409重複、503未設定、502処理失敗。トークンや秘密鍵は返しません。
 
 | メソッド | パス                | 入力・結果                                                                                                             |
 | -------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| GET      | /auth/login         | Google認可へリダイレクト。PKCE・state Cookie                                                                           |
-| GET      | /auth/callback      | code/state検証、管理者メールとGmail scope確認、セッション発行                                                          |
-| POST     | /api/logout         | 現セッション削除、Cookie失効                                                                                           |
 | GET      | /api/dashboard      | members, overdue, recommendations, rotation, weekly, rising, articles, pendingEvents, jobs, counts。本文は含めない     |
 | GET      | /api/setup          | Google/AI/Discord設定の有無、同期・通知日時、通知エラー                                                                |
 | POST     | /api/members        | name, note_username（任意）, joined_at（任意）。IDなしはpending                                                        |
