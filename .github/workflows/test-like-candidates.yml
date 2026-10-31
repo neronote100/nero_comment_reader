@@ -5,6 +5,8 @@ on:
     paths:
       - scripts/collect-like-candidates.mjs
       - scripts/publish-like-candidates.mjs
+      - scripts/sync-reader-session.mjs
+      - tests/sync-reader-session.test.mjs
       - scripts/verify-like-candidates-browser.mjs
       - tests/*like-candidates*.test.mjs
       - like-candidates.js
@@ -19,6 +21,8 @@ on:
     paths:
       - scripts/collect-like-candidates.mjs
       - scripts/publish-like-candidates.mjs
+      - scripts/sync-reader-session.mjs
+      - tests/sync-reader-session.test.mjs
       - scripts/verify-like-candidates-browser.mjs
       - tests/*like-candidates*.test.mjs
       - like-candidates.js
@@ -49,6 +53,7 @@ jobs:
         run: |
           node --check scripts/collect-like-candidates.mjs
           node --check scripts/publish-like-candidates.mjs
+          node --check scripts/sync-reader-session.mjs
           node --check like-candidates.js
           node --check app.js
       - name: Offline candidate and publication tests

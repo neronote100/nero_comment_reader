@@ -90,6 +90,17 @@ input:focus{border-color:#706a52}
 .candidateActions .primary{display:inline-flex;align-items:center;min-height:44px}
 .candidateChecked{border-color:#454632;background:linear-gradient(145deg,#191e22,#121620)}
 .candidateChecked .candidatePerson::after{content:' ✓';color:var(--accent)}
+.candidateConnection{border:1px solid var(--line);border-radius:16px;padding:14px;margin:14px 0 18px;background:var(--panel)}
+.candidateConnection button{min-height:44px;margin-right:8px}
+.candidateConnection .candidateHint{margin-bottom:0}
+.candidateConnection [hidden],.candidateProgress[hidden]{display:none}
+.candidateProgress{color:var(--accent2);font-size:14px;line-height:1.7;padding:12px 0}
+.candidateSend{min-height:44px;cursor:pointer}
+.candidateSend:disabled{opacity:.7;cursor:default}
+.candidateDelivery{color:var(--muted);font-size:12px;line-height:1.7;margin:10px 0 0}
+.candidateDelivery:empty{display:none}
+.candidateAdvanced{margin-top:22px;font-size:13px;color:var(--muted);line-height:2}
+.candidateAdvanced a{display:inline-block;color:var(--accent2);margin:8px 0}
 @media(max-width:640px){
   .candidateList{grid-template-columns:minmax(0,1fr)}
   .candidateSummary{gap:16px;padding:15px}
@@ -98,5 +109,7 @@ input:focus{border-color:#706a52}
   .candidateTools{align-items:stretch;flex-direction:column;gap:4px}
   .candidateTools button{min-height:44px}
   .candidateActions>*{flex:0 1 auto}
+  .candidateSend{width:100%}
+  .candidateConnection button{width:100%;margin:0 0 8px}
 }
 

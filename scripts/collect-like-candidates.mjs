@@ -213,7 +213,10 @@ export async function collect({ rawCookie, chromePath, launch, ...options } = {}
     launch = settings => chromium.launch(settings);
   }
   const browser = await launch({ headless: true, executablePath: chromePath || '/usr/bin/google-chrome',
-    env: Object.fromEntries(Object.entries(process.env).filter(([key]) => !['NOTE_SESSION_COOKIE', 'GITHUB_TOKEN', 'GH_TOKEN'].includes(key))) });
+    env: Object.fromEntries(Object.entries(process.env).filter(([key]) => ![
+      'NOTE_SESSION_COOKIE', 'GITHUB_TOKEN', 'GH_TOKEN',
+      'ACTIONS_ID_TOKEN_REQUEST_TOKEN', 'ACTIONS_ID_TOKEN_REQUEST_URL',
+    ].includes(key))) });
   try {
     const context = await browser.newContext({ locale: 'ja-JP', timezoneId: 'Asia/Tokyo' });
     await context.addCookies([{ name: '_note_session_v5', value, domain: '.note.com', path: '/', httpOnly: true, secure: true, sameSite: 'Lax' }]);

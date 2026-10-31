@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {normalizeLikeCandidatesFeed,fetchLikeCandidatesFeed,CANDIDATE_FEED_URL} from '../like-candidates.js';
+import {normalizeLikeCandidatesFeed,fetchLikeCandidatesFeed,CANDIDATE_FEED_URL,ReaderApiClient,ReaderApiError,READER_API_ORIGIN,verifiedConnectionMessage,parseReaderCallback,normalizeLikeResult} from '../like-candidates.js';
 
 const now=Date.parse('2026-11-01T00:00:00Z');
 const article=(n=0)=>({user:'writer'+n,name:'書き手 '+n,profileUrl:'https://note.com/writer'+n,
@@ -71,4 +71,70 @@ test('cached public metadata can be revalidated without adding note access',()=>
   const normalized=normalizeLikeCandidatesFeed(report(),now);
   const cached={...normalized,summary:{scanned:normalized.scanned}};
   assert.equal(normalizeLikeCandidatesFeed(cached,now).candidates.length,1);
+});
+
+const connection={token:'T'.repeat(43),expiresAt:now+3600000,owner:'nero_notelover'};
+const apiResponse=(value,status=200)=>({ok:status>=200&&status<300,status,text:async()=>JSON.stringify(value)});
+test('owner API stores the bearer only in private memory and omits browser credentials',async()=>{
+  const requests=[];
+  const client=new ReaderApiClient({now:()=>now,fetcher:async(url,options)=>{requests.push({url,options});return apiResponse({ok:true,connected:true,noteReady:true});}});
+  client.setConnection(connection);
+  assert.equal(client.connected,true);
+  assert.ok(!JSON.stringify(client).includes(connection.token));
+  await client.request('/reader/status');
+  assert.equal(requests[0].url,READER_API_ORIGIN+'/reader/status');
+  assert.equal(requests[0].options.credentials,'omit');
+  assert.equal(requests[0].options.headers.Authorization,'Bearer '+connection.token);
+  assert.equal(requests[0].options.method,'GET');
+  client.clear();assert.equal(client.connected,false);
+  await assert.rejects(client.request('/reader/status'),error=>error.code==='READER_AUTH_REQUIRED');
+  assert.equal(requests.length,1);
+});
+test('the one-time PKCE exchange sends no bearer; API paths cannot target another service',async()=>{
+  const requests=[];
+  const client=new ReaderApiClient({now:()=>now,fetcher:async(url,options)=>{requests.push({url,options});return apiResponse({ok:true,...connection});}});
+  await client.request('/reader/exchange',{method:'POST',body:{code:'C'.repeat(43),verifier:'V'.repeat(43)}});
+  assert.equal(requests[0].options.headers.Authorization,undefined);
+  assert.deepEqual(JSON.parse(requests[0].options.body),{code:'C'.repeat(43),verifier:'V'.repeat(43)});
+  await assert.rejects(client.request('https://evil.example/reader/status'),error=>error.code==='INVALID_INPUT');
+  await assert.rejects(client.request('/reader/like'),error=>error.code==='INVALID_INPUT');
+  assert.equal(requests.length,1);
+});
+test('expired or unauthorized sessions cannot send likes, and no failed request is retried',async()=>{
+  let calls=0;
+  const client=new ReaderApiClient({now:()=>now,fetcher:async()=>{calls++;return apiResponse({ok:false,code:'READER_AUTH_REQUIRED',message:'UNTRUSTED_SECRET_TEXT'},401);}});
+  client.setConnection(connection);
+  await assert.rejects(client.request('/reader/like',{method:'POST',body:{key:'n123456789abc'}}),error=>error.code==='READER_AUTH_REQUIRED'&&!error.message.includes('SECRET'));
+  assert.equal(calls,1);assert.equal(client.connected,false);
+  await assert.rejects(client.request('/reader/like',{method:'POST',body:{key:'n123456789abc'}}));
+  assert.equal(calls,1);
+  assert.throws(()=>client.setConnection({...connection,expiresAt:now-1}),ReaderApiError);
+});
+test('response bodies and network exceptions never become product error text',async()=>{
+  const client=new ReaderApiClient({now:()=>now,fetcher:async()=>apiResponse({ok:false,code:'NOTE_READ_FAILED',message:'TOKEN_PRIVATE_RAW_RESPONSE'},502)});
+  client.setConnection(connection);
+  await assert.rejects(client.request('/reader/status'),error=>error.code==='NOTE_READ_FAILED'&&!error.message.includes('TOKEN_PRIVATE'));
+  let calls=0;
+  const broken=new ReaderApiClient({now:()=>now,fetcher:async()=>{calls++;throw Error('PRIVATE_ENV_VALUE');}});
+  broken.setConnection(connection);
+  await assert.rejects(broken.request('/reader/like',{method:'POST',body:{key:'n123456789abc'}}),error=>!error.message.includes('PRIVATE_ENV_VALUE'));
+  assert.equal(calls,1);
+});
+test('popup authorization requires the exact service origin, popup and nonce',()=>{
+  const popup={},nonce='N'.repeat(43),code='C'.repeat(43);
+  const event={origin:READER_API_ORIGIN,source:popup,data:{type:'ouji-reader-connected',nonce,code}};
+  assert.equal(verifiedConnectionMessage(event,{popup,nonce}),code);
+  assert.equal(verifiedConnectionMessage({...event,origin:'https://evil.example'},{popup,nonce}),null);
+  assert.equal(verifiedConnectionMessage({...event,source:{}},{popup,nonce}),null);
+  assert.equal(verifiedConnectionMessage(event,{popup,nonce:'X'.repeat(43)}),null);
+  assert.equal(verifiedConnectionMessage({...event,data:{...event.data,code:'bad'}},{popup,nonce}),null);
+});
+test('openerless callbacks accept only one valid code and nonce, and an uncertain send is not called delivered',()=>{
+  const code='C'.repeat(43),nonce='N'.repeat(43);
+  assert.deepEqual(parseReaderCallback('#reader-code='+code+'&reader-nonce='+nonce),{code,nonce});
+  assert.equal(parseReaderCallback('#reader-code='+code+'&reader-code='+code+'&reader-nonce='+nonce),null);
+  assert.equal(parseReaderCallback('#like-candidates'),null);
+  assert.equal(normalizeLikeResult({liked:true}),'liked');
+  assert.equal(normalizeLikeResult({liked:false,confirmationPending:true}),'unknown');
+  assert.equal(normalizeLikeResult({ok:true}),'unknown');
 });
