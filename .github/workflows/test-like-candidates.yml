@@ -1,0 +1,81 @@
+name: Test manual note candidates
+
+on:
+  push:
+    paths:
+      - scripts/collect-like-candidates.mjs
+      - scripts/publish-like-candidates.mjs
+      - scripts/verify-like-candidates-browser.mjs
+      - tests/*like-candidates*.test.mjs
+      - like-candidates.js
+      - index.html
+      - app.js
+      - styles.css
+      - package.json
+      - recommend/scripts/build.mjs
+      - .github/workflows/like-candidates.yml
+      - .github/workflows/test-like-candidates.yml
+  pull_request:
+    paths:
+      - scripts/collect-like-candidates.mjs
+      - scripts/publish-like-candidates.mjs
+      - scripts/verify-like-candidates-browser.mjs
+      - tests/*like-candidates*.test.mjs
+      - like-candidates.js
+      - index.html
+      - app.js
+      - styles.css
+      - package.json
+      - recommend/scripts/build.mjs
+      - .github/workflows/like-candidates.yml
+      - .github/workflows/test-like-candidates.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
+        with:
+          node-version: '24.19.0'
+      - name: JavaScript syntax
+        run: |
+          node --check scripts/collect-like-candidates.mjs
+          node --check scripts/publish-like-candidates.mjs
+          node --check like-candidates.js
+          node --check app.js
+      - name: Offline candidate and publication tests
+        run: npm run test:candidates
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
+        with:
+          node-version: '24.19.0'
+      - name: Install browser client
+        run: npm install --no-save --ignore-scripts --no-audit --no-fund playwright-core@1.55.0
+      - name: Find Chrome
+        run: |
+          CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
+          test -n "$CHROME_BIN" || exit 1
+          echo "CHROME_BIN=$CHROME_BIN" >> "$GITHUB_ENV"
+      - name: Verify thirty manual candidates on mobile
+        run: node scripts/verify-like-candidates-browser.mjs
+      - name: Save mobile preview
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: manual-like-candidates-mobile
+          path: .tmp/like-candidates-mobile.png
+          if-no-files-found: error
+          retention-days: 1

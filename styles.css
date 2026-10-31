@@ -69,3 +69,34 @@ input:focus{border-color:#706a52}
   .tabs{overflow-x:auto}
   .tab{flex:0 0 auto}
 }
+
+.candidateControls,.candidateTools{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.candidateControls a{display:inline-flex;align-items:center;min-height:44px}
+.candidateHint{color:var(--muted);font-size:12px;line-height:1.7;margin:10px 0 16px}
+.candidateSummary{display:flex;align-items:center;gap:20px;border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:16px 20px;margin:18px 0}
+.candidateCount{font-size:34px;color:var(--accent2);white-space:nowrap}
+.candidateMeta{display:grid;gap:7px;color:var(--muted);font-size:13px;line-height:1.6}
+.candidateTools{justify-content:space-between}
+.candidateFilter,.candidateMark{display:inline-flex;align-items:center;gap:9px;min-height:44px;cursor:pointer;font-size:14px}
+.candidateFilter input,.candidateMark input{width:20px;height:20px;padding:0;flex:0 0 auto;accent-color:var(--accent)}
+.candidateStatus{font-size:13px;line-height:1.7;min-height:48px}
+.candidateList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.candidateCard{min-width:0}
+.candidatePerson{color:var(--text);font-weight:700;text-decoration:none;overflow-wrap:anywhere}
+.candidateNumbers{color:var(--muted);font-size:12px;line-height:1.7;overflow-wrap:anywhere;margin:10px 0}
+.candidateCard .articleTitle{font-size:16px;font-weight:700;line-height:1.7;overflow-wrap:anywhere}
+.candidateCard .badge{flex-shrink:0;white-space:nowrap}
+.candidateActions{align-items:center;justify-content:space-between;margin-top:14px}
+.candidateActions .primary{display:inline-flex;align-items:center;min-height:44px}
+.candidateChecked{border-color:#454632;background:linear-gradient(145deg,#191e22,#121620)}
+.candidateChecked .candidatePerson::after{content:' ✓';color:var(--accent)}
+@media(max-width:640px){
+  .candidateList{grid-template-columns:minmax(0,1fr)}
+  .candidateSummary{gap:16px;padding:15px}
+  .candidateControls{align-items:stretch}
+  .candidateControls>*{width:100%;justify-content:center;text-align:center}
+  .candidateTools{align-items:stretch;flex-direction:column;gap:4px}
+  .candidateTools button{min-height:44px}
+  .candidateActions>*{flex:0 1 auto}
+}
+

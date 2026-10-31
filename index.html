@@ -20,12 +20,21 @@
   <nav class="tabs" aria-label="機能">
     <button class="tab active" data-view="comments">💬 コメント</button>
     <button class="tab" data-view="events">🎪 イベント</button>
+    <button class="tab" data-view="likeCandidates">♡ スキ候補</button>
     <button class="tab" data-view="library">🏰 王立図書館</button>
     <button class="tab disabled" title="準備中">🔗 引用 <small>準備中</small></button>
     <button class="tab disabled" title="準備中">👀 ウォッチリスト <small>準備中</small></button>
   </nav>
 
   <main>
+    <section id="likeCandidatesView" class="view" aria-labelledby="likeCandidatesTitle">
+      <section class="eventIntro">
+        <p class="eyebrow">NEW NOTE ENCOUNTERS</p>
+        <h2 id="likeCandidatesTitle">気になる書き手を、30人ずつ ♡</h2>
+        <p>条件に合う人の記事を開いて、読んでからnoteでスキ。候補一覧から、一人ずつ会いにいけます。</p>
+      </section>
+      <div id="likeCandidatesApp" aria-live="polite"><p class="status">スキ候補タブを開くと、最新の候補一覧を読み込みます。</p></div>
+    </section>
     <section id="libraryView" class="view">
       <section class="eventIntro">
         <p class="eyebrow">NERO ROYAL LIBRARY</p>
@@ -127,3 +136,4 @@
   <script src="./app.js" defer></script>
 </body>
 </html>
+
