@@ -1,0 +1,60 @@
+name: Collect manual note candidates
+
+on:
+  workflow_call:
+    inputs:
+      source_ref:
+        description: Exact Comment Reader source commit
+        required: true
+        type: string
+    secrets:
+      NOTE_SESSION_COOKIE:
+        required: true
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: manual-like-candidates
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    if: >-
+      (github.repository == 'neronote100/Prince_like_giver' || github.repository == 'neronote100/nero_comment_reader') &&
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Validate source commit
+        env:
+          SOURCE_REF: ${{ inputs.source_ref || github.sha }}
+        run: node --input-type=module -e 'if(!/^[a-f0-9]{40}$/.test(process.env.SOURCE_REF||""))throw new Error("SOURCE_REF_INVALID")'
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          repository: neronote100/nero_comment_reader
+          ref: ${{ inputs.source_ref || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
+        with:
+          node-version: '24.19.0'
+      - name: Install browser client
+        run: npm install --no-save --ignore-scripts --no-audit --no-fund playwright-core@1.55.0
+      - name: Check candidate logic
+        run: npm run test:candidates
+      - name: Find Chrome
+        run: |
+          CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
+          test -n "$CHROME_BIN" || exit 1
+          echo "CHROME_BIN=$CHROME_BIN" >> "$GITHUB_ENV"
+      - name: Collect up to thirty people (note reads only)
+        env:
+          NOTE_SESSION_COOKIE: ${{ secrets.NOTE_SESSION_COOKIE }}
+        run: node scripts/collect-like-candidates.mjs
+      - name: Publish the manual candidate feed
+        env:
+          CANDIDATE_PUBLISH_REPOSITORY: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/publish-like-candidates.mjs

@@ -3,5 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "scripts": {"sync": "node scripts/sync-comments.mjs"}
+  "scripts": {
+    "sync": "node scripts/sync-comments.mjs",
+    "collect:candidates": "node scripts/collect-like-candidates.mjs",
+    "test:candidates": "node --test tests/*like-candidates*.test.mjs"
+  }
 }
+

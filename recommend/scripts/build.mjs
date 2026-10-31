@@ -25,9 +25,10 @@ await writeFile(root + "dist/library.css", css.css);
 // Deploy the existing site and the new native tab together as one Pages artifact.
 await rm(root + "site", { recursive: true, force: true });
 await mkdir(root + "site", { recursive: true });
-for (const name of ["index.html", "app.js", "styles.css", "data"])
+for (const name of ["index.html", "app.js", "like-candidates.js", "styles.css", "data"])
   await cp(root + "../" + name, root + "site/" + name, { recursive: true });
 await cp(root + "dist", root + "site", { recursive: true });
 console.log(
   "Built original Comment Reader + native royal library tab in recommend/site",
 );
+

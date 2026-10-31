@@ -17,6 +17,21 @@ const eventStatusEl=$('#eventStatus');
 
 const WORKER='https://nero-comment-reader.nero-prince.workers.dev';
 
+let likeCandidatesMounted=false;
+let likeCandidatesLoading=false;
+async function openLikeCandidates(){
+  if(likeCandidatesMounted||likeCandidatesLoading)return;
+  likeCandidatesLoading=true;
+  const host=$('#likeCandidatesApp');
+  try{
+    const {mountLikeCandidates}=await import('./like-candidates.js');
+    mountLikeCandidates(host);
+    likeCandidatesMounted=true;
+  }catch(error){
+    host.textContent='候補一覧を読み込めませんでした。もう一度タブを開いてください。';
+  }finally{likeCandidatesLoading=false;}
+}
+
 let libraryMounted=false;
 let libraryLoading=false;
 async function openLibrary(){
@@ -398,6 +413,7 @@ async function legacyRefresh(){
 
 function switchView(view){
   if(view==='library')void openLibrary();
+  if(view==='likeCandidates')void openLikeCandidates();
   document.querySelectorAll('.view').forEach(el=>el.classList.toggle('active',el.id===view+'View'));
   document.querySelectorAll('.tab[data-view]').forEach(el=>el.classList.toggle('active',el.dataset.view===view));
   $('#refreshBtn').style.display=view==='comments'?'':'none';
@@ -545,3 +561,5 @@ if(savedMagazine)$('#magazineInput').value=savedMagazine;
 
 loadData();
 setSyncUi('手動取得','「最新コメントを取得」を押した時だけnoteを確認します。',0);
+if(location.hash==='#like-candidates')switchView('likeCandidates');
+
