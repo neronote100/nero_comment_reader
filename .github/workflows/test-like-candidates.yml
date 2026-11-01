@@ -6,6 +6,8 @@ on:
       - scripts/collect-like-candidates.mjs
       - scripts/publish-like-candidates.mjs
       - scripts/sync-reader-session.mjs
+      - scripts/reader-write-session.mjs
+      - tests/reader-write-session.test.mjs
       - tests/sync-reader-session.test.mjs
       - scripts/verify-like-candidates-browser.mjs
       - tests/*like-candidates*.test.mjs
@@ -22,6 +24,8 @@ on:
       - scripts/collect-like-candidates.mjs
       - scripts/publish-like-candidates.mjs
       - scripts/sync-reader-session.mjs
+      - scripts/reader-write-session.mjs
+      - tests/reader-write-session.test.mjs
       - tests/sync-reader-session.test.mjs
       - scripts/verify-like-candidates-browser.mjs
       - tests/*like-candidates*.test.mjs

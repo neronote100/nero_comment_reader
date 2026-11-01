@@ -1,5 +1,6 @@
 import { appendFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
+import { prepareReaderWriteSession, ReaderWriteSessionError } from './reader-write-session.mjs';
 
 export const READER_SESSION_ENDPOINT = 'https://ouji-note-mcp.nero-prince.workers.dev/reader/session/import';
 const OWNER = 'nero_notelover';
@@ -164,12 +165,13 @@ async function summary(message) {
 
 async function main() {
   try {
-    const result = await syncReaderSession({ cookie: process.env.NOTE_SESSION_COOKIE,
+    const cookie = await prepareReaderWriteSession({ rawCookie: process.env.NOTE_SESSION_COOKIE, chromePath: process.env.CHROME_BIN });
+    const result = await syncReaderSession({ cookie,
       requestUrl: process.env.ACTIONS_ID_TOKEN_REQUEST_URL, requestToken: process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN });
     console.log('READER_SESSION_SYNC_READY ' + JSON.stringify(result));
     await summary('Comment Readerのnote接続を更新しました。本人アカウント確認済み。');
   } catch (error) {
-    const safe = error instanceof ReaderSessionSyncError;
+    const safe = error instanceof ReaderSessionSyncError || error instanceof ReaderWriteSessionError;
     console.error('READER_SESSION_SYNC_FAILED ' + JSON.stringify({ code: safe ? error.code : 'SESSION_SYNC_FAILED',
       ...(safe && error.status ? { status: error.status } : {}),
       ...(safe && error.reason ? { reason: error.reason } : {}),
