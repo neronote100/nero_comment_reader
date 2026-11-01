@@ -5,6 +5,14 @@ export const READER_SESSION_ENDPOINT = 'https://ouji-note-mcp.nero-prince.worker
 const OWNER = 'nero_notelover';
 const MAX_JSON = 32_768;
 const TOKEN = /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/;
+const REUSABLE = /^neronote100\/nero_comment_reader\/\.github\/workflows\/like-candidates\.yml@([a-f0-9]{40})$/;
+const IDENTITY_CHECK_KEYS = Object.freeze([
+  'issuerMatch', 'audienceMatch', 'repositoryMatch', 'repositoryIdMatch', 'ownerIdMatch',
+  'refMatch', 'subjectMatch', 'workflowRefMatch', 'reusableWorkflowRefMatch', 'jobWorkflowShaMatch',
+  'eventAllowed', 'runIdValid', 'jwtIdValid', 'repositoryIdIsString', 'ownerIdIsString',
+  'repositoryIdPresent', 'ownerIdPresent', 'subjectPresent', 'workflowRefPresent',
+  'reusableWorkflowRefPresent', 'jobWorkflowShaPresent', 'runIdPresent', 'jwtIdPresent',
+]);
 const SERVER_CODES = new Set([
   'ACTIONS_IDENTITY_INVALID', 'ACTIONS_TOKEN_INVALID', 'ACTIONS_CONFIGURATION', 'ACTIONS_TOKEN_EXPIRED',
   'ACTIONS_KEYS_UNAVAILABLE', 'ACTIONS_KEY_UNKNOWN', 'ACTIONS_SIGNATURE_INVALID', 'ACTIONS_SERVER_ONLY',
@@ -13,14 +21,54 @@ const SERVER_CODES = new Set([
 ]);
 
 export class ReaderSessionSyncError extends Error {
-  constructor(code, status, diagnostic) {
+  constructor(code, status, diagnostic, identityChecks) {
     super(code);
     this.name = 'ReaderSessionSyncError';
     this.code = code;
     if (Number.isInteger(status) && status >= 100 && status <= 599) this.status = status;
     if (SERVER_CODES.has(diagnostic?.code)) this.reason = diagnostic.code;
     if (Number.isInteger(diagnostic?.noteStatus) && diagnostic.noteStatus >= 100 && diagnostic.noteStatus <= 599) this.noteStatus = diagnostic.noteStatus;
+    if (this.reason === 'ACTIONS_IDENTITY_INVALID' && identityChecks && typeof identityChecks === 'object') {
+      this.identityChecks = Object.fromEntries(IDENTITY_CHECK_KEYS.filter(key => typeof identityChecks[key] === 'boolean')
+        .map(key => [key, identityChecks[key]]));
+    }
   }
+}
+
+/** Diagnostic comparisons only. The token and claim values never leave this function. */
+export function actionsIdentityChecks(jwt) {
+  try {
+    if (typeof jwt !== 'string' || jwt.length > 16_384 || !TOKEN.test(jwt)) return null;
+    const payload = jwt.split('.')[1];
+    if (payload.length > 12_000) return null;
+    const bytes = Buffer.from(payload, 'base64url');
+    if (bytes.toString('base64url') !== payload) return null;
+    const claims = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
+    if (!claims || typeof claims !== 'object' || Array.isArray(claims)) return null;
+    const reusable = typeof claims.job_workflow_ref === 'string' && claims.job_workflow_ref.match(REUSABLE);
+    const present = key => Object.hasOwn(claims, key);
+    return {
+      issuerMatch: claims.iss === 'https://token.actions.githubusercontent.com',
+      audienceMatch: claims.aud === READER_SESSION_ENDPOINT,
+      repositoryMatch: claims.repository === 'neronote100/Prince_like_giver',
+      repositoryIdMatch: claims.repository_id === '1438673284',
+      ownerIdMatch: claims.repository_owner_id === '330726672',
+      refMatch: claims.ref === 'refs/heads/main',
+      subjectMatch: claims.sub === 'repo:neronote100/Prince_like_giver:ref:refs/heads/main',
+      workflowRefMatch: claims.workflow_ref === 'neronote100/Prince_like_giver/.github/workflows/candidates.yml@refs/heads/main',
+      reusableWorkflowRefMatch: Boolean(reusable),
+      jobWorkflowShaMatch: claims.job_workflow_sha === undefined || Boolean(reusable && claims.job_workflow_sha === reusable[1]),
+      eventAllowed: ['push', 'schedule', 'workflow_dispatch'].includes(claims.event_name),
+      runIdValid: typeof claims.run_id === 'string' && /^[1-9]\d{0,31}$/.test(claims.run_id),
+      jwtIdValid: typeof claims.jti === 'string' && /^[A-Za-z0-9_-]{8,200}$/.test(claims.jti),
+      repositoryIdIsString: typeof claims.repository_id === 'string',
+      ownerIdIsString: typeof claims.repository_owner_id === 'string',
+      repositoryIdPresent: present('repository_id'), ownerIdPresent: present('repository_owner_id'),
+      subjectPresent: present('sub'), workflowRefPresent: present('workflow_ref'),
+      reusableWorkflowRefPresent: present('job_workflow_ref'), jobWorkflowShaPresent: present('job_workflow_sha'),
+      runIdPresent: present('run_id'), jwtIdPresent: present('jti'),
+    };
+  } catch { return null; }
 }
 
 async function readJson(response, code, allowErrorStatus = false) {
@@ -81,7 +129,8 @@ export async function syncReaderSession({ cookie, requestUrl, requestToken, fetc
     });
   } catch { throw new ReaderSessionSyncError('SESSION_SYNC_FAILED'); }
   const result = await readJson(response, 'SESSION_SYNC_FAILED', true);
-  if (response.status < 200 || response.status >= 300) throw new ReaderSessionSyncError('SESSION_SYNC_FAILED', response.status, result);
+  if (response.status < 200 || response.status >= 300) throw new ReaderSessionSyncError('SESSION_SYNC_FAILED', response.status, result,
+    result?.code === 'ACTIONS_IDENTITY_INVALID' ? actionsIdentityChecks(identity.value) : undefined);
   if (result?.ok !== true || result.account !== OWNER || result.noteReady !== true)
     throw new ReaderSessionSyncError('SESSION_SYNC_RESPONSE_INVALID');
   return { ok: true, account: OWNER, noteReady: true };
@@ -103,7 +152,8 @@ async function main() {
     console.error('READER_SESSION_SYNC_FAILED ' + JSON.stringify({ code: safe ? error.code : 'SESSION_SYNC_FAILED',
       ...(safe && error.status ? { status: error.status } : {}),
       ...(safe && error.reason ? { reason: error.reason } : {}),
-      ...(safe && error.noteStatus ? { noteStatus: error.noteStatus } : {}) }));
+      ...(safe && error.noteStatus ? { noteStatus: error.noteStatus } : {}),
+      ...(safe && error.identityChecks ? { identityChecks: error.identityChecks } : {}) }));
     await summary('Comment Readerのnote接続更新は確認待ちです。通常の候補収集は継続します。');
     process.exitCode = 1;
   }

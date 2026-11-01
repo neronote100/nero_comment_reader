@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { syncReaderSession, ReaderSessionSyncError, READER_SESSION_ENDPOINT } from '../scripts/sync-reader-session.mjs';
+import { syncReaderSession, ReaderSessionSyncError, READER_SESSION_ENDPOINT, actionsIdentityChecks } from '../scripts/sync-reader-session.mjs';
 import { collect } from '../scripts/collect-like-candidates.mjs';
 
 const COOKIE = '_note_session_v5=PRIVATE_NOTE_COOKIE';
@@ -105,6 +105,58 @@ test('only reviewed fixed import diagnostics may reach the runner error', async 
     assert.equal(error.reason, undefined); assert.equal(error.noteStatus, undefined);
     assert.ok(!JSON.stringify(error).includes('PRIVATE')); return true;
   });
+});
+
+function diagnosticIdentity(overrides = {}) {
+  const claims = {
+    iss: 'https://token.actions.githubusercontent.com', aud: READER_SESSION_ENDPOINT,
+    repository: 'neronote100/Prince_like_giver', repository_id: '1438673284', repository_owner_id: '330726672',
+    ref: 'refs/heads/main', sub: 'repo:neronote100/Prince_like_giver:ref:refs/heads/main',
+    workflow_ref: 'neronote100/Prince_like_giver/.github/workflows/candidates.yml@refs/heads/main',
+    job_workflow_ref: 'neronote100/nero_comment_reader/.github/workflows/like-candidates.yml@' + 'a'.repeat(40),
+    job_workflow_sha: 'a'.repeat(40), event_name: 'push', run_id: '12345', jti: 'actions-identity-fixture',
+    ...overrides,
+  };
+  return 'eyJhbGciOiJSUzI1NiJ9.' + Buffer.from(JSON.stringify(claims)).toString('base64url') + '.private_signature';
+}
+
+test('identity diagnostic contains fixed boolean comparisons and never claim or token values', () => {
+  const valid = actionsIdentityChecks(diagnosticIdentity());
+  assert.ok(valid && Object.values(valid).every(value => value === true));
+  const jwt = diagnosticIdentity({ repository_id: 1438673284, repository_owner_id: 'PRIVATE_OWNER',
+    workflow_ref: COOKIE, job_workflow_ref: REQUEST_TOKEN, arbitrary: IDENTITY });
+  const checks = actionsIdentityChecks(jwt);
+  assert.equal(checks.repositoryIdPresent, true);
+  assert.equal(checks.repositoryIdIsString, false);
+  assert.equal(checks.repositoryIdMatch, false);
+  assert.equal(checks.ownerIdIsString, true);
+  assert.equal(checks.ownerIdMatch, false);
+  assert.equal(checks.workflowRefMatch, false);
+  assert.equal(checks.reusableWorkflowRefMatch, false);
+  assert.ok(Object.values(checks).every(value => typeof value === 'boolean'));
+  const printed = JSON.stringify(checks);
+  for (const secret of [COOKIE, REQUEST_TOKEN, IDENTITY, jwt, 'PRIVATE_OWNER']) assert.ok(!printed.includes(secret));
+  for (const value of [null, '', 'not-a-jwt', 'a.b.c', diagnosticIdentity({}).replace(/\.[^.]+$/, '.x').repeat(1000)])
+    assert.equal(actionsIdentityChecks(value), null);
+});
+
+test('only identity refusal attaches locally computed diagnostic booleans', async () => {
+  const identity = diagnosticIdentity({ repository: 'PRIVATE_REPOSITORY' });
+  const f = fixture({ identity, finalStatus: 403, final: { code: 'ACTIONS_IDENTITY_INVALID',
+    identityChecks: { repositoryMatch: COOKIE }, error: REQUEST_TOKEN } });
+  await assert.rejects(syncReaderSession({ ...SETTINGS, fetcher: f.fetcher }), error => {
+    assert.equal(error.reason, 'ACTIONS_IDENTITY_INVALID');
+    assert.equal(error.identityChecks.repositoryMatch, false);
+    assert.ok(Object.values(error.identityChecks).every(value => typeof value === 'boolean'));
+    const printed = JSON.stringify(error);
+    for (const secret of [COOKIE, REQUEST_TOKEN, identity, 'PRIVATE_REPOSITORY']) assert.ok(!printed.includes(secret));
+    return true;
+  });
+  const other = fixture({ identity, finalStatus: 403, final: { code: 'NOTE_ACCESS_PAUSED' } });
+  await assert.rejects(syncReaderSession({ ...SETTINGS, fetcher: other.fetcher }), error => error.identityChecks === undefined);
+  const filtered = new ReaderSessionSyncError('SESSION_SYNC_FAILED', 403, { code: 'ACTIONS_IDENTITY_INVALID' },
+    { repositoryMatch: false, unknown: COOKIE, ownerIdMatch: REQUEST_TOKEN });
+  assert.deepEqual(filtered.identityChecks, { repositoryMatch: false });
 });
 
 test('Chrome cannot inherit the runner identity request credentials', async () => {
