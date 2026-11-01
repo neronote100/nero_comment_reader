@@ -360,7 +360,7 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
         const code=verifiedConnectionMessage(event,{popup,nonce:proof.nonce});
         if(!code||exchanging)return;
         exchanging=true;cleanup();
-        try{await exchange(code,proof);}
+        try{await exchange(code,proof);try{popup.close();}catch{}}
         catch(error){updateConnection(notice(error));}
         finally{connecting=false;authBusy=false;updateConnection(client.connected?undefined:ERROR_MESSAGES.READER_CONNECTION_FAILED);}
       };

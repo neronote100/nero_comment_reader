@@ -1,5 +1,4 @@
 import assert from 'node:assert/strict';
-import { createServer } from 'node:http';
 import { readFile, mkdir } from 'node:fs/promises';
 import { resolve, sep, extname } from 'node:path';
 import { chromium } from 'playwright-core';
@@ -20,18 +19,9 @@ const feed = {
     liked: false, status: 'review_only',
   })),
 };
-const server = createServer(async (req, res) => {
-  const pathname = new URL(req.url, 'http://localhost').pathname;
-  const file = resolve(root, '.' + (pathname === '/' ? '/index.html' : pathname));
-  if (!file.startsWith(root + sep)) { res.writeHead(403); res.end(); return; }
-  try {
-    const body = await readFile(file);
-    res.writeHead(200, { 'Content-Type': ({ '.js': 'text/javascript', '.css': 'text/css', '.html': 'text/html' })[extname(file)] || 'application/json' });
-    res.end(body);
-  } catch { res.writeHead(404); res.end(); }
-});
-await new Promise((resolve, reject) => { server.once('error', reject); server.listen(0, '127.0.0.1', resolve); });
-const origin = 'http://127.0.0.1:' + server.address().port;
+// Serve the exact source through interception: no listening socket or external
+// network is needed, while HTTPS origins still exercise browser CORS and PKCE.
+const origin = 'https://reader-fixture.invalid';
 let browser;
 try {
   browser = await chromium.launch({ headless: true, executablePath: process.env.CHROME_BIN || '/usr/bin/google-chrome' });
@@ -55,7 +45,7 @@ try {
         const callback = origin + '/#reader-code=' + code + '&reader-nonce=' + nonce;
         const script = fallback
           ? 'window.opener=null;location.replace(' + JSON.stringify(callback) + ');'
-          : 'window.opener.postMessage(' + JSON.stringify({ type: 'ouji-reader-connected', code, nonce }) + ',' + JSON.stringify(origin) + ');window.close();';
+          : 'window.opener.postMessage(' + JSON.stringify({ type: 'ouji-reader-connected', code, nonce }) + ',' + JSON.stringify(origin) + ');';
         await route.fulfill({ status: 200, contentType: 'text/html', body: '<!doctype html><script>' + script + '</script>' });
         return;
       }
@@ -93,7 +83,13 @@ try {
     if (url.pathname.endsWith('/like-candidates.json')) {
       if (offline) await route.abort();
       else await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(feed) });
-    } else if (url.origin === origin) await route.continue();
+    } else if (url.origin === origin) {
+      const file = resolve(root, '.' + (url.pathname === '/' ? '/index.html' : url.pathname));
+      if (!file.startsWith(root + sep)) { await route.fulfill({ status: 403, body: '' }); return; }
+      try {
+        await route.fulfill({ status: 200, contentType: ({ '.js': 'text/javascript', '.css': 'text/css', '.html': 'text/html' })[extname(file)] || 'application/json', body: await readFile(file) });
+      } catch { await route.fulfill({ status: 404, body: '' }); }
+    }
     else if (url.hostname === 'nero-comment-reader.nero-prince.workers.dev') await route.fulfill({
       status: 200, contentType: 'application/json', body: JSON.stringify({ ok: true, snapshot: { version: 5, items: [], updatedAt: new Date(now).toISOString() } }),
     });
@@ -101,6 +97,23 @@ try {
   });
   const page = await context.newPage(), errors = [];
   page.on('pageerror', error => errors.push(error.message));
+  context.on('page', popup => popup.on('pageerror', error => errors.push(error.message)));
+  const awaitConnection = async target => {
+    try {
+      await target.waitForFunction(() => document.querySelector('.candidateConnectionStatus')?.textContent.includes('王子のnoteに接続済み'));
+    } catch (error) {
+      // This harness contains fixture codes only. Log UI state and route names,
+      // never authorization headers, payloads or URLs containing auth codes.
+      console.error('READER_BROWSER_CONNECTION_FAILED ' + JSON.stringify({
+        status: await target.locator('.candidateConnectionStatus').textContent().catch(() => 'unavailable'),
+        errors, requests: writes.map(write => write.path),
+        pages: context.pages().map(openPage => {
+          try { const url = new URL(openPage.url()); return url.origin + url.pathname; } catch { return 'unavailable'; }
+        }),
+      }));
+      throw error;
+    }
+  };
   await page.goto(origin + '/#like-candidates');
   await page.waitForFunction(() => document.querySelectorAll('.candidateCard').length === 30);
   assert.equal(await page.locator('.candidateCount').innerText(), '30人');
@@ -130,7 +143,7 @@ try {
   offline = false;
 
   await page.locator('.candidateConnect').click();
-  await page.waitForFunction(() => document.querySelector('.candidateConnectionStatus')?.textContent.includes('王子のnoteに接続済み'));
+  await awaitConnection(page);
   assert.equal(writes.filter(w => w.path === '/reader/like').length, 0, 'connecting must not send a previously clicked like');
   await page.locator('.candidateSearch').click();
   await page.waitForFunction(() => document.querySelector('.candidateProgress')?.hidden === true);
@@ -162,7 +175,7 @@ try {
   await source.locator('.candidateConnect').click();
   const callbackPage = await callbackPagePromise;
   callbackPage.on('pageerror', error => errors.push(error.message));
-  await callbackPage.waitForFunction(() => document.querySelector('.candidateConnectionStatus')?.textContent.includes('王子のnoteに接続済み'));
+  await awaitConnection(callbackPage);
   assert.equal(new URL(callbackPage.url()).hash, '#like-candidates', 'authorization code must be removed from browser URL');
   assert.equal(writes.filter(w => w.path === '/reader/like').length, 2, 'fallback authentication cannot send likes');
   assert.deepEqual(errors, []);
@@ -172,5 +185,4 @@ try {
   console.log('MANUAL_CANDIDATES_BROWSER_OK: 30 mobile cards, owner popup and fallback, in-page extraction, explicit single likes, uncertain outcome lookup without resending.');
 } finally {
   await browser?.close();
-  await new Promise(resolve => server.close(resolve));
 }
