@@ -179,9 +179,12 @@ try {
   assert.equal(new URL(callbackPage.url()).hash, '#like-candidates', 'authorization code must be removed from browser URL');
   assert.equal(writes.filter(w => w.path === '/reader/like').length, 2, 'fallback authentication cannot send likes');
   assert.deepEqual(errors, []);
+  await callbackPage.close();
+  await source.close();
+  await page.bringToFront();
   await page.evaluate(() => scrollTo(0, 0));
   await mkdir(resolve(root, '.tmp'), { recursive: true });
-  await page.screenshot({ path: resolve(root, '.tmp/like-candidates-mobile.png') });
+  await page.screenshot({ path: resolve(root, '.tmp/like-candidates-mobile.png'), animations: 'disabled' });
   console.log('MANUAL_CANDIDATES_BROWSER_OK: 30 mobile cards, owner popup and fallback, in-page extraction, explicit single likes, uncertain outcome lookup without resending.');
 } finally {
   await browser?.close();
