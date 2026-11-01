@@ -125,7 +125,9 @@ export class ReaderApiClient{
     if(!exchange&&!this.connected)throw new ReaderApiError('READER_AUTH_REQUIRED',401);
     const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),30000);
     try{
-      const response=await this.fetcher(READER_API_ORIGIN+path,{
+      // Browser fetch is a Window method. Calling the stored function as a
+      // ReaderApiClient method gives it an invalid receiver before networking.
+      const response=await this.fetcher.call(globalThis,READER_API_ORIGIN+path,{
         method,cache:'no-store',credentials:'omit',redirect:'error',signal:controller.signal,
         headers:{Accept:'application/json',...(body===undefined?{}:{'Content-Type':'application/json'}),
           ...(!exchange?{Authorization:'Bearer '+this.#token}:{})},

@@ -75,6 +75,20 @@ test('cached public metadata can be revalidated without adding note access',()=>
 
 const connection={token:'T'.repeat(43),expiresAt:now+3600000,owner:'nero_notelover'};
 const apiResponse=(value,status=200)=>({ok:status>=200&&status<300,status,text:async()=>JSON.stringify(value)});
+test('stored browser fetch retains its Window receiver before a request is sent',async()=>{
+  let calls=0;
+  const client=new ReaderApiClient({now:()=>now,fetcher:async function(url,options){
+    assert.equal(this,globalThis,'native browser fetch requires its global receiver');
+    assert.equal(url,READER_API_ORIGIN+'/reader/status');
+    assert.equal(options.method,'GET');
+    calls++;
+    return apiResponse({ok:true,connected:true,noteReady:true});
+  }});
+  client.setConnection(connection);
+  const result=await client.request('/reader/status');
+  assert.equal(result.noteReady,true);
+  assert.equal(calls,1);
+});
 test('owner API stores the bearer only in private memory and omits browser credentials',async()=>{
   const requests=[];
   const client=new ReaderApiClient({now:()=>now,fetcher:async(url,options)=>{requests.push({url,options});return apiResponse({ok:true,connected:true,noteReady:true});}});
