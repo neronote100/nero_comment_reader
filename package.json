@@ -6,7 +6,7 @@
   "scripts": {
     "sync": "node scripts/sync-comments.mjs",
     "collect:candidates": "node scripts/collect-like-candidates.mjs",
-    "test:candidates": "node --test tests/*like-candidates*.test.mjs"
+    "test:candidates": "node --test tests/*like-candidates*.test.mjs tests/sync-reader-session.test.mjs"
   }
 }
 

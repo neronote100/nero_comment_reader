@@ -561,5 +561,5 @@ if(savedMagazine)$('#magazineInput').value=savedMagazine;
 
 loadData();
 setSyncUi('手動取得','「最新コメントを取得」を押した時だけnoteを確認します。',0);
-if(location.hash==='#like-candidates')switchView('likeCandidates');
+if(location.hash==='#like-candidates'||new URLSearchParams(location.hash.slice(1)).has('reader-code'))switchView('likeCandidates');
 

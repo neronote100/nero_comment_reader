@@ -14,6 +14,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write
 
 concurrency:
   group: manual-like-candidates
@@ -43,12 +44,19 @@ jobs:
       - name: Install browser client
         run: npm install --no-save --ignore-scripts --no-audit --no-fund playwright-core@1.55.0
       - name: Check candidate logic
-        run: npm run test:candidates
+        run: |
+          npm run test:candidates
+          node --test tests/sync-reader-session.test.mjs
       - name: Find Chrome
         run: |
           CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
           test -n "$CHROME_BIN" || exit 1
           echo "CHROME_BIN=$CHROME_BIN" >> "$GITHUB_ENV"
+      - name: Refresh Comment Reader note connection
+        continue-on-error: true
+        env:
+          NOTE_SESSION_COOKIE: ${{ secrets.NOTE_SESSION_COOKIE }}
+        run: node scripts/sync-reader-session.mjs
       - name: Collect up to thirty people (note reads only)
         env:
           NOTE_SESSION_COOKIE: ${{ secrets.NOTE_SESSION_COOKIE }}
