@@ -54,6 +54,13 @@ test('connection receipt exposes bounded delivery counts and fixed diagnostics w
     lastHttpStatus: IDENTITY, recentAttempts: { unknown: 21, inspected: -1, liked: REQUEST_TOKEN } }), undefined);
 });
 
+test('the verified server write-readiness flag is preserved without inferring it from CSRF availability', async () => {
+  for (const writeReady of [true, false]) {
+    const f = fixture({ final: { ok: true, account: 'nero_notelover', noteReady: true, writeReady } });
+    assert.equal((await syncReaderSession({ ...SETTINGS, fetcher: f.fetcher })).writeReady, writeReady);
+  }
+});
+
 test('outer Cookie whitespace is accepted but embedded control characters and unsafe runner URLs stop before requests', async () => {
   const f = fixture();
   await syncReaderSession({ ...SETTINGS, cookie: '\n' + COOKIE + '\n', fetcher: f.fetcher });

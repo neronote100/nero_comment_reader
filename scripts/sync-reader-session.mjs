@@ -155,7 +155,9 @@ export async function syncReaderSession({ cookie, requestUrl, requestToken, fetc
   if (result?.ok !== true || result.account !== OWNER || result.noteReady !== true)
     throw new ReaderSessionSyncError('SESSION_SYNC_RESPONSE_INVALID');
   const diagnostics = connectionDiagnostics(result.diagnostics);
-  return { ok: true, account: OWNER, noteReady: true, ...(diagnostics ? { diagnostics } : {}) };
+  return { ok: true, account: OWNER, noteReady: true,
+    ...(typeof result.writeReady === 'boolean' ? { writeReady: result.writeReady } : {}),
+    ...(diagnostics ? { diagnostics } : {}) };
 }
 
 async function summary(message) {
