@@ -3,6 +3,7 @@ export const CANDIDATE_FEED_URL='https://raw.githubusercontent.com/neronote100/P
 export const CANDIDATE_WORKFLOW_URL='https://github.com/neronote100/Prince_like_giver/actions/workflows/candidates.yml';
 const CACHE_KEY='nero-manual-like-candidates-v1';
 const CHECKED_KEY='nero-manual-like-checked-v1';
+const DELIVERED_KEY='nero-confirmed-like-deliveries-v1';
 const DAY=86400000;
 const REASONS={
   source_exhausted:'今回調べられた範囲で、条件に合う候補を表示しています。',
@@ -87,6 +88,8 @@ function dateText(value){
 
 export const READER_API_ORIGIN='https://ouji-note-mcp.nero-prince.workers.dev';
 const PENDING_KEY='nero-reader-connect-pending-v1';
+const CONNECTION_KEY='nero-reader-session-v1';
+const CONNECTION_TTL=8*60*60*1000;
 const TOKEN=/^[A-Za-z0-9_-]{43}$/;
 const NOTE_KEY=/^n[a-f0-9]{8,32}$/;
 const ERROR_MESSAGES={
@@ -94,6 +97,8 @@ const ERROR_MESSAGES={
   NOTE_SESSION_REQUIRED:'noteとの接続を準備しています。少し待ってからもう一度お試しください。',
   NOTE_ACCESS_PAUSED:'note側の制限で操作を止めました。時間をおいてからお試しください。',
   NOTE_READ_FAILED:'noteの状態を確認できませんでした。前回の候補を保持しています。',
+  NOTE_CSRF_REQUIRED:'noteとの接続情報を更新中です。スキは送信していません。少し待ってからもう一度押してください。',
+  NOTE_SEND_REJECTED:'noteに送信を受け付けてもらえませんでした。少し待ってからもう一度押してください。',
   CANDIDATE_NOT_FOUND:'候補の有効期限が切れました。「候補を30人探す」で更新してください。',
   SCAN_EXPIRED:'候補の検索期限が切れました。もう一度「候補を30人探す」を押してください。',
   STORAGE_FAILED:'操作結果の保存を確認できませんでした。',
@@ -108,15 +113,28 @@ export class ReaderApiError extends Error{
   }
 }
 export class ReaderApiClient{
-  #token=null;#expiresAt=0;
-  constructor({fetcher=globalThis.fetch,now=Date.now}={}){this.fetcher=fetcher;this.now=now;}
-  get connected(){return !!this.#token&&this.#expiresAt>this.now();}
-  setConnection(value){
-    if(!TOKEN.test(value?.token)||!Number.isSafeInteger(value.expiresAt)||value.expiresAt<=this.now()||
-       value.owner!=='nero_notelover')throw new ReaderApiError('READER_CONNECTION_FAILED');
-    this.#token=value.token;this.#expiresAt=value.expiresAt;
+  #token=null;#expiresAt=0;#storage=null;
+  constructor({fetcher=globalThis.fetch,now=Date.now,storage}={}){
+    this.fetcher=fetcher;this.now=now;
+    try{this.#storage=storage===undefined?(typeof window==='undefined'?null:window.sessionStorage):storage;}catch{}
+    const saved=readStorage(this.#storage,CONNECTION_KEY);
+    if(saved){try{this.setConnection(saved);}catch{this.clear();}}
   }
-  clear(){this.#token=null;this.#expiresAt=0;}
+  get connected(){
+    if(this.#token&&this.#expiresAt<=this.now())this.clear();
+    return !!this.#token&&this.#expiresAt>this.now();
+  }
+  setConnection(value){
+    const time=this.now();
+    if(!TOKEN.test(value?.token)||!Number.isSafeInteger(value.expiresAt)||value.expiresAt<=time||
+       value.expiresAt-time>CONNECTION_TTL+60000||value.owner!=='nero_notelover')throw new ReaderApiError('READER_CONNECTION_FAILED');
+    this.#token=value.token;this.#expiresAt=Math.min(value.expiresAt,time+CONNECTION_TTL);
+    saveStorage(this.#storage,CONNECTION_KEY,{token:this.#token,expiresAt:this.#expiresAt,owner:'nero_notelover'});
+  }
+  clear(){
+    this.#token=null;this.#expiresAt=0;
+    try{this.#storage?.removeItem(CONNECTION_KEY);}catch{}
+  }
   async request(path,{method='GET',body}={}){
     const allowed=method==='GET'?/^\/reader\/(?:status|candidates|like-status\?key=n[a-f0-9]{8,32})$/.test(path):
       method==='POST'&&/^\/reader\/(?:exchange|logout|candidates\/start|candidates\/next|like)$/.test(path);
@@ -140,6 +158,7 @@ export class ReaderApiClient{
         if(response.status===401)this.clear();
         throw new ReaderApiError(response.status===401?'READER_AUTH_REQUIRED':value?.code,response.status);
       }
+      if(path==='/reader/logout')this.clear();
       return value;
     }catch(error){if(error instanceof ReaderApiError)throw error;throw new ReaderApiError('READER_SERVICE_UNAVAILABLE');}
     finally{clearTimeout(timer);}
@@ -165,8 +184,33 @@ function connectionProof(){
 function notice(error){return error instanceof ReaderApiError?error.message:ERROR_MESSAGES.READER_SERVICE_UNAVAILABLE;}
 export function normalizeLikeResult(value){
   if(value?.liked===true)return 'liked';
+  if(value?.liked===false&&value.retryable===true&&value.confirmationPending===false&&value.outcomeUnknown!==true)return 'retryable';
   // An unconfirmed response never proves that the POST failed.
   return 'unknown';
+}
+
+// Call recordResult/recordStates only for the authenticated owner API. Public
+// candidate metadata cannot declare a delivery, and an unknown outcome is kept.
+export function createConfirmedLikeHistory(storage){
+  const saved=readStorage(storage,DELIVERED_KEY);
+  const keys=new Set(Array.isArray(saved)?saved.filter(key=>typeof key==='string'&&NOTE_KEY.test(key)).slice(-2000):[]);
+  function remember(key){
+    if(!NOTE_KEY.test(key||'')||keys.has(key))return false;
+    keys.add(key);
+    while(keys.size>2000)keys.delete(keys.values().next().value);
+    saveStorage(storage,DELIVERED_KEY,[...keys]);
+    return true;
+  }
+  return {
+    has:key=>keys.has(key),
+    keys:()=>[...keys],
+    recordResult(key,value){return value?.liked===true?remember(key):false;},
+    recordStates(value){
+      if(!value||typeof value!=='object'||Array.isArray(value))return;
+      for(const [key,state] of Object.entries(value))if(state==='liked')remember(key);
+    },
+    remaining:rows=>rows.filter(row=>!keys.has(row.articleUrl.split('/').at(-1))),
+  };
 }
 
 export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
@@ -174,7 +218,8 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
   try{storage=window.localStorage;}catch{}
   try{sessionStorage=window.sessionStorage;}catch{}
   let feed=null,loading=false,searching=false,connecting=false,authBusy=false,noteReady=false,destroyed=false;
-  const sent=new Map(),pendingSends=new Set();
+  const sent=new Map(),pendingSends=new Set(),deliveryNotices=new Map();
+  const confirmed=createConfirmedLikeHistory(storage);
   const saved=readStorage(storage,CHECKED_KEY);
   const checked=new Set(Array.isArray(saved)?saved.filter(v=>typeof v==='string').slice(-2000):[]);
   host.replaceChildren();
@@ -193,7 +238,7 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
   const filter=element('label','candidateFilter'),onlyUnchecked=element('input');onlyUnchecked.type='checkbox';
   filter.append(onlyUnchecked,document.createTextNode('未確認の候補だけ表示'));
   const copy=element('button','secondary','未確認の記事URLをまとめてコピー');copy.type='button';copy.disabled=true;
-  const localNote=element('p','candidateHint','確認済みは、このブラウザで付ける手動の記録です。「スキ送信済み」はサーバーで確認できた結果です。');
+  const localNote=element('p','candidateHint','スキ送信済みを確認できた記事は一覧から外します。確認済みは、このブラウザで付ける手動の記録です。');
   const status=element('p','status candidateStatus','候補一覧を読み込んでいます…');status.setAttribute('role','status');
   const progress=element('p','candidateProgress');progress.hidden=true;progress.setAttribute('role','status');
   const list=element('section','candidateList');
@@ -211,11 +256,18 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
       '候補一覧はそのまま読めます。検索とスキの送信は、最初に王子のGitHubで接続してください。';
     search.disabled=searching||connecting;
   }
+  function showConnectionNotice(message){
+    updateConnection(message);status.textContent=message;
+    connection.scrollIntoView?.({block:'nearest',behavior:'smooth'});
+  }
   function updateCount(){
     if(!feed)return;
-    const remaining=feed.candidates.filter(row=>!checked.has(row.articleUrl)).length;
-    count.textContent=feed.candidates.length+'人';
-    meta.replaceChildren(element('div',null,'未確認 '+remaining+'人 / 確認済み '+(feed.candidates.length-remaining)+'人'),
+    const candidates=confirmed.remaining(feed.candidates);
+    const remaining=candidates.filter(row=>!checked.has(row.articleUrl)).length;
+    const delivered=feed.candidates.length-candidates.length;
+    count.textContent=candidates.length+'人';
+    meta.replaceChildren(element('div',null,'未確認 '+remaining+'人 / 確認済み '+(candidates.length-remaining)+'人'),
+      element('div',null,'スキ送信済み '+delivered+'人（一覧から非表示）'),
       element('div',null,'抽出 '+dateText(feed.generatedAt)+'（日本時間）'+(feed.scanned?' / '+feed.scanned+'人を調査':'')));
     copy.disabled=loading||remaining===0;
   }
@@ -224,14 +276,31 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
     if(Date.now()-Date.parse(feed.generatedAt)>DAY)notices.push('抽出から24時間以上経っています。「候補を30人探す」で更新できます。');
     if(!feed.complete)notices.push(REASONS[feed.reason]||'今回は30人未満の候補です。条件を満たした人だけを表示しています。');
     if(feed.rejected)notices.push('確認できない情報が含まれる候補を除外しました。');
-    if(!notices.length)notices.push('30人の候補を表示しています。記事を読んで、気になる相手にスキを届けられます。');
+    if(!notices.length)notices.push('候補 '+confirmed.remaining(feed.candidates).length+'人を表示しています。スキを届けた記事は一覧から外します。');
     status.textContent=notices.join(' ');
   }
   function receiveStates(value){
     if(!value||typeof value!=='object')return;
+    confirmed.recordStates(value);
     for(const [key,state] of Object.entries(value)){
-      if(NOTE_KEY.test(key)&&['liked','unknown','attempting'].includes(state))sent.set(key,state==='liked'?'liked':'unknown');
+      if(!NOTE_KEY.test(key))continue;
+      if(['refused','not_sent'].includes(state)&&!confirmed.has(key)){
+        sent.delete(key);deliveryNotices.set(key,ERROR_MESSAGES.NOTE_SEND_REJECTED);
+      }else if(['liked','unknown','attempting'].includes(state)&&!confirmed.has(key)){
+        sent.set(key,state==='liked'?'liked':'unknown');deliveryNotices.delete(key);
+      }
     }
+  }
+  function receiveLikeResult(key,response){
+    confirmed.recordResult(key,response);
+    const delivery=normalizeLikeResult(response);
+    if(delivery==='retryable'&&!confirmed.has(key)){
+      sent.delete(key);
+      deliveryNotices.set(key,ERROR_MESSAGES[response.code]||ERROR_MESSAGES.NOTE_SEND_REJECTED);
+    }else{
+      sent.set(key,delivery);deliveryNotices.delete(key);
+    }
+    return delivery;
   }
   function applyFeed(value){
     const latest=normalizeLikeCandidatesFeed(value);
@@ -246,34 +315,53 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
     button.disabled=true;
     try{
       const response=await client.request('/reader/like-status?key='+encodeURIComponent(key));
-      sent.set(key,normalizeLikeResult(response));render();
-      status.textContent=response.liked===true?'スキの送信を確認しました。':'スキの送信結果はまだ確認できません。note上で状態を確認してください。';
+      const delivery=receiveLikeResult(key,response);render();
+      status.textContent=delivery==='liked'?'スキの送信を確認しました。':delivery==='retryable'?deliveryNotices.get(key):'スキの送信結果はまだ確認できません。note上で状態を確認してください。';
     }catch(error){result.textContent=notice(error);updateConnection();}
     finally{if(button.isConnected)button.disabled=false;}
   }
   async function sendLike(row,button,result){
     const key=row.articleUrl.split('/').at(-1);
-    if(authBusy||pendingSends.has(key)||sent.has(key))return;
-    if(!client.connected){updateConnection(ERROR_MESSAGES.READER_AUTH_REQUIRED);connect.focus();return;}
-    if(!noteReady){updateConnection(ERROR_MESSAGES.NOTE_SESSION_REQUIRED);return;}
+    if(pendingSends.has(key)||sent.has(key)||confirmed.has(key))return;
+    if(authBusy){result.textContent='本人確認を進めています。完了後にもう一度押してください。';return;}
+    if(!client.connected){
+      const message='本人確認後、このスキボタンをもう一度押してください。';
+      deliveryNotices.set(key,message);result.textContent=message;status.textContent=message;
+      void beginConnection({afterConnection:message});return;
+    }
+    if(!noteReady){
+      const checking='noteとの接続を確認しています…';
+      result.textContent=checking;status.textContent=checking;button.disabled=true;button.textContent='接続を確認中…';
+      try{await connectionStatusRefresh();}
+      catch(error){deliveryNotices.set(key,notice(error));result.textContent=notice(error);status.textContent=notice(error);return;}
+      finally{if(button.isConnected){button.disabled=false;button.textContent='♡ スキを届ける';}}
+      if(!noteReady){deliveryNotices.set(key,ERROR_MESSAGES.NOTE_SESSION_REQUIRED);result.textContent=ERROR_MESSAGES.NOTE_SESSION_REQUIRED;status.textContent=ERROR_MESSAGES.NOTE_SESSION_REQUIRED;return;}
+    }
     pendingSends.add(key);button.disabled=true;button.textContent='送信中…';
+    deliveryNotices.delete(key);
     // Once a user starts a send, any ambiguous outcome must block resending.
     sent.set(key,'unknown');
     try{
       const response=await client.request('/reader/like',{method:'POST',body:{key}});
-      sent.set(key,normalizeLikeResult(response));render();
-      status.textContent=response.liked===true?'スキを届けました。':'送信結果を確認中です。再送せず、「送信結果を確認」から状態を確認できます。';
+      const delivery=receiveLikeResult(key,response);render();
+      status.textContent=delivery==='liked'?'スキを届けました。':delivery==='retryable'?deliveryNotices.get(key):'送信結果を確認中です。再送せず、「送信結果を確認」から状態を確認できます。';
     }catch(error){
       if(error instanceof ReaderApiError&&error.status===401){sent.delete(key);noteReady=false;updateConnection(notice(error));}
-      else {sent.set(key,'unknown');result.textContent='結果を確認できません。再送せず、note上の状態を確認してください。';}
-      render();status.textContent=notice(error)+' 送信した可能性があるため、自動で再送しません。';
+      else if(error instanceof ReaderApiError&&['NOTE_CSRF_REQUIRED','NOTE_SEND_REJECTED'].includes(error.code)){
+        sent.delete(key);deliveryNotices.set(key,notice(error));
+      }else {sent.set(key,'unknown');result.textContent='結果を確認できません。再送せず、note上の状態を確認してください。';}
+      render();status.textContent=notice(error)+(sent.get(key)==='unknown'?' 送信した可能性があるため、自動で再送しません。':'');
     }finally{pendingSends.delete(key);render();}
   }
   function render(){
     if(!feed)return;
     list.replaceChildren();updateCount();
-    const visible=feed.candidates.filter(row=>!onlyUnchecked.checked||!checked.has(row.articleUrl));
-    if(!visible.length){list.append(element('div','empty',feed.candidates.length?'表示中の候補はすべて確認済みです。':'今回の調査では、条件に合う候補が見つかりませんでした。'));return;}
+    const candidates=confirmed.remaining(feed.candidates);
+    const visible=candidates.filter(row=>!onlyUnchecked.checked||!checked.has(row.articleUrl));
+    if(!visible.length){
+      const empty=feed.candidates.length&&!candidates.length?'この候補一覧の全員にスキを届けました。「候補を30人探す」で新しく探せます。':candidates.length?'表示中の候補はすべて確認済みです。':'今回の調査では、条件に合う候補が見つかりませんでした。';
+      list.append(element('div','empty',empty));return;
+    }
     for(const row of visible){
       const key=row.articleUrl.split('/').at(-1),delivery=sent.get(key);
       const card=element('article','commentCard candidateCard'+(checked.has(row.articleUrl)?' candidateChecked':''));
@@ -288,6 +376,7 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
       const deliveryStatus=element('p','candidateDelivery');deliveryStatus.setAttribute('role','status');
       if(delivery==='liked')deliveryStatus.textContent='noteでスキ済みを確認しました。';
       else if(delivery==='unknown')deliveryStatus.textContent='結果が未確認のため、再送を止めています。';
+      else if(deliveryNotices.has(key))deliveryStatus.textContent=deliveryNotices.get(key);
       send.addEventListener('click',()=>void sendLike(row,send,deliveryStatus));
       const mark=element('label','candidateMark'),box=element('input');box.type='checkbox';box.checked=checked.has(row.articleUrl);
       box.setAttribute('aria-label',row.name+'の記事を確認済みにする');
@@ -329,7 +418,7 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
   }
   async function connectionStatusRefresh(){
     const value=await client.request('/reader/status');
-    noteReady=value.noteReady===true;updateConnection();
+    noteReady=value.noteReady===true&&value.writeReady!==false;updateConnection();
   }
   async function exchange(code,proof){
     const value=await client.request('/reader/exchange',{method:'POST',body:{code,verifier:proof.verifier}});
@@ -337,23 +426,26 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
     try{sessionStorage?.removeItem(PENDING_KEY);}catch{}
     await connectionStatusRefresh();await refreshFeed();
   }
-  async function beginConnection(){
+  async function beginConnection({afterConnection}={}){
     if(connecting)return;
     connecting=true;authBusy=true;updateConnection();
     let proof;
     try{proof=connectionProof();}
-    catch{connecting=false;authBusy=false;updateConnection(ERROR_MESSAGES.READER_CONNECTION_FAILED);return;}
+    catch{connecting=false;authBusy=false;showConnectionNotice(ERROR_MESSAGES.READER_CONNECTION_FAILED);return;}
     // The popup inherits this origin's sessionStorage at window.open. Save the
     // proof first so OAuth can recover even if GitHub removes window.opener.
     saveStorage(sessionStorage,PENDING_KEY,proof);
     // Open during the tap so mobile browsers do not block the OAuth popup.
     const popup=window.open('about:blank','ouji-reader-connect','popup,width=480,height=720');
-    if(!popup){connecting=false;authBusy=false;updateConnection('接続画面を開けませんでした。ブラウザのポップアップ許可を確認してください。');return;}
     let cleanup=()=>{};
     try{
       const challenge=b64url(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(proof.verifier))));
       const url=new URL(READER_API_ORIGIN+'/reader/connect');
       url.search=new URLSearchParams({nonce:proof.nonce,challenge}).toString();
+      if(!popup){
+        showConnectionNotice('本人確認のページへ移動します。接続後、この画面へ戻ります。');
+        location.assign(url.href);return;
+      }
       let exchanging=false;
       const finish=()=>{
         cleanup();connecting=false;authBusy=false;updateConnection();
@@ -362,22 +454,33 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
         const code=verifiedConnectionMessage(event,{popup,nonce:proof.nonce});
         if(!code||exchanging)return;
         exchanging=true;cleanup();
+        let failure;
         try{await exchange(code,proof);try{popup.close();}catch{}}
-        catch(error){updateConnection(notice(error));}
-        finally{connecting=false;authBusy=false;updateConnection(client.connected?undefined:ERROR_MESSAGES.READER_CONNECTION_FAILED);}
+        catch(error){failure=notice(error);}
+        finally{
+          connecting=false;authBusy=false;updateConnection(failure||(client.connected?undefined:ERROR_MESSAGES.READER_CONNECTION_FAILED));
+          if(failure)showConnectionNotice(failure);
+          else if(client.connected&&afterConnection)status.textContent=afterConnection;
+        }
       };
       const closed=setInterval(()=>{if(popup.closed&&!exchanging){finish();}},700);
-      const timeout=setTimeout(()=>{if(!exchanging){finish();updateConnection('接続の期限が切れました。もう一度GitHubで接続してください。');}},10*60*1000);
+      const timeout=setTimeout(()=>{if(!exchanging){finish();showConnectionNotice('接続の期限が切れました。もう一度GitHubで接続してください。');}},10*60*1000);
       cleanup=()=>{window.removeEventListener('message',onMessage);clearInterval(closed);clearTimeout(timeout);};
       window.addEventListener('message',onMessage);
       popup.location.href=url.href;
-    }catch(error){cleanup();try{popup.close();}catch{}connecting=false;authBusy=false;updateConnection(notice(error));}
+    }catch(error){cleanup();try{popup?.close();}catch{}connecting=false;authBusy=false;showConnectionNotice(notice(error));}
   }
   async function searchCandidates(){
     if(searching)return;
-    if(!client.connected){updateConnection(ERROR_MESSAGES.READER_AUTH_REQUIRED);connect.focus();return;}
-    if(!noteReady){try{await connectionStatusRefresh();}catch(error){updateConnection(notice(error));return;}}
-    if(!noteReady){updateConnection(ERROR_MESSAGES.NOTE_SESSION_REQUIRED);return;}
+    if(!client.connected){
+      const message='本人確認後、「候補を30人探す」をもう一度押してください。';
+      status.textContent=message;void beginConnection({afterConnection:message});return;
+    }
+    if(!noteReady){
+      status.textContent='noteとの接続を確認しています…';
+      try{await connectionStatusRefresh();}catch(error){showConnectionNotice(notice(error));return;}
+    }
+    if(!noteReady){showConnectionNotice(ERROR_MESSAGES.NOTE_SESSION_REQUIRED);return;}
     searching=true;search.disabled=true;refresh.disabled=true;progress.hidden=false;progress.textContent='候補を探しています…';
     try{
       let output=await client.request('/reader/candidates/start',{method:'POST',body:{}});
@@ -418,7 +521,7 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
     client.clear();noteReady=false;updateConnection();
   });
   copy.addEventListener('click',async()=>{
-    try{await navigator.clipboard.writeText(feed.candidates.filter(row=>!checked.has(row.articleUrl)).map(row=>row.articleUrl).join('\n'));status.textContent='未確認の記事URLをコピーしました。';}
+    try{await navigator.clipboard.writeText(confirmed.remaining(feed.candidates).filter(row=>!checked.has(row.articleUrl)).map(row=>row.articleUrl).join('\n'));status.textContent='未確認の記事URLをコピーしました。';}
     catch{status.textContent='コピーできませんでした。各記事のリンクから開いてください。';}
   });
   const active=()=>!document.hidden&&(!host.closest('.view')||host.closest('.view').classList.contains('active'));
@@ -426,6 +529,13 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
   const interval=setInterval(onVisible,60000);
   document.addEventListener('visibilitychange',onVisible);
   try{feed=normalizeLikeCandidatesFeed(readStorage(storage,CACHE_KEY));render();describeFeed();}catch{}
-  updateConnection();void refreshFeed();void recoverCallback();
+  async function initialize(){
+    if(client.connected){
+      try{await connectionStatusRefresh();}
+      catch(error){noteReady=false;updateConnection(notice(error));}
+    }
+    await refreshFeed();await recoverCallback();
+  }
+  updateConnection();void initialize();
   return {destroy(){destroyed=true;clearInterval(interval);document.removeEventListener('visibilitychange',onVisible);client.clear();}};
 }

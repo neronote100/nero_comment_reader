@@ -26,7 +26,7 @@ let browser;
 try {
   browser = await chromium.launch({ headless: true, executablePath: process.env.CHROME_BIN || '/usr/bin/google-chrome' });
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, locale: 'ja-JP' });
-  let offline = false, fallback = false, starts = 0, nexts = 0;
+  let offline = false, fallback = false, starts = 0, nexts = 0, refusedSends = 0;
   const writes = [], forbidden = [], states = {};
   const cors = {
     'Access-Control-Allow-Origin': origin,
@@ -69,6 +69,9 @@ try {
         if (key === feed.candidates[1].articleUrl.split('/').at(-1)) {
           states[key] = 'unknown';
           await route.fulfill({ status: 202, headers: cors, contentType: 'application/json', body: JSON.stringify({ ok: true, key, liked: false, confirmationPending: true, outcomeUnknown: true }) });
+        } else if (key === feed.candidates[2].articleUrl.split('/').at(-1) && refusedSends++ === 0) {
+          states[key] = 'refused';
+          await fulfill({ ok: true, key, liked: false, retryable: true, confirmationPending: false, code: 'NOTE_SEND_REJECTED', noteStatus: 403 });
         } else {
           states[key] = 'liked';
           await fulfill({ ok: true, key, liked: true });
@@ -101,6 +104,7 @@ try {
   const awaitConnection = async target => {
     try {
       await target.waitForFunction(() => document.querySelector('.candidateConnectionStatus')?.textContent.includes('王子のnoteに接続済み'));
+      await target.waitForFunction(() => !document.querySelector('.candidateConnect')?.disabled);
     } catch (error) {
       // This harness contains fixture codes only. Log UI state and route names,
       // never authorization headers, payloads or URLs containing auth codes.
@@ -125,9 +129,16 @@ try {
   assert.match(await article.getAttribute('rel'), /noopener/);
   assert.equal(writes.length, 0, 'opening the list must not send or collect anything');
   await page.locator('.candidateSend').first().click();
-  assert.equal(writes.length, 0, 'a like before authentication must not issue a POST');
+  await awaitConnection(page);
+  assert.equal(writes.filter(w => w.path === '/reader/like').length, 0, 'an unauthenticated like tap opens owner connection without queuing a like');
+  await page.locator('.candidateDisconnect').click();
+  await page.waitForFunction(() => document.querySelector('.candidateDisconnect')?.hidden === true);
   await page.locator('.candidateSearch').click();
-  assert.equal(starts, 0, 'search before authentication must not start note reads');
+  await awaitConnection(page);
+  assert.equal(starts, 0, 'an unauthenticated search tap opens owner connection and waits for a fresh search click');
+  assert.equal(writes.filter(w => w.path === '/reader/like').length, 0);
+  await page.locator('.candidateDisconnect').click();
+  await page.waitForFunction(() => document.querySelector('.candidateDisconnect')?.hidden === true);
   await page.locator('.candidateMark input').first().check();
   assert.match(await page.locator('.candidateMeta').innerText(), /未確認 29人/);
   await page.reload();
@@ -148,22 +159,69 @@ try {
   await page.locator('.candidateSearch').click();
   await page.waitForFunction(() => document.querySelector('.candidateProgress')?.hidden === true);
   assert.equal(starts, 1);assert.equal(nexts, 1, 'new extraction must complete inside the page');
-  await page.locator('.candidateSend').first().click();
-  await page.waitForFunction(() => document.querySelector('.candidateSend')?.textContent.includes('スキ送信済み'));
+  const firstKey = feed.candidates[0].articleUrl.split('/').at(-1);
+  const secondKey = feed.candidates[1].articleUrl.split('/').at(-1);
+  const thirdKey = feed.candidates[2].articleUrl.split('/').at(-1);
+  const cardFor = key => page.locator('.candidateCard[data-key="' + key + '"]');
+  await cardFor(firstKey).locator('.candidateSend').click();
+  await cardFor(firstKey).waitFor({ state: 'detached' });
+  assert.equal(await page.locator('.candidateCard').count(), 29, 'a confirmed like must disappear immediately');
+  assert.equal(await page.locator('.candidateCount').innerText(), '29人');
   assert.equal(writes.filter(w => w.path === '/reader/like').length, 1);
-  assert.equal(writes.find(w => w.path === '/reader/like').body.key, feed.candidates[0].articleUrl.split('/').at(-1));
-  assert.equal(await page.locator('.candidateSend').first().isDisabled(), true);
-  await page.locator('.candidateSend').nth(1).click();
+  assert.equal(writes.find(w => w.path === '/reader/like').body.key, firstKey);
+  await page.getByRole('button', { name: '↻ 最新候補を表示', exact: true }).click();
+  await page.waitForFunction(() => !document.querySelector('.candidateRefresh')?.disabled);
+  assert.equal(await cardFor(firstKey).count(), 0, 'a refreshed public batch must not restore a confirmed like');
+  await cardFor(secondKey).locator('.candidateSend').click();
   await page.waitForFunction(() => document.querySelectorAll('.candidateCheckDelivery').length === 1);
   assert.equal(writes.filter(w => w.path === '/reader/like').length, 2);
-  assert.equal(await page.locator('.candidateSend').nth(1).isDisabled(), true);
-  await page.locator('.candidateCheckDelivery').click();
+  assert.equal(await cardFor(secondKey).count(), 1, 'an uncertain send must remain visible');
+  assert.equal(await cardFor(secondKey).locator('.candidateSend').isDisabled(), true);
+  assert.equal(await page.locator('.candidateCard').count(), 29);
+  const exchangesBeforeReload = writes.filter(w => w.path === '/reader/exchange').length;
+  await page.reload();
+  await page.waitForFunction(() => document.querySelectorAll('.candidateCard').length === 29);
+  await awaitConnection(page);
+  assert.equal(writes.filter(w => w.path === '/reader/exchange').length, exchangesBeforeReload, 'same-tab reload restores its existing owner session without another OAuth exchange');
+  assert.equal(await cardFor(firstKey).count(), 0, 'confirmed results must survive the same-tab reload');
+  assert.equal(await cardFor(secondKey).count(), 1, 'an uncertain send cannot be hidden as completed');
+  assert.equal(writes.filter(w => w.path === '/reader/like').length, 2, 'reload cannot resend an uncertain like');
+  await cardFor(secondKey).locator('.candidateCheckDelivery').waitFor();
+  assert.equal(await cardFor(secondKey).locator('.candidateSend').isDisabled(), true, 'authenticated server history restores the uncertain state');
+  await cardFor(secondKey).locator('.candidateCheckDelivery').click();
   await page.waitForFunction(() => document.querySelectorAll('.candidateCheckDelivery').length === 0);
+  await cardFor(secondKey).waitFor({ state: 'detached' });
+  assert.equal(await page.locator('.candidateCard').count(), 28, 'a positive status lookup hides the newly confirmed article');
+  assert.equal(await page.locator('.candidateCount').innerText(), '28人');
   assert.equal(writes.filter(w => w.path === '/reader/like').length, 2, 'checking an uncertain result must never resend a like');
+  await cardFor(thirdKey).locator('.candidateSend').click();
+  await page.waitForFunction(key => {
+    const card = document.querySelector('.candidateCard[data-key="' + key + '"]');
+    return card && !card.querySelector('.candidateSend')?.disabled;
+  }, thirdKey);
+  assert.equal(await cardFor(thirdKey).count(), 1, 'a known refusal cannot hide an article as completed');
+  assert.equal(await page.locator('.candidateCard').count(), 28);
+  assert.equal(writes.filter(w => w.path === '/reader/like').length, 3);
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  assert.equal(writes.filter(w => w.path === '/reader/like').length, 3, 'a known refusal cannot automatically retry');
+  await cardFor(thirdKey).locator('.candidateSend').click();
+  await cardFor(thirdKey).waitFor({ state: 'detached' });
+  assert.equal(await page.locator('.candidateCard').count(), 27, 'a fresh manual click can confirm and hide a previously refused article');
+  assert.equal(await page.locator('.candidateCount').innerText(), '27人');
+  assert.equal(writes.filter(w => w.path === '/reader/like').length, 4);
   await page.locator('[data-view="comments"]').click();
   assert.ok(await page.locator('#commentsView').evaluate(node => node.classList.contains('active')));
   await page.locator('[data-view="likeCandidates"]').click();
-  assert.equal(await page.locator('.candidateCard').count(), 30);
+  assert.equal(await page.locator('.candidateCard').count(), 27);
+  const finalExchangesBeforeReload = writes.filter(w => w.path === '/reader/exchange').length;
+  await page.reload();
+  await page.waitForFunction(() => document.querySelectorAll('.candidateCard').length === 27);
+  await awaitConnection(page);
+  assert.equal(writes.filter(w => w.path === '/reader/exchange').length, finalExchangesBeforeReload);
+  assert.equal(await cardFor(firstKey).count(), 0);
+  assert.equal(await cardFor(secondKey).count(), 0);
+  assert.equal(await cardFor(thirdKey).count(), 0);
+  assert.equal(writes.filter(w => w.path === '/reader/like').length, 4, 'persisted confirmation never resends a like');
   assert.deepEqual(forbidden, [], 'all actual note writes must stay mocked and no other write service is allowed');
 
   // A browser that loses window.opener must recover from the copied PKCE proof.
@@ -176,8 +234,9 @@ try {
   const callbackPage = await callbackPagePromise;
   callbackPage.on('pageerror', error => errors.push(error.message));
   await awaitConnection(callbackPage);
+  assert.equal(await callbackPage.locator('.candidateCard').count(), 27, 'confirmed results are hidden after OAuth fallback and feed reload');
   assert.equal(new URL(callbackPage.url()).hash, '#like-candidates', 'authorization code must be removed from browser URL');
-  assert.equal(writes.filter(w => w.path === '/reader/like').length, 2, 'fallback authentication cannot send likes');
+  assert.equal(writes.filter(w => w.path === '/reader/like').length, 4, 'fallback authentication cannot send likes');
   assert.deepEqual(errors, []);
   await callbackPage.close();
   await source.close();
@@ -185,7 +244,7 @@ try {
   await page.evaluate(() => scrollTo(0, 0));
   await mkdir(resolve(root, '.tmp'), { recursive: true });
   await page.screenshot({ path: resolve(root, '.tmp/like-candidates-mobile.png'), animations: 'disabled' });
-  console.log('MANUAL_CANDIDATES_BROWSER_OK: 30 mobile cards, owner popup and fallback, in-page extraction, explicit single likes, uncertain outcome lookup without resending.');
+  console.log('MANUAL_CANDIDATES_BROWSER_OK: 30 mobile cards, owner popup and fallback, explicit single likes, confirmed results hidden across refresh/reload, uncertain outcome lookup without resending.');
 } finally {
   await browser?.close();
 }
