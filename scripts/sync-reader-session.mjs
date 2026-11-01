@@ -165,7 +165,14 @@ async function summary(message) {
 
 async function main() {
   try {
-    const cookie = await prepareReaderWriteSession({ rawCookie: process.env.NOTE_SESSION_COOKIE, chromePath: process.env.CHROME_BIN });
+    let cookie = process.env.NOTE_SESSION_COOKIE;
+    if (process.env.READER_PREPARE_BROWSER_SESSION === 'true') {
+      try { cookie = await prepareReaderWriteSession({ rawCookie: cookie, chromePath: process.env.CHROME_BIN }); }
+      catch (error) {
+        if (!(error instanceof ReaderWriteSessionError) || error.code === 'WRITE_SESSION_OWNER_REQUIRED') throw error;
+        console.log('READER_OPTIONAL_CSRF_UNAVAILABLE');
+      }
+    }
     const result = await syncReaderSession({ cookie,
       requestUrl: process.env.ACTIONS_ID_TOKEN_REQUEST_URL, requestToken: process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN });
     console.log('READER_SESSION_SYNC_READY ' + JSON.stringify(result));
