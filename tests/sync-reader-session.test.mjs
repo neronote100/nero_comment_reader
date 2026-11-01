@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { syncReaderSession, ReaderSessionSyncError, READER_SESSION_ENDPOINT, actionsIdentityChecks } from '../scripts/sync-reader-session.mjs';
+import { syncReaderSession, ReaderSessionSyncError, READER_SESSION_ENDPOINT, actionsIdentityChecks, connectionDiagnostics } from '../scripts/sync-reader-session.mjs';
 import { collect } from '../scripts/collect-like-candidates.mjs';
 
 const COOKIE = '_note_session_v5=PRIVATE_NOTE_COOKIE';
@@ -38,6 +38,20 @@ test('sync exchanges the runner identity for one fixed Cookie import and returns
   assert.ok(f.calls.every(call => call.options.redirect === 'manual' && call.options.signal instanceof AbortSignal));
   const publicResult = JSON.stringify(result);
   for (const secret of [COOKIE, REQUEST_TOKEN, IDENTITY]) assert.ok(!publicResult.includes(secret));
+});
+
+test('connection receipt exposes bounded delivery counts and fixed diagnostics without credentials', async () => {
+  const diagnostics = { csrfReady: true, activeOwnerSessions: 1,
+    recentAttempts: { inspected: 2, liked: 0, unknown: 1, attempting: 0, refused: 1, notSent: 0, article: COOKIE },
+    lastHttpStatus: 403, lastFailureCode: 'NOTE_SEND_REJECTED', cookie: COOKIE, token: IDENTITY, response: REQUEST_TOKEN };
+  const f = fixture({ final: { ok: true, account: 'nero_notelover', noteReady: true, diagnostics } });
+  const result = await syncReaderSession({ ...SETTINGS, fetcher: f.fetcher });
+  assert.deepEqual(result.diagnostics, { csrfReady: true, activeOwnerSessions: 1,
+    recentAttempts: { inspected: 2, liked: 0, unknown: 1, attempting: 0, refused: 1, notSent: 0 },
+    lastHttpStatus: 403, lastFailureCode: 'NOTE_SEND_REJECTED' });
+  for (const secret of [COOKIE, REQUEST_TOKEN, IDENTITY]) assert.ok(!JSON.stringify(result).includes(secret));
+  assert.equal(connectionDiagnostics({ csrfReady: COOKIE, activeOwnerSessions: 129, lastFailureCode: COOKIE,
+    lastHttpStatus: IDENTITY, recentAttempts: { unknown: 21, inspected: -1, liked: REQUEST_TOKEN } }), undefined);
 });
 
 test('outer Cookie whitespace is accepted but embedded control characters and unsafe runner URLs stop before requests', async () => {

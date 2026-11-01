@@ -17,8 +17,28 @@ const SERVER_CODES = new Set([
   'ACTIONS_IDENTITY_INVALID', 'ACTIONS_TOKEN_INVALID', 'ACTIONS_CONFIGURATION', 'ACTIONS_TOKEN_EXPIRED',
   'ACTIONS_KEYS_UNAVAILABLE', 'ACTIONS_KEY_UNKNOWN', 'ACTIONS_SIGNATURE_INVALID', 'ACTIONS_SERVER_ONLY',
   'SESSION_IMPORT_INVALID', 'SESSION_IMPORT_UNAVAILABLE', 'NOTE_SESSION_SYNC_REJECTED',
-  'NOTE_SESSION_REQUIRED', 'NOTE_ACCESS_PAUSED', 'NOTE_READ_FAILED', 'IMPORT_REJECTED', 'STORAGE_FAILED',
+  'NOTE_SESSION_REQUIRED', 'NOTE_ACCESS_PAUSED', 'NOTE_READ_FAILED', 'NOTE_CSRF_REQUIRED', 'NOTE_SEND_REJECTED', 'IMPORT_REJECTED', 'STORAGE_FAILED',
 ]);
+
+export function connectionDiagnostics(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return undefined;
+  const output = {};
+  if (typeof value.csrfReady === 'boolean') output.csrfReady = value.csrfReady;
+  if (Number.isSafeInteger(value.activeOwnerSessions) && value.activeOwnerSessions >= 0 && value.activeOwnerSessions <= 128)
+    output.activeOwnerSessions = value.activeOwnerSessions;
+  if (value.recentAttempts && typeof value.recentAttempts === 'object' && !Array.isArray(value.recentAttempts)) {
+    const counts = {};
+    for (const key of ['inspected', 'liked', 'unknown', 'attempting', 'refused', 'notSent']) {
+      const count = value.recentAttempts[key];
+      if (Number.isSafeInteger(count) && count >= 0 && count <= 20) counts[key] = count;
+    }
+    if (Object.keys(counts).length) output.recentAttempts = counts;
+  }
+  if (value.lastHttpStatus === null || Number.isInteger(value.lastHttpStatus) && value.lastHttpStatus >= 100 && value.lastHttpStatus <= 599)
+    output.lastHttpStatus = value.lastHttpStatus;
+  if (value.lastFailureCode === null || SERVER_CODES.has(value.lastFailureCode)) output.lastFailureCode = value.lastFailureCode;
+  return Object.keys(output).length ? output : undefined;
+}
 
 export class ReaderSessionSyncError extends Error {
   constructor(code, status, diagnostic, identityChecks) {
@@ -133,7 +153,8 @@ export async function syncReaderSession({ cookie, requestUrl, requestToken, fetc
     result?.code === 'ACTIONS_IDENTITY_INVALID' ? actionsIdentityChecks(identity.value) : undefined);
   if (result?.ok !== true || result.account !== OWNER || result.noteReady !== true)
     throw new ReaderSessionSyncError('SESSION_SYNC_RESPONSE_INVALID');
-  return { ok: true, account: OWNER, noteReady: true };
+  const diagnostics = connectionDiagnostics(result.diagnostics);
+  return { ok: true, account: OWNER, noteReady: true, ...(diagnostics ? { diagnostics } : {}) };
 }
 
 async function summary(message) {
