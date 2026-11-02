@@ -1,5 +1,6 @@
 import { appendFile, readFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
+import { normalizePrioritySources, rankCandidates } from '../candidate-priority.js';
 
 const REPOSITORIES = new Set(['neronote100/Prince_like_giver', 'neronote100/nero_comment_reader']);
 const BRANCH = 'manual-candidates';
@@ -48,14 +49,17 @@ export function publicCandidateReport(input, now = Date.now()) {
     const published = Date.parse(row.publishedAt);
     if (!Number.isFinite(published) || published > generated || generated - published > 30 * 86400_000)
       throw new PublishError('CANDIDATE_REPORT_INVALID');
+    let prioritySources;
+    try { prioritySources = normalizePrioritySources(row.prioritySources); }
+    catch { throw new PublishError('CANDIDATE_REPORT_INVALID'); }
     users.add(row.user); keys.add(match[2]);
     return {
       user: row.user, name: row.name, profileUrl: row.profileUrl,
       following: row.following, followers: row.followers, gap: row.gap,
       articleTitle: row.articleTitle, publishedAt: row.publishedAt,
-      articleUrl: row.articleUrl, liked: false, status: 'review_only'
+      articleUrl: row.articleUrl, liked: false, status: 'review_only', prioritySources
     };
-  });
+  }).sort(rankCandidates);
   return {
     version: 1, owner: OWNER, generatedAt: input.generatedAt, targetCount: 30,
     complete: input.complete, reason: input.reason, rateLimited: false,

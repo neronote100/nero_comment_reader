@@ -73,6 +73,23 @@ test('cached public metadata can be revalidated without adding note access',()=>
   assert.equal(normalizeLikeCandidatesFeed(cached,now).candidates.length,1);
 });
 
+test('preferred follower overlap outranks gap and survives the browser cache',()=>{
+  const rows=[{...article(),following:900,gap:800},
+    {...article(1),prioritySources:['sessha']},
+    {...article(2),prioritySources:['sessha','sikkokusimeji']}];
+  const normalized=normalizeLikeCandidatesFeed(report(rows),now);
+  assert.deepEqual(normalized.candidates.map(row=>row.user),['writer2','writer1','writer0']);
+  assert.deepEqual(normalized.candidates.map(row=>row.prioritySources),[['sikkokusimeji','sessha'],['sessha'],[]]);
+  assert.deepEqual(normalizeLikeCandidatesFeed(JSON.parse(JSON.stringify(normalized)),now).candidates,normalized.candidates);
+});
+
+test('invalid priority evidence is rejected without creating extra priority',()=>{
+  const invalid=[['someone_else'],['sessha','sessha'],null,'sessha'];
+  const normalized=normalizeLikeCandidatesFeed(report([article(),...invalid.map((prioritySources,i)=>({...article(i+1),prioritySources}))]),now);
+  assert.equal(normalized.rejected,invalid.length);
+  assert.deepEqual(normalized.candidates.map(row=>row.prioritySources),[[]]);
+});
+
 const memoryStorage=()=>{
   const entries=new Map();
   return {getItem:key=>entries.get(key)??null,setItem:(key,value)=>entries.set(key,value),removeItem:key=>entries.delete(key)};

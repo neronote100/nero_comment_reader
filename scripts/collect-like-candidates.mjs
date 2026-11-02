@@ -1,5 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
+import { PRIORITY_SEEDS, normalizePrioritySources, rankCandidates } from '../candidate-priority.js';
 
 const OWNER = 'nero_notelover';
 const ROOT = 'https://note.com';
@@ -80,7 +81,7 @@ export function sessionValue(raw) {
 function followPage(payload, page) {
   const data = payload?.data;
   if (!data || !Array.isArray(data.follows)) throw new CandidateCollectionError('FOLLOW_DATA_INVALID');
-  const names = [...new Set(data.follows.map(row => String(row?.urlname ?? '').toLowerCase())
+  const names = [...new Set(data.follows.slice(0, 20).map(row => String(row?.urlname ?? '').toLowerCase())
     .filter(name => NAME.test(name) && name !== OWNER))];
   const explicit = data.next_page ?? data.nextPage ?? payload.next_page ?? payload.nextPage;
   const last = data.isLastPage === true || data.is_last_page === true || data.lastPage === true;
@@ -109,7 +110,8 @@ function optionsFrom(options) {
 }
 
 /** Read-only selection. `read` receives only fixed note API GET paths. */
-export async function collectCandidates({ read, now = Date.now, wait = ms => new Promise(resolve => setTimeout(resolve, ms)), ...options } = {}) {
+export async function collectCandidates({ read, now = Date.now, wait = ms => new Promise(resolve => setTimeout(resolve, ms)),
+  prioritySeeds = PRIORITY_SEEDS, ...options } = {}) {
   if (typeof read !== 'function' || typeof now !== 'function' || typeof wait !== 'function') throw new CandidateCollectionError('CONFIG_INVALID');
   const config = optionsFrom(options);
   const startedAt = now();
@@ -117,7 +119,10 @@ export async function collectCandidates({ read, now = Date.now, wait = ms => new
   const summary = { scanned: 0, already_liked: 0, existing_relationship_or_unknown: 0,
     insufficient_follow_gap: 0, inactive_30_days: 0, unknown_like_state: 0,
     unknown_articles: 0, invalid_profile: 0, errors: 0 };
-  const candidates = [], pool = new Set(), seedNames = [], seedKeys = [];
+  let preferredNames;
+  try { preferredNames = normalizePrioritySources(prioritySeeds).slice(0, config.maxSeeds); }
+  catch { throw new CandidateCollectionError('CONFIG_INVALID'); }
+  const candidates = [], pool = new Map(), seedNames = [...preferredNames], seedKeys = [];
   let requests = 0, reason = null, rateLimited = false;
   async function checkedRead(path) {
     if (reason) throw new CandidateCollectionError('COLLECTION_STOPPED');
@@ -143,7 +148,37 @@ export async function collectCandidates({ read, now = Date.now, wait = ms => new
   if (owner?.urlname !== OWNER || owner?.is_me === false || !USER_KEY.test(String(owner?.key ?? '')))
     throw new CandidateCollectionError('OWNER_REQUIRED');
 
-  // Expand the former single 20-person page so the same criteria can yield 30 people.
+  async function loadSeed(name, priority) {
+    if (reason) return;
+    try {
+      const profile = await checkedRead('/api/v2/creators/' + name);
+      const p = profile?.data ?? profile;
+      if (String(p?.urlname ?? '').toLowerCase() !== name || !USER_KEY.test(String(p?.key ?? ''))) { failed(); return; }
+      seedKeys.push({ name, priority, key: String(p.key).toLowerCase(), page: 1 });
+    } catch { failed(); }
+  }
+  async function sampleFollowers(seeds, priority) {
+    // Finish the priority graphs before fallback can fill the bounded pool. Sets
+    // count distinct source people, regardless of repeated rows or pages.
+    for (let round = 1; round <= config.maxFollowerPages && !reason; round++) {
+      for (const seed of seeds) {
+        if (reason || !priority && pool.size >= config.maxProfiles) break;
+        if (seed.page !== round) continue;
+        try {
+          const found = followPage(await checkedRead('/api/v3/users/' + seed.key + '/followers?page=' + round + '&per=20'), round);
+          for (const name of found.names) {
+            if (!pool.has(name) && pool.size < config.maxProfiles) pool.set(name, new Set());
+            if (priority) pool.get(name)?.add(seed.name);
+          }
+          seed.page = found.next;
+        } catch { failed(); seed.page = null; }
+      }
+    }
+  }
+  for (const name of preferredNames) await loadSeed(name, true);
+  await sampleFollowers(seedKeys, true);
+
+  // Owner-following graphs supply the remaining discovery capacity.
   for (let page = 1; page <= config.maxFollowingPages && seedNames.length < config.maxSeeds && !reason;) {
     try {
       const found = followPage(await checkedRead('/api/v3/users/' + owner.key + '/followings?page=' + page + '&per=20'), page);
@@ -152,31 +187,12 @@ export async function collectCandidates({ read, now = Date.now, wait = ms => new
       page = found.next;
     } catch { failed(); break; }
   }
-  for (const name of seedNames) {
-    if (reason) break;
-    try {
-      const profile = await checkedRead('/api/v2/creators/' + name);
-      const p = profile?.data ?? profile;
-      if (String(p?.urlname ?? '').toLowerCase() !== name || !USER_KEY.test(String(p?.key ?? ''))) { failed(); continue; }
-      seedKeys.push({ key: String(p.key).toLowerCase(), page: 1 });
-    } catch { failed(); }
-  }
-  // Round-robin pages across seeds, instead of filling the entire pool from one person.
-  for (let round = 1; round <= config.maxFollowerPages && pool.size < config.maxProfiles && !reason; round++) {
-    for (const seed of seedKeys) {
-      if (reason || pool.size >= config.maxProfiles) break;
-      if (seed.page !== round) continue;
-      try {
-        const found = followPage(await checkedRead('/api/v3/users/' + seed.key + '/followers?page=' + round + '&per=20'), round);
-        for (const name of found.names) {
-          if (pool.size >= config.maxProfiles) break;
-          pool.add(name);
-        }
-        seed.page = found.next;
-      } catch { failed(); seed.page = null; }
-    }
-  }
-  for (const username of pool) {
+  for (const name of seedNames.filter(name => !preferredNames.includes(name))) await loadSeed(name, false);
+  await sampleFollowers(seedKeys.filter(seed => !seed.priority), false);
+  // Discover all sampled overlaps first, so the target cap cannot consume
+  // single-source candidates before a later-discovered shared follower.
+  const rankedPool = [...pool].sort((a, b) => b[1].size - a[1].size);
+  for (const [username, sources] of rankedPool) {
     if (reason || summary.scanned >= config.maxProfiles || candidates.length >= config.targetCount) break;
     summary.scanned++;
     try {
@@ -187,14 +203,14 @@ export async function collectCandidates({ read, now = Date.now, wait = ms => new
       if (!qualifiesByFollowRatio(p.followingCount, p.followerCount)) { summary.insufficient_follow_gap++; continue; }
       const articles = await checkedRead('/api/v2/creators/' + username + '/contents?kind=note&disabled_pinned=true&page=1');
       const verdict = evaluateProfile(profile, articles, now());
-      if (verdict.candidate) candidates.push(verdict.candidate);
+      if (verdict.candidate) candidates.push({ ...verdict.candidate, prioritySources: normalizePrioritySources([...sources]) });
       else summary[verdict.reason]++;
     } catch { failed(); }
   }
   const complete = candidates.length >= config.targetCount;
   if (complete) reason = 'target_reached';
   else if (!reason) reason = summary.scanned >= config.maxProfiles ? 'profile_limit' : 'source_exhausted';
-  candidates.sort((a, b) => b.gap - a.gap || Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+  candidates.sort(rankCandidates);
   return { version: 1, owner: OWNER, generatedAt: new Date(now()).toISOString(), targetCount: config.targetCount,
     complete, reason, rateLimited, requests, scannedSeedCount: seedKeys.length, pooledUsers: pool.size,
     summary, candidates };

@@ -1,3 +1,5 @@
+import {normalizePrioritySources,rankCandidates} from './candidate-priority.js';
+
 const OWNER='nero_notelover';
 export const CANDIDATE_FEED_URL='https://raw.githubusercontent.com/neronote100/Prince_like_giver/manual-candidates/data/like-candidates.json';
 export const CANDIDATE_WORKFLOW_URL='https://github.com/neronote100/Prince_like_giver/actions/workflows/candidates.yml';
@@ -32,8 +34,9 @@ export function normalizeLikeCandidatesFeed(value,now=Date.now()){
       Number.isSafeInteger(following)&&Number.isSafeInteger(followers)&&followers>=0&&
       following-followers>=10&&following*100>=followers*115&&row.gap===following-followers&&
       row.liked===false&&Number.isFinite(publishedAt)&&publishedAt<=generatedAt&&generatedAt-publishedAt<=30*DAY;
-    let article;
+    let article,prioritySources;
     try{
+      prioritySources=normalizePrioritySources(row.prioritySources);
       const profile=new URL(row.profileUrl);
       article=new URL(row.articleUrl);
       valid=valid&&profile.href==='https://note.com/'+user&&
@@ -44,13 +47,13 @@ export function normalizeLikeCandidatesFeed(value,now=Date.now()){
     seenUsers.add(user);seenArticles.add(article.href);
     candidates.push({user,name:String(row.name||user).slice(0,80),profileUrl:row.profileUrl,
       following,followers,gap:row.gap,articleTitle:String(row.articleTitle||'記事を開く').slice(0,150),
-      publishedAt:new Date(publishedAt).toISOString(),articleUrl:article.href,liked:false});
+      publishedAt:new Date(publishedAt).toISOString(),articleUrl:article.href,liked:false,prioritySources});
   }
   if(value.candidates.length&&!candidates.length)throw new Error('INVALID_CANDIDATE_FEED');
   return {version:1,owner:OWNER,generatedAt:new Date(generatedAt).toISOString(),targetCount:30,
     complete:value.complete&&candidates.length===30&&rejected===0,reason:String(value.reason||''),
     scanned:Number.isSafeInteger(value.summary?.scanned)?value.summary.scanned:0,
-    candidates,rejected};
+    candidates:candidates.sort(rankCandidates),rejected};
 }
 
 export async function fetchLikeCandidatesFeed({fetcher=globalThis.fetch,localUrl,now=Date.now()}={}){
@@ -391,7 +394,13 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
         const check=element('button','secondary candidateCheckDelivery','送信結果を確認');check.type='button';
         check.addEventListener('click',()=>void checkLike(key,check,deliveryStatus));links.append(check);
       }
-      card.append(header,numbers,title,date,links,deliveryStatus);list.append(card);
+      card.append(header,numbers);
+      if(row.prioritySources.length){
+        const priority=element('p','candidatePriority','優先候補 · 指定'+row.prioritySources.length+'アカウントのフォロワー');
+        priority.append(element('span','candidatePrioritySources',row.prioritySources.map(user=>'@'+user).join(' / ')));
+        card.append(priority);
+      }
+      card.append(title,date,links,deliveryStatus);list.append(card);
     }
   }
   async function refreshFeed({quiet=false}={}){
@@ -487,7 +496,7 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
       let rounds=0;
       while(true){
         if(output?.ok!==true||typeof output.scanId!=='string'||typeof output.done!=='boolean')throw new ReaderApiError('READER_SERVICE_UNAVAILABLE');
-        progress.textContent='確認 '+Number(output.scanned||0)+'人 / 候補 '+Number(output.candidateCount||0)+'人';
+        progress.textContent=(['priority-seeds','priority-pool'].includes(output.phase)?'指定6人のフォロワーを確認中 · ':'')+'確認 '+Number(output.scanned||0)+'人 / 候補 '+Number(output.candidateCount||0)+'人';
         if(output.done){
           if(!output.report)throw new ReaderApiError('READER_SERVICE_UNAVAILABLE');
           applyFeed(output.report);receiveStates(output.report.states);render();describeFeed();break;

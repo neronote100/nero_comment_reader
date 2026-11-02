@@ -86,6 +86,8 @@ input:focus{border-color:#706a52}
 .candidateNumbers{color:var(--muted);font-size:12px;line-height:1.7;overflow-wrap:anywhere;margin:10px 0}
 .candidateCard .articleTitle{font-size:16px;font-weight:700;line-height:1.7;overflow-wrap:anywhere}
 .candidateCard .badge{flex-shrink:0;white-space:nowrap}
+.candidatePriority{color:var(--accent2);font-size:13px;line-height:1.7;margin:8px 0}
+.candidatePrioritySources{display:block;color:var(--muted);font-size:12px;overflow-wrap:anywhere}
 .candidateActions{align-items:center;justify-content:space-between;margin-top:14px}
 .candidateActions .primary{display:inline-flex;align-items:center;min-height:44px}
 .candidateChecked{border-color:#454632;background:linear-gradient(145deg,#191e22,#121620)}

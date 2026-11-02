@@ -16,7 +16,7 @@ const feed = {
     articleTitle: '日々の小さな気づきを、言葉にしてみました ' + (i + 1),
     publishedAt: new Date(now - 86400000).toISOString(),
     articleUrl: 'https://note.com/writer' + i + '/n/n' + (i + 1).toString(16).padStart(12, '0'),
-    liked: false, status: 'review_only',
+    liked: false, status: 'review_only', prioritySources: i === 0 ? ['sikkokusimeji', 'sessha'] : [],
   })),
 };
 // Serve the exact source through interception: no listening socket or external
@@ -123,6 +123,8 @@ try {
   assert.equal(await page.locator('.candidateCount').innerText(), '30人');
   assert.equal(await page.locator('.candidatePerson script').count(), 0);
   assert.ok((await page.locator('.candidatePerson').first().innerText()).includes('<script>'));
+  assert.match(await page.locator('.candidatePriority').first().innerText(), /指定2アカウントのフォロワー/);
+  assert.match(await page.locator('.candidatePrioritySources').first().innerText(), /@sikkokusimeji \/ @sessha/);
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, 'mobile layout must fit the screen');
   const article = page.locator('.candidateActions a').first();
   assert.equal(await article.getAttribute('href'), feed.candidates[0].articleUrl);

@@ -53,6 +53,26 @@ function github({ initial = null, fail, race = false, badFinal = false } = {}) {
 const publish = (input, api, options = {}) => publishCandidateReport({ report: input,
   repository: 'neronote100/Prince_like_giver', token: 'PRIVATE_TEST_TOKEN', fetcher: api.fetcher, now: NOW, ...options });
 
+test('public priority evidence survives publication and ranks overlap before gap', () => {
+  const input = report(3);
+  input.candidates[0].following = 900;
+  input.candidates[0].gap = 800;
+  input.candidates[1].prioritySources = ['sessha'];
+  input.candidates[2].prioritySources = ['sessha', 'sikkokusimeji'];
+  const result = publicCandidateReport(input, NOW);
+  assert.deepEqual(result.candidates.map(row => row.user), ['writer2', 'writer1', 'writer0']);
+  assert.deepEqual(result.candidates.map(row => row.prioritySources), [['sikkokusimeji', 'sessha'], ['sessha'], []]);
+});
+
+test('unrecognized or duplicate public priority evidence cannot be published', async () => {
+  for (const prioritySources of [['someone_else'], ['sessha', 'sessha'], null, 'sessha']) {
+    const input = report(1), api = github();
+    input.candidates[0].prioritySources = prioritySources;
+    await assert.rejects(publish(input, api), { code: 'CANDIDATE_REPORT_INVALID' });
+    assert.equal(api.calls.length, 0);
+  }
+});
+
 test('bootstraps a public feed with thirty people and no source/workflow parent', async () => {
   const api = github();
   const input = report();
