@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {normalizeLikeCandidatesFeed,fetchLikeCandidatesFeed,CANDIDATE_FEED_URL,ReaderApiClient,ReaderApiError,READER_API_ORIGIN,verifiedConnectionMessage,parseReaderCallback,normalizeLikeResult,createConfirmedLikeHistory} from '../like-candidates.js';
+import {normalizeLikeCandidatesFeed,fetchLikeCandidatesFeed,CANDIDATE_FEED_URL,ReaderApiClient,ReaderApiError,READER_API_ORIGIN,verifiedConnectionMessage,parseReaderCallback,normalizeLikeResult,createConfirmedLikeHistory,normalizeLikeQuota} from '../like-candidates.js';
 
 const now=Date.parse('2026-11-01T00:00:00Z');
 const article=(n=0)=>({user:'writer'+n,name:'書き手 '+n,profileUrl:'https://note.com/writer'+n,
@@ -10,6 +10,42 @@ const report=(candidates=[article()])=>({owner:'nero_notelover',generatedAt:new 
   complete:candidates.length===30,reason:candidates.length===30?'target_reached':'source_exhausted',
   summary:{scanned:90},candidates});
 const response=value=>({ok:true,text:async()=>JSON.stringify(value)});
+
+const quotaWindow=(limit,used=0,startedAt=null)=>({limit,used,remaining:limit-used,startedAt,
+  resetAt:startedAt===null?null:startedAt+(limit===20?3600000:86400000)});
+const quota=(hour=quotaWindow(20),day=quotaWindow(200))=>({version:1,serverNow:now,hour,day,
+  blocked:hour.remaining===0||day.remaining===0,
+  retryAt:hour.remaining===0||day.remaining===0?Math.max(...[hour,day].filter(window=>window.remaining===0).map(window=>window.resetAt)):null});
+
+test('independent quota windows validate counts, fixed reset times and the later blocking reset',()=>{
+  const empty=quota();
+  assert.deepEqual(normalizeLikeQuota(empty),empty);
+  const both=quota(quotaWindow(20,20,now-1000),quotaWindow(200,200,now-3600000));
+  assert.deepEqual(normalizeLikeQuota(both),both);
+  assert.equal(normalizeLikeQuota(both).retryAt,both.day.resetAt);
+  const dayOnly=quota(quotaWindow(20),both.day);
+  assert.deepEqual(normalizeLikeQuota(dayOnly),dayOnly);
+  // The snapshot is relative to the server clock, independent of this device.
+  assert.equal(normalizeLikeQuota({...empty,serverNow:now-300000}).serverNow,now-300000);
+});
+
+test('malformed quota snapshots cannot manufacture remaining capacity or a reset',()=>{
+  const valid=quota(quotaWindow(20,19,now-1000),quotaWindow(200,199,now-3600000));
+  for(const invalid of [undefined,null,{...valid,version:2},{...valid,serverNow:'now'},
+    {...valid,hour:{...valid.hour,limit:21}},
+    {...valid,hour:{...valid.hour,used:21,remaining:-1}},
+    {...valid,hour:{...valid.hour,used:-1,remaining:21}},
+    {...valid,hour:{...valid.hour,remaining:20}},
+    {...valid,hour:{...valid.hour,startedAt:null,resetAt:null}},
+    {...valid,hour:{...valid.hour,resetAt:valid.hour.resetAt+1}},
+    {...valid,hour:{...valid.hour,startedAt:now+1,resetAt:now+3600001}},
+    {...valid,serverNow:valid.hour.resetAt},
+    {...valid,blocked:true},{...valid,retryAt:now+3600000},
+    {...valid,serverNow:8640000000000001},
+  ])assert.equal(normalizeLikeQuota(invalid),null);
+  const sanitized=normalizeLikeQuota({...valid,privateSecret:'PRIVATE',hour:{...valid.hour,privateSecret:'PRIVATE'}});
+  assert.ok(!JSON.stringify(sanitized).includes('PRIVATE'));
+});
 
 test('one full batch shows 30 distinct people and retains verified article links',()=>{
   const rows=Array.from({length:30},(_,n)=>article(n));
@@ -144,6 +180,23 @@ test('confirmed history has a fixed storage limit and still works when storage i
 
 const connection={token:'T'.repeat(43),expiresAt:now+3600000,owner:'nero_notelover'};
 const apiResponse=(value,status=200)=>({ok:status>=200&&status<300,status,text:async()=>JSON.stringify(value)});
+
+test('a quota refusal carries only validated counters and never retries the send',async()=>{
+  const snapshot=quota(quotaWindow(20,20,now-1000),quotaWindow(200,42,now-3600000));
+  let calls=0;
+  const client=new ReaderApiClient({now:()=>now,fetcher:async()=>{
+    calls++;return apiResponse({ok:false,code:'LIKE_LIMIT_REACHED',quota:{...snapshot,privateSecret:'PRIVATE'},message:'PRIVATE'},429);
+  }});
+  client.setConnection(connection);
+  await assert.rejects(client.request('/reader/like',{method:'POST',body:{key:keyOf(article())}}),error=>{
+    assert.equal(error.code,'LIKE_LIMIT_REACHED');assert.equal(error.status,429);
+    assert.deepEqual(error.quota,snapshot);assert.ok(!JSON.stringify(error).includes('PRIVATE'));
+    return true;
+  });
+  assert.equal(calls,1);assert.equal(client.connected,true);
+  const invalid=new ReaderApiError('LIKE_LIMIT_REACHED',429,{...snapshot,blocked:false});
+  assert.equal(invalid.quota,null);
+});
 test('stored browser fetch retains its Window receiver before a request is sent',async()=>{
   let calls=0;
   const client=new ReaderApiClient({now:()=>now,fetcher:async function(url,options){

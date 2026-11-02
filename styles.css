@@ -96,6 +96,15 @@ input:focus{border-color:#706a52}
 .candidateConnection button{min-height:44px;margin-right:8px}
 .candidateConnection .candidateHint{margin-bottom:0}
 .candidateConnection [hidden],.candidateProgress[hidden]{display:none}
+.candidateQuota{border:1px solid var(--line);border-radius:16px;padding:16px;margin:14px 0 18px;background:var(--panel)}
+.candidateQuotaWindows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.candidateQuotaWindow{display:grid;gap:5px;min-width:0}
+.candidateQuotaCount{font-size:17px;color:var(--accent2)}
+.candidateQuotaRemaining{font-size:14px}
+.candidateQuotaReset,.candidateQuotaNotice{font-size:12px;line-height:1.7;color:var(--muted);overflow-wrap:anywhere}
+.candidateQuotaNotice{margin:12px 0 0}
+.candidateQuotaBlocked{border-color:var(--accent)}
+.candidateQuotaBlocked .candidateQuotaNotice{color:var(--accent)}
 .candidateProgress{color:var(--accent2);font-size:14px;line-height:1.7;padding:12px 0}
 .candidateSend{min-height:44px;cursor:pointer}
 .candidateSend:disabled{opacity:.7;cursor:default}
@@ -104,6 +113,7 @@ input:focus{border-color:#706a52}
 .candidateAdvanced{margin-top:22px;font-size:13px;color:var(--muted);line-height:2}
 .candidateAdvanced a{display:inline-block;color:var(--accent2);margin:8px 0}
 @media(max-width:640px){
+  .candidateQuotaWindows{grid-template-columns:minmax(0,1fr);gap:15px}
   .candidateList{grid-template-columns:minmax(0,1fr)}
   .candidateSummary{gap:16px;padding:15px}
   .candidateControls{align-items:stretch}

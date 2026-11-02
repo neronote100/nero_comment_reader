@@ -88,6 +88,9 @@ function link(text,url,className){
 function dateText(value){
   return new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(value));
 }
+function quotaDateText(value){
+  return new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(new Date(value));
+}
 
 export const READER_API_ORIGIN='https://ouji-note-mcp.nero-prince.workers.dev';
 const PENDING_KEY='nero-reader-connect-pending-v1';
@@ -102,6 +105,7 @@ const ERROR_MESSAGES={
   NOTE_READ_FAILED:'noteの状態を確認できませんでした。前回の候補を保持しています。',
   NOTE_CSRF_REQUIRED:'noteとの接続情報を更新中です。スキは送信していません。少し待ってからもう一度押してください。',
   NOTE_SEND_REJECTED:'noteに送信を受け付けてもらえませんでした。少し待ってからもう一度押してください。',
+  LIKE_LIMIT_REACHED:'スキの上限に達しました。リセット時刻を過ぎてから、もう一度押してください。',
   CANDIDATE_NOT_FOUND:'候補の有効期限が切れました。「候補を30人探す」で更新してください。',
   SCAN_EXPIRED:'候補の検索期限が切れました。もう一度「候補を30人探す」を押してください。',
   STORAGE_FAILED:'操作結果の保存を確認できませんでした。',
@@ -110,10 +114,32 @@ const ERROR_MESSAGES={
   READER_SERVICE_UNAVAILABLE:'接続先に応答がありません。少し待ってからお試しください。',
 };
 export class ReaderApiError extends Error{
-  constructor(code,status){
+  constructor(code,status,quota){
     const safe=Object.hasOwn(ERROR_MESSAGES,code)?code:'READER_SERVICE_UNAVAILABLE';
     super(ERROR_MESSAGES[safe]);this.name='ReaderApiError';this.code=safe;this.status=status;
+    if(safe==='LIKE_LIMIT_REACHED')this.quota=normalizeLikeQuota(quota);
   }
+}
+
+// Only authenticated Reader API responses may supply this snapshot. Counters
+// stay server-owned; the browser never grants capacity when its clock expires.
+export function normalizeLikeQuota(value){
+  if(value?.version!==1||!Number.isSafeInteger(value.serverNow)||value.serverNow<0||value.serverNow>8640000000000000)return null;
+  const result={version:1,serverNow:value.serverNow};
+  for(const [name,limit,duration] of [['hour',20,3600000],['day',200,86400000]]){
+    const window=value[name];
+    if(!window||typeof window!=='object'||window.limit!==limit||!Number.isSafeInteger(window.used)||
+       window.used<0||window.used>limit||window.remaining!==limit-window.used)return null;
+    const {startedAt,resetAt}=window;
+    if(startedAt===null&&resetAt===null){if(window.used!==0)return null;}
+    else if(!Number.isSafeInteger(startedAt)||startedAt<0||!Number.isSafeInteger(resetAt)||resetAt>8640000000000000||
+      resetAt-startedAt!==duration||startedAt>value.serverNow||resetAt<=value.serverNow)return null;
+    result[name]={limit,used:window.used,remaining:window.remaining,startedAt,resetAt};
+  }
+  const exhausted=[result.hour,result.day].filter(window=>window.remaining===0);
+  const retryAt=exhausted.length?Math.max(...exhausted.map(window=>window.resetAt)):null;
+  if(value.blocked!==(exhausted.length>0)||value.retryAt!==retryAt)return null;
+  return {...result,blocked:value.blocked,retryAt};
 }
 export class ReaderApiClient{
   #token=null;#expiresAt=0;#storage=null;
@@ -159,7 +185,7 @@ export class ReaderApiClient{
       let value;try{value=JSON.parse(raw);}catch{throw new ReaderApiError('READER_SERVICE_UNAVAILABLE');}
       if(!response.ok||value?.ok!==true){
         if(response.status===401)this.clear();
-        throw new ReaderApiError(response.status===401?'READER_AUTH_REQUIRED':value?.code,response.status);
+        throw new ReaderApiError(response.status===401?'READER_AUTH_REQUIRED':value?.code,response.status,value?.quota);
       }
       if(path==='/reader/logout')this.clear();
       return value;
@@ -221,6 +247,7 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
   try{storage=window.localStorage;}catch{}
   try{sessionStorage=window.sessionStorage;}catch{}
   let feed=null,loading=false,searching=false,connecting=false,authBusy=false,noteReady=false,destroyed=false;
+  let quota=null,quotaTimer=null,quotaRefreshing=false,quotaUnknownBlocked=false;
   const sent=new Map(),pendingSends=new Set(),deliveryNotices=new Map();
   const confirmed=createConfirmedLikeHistory(storage);
   const saved=readStorage(storage,CHECKED_KEY);
@@ -231,6 +258,12 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
   const disconnect=element('button','secondary candidateDisconnect','接続を解除');disconnect.type='button';disconnect.hidden=true;
   const connectionStatus=element('p','candidateHint candidateConnectionStatus','候補一覧はそのまま読めます。検索とスキの送信は、最初に王子のGitHubで接続してください。');
   connection.append(connect,disconnect,connectionStatus);
+  const quotaPanel=element('section','candidateQuota');quotaPanel.setAttribute('aria-label','スキの上限管理');
+  const quotaHeading=element('strong',null,'スキの上限管理');
+  const quotaWindows=element('div','candidateQuotaWindows');
+  const quotaHour=element('div','candidateQuotaWindow candidateQuotaHour'),quotaDay=element('div','candidateQuotaWindow candidateQuotaDay');
+  const quotaNotice=element('p','candidateQuotaNotice');quotaNotice.setAttribute('role','status');
+  quotaWindows.append(quotaHour,quotaDay);quotaPanel.append(quotaHeading,quotaWindows,quotaNotice);
   const controls=element('div','candidateControls');
   const search=element('button','primaryAction candidateSearch','候補を30人探す');search.type='button';
   const refresh=element('button','secondary candidateRefresh','↻ 最新候補を表示');refresh.type='button';
@@ -248,9 +281,44 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
   const actions=element('div','candidateTools');actions.append(filter,copy);
   const advanced=element('details','candidateAdvanced'),advancedTitle=element('summary',null,'接続できないとき');
   advanced.append(advancedTitle,link('GitHubで候補の更新を実行 ↗',CANDIDATE_WORKFLOW_URL));
-  host.append(connection,controls,instructions,summary,actions,localNote,progress,status,list,advanced);
+  host.append(connection,quotaPanel,controls,instructions,summary,actions,localNote,progress,status,list,advanced);
+
+  function quotaBlocked(){return client.connected&&(quota?.blocked===true||quotaUnknownBlocked);}
+  function renderQuota(){
+    for(const [node,name,label,duration] of [[quotaHour,'hour','1時間', '1時間'],[quotaDay,'day','24時間','24時間']]){
+      const window=client.connected?quota?.[name]:null,limit=name==='hour'?20:200;
+      node.replaceChildren(element('strong','candidateQuotaCount',label+' '+(window?window.used:'—')+' / '+limit+'件'),
+        element('span','candidateQuotaRemaining',window?'残り '+window.remaining+'件':'残り件数を確認してください'),
+        element('span','candidateQuotaReset',window?.resetAt?'リセット '+quotaDateText(window.resetAt)+'（日本時間）':'最初のスキから'+duration+'でリセット'));
+    }
+    quotaPanel.classList.toggle('candidateQuotaBlocked',quotaBlocked());
+    quotaNotice.textContent=!client.connected?'GitHubで接続すると、全端末で共通の件数を確認できます。':quotaBlocked()?
+      quota?.retryAt?'上限に達しました。'+quotaDateText(quota.retryAt)+'（日本時間）以降に送信できます。':'上限に達しました。現在の件数とリセット時刻を確認しています。':
+      quota?'この画面から送信したスキを数えます。結果が未確認の送信も、確認できるまで件数に含めます。':'スキの件数を確認しています…';
+  }
+  function receiveQuota(value){
+    const next=normalizeLikeQuota(value);
+    if(!next||quota&&next.serverNow<quota.serverNow)return;
+    quota=next;quotaUnknownBlocked=false;
+    clearTimeout(quotaTimer);
+    const resetTimes=[next.hour.resetAt,next.day.resetAt].filter(time=>Number.isSafeInteger(time));
+    // A relative timeout based on server time ignores a phone clock's offset.
+    // Even when it fires, only a fresh API response may reset the counter.
+    if(resetTimes.length)quotaTimer=setTimeout(()=>void refreshQuota(),Math.max(50,Math.min(...resetTimes)-next.serverNow+50));
+    render();
+  }
+  async function refreshQuota(){
+    if(destroyed||!client.connected||quotaRefreshing)return;
+    quotaRefreshing=true;
+    try{await connectionStatusRefresh();}
+    catch(error){
+      if(error?.status===401){noteReady=false;updateConnection(notice(error));}
+      else quotaTimer=setTimeout(()=>void refreshQuota(),30000);
+    }finally{quotaRefreshing=false;}
+  }
 
   function updateConnection(message){
+    if(!client.connected){quota=null;quotaUnknownBlocked=false;clearTimeout(quotaTimer);}
     connect.textContent=connecting?'接続を準備しています…':client.connected?'GitHubで接続し直す':'王子のGitHubで接続';
     connect.disabled=connecting;disconnect.hidden=!client.connected;
     if(message)connectionStatus.textContent=message;
@@ -258,6 +326,7 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
       noteReady?'王子のnoteに接続済みです。この画面で候補を探し、1件ずつスキを届けられます。':'本人確認ができました。noteとの接続を準備しています。':
       '候補一覧はそのまま読めます。検索とスキの送信は、最初に王子のGitHubで接続してください。';
     search.disabled=searching||connecting;
+    render();
   }
   function showConnectionNotice(message){
     updateConnection(message);status.textContent=message;
@@ -295,6 +364,7 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
     }
   }
   function receiveLikeResult(key,response){
+    receiveQuota(response?.quota);
     confirmed.recordResult(key,response);
     const delivery=normalizeLikeResult(response);
     if(delivery==='retryable'&&!confirmed.has(key)){
@@ -332,6 +402,10 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
       deliveryNotices.set(key,message);result.textContent=message;status.textContent=message;
       void beginConnection({afterConnection:message});return;
     }
+    if(quotaBlocked()){
+      result.textContent=ERROR_MESSAGES.LIKE_LIMIT_REACHED;status.textContent=ERROR_MESSAGES.LIKE_LIMIT_REACHED;
+      void refreshQuota();return;
+    }
     if(!noteReady){
       const checking='noteとの接続を確認しています…';
       result.textContent=checking;status.textContent=checking;button.disabled=true;button.textContent='接続を確認中…';
@@ -340,6 +414,7 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
       finally{if(button.isConnected){button.disabled=false;button.textContent='♡ スキを届ける';}}
       if(!noteReady){deliveryNotices.set(key,ERROR_MESSAGES.NOTE_SESSION_REQUIRED);result.textContent=ERROR_MESSAGES.NOTE_SESSION_REQUIRED;status.textContent=ERROR_MESSAGES.NOTE_SESSION_REQUIRED;return;}
     }
+    if(quotaBlocked()){status.textContent=ERROR_MESSAGES.LIKE_LIMIT_REACHED;render();return;}
     pendingSends.add(key);button.disabled=true;button.textContent='送信中…';
     deliveryNotices.delete(key);
     // Once a user starts a send, any ambiguous outcome must block resending.
@@ -350,13 +425,18 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
       status.textContent=delivery==='liked'?'スキを届けました。':delivery==='retryable'?deliveryNotices.get(key):'送信結果を確認中です。再送せず、「送信結果を確認」から状態を確認できます。';
     }catch(error){
       if(error instanceof ReaderApiError&&error.status===401){sent.delete(key);noteReady=false;updateConnection(notice(error));}
-      else if(error instanceof ReaderApiError&&['NOTE_CSRF_REQUIRED','NOTE_SEND_REJECTED'].includes(error.code)){
+      else if(error instanceof ReaderApiError&&['NOTE_CSRF_REQUIRED','NOTE_SEND_REJECTED','LIKE_LIMIT_REACHED'].includes(error.code)){
         sent.delete(key);deliveryNotices.set(key,notice(error));
-      }else {sent.set(key,'unknown');result.textContent='結果を確認できません。再送せず、note上の状態を確認してください。';}
+        if(error.code==='LIKE_LIMIT_REACHED'){
+          quotaUnknownBlocked=true;receiveQuota(error.quota);
+          if(!error.quota)void refreshQuota();
+        }
+      }else {sent.set(key,'unknown');result.textContent='結果を確認できません。再送せず、note上の状態を確認してください。';void refreshQuota();}
       render();status.textContent=notice(error)+(sent.get(key)==='unknown'?' 送信した可能性があるため、自動で再送しません。':'');
     }finally{pendingSends.delete(key);render();}
   }
   function render(){
+    renderQuota();
     if(!feed)return;
     list.replaceChildren();updateCount();
     const candidates=confirmed.remaining(feed.candidates);
@@ -375,7 +455,7 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
       const title=link(row.articleTitle,row.articleUrl,'articleTitle'),date=element('p','date',dateText(row.publishedAt)+' 公開');
       const links=element('div','actions candidateActions'),open=link('noteで記事を読む ↗',row.articleUrl);
       const send=element('button','primary candidateSend',pendingSends.has(key)?'送信中…':delivery==='liked'?'♥ スキ送信済み':delivery==='unknown'?'送信結果を確認中':'♡ スキを届ける');
-      send.type='button';send.disabled=pendingSends.has(key)||!!delivery;
+      send.type='button';send.disabled=pendingSends.has(key)||!!delivery||quotaBlocked();
       const deliveryStatus=element('p','candidateDelivery');deliveryStatus.setAttribute('role','status');
       if(delivery==='liked')deliveryStatus.textContent='noteでスキ済みを確認しました。';
       else if(delivery==='unknown')deliveryStatus.textContent='結果が未確認のため、再送を止めています。';
@@ -412,6 +492,7 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
       if(client.connected){
         try{
           const response=await client.request('/reader/candidates');
+          receiveQuota(response.quota);
           receiveStates(response.states);
           if(response.report!==null&&response.generatedAt)latest=applyFeed(response);
         }catch(error){if(error.status===401){noteReady=false;updateConnection(notice(error));}}
@@ -427,6 +508,7 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
   }
   async function connectionStatusRefresh(){
     const value=await client.request('/reader/status');
+    receiveQuota(value.quota);
     noteReady=value.noteReady===true&&value.writeReady!==false;updateConnection();
   }
   async function exchange(code,proof){
@@ -534,7 +616,7 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
     catch{status.textContent='コピーできませんでした。各記事のリンクから開いてください。';}
   });
   const active=()=>!document.hidden&&(!host.closest('.view')||host.closest('.view').classList.contains('active'));
-  const onVisible=()=>{if(active())void refreshFeed({quiet:true});};
+  const onVisible=()=>{if(active()){if(client.connected)void refreshQuota();void refreshFeed({quiet:true});}};
   const interval=setInterval(onVisible,60000);
   document.addEventListener('visibilitychange',onVisible);
   try{feed=normalizeLikeCandidatesFeed(readStorage(storage,CACHE_KEY));render();describeFeed();}catch{}
@@ -546,5 +628,5 @@ export function mountLikeCandidates(host,{client=new ReaderApiClient()}={}){
     await refreshFeed();await recoverCallback();
   }
   updateConnection();void initialize();
-  return {destroy(){destroyed=true;clearInterval(interval);document.removeEventListener('visibilitychange',onVisible);client.clear();}};
+  return {destroy(){destroyed=true;clearInterval(interval);clearTimeout(quotaTimer);document.removeEventListener('visibilitychange',onVisible);client.clear();}};
 }
