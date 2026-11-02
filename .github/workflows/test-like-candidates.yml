@@ -11,6 +11,7 @@ on:
       - tests/sync-reader-session.test.mjs
       - scripts/verify-like-candidates-browser.mjs
       - tests/*like-candidates*.test.mjs
+      - candidate-priority.js
       - like-candidates.js
       - index.html
       - app.js
@@ -29,6 +30,7 @@ on:
       - tests/sync-reader-session.test.mjs
       - scripts/verify-like-candidates-browser.mjs
       - tests/*like-candidates*.test.mjs
+      - candidate-priority.js
       - like-candidates.js
       - index.html
       - app.js
@@ -58,6 +60,7 @@ jobs:
           node --check scripts/collect-like-candidates.mjs
           node --check scripts/publish-like-candidates.mjs
           node --check scripts/sync-reader-session.mjs
+          node --check candidate-priority.js
           node --check like-candidates.js
           node --check app.js
       - name: Offline candidate and publication tests
