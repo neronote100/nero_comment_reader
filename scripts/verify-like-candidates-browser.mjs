@@ -27,7 +27,19 @@ try {
   browser = await chromium.launch({ headless: true, executablePath: process.env.CHROME_BIN || '/usr/bin/google-chrome' });
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, locale: 'ja-JP' });
   let offline = false, fallback = false, starts = 0, nexts = 0, refusedSends = 0;
+  let quotaFixture = null, quotaAccepted = 0, statusReads = 0;
   const writes = [], forbidden = [], states = {};
+  const quotaWindow = (limit, used = 0, startedAt = null) => ({ limit, used, remaining: limit - used,
+    startedAt, resetAt: startedAt === null ? null : startedAt + (limit === 20 ? 3600000 : 86400000) });
+  const quotaSnapshot = () => {
+    if (!quotaFixture) return undefined;
+    const serverNow = Date.now();
+    for (const name of ['hour', 'day']) if (quotaFixture[name].resetAt !== null && quotaFixture[name].resetAt <= serverNow)
+      quotaFixture[name] = quotaWindow(quotaFixture[name].limit);
+    const exhausted = [quotaFixture.hour, quotaFixture.day].filter(window => window.remaining === 0);
+    return { version: 1, serverNow, hour: { ...quotaFixture.hour }, day: { ...quotaFixture.day },
+      blocked: exhausted.length > 0, retryAt: exhausted.length ? Math.max(...exhausted.map(window => window.resetAt)) : null };
+  };
   const cors = {
     'Access-Control-Allow-Origin': origin,
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
@@ -35,7 +47,7 @@ try {
   };
   await context.route('**/*', async route => {
     const request = route.request(), url = new URL(request.url());
-    const fulfill = value => route.fulfill({ status: 200, headers: cors, contentType: 'application/json', body: JSON.stringify(value) });
+    const fulfill = value => route.fulfill({ status: 200, headers: cors, contentType: 'application/json', body: JSON.stringify({ ...value, ...(quotaFixture ? { quota: quotaSnapshot() } : {}) }) });
     if (url.origin === service) {
       if (request.method() === 'OPTIONS') { await route.fulfill({ status: 204, headers: cors }); return; }
       if (url.pathname === '/reader/connect') {
@@ -56,7 +68,7 @@ try {
         assert.equal(request.postDataJSON().code, code);
         assert.match(request.postDataJSON().verifier, /^[A-Za-z0-9_-]{43}$/);
         await fulfill({ ok: true, token: bearer, owner: 'nero_notelover', expiresAt: now + 3600000 });
-      } else if (url.pathname === '/reader/status') await fulfill({ ok: true, connected: true, noteReady: true, expiresAt: now + 3600000 });
+      } else if (url.pathname === '/reader/status') { statusReads++; await fulfill({ ok: true, connected: true, noteReady: true, expiresAt: now + 3600000 }); }
       else if (url.pathname === '/reader/candidates') await fulfill({ ok: true, ...feed, states });
       else if (url.pathname === '/reader/candidates/start') {
         starts++;
@@ -66,6 +78,19 @@ try {
         await fulfill({ ok: true, scanId: 'scan-1', done: true, phase: 'done', scanned: 180, candidateCount: 30, requests: 246, report: feed });
       } else if (url.pathname === '/reader/like') {
         const key = request.postDataJSON().key;
+        if (quotaFixture) {
+          const snapshot = quotaSnapshot();
+          if (snapshot.blocked) {
+            await route.fulfill({ status: 429, headers: cors, contentType: 'application/json', body: JSON.stringify({ ok: false, code: 'LIKE_LIMIT_REACHED', quota: snapshot }) });
+            return;
+          }
+          quotaAccepted++;
+          for (const name of ['hour', 'day']) {
+            const window = quotaFixture[name];
+            quotaFixture[name] = quotaWindow(window.limit, window.used + 1, window.startedAt ?? snapshot.serverNow);
+          }
+          states[key] = 'liked';await fulfill({ ok: true, key, liked: true });return;
+        }
         if (key === feed.candidates[1].articleUrl.split('/').at(-1)) {
           states[key] = 'unknown';
           await route.fulfill({ status: 202, headers: cors, contentType: 'application/json', body: JSON.stringify({ ok: true, key, liked: false, confirmationPending: true, outcomeUnknown: true }) });
@@ -243,10 +268,66 @@ try {
   await callbackPage.close();
   await source.close();
   await page.bringToFront();
+
+  // One account's counters survive refresh and control every remaining row.
+  quotaFixture = { hour: quotaWindow(20, 19, Date.now() - 1000), day: quotaWindow(200, 41, Date.now() - 120000) };
+  const refreshQuota = async () => {
+    await page.locator('.candidateRefresh').click();
+    await page.waitForFunction(() => !document.querySelector('.candidateRefresh')?.disabled);
+  };
+  await refreshQuota();
+  assert.match(await page.locator('.candidateQuotaHour').innerText(), /1時間 19 \/ 20件/);
+  assert.match(await page.locator('.candidateQuotaHour').innerText(), /残り 1件/);
+  assert.match(await page.locator('.candidateQuotaDay').innerText(), /24時間 41 \/ 200件/);
+  const fourthKey = feed.candidates[3].articleUrl.split('/').at(-1), fifthKey = feed.candidates[4].articleUrl.split('/').at(-1);
+  await cardFor(fourthKey).locator('.candidateSend').click();
+  await cardFor(fourthKey).waitFor({ state: 'detached' });
+  assert.match(await page.locator('.candidateQuotaHour').innerText(), /1時間 20 \/ 20件/);
+  assert.match(await page.locator('.candidateQuotaDay').innerText(), /24時間 42 \/ 200件/);
+  assert.equal(await page.locator('.candidateSend:not(:disabled)').count(), 0, 'twentieth accepted like stops every send button');
+  assert.equal(quotaAccepted, 1);
+  assert.equal(writes.filter(w => w.path === '/reader/like').length, 5);
+  await page.reload();await awaitConnection(page);
+  assert.match(await page.locator('.candidateQuotaHour').innerText(), /1時間 20 \/ 20件/);
+  assert.equal(await page.locator('.candidateSend:not(:disabled)').count(), 0, 'reloading cannot reset an exhausted account counter');
+
+  // Another tab can consume the last slot after this page last checked it.
+  quotaFixture.hour = quotaWindow(20);
+  await refreshQuota();
+  assert.equal(await cardFor(fifthKey).locator('.candidateSend').isEnabled(), true);
+  quotaFixture.hour = quotaWindow(20, 20, Date.now() - 1000);
+  await cardFor(fifthKey).locator('.candidateSend').click();
+  await page.waitForFunction(() => document.querySelector('.candidateStatus')?.textContent.includes('上限に達しました'));
+  assert.equal(await cardFor(fifthKey).count(), 1, 'quota refusal keeps the article available for a later manual click');
+  assert.equal(await cardFor(fifthKey).locator('.candidateCheckDelivery').count(), 0, 'known quota refusal is not an uncertain delivery');
+  assert.equal(quotaAccepted, 1, 'the twenty-first attempt cannot reach a note mutation');
+  assert.equal(writes.filter(w => w.path === '/reader/like').length, 6);
+
+  quotaFixture = { hour: quotaWindow(20), day: quotaWindow(200, 200, Date.now() - 3600000) };
+  await refreshQuota();
+  assert.match(await page.locator('.candidateQuotaHour').innerText(), /1時間 0 \/ 20件/);
+  assert.match(await page.locator('.candidateQuotaDay').innerText(), /24時間 200 \/ 200件/);
+  assert.equal(await page.locator('.candidateSend:not(:disabled)').count(), 0, 'a reset hourly window does not lift the daily limit');
+  assert.equal(await page.locator('.candidateSearch').isEnabled(), true, 'candidate search remains available at the like limit');
+
+  // A phone running five minutes fast must wait for a server-confirmed reset.
+  await page.evaluate(() => { window.__quotaOriginalNow = Date.now; Date.now = () => window.__quotaOriginalNow() + 300000; });
+  quotaFixture.day = quotaWindow(200, 200, Date.now() - 86400000 + 1800);
+  await refreshQuota();
+  assert.equal(await page.locator('.candidateSend:not(:disabled)').count(), 0);
+  const statusBeforeReset = statusReads;
+  await page.waitForFunction(() => document.querySelector('.candidateQuotaDay')?.textContent.includes('24時間 0 / 200件'));
+  assert.ok(statusReads > statusBeforeReset, 'reset permission must come from a status GET');
+  assert.equal(await cardFor(fifthKey).locator('.candidateSend').isEnabled(), true, 'reset allows a new manual click without resending the earlier refusal');
+  assert.equal(writes.filter(w => w.path === '/reader/like').length, 6, 'reset never queues or automatically sends a like');
+  await page.evaluate(() => { Date.now = window.__quotaOriginalNow; delete window.__quotaOriginalNow; });
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, 'quota panel must fit the mobile screen');
+  assert.deepEqual(errors, []);
+  assert.deepEqual(forbidden, []);
   await page.evaluate(() => scrollTo(0, 0));
   await mkdir(resolve(root, '.tmp'), { recursive: true });
   await page.screenshot({ path: resolve(root, '.tmp/like-candidates-mobile.png'), animations: 'disabled' });
-  console.log('MANUAL_CANDIDATES_BROWSER_OK: 30 mobile cards, owner popup and fallback, explicit single likes, confirmed results hidden across refresh/reload, uncertain outcome lookup without resending.');
+  console.log('MANUAL_CANDIDATES_BROWSER_OK: 30 mobile cards, owner popup and fallback, explicit single likes, confirmed results hidden across refresh/reload, uncertain outcome lookup, account quotas, known 429 refusal and independent server-confirmed resets without resending.');
 } finally {
   await browser?.close();
 }

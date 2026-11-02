@@ -24,7 +24,7 @@ async function openLikeCandidates(){
   likeCandidatesLoading=true;
   const host=$('#likeCandidatesApp');
   try{
-    const {mountLikeCandidates}=await import('./like-candidates.js?v=20261102-priority');
+    const {mountLikeCandidates}=await import('./like-candidates.js?v=20261102-quota');
     mountLikeCandidates(host);
     likeCandidatesMounted=true;
   }catch(error){
