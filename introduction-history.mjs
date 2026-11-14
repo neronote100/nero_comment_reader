@@ -9,9 +9,13 @@ export function parseIntroductions(payload) {
     !Array.isArray(payload.records) || payload.records.length > 20000) {
     throw new Error('紹介履歴データの形式を確認してください');
   }
+  const allowedRoot=new Set(['schema_version','coverage','reviewed_through','records']);
+  if(Object.keys(payload).some(k=>!allowedRoot.has(k)))throw new Error('台帳に非公開項目が含まれています');
+  const allowedFields=new Set(['id','member_name','member_note_id','introduced_at','published_url','source_article_url']);
   const ids = new Set(), pairs = new Set();
   const records = payload.records.map((raw,index)=>{
     if (!raw || typeof raw !== 'object') throw new Error('紹介履歴が不正です: '+index);
+    if(Object.keys(raw).some(k=>!allowedFields.has(k)))throw new Error('紹介履歴に非公開項目が含まれています');
     const id=String(raw.id||'').trim(), memberName=String(raw.member_name||'').trim();
     const memberNoteId=String(raw.member_note_id||'').trim().toLowerCase();
     const introducedAt=String(raw.introduced_at||'').trim();
