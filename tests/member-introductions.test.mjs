@@ -48,6 +48,7 @@ test('requires verified 王子 note URL, note username, real date and non-duplic
   assert.throws(()=>parseIntroductions({...ledger,records:[{...b,introduced_at:'2026-02-31'}]}),/不正/);
   assert.throws(()=>parseIntroductions({...ledger,records:[{...b,member_note_id:'evil/../../'}]}),/不正/);
   assert.throws(()=>parseIntroductions({...ledger,records:[{...b,source_article_url:'javascript:alert(1)'}]}),/不正/);
+  assert.throws(()=>parseIntroductions({...ledger,records:[{...b,buyer_email:'private@example.com'}]}),/非公開/);
   assert.throws(()=>parseIntroductions({schema_version:1,coverage:'complete',records:[]}),/形式/);
 });
 
