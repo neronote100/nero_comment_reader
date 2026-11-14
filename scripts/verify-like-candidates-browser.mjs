@@ -115,7 +115,7 @@ try {
       const file = resolve(root, '.' + (url.pathname === '/' ? '/index.html' : url.pathname));
       if (!file.startsWith(root + sep)) { await route.fulfill({ status: 403, body: '' }); return; }
       try {
-        await route.fulfill({ status: 200, contentType: ({ '.js': 'text/javascript', '.css': 'text/css', '.html': 'text/html' })[extname(file)] || 'application/json', body: await readFile(file) });
+        await route.fulfill({ status: 200, contentType: ({ '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.html': 'text/html' })[extname(file)] || 'application/json', body: await readFile(file) });
       } catch { await route.fulfill({ status: 404, body: '' }); }
     }
     else if (url.hostname === 'nero-comment-reader.nero-prince.workers.dev') await route.fulfill({

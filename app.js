@@ -253,37 +253,53 @@ function applyInboxSnapshot(data){
 }
 
 async function loadData(){
-  statusEl.textContent='保存済みデータを確認しています…';
+  statusEl.textContent='最新の保存データを確認しています…';
+  const {chooseCommentSnapshot,snapshotFreshness}=await import('./comment-snapshot.mjs');
   let cached=null;
   try{cached=JSON.parse(localStorage.getItem('nero-live-comments-cache')||'null');}catch(_){}
-  if(cached?.classifierVersion>=2 && Array.isArray(cached.items)){
+  if(cached?.classifierVersion>=2&&Array.isArray(cached.items)){
     applyInboxSnapshot(cached);
-    statusEl.textContent='';
   }
-  try{
-    const response=await fetch(WORKER+'/comments/snapshot?t='+Date.now(),{cache:'no-store'});
-    const result=await response.json();
-    if(!response.ok||!result.ok)throw new Error(result.error||'スナップショット取得失敗');
-    const snapshot=result.snapshot;
-    if(snapshot?.version>=5 && Array.isArray(snapshot.items) &&
-       (!cached?.updatedAt||Date.parse(snapshot.updatedAt)>=Date.parse(cached.updatedAt))){
-      localStorage.setItem('nero-live-comments-cache',JSON.stringify({...snapshot,classifierVersion:3}));
-      applyInboxSnapshot(snapshot);
-      statusEl.textContent='';
-      return;
-    }
-  }catch(error){
-    console.warn('snapshot unavailable:',error);
+  const getWorker=async()=>{
+    try{
+      const res=await fetch(WORKER+'/comments/snapshot?t='+Date.now(),{
+        cache:'no-store',signal:AbortSignal.timeout(15000)
+      });
+      if(!res.ok)throw new Error('HTTP '+res.status);
+      const data=await res.json();
+      if(!data?.ok||!data.snapshot||Number(data.snapshot.version)<5)return null;
+      return {source:'worker',snapshot:data.snapshot};
+    }catch(e){console.warn('Comment Reader Worker snapshot unavailable');return null;}
+  };
+  const getStatic=async()=>{
+    try{
+      const res=await fetch('./data/inbox.json?t='+Date.now(),{
+        cache:'no-store',signal:AbortSignal.timeout(15000)
+      });
+      if(!res.ok)throw new Error('HTTP '+res.status);
+      return {source:'static',snapshot:await res.json()};
+    }catch(e){console.warn('GitHub static comment backup unavailable');return null;}
+  };
+  const [worker,staticData]=await Promise.all([getWorker(),getStatic()]);
+  const selected=chooseCommentSnapshot([
+    ...(cached?[{source:'cache',snapshot:cached}]:[]),
+    ...(worker?[worker]:[]),
+    ...(staticData?[staticData]:[])
+  ]);
+  if(selected){
+    const saved={...selected.snapshot,classifierVersion:3};
+    try{localStorage.setItem('nero-live-comments-cache',JSON.stringify(saved));}catch(_){}
+    applyInboxSnapshot(saved);
+    const freshness=snapshotFreshness(selected);
+    statusEl.textContent=freshness.message;
+    setSyncUi(freshness.kind==='stale'?'保存データ（要確認）':'保存データ確認済み',
+      freshness.message+'。確定させたい場合は「最新コメントを取得」でnoteを確認してください。',100);
+    return;
   }
-  if(!cached){
-    state.items=[];
-    state.filtered=[];
-    $('#count').textContent='—';
-    $('#articleCount').textContent='—';
-    $('#updatedAt').textContent='未取得';
-    commentsEl.innerHTML='<div class="empty">「最新コメントを取得」を押して確認してください🌙</div>';
-    statusEl.textContent='';
-  }
+  state.items=[];state.filtered=[];
+  $('#count').textContent='—';$('#articleCount').textContent='—';$('#updatedAt').textContent='未取得';
+  commentsEl.innerHTML='<div class="empty">「最新コメントを取得」を押して確認してください🌙</div>';
+  statusEl.textContent='保存データが取得できませんでした。';
 }
 
 function setSyncUi(label,detail,percent){
