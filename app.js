@@ -32,6 +32,16 @@ async function openLikeCandidates(){
   }finally{likeCandidatesLoading=false;}
 }
 
+async function openIntroductions(){
+  const host=document.querySelector('#introductionHistoryApp');
+  try{
+    const {mountIntroductionHistory}=await import('./introduction-history.mjs');
+    await mountIntroductionHistory(host);
+  }catch(error){
+    host.querySelector('[data-intro-status]').textContent='紹介履歴を読み込めませんでした。再度タブを開いてください。';
+  }
+}
+
 let libraryMounted=false;
 let libraryLoading=false;
 async function openLibrary(){
@@ -412,6 +422,7 @@ async function legacyRefresh(){
 
 
 function switchView(view){
+  if(view==='introductions')void openIntroductions();
   if(view==='library')void openLibrary();
   if(view==='likeCandidates')void openLikeCandidates();
   document.querySelectorAll('.view').forEach(el=>el.classList.toggle('active',el.id===view+'View'));
