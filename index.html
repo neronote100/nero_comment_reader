@@ -21,6 +21,7 @@
     <button class="tab active" data-view="comments">💬 コメント</button>
     <button class="tab" data-view="events">🎪 イベント</button>
     <button class="tab" data-view="likeCandidates">♡ スキ候補</button>
+    <button class="tab" data-view="introductions">🌙 紹介履歴</button>
     <button class="tab" data-view="library">🏰 王立図書館</button>
     <button class="tab disabled" title="準備中">🔗 引用 <small>準備中</small></button>
     <button class="tab disabled" title="準備中">👀 ウォッチリスト <small>準備中</small></button>
@@ -34,6 +35,43 @@
         <p>候補を30人まとめて探して、気になる記事にこの画面からスキを届けられます。</p>
       </section>
       <div id="likeCandidatesApp" aria-live="polite"><p class="status">スキ候補タブを開くと、最新の候補一覧を読み込みます。</p></div>
+    </section>
+    <section id="introductionsView" class="view">
+      <section class="eventIntro">
+        <p class="eyebrow">MEMBER INTRODUCTION LEDGER</p>
+        <h2>王子が紹介した、城下町の仲間たち🌙</h2>
+        <p>公開済みの紹介記事を、ここでひとつずつ記録します。紹介を受けた通知やメンバーの入退会履歴とは別管理です。</p>
+      </section>
+      <div id="introductionHistoryApp" class="introApp">
+        <div class="introActions">
+          <button type="button" data-intro-refresh class="secondary">↻ 履歴を読み直す</button>
+          <button type="button" data-intro-copy class="secondary">確認済み履歴をコピー</button>
+          <a href="https://github.com/neronote100/nero_comment_reader/edit/main/data/member-introductions.json" target="_blank" rel="noopener noreferrer">GitHubの台帳を開く ↗</a>
+        </div>
+        <p class="status" data-intro-status>このタブを開くと、毎回GitHubの台帳から取得します。</p>
+        <p data-intro-summary class="introSummary"></p>
+        <div class="introControls">
+          <label>名前・note IDで検索 <input data-intro-search type="search" placeholder="メンバーを探す"></label>
+          <label>紹介日 <select data-intro-period>
+            <option value="all">すべて</option>
+            <option value="recent">最近30日</option>
+            <option value="older">30日以上前</option>
+          </select></label>
+        </div>
+        <div data-intro-results class="introList" aria-live="polite"></div>
+        <details class="introEntry">
+          <summary>公開済みの紹介を追加する</summary>
+          <form data-intro-form class="introForm">
+            <label>紹介した人の表示名 <input name="member_name" required maxlength="140" placeholder="例：○○さん"></label>
+            <label>note ID <input name="member_note_id" required pattern="[a-zA-Z0-9_-]{2,80}" placeholder="example_user"></label>
+            <label>紹介日 <input name="introduced_at" required type="date"></label>
+            <label>王子の公開済み紹介記事URL <input name="published_url" required type="url" placeholder="https://note.com/nero_notelover/n/n..."></label>
+            <label>紹介した相手の記事URL（任意） <input name="source_article_url" type="url" placeholder="https://note.com/..." ></label>
+            <button class="primaryAction" type="submit">追加依頼文をコピー</button>
+            <p data-intro-draft class="status">コピーした文章をChatGPTに送ると台帳への登録を依頼できます。この画面だけでは保存されません。</p>
+          </form>
+        </details>
+      </div>
     </section>
     <section id="libraryView" class="view">
       <section class="eventIntro">
