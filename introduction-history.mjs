@@ -85,7 +85,9 @@ function makeElement(tag,className,label) {
   return el;
 }
 const jpDate=d=>/^\d{4}-\d{2}-\d{2}$/.test(d)?d.replaceAll('-','/'):d;
+const activeHistories=new WeakMap();
 export async function mountIntroductionHistory(host) {
+  if(activeHistories.has(host))return activeHistories.get(host)();
   const status=host.querySelector('[data-intro-status]');
   const results=host.querySelector('[data-intro-results]');
   const search=host.querySelector('[data-intro-search]');
@@ -165,6 +167,8 @@ export async function mountIntroductionHistory(host) {
       }catch(error){draft.textContent='入力内容を確認してください。公開済みの王子の記事URL、note ID、日付が必要です。';}
     });
   }
+  // Reuse the original event handlers and state when revisiting this tab.
+  activeHistories.set(host,load);
   // Always re-fetch: every introduction decision consults the same ledger.
   await load();
 }
