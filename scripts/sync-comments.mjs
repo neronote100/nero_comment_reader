@@ -95,7 +95,10 @@ async function creatorArticles(){
     url.searchParams.set('page',String(page));
     const payload=await fetchJson(url.toString());
     const data=payload?.data||{};
-    const rows=Array.isArray(data?.contents)?data.contents:Array.isArray(payload?.contents)?payload.contents:[];
+    if(!Array.isArray(data?.contents)&&!Array.isArray(payload?.contents)) {
+      throw new Error('Unexpected note article list response; previous data preserved');
+    }
+    const rows=Array.isArray(data?.contents)?data.contents:payload.contents;
     for(const row of rows){
       const key=String(row?.key||row?.noteKey||row?.note_key||'');
       if(!key)continue;
@@ -109,6 +112,7 @@ async function creatorArticles(){
     }
     const last=Boolean(data?.isLastPage??data?.is_last_page??payload?.isLastPage??false);
     if(last||rows.length===0)break;
+    if(page===100) throw new Error('Article list exceeded 100 pages; previous data preserved');
     await sleep(120);
   }
   return [...byKey.values()];
@@ -198,6 +202,7 @@ async function readState(){
 const oldState=await readState();
 const oldArticles=oldState?.articles&&typeof oldState.articles==='object'?oldState.articles:{};
 const articles=await creatorArticles();
+if(!articles.length) throw new Error('Empty article list; previous data preserved');
 const nextArticles={};
 let failedArticles=0;
 
