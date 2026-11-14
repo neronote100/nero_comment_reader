@@ -7,6 +7,14 @@ on:
         description: Force rescan
         required: false
         default: "false"
+  # Daily public-read-only refresh at 05:30 JST; manual rescan remains available.
+  schedule:
+    - cron: '30 20 * * *'
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/sync-comments.yml
+      - scripts/sync-comments.mjs
 
 permissions:
   contents: write
