@@ -125,3 +125,26 @@ input:focus{border-color:#706a52}
   .candidateConnection button{width:100%;margin:0 0 8px}
 }
 
+
+/* Published member introduction history: compact, mobile-first, no private data. */
+.introApp{display:grid;gap:16px}
+.introActions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.introActions button{min-height:44px}
+.introActions a,.introLinks a{color:var(--accent2);font-size:14px}
+.introSummary{font-size:14px;color:var(--accent2);font-weight:700;margin:0}
+.introControls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,190px);gap:12px}
+.introControls label,.introForm label{display:grid;gap:7px;font-size:13px;color:var(--muted)}
+.introControls input,.introControls select,.introForm input{min-height:44px;min-width:0;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.introList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.introCard{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+.introCardHeader{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center}
+.introPerson{color:var(--text);font-weight:700;overflow-wrap:anywhere}
+.introDate,.introNoteId{color:var(--muted);font-size:12px}
+.introNoteId{margin:7px 0 13px}
+.introLinks{display:flex;gap:12px;flex-wrap:wrap}
+.introEntry{border:1px solid var(--line);border-radius:16px;padding:14px 16px;background:var(--panel)}
+.introEntry summary{cursor:pointer;font-weight:700;min-height:34px}
+.introForm{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.introForm label:nth-child(4),.introForm label:nth-child(5),.introForm [data-intro-draft]{grid-column:1/-1}
+.introForm button{min-height:44px}
+@media(max-width:640px){.introList,.introControls,.introForm{grid-template-columns:minmax(0,1fr)}.introForm label:nth-child(n){grid-column:1}.introActions{align-items:stretch}.introActions button{width:100%}}
