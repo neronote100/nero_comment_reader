@@ -4,6 +4,9 @@ on:
   pull_request:
     paths:
       - "app.js"
+      - "introduction-history.mjs"
+      - "data/member-introductions.json"
+      - "tests/member-introductions.test.mjs"
       - "mcp/**"
       - "members/**"
       - ".github/workflows/validate-member-sync.yml"
@@ -31,10 +34,13 @@ jobs:
         run: |
           node --check mcp/worker.js
           node --check app.js
+          node --check introduction-history.mjs
           node --check members/worker.js
           node --check members/test.mjs
           cp members/site-script.txt /tmp/nero-member-site.js
           node --check /tmp/nero-member-site.js
+      - name: Published member introduction ledger tests
+        run: node --test tests/member-introductions.test.mjs
       - name: Existing MCP regression tests
         run: node mcp/test.mjs
       - name: Main Worker incremental-state tests
