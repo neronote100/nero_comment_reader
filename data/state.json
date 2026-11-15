@@ -1,16 +1,67 @@
 {
   "version": 1,
   "owner": "nero_notelover",
-  "updatedAt": "2026-11-14T01:00:58.819Z",
+  "updatedAt": "2026-11-15T00:05:20.281Z",
   "articles": {
+    "ne99bc9a9df81": {
+      "key": "ne99bc9a9df81",
+      "title": "🌙 王子、プロレスラーになる！noteのリングが面白すぎる🤣",
+      "commentCount": 28,
+      "publishedAt": "2026-11-14T21:00:00+09:00",
+      "url": "https://note.com/nero_notelover/n/ne99bc9a9df81",
+      "unresolved": [
+        {
+          "key": "nc0114c292bc63",
+          "parentKey": "",
+          "authorUrlname": "mulcombox",
+          "authorName": "マツリカ｜【変態怪異】",
+          "avatar": "https://assets.st-note.com/production/uploads/images/315329620/profile_724ea7df9f52770e8bdf57104aa64b94.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "主の腹筋、豪邸だったあ！！！\n\n果たしてどれになるか！！\n運命の試合、楽しみすぎて夜以外起きて待ってます❣️🤣",
+          "publishedAt": "2026-11-15T00:36:24.082+09:00",
+          "isRoot": false,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "nc39b0fc8349f4",
+          "rootAuthorUrlname": "mulcombox",
+          "rootBody": "主が、ガチムチキンニク！！！！💪\n\n爽やかな顔して締めている！！！\n最高だ☺️✨\n\nポイントカード、強すぎる🙌！！",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "主の腹筋、豪邸だったあ！！！\n\n果たしてどれになるか！！\n運命の試合、楽しみすぎて夜以外起きて待ってます❣️🤣"
+          ]
+        }
+      ],
+      "checkedAt": 1794701044653
+    },
     "n2274f8a62a5d": {
       "key": "n2274f8a62a5d",
       "title": "🌙 王子、百人一首になりました。ちびたぬきさんの挑戦！",
-      "commentCount": 22,
+      "commentCount": 35,
       "publishedAt": "2026-11-13T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n2274f8a62a5d",
-      "unresolved": [],
-      "checkedAt": 1794617473069
+      "unresolved": [
+        {
+          "key": "ncb35abb9f13f7",
+          "parentKey": "",
+          "authorUrlname": "open_myway",
+          "authorName": "星ねこ｜ありのまま、そのまま。初心者さんに安心してもらえるひと。",
+          "avatar": "https://assets.st-note.com/production/uploads/images/322355514/profile_e93e3d8a9cc46a0c74f1d51982cefd4f.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "元気です〜😊⭐\n\n王子も元気そうでよかったです🌙😆\n久しぶりに一番乗りできて、思わず「王子ー！🥹」ってなりました🤣\n\n百人一首も、さすが王子だなぁと思いながら読んでました😊\n星ねこは64番でした〜⭐️\nこれから広がることが楽しみですね😊✨",
+          "publishedAt": "2026-11-14T11:28:52.400+09:00",
+          "isRoot": false,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "nc4564c57da77b",
+          "rootAuthorUrlname": "open_myway",
+          "rootBody": "王子ー！🥹",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "元気です〜😊⭐\n\n王子も元気そうでよかったです🌙😆\n久しぶりに一番乗りできて、思わず「王子ー！🥹」ってなりました🤣\n\n百人一首も、さすが王子だなぁと思いながら読んでました😊\n星ねこは64番でした〜⭐️\nこれから広がることが楽しみですね😊✨"
+          ]
+        }
+      ],
+      "checkedAt": 1794701050438
     },
     "n55a72e525c2f": {
       "key": "n55a72e525c2f",
@@ -40,7 +91,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617479196
+      "checkedAt": 1794701051612
     },
     "n44dcd5fab9ee": {
       "key": "n44dcd5fab9ee",
@@ -99,7 +150,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617485229
+      "checkedAt": 1794701052182
     },
     "nb6cdb0f181a1": {
       "key": "nb6cdb0f181a1",
@@ -169,7 +220,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617487983
+      "checkedAt": 1794701053041
     },
     "nc4d3fb9cfec3": {
       "key": "nc4d3fb9cfec3",
@@ -419,7 +470,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617494141
+      "checkedAt": 1794701054531
     },
     "n230e1cf05131": {
       "key": "n230e1cf05131",
@@ -569,7 +620,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617494534
+      "checkedAt": 1794701054924
     },
     "n1dfcf3c18d24": {
       "key": "n1dfcf3c18d24",
@@ -599,7 +650,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617497835
+      "checkedAt": 1794701056385
     },
     "n25e6c5294aa3": {
       "key": "n25e6c5294aa3",
@@ -629,7 +680,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617499398
+      "checkedAt": 1794701056839
     },
     "nf6d9a0a7fc46": {
       "key": "nf6d9a0a7fc46",
@@ -679,7 +730,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617502475
+      "checkedAt": 1794701057895
     },
     "n7d0e4ca8bc70": {
       "key": "n7d0e4ca8bc70",
@@ -732,7 +783,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617507587
+      "checkedAt": 1794701059568
     },
     "n3bf669d15322": {
       "key": "n3bf669d15322",
@@ -762,7 +813,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617508503
+      "checkedAt": 1794701059973
     },
     "nbe088c1cdd79": {
       "key": "nbe088c1cdd79",
@@ -852,7 +903,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617511479
+      "checkedAt": 1794701060790
     },
     "n91c03cdd9338": {
       "key": "n91c03cdd9338",
@@ -985,7 +1036,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617515499
+      "checkedAt": 1794701061683
     },
     "n7dafe723e128": {
       "key": "n7dafe723e128",
@@ -1015,12 +1066,12 @@
           ]
         }
       ],
-      "checkedAt": 1794617517046
+      "checkedAt": 1794701062728
     },
     "n9ac31804edbf": {
       "key": "n9ac31804edbf",
       "title": "【参加受付】🌙月夜の広場│王子の共同運営マガジン",
-      "commentCount": 124,
+      "commentCount": 130,
       "publishedAt": "2026-11-01T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n9ac31804edbf",
       "unresolved": [
@@ -1068,7 +1119,7 @@
           "key": "nc10ffcc0a08c2",
           "parentKey": "",
           "authorUrlname": "missa_t",
-          "authorName": "一休ママ☆お金をかけずに子どもの可能性を育てる【育児法＆マネー教育】男子3人育児☆フォロバ100",
+          "authorName": "一休ママ｜お金をかけずに賢く＆楽しく育児する【一級建築士・大手ゼネコン管理職3人育児】フォロバ100",
           "avatar": "https://assets.st-note.com/production/uploads/images/332812649/profile_fa8f45868d620b4b522ecbfcb83135d1.png?fit=bounds&format=jpeg&quality=85&width=330",
           "body": "ありがとうございます🙏\nどうぞよろしくお願いします❣️",
           "publishedAt": "2026-11-12T21:08:02.784+09:00",
@@ -1103,9 +1154,129 @@
           "pendingBodies": [
             "はじめまして、恋タロットの記事を出しているつくよみあおいです。参加希望です"
           ]
+        },
+        {
+          "key": "ncd0e8735a1b22",
+          "parentKey": "",
+          "authorUrlname": "maron55",
+          "authorName": "maron｜売るな、選ばれろ。",
+          "avatar": "https://assets.st-note.com/production/uploads/images/295721797/profile_6d9ef897cc3f321ce50305d15352ec5b.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "maron申します。\nマガジン参加希望です。\nよろしくお願い致します。",
+          "publishedAt": "2026-11-14T13:04:12.338+09:00",
+          "isRoot": true,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "ncd0e8735a1b22",
+          "rootAuthorUrlname": "maron55",
+          "rootBody": "maron申します。\nマガジン参加希望です。\nよろしくお願い致します。",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "maron申します。\nマガジン参加希望です。\nよろしくお願い致します。"
+          ]
+        },
+        {
+          "key": "nca9a7b729a9af",
+          "parentKey": "",
+          "authorUrlname": "puente_story",
+          "authorName": "PUENTE｜それぞれの物語",
+          "avatar": "https://assets.st-note.com/production/uploads/images/330663846/profile_5eccf3c1e41784784a5df73f6048f336.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "ネロさん、はじめまして。puenteと申します。ネロさんの企画とその想いにとても共感しています！ぜひ参加させてください、これからも色々なことを参加させてもらいながら勉強させてください。よろしくお願いします。",
+          "publishedAt": "2026-11-14T13:19:47.931+09:00",
+          "isRoot": true,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "nca9a7b729a9af",
+          "rootAuthorUrlname": "puente_story",
+          "rootBody": "ネロさん、はじめまして。puenteと申します。ネロさんの企画とその想いにとても共感しています！ぜひ参加させてください、これからも色々なことを参加させてもらいながら勉強させてください。よろしくお願いします。",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "ネロさん、はじめまして。puenteと申します。ネロさんの企画とその想いにとても共感しています！ぜひ参加させてください、これからも色々なことを参加させてもらいながら勉強させてください。よろしくお願いします。"
+          ]
+        },
+        {
+          "key": "nc9a19e774b336",
+          "parentKey": "",
+          "authorUrlname": "clear_loris3610",
+          "authorName": "つーさん",
+          "avatar": "https://assets.st-note.com/production/uploads/images/321605990/profile_8728ea381ec0f5654a7c9b3c53aa34df.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "はじめまして、つーと申します。\nマガジン参加希望です。\nよろしくお願いいたします！",
+          "publishedAt": "2026-11-14T13:53:20.110+09:00",
+          "isRoot": true,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "nc9a19e774b336",
+          "rootAuthorUrlname": "clear_loris3610",
+          "rootBody": "はじめまして、つーと申します。\nマガジン参加希望です。\nよろしくお願いいたします！",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "はじめまして、つーと申します。\nマガジン参加希望です。\nよろしくお願いいたします！"
+          ]
+        },
+        {
+          "key": "nc5adeb7e01f1c",
+          "parentKey": "",
+          "authorUrlname": "k19770928",
+          "authorName": "うさこ🐰/悲しみを笑いに変え自立神経をリセット中/パワフルママ/",
+          "avatar": "https://assets.st-note.com/production/uploads/images/332745136/profile_0baa7480c730a37942ff8fec2cf12fe4.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "はじめまして。うさこと申します🐰\n私のお部屋に来ていただいて、スキをありがとうございます🧡\n\nマガジンも参加させてください😍よろしくお願いいたします🌿",
+          "publishedAt": "2026-11-14T16:11:36.108+09:00",
+          "isRoot": true,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "nc5adeb7e01f1c",
+          "rootAuthorUrlname": "k19770928",
+          "rootBody": "はじめまして。うさこと申します🐰\n私のお部屋に来ていただいて、スキをありがとうございます🧡\n\nマガジンも参加させてください😍よろしくお願いいたします🌿",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "はじめまして。うさこと申します🐰\n私のお部屋に来ていただいて、スキをありがとうございます🧡\n\nマガジンも参加させてください😍よろしくお願いいたします🌿"
+          ]
+        },
+        {
+          "key": "ncbd91c1516564",
+          "parentKey": "",
+          "authorUrlname": "sc_fun",
+          "authorName": "sc_fun｜AI×note収益化サポート😺",
+          "avatar": "https://assets.st-note.com/production/uploads/images/296519929/profile_28a9df8a469b95b3298a0bf65cf47d8e.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "ネロさん、ようやく「王子ごっこ」してみました。\nこの機会にマガジンも参加したいと思います。\nあと、あかりちゃんのところでも触れたかもしれませんが、差し支えなければ「王子」って呼んでいいですか？\nよろしくお願いします。",
+          "publishedAt": "2026-11-14T22:32:42.128+09:00",
+          "isRoot": true,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "ncbd91c1516564",
+          "rootAuthorUrlname": "sc_fun",
+          "rootBody": "ネロさん、ようやく「王子ごっこ」してみました。\nこの機会にマガジンも参加したいと思います。\nあと、あかりちゃんのところでも触れたかもしれませんが、差し支えなければ「王子」って呼んでいいですか？\nよろしくお願いします。",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "ネロさん、ようやく「王子ごっこ」してみました。\nこの機会にマガジンも参加したいと思います。\nあと、あかりちゃんのところでも触れたかもしれませんが、差し支えなければ「王子」って呼んでいいですか？\nよろしくお願いします。"
+          ]
+        },
+        {
+          "key": "nc7b6bdbb5b9bc",
+          "parentKey": "",
+          "authorUrlname": "hannya_yuki",
+          "authorName": "はんにゃ",
+          "avatar": "https://assets.st-note.com/production/uploads/images/331792071/profile_b7a069c10afc441a3201739ab20c1cb3.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "はじめまして！参加希望です！よろしくお願いいたしますm(__)m",
+          "publishedAt": "2026-11-15T06:20:21.334+09:00",
+          "isRoot": true,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "nc7b6bdbb5b9bc",
+          "rootAuthorUrlname": "hannya_yuki",
+          "rootBody": "はじめまして！参加希望です！よろしくお願いいたしますm(__)m",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "はじめまして！参加希望です！よろしくお願いいたしますm(__)m"
+          ]
         }
       ],
-      "checkedAt": 1794617535715
+      "checkedAt": 1794701081975
     },
     "nd47eb46636f3": {
       "key": "nd47eb46636f3",
@@ -1275,7 +1446,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617536082
+      "checkedAt": 1794701082378
     },
     "nfbf12cf1ecd6": {
       "key": "nfbf12cf1ecd6",
@@ -1587,7 +1758,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617543655
+      "checkedAt": 1794701084523
     },
     "n5673d8a2a1e7": {
       "key": "n5673d8a2a1e7",
@@ -1657,7 +1828,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617544010
+      "checkedAt": 1794701084899
     },
     "nfa7b2615b2e1": {
       "key": "nfa7b2615b2e1",
@@ -1867,7 +2038,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617547272
+      "checkedAt": 1794701086447
     },
     "na49c548a0363": {
       "key": "na49c548a0363",
@@ -1937,7 +2108,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617548806
+      "checkedAt": 1794701086889
     },
     "n92ed11ea0560": {
       "key": "n92ed11ea0560",
@@ -2047,7 +2218,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617554233
+      "checkedAt": 1794701087563
     },
     "n6daf17e1b9f2": {
       "key": "n6daf17e1b9f2",
@@ -2106,7 +2277,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617561482
+      "checkedAt": 1794701088749
     },
     "n24d789d1d832": {
       "key": "n24d789d1d832",
@@ -2156,7 +2327,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617565752
+      "checkedAt": 1794701090278
     },
     "nce0eaef2ecff": {
       "key": "nce0eaef2ecff",
@@ -2246,7 +2417,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617575934
+      "checkedAt": 1794701091587
     },
     "nabd2c1f9084e": {
       "key": "nabd2c1f9084e",
@@ -2397,7 +2568,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617579008
+      "checkedAt": 1794701092802
     },
     "n2d77b106b5fa": {
       "key": "n2d77b106b5fa",
@@ -2468,7 +2639,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617581466
+      "checkedAt": 1794701093654
     },
     "n204d9285366f": {
       "key": "n204d9285366f",
@@ -2498,7 +2669,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617589270
+      "checkedAt": 1794701094749
     },
     "nd4818ee00393": {
       "key": "nd4818ee00393",
@@ -2608,7 +2779,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617592356
+      "checkedAt": 1794701095250
     },
     "nca840b916450": {
       "key": "nca840b916450",
@@ -2638,7 +2809,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617597432
+      "checkedAt": 1794701096213
     },
     "n6a638b4cdc9c": {
       "key": "n6a638b4cdc9c",
@@ -2688,7 +2859,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617600350
+      "checkedAt": 1794701097096
     },
     "ndf701a30f804": {
       "key": "ndf701a30f804",
@@ -2920,7 +3091,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617604616
+      "checkedAt": 1794701099031
     },
     "n6614109484e6": {
       "key": "n6614109484e6",
@@ -3110,7 +3281,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617614889
+      "checkedAt": 1794701100977
     },
     "n888d088cb751": {
       "key": "n888d088cb751",
@@ -3160,7 +3331,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617622265
+      "checkedAt": 1794701102815
     },
     "n76a630334117": {
       "key": "n76a630334117",
@@ -3290,7 +3461,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617631640
+      "checkedAt": 1794701104419
     },
     "n9c329a589955": {
       "key": "n9c329a589955",
@@ -3320,7 +3491,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617636606
+      "checkedAt": 1794701105154
     },
     "n045caddfdeb2": {
       "key": "n045caddfdeb2",
@@ -3350,7 +3521,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617641043
+      "checkedAt": 1794701105713
     },
     "n599b78d349cb": {
       "key": "n599b78d349cb",
@@ -3520,7 +3691,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617659770
+      "checkedAt": 1794701109899
     },
     "ncb2e8df1ba60": {
       "key": "ncb2e8df1ba60",
@@ -3599,7 +3770,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617674869
+      "checkedAt": 1794701111371
     },
     "n6c980c7258f4": {
       "key": "n6c980c7258f4",
@@ -3649,7 +3820,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617687049
+      "checkedAt": 1794701113238
     },
     "nfaa6a8e6b0f0": {
       "key": "nfaa6a8e6b0f0",
@@ -3717,7 +3888,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617704555
+      "checkedAt": 1794701114445
     },
     "ncf8842e9aace": {
       "key": "ncf8842e9aace",
@@ -3794,7 +3965,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617724294
+      "checkedAt": 1794701115329
     },
     "n2499a4347e8e": {
       "key": "n2499a4347e8e",
@@ -3878,7 +4049,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617775146
+      "checkedAt": 1794701116729
     },
     "nfec34a269814": {
       "key": "nfec34a269814",
@@ -4160,7 +4331,7 @@
           ]
         }
       ],
-      "checkedAt": 1794617929445
+      "checkedAt": 1794701117502
     },
     "neb1acdcd5049": {
       "key": "neb1acdcd5049",
@@ -4289,7 +4460,7 @@
           ]
         }
       ],
-      "checkedAt": 1794618015388
+      "checkedAt": 1794701118208
     },
     "nf4830fe23412": {
       "key": "nf4830fe23412",
@@ -4427,7 +4598,7 @@
           ]
         }
       ],
-      "checkedAt": 1794618045636
+      "checkedAt": 1794701119217
     },
     "n29e9faebb23e": {
       "key": "n29e9faebb23e",
@@ -4493,7 +4664,7 @@
           ]
         }
       ],
-      "checkedAt": 1794618058637
+      "checkedAt": 1794701120099
     }
   }
 }
