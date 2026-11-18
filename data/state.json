@@ -1,12 +1,21 @@
 {
   "version": 1,
   "owner": "nero_notelover",
-  "updatedAt": "2026-11-17T03:03:45.203Z",
+  "updatedAt": "2026-11-18T02:33:43.315Z",
   "articles": {
+    "n8c649c95cf33": {
+      "key": "n8c649c95cf33",
+      "title": "🌙 最後のドラミング｜コインランドリー｜地図にない灯り",
+      "commentCount": 45,
+      "publishedAt": "2026-11-17T21:00:00+09:00",
+      "url": "https://note.com/nero_notelover/n/n8c649c95cf33",
+      "unresolved": [],
+      "checkedAt": 1794969132792
+    },
     "ne6a014965724": {
       "key": "ne6a014965724",
       "title": "🌙 王子、スキ動画コンテスト『秋の陣』に参戦🍁",
-      "commentCount": 45,
+      "commentCount": 64,
       "publishedAt": "2026-11-16T21:30:00+09:00",
       "url": "https://note.com/nero_notelover/n/ne6a014965724",
       "unresolved": [
@@ -15,7 +24,7 @@
           "parentKey": "",
           "authorUrlname": "futurelnve5r",
           "authorName": "Labo.",
-          "avatar": "https://assets.st-note.com/production/uploads/images/337048168/profile_5f78c2f868af6fdefb344e2b0b7cc521.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "avatar": "https://assets.st-note.com/production/uploads/images/337165201/profile_8f39bb291069e418971e986f02f93d99.png?fit=bounds&format=jpeg&quality=85&width=330",
           "body": "Labo.のアイコンは定期的（気分）で変わります！\n見逃してあとから「ラボちゃんだったの？」って言われるまでが、わたしのゲームです🎮\n\n秋イワシとか言えばなんでもありな気がします☝️",
           "publishedAt": "2026-11-17T07:38:03.441+09:00",
           "isRoot": false,
@@ -31,67 +40,27 @@
           ]
         },
         {
-          "key": "nc52d6cc916c0a",
+          "key": "nce0e4aae8f7fd",
           "parentKey": "",
-          "authorUrlname": "kan_mina867",
-          "authorName": "❁⃘*.ﾟMina❁⃘*.ﾟ｜︎︎雲バル・ブラバル運営中☁️🖤",
-          "avatar": "https://assets.st-note.com/production/uploads/images/330751797/profile_f730771dfb69a60dc81f2afcc0e11b78.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子、おはようございます☀️\n\nこんなに沢山つくっていたんですねwww\n1番最初の矢を打つの、好きでした。王道が1番ꉂ🤭ハートのやつ、よくゲームセンターにあるやつですね💕︎\n長縄はnoteとお仲間のDiscordを渡り歩く王子らしくてꉂ🤭ってなります。何よりプリンセスが可愛すぎてキュン♡♡\n\n私、クレジット貰うのもちょっとギリギリだったので、大急ぎꉂ🤣w‪𐤔\nでも今回は、PolloAIさんを使うこと自体が初めてなので、動かすことがメインかもꉂ🤭頑張ります✨️",
-          "publishedAt": "2026-11-17T09:56:39.637+09:00",
-          "isRoot": true,
+          "authorUrlname": "yokayoka5103",
+          "authorName": "まるよか│胸なし女の日常実験",
+          "avatar": "https://assets.st-note.com/production/uploads/images/222786932/profile_7cd7089df475a85f46c7b0af61dddfe1.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "プリンセス✨一発OK!ですか！😲すごっ！\n王子も胸キュン💓ですよねー(^o^)\n\n矢で射抜くやつ、大変だったんですね😲\n苦労したかいがあって、印象に残る「スキ」動画でしたよ😄",
+          "publishedAt": "2026-11-17T15:12:51.577+09:00",
+          "isRoot": false,
           "replyCount": 0,
           "creatorReplied": false,
           "creatorLiked": false,
-          "rootKey": "nc52d6cc916c0a",
-          "rootAuthorUrlname": "kan_mina867",
-          "rootBody": "王子、おはようございます☀️\n\nこんなに沢山つくっていたんですねwww\n1番最初の矢を打つの、好きでした。王道が1番ꉂ🤭ハートのやつ、よくゲームセンターにあるやつですね💕︎\n長縄はnoteとお仲間のDiscordを渡り歩く王子らしくてꉂ🤭ってなります。何よりプリンセスが可愛すぎてキュン♡♡\n\n私、クレジット貰うのもちょっとギリギリだったので、大急ぎꉂ🤣w‪𐤔\nでも今回は、PolloAIさんを使うこと自体が初めてなので、動かすことがメインかもꉂ🤭頑張ります✨️",
+          "rootKey": "ncf9f4d5af2ef2",
+          "rootAuthorUrlname": "yokayoka5103",
+          "rootBody": "ネロ王子さま✨\n\nわたしのスキは「プリンセス」でした🤭かわいい💕💕\nスキ動画、どれも個性的✨で楽しかったです🥰矢で、紅葉を射抜くやつが好きです💓💓",
           "pendingCount": 1,
           "pendingBodies": [
-            "王子、おはようございます☀️\n\nこんなに沢山つくっていたんですねwww\n1番最初の矢を打つの、好きでした。王道が1番ꉂ🤭ハートのやつ、よくゲームセンターにあるやつですね💕︎\n長縄はnoteとお仲間のDiscordを渡り歩く王子らしくてꉂ🤭ってなります。何よりプリンセスが可愛すぎてキュン♡♡\n\n私、クレジット貰うのもちょっとギリギリだったので、大急ぎꉂ🤣w‪𐤔\nでも今回は、PolloAIさんを使うこと自体が初めてなので、動かすことがメインかもꉂ🤭頑張ります✨️"
-          ]
-        },
-        {
-          "key": "nccb7b9f01be65",
-          "parentKey": "",
-          "authorUrlname": "ai_naoyuki",
-          "authorName": "ナオユキ｜物語と知識のコンシェルジュ",
-          "avatar": "https://assets.st-note.com/production/uploads/images/313291204/profile_a5b784b498c6219aaf599ff4dba0e39f.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子、8本も作っていただいてありがとうございます😊\n\nどれも、王子が楽しんで作られてるのがすごく伝わってきました🙂‍↕️\n\n間のコメントがまた愉快で最初から最後まで楽しませていただきました😆\n\nどれもステキですが、③のインド映画はずっと見てしまいました\n\nGIFを読み込むのに少し時間がかこり、最初はゆっくりだったのが、ローディング終わると急に早くなるのもツボでした🤣\n\n応募作品も色使いとスピード感が良かったです☺️\n\n沢山の作品作っていただきありがとうございました😊",
-          "publishedAt": "2026-11-17T10:35:02.604+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nccb7b9f01be65",
-          "rootAuthorUrlname": "ai_naoyuki",
-          "rootBody": "王子、8本も作っていただいてありがとうございます😊\n\nどれも、王子が楽しんで作られてるのがすごく伝わってきました🙂‍↕️\n\n間のコメントがまた愉快で最初から最後まで楽しませていただきました😆\n\nどれもステキですが、③のインド映画はずっと見てしまいました\n\nGIFを読み込むのに少し時間がかこり、最初はゆっくりだったのが、ローディング終わると急に早くなるのもツボでした🤣\n\n応募作品も色使いとスピード感が良かったです☺️\n\n沢山の作品作っていただきありがとうございました😊",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子、8本も作っていただいてありがとうございます😊\n\nどれも、王子が楽しんで作られてるのがすごく伝わってきました🙂‍↕️\n\n間のコメントがまた愉快で最初から最後まで楽しませていただきました😆\n\nどれもステキですが、③のインド映画はずっと見てしまいました\n\nGIFを読み込むのに少し時間がかこり、最初はゆっくりだったのが、ローディング終わると急に早くなるのもツボでした🤣\n\n応募作品も色使いとスピード感が良かったです☺️\n\n沢山の作品作っていただきありがとうございました😊"
-          ]
-        },
-        {
-          "key": "nc542a4e4708aa",
-          "parentKey": "",
-          "authorUrlname": "akemi0730",
-          "authorName": "あけみ | note企画×子育て応援",
-          "avatar": "https://assets.st-note.com/production/uploads/images/335124947/profile_65d403de5b930fd0f46e89998ce9597a.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子、先ほど別の記事をスキしたら、プリンセスが出てきたので急いできました！！\n\nプリンセス可愛すぎです！！\n個人的にはボスのスキも好きでした！",
-          "publishedAt": "2026-11-17T10:50:28.119+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc542a4e4708aa",
-          "rootAuthorUrlname": "akemi0730",
-          "rootBody": "王子、先ほど別の記事をスキしたら、プリンセスが出てきたので急いできました！！\n\nプリンセス可愛すぎです！！\n個人的にはボスのスキも好きでした！",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子、先ほど別の記事をスキしたら、プリンセスが出てきたので急いできました！！\n\nプリンセス可愛すぎです！！\n個人的にはボスのスキも好きでした！"
+            "プリンセス✨一発OK!ですか！😲すごっ！\n王子も胸キュン💓ですよねー(^o^)\n\n矢で射抜くやつ、大変だったんですね😲\n苦労したかいがあって、印象に残る「スキ」動画でしたよ😄"
           ]
         }
       ],
-      "checkedAt": 1794884539123
+      "checkedAt": 1794969142803
     },
     "n875184ff03f4": {
       "key": "n875184ff03f4",
@@ -221,7 +190,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884542006
+      "checkedAt": 1794969144224
     },
     "ne99bc9a9df81": {
       "key": "ne99bc9a9df81",
@@ -251,7 +220,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884542841
+      "checkedAt": 1794969145054
     },
     "n2274f8a62a5d": {
       "key": "n2274f8a62a5d",
@@ -341,7 +310,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884548271
+      "checkedAt": 1794969145988
     },
     "n55a72e525c2f": {
       "key": "n55a72e525c2f",
@@ -391,7 +360,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884549318
+      "checkedAt": 1794969146888
     },
     "n44dcd5fab9ee": {
       "key": "n44dcd5fab9ee",
@@ -421,7 +390,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884549982
+      "checkedAt": 1794969147664
     },
     "ncb723bf4808c": {
       "key": "ncb723bf4808c",
@@ -471,7 +440,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884550852
+      "checkedAt": 1794969148180
     },
     "nb6cdb0f181a1": {
       "key": "nb6cdb0f181a1",
@@ -541,7 +510,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884551639
+      "checkedAt": 1794969149098
     },
     "nc4d3fb9cfec3": {
       "key": "nc4d3fb9cfec3",
@@ -791,7 +760,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884552635
+      "checkedAt": 1794969150370
     },
     "n230e1cf05131": {
       "key": "n230e1cf05131",
@@ -941,7 +910,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884552986
+      "checkedAt": 1794969150991
     },
     "n1dfcf3c18d24": {
       "key": "n1dfcf3c18d24",
@@ -971,7 +940,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884553757
+      "checkedAt": 1794969152042
     },
     "n25e6c5294aa3": {
       "key": "n25e6c5294aa3",
@@ -1021,7 +990,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884554179
+      "checkedAt": 1794969152460
     },
     "nf6d9a0a7fc46": {
       "key": "nf6d9a0a7fc46",
@@ -1071,7 +1040,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884554875
+      "checkedAt": 1794969153196
     },
     "n7d0e4ca8bc70": {
       "key": "n7d0e4ca8bc70",
@@ -1124,7 +1093,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884555976
+      "checkedAt": 1794969154801
     },
     "n3bf669d15322": {
       "key": "n3bf669d15322",
@@ -1154,7 +1123,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884556310
+      "checkedAt": 1794969155196
     },
     "nbe088c1cdd79": {
       "key": "nbe088c1cdd79",
@@ -1244,7 +1213,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884556772
+      "checkedAt": 1794969155692
     },
     "n91c03cdd9338": {
       "key": "n91c03cdd9338",
@@ -1377,7 +1346,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884557569
+      "checkedAt": 1794969156541
     },
     "n7dafe723e128": {
       "key": "n7dafe723e128",
@@ -1407,7 +1376,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884558217
+      "checkedAt": 1794969157498
     },
     "n9ac31804edbf": {
       "key": "n9ac31804edbf",
@@ -1460,7 +1429,7 @@
           "key": "nc10ffcc0a08c2",
           "parentKey": "",
           "authorUrlname": "missa_t",
-          "authorName": "一休ママ｜お金をかけずに賢く＆楽しく育児する【一級建築士・大手ゼネコン管理職】男3人育児＆マネー教育",
+          "authorName": "一休ママ｜お金をかけずに賢く＆楽しく育児する【一級建築士・大手ゼネコン管理職3人育児】フォロバ100",
           "avatar": "https://assets.st-note.com/production/uploads/images/332812649/profile_fa8f45868d620b4b522ecbfcb83135d1.png?fit=bounds&format=jpeg&quality=85&width=330",
           "body": "ありがとうございます🙏\nどうぞよろしくお願いします❣️",
           "publishedAt": "2026-11-12T21:08:02.784+09:00",
@@ -1501,7 +1470,7 @@
           "parentKey": "",
           "authorUrlname": "futurelnve5r",
           "authorName": "Labo.",
-          "avatar": "https://assets.st-note.com/production/uploads/images/337048168/profile_5f78c2f868af6fdefb344e2b0b7cc521.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "avatar": "https://assets.st-note.com/production/uploads/images/337165201/profile_8f39bb291069e418971e986f02f93d99.png?fit=bounds&format=jpeg&quality=85&width=330",
           "body": "おうじさまぁ〜😭\nごめんなさい！\n通知設定2個あるの知らなくて、全部オンだから大丈夫って思ってたらプッシュ通知の方で、メール設定の方は出来てなかったです💦\n設定し直したので、もう一度だけお願いできませんか？",
           "publishedAt": "2026-11-16T12:10:05.637+09:00",
           "isRoot": false,
@@ -1518,7 +1487,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884578784
+      "checkedAt": 1794969160505
     },
     "nd47eb46636f3": {
       "key": "nd47eb46636f3",
@@ -1688,7 +1657,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884579135
+      "checkedAt": 1794969160892
     },
     "nfbf12cf1ecd6": {
       "key": "nfbf12cf1ecd6",
@@ -2000,7 +1969,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884581677
+      "checkedAt": 1794969163059
     },
     "n5673d8a2a1e7": {
       "key": "n5673d8a2a1e7",
@@ -2070,7 +2039,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884582008
+      "checkedAt": 1794969163416
     },
     "nfa7b2615b2e1": {
       "key": "nfa7b2615b2e1",
@@ -2224,7 +2193,7 @@
           "parentKey": "",
           "authorUrlname": "futurelnve5r",
           "authorName": "Labo.",
-          "avatar": "https://assets.st-note.com/production/uploads/images/337048168/profile_5f78c2f868af6fdefb344e2b0b7cc521.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "avatar": "https://assets.st-note.com/production/uploads/images/337165201/profile_8f39bb291069e418971e986f02f93d99.png?fit=bounds&format=jpeg&quality=85&width=330",
           "body": "プリキュア王子🤴\n運転中がかわいすぎます❤️\n\nオールインクルーシブいいですよね🤩\n前から憧れてたけど、ご利用した事ないんです😭\n\nでも記事見たら太りそうでこわい🐷",
           "publishedAt": "2026-10-31T22:46:14.078+09:00",
           "isRoot": true,
@@ -2280,7 +2249,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884583253
+      "checkedAt": 1794969164518
     },
     "na49c548a0363": {
       "key": "na49c548a0363",
@@ -2350,7 +2319,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884583657
+      "checkedAt": 1794969164943
     },
     "n92ed11ea0560": {
       "key": "n92ed11ea0560",
@@ -2460,7 +2429,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884584287
+      "checkedAt": 1794969165568
     },
     "n6daf17e1b9f2": {
       "key": "n6daf17e1b9f2",
@@ -2519,7 +2488,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884585610
+      "checkedAt": 1794969166956
     },
     "n24d789d1d832": {
       "key": "n24d789d1d832",
@@ -2569,7 +2538,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884586503
+      "checkedAt": 1794969167938
     },
     "nce0eaef2ecff": {
       "key": "nce0eaef2ecff",
@@ -2659,7 +2628,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884587932
+      "checkedAt": 1794969169140
     },
     "nabd2c1f9084e": {
       "key": "nabd2c1f9084e",
@@ -2810,7 +2779,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884589171
+      "checkedAt": 1794969170542
     },
     "n2d77b106b5fa": {
       "key": "n2d77b106b5fa",
@@ -2881,7 +2850,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884589921
+      "checkedAt": 1794969171609
     },
     "n204d9285366f": {
       "key": "n204d9285366f",
@@ -2911,7 +2880,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884591005
+      "checkedAt": 1794969172890
     },
     "nd4818ee00393": {
       "key": "nd4818ee00393",
@@ -3021,7 +2990,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884591692
+      "checkedAt": 1794969173404
     },
     "nca840b916450": {
       "key": "nca840b916450",
@@ -3051,7 +3020,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884592585
+      "checkedAt": 1794969174309
     },
     "n6a638b4cdc9c": {
       "key": "n6a638b4cdc9c",
@@ -3101,7 +3070,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884593340
+      "checkedAt": 1794969175337
     },
     "ndf701a30f804": {
       "key": "ndf701a30f804",
@@ -3333,7 +3302,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884594974
+      "checkedAt": 1794969177398
     },
     "n6614109484e6": {
       "key": "n6614109484e6",
@@ -3523,7 +3492,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884597308
+      "checkedAt": 1794969178933
     },
     "n888d088cb751": {
       "key": "n888d088cb751",
@@ -3573,7 +3542,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884598577
+      "checkedAt": 1794969180539
     },
     "n76a630334117": {
       "key": "n76a630334117",
@@ -3703,7 +3672,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884600139
+      "checkedAt": 1794969182264
     },
     "n9c329a589955": {
       "key": "n9c329a589955",
@@ -3733,7 +3702,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884600717
+      "checkedAt": 1794969182830
     },
     "n045caddfdeb2": {
       "key": "n045caddfdeb2",
@@ -3763,7 +3732,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884601290
+      "checkedAt": 1794969183657
     },
     "n599b78d349cb": {
       "key": "n599b78d349cb",
@@ -3933,7 +3902,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884604947
+      "checkedAt": 1794969187691
     },
     "ncb2e8df1ba60": {
       "key": "ncb2e8df1ba60",
@@ -4012,7 +3981,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884606206
+      "checkedAt": 1794969189216
     },
     "n6c980c7258f4": {
       "key": "n6c980c7258f4",
@@ -4062,7 +4031,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884607762
+      "checkedAt": 1794969190914
     },
     "nfaa6a8e6b0f0": {
       "key": "nfaa6a8e6b0f0",
@@ -4130,7 +4099,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884608585
+      "checkedAt": 1794969191731
     },
     "ncf8842e9aace": {
       "key": "ncf8842e9aace",
@@ -4207,7 +4176,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884609697
+      "checkedAt": 1794969192805
     },
     "n2499a4347e8e": {
       "key": "n2499a4347e8e",
@@ -4291,7 +4260,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884611275
+      "checkedAt": 1794969194227
     },
     "nfec34a269814": {
       "key": "nfec34a269814",
@@ -4354,7 +4323,7 @@
       "publishedAt": "2026-09-29T06:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n40e1bc7d811c",
       "unresolved": [],
-      "checkedAt": 1790934733681
+      "checkedAt": 1794969198474
     },
     "n7a4123fca48b": {
       "key": "n7a4123fca48b",
@@ -4462,7 +4431,7 @@
       "publishedAt": "2026-09-23T10:20:53+09:00",
       "url": "https://note.com/nero_notelover/n/n5d373c663477",
       "unresolved": [],
-      "checkedAt": 1790926796182
+      "checkedAt": 1794969209251
     },
     "nd0af429284a2": {
       "key": "nd0af429284a2",
@@ -4516,7 +4485,7 @@
       "publishedAt": "2026-09-18T06:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/nb83d60ff76e2",
       "unresolved": [],
-      "checkedAt": 1790926810824
+      "checkedAt": 1794969213359
     },
     "n36212bf7056f": {
       "key": "n36212bf7056f",
@@ -4573,7 +4542,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884612099
+      "checkedAt": 1794969214074
     },
     "neb1acdcd5049": {
       "key": "neb1acdcd5049",
@@ -4704,7 +4673,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884616162
+      "checkedAt": 1794969214679
     },
     "n412a21c4ca4c": {
       "key": "n412a21c4ca4c",
@@ -4743,7 +4712,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884616810
+      "checkedAt": 1794969215278
     },
     "nf4830fe23412": {
       "key": "nf4830fe23412",
@@ -4847,7 +4816,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884617493
+      "checkedAt": 1794969215967
     },
     "nfaa8ad059650": {
       "key": "nfaa8ad059650",
@@ -4922,7 +4891,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884621679
+      "checkedAt": 1794969216834
     },
     "n29e9faebb23e": {
       "key": "n29e9faebb23e",
@@ -4930,8 +4899,29 @@
       "commentCount": 38,
       "publishedAt": "2026-08-26T12:05:23+09:00",
       "url": "https://note.com/nero_notelover/n/n29e9faebb23e",
-      "unresolved": [],
-      "checkedAt": 1790926864876
+      "unresolved": [
+        {
+          "key": "nc6c371b2bef2d",
+          "parentKey": "",
+          "authorUrlname": "ib_dolphin322",
+          "authorName": "いるか｜ゆるnote",
+          "avatar": "https://assets.st-note.com/production/uploads/images/334799804/profile_1d34ac5988d1dfc7408d3f639c37ea80.jpg?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "王子！はじめまして、いるか🐬です。\nぜひ私の記事を読んでほしいです！\n\nhttps://note.com/ib_dolphin322/n/n564d956f6e7a?sub_rt=share_pw\n\n今の自分の悩みを赤裸々に書いてみました！\nどうぞよろしくお願いします！🫡",
+          "publishedAt": "2026-11-07T12:49:54.875+09:00",
+          "isRoot": true,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "nc6c371b2bef2d",
+          "rootAuthorUrlname": "ib_dolphin322",
+          "rootBody": "王子！はじめまして、いるか🐬です。\nぜひ私の記事を読んでほしいです！\n\nhttps://note.com/ib_dolphin322/n/n564d956f6e7a?sub_rt=share_pw\n\n今の自分の悩みを赤裸々に書いてみました！\nどうぞよろしくお願いします！🫡",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "王子！はじめまして、いるか🐬です。\nぜひ私の記事を読んでほしいです！\n\nhttps://note.com/ib_dolphin322/n/n564d956f6e7a?sub_rt=share_pw\n\n今の自分の悩みを赤裸々に書いてみました！\nどうぞよろしくお願いします！🫡"
+          ]
+        }
+      ],
+      "checkedAt": 1794969222408
     },
     "n524047479f3f": {
       "key": "n524047479f3f",
@@ -4988,7 +4978,7 @@
           ]
         }
       ],
-      "checkedAt": 1794884625022
+      "checkedAt": 1794969223134
     }
   }
 }
