@@ -1,16 +1,66 @@
 {
   "version": 1,
   "owner": "nero_notelover",
-  "updatedAt": "2026-11-20T01:53:27.278Z",
+  "updatedAt": "2026-11-21T01:41:29.290Z",
   "articles": {
+    "n16ecb4479f6c": {
+      "key": "n16ecb4479f6c",
+      "title": "🌙 ふたつのみかん｜足湯｜地図にない灯り",
+      "commentCount": 17,
+      "publishedAt": "2026-11-20T21:00:00+09:00",
+      "url": "https://note.com/nero_notelover/n/n16ecb4479f6c",
+      "unresolved": [
+        {
+          "key": "ncce46feb093d4",
+          "parentKey": "",
+          "authorUrlname": "kocori256",
+          "authorName": "ラナ🌺　相互フォローで盛りあがろう💪",
+          "avatar": "https://assets.st-note.com/production/uploads/images/319521467/profile_605d619baf3e13dc46706c29b3c94c71.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "ネロ王子さん❣️\n\nジョニーから始まるショートショートがもう面白くて斬新で😂😂\n\n読んでいてとても楽しかったです😆🙌🩵",
+          "publishedAt": "2026-11-21T00:30:27.857+09:00",
+          "isRoot": true,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "ncce46feb093d4",
+          "rootAuthorUrlname": "kocori256",
+          "rootBody": "ネロ王子さん❣️\n\nジョニーから始まるショートショートがもう面白くて斬新で😂😂\n\n読んでいてとても楽しかったです😆🙌🩵",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "ネロ王子さん❣️\n\nジョニーから始まるショートショートがもう面白くて斬新で😂😂\n\n読んでいてとても楽しかったです😆🙌🩵"
+          ]
+        },
+        {
+          "key": "nc525f0665905c",
+          "parentKey": "",
+          "authorUrlname": "mute_mink3681",
+          "authorName": "賢者スタン@フォロバ100%",
+          "avatar": "https://assets.st-note.com/production/uploads/images/321601764/profile_01c1642713c76bcbe169e1220c93075b.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "ネロ殿、\n我が企画を取り上げてもらい感謝する\nそしてカウボーイでくるとは思わなかった\n2枚目は夜なのも相まって、\nよりイケおじ感が増してくるな。\n\nそして今回もウホウホが止まらないようだ\nとりあえずゴリラを置いていく🦍",
+          "publishedAt": "2026-11-21T09:00:58.350+09:00",
+          "isRoot": true,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "nc525f0665905c",
+          "rootAuthorUrlname": "mute_mink3681",
+          "rootBody": "ネロ殿、\n我が企画を取り上げてもらい感謝する\nそしてカウボーイでくるとは思わなかった\n2枚目は夜なのも相まって、\nよりイケおじ感が増してくるな。\n\nそして今回もウホウホが止まらないようだ\nとりあえずゴリラを置いていく🦍",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "ネロ殿、\n我が企画を取り上げてもらい感謝する\nそしてカウボーイでくるとは思わなかった\n2枚目は夜なのも相まって、\nよりイケおじ感が増してくるな。\n\nそして今回もウホウホが止まらないようだ\nとりあえずゴリラを置いていく🦍"
+          ]
+        }
+      ],
+      "checkedAt": 1795225148550
+    },
     "n51014fa77407": {
       "key": "n51014fa77407",
       "title": "🌙王子の初心者向けスキ動画の作り方",
-      "commentCount": 24,
+      "commentCount": 39,
       "publishedAt": "2026-11-19T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n51014fa77407",
       "unresolved": [],
-      "checkedAt": 1795139431264
+      "checkedAt": 1795225154944
     },
     "n11f2834cc32f": {
       "key": "n11f2834cc32f",
@@ -24,29 +74,50 @@
     "na551d64b41ab": {
       "key": "na551d64b41ab",
       "title": "🌙 noteでいくら稼ぎたい？｜それって何のため？",
-      "commentCount": 52,
+      "commentCount": 55,
       "publishedAt": "2026-11-18T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/na551d64b41ab",
       "unresolved": [],
-      "checkedAt": 1795139440501
+      "checkedAt": 1795225162633
     },
     "n8c649c95cf33": {
       "key": "n8c649c95cf33",
       "title": "🌙 最後のドラミング｜コインランドリー｜地図にない灯り",
-      "commentCount": 55,
+      "commentCount": 62,
       "publishedAt": "2026-11-17T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n8c649c95cf33",
-      "unresolved": [],
-      "checkedAt": 1795139447734
+      "unresolved": [
+        {
+          "key": "nce837c01450a0",
+          "parentKey": "",
+          "authorUrlname": "kepcharitabi",
+          "authorName": "Keptyの旅ログ🚲️ |あの旅を一冊の本に",
+          "avatar": "https://assets.st-note.com/production/uploads/images/305572272/profile_4afaf10f99a8cb892fafaee387450625.jpg?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "そーなんですね！笑\n全員平等にウホ！笑\n\n楽しませていただきます！🤣",
+          "publishedAt": "2026-11-21T01:19:45.372+09:00",
+          "isRoot": false,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "nca760c6d61873",
+          "rootAuthorUrlname": "kepcharitabi",
+          "rootBody": "こんばんは！はじめまして！\nゆうさんつながりでここにたどり着しました！いろいろな企画とても楽しそうですね☺️",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "そーなんですね！笑\n全員平等にウホ！笑\n\n楽しませていただきます！🤣"
+          ]
+        }
+      ],
+      "checkedAt": 1795225171801
     },
     "ne6a014965724": {
       "key": "ne6a014965724",
       "title": "🌙 王子、スキ動画コンテスト『秋の陣』に参戦🍁",
-      "commentCount": 71,
+      "commentCount": 73,
       "publishedAt": "2026-11-16T21:30:00+09:00",
       "url": "https://note.com/nero_notelover/n/ne6a014965724",
       "unresolved": [],
-      "checkedAt": 1795139460192
+      "checkedAt": 1795225186237
     },
     "n875184ff03f4": {
       "key": "n875184ff03f4",
@@ -76,7 +147,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139464729
+      "checkedAt": 1795225187180
     },
     "ne99bc9a9df81": {
       "key": "ne99bc9a9df81",
@@ -115,7 +186,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139472795
+      "checkedAt": 1795225188473
     },
     "n55a72e525c2f": {
       "key": "n55a72e525c2f",
@@ -253,7 +324,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139502552
+      "checkedAt": 1795225189056
     },
     "n7dafe723e128": {
       "key": "n7dafe723e128",
@@ -267,11 +338,11 @@
     "n9ac31804edbf": {
       "key": "n9ac31804edbf",
       "title": "【参加受付】🌙月夜の広場│王子の共同運営マガジン",
-      "commentCount": 156,
+      "commentCount": 162,
       "publishedAt": "2026-11-01T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n9ac31804edbf",
       "unresolved": [],
-      "checkedAt": 1795139527042
+      "checkedAt": 1795225214336
     },
     "nd47eb46636f3": {
       "key": "nd47eb46636f3",
@@ -328,7 +399,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139531557
+      "checkedAt": 1795225215174
     },
     "na49c548a0363": {
       "key": "na49c548a0363",
@@ -378,7 +449,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139531987
+      "checkedAt": 1795225215619
     },
     "n92ed11ea0560": {
       "key": "n92ed11ea0560",
@@ -446,7 +517,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139534231
+      "checkedAt": 1795225217119
     },
     "n24d789d1d832": {
       "key": "n24d789d1d832",
@@ -496,7 +567,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139535059
+      "checkedAt": 1795225218048
     },
     "nce0eaef2ecff": {
       "key": "nce0eaef2ecff",
@@ -526,7 +597,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139536483
+      "checkedAt": 1795225219232
     },
     "nabd2c1f9084e": {
       "key": "nabd2c1f9084e",
@@ -676,7 +747,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139537569
+      "checkedAt": 1795225220453
     },
     "n2d77b106b5fa": {
       "key": "n2d77b106b5fa",
@@ -747,7 +818,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139538364
+      "checkedAt": 1795225221576
     },
     "n204d9285366f": {
       "key": "n204d9285366f",
@@ -777,7 +848,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139539643
+      "checkedAt": 1795225222607
     },
     "nd4818ee00393": {
       "key": "nd4818ee00393",
@@ -850,7 +921,7 @@
           "key": "ncaf84b489b46e",
           "parentKey": "",
           "authorUrlname": "hawaiiofjapan",
-          "authorName": "日本のハワイ静岡を広めれまてん｜🐼パンダ🎀｜フォロバ︎︎︎︎👍🏻💝",
+          "authorName": "フォロバ🎀日本のハワイ静岡を広めれまてんw/🐼ぴんくぱんだ🎀",
           "avatar": "https://assets.st-note.com/production/uploads/images/329761358/profile_9cf38b4d7fe1921d8c319f471e782640.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
           "body": "やっぱりネロ王子って凄いよな～🌺",
           "publishedAt": "2026-10-25T13:32:04.588+09:00",
@@ -887,7 +958,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139540153
+      "checkedAt": 1795225223099
     },
     "nca840b916450": {
       "key": "nca840b916450",
@@ -917,7 +988,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139541049
+      "checkedAt": 1795225224345
     },
     "n6a638b4cdc9c": {
       "key": "n6a638b4cdc9c",
@@ -967,7 +1038,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139542082
+      "checkedAt": 1795225225122
     },
     "ndf701a30f804": {
       "key": "ndf701a30f804",
@@ -1199,7 +1270,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139543808
+      "checkedAt": 1795225227874
     },
     "n6614109484e6": {
       "key": "n6614109484e6",
@@ -1389,7 +1460,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139545315
+      "checkedAt": 1795225229849
     },
     "n888d088cb751": {
       "key": "n888d088cb751",
@@ -1439,7 +1510,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139546911
+      "checkedAt": 1795225231256
     },
     "n76a630334117": {
       "key": "n76a630334117",
@@ -1529,7 +1600,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139548374
+      "checkedAt": 1795225232554
     },
     "n9c329a589955": {
       "key": "n9c329a589955",
@@ -1559,7 +1630,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139548926
+      "checkedAt": 1795225233116
     },
     "n045caddfdeb2": {
       "key": "n045caddfdeb2",
@@ -1678,7 +1749,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139553399
+      "checkedAt": 1795225236471
     },
     "ncb2e8df1ba60": {
       "key": "ncb2e8df1ba60",
@@ -1717,7 +1788,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139555202
+      "checkedAt": 1795225237435
     },
     "n6c980c7258f4": {
       "key": "n6c980c7258f4",
@@ -1735,7 +1806,7 @@
       "publishedAt": "2026-10-13T21:00:01+09:00",
       "url": "https://note.com/nero_notelover/n/nfaa6a8e6b0f0",
       "unresolved": [],
-      "checkedAt": 1794617693867
+      "checkedAt": 1795225244684
     },
     "n47ddff9e7eec": {
       "key": "n47ddff9e7eec",
@@ -1794,7 +1865,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139557900
+      "checkedAt": 1795225245495
     },
     "ncf8842e9aace": {
       "key": "ncf8842e9aace",
@@ -1871,7 +1942,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139558951
+      "checkedAt": 1795225246352
     },
     "n2499a4347e8e": {
       "key": "n2499a4347e8e",
@@ -1955,7 +2026,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139560239
+      "checkedAt": 1795225247916
     },
     "nfec34a269814": {
       "key": "nfec34a269814",
@@ -2171,7 +2242,7 @@
       "publishedAt": "2026-09-18T23:01:24+09:00",
       "url": "https://note.com/nero_notelover/n/n7ddf9e8a58b9",
       "unresolved": [],
-      "checkedAt": 1794617917514
+      "checkedAt": 1795225257764
     },
     "nb83d60ff76e2": {
       "key": "nb83d60ff76e2",
@@ -2288,7 +2359,7 @@
       "publishedAt": "2026-09-08T22:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n656bdfab359b",
       "unresolved": [],
-      "checkedAt": 1794618004339
+      "checkedAt": 1795225263330
     },
     "n9d7208a2e4b4": {
       "key": "n9d7208a2e4b4",
@@ -2347,7 +2418,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139585719
+      "checkedAt": 1795225264247
     },
     "n412a21c4ca4c": {
       "key": "n412a21c4ca4c",
@@ -2386,7 +2457,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139589664
+      "checkedAt": 1795225264868
     },
     "nf4830fe23412": {
       "key": "nf4830fe23412",
@@ -2490,7 +2561,7 @@
           ]
         }
       ],
-      "checkedAt": 1795139590274
+      "checkedAt": 1795225265499
     },
     "nfaa8ad059650": {
       "key": "nfaa8ad059650",
@@ -2499,7 +2570,7 @@
       "publishedAt": "2026-08-29T23:13:36+09:00",
       "url": "https://note.com/nero_notelover/n/nfaa8ad059650",
       "unresolved": [],
-      "checkedAt": 1794618030610
+      "checkedAt": 1795225268198
     },
     "n86b5496315de": {
       "key": "n86b5496315de",
@@ -2531,11 +2602,32 @@
     "n99f2859211d3": {
       "key": "n99f2859211d3",
       "title": "コメント依存症の王子、紹介されました🌙",
-      "commentCount": 21,
+      "commentCount": 24,
       "publishedAt": "2026-08-27T12:02:55+09:00",
       "url": "https://note.com/nero_notelover/n/n99f2859211d3",
-      "unresolved": [],
-      "checkedAt": 1794884621054
+      "unresolved": [
+        {
+          "key": "nc8ad7ce963707",
+          "parentKey": "",
+          "authorUrlname": "yuu_boy3_mom",
+          "authorName": "ゆう@you, too.",
+          "avatar": "https://assets.st-note.com/production/uploads/images/338366156/profile_2f93e66a8cea4a0cfbd407bbd58b131b.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "そうなんですね…もうすぐアウトです🤭",
+          "publishedAt": "2026-11-21T07:54:42.660+09:00",
+          "isRoot": false,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "ncbf89af116902",
+          "rootAuthorUrlname": "yuu_boy3_mom",
+          "rootBody": "コメント依存症📝私もです🤭",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "そうなんですね…もうすぐアウトです🤭"
+          ]
+        }
+      ],
+      "checkedAt": 1795225272163
     },
     "n46c95069af22": {
       "key": "n46c95069af22",
@@ -2549,11 +2641,11 @@
     "n29e9faebb23e": {
       "key": "n29e9faebb23e",
       "title": "ネロのお気に入り掲示板｜あなたの「読んでほしい」を置いていって🌙",
-      "commentCount": 39,
+      "commentCount": 43,
       "publishedAt": "2026-08-26T12:05:23+09:00",
       "url": "https://note.com/nero_notelover/n/n29e9faebb23e",
       "unresolved": [],
-      "checkedAt": 1795139601132
+      "checkedAt": 1795225278754
     },
     "n524047479f3f": {
       "key": "n524047479f3f",
@@ -2571,7 +2663,7 @@
       "publishedAt": "2026-08-25T22:24:24+09:00",
       "url": "https://note.com/nero_notelover/n/nc013a3f5efb2",
       "unresolved": [],
-      "checkedAt": 1794618048252
+      "checkedAt": 1795225281100
     },
     "nffe4c9a31096": {
       "key": "nffe4c9a31096",
@@ -2585,11 +2677,11 @@
     "ne4843208abbe": {
       "key": "ne4843208abbe",
       "title": "はじめてのnote│スキくれたら遊びに行くよ🌙",
-      "commentCount": 58,
+      "commentCount": 62,
       "publishedAt": "2026-08-25T05:16:32+09:00",
       "url": "https://note.com/nero_notelover/n/ne4843208abbe",
       "unresolved": [],
-      "checkedAt": 1795139607098
+      "checkedAt": 1795225289110
     }
   }
 }
