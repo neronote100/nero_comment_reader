@@ -1,12 +1,42 @@
 {
   "version": 1,
   "owner": "nero_notelover",
-  "updatedAt": "2026-11-23T01:04:17.180Z",
+  "updatedAt": "2026-11-24T04:56:35.532Z",
   "articles": {
+    "nb102e84f518c": {
+      "key": "nb102e84f518c",
+      "title": "🌙これが王子のアンサーだ！【第2弾】",
+      "commentCount": 17,
+      "publishedAt": "2026-11-23T21:00:00+09:00",
+      "url": "https://note.com/nero_notelover/n/nb102e84f518c",
+      "unresolved": [
+        {
+          "key": "nc967c2f832c0f",
+          "parentKey": "",
+          "authorUrlname": "mama_ca",
+          "authorName": "Pajama de mama*4歳娘ママ",
+          "avatar": "https://assets.st-note.com/production/uploads/images/302879278/profile_680f428bdf06a11c197bae98b43534d2.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "王子🌙🤣、\n念願のパラパラを一緒に踊ってくれてまぢぁりが㌧💖\n\nいつでも平成に戻りﾅﾆいｶﾗ、画像いﾅﾆﾅﾆ゛きﾏｽ⤴︎⤴︎😍✨✨",
+          "publishedAt": "2026-11-24T11:25:27.683+09:00",
+          "isRoot": true,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "nc967c2f832c0f",
+          "rootAuthorUrlname": "mama_ca",
+          "rootBody": "王子🌙🤣、\n念願のパラパラを一緒に踊ってくれてまぢぁりが㌧💖\n\nいつでも平成に戻りﾅﾆいｶﾗ、画像いﾅﾆﾅﾆ゛きﾏｽ⤴︎⤴︎😍✨✨",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "王子🌙🤣、\n念願のパラパラを一緒に踊ってくれてまぢぁりが㌧💖\n\nいつでも平成に戻りﾅﾆいｶﾗ、画像いﾅﾆﾅﾆ゛きﾏｽ⤴︎⤴︎😍✨✨"
+          ]
+        }
+      ],
+      "checkedAt": 1795496079214
+    },
     "n39c1ee7cf1a4": {
       "key": "n39c1ee7cf1a4",
       "title": "王子ごっこP-1に新キャラ参戦🍌",
-      "commentCount": 22,
+      "commentCount": 24,
       "publishedAt": "2026-11-22T21:30:00+09:00",
       "url": "https://note.com/nero_notelover/n/n39c1ee7cf1a4",
       "unresolved": [
@@ -69,9 +99,29 @@
           "pendingBodies": [
             "王子、おはようございます😊🌙\n\nちょっと待ってください！笑\nジョニーが参戦して、王子ごっこが格闘ゲームになってるじゃないですか！😁\n\nしかも、参加者一人ひとりにアンサーまで！\n王子も相当忙しくなりそうですね！笑\n\nそして、私の122人企画まで紹介していただき、ありがとうございます☺️✨\n\n18人へのコメントや、王子の最初の記事まで読みに行ったことにも気づいてくださって、本当にうれしかったです！\n\nでも、そういう細かなところまで見てくれる王子だからこそ、私もついつい記事を読みたくなるんですよね☺️\n\n人とのご縁を大切にしているのは、王子も同じだと思います。\n\nこうして一人ひとりに向き合う王子の姿勢、私は本当に好きですよ😊\n\n王子と出会えてよかったなぁと、改めて思いました。\n\nこれからもよろしくお願いします🌙✨"
           ]
+        },
+        {
+          "key": "ncc4693127ce2d",
+          "parentKey": "",
+          "authorUrlname": "futurelnve5r",
+          "authorName": "Labo.（17）",
+          "avatar": "https://assets.st-note.com/production/uploads/images/337165201/profile_8f39bb291069e418971e986f02f93d99.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "ウホホ！ウホウホ！\nウッホッホ🍌",
+          "publishedAt": "2026-11-23T22:05:36.279+09:00",
+          "isRoot": true,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "ncc4693127ce2d",
+          "rootAuthorUrlname": "futurelnve5r",
+          "rootBody": "ウホホ！ウホウホ！\nウッホッホ🍌",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "ウホホ！ウホウホ！\nウッホッホ🍌"
+          ]
         }
       ],
-      "checkedAt": 1795395742999
+      "checkedAt": 1795496082212
     },
     "nb110801f9eac": {
       "key": "nb110801f9eac",
@@ -170,7 +220,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395749269
+      "checkedAt": 1795496082658
     },
     "n51014fa77407": {
       "key": "n51014fa77407",
@@ -227,7 +277,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395750671
+      "checkedAt": 1795496083764
     },
     "ne6a014965724": {
       "key": "ne6a014965724",
@@ -266,7 +316,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395751583
+      "checkedAt": 1795496084699
     },
     "ne99bc9a9df81": {
       "key": "ne99bc9a9df81",
@@ -305,7 +355,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395752852
+      "checkedAt": 1795496085732
     },
     "n55a72e525c2f": {
       "key": "n55a72e525c2f",
@@ -443,7 +493,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395753393
+      "checkedAt": 1795496086266
     },
     "n7dafe723e128": {
       "key": "n7dafe723e128",
@@ -457,11 +507,52 @@
     "n9ac31804edbf": {
       "key": "n9ac31804edbf",
       "title": "【参加受付】🌙月夜の広場│王子の共同運営マガジン",
-      "commentCount": 162,
+      "commentCount": 168,
       "publishedAt": "2026-11-01T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n9ac31804edbf",
-      "unresolved": [],
-      "checkedAt": 1795225214336
+      "unresolved": [
+        {
+          "key": "ncfef5c1d0d95e",
+          "parentKey": "",
+          "authorUrlname": "suzuka020825",
+          "authorName": "ミライダネ",
+          "avatar": "https://assets.st-note.com/production/uploads/images/293841458/profile_d534e9f6cf1cf7847eb50f4124a89d92.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "ありがとうございます✨",
+          "publishedAt": "2026-11-23T11:45:37.818+09:00",
+          "isRoot": false,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "ncb4716be53dee",
+          "rootAuthorUrlname": "suzuka020825",
+          "rootBody": "ネロ🌙王子さん、こんにちは☺️\n\n「🌙月夜の広場」素敵な名前のマガジンですね✨\n\n私も参加させてください💕\nよろしくお願いします🥰",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "ありがとうございます✨"
+          ]
+        },
+        {
+          "key": "nc4100ee29fe09",
+          "parentKey": "",
+          "authorUrlname": "momokoskinlab",
+          "authorName": "桃子｜薬剤師・美容ライター  フォロバ100",
+          "avatar": "https://assets.st-note.com/production/uploads/images/327222613/profile_a1d0339bf42bbe88bc0f0666a84cb505.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "ありがとうございます😊\nこれからよろしくお願いいたします🙇‍♀️",
+          "publishedAt": "2026-11-24T12:30:08.714+09:00",
+          "isRoot": false,
+          "replyCount": 0,
+          "creatorReplied": false,
+          "creatorLiked": false,
+          "rootKey": "nc073e49f2a9de",
+          "rootAuthorUrlname": "momokoskinlab",
+          "rootBody": "ネロ王子さん、こんばんは🌙\n私も参加させていただきたいです✨\nよろしくお願いいたします🙇‍♀️",
+          "pendingCount": 1,
+          "pendingBodies": [
+            "ありがとうございます😊\nこれからよろしくお願いいたします🙇‍♀️"
+          ]
+        }
+      ],
+      "checkedAt": 1795496113890
     },
     "nd47eb46636f3": {
       "key": "nd47eb46636f3",
@@ -518,7 +609,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395753920
+      "checkedAt": 1795496114432
     },
     "na49c548a0363": {
       "key": "na49c548a0363",
@@ -568,7 +659,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395754348
+      "checkedAt": 1795496115058
     },
     "n92ed11ea0560": {
       "key": "n92ed11ea0560",
@@ -636,7 +727,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395758800
+      "checkedAt": 1795496116600
     },
     "n24d789d1d832": {
       "key": "n24d789d1d832",
@@ -686,7 +777,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395759938
+      "checkedAt": 1795496117464
     },
     "nce0eaef2ecff": {
       "key": "nce0eaef2ecff",
@@ -716,7 +807,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395761281
+      "checkedAt": 1795496119404
     },
     "nabd2c1f9084e": {
       "key": "nabd2c1f9084e",
@@ -866,7 +957,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395762761
+      "checkedAt": 1795496120883
     },
     "n2d77b106b5fa": {
       "key": "n2d77b106b5fa",
@@ -937,7 +1028,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395763593
+      "checkedAt": 1795496121732
     },
     "n204d9285366f": {
       "key": "n204d9285366f",
@@ -967,7 +1058,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395764628
+      "checkedAt": 1795496123028
     },
     "nd4818ee00393": {
       "key": "nd4818ee00393",
@@ -1077,7 +1168,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395765141
+      "checkedAt": 1795496123532
     },
     "nca840b916450": {
       "key": "nca840b916450",
@@ -1107,7 +1198,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395766220
+      "checkedAt": 1795496124743
     },
     "n6a638b4cdc9c": {
       "key": "n6a638b4cdc9c",
@@ -1157,7 +1248,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395767033
+      "checkedAt": 1795496125569
     },
     "ndf701a30f804": {
       "key": "ndf701a30f804",
@@ -1389,7 +1480,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395769172
+      "checkedAt": 1795496127743
     },
     "n6614109484e6": {
       "key": "n6614109484e6",
@@ -1579,7 +1670,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395770739
+      "checkedAt": 1795496129806
     },
     "n888d088cb751": {
       "key": "n888d088cb751",
@@ -1629,7 +1720,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395772052
+      "checkedAt": 1795496131539
     },
     "n76a630334117": {
       "key": "n76a630334117",
@@ -1719,7 +1810,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395773305
+      "checkedAt": 1795496133159
     },
     "n9c329a589955": {
       "key": "n9c329a589955",
@@ -1749,7 +1840,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395773852
+      "checkedAt": 1795496133708
     },
     "n045caddfdeb2": {
       "key": "n045caddfdeb2",
@@ -1868,7 +1959,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395776599
+      "checkedAt": 1795496137066
     },
     "ncb2e8df1ba60": {
       "key": "ncb2e8df1ba60",
@@ -1907,7 +1998,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395783966
+      "checkedAt": 1795496137710
     },
     "n6c980c7258f4": {
       "key": "n6c980c7258f4",
@@ -1984,7 +2075,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395784924
+      "checkedAt": 1795496138674
     },
     "ncf8842e9aace": {
       "key": "ncf8842e9aace",
@@ -2061,7 +2152,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395799735
+      "checkedAt": 1795496139533
     },
     "n2499a4347e8e": {
       "key": "n2499a4347e8e",
@@ -2145,7 +2236,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395801489
+      "checkedAt": 1795496140758
     },
     "nfec34a269814": {
       "key": "nfec34a269814",
@@ -2222,11 +2313,11 @@
     "n524b070cb8d3": {
       "key": "n524b070cb8d3",
       "title": "王子、コスモス畑へ行ってきました🌙",
-      "commentCount": 34,
+      "commentCount": 36,
       "publishedAt": "2026-09-27T23:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n524b070cb8d3",
       "unresolved": [],
-      "checkedAt": 1795307710992
+      "checkedAt": 1795496146407
     },
     "n77c4a482d5a7": {
       "key": "n77c4a482d5a7",
@@ -2244,7 +2335,7 @@
       "publishedAt": "2026-09-27T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n17a2e002c81a",
       "unresolved": [],
-      "checkedAt": 1794617829124
+      "checkedAt": 1795496150563
     },
     "nb0b096f1dbf9": {
       "key": "nb0b096f1dbf9",
@@ -2253,7 +2344,7 @@
       "publishedAt": "2026-09-27T20:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/nb0b096f1dbf9",
       "unresolved": [],
-      "checkedAt": 1794617831917
+      "checkedAt": 1795496153893
     },
     "nf558f15df86a": {
       "key": "nf558f15df86a",
@@ -2280,7 +2371,7 @@
       "publishedAt": "2026-09-26T19:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n5cef5558a49a",
       "unresolved": [],
-      "checkedAt": 1794617860611
+      "checkedAt": 1795496179074
     },
     "ne0cdbe05dcdd": {
       "key": "ne0cdbe05dcdd",
@@ -2442,7 +2533,7 @@
       "publishedAt": "2026-09-12T23:04:12+09:00",
       "url": "https://note.com/nero_notelover/n/n18f5eee9aeed",
       "unresolved": [],
-      "checkedAt": 1794617965681
+      "checkedAt": 1795496185992
     },
     "n4e8b02c1e1ef": {
       "key": "n4e8b02c1e1ef",
@@ -2537,7 +2628,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395840581
+      "checkedAt": 1795496186620
     },
     "n412a21c4ca4c": {
       "key": "n412a21c4ca4c",
@@ -2576,7 +2667,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395841234
+      "checkedAt": 1795496187549
     },
     "nf4830fe23412": {
       "key": "nf4830fe23412",
@@ -2680,7 +2771,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395846799
+      "checkedAt": 1795496188216
     },
     "nfaa8ad059650": {
       "key": "nfaa8ad059650",
@@ -2698,7 +2789,7 @@
       "publishedAt": "2026-08-28T20:40:21+09:00",
       "url": "https://note.com/nero_notelover/n/n86b5496315de",
       "unresolved": [],
-      "checkedAt": 1794618034250
+      "checkedAt": 1795496191855
     },
     "ndd494d647290": {
       "key": "ndd494d647290",
@@ -2746,7 +2837,7 @@
           ]
         }
       ],
-      "checkedAt": 1795395847683
+      "checkedAt": 1795496193034
     },
     "n46c95069af22": {
       "key": "n46c95069af22",
@@ -2773,7 +2864,7 @@
       "publishedAt": "2026-08-26T07:50:15+09:00",
       "url": "https://note.com/nero_notelover/n/n524047479f3f",
       "unresolved": [],
-      "checkedAt": 1794884624161
+      "checkedAt": 1795496195351
     },
     "nc013a3f5efb2": {
       "key": "nc013a3f5efb2",
