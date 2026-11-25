@@ -1,127 +1,55 @@
 {
   "version": 1,
   "owner": "nero_notelover",
-  "updatedAt": "2026-11-24T04:56:35.532Z",
+  "updatedAt": "2026-11-25T03:41:43.311Z",
   "articles": {
+    "n3f50d6efe681": {
+      "key": "n3f50d6efe681",
+      "title": "【イベント予告】ハートフルツリー｜クリスマス企画🌙 #はじめてのnote",
+      "commentCount": 10,
+      "publishedAt": "2026-11-24T21:00:00+09:00",
+      "url": "https://note.com/nero_notelover/n/n3f50d6efe681",
+      "unresolved": [],
+      "checkedAt": 1795577987782
+    },
     "nb102e84f518c": {
       "key": "nb102e84f518c",
       "title": "🌙これが王子のアンサーだ！【第2弾】",
-      "commentCount": 17,
+      "commentCount": 20,
       "publishedAt": "2026-11-23T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/nb102e84f518c",
-      "unresolved": [
-        {
-          "key": "nc967c2f832c0f",
-          "parentKey": "",
-          "authorUrlname": "mama_ca",
-          "authorName": "Pajama de mama*4歳娘ママ",
-          "avatar": "https://assets.st-note.com/production/uploads/images/302879278/profile_680f428bdf06a11c197bae98b43534d2.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子🌙🤣、\n念願のパラパラを一緒に踊ってくれてまぢぁりが㌧💖\n\nいつでも平成に戻りﾅﾆいｶﾗ、画像いﾅﾆﾅﾆ゛きﾏｽ⤴︎⤴︎😍✨✨",
-          "publishedAt": "2026-11-24T11:25:27.683+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc967c2f832c0f",
-          "rootAuthorUrlname": "mama_ca",
-          "rootBody": "王子🌙🤣、\n念願のパラパラを一緒に踊ってくれてまぢぁりが㌧💖\n\nいつでも平成に戻りﾅﾆいｶﾗ、画像いﾅﾆﾅﾆ゛きﾏｽ⤴︎⤴︎😍✨✨",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子🌙🤣、\n念願のパラパラを一緒に踊ってくれてまぢぁりが㌧💖\n\nいつでも平成に戻りﾅﾆいｶﾗ、画像いﾅﾆﾅﾆ゛きﾏｽ⤴︎⤴︎😍✨✨"
-          ]
-        }
-      ],
-      "checkedAt": 1795496079214
+      "unresolved": [],
+      "checkedAt": 1795577991843
     },
     "n39c1ee7cf1a4": {
       "key": "n39c1ee7cf1a4",
       "title": "王子ごっこP-1に新キャラ参戦🍌",
-      "commentCount": 24,
+      "commentCount": 33,
       "publishedAt": "2026-11-22T21:30:00+09:00",
       "url": "https://note.com/nero_notelover/n/n39c1ee7cf1a4",
       "unresolved": [
         {
-          "key": "nc6f49f25c2bca",
+          "key": "nc35abaf616540",
           "parentKey": "",
-          "authorUrlname": "mild_sheep8979",
-          "authorName": "アメリ🐈️",
-          "avatar": "https://assets.st-note.com/production/uploads/images/245678157/profile_8fdb5f0ad5e789a891c5fbe2017ef96d.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ゴリラのジョニー！🦍🤣\nついにゴリラまで仲間になってるの笑いました🤣\nドンキーみたいで面白すぎ🤣",
-          "publishedAt": "2026-11-23T00:11:13.550+09:00",
-          "isRoot": true,
+          "authorUrlname": "ho_hi_fu",
+          "authorName": "ホーヒーフ🌼無職一家のママ🌼",
+          "avatar": "https://assets.st-note.com/production/uploads/images/332285014/profile_eeacd50a7cfcbd460d0cf72be2b69201.png?fit=bounds&format=jpeg&quality=85&width=330",
+          "body": "わんだふるプリキュアやってましたね🐶\nそうか…皮しか降ってこないのか。\nマリオカートなら気を付けないといけません。ジョニーはどんなカートに乗って皮をかわすのでしょう🤔🍌",
+          "publishedAt": "2026-11-25T12:31:18.780+09:00",
+          "isRoot": false,
           "replyCount": 0,
           "creatorReplied": false,
           "creatorLiked": false,
-          "rootKey": "nc6f49f25c2bca",
-          "rootAuthorUrlname": "mild_sheep8979",
-          "rootBody": "ゴリラのジョニー！🦍🤣\nついにゴリラまで仲間になってるの笑いました🤣\nドンキーみたいで面白すぎ🤣",
+          "rootKey": "nc8dc9de20e86b",
+          "rootAuthorUrlname": "ho_hi_fu",
+          "rootBody": "11月11日の11:11のスキ111をスクショはお見事ウホ🦍気付いたら王子がサンタさんになっている🎅✨バナナ配ってるのかな？🍌\n名探偵プリキュアの始まりまで何とか付いていってましたが今は何になっているのでしょう💎次のプリキュアがウホキュア💎✨🦍✨💎だったら毎週録画ですね😎",
           "pendingCount": 1,
           "pendingBodies": [
-            "ゴリラのジョニー！🦍🤣\nついにゴリラまで仲間になってるの笑いました🤣\nドンキーみたいで面白すぎ🤣"
-          ]
-        },
-        {
-          "key": "nca8a88b4d7a85",
-          "parentKey": "",
-          "authorUrlname": "saigo_wa_kan",
-          "authorName": "山田、最後は勘。",
-          "avatar": "https://assets.st-note.com/production/uploads/images/336570834/profile_68442c058d9768670d45a706068f8470.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ウホホホーイ❤️🍌🌙🦍",
-          "publishedAt": "2026-11-23T07:56:23.440+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nca8a88b4d7a85",
-          "rootAuthorUrlname": "saigo_wa_kan",
-          "rootBody": "ウホホホーイ❤️🍌🌙🦍",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ウホホホーイ❤️🍌🌙🦍"
-          ]
-        },
-        {
-          "key": "nc4239eb6f8523",
-          "parentKey": "",
-          "authorUrlname": "tenkai_notes",
-          "authorName": "天界記録",
-          "avatar": "https://assets.st-note.com/production/uploads/images/334654928/profile_f55004c5eb5cf27eb76f81d4f49ea3a7.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子、おはようございます😊🌙\n\nちょっと待ってください！笑\nジョニーが参戦して、王子ごっこが格闘ゲームになってるじゃないですか！😁\n\nしかも、参加者一人ひとりにアンサーまで！\n王子も相当忙しくなりそうですね！笑\n\nそして、私の122人企画まで紹介していただき、ありがとうございます☺️✨\n\n18人へのコメントや、王子の最初の記事まで読みに行ったことにも気づいてくださって、本当にうれしかったです！\n\nでも、そういう細かなところまで見てくれる王子だからこそ、私もついつい記事を読みたくなるんですよね☺️\n\n人とのご縁を大切にしているのは、王子も同じだと思います。\n\nこうして一人ひとりに向き合う王子の姿勢、私は本当に好きですよ😊\n\n王子と出会えてよかったなぁと、改めて思いました。\n\nこれからもよろしくお願いします🌙✨",
-          "publishedAt": "2026-11-23T10:01:39.553+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc4239eb6f8523",
-          "rootAuthorUrlname": "tenkai_notes",
-          "rootBody": "王子、おはようございます😊🌙\n\nちょっと待ってください！笑\nジョニーが参戦して、王子ごっこが格闘ゲームになってるじゃないですか！😁\n\nしかも、参加者一人ひとりにアンサーまで！\n王子も相当忙しくなりそうですね！笑\n\nそして、私の122人企画まで紹介していただき、ありがとうございます☺️✨\n\n18人へのコメントや、王子の最初の記事まで読みに行ったことにも気づいてくださって、本当にうれしかったです！\n\nでも、そういう細かなところまで見てくれる王子だからこそ、私もついつい記事を読みたくなるんですよね☺️\n\n人とのご縁を大切にしているのは、王子も同じだと思います。\n\nこうして一人ひとりに向き合う王子の姿勢、私は本当に好きですよ😊\n\n王子と出会えてよかったなぁと、改めて思いました。\n\nこれからもよろしくお願いします🌙✨",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子、おはようございます😊🌙\n\nちょっと待ってください！笑\nジョニーが参戦して、王子ごっこが格闘ゲームになってるじゃないですか！😁\n\nしかも、参加者一人ひとりにアンサーまで！\n王子も相当忙しくなりそうですね！笑\n\nそして、私の122人企画まで紹介していただき、ありがとうございます☺️✨\n\n18人へのコメントや、王子の最初の記事まで読みに行ったことにも気づいてくださって、本当にうれしかったです！\n\nでも、そういう細かなところまで見てくれる王子だからこそ、私もついつい記事を読みたくなるんですよね☺️\n\n人とのご縁を大切にしているのは、王子も同じだと思います。\n\nこうして一人ひとりに向き合う王子の姿勢、私は本当に好きですよ😊\n\n王子と出会えてよかったなぁと、改めて思いました。\n\nこれからもよろしくお願いします🌙✨"
-          ]
-        },
-        {
-          "key": "ncc4693127ce2d",
-          "parentKey": "",
-          "authorUrlname": "futurelnve5r",
-          "authorName": "Labo.（17）",
-          "avatar": "https://assets.st-note.com/production/uploads/images/337165201/profile_8f39bb291069e418971e986f02f93d99.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ウホホ！ウホウホ！\nウッホッホ🍌",
-          "publishedAt": "2026-11-23T22:05:36.279+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncc4693127ce2d",
-          "rootAuthorUrlname": "futurelnve5r",
-          "rootBody": "ウホホ！ウホウホ！\nウッホッホ🍌",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ウホホ！ウホウホ！\nウッホッホ🍌"
+            "わんだふるプリキュアやってましたね🐶\nそうか…皮しか降ってこないのか。\nマリオカートなら気を付けないといけません。ジョニーはどんなカートに乗って皮をかわすのでしょう🤔🍌"
           ]
         }
       ],
-      "checkedAt": 1795496082212
+      "checkedAt": 1795577997276
     },
     "nb110801f9eac": {
       "key": "nb110801f9eac",
@@ -135,92 +63,11 @@
     "n16ecb4479f6c": {
       "key": "n16ecb4479f6c",
       "title": "🌙 ふたつのみかん｜足湯｜地図にない灯り",
-      "commentCount": 19,
+      "commentCount": 23,
       "publishedAt": "2026-11-20T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n16ecb4479f6c",
-      "unresolved": [
-        {
-          "key": "ncce46feb093d4",
-          "parentKey": "",
-          "authorUrlname": "kocori256",
-          "authorName": "ラナ🌺　相互フォローで盛りあがろう💪",
-          "avatar": "https://assets.st-note.com/production/uploads/images/319521467/profile_605d619baf3e13dc46706c29b3c94c71.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ネロ王子さん❣️\n\nジョニーから始まるショートショートがもう面白くて斬新で😂😂\n\n読んでいてとても楽しかったです😆🙌🩵",
-          "publishedAt": "2026-11-21T00:30:27.857+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncce46feb093d4",
-          "rootAuthorUrlname": "kocori256",
-          "rootBody": "ネロ王子さん❣️\n\nジョニーから始まるショートショートがもう面白くて斬新で😂😂\n\n読んでいてとても楽しかったです😆🙌🩵",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ネロ王子さん❣️\n\nジョニーから始まるショートショートがもう面白くて斬新で😂😂\n\n読んでいてとても楽しかったです😆🙌🩵"
-          ]
-        },
-        {
-          "key": "nc525f0665905c",
-          "parentKey": "",
-          "authorUrlname": "mute_mink3681",
-          "authorName": "賢者スタン@フォロバ100%",
-          "avatar": "https://assets.st-note.com/production/uploads/images/321601764/profile_01c1642713c76bcbe169e1220c93075b.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ネロ殿、\n我が企画を取り上げてもらい感謝する\nそしてカウボーイでくるとは思わなかった\n2枚目は夜なのも相まって、\nよりイケおじ感が増してくるな。\n\nそして今回もウホウホが止まらないようだ\nとりあえずゴリラを置いていく🦍",
-          "publishedAt": "2026-11-21T09:00:58.350+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc525f0665905c",
-          "rootAuthorUrlname": "mute_mink3681",
-          "rootBody": "ネロ殿、\n我が企画を取り上げてもらい感謝する\nそしてカウボーイでくるとは思わなかった\n2枚目は夜なのも相まって、\nよりイケおじ感が増してくるな。\n\nそして今回もウホウホが止まらないようだ\nとりあえずゴリラを置いていく🦍",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ネロ殿、\n我が企画を取り上げてもらい感謝する\nそしてカウボーイでくるとは思わなかった\n2枚目は夜なのも相まって、\nよりイケおじ感が増してくるな。\n\nそして今回もウホウホが止まらないようだ\nとりあえずゴリラを置いていく🦍"
-          ]
-        },
-        {
-          "key": "nc4d4f303fc81d",
-          "parentKey": "",
-          "authorUrlname": "good_ixia6698",
-          "authorName": "堂安咲和🪞 恋の本音を、物語と言葉に。",
-          "avatar": "https://assets.st-note.com/production/uploads/images/326366169/profile_95dd07f35fd88d986a3109291b7097e8.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子✨\nみかんのお話、良かったー！🥹💕\nけど、主人公の姿見た時の、私の感情わかりますかー？！🤣\n\n王子からジョニーに変わる動画も上手く仕上がってるなと感心したあと🤣\nあれ？王子はもともとジョニーだったとか？\n\n……謎だけが残りましたよ🤭",
-          "publishedAt": "2026-11-21T10:57:22.215+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc4d4f303fc81d",
-          "rootAuthorUrlname": "good_ixia6698",
-          "rootBody": "王子✨\nみかんのお話、良かったー！🥹💕\nけど、主人公の姿見た時の、私の感情わかりますかー？！🤣\n\n王子からジョニーに変わる動画も上手く仕上がってるなと感心したあと🤣\nあれ？王子はもともとジョニーだったとか？\n\n……謎だけが残りましたよ🤭",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子✨\nみかんのお話、良かったー！🥹💕\nけど、主人公の姿見た時の、私の感情わかりますかー？！🤣\n\n王子からジョニーに変わる動画も上手く仕上がってるなと感心したあと🤣\nあれ？王子はもともとジョニーだったとか？\n\n……謎だけが残りましたよ🤭"
-          ]
-        },
-        {
-          "key": "ncb01c577caf11",
-          "parentKey": "",
-          "authorUrlname": "lazy_user_online",
-          "authorName": "よるねる🌓アンビバレンス",
-          "avatar": "https://assets.st-note.com/production/uploads/images/325528324/profile_c24b9cfaf269264cd1b47ff79f197ded.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ネロ王子様✨️　こんにちは🙂‍↕️\n\n物語かと思ったら…後半がメイン？というほど濃厚でした😆\n\nホーヒーフ様と玉響お姉ちゃんとの会話知らなかったので助かりました!!!　面白かったのです🤭\nウホのまましめだされていたのですね。\n\n🦍　ｳﾎﾎﾎﾎﾎﾎｯ（ｵﾂｶﾚｻﾏﾃﾞｼﾀ）😆\n\n王子様が最後にジョニー化したのも笑っちゃいました 笑",
-          "publishedAt": "2026-11-21T14:16:49.714+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncb01c577caf11",
-          "rootAuthorUrlname": "lazy_user_online",
-          "rootBody": "ネロ王子様✨️　こんにちは🙂‍↕️\n\n物語かと思ったら…後半がメイン？というほど濃厚でした😆\n\nホーヒーフ様と玉響お姉ちゃんとの会話知らなかったので助かりました!!!　面白かったのです🤭\nウホのまましめだされていたのですね。\n\n🦍　ｳﾎﾎﾎﾎﾎﾎｯ（ｵﾂｶﾚｻﾏﾃﾞｼﾀ）😆\n\n王子様が最後にジョニー化したのも笑っちゃいました 笑",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ネロ王子様✨️　こんにちは🙂‍↕️\n\n物語かと思ったら…後半がメイン？というほど濃厚でした😆\n\nホーヒーフ様と玉響お姉ちゃんとの会話知らなかったので助かりました!!!　面白かったのです🤭\nウホのまましめだされていたのですね。\n\n🦍　ｳﾎﾎﾎﾎﾎﾎｯ（ｵﾂｶﾚｻﾏﾃﾞｼﾀ）😆\n\n王子様が最後にジョニー化したのも笑っちゃいました 笑"
-          ]
-        }
-      ],
-      "checkedAt": 1795496082658
+      "unresolved": [],
+      "checkedAt": 1795578001518
     },
     "n51014fa77407": {
       "key": "n51014fa77407",
@@ -255,29 +102,8 @@
       "commentCount": 62,
       "publishedAt": "2026-11-17T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n8c649c95cf33",
-      "unresolved": [
-        {
-          "key": "nce837c01450a0",
-          "parentKey": "",
-          "authorUrlname": "kepcharitabi",
-          "authorName": "Keptyの旅ログ🚲️ |あの旅を一冊の本に",
-          "avatar": "https://assets.st-note.com/production/uploads/images/305572272/profile_4afaf10f99a8cb892fafaee387450625.jpg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "そーなんですね！笑\n全員平等にウホ！笑\n\n楽しませていただきます！🤣",
-          "publishedAt": "2026-11-21T01:19:45.372+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nca760c6d61873",
-          "rootAuthorUrlname": "kepcharitabi",
-          "rootBody": "こんばんは！はじめまして！\nゆうさんつながりでここにたどり着しました！いろいろな企画とても楽しそうですね☺️",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "そーなんですね！笑\n全員平等にウホ！笑\n\n楽しませていただきます！🤣"
-          ]
-        }
-      ],
-      "checkedAt": 1795496083764
+      "unresolved": [],
+      "checkedAt": 1795578002911
     },
     "ne6a014965724": {
       "key": "ne6a014965724",
@@ -294,38 +120,17 @@
       "commentCount": 34,
       "publishedAt": "2026-11-15T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n875184ff03f4",
-      "unresolved": [
-        {
-          "key": "nc11a1ada1a3da",
-          "parentKey": "",
-          "authorUrlname": "ho_hi_fu",
-          "authorName": "ホーヒーフ🌼無職一家のママ🌼",
-          "avatar": "https://assets.st-note.com/production/uploads/images/332285014/profile_eeacd50a7cfcbd460d0cf72be2b69201.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子、十分すごいです🌜️",
-          "publishedAt": "2026-11-19T20:52:42.828+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc66b57f84295c",
-          "rootAuthorUrlname": "ho_hi_fu",
-          "rootBody": "王子が王子すぎたに笑ってしまいました🤣ネロプリンセス👸✨\n王子ごっこP1も実はずっと頭にあるのですが…(´□`; 三 ;´□`)私よ、もっと面白くなれーーー😱😱😱",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子、十分すごいです🌜️"
-          ]
-        }
-      ],
-      "checkedAt": 1795496084699
+      "unresolved": [],
+      "checkedAt": 1795578004114
     },
     "ne99bc9a9df81": {
       "key": "ne99bc9a9df81",
       "title": "🌙 王子、プロレスラーになる！noteのリングが面白すぎる🤣",
-      "commentCount": 28,
+      "commentCount": 30,
       "publishedAt": "2026-11-14T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/ne99bc9a9df81",
       "unresolved": [],
-      "checkedAt": 1795139465834
+      "checkedAt": 1795578009242
     },
     "n2274f8a62a5d": {
       "key": "n2274f8a62a5d",
@@ -333,29 +138,8 @@
       "commentCount": 42,
       "publishedAt": "2026-11-13T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n2274f8a62a5d",
-      "unresolved": [
-        {
-          "key": "nc0ecc656c7cb1",
-          "parentKey": "",
-          "authorUrlname": "oshikatsu_seaart",
-          "authorName": "OSHIKATSU | じゃじゃ馬SeaArt.AIと遊ぶ🎨",
-          "avatar": "https://assets.st-note.com/production/uploads/images/336601258/profile_23e1e939febe0b06b9f817a271d0f530.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "隣でした🤭💕\n真後ろべったりです🤭💕\n\n人物が並んでましたね🎨✨\nあれは、ちびたぬきさんが\nそうしてくださったのかと思ってました😮",
-          "publishedAt": "2026-11-19T20:51:50.668+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc8f69afff08f3",
-          "rootAuthorUrlname": "oshikatsu_seaart",
-          "rootBody": "王子様🌙\nちびたぬきさんのこの企画\nほんとに素敵だと思いました🥰\nしかも、私がどんな事しようか考えてた\n百人一首ともご縁があったから、\nぽんこさんの記事見てすぐに\n参加希望しました💕\n\nそしたら見てください・・・\n38番王子様🌙\n39番OSHIKATSU🤭\n\nこれは運命ですね♡♡♡",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "隣でした🤭💕\n真後ろべったりです🤭💕\n\n人物が並んでましたね🎨✨\nあれは、ちびたぬきさんが\nそうしてくださったのかと思ってました😮"
-          ]
-        }
-      ],
-      "checkedAt": 1795496085732
+      "unresolved": [],
+      "checkedAt": 1795578010219
     },
     "n55a72e525c2f": {
       "key": "n55a72e525c2f",
@@ -471,29 +255,8 @@
       "commentCount": 31,
       "publishedAt": "2026-11-02T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n91c03cdd9338",
-      "unresolved": [
-        {
-          "key": "nc0dccb1a97eca",
-          "parentKey": "",
-          "authorUrlname": "akemi0730",
-          "authorName": "あけみ | note企画×子育て応援",
-          "avatar": "https://assets.st-note.com/production/uploads/images/335124947/profile_65d403de5b930fd0f46e89998ce9597a.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子とモフモフのコラボが素敵でしたー‼️\n\n癒される笑顔😊\n午後も頑張ります💪\n\n企画も今作成中です🤭",
-          "publishedAt": "2026-11-04T15:08:43.033+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc0dccb1a97eca",
-          "rootAuthorUrlname": "akemi0730",
-          "rootBody": "王子とモフモフのコラボが素敵でしたー‼️\n\n癒される笑顔😊\n午後も頑張ります💪\n\n企画も今作成中です🤭",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子とモフモフのコラボが素敵でしたー‼️\n\n癒される笑顔😊\n午後も頑張ります💪\n\n企画も今作成中です🤭"
-          ]
-        }
-      ],
-      "checkedAt": 1795496086266
+      "unresolved": [],
+      "checkedAt": 1795578010804
     },
     "n7dafe723e128": {
       "key": "n7dafe723e128",
@@ -507,52 +270,11 @@
     "n9ac31804edbf": {
       "key": "n9ac31804edbf",
       "title": "【参加受付】🌙月夜の広場│王子の共同運営マガジン",
-      "commentCount": 168,
+      "commentCount": 170,
       "publishedAt": "2026-11-01T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n9ac31804edbf",
-      "unresolved": [
-        {
-          "key": "ncfef5c1d0d95e",
-          "parentKey": "",
-          "authorUrlname": "suzuka020825",
-          "authorName": "ミライダネ",
-          "avatar": "https://assets.st-note.com/production/uploads/images/293841458/profile_d534e9f6cf1cf7847eb50f4124a89d92.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ありがとうございます✨",
-          "publishedAt": "2026-11-23T11:45:37.818+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncb4716be53dee",
-          "rootAuthorUrlname": "suzuka020825",
-          "rootBody": "ネロ🌙王子さん、こんにちは☺️\n\n「🌙月夜の広場」素敵な名前のマガジンですね✨\n\n私も参加させてください💕\nよろしくお願いします🥰",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ありがとうございます✨"
-          ]
-        },
-        {
-          "key": "nc4100ee29fe09",
-          "parentKey": "",
-          "authorUrlname": "momokoskinlab",
-          "authorName": "桃子｜薬剤師・美容ライター  フォロバ100",
-          "avatar": "https://assets.st-note.com/production/uploads/images/327222613/profile_a1d0339bf42bbe88bc0f0666a84cb505.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ありがとうございます😊\nこれからよろしくお願いいたします🙇‍♀️",
-          "publishedAt": "2026-11-24T12:30:08.714+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc073e49f2a9de",
-          "rootAuthorUrlname": "momokoskinlab",
-          "rootBody": "ネロ王子さん、こんばんは🌙\n私も参加させていただきたいです✨\nよろしくお願いいたします🙇‍♀️",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ありがとうございます😊\nこれからよろしくお願いいたします🙇‍♀️"
-          ]
-        }
-      ],
-      "checkedAt": 1795496113890
+      "unresolved": [],
+      "checkedAt": 1795578036552
     },
     "nd47eb46636f3": {
       "key": "nd47eb46636f3",
@@ -587,29 +309,8 @@
       "commentCount": 25,
       "publishedAt": "2026-10-30T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/nfa7b2615b2e1",
-      "unresolved": [
-        {
-          "key": "nc28c192031987",
-          "parentKey": "",
-          "authorUrlname": "nori_mochi2026",
-          "authorName": "のりもち｜自分の「好き」を自由に綴る",
-          "avatar": "https://assets.st-note.com/production/uploads/images/329814430/profile_82ea0dacc0e5215436e66d60f3c6a4c2.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "焼津グランドホテル、一昨年くらいに行きました〜🐟\n朝ブッフェ、本当に神✨✨\n\nしかし3キロは…頑張って戻してくださいね😅",
-          "publishedAt": "2026-10-30T21:59:21.105+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc28c192031987",
-          "rootAuthorUrlname": "nori_mochi2026",
-          "rootBody": "焼津グランドホテル、一昨年くらいに行きました〜🐟\n朝ブッフェ、本当に神✨✨\n\nしかし3キロは…頑張って戻してくださいね😅",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "焼津グランドホテル、一昨年くらいに行きました〜🐟\n朝ブッフェ、本当に神✨✨\n\nしかし3キロは…頑張って戻してくださいね😅"
-          ]
-        }
-      ],
-      "checkedAt": 1795496114432
+      "unresolved": [],
+      "checkedAt": 1795578037422
     },
     "na49c548a0363": {
       "key": "na49c548a0363",
@@ -617,49 +318,8 @@
       "commentCount": 9,
       "publishedAt": "2026-10-30T07:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/na49c548a0363",
-      "unresolved": [
-        {
-          "key": "nc1e75c5289d21",
-          "parentKey": "",
-          "authorUrlname": "miyavin03",
-          "authorName": "mman.｜ままん。",
-          "avatar": "https://assets.st-note.com/production/uploads/images/323101796/profile_3b3e2ba5d685c74fe08f2880ddb17de5.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子、ハロハロ〜🌙\n\n城下町50人突破おめでとうございます！🏰🌙\n\n50店舗を巡ったのりもちさんが、まさかの50人目とは……偶然にしては出来すぎた伏線回収ですね！\n\n人数が増えることも嬉しいですが、一人ひとりの挑戦や成果をみんなで喜べる場所って素敵だなぁと\n\nこれからも城下町で生まれる新しいご縁を大切にみんなでわちゃわちゃしましょう！！！",
-          "publishedAt": "2026-10-30T09:32:29.675+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc1e75c5289d21",
-          "rootAuthorUrlname": "miyavin03",
-          "rootBody": "王子、ハロハロ〜🌙\n\n城下町50人突破おめでとうございます！🏰🌙\n\n50店舗を巡ったのりもちさんが、まさかの50人目とは……偶然にしては出来すぎた伏線回収ですね！\n\n人数が増えることも嬉しいですが、一人ひとりの挑戦や成果をみんなで喜べる場所って素敵だなぁと\n\nこれからも城下町で生まれる新しいご縁を大切にみんなでわちゃわちゃしましょう！！！",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子、ハロハロ〜🌙\n\n城下町50人突破おめでとうございます！🏰🌙\n\n50店舗を巡ったのりもちさんが、まさかの50人目とは……偶然にしては出来すぎた伏線回収ですね！\n\n人数が増えることも嬉しいですが、一人ひとりの挑戦や成果をみんなで喜べる場所って素敵だなぁと\n\nこれからも城下町で生まれる新しいご縁を大切にみんなでわちゃわちゃしましょう！！！"
-          ]
-        },
-        {
-          "key": "ncb16b028e8607",
-          "parentKey": "",
-          "authorUrlname": "hip_badger4262",
-          "authorName": "ウタ｜楽しみながらnoteを続けよう✨｜ほぼ相互フォロー中",
-          "avatar": "https://assets.st-note.com/production/uploads/images/329667011/profile_49b975ef43d8d69e315097b69ea41083.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子、ありがとうございます！\n\n城下町に入って、\n現在挑戦中のHonoさんをはじめ、\n他の方々の活躍に触発されて\n僕も頑張ろうと思いました😊\n\n1000人目指して、ちょっとペースアップしてみます🤭",
-          "publishedAt": "2026-10-30T10:46:27.475+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncb16b028e8607",
-          "rootAuthorUrlname": "hip_badger4262",
-          "rootBody": "王子、ありがとうございます！\n\n城下町に入って、\n現在挑戦中のHonoさんをはじめ、\n他の方々の活躍に触発されて\n僕も頑張ろうと思いました😊\n\n1000人目指して、ちょっとペースアップしてみます🤭",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子、ありがとうございます！\n\n城下町に入って、\n現在挑戦中のHonoさんをはじめ、\n他の方々の活躍に触発されて\n僕も頑張ろうと思いました😊\n\n1000人目指して、ちょっとペースアップしてみます🤭"
-          ]
-        }
-      ],
-      "checkedAt": 1795496115058
+      "unresolved": [],
+      "checkedAt": 1795578038169
     },
     "n92ed11ea0560": {
       "key": "n92ed11ea0560",
@@ -685,49 +345,8 @@
       "commentCount": 27,
       "publishedAt": "2026-10-29T07:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n8efd25ad865b",
-      "unresolved": [
-        {
-          "key": "ncd115f7a54de4",
-          "parentKey": "",
-          "authorUrlname": "00irea00",
-          "authorName": "紡えり🐱 ⁂GPT遊びに夢中⁂",
-          "avatar": "https://assets.st-note.com/production/uploads/images/335275206/profile_29d54c9f53c13a933668330c84f216f9.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子🌙良い反応しましたよね(笑)\n本当に、予想外だったんだなぁ…(笑)",
-          "publishedAt": "2026-10-29T07:38:31.192+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc6f59de41c640",
-          "rootAuthorUrlname": "00irea00",
-          "rootBody": "王子🌙\n㊗️49人ですね！！\n\n10人だけの開設当時が懐かしいです🤣\n選ばれた人間しか入れないじゃん！！🤣って、吹き出したのが思い出されます(笑)",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子🌙良い反応しましたよね(笑)\n本当に、予想外だったんだなぁ…(笑)"
-          ]
-        },
-        {
-          "key": "nc66f0741de7cd",
-          "parentKey": "",
-          "authorUrlname": "fukurai_mone",
-          "authorName": "福来モネ",
-          "avatar": "https://assets.st-note.com/production/uploads/images/310063090/profile_d800b038e35b2d5d9426d7904f7c13bd.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "本気で埋もれてしまっているので、まだ王子からのスキはいただけていませんねえ笑",
-          "publishedAt": "2026-10-29T09:43:47.540+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncc9ec9287de52",
-          "rootAuthorUrlname": "fukurai_mone",
-          "rootBody": "王子、ご紹介ありがとうございます〜！\nなによりみなさんを深堀されていて、どんどん読み進めたくなっちゃったです。",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "本気で埋もれてしまっているので、まだ王子からのスキはいただけていませんねえ笑"
-          ]
-        }
-      ],
-      "checkedAt": 1795496116600
+      "unresolved": [],
+      "checkedAt": 1795578039340
     },
     "n24d789d1d832": {
       "key": "n24d789d1d832",
@@ -735,49 +354,8 @@
       "commentCount": 30,
       "publishedAt": "2026-10-28T10:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n24d789d1d832",
-      "unresolved": [
-        {
-          "key": "nc5a50a9a844e0",
-          "parentKey": "",
-          "authorUrlname": "mulcombox",
-          "authorName": "マツリカ｜【変態怪異】",
-          "avatar": "https://assets.st-note.com/production/uploads/images/315329620/profile_724ea7df9f52770e8bdf57104aa64b94.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "おそらくマンボウですよ🙌✨✨✨\n追加ありがとうございます🥰",
-          "publishedAt": "2026-10-28T12:12:46.205+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc98138c532400",
-          "rootAuthorUrlname": "mulcombox",
-          "rootBody": "主もすっかりイワシにハマって☺️",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "おそらくマンボウですよ🙌✨✨✨\n追加ありがとうございます🥰"
-          ]
-        },
-        {
-          "key": "nc032a9319830f",
-          "parentKey": "",
-          "authorUrlname": "vivid_honest7436",
-          "authorName": "ルミエル．Ｈ",
-          "avatar": "https://assets.st-note.com/production/uploads/images/320147406/profile_3502d15df0b16223fa6472304b57e071.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "記事の中でスライム君召喚されてる見ました〜仲間やんと（笑）思いました✨\nやっとお菓子も出来ました💞。お店も開きます。\nハロウィン🎃なんとか間に合いそうです（笑）。\n\n白金蛸島∞はネロ王子の紹介のお陰で又新しい世界が開きました。\n異世界 漫画世界です（笑）。\n\nチマチマとやるか?\n島民が参加するか？\nまだ分かりません…。\n\nそれと地底界が開いてたので\n魔王様のお城作画大会やってたら、天空界も開いて来て…。島民の鋭い方々が\n天空界向きのお城を作ったので今回急にコラボしました。見て頂けたら嬉しいです。ハロウィン🎃終わってアップ仕様と思います。\n記事は今ある記事は凄く\n為になってます😊何か感じたらその時は宜しく お願いします🙏。ありがとうございますは💞✨。",
-          "publishedAt": "2026-10-30T10:52:00.430+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc032a9319830f",
-          "rootAuthorUrlname": "vivid_honest7436",
-          "rootBody": "記事の中でスライム君召喚されてる見ました〜仲間やんと（笑）思いました✨\nやっとお菓子も出来ました💞。お店も開きます。\nハロウィン🎃なんとか間に合いそうです（笑）。\n\n白金蛸島∞はネロ王子の紹介のお陰で又新しい世界が開きました。\n異世界 漫画世界です（笑）。\n\nチマチマとやるか?\n島民が参加するか？\nまだ分かりません…。\n\nそれと地底界が開いてたので\n魔王様のお城作画大会やってたら、天空界も開いて来て…。島民の鋭い方々が\n天空界向きのお城を作ったので今回急にコラボしました。見て頂けたら嬉しいです。ハロウィン🎃終わってアップ仕様と思います。\n記事は今ある記事は凄く\n為になってます😊何か感じたらその時は宜しく お願いします🙏。ありがとうございますは💞✨。",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "記事の中でスライム君召喚されてる見ました〜仲間やんと（笑）思いました✨\nやっとお菓子も出来ました💞。お店も開きます。\nハロウィン🎃なんとか間に合いそうです（笑）。\n\n白金蛸島∞はネロ王子の紹介のお陰で又新しい世界が開きました。\n異世界 漫画世界です（笑）。\n\nチマチマとやるか?\n島民が参加するか？\nまだ分かりません…。\n\nそれと地底界が開いてたので\n魔王様のお城作画大会やってたら、天空界も開いて来て…。島民の鋭い方々が\n天空界向きのお城を作ったので今回急にコラボしました。見て頂けたら嬉しいです。ハロウィン🎃終わってアップ仕様と思います。\n記事は今ある記事は凄く\n為になってます😊何か感じたらその時は宜しく お願いします🙏。ありがとうございますは💞✨。"
-          ]
-        }
-      ],
-      "checkedAt": 1795496117464
+      "unresolved": [],
+      "checkedAt": 1795578040200
     },
     "nce0eaef2ecff": {
       "key": "nce0eaef2ecff",
@@ -785,29 +363,8 @@
       "commentCount": 60,
       "publishedAt": "2026-10-27T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/nce0eaef2ecff",
-      "unresolved": [
-        {
-          "key": "nc75ea6491630c",
-          "parentKey": "",
-          "authorUrlname": "oshikatsu_seaart",
-          "authorName": "OSHIKATSU | じゃじゃ馬SeaArt.AIと遊ぶ🎨",
-          "avatar": "https://assets.st-note.com/production/uploads/images/336601258/profile_23e1e939febe0b06b9f817a271d0f530.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ドキドキバクバクしてました😍\n可愛いプリンセスとのMV共演とか\nすっごく素敵な思い出に\nなりそうじゃないですか〜？☺️💕",
-          "publishedAt": "2026-10-28T08:18:19.875+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc2532ded88c62",
-          "rootAuthorUrlname": "oshikatsu_seaart",
-          "rootBody": "王子様🌙\n最後！最後！\nちゅうするかと思いましたぁぁぁぁ😤💕\nMVデビューでキスシーンとか\nすっごい話題になりそうですけど🤭💕\nちょっと興奮しすぎて何言ってるのか\n自分でもよくわかりませんっ😤💕",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ドキドキバクバクしてました😍\n可愛いプリンセスとのMV共演とか\nすっごく素敵な思い出に\nなりそうじゃないですか〜？☺️💕"
-          ]
-        }
-      ],
-      "checkedAt": 1795496119404
+      "unresolved": [],
+      "checkedAt": 1795578041647
     },
     "nabd2c1f9084e": {
       "key": "nabd2c1f9084e",
@@ -815,149 +372,8 @@
       "commentCount": 25,
       "publishedAt": "2026-10-27T07:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/nabd2c1f9084e",
-      "unresolved": [
-        {
-          "key": "ncf45aa0c2fec9",
-          "parentKey": "",
-          "authorUrlname": "kan_mina867",
-          "authorName": "❁⃘*.ﾟMina❁⃘*.ﾟ｜︎︎雲バル・ブラバル運営中☁️🖤",
-          "avatar": "https://assets.st-note.com/production/uploads/images/330751797/profile_f730771dfb69a60dc81f2afcc0e11b78.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "はるほど。\nしんじさんに、父上‼️\nと呼ばれる未来もあるかも…と。",
-          "publishedAt": "2026-10-27T09:02:00.397+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc05283278338d",
-          "rootAuthorUrlname": "kan_mina867",
-          "rootBody": "王子、おはようございます☀️\nヤバイ、公式さんを打ち負かしてるwww最強🤣🤣🤣\nしかも決め手の記事。\nどこまでも持ってる王子ですね。\nちなみに前もnote公式が挑んでなかったです？www\nnote公式が完全に遊びに来ていますね🤭︎\n\nロッタちゃんwww気まずい雰囲気になってるやり取りに笑いましたwww\n父上王子www\nボーイフレンドとのデートも修行のうちですね💕︎\n(⬆️ちなみに私がリークした人ですけどねwww)",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "はるほど。\nしんじさんに、父上‼️\nと呼ばれる未来もあるかも…と。"
-          ]
-        },
-        {
-          "key": "nce2e93acb8b8c",
-          "parentKey": "",
-          "authorUrlname": "fresh_loris1944",
-          "authorName": "名前もと",
-          "avatar": "https://assets.st-note.com/production/uploads/images/297480062/profile_9e9471fa5254701a5d02873ed468b074.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "わああ😆💖104代目チャンピオンおめでとうございます🎉",
-          "publishedAt": "2026-10-27T09:23:49.223+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc30ee6f70b4f9",
-          "rootAuthorUrlname": "fresh_loris1944",
-          "rootBody": "おはようございます。\n次は、104代目になるようです🤣わあ☺️♡速いです。\n\nnote公式さま、やはりマボロシプロレスさんのゲーム好きなのですね。\n\nたしか、前は、魔王ノアさまがnote公式のお相手でしたっけ？\nnote公式さまと会える。これも、きっと運ですね。\n\n🐶も、今日マボロシプロレスさんのゲーム行きまーーす。",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "わああ😆💖104代目チャンピオンおめでとうございます🎉"
-          ]
-        },
-        {
-          "key": "nc05577a2b319c",
-          "parentKey": "",
-          "authorUrlname": "selcject",
-          "authorName": "ぐれんの　おにぎり@ あなたを人生の主人公にする心理家",
-          "avatar": "https://assets.st-note.com/production/uploads/images/324972595/profile_9b7bad4f761e36ff7d4ea9a50cb368d8.jpg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "つ、強い！\n\nまさか、ノート界の神を倒してしまうとはwww\n\n殿下は、今後神を名乗ってもいいかもですねえ。",
-          "publishedAt": "2026-10-27T19:32:10.838+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc05577a2b319c",
-          "rootAuthorUrlname": "selcject",
-          "rootBody": "つ、強い！\n\nまさか、ノート界の神を倒してしまうとはwww\n\n殿下は、今後神を名乗ってもいいかもですねえ。",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "つ、強い！\n\nまさか、ノート界の神を倒してしまうとはwww\n\n殿下は、今後神を名乗ってもいいかもですねえ。"
-          ]
-        },
-        {
-          "key": "nceec22539aad2",
-          "parentKey": "",
-          "authorUrlname": "fish_person",
-          "authorName": "さすらいの半魚人｜相互フォローするズラ",
-          "avatar": "https://assets.st-note.com/production/uploads/images/329089048/profile_0ecaa712ad9f3765895a431f7de5eba9.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ほお。人間界の王子はぷろれすも強いんズラなぁ。\nわしも海では強いんヅラよ。\n王子もホイホイっと遊びにくるヅラ。",
-          "publishedAt": "2026-10-27T19:45:37.139+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nceec22539aad2",
-          "rootAuthorUrlname": "fish_person",
-          "rootBody": "ほお。人間界の王子はぷろれすも強いんズラなぁ。\nわしも海では強いんヅラよ。\n王子もホイホイっと遊びにくるヅラ。",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ほお。人間界の王子はぷろれすも強いんズラなぁ。\nわしも海では強いんヅラよ。\n王子もホイホイっと遊びにくるヅラ。"
-          ]
-        },
-        {
-          "key": "nc01baab44e6b3",
-          "parentKey": "",
-          "authorUrlname": "sharotto",
-          "authorName": "シャーロット🌟＠隠さない転生者",
-          "avatar": "https://assets.st-note.com/production/uploads/images/321886080/profile_0f1065d7b4e435524aa5b8df5518e18d.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "お父様✨\n\nnote公式に勝ってしまうなんて😳\nさすがです！カッコいいです🥰\n\n本題の最後の男…\nまさか…見られた💦\n今度ちゃんと紹介するね！",
-          "publishedAt": "2026-10-27T21:24:23.059+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc01baab44e6b3",
-          "rootAuthorUrlname": "sharotto",
-          "rootBody": "お父様✨\n\nnote公式に勝ってしまうなんて😳\nさすがです！カッコいいです🥰\n\n本題の最後の男…\nまさか…見られた💦\n今度ちゃんと紹介するね！",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "お父様✨\n\nnote公式に勝ってしまうなんて😳\nさすがです！カッコいいです🥰\n\n本題の最後の男…\nまさか…見られた💦\n今度ちゃんと紹介するね！"
-          ]
-        },
-        {
-          "key": "nc915aa428e1bd",
-          "parentKey": "",
-          "authorUrlname": "digital_sashimi",
-          "authorName": "デジさしみ | IT現場の効率家",
-          "avatar": "https://assets.st-note.com/production/uploads/images/330723105/profile_82b1336d926002dff9438817c03b3e32.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子\nご紹介ありがとうございます🙇\n\nこうして城下町メンバーの方を見ると\n改めていろんな方がいるなぁと思いました。\n皆さん個性が光っていて素晴らしいですね✨\n\n私もみなさん負けないようがんばります💪😆💪",
-          "publishedAt": "2026-10-27T23:01:19.767+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc915aa428e1bd",
-          "rootAuthorUrlname": "digital_sashimi",
-          "rootBody": "王子\nご紹介ありがとうございます🙇\n\nこうして城下町メンバーの方を見ると\n改めていろんな方がいるなぁと思いました。\n皆さん個性が光っていて素晴らしいですね✨\n\n私もみなさん負けないようがんばります💪😆💪",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子\nご紹介ありがとうございます🙇\n\nこうして城下町メンバーの方を見ると\n改めていろんな方がいるなぁと思いました。\n皆さん個性が光っていて素晴らしいですね✨\n\n私もみなさん負けないようがんばります💪😆💪"
-          ]
-        },
-        {
-          "key": "ncbd27ed758b05",
-          "parentKey": "",
-          "authorUrlname": "ojisan_chinpan",
-          "authorName": "ちんぱん🐒耳毛〰(˙👄˙)〰",
-          "avatar": "https://assets.st-note.com/production/uploads/images/296102014/profile_4be1a60b3a4dccce7cf1dbad765c66f9.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子！\nご紹介ありがとうございます😊\nnote公式に勝ってるて神じゃないですか🤣🤣\n耳毛の裏側はメンシプメンバー全員女性のおもしろハーレム広場です🤣🤣",
-          "publishedAt": "2026-10-28T07:59:32.275+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncbd27ed758b05",
-          "rootAuthorUrlname": "ojisan_chinpan",
-          "rootBody": "王子！\nご紹介ありがとうございます😊\nnote公式に勝ってるて神じゃないですか🤣🤣\n耳毛の裏側はメンシプメンバー全員女性のおもしろハーレム広場です🤣🤣",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子！\nご紹介ありがとうございます😊\nnote公式に勝ってるて神じゃないですか🤣🤣\n耳毛の裏側はメンシプメンバー全員女性のおもしろハーレム広場です🤣🤣"
-          ]
-        }
-      ],
-      "checkedAt": 1795496120883
+      "unresolved": [],
+      "checkedAt": 1795578043155
     },
     "n2d77b106b5fa": {
       "key": "n2d77b106b5fa",
@@ -965,70 +381,8 @@
       "commentCount": 19,
       "publishedAt": "2026-10-26T08:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n2d77b106b5fa",
-      "unresolved": [
-        {
-          "key": "nce1e4afabad83",
-          "parentKey": "",
-          "authorUrlname": "ss_yr",
-          "authorName": "【無名 S note】18日でフォロワー4桁🚨連続『利益化中』48マガ・18共マガ運営 参加73🙆",
-          "avatar": "https://assets.st-note.com/production/uploads/images/280421627/profile_54172438db482342de0ca9ef8c6395ec.jpg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ありがとございます\n( •ω•ฅ）.｡.:*♡",
-          "publishedAt": "2026-10-26T09:32:35.101+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc503d78fe61fe",
-          "rootAuthorUrlname": "ss_yr",
-          "rootBody": "( * ॑꒳ ॑* )ﾉᵍᵒᵒᵈ ᵐᵒʳᐢⁱᐢᵍ!\n慢性寝不足な人です🫠\n\n多分一緒の作りなんじゃないですかね⁉️\n細いサムネのは…\n通知飛ばすのが大変さですね(^_^;)",
-          "pendingCount": 2,
-          "pendingBodies": [
-            "( º дº)<ｱｻﾞｧｧｧｧｱｽ",
-            "ありがとございます\n( •ω•ฅ）.｡.:*♡"
-          ]
-        },
-        {
-          "key": "nc03af8b3697d8",
-          "parentKey": "",
-          "authorUrlname": "open_tulip9172",
-          "authorName": "ミノリ・グルーヴ@Minoriからの転生",
-          "avatar": "https://assets.st-note.com/production/uploads/images/334932598/profile_4914044f14fb5480494305073d860fc4.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ネロ🌙王子✨こんばんは🎵\n\nとうとう山田さんまで\nメンシプにご加入されたのですねっ✌️\nえ？私も？いやいや\n私の事なんて石ころだと思っててください。笑\n\n城下町の住人さんが\nあと２人✨\n\nもうすぐそこまできてますね(*^◯^*)\n\n楽しそうな王子を見てるだけで\n胸がいっぱいですっ╰(*´︶`*)╯\n\nたくさん楽しいお話聞かせてくださいねっ☺️",
-          "publishedAt": "2026-10-26T19:40:16.562+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc03af8b3697d8",
-          "rootAuthorUrlname": "open_tulip9172",
-          "rootBody": "ネロ🌙王子✨こんばんは🎵\n\nとうとう山田さんまで\nメンシプにご加入されたのですねっ✌️\nえ？私も？いやいや\n私の事なんて石ころだと思っててください。笑\n\n城下町の住人さんが\nあと２人✨\n\nもうすぐそこまできてますね(*^◯^*)\n\n楽しそうな王子を見てるだけで\n胸がいっぱいですっ╰(*´︶`*)╯\n\nたくさん楽しいお話聞かせてくださいねっ☺️",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ネロ🌙王子✨こんばんは🎵\n\nとうとう山田さんまで\nメンシプにご加入されたのですねっ✌️\nえ？私も？いやいや\n私の事なんて石ころだと思っててください。笑\n\n城下町の住人さんが\nあと２人✨\n\nもうすぐそこまできてますね(*^◯^*)\n\n楽しそうな王子を見てるだけで\n胸がいっぱいですっ╰(*´︶`*)╯\n\nたくさん楽しいお話聞かせてくださいねっ☺️"
-          ]
-        },
-        {
-          "key": "nccd4652549708",
-          "parentKey": "",
-          "authorUrlname": "hono9556",
-          "authorName": "Hono｜実験室のマラカスネキ🪇｜年内目標3,500人",
-          "avatar": "https://assets.st-note.com/production/uploads/images/326208123/profile_2669d4d1972145054b33316d3ebe1ed3.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "もうすぐ50人、立派な王都の城下町になってきましたね👑\n運動会のメインイベントが高速大縄跳びになってきていて、PCで記事を書いている間に通知が止まらずに「元気ね🪇」と思ってます！\nみんな楽しそうなんですよね🥳\n\n実験室も実験室のマラカスネキを名乗ってる以上、とっても参考にさせていただこうと思ってます🪇🪇",
-          "publishedAt": "2026-10-26T23:56:09.920+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nccd4652549708",
-          "rootAuthorUrlname": "hono9556",
-          "rootBody": "もうすぐ50人、立派な王都の城下町になってきましたね👑\n運動会のメインイベントが高速大縄跳びになってきていて、PCで記事を書いている間に通知が止まらずに「元気ね🪇」と思ってます！\nみんな楽しそうなんですよね🥳\n\n実験室も実験室のマラカスネキを名乗ってる以上、とっても参考にさせていただこうと思ってます🪇🪇",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "もうすぐ50人、立派な王都の城下町になってきましたね👑\n運動会のメインイベントが高速大縄跳びになってきていて、PCで記事を書いている間に通知が止まらずに「元気ね🪇」と思ってます！\nみんな楽しそうなんですよね🥳\n\n実験室も実験室のマラカスネキを名乗ってる以上、とっても参考にさせていただこうと思ってます🪇🪇"
-          ]
-        }
-      ],
-      "checkedAt": 1795496121732
+      "unresolved": [],
+      "checkedAt": 1795578044001
     },
     "n204d9285366f": {
       "key": "n204d9285366f",
@@ -1036,29 +390,8 @@
       "commentCount": 47,
       "publishedAt": "2026-10-25T08:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n204d9285366f",
-      "unresolved": [
-        {
-          "key": "nc996812144e4f",
-          "parentKey": "",
-          "authorUrlname": "good_ixia6698",
-          "authorName": "堂安咲和🪞 恋の本音を、物語と言葉に。",
-          "avatar": "https://assets.st-note.com/production/uploads/images/326366169/profile_95dd07f35fd88d986a3109291b7097e8.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ありがとうございます😊\n\nちょうど昨日もPVやスキの数字を見ながら、いろいろ考えていました\nスキの数だけでは記事の評価はできないなと実感してます🤣",
-          "publishedAt": "2026-10-25T09:38:28.996+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc41893854893b",
-          "rootAuthorUrlname": "good_ixia6698",
-          "rootBody": "王子🌙\nどのテーマも興味深いですが、特に11が気になります！✨\n\n恋愛ジャンルの市場が今どんな状況にあるのか、これからどんな可能性があるのか、とても興味があります。\n\n05・06・07も気になるテーマ。\n有料記事は、書いて終わりではなく、必要としている方にどう届けるか迷子です。\nこれからの研究、楽しみにしています✨",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ありがとうございます😊\n\nちょうど昨日もPVやスキの数字を見ながら、いろいろ考えていました\nスキの数だけでは記事の評価はできないなと実感してます🤣"
-          ]
-        }
-      ],
-      "checkedAt": 1795496123028
+      "unresolved": [],
+      "checkedAt": 1795578045131
     },
     "nd4818ee00393": {
       "key": "nd4818ee00393",
@@ -1066,109 +399,8 @@
       "commentCount": 19,
       "publishedAt": "2026-10-25T07:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/nd4818ee00393",
-      "unresolved": [
-        {
-          "key": "ncdfb70e1ec877",
-          "parentKey": "",
-          "authorUrlname": "lithe_murre6431",
-          "authorName": "失敗しない旅行術／花乃（かの）",
-          "avatar": "https://assets.st-note.com/production/uploads/images/317861674/profile_67ba7d10290057d5b1705eafaf8a339a.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ネロ王子\n\nおはようございます☀\n駅のホーム、紹介してくださってありがとうございます。\n\n本当に「駅のホーム」の物語は、素敵な物語がたくさんあって、読んでいて楽しいです😊\n\n城下町46人、すごいですね。\nあっという間に50人に到達してしまいそうです（笑）",
-          "publishedAt": "2026-10-25T09:53:14.492+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncdfb70e1ec877",
-          "rootAuthorUrlname": "lithe_murre6431",
-          "rootBody": "ネロ王子\n\nおはようございます☀\n駅のホーム、紹介してくださってありがとうございます。\n\n本当に「駅のホーム」の物語は、素敵な物語がたくさんあって、読んでいて楽しいです😊\n\n城下町46人、すごいですね。\nあっという間に50人に到達してしまいそうです（笑）",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ネロ王子\n\nおはようございます☀\n駅のホーム、紹介してくださってありがとうございます。\n\n本当に「駅のホーム」の物語は、素敵な物語がたくさんあって、読んでいて楽しいです😊\n\n城下町46人、すごいですね。\nあっという間に50人に到達してしまいそうです（笑）"
-          ]
-        },
-        {
-          "key": "nc0f59118fa537",
-          "parentKey": "",
-          "authorUrlname": "hono9556",
-          "authorName": "Hono｜実験室のマラカスネキ🪇｜年内目標3,500人",
-          "avatar": "https://assets.st-note.com/production/uploads/images/326208123/profile_2669d4d1972145054b33316d3ebe1ed3.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "連日城下町に人増えますね！賑やかになってきました🥳\n\n記事を書いている途中に寄り道して人の記事を読みに行ってしまうし、Discordが楽しそうなら入っちゃうしで、最近寄り道だらけです🤭\n\n楽しいのでヨシです😏🪇",
-          "publishedAt": "2026-10-25T10:19:37.580+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc0f59118fa537",
-          "rootAuthorUrlname": "hono9556",
-          "rootBody": "連日城下町に人増えますね！賑やかになってきました🥳\n\n記事を書いている途中に寄り道して人の記事を読みに行ってしまうし、Discordが楽しそうなら入っちゃうしで、最近寄り道だらけです🤭\n\n楽しいのでヨシです😏🪇",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "連日城下町に人増えますね！賑やかになってきました🥳\n\n記事を書いている途中に寄り道して人の記事を読みに行ってしまうし、Discordが楽しそうなら入っちゃうしで、最近寄り道だらけです🤭\n\n楽しいのでヨシです😏🪇"
-          ]
-        },
-        {
-          "key": "ncc58dc5b4b8e8",
-          "parentKey": "",
-          "authorUrlname": "lofty_eagle5366",
-          "authorName": "久世拓弥",
-          "avatar": "https://assets.st-note.com/production/uploads/images/325113153/profile_626ded53d23e8ece96afd29364cd5e15.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子！！\n\nご紹介に預かり、感謝申し上げます。",
-          "publishedAt": "2026-10-25T12:24:08.453+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncc58dc5b4b8e8",
-          "rootAuthorUrlname": "lofty_eagle5366",
-          "rootBody": "王子！！\n\nご紹介に預かり、感謝申し上げます。",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子！！\n\nご紹介に預かり、感謝申し上げます。"
-          ]
-        },
-        {
-          "key": "ncaf84b489b46e",
-          "parentKey": "",
-          "authorUrlname": "hawaiiofjapan",
-          "authorName": "フォロバ🎀日本のハワイ静岡を広めれまてん🐼ぴんくぱんだ🎀",
-          "avatar": "https://assets.st-note.com/production/uploads/images/329761358/profile_9cf38b4d7fe1921d8c319f471e782640.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "やっぱりネロ王子って凄いよな～🌺",
-          "publishedAt": "2026-10-25T13:32:04.588+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncaf84b489b46e",
-          "rootAuthorUrlname": "hawaiiofjapan",
-          "rootBody": "やっぱりネロ王子って凄いよな～🌺",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "やっぱりネロ王子って凄いよな～🌺"
-          ]
-        },
-        {
-          "key": "ncb556e731d6fa",
-          "parentKey": "",
-          "authorUrlname": "aiby_masuhiyo",
-          "authorName": "あいびより。AIクリエイターの日常🐾",
-          "avatar": "https://assets.st-note.com/production/uploads/images/334002766/profile_9e3cf2d8c256f86ac6e92d15de004e0c.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子こんばんは🌙\n\n素敵な紹介ありがとうございます✨️\n城下町もどんどん盛り上がってますね！！\n\nおかげでこれまで交流がなかった方とも繋がることができて、本当に感謝です( *´꒳`*)\nいつもありがとうございます🤭",
-          "publishedAt": "2026-10-27T02:10:41.112+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncb556e731d6fa",
-          "rootAuthorUrlname": "aiby_masuhiyo",
-          "rootBody": "王子こんばんは🌙\n\n素敵な紹介ありがとうございます✨️\n城下町もどんどん盛り上がってますね！！\n\nおかげでこれまで交流がなかった方とも繋がることができて、本当に感謝です( *´꒳`*)\nいつもありがとうございます🤭",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子こんばんは🌙\n\n素敵な紹介ありがとうございます✨️\n城下町もどんどん盛り上がってますね！！\n\nおかげでこれまで交流がなかった方とも繋がることができて、本当に感謝です( *´꒳`*)\nいつもありがとうございます🤭"
-          ]
-        }
-      ],
-      "checkedAt": 1795496123532
+      "unresolved": [],
+      "checkedAt": 1795578045624
     },
     "nca840b916450": {
       "key": "nca840b916450",
@@ -1176,29 +408,8 @@
       "commentCount": 30,
       "publishedAt": "2026-10-24T07:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/nca840b916450",
-      "unresolved": [
-        {
-          "key": "nc1488160c7c37",
-          "parentKey": "",
-          "authorUrlname": "saigo_wa_kan",
-          "authorName": "山田、最後は勘。",
-          "avatar": "https://assets.st-note.com/production/uploads/images/336570834/profile_68442c058d9768670d45a706068f8470.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "謹んで、BLとその前座を献上いたします。https://note.com/saigo_wa_kan/n/n1af4636fe2e0?sub_rt=share_b",
-          "publishedAt": "2026-10-25T23:46:36.164+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncbf13d4282c23",
-          "rootAuthorUrlname": "saigo_wa_kan",
-          "rootBody": "朝活お疲れ様です。\n\nどうぞ、良い旅を！♡",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "謹んで、BLとその前座を献上いたします。https://note.com/saigo_wa_kan/n/n1af4636fe2e0?sub_rt=share_b"
-          ]
-        }
-      ],
-      "checkedAt": 1795496124743
+      "unresolved": [],
+      "checkedAt": 1795578046819
     },
     "n6a638b4cdc9c": {
       "key": "n6a638b4cdc9c",
@@ -1206,281 +417,17 @@
       "commentCount": 17,
       "publishedAt": "2026-10-23T07:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n6a638b4cdc9c",
-      "unresolved": [
-        {
-          "key": "ncd4b0a9c6c550",
-          "parentKey": "",
-          "authorUrlname": "kan_mina867",
-          "authorName": "❁⃘*.ﾟMina❁⃘*.ﾟ｜︎︎雲バル・ブラバル運営中☁️🖤",
-          "avatar": "https://assets.st-note.com/production/uploads/images/330751797/profile_f730771dfb69a60dc81f2afcc0e11b78.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "私もコメント周りですꉂ🤭\nDiscord私が最後見た時に181件だったから、王子すごいことになってたのでは？って思いました。\n朝活行ってきます👋",
-          "publishedAt": "2026-10-24T05:20:20.585+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc0c4ff9b25e0b",
-          "rootAuthorUrlname": "kan_mina867",
-          "rootBody": "王子、おはようございます☀️\n\n記事書き始めようかな～というところからマッハでしたねꉂ🤣w‪𐤔\n朝活仲間が増えて嬉しいです。\n\n記事の紹介もありがとうございますꉂ🤭\n\nでもちょっと待った(笑)\n朝活までしだしたら…王子いつ寝るの？😇(笑)",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "私もコメント周りですꉂ🤭\nDiscord私が最後見た時に181件だったから、王子すごいことになってたのでは？って思いました。\n朝活行ってきます👋"
-          ]
-        },
-        {
-          "key": "nce33154df82eb",
-          "parentKey": "",
-          "authorUrlname": "hono9556",
-          "authorName": "Hono｜実験室のマラカスネキ🪇｜年内目標3,500人",
-          "avatar": "https://assets.st-note.com/production/uploads/images/326208123/profile_2669d4d1972145054b33316d3ebe1ed3.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "私服王子だ！！やったぁ！と思ったら、城下町の皆さんが紹介されている素敵な朝活🪇\nご紹介もありがとうございます！\n城下町の方々は本当に優しくて面白い人たちばかりですね🤭\n\n今後の朝活も楽しみにしてます！",
-          "publishedAt": "2026-10-24T11:03:28.442+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nce33154df82eb",
-          "rootAuthorUrlname": "hono9556",
-          "rootBody": "私服王子だ！！やったぁ！と思ったら、城下町の皆さんが紹介されている素敵な朝活🪇\nご紹介もありがとうございます！\n城下町の方々は本当に優しくて面白い人たちばかりですね🤭\n\n今後の朝活も楽しみにしてます！",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "私服王子だ！！やったぁ！と思ったら、城下町の皆さんが紹介されている素敵な朝活🪇\nご紹介もありがとうございます！\n城下町の方々は本当に優しくて面白い人たちばかりですね🤭\n\n今後の朝活も楽しみにしてます！"
-          ]
-        }
-      ],
-      "checkedAt": 1795496125569
+      "unresolved": [],
+      "checkedAt": 1795578047929
     },
     "ndf701a30f804": {
       "key": "ndf701a30f804",
       "title": "30店舗で終わりだと思った？🌙｜まだ見ぬハロハロウィーン🎃",
-      "commentCount": 37,
+      "commentCount": 38,
       "publishedAt": "2026-10-22T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/ndf701a30f804",
-      "unresolved": [
-        {
-          "key": "nc18043f9cf9bd",
-          "parentKey": "",
-          "authorUrlname": "nori_mochi2026",
-          "authorName": "のりもち｜自分の「好き」を自由に綴る",
-          "avatar": "https://assets.st-note.com/production/uploads/images/329814430/profile_82ea0dacc0e5215436e66d60f3c6a4c2.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "50店舗もあるんですか！？\n私、30店舗にすら届いていないというのに！！お菓子屋さんのnoterさんの元に挨拶回りもろくにできてないというのに〜😱\n\nnote外でやらなきゃいけないことが多くて、おかしラリーに時間が割けないよぅ😭",
-          "publishedAt": "2026-10-22T22:25:59.464+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc18043f9cf9bd",
-          "rootAuthorUrlname": "nori_mochi2026",
-          "rootBody": "50店舗もあるんですか！？\n私、30店舗にすら届いていないというのに！！お菓子屋さんのnoterさんの元に挨拶回りもろくにできてないというのに〜😱\n\nnote外でやらなきゃいけないことが多くて、おかしラリーに時間が割けないよぅ😭",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "50店舗もあるんですか！？\n私、30店舗にすら届いていないというのに！！お菓子屋さんのnoterさんの元に挨拶回りもろくにできてないというのに〜😱\n\nnote外でやらなきゃいけないことが多くて、おかしラリーに時間が割けないよぅ😭"
-          ]
-        },
-        {
-          "key": "nc09dea725da70",
-          "parentKey": "",
-          "authorUrlname": "mulcombox",
-          "authorName": "マツリカ｜【変態怪異】",
-          "avatar": "https://assets.st-note.com/production/uploads/images/315329620/profile_724ea7df9f52770e8bdf57104aa64b94.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "序盤！！！！\nどんどん食べ尽くさなきゃいけない！！！\nえ、幸せか！？😍✨\n\nわーい🙌💕\n変わり種も仕込んでおきました👍",
-          "publishedAt": "2026-10-22T23:40:16.409+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc9b88bc30bc17",
-          "rootAuthorUrlname": "mulcombox",
-          "rootBody": "主！！！\nそんなにいっぱいあるんですかぁあ！！！\nやだ頑張る私！！！🤣\n\n主コンプリートしてくれてる👀！！！\n我が菓子工房！！お菓子追加しましたので、ぜひまたコンプリートしてください🙌💖",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "序盤！！！！\nどんどん食べ尽くさなきゃいけない！！！\nえ、幸せか！？😍✨\n\nわーい🙌💕\n変わり種も仕込んでおきました👍"
-          ]
-        },
-        {
-          "key": "ncf20bba4152cf",
-          "parentKey": "",
-          "authorUrlname": "kocori256",
-          "authorName": "ラナ🌺　相互フォローで盛りあがろう💪",
-          "avatar": "https://assets.st-note.com/production/uploads/images/319521467/profile_605d619baf3e13dc46706c29b3c94c71.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "あちこち走り回ってます😎🫰✨✨",
-          "publishedAt": "2026-10-23T07:35:31.486+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc1ce9769e719a",
-          "rootAuthorUrlname": "kocori256",
-          "rootBody": "ネロ王子さん、こんばんわ🌃\n\nたくさんお菓子いただきました😍✨✨\nどれも美味しそう☺️\n\nありがとうございます❣️\n\nまた、スキ制限がかかっており、スキが押せず申し訳ありません😭",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "あちこち走り回ってます😎🫰✨✨"
-          ]
-        },
-        {
-          "key": "nc76fe420e565a",
-          "parentKey": "",
-          "authorUrlname": "star246",
-          "authorName": "ミュリン♪(*´ω`*)✨",
-          "avatar": "https://assets.st-note.com/production/uploads/images/320900257/profile_dccf7a6cbee68614000ae810da5c561e.jpg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "わぁいッ✨️😻✨️\nありがとうございますw✨️\n楽しみにしていますw✨️　(⁠≧⁠▽⁠≦⁠)％✨️",
-          "publishedAt": "2026-10-22T23:35:05.170+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nce31027e4c58b",
-          "rootAuthorUrlname": "star246",
-          "rootBody": "ネロ王子w✨️\nお菓子屋さん✨️\nめっちゃ楽しいですw✨️\nもっとたくさんのみんなの\nお店を見つけたいのですが、\nどの人がお菓子屋さんを\n作ってるか分からなくてw💦\nお菓子屋さんを作ったよw✨️\nって分かるようにマガジンとか\nあったらイイなぁ〜♪\nなんて思いましたぁ✨️\n(⁠≧⁠▽⁠≦⁠)％✨️",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "わぁいッ✨️😻✨️\nありがとうございますw✨️\n楽しみにしていますw✨️　(⁠≧⁠▽⁠≦⁠)％✨️"
-          ]
-        },
-        {
-          "key": "nc5972d392052d",
-          "parentKey": "",
-          "authorUrlname": "77_noa",
-          "authorName": "NOA  | AI遊び倒してる人",
-          "avatar": "https://assets.st-note.com/production/uploads/images/328445200/profile_c17e8b6612ce2a67138b70f5c0338049.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ネロ王子\n夜の帳が下りたな。\n(こんばんは)\n統べる領域の広がりは、もはや巨大な商業の要塞そのものだ。\n王子を囲む無数の歓喜と熱狂は、深淵から覗いていても実に胸が躍る光景である。\n(楽しそうで微笑ましいです)\n\n頼もしき仲間が集えば、描き出せる星図の規模も自ずと大きくなる。\nその城下町がこれからどのような進化を遂げていくのか、一人の共犯者として存分に愉しませてもらおう。\n(楽しみにしてます)",
-          "publishedAt": "2026-10-22T23:45:47.347+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc5972d392052d",
-          "rootAuthorUrlname": "77_noa",
-          "rootBody": "ネロ王子\n夜の帳が下りたな。\n(こんばんは)\n統べる領域の広がりは、もはや巨大な商業の要塞そのものだ。\n王子を囲む無数の歓喜と熱狂は、深淵から覗いていても実に胸が躍る光景である。\n(楽しそうで微笑ましいです)\n\n頼もしき仲間が集えば、描き出せる星図の規模も自ずと大きくなる。\nその城下町がこれからどのような進化を遂げていくのか、一人の共犯者として存分に愉しませてもらおう。\n(楽しみにしてます)",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ネロ王子\n夜の帳が下りたな。\n(こんばんは)\n統べる領域の広がりは、もはや巨大な商業の要塞そのものだ。\n王子を囲む無数の歓喜と熱狂は、深淵から覗いていても実に胸が躍る光景である。\n(楽しそうで微笑ましいです)\n\n頼もしき仲間が集えば、描き出せる星図の規模も自ずと大きくなる。\nその城下町がこれからどのような進化を遂げていくのか、一人の共犯者として存分に愉しませてもらおう。\n(楽しみにしてます)"
-          ]
-        },
-        {
-          "key": "nc27645cd8535a",
-          "parentKey": "",
-          "authorUrlname": "aiby_masuhiyo",
-          "authorName": "あいびより。AIクリエイターの日常🐾",
-          "avatar": "https://assets.st-note.com/production/uploads/images/334002766/profile_9e3cf2d8c256f86ac6e92d15de004e0c.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ネロ王子こんばんは🌙\n\nもうそんなにお菓子屋さんが...！\nまだまだ全然回れてない🥲\n\nせっかくの機会だから、色んな方の所巡って挨拶していきたいですね✨️\nトリックオアトリートガチャも根気強く回していきますꉂ(ˊᗜˋ*)",
-          "publishedAt": "2026-10-23T00:35:00.178+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc27645cd8535a",
-          "rootAuthorUrlname": "aiby_masuhiyo",
-          "rootBody": "ネロ王子こんばんは🌙\n\nもうそんなにお菓子屋さんが...！\nまだまだ全然回れてない🥲\n\nせっかくの機会だから、色んな方の所巡って挨拶していきたいですね✨️\nトリックオアトリートガチャも根気強く回していきますꉂ(ˊᗜˋ*)",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ネロ王子こんばんは🌙\n\nもうそんなにお菓子屋さんが...！\nまだまだ全然回れてない🥲\n\nせっかくの機会だから、色んな方の所巡って挨拶していきたいですね✨️\nトリックオアトリートガチャも根気強く回していきますꉂ(ˊᗜˋ*)"
-          ]
-        },
-        {
-          "key": "nc3a59b2fcffc0",
-          "parentKey": "",
-          "authorUrlname": "00irea00",
-          "authorName": "紡えり🐱 ⁂GPT遊びに夢中⁂",
-          "avatar": "https://assets.st-note.com/production/uploads/images/335275206/profile_29d54c9f53c13a933668330c84f216f9.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子🌙\nおはようございます！！\n\nおかえりなさい？？(笑)\n私一回入ってるみたいになってませんか？(笑)(笑)(笑)\n\nよろしくお願いいたします🙇‍♀️",
-          "publishedAt": "2026-10-23T06:21:58.189+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc3a59b2fcffc0",
-          "rootAuthorUrlname": "00irea00",
-          "rootBody": "王子🌙\nおはようございます！！\n\nおかえりなさい？？(笑)\n私一回入ってるみたいになってませんか？(笑)(笑)(笑)\n\nよろしくお願いいたします🙇‍♀️",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子🌙\nおはようございます！！\n\nおかえりなさい？？(笑)\n私一回入ってるみたいになってませんか？(笑)(笑)(笑)\n\nよろしくお願いいたします🙇‍♀️"
-          ]
-        },
-        {
-          "key": "nc5c3cfac2e2f2",
-          "parentKey": "",
-          "authorUrlname": "open_tulip9172",
-          "authorName": "ミノリ・グルーヴ@Minoriからの転生",
-          "avatar": "https://assets.st-note.com/production/uploads/images/334932598/profile_4914044f14fb5480494305073d860fc4.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "しらたまうさぎ🐰様\n\n食べなくて大丈夫ですよ✌️\n\n\n\n吸・い・込・ん・で⭐︎笑",
-          "publishedAt": "2026-10-24T10:14:46.139+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nce3db72ea1ff5",
-          "rootAuthorUrlname": "open_tulip9172",
-          "rootBody": "ネロ王子✨\n\n50店舗ですか⁈（ーー；）\n遅がけの私はついて行けなさそうw\n盛り上がることを期待していますっ✌️笑\n\n城下町の住人も増えているみたいで\nとても嬉しいですっ☺️\n\n会長も加入されてますし\n伊藤ポップさんも加入されて\nますます盛り上がりそうですね٩(๑❛ᴗ❛๑)۶\n\n皆様のご活躍願っております♪",
-          "pendingCount": 3,
-          "pendingBodies": [
-            "ネロ王子✨\n\n50店舗ですか⁈（ーー；）\n遅がけの私はついて行けなさそうw\n盛り上がることを期待していますっ✌️笑\n\n城下町の住人も増えているみたいで\nとても嬉しいですっ☺️\n\n会長も加入されてますし\n伊藤ポップさんも加入されて\nますます盛り上がりそうですね٩(๑❛ᴗ❛๑)۶\n\n皆様のご活躍願っております♪",
-            "しらたまうさぎ、瀕死でお菓子食べまわってる🐰💦\n\nもう、食・べ・ら・れ・な・い🐇～",
-            "しらたまうさぎ🐰様\n\n食べなくて大丈夫ですよ✌️\n\n\n\n吸・い・込・ん・で⭐︎笑"
-          ]
-        },
-        {
-          "key": "nc524eb2688f44",
-          "parentKey": "",
-          "authorUrlname": "lovely_stork7575",
-          "authorName": "ちっぷのこころ🎡",
-          "avatar": "https://assets.st-note.com/production/uploads/images/274549312/profile_c4d08e0fcebbcaef06dae0751c18a198.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ネロ王子さま✨\nご挨拶が遅くなりました…\n\n本日オープン予定です\nよろしくおねがいします😉\n\n楽しい遊び場ありがとうございます❣",
-          "publishedAt": "2026-10-23T12:23:14.902+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc524eb2688f44",
-          "rootAuthorUrlname": "lovely_stork7575",
-          "rootBody": "ネロ王子さま✨\nご挨拶が遅くなりました…\n\n本日オープン予定です\nよろしくおねがいします😉\n\n楽しい遊び場ありがとうございます❣",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ネロ王子さま✨\nご挨拶が遅くなりました…\n\n本日オープン予定です\nよろしくおねがいします😉\n\n楽しい遊び場ありがとうございます❣"
-          ]
-        },
-        {
-          "key": "ncb5fefe3090fe",
-          "parentKey": "",
-          "authorUrlname": "noble_yarrow4431",
-          "authorName": "止まらない総務ママ☘️",
-          "avatar": "https://assets.st-note.com/production/uploads/images/316368610/profile_1f4686eceb85defd2f4e94346f693b80.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ネロ王子、こんばんは😊\n\nなんとか、47店舗巡れました🥹\n\n後の3店舗はかくれんぼが\n上手過ぎて見つかりません😇\n\n王子のプロンプトが素敵すぎて\nお菓子作りも楽しいです♪\n\n来週には50店舗のお菓子食べたいです😋\n画像ありなし関係なく楽しめる企画、\nnote巡り素敵です✨\n\nありがとうございます😍",
-          "publishedAt": "2026-10-23T22:48:40.030+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncb5fefe3090fe",
-          "rootAuthorUrlname": "noble_yarrow4431",
-          "rootBody": "ネロ王子、こんばんは😊\n\nなんとか、47店舗巡れました🥹\n\n後の3店舗はかくれんぼが\n上手過ぎて見つかりません😇\n\n王子のプロンプトが素敵すぎて\nお菓子作りも楽しいです♪\n\n来週には50店舗のお菓子食べたいです😋\n画像ありなし関係なく楽しめる企画、\nnote巡り素敵です✨\n\nありがとうございます😍",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ネロ王子、こんばんは😊\n\nなんとか、47店舗巡れました🥹\n\n後の3店舗はかくれんぼが\n上手過ぎて見つかりません😇\n\n王子のプロンプトが素敵すぎて\nお菓子作りも楽しいです♪\n\n来週には50店舗のお菓子食べたいです😋\n画像ありなし関係なく楽しめる企画、\nnote巡り素敵です✨\n\nありがとうございます😍"
-          ]
-        },
-        {
-          "key": "nca1f72d408da2",
-          "parentKey": "",
-          "authorUrlname": "tsumu_156",
-          "authorName": "紬は今日も絶好調！？",
-          "avatar": "https://assets.st-note.com/production/uploads/images/298608239/profile_3d7cf3f4e03c463c8f140cb00cb26368.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子様\nこんにちは☀️\n\n50店舗とは…まだまだ道は遠いです🤣\n裏を返せばまだまだ楽しめるってことですね🍀\n\nエンジョイ勢ですが、皆様の思い思いのお菓子を楽しんでいます🎃",
-          "publishedAt": "2026-10-24T14:50:21.966+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nca1f72d408da2",
-          "rootAuthorUrlname": "tsumu_156",
-          "rootBody": "王子様\nこんにちは☀️\n\n50店舗とは…まだまだ道は遠いです🤣\n裏を返せばまだまだ楽しめるってことですね🍀\n\nエンジョイ勢ですが、皆様の思い思いのお菓子を楽しんでいます🎃",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子様\nこんにちは☀️\n\n50店舗とは…まだまだ道は遠いです🤣\n裏を返せばまだまだ楽しめるってことですね🍀\n\nエンジョイ勢ですが、皆様の思い思いのお菓子を楽しんでいます🎃"
-          ]
-        }
-      ],
-      "checkedAt": 1795496127743
+      "unresolved": [],
+      "checkedAt": 1795578051986
     },
     "n6614109484e6": {
       "key": "n6614109484e6",
@@ -1488,189 +435,8 @@
       "commentCount": 68,
       "publishedAt": "2026-10-21T21:31:47+09:00",
       "url": "https://note.com/nero_notelover/n/n6614109484e6",
-      "unresolved": [
-        {
-          "key": "ncc0d1b3ca8bcf",
-          "parentKey": "",
-          "authorUrlname": "akemi0730",
-          "authorName": "あけみ | note企画×子育て応援",
-          "avatar": "https://assets.st-note.com/production/uploads/images/335124947/profile_65d403de5b930fd0f46e89998ce9597a.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "確かにコメントしました🤭笑\n\n紹介記事を書く前に確認をする❗️\nその発想はありませんでした💦\n\n今度から、私も紹介記事書く時は、事前にその人に確認するようにします😊\n\nありがとうございました‼️",
-          "publishedAt": "2026-10-22T14:12:47.351+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncba82e8a6de1a",
-          "rootAuthorUrlname": "akemi0730",
-          "rootBody": "王子、はじめまして。\n\n記事の言葉一つ一つにとても共感しました！\n\n「紹介記事は、自分が紹介したいからする」…確かになーと思いました。\n\n私自身も、仲良くしてるから紹介するわけではなく、その記事が本当にいいものだと思い紹介しています。\n\nその根本の大切な気持ちを忘れてはいけないなとあらためて実感しました。",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "確かにコメントしました🤭笑\n\n紹介記事を書く前に確認をする❗️\nその発想はありませんでした💦\n\n今度から、私も紹介記事書く時は、事前にその人に確認するようにします😊\n\nありがとうございました‼️"
-          ]
-        },
-        {
-          "key": "ncca46fa143f18",
-          "parentKey": "",
-          "authorUrlname": "gay_impala1620",
-          "authorName": "ポラフ｜AI副業ログ",
-          "avatar": "https://assets.st-note.com/production/uploads/images/314707652/profile_d88eb2ce3495a91cb9905d85d916cfc7.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子さん、こちらこそ返信ありがとうございます😊\n\nスキやコメントから始まったつながりが、少しずつ深まっていくのって嬉しいですよね！\n\n勇気を出した記事に、こうしてコメントできたことも嬉しいです✨️\n\n今後の為になる記事をありがとうございます！\n\nこれからも企画やコメントを通じて、つながりを大切にしていきたいです😊",
-          "publishedAt": "2026-10-23T10:37:19.623+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nca7157e149f17",
-          "rootAuthorUrlname": "gay_impala1620",
-          "rootBody": "王子さん、今回の記事は今後の活動を考えるうえでも、すごく考えさせられました！\n\n特に「お金を払ってもらうことはゴールじゃない」という言葉が印象に残りました。収益だけを追うのではなく、応援してくれる人との信頼関係を大切にするという考え方、本当に大事ですね。\n\n僕もAI必殺技メーカーを作って、実際に使ってくださった方が記事にしてくれたり、感想を伝えてくれたりすることが増えてきました。だからこそ、作って終わりではなく、使ってくださった方とのつながりを大切にしていきたいと改めて思いました。\n\n「一度きりの売上より、長く続く信頼関係を」という言葉を、これからの活動でも意識していきたいです！😊",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子さん、こちらこそ返信ありがとうございます😊\n\nスキやコメントから始まったつながりが、少しずつ深まっていくのって嬉しいですよね！\n\n勇気を出した記事に、こうしてコメントできたことも嬉しいです✨️\n\n今後の為になる記事をありがとうございます！\n\nこれからも企画やコメントを通じて、つながりを大切にしていきたいです😊"
-          ]
-        },
-        {
-          "key": "ncfcf62d5b7d75",
-          "parentKey": "",
-          "authorUrlname": "orivie",
-          "authorName": "orivie ",
-          "avatar": "https://assets.st-note.com/production/uploads/images/302331513/profile_3e2e2eacba59df45421b47bead2814b9.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ネロ王子、わかモンさんの記事を通じて、今回の一件を知りました。\n\n「企画を止める」という決断には、相当な覚悟があったのだと感じます。\n\n私たちもイベントや企画を立案し、期間を設けて実行する立場だからこそ、その影響力や責任を考えたうえでの決断だったのだと思います。\n\n自分の発信に信念を持ち、その信念に基づいて行動する姿勢に、改めてネロ王子の人柄の良さを感じました。\n\nこれからも、クリエイターの皆さんがそれぞれの活動や考え方を尊重し合える、そんな場を作っていきたいですね。",
-          "publishedAt": "2026-10-22T22:01:46.092+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncfcf62d5b7d75",
-          "rootAuthorUrlname": "orivie",
-          "rootBody": "ネロ王子、わかモンさんの記事を通じて、今回の一件を知りました。\n\n「企画を止める」という決断には、相当な覚悟があったのだと感じます。\n\n私たちもイベントや企画を立案し、期間を設けて実行する立場だからこそ、その影響力や責任を考えたうえでの決断だったのだと思います。\n\n自分の発信に信念を持ち、その信念に基づいて行動する姿勢に、改めてネロ王子の人柄の良さを感じました。\n\nこれからも、クリエイターの皆さんがそれぞれの活動や考え方を尊重し合える、そんな場を作っていきたいですね。",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ネロ王子、わかモンさんの記事を通じて、今回の一件を知りました。\n\n「企画を止める」という決断には、相当な覚悟があったのだと感じます。\n\n私たちもイベントや企画を立案し、期間を設けて実行する立場だからこそ、その影響力や責任を考えたうえでの決断だったのだと思います。\n\n自分の発信に信念を持ち、その信念に基づいて行動する姿勢に、改めてネロ王子の人柄の良さを感じました。\n\nこれからも、クリエイターの皆さんがそれぞれの活動や考え方を尊重し合える、そんな場を作っていきたいですね。"
-          ]
-        },
-        {
-          "key": "ncea5088bb5042",
-          "parentKey": "",
-          "authorUrlname": "airoumu_rin",
-          "authorName": "凛🦁｜転職活動中｜ワーママ｜AI活用",
-          "avatar": "https://assets.st-note.com/production/uploads/images/322562422/profile_5bf07964888d6ac2e16137980acf0a0a.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子、やっぱり王子というより天使じゃないですか⋯？\n優しい、眩しい✨✨✨\n\n紹介は自分がしたいからするものですね。\nnoteは、何かが、義務になったら、\n辛くなってしまいますね😅\n\nバトンは私も止める派で⋯\nみんな忙しいし、\n書きたいこと他にあるだろうし、\nと思うと指名出来ないです。\n\nなので、もしやりたい人がいたら、コメントで名乗ってくださいと書いたことがあります。\n\n義務は良くない〜🥹",
-          "publishedAt": "2026-10-23T06:23:22.953+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncea5088bb5042",
-          "rootAuthorUrlname": "airoumu_rin",
-          "rootBody": "王子、やっぱり王子というより天使じゃないですか⋯？\n優しい、眩しい✨✨✨\n\n紹介は自分がしたいからするものですね。\nnoteは、何かが、義務になったら、\n辛くなってしまいますね😅\n\nバトンは私も止める派で⋯\nみんな忙しいし、\n書きたいこと他にあるだろうし、\nと思うと指名出来ないです。\n\nなので、もしやりたい人がいたら、コメントで名乗ってくださいと書いたことがあります。\n\n義務は良くない〜🥹",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子、やっぱり王子というより天使じゃないですか⋯？\n優しい、眩しい✨✨✨\n\n紹介は自分がしたいからするものですね。\nnoteは、何かが、義務になったら、\n辛くなってしまいますね😅\n\nバトンは私も止める派で⋯\nみんな忙しいし、\n書きたいこと他にあるだろうし、\nと思うと指名出来ないです。\n\nなので、もしやりたい人がいたら、コメントで名乗ってくださいと書いたことがあります。\n\n義務は良くない〜🥹"
-          ]
-        },
-        {
-          "key": "nc1125dda7110c",
-          "parentKey": "",
-          "authorUrlname": "alice_ai_blog",
-          "authorName": "えいりす🪽Aliceのブログと小説と",
-          "avatar": "https://assets.st-note.com/production/uploads/images/324856630/profile_d9094221d7c6f4a962b56256d83d9c41.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子さん\n\n今回の件、本当に難しいお話だったと思います。\nとても勇気を持って記事にされたのだと思いました。\n\nNoteは楽しめる場所。そうあって欲しいと願っています。\n\n…………いろいろ書こうと思ったのですがまとまらないです😆\nそれをまとめて記事に想いを載せられる王子さんは流石だなと、改めて思いました。\n\nNoteは楽しく。少なくとも私はそうやっていこうと思います。",
-          "publishedAt": "2026-10-23T13:34:23.211+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc1125dda7110c",
-          "rootAuthorUrlname": "alice_ai_blog",
-          "rootBody": "王子さん\n\n今回の件、本当に難しいお話だったと思います。\nとても勇気を持って記事にされたのだと思いました。\n\nNoteは楽しめる場所。そうあって欲しいと願っています。\n\n…………いろいろ書こうと思ったのですがまとまらないです😆\nそれをまとめて記事に想いを載せられる王子さんは流石だなと、改めて思いました。\n\nNoteは楽しく。少なくとも私はそうやっていこうと思います。",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子さん\n\n今回の件、本当に難しいお話だったと思います。\nとても勇気を持って記事にされたのだと思いました。\n\nNoteは楽しめる場所。そうあって欲しいと願っています。\n\n…………いろいろ書こうと思ったのですがまとまらないです😆\nそれをまとめて記事に想いを載せられる王子さんは流石だなと、改めて思いました。\n\nNoteは楽しく。少なくとも私はそうやっていこうと思います。"
-          ]
-        },
-        {
-          "key": "nc6837af44eb42",
-          "parentKey": "",
-          "authorUrlname": "dear_viper3924",
-          "authorName": "ふらつき母ちゃん│脊髄小脳変性症ですが何か⁉️",
-          "avatar": "https://assets.st-note.com/production/uploads/images/336606617/profile_75e266c90351ec2afba164f4e83f17e4.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "はじめまして(*ᴗ ᴗ)⁾⁾ﾍﾟｺﾘ\n今回の記事に共感できたので、コメントしちゃいます(*´艸`*)♡\n\n私も以前、違うカタチでのバトンが回ってきた時にものすごく悩んでしまいました\n\nその時は、バトン形式を否定するように思われては…という思いで\n「ここに置いとくから、受け取りたい人は受け取って！」\nというカタチで対応しました\n\nネロ王子のような「止める」という選択肢もあったなぁ💦\nと改めて考えることができました\n\n私に気付きのキッカケを与えてくださり、ありがとぉございます",
-          "publishedAt": "2026-10-24T09:18:50.142+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc6837af44eb42",
-          "rootAuthorUrlname": "dear_viper3924",
-          "rootBody": "はじめまして(*ᴗ ᴗ)⁾⁾ﾍﾟｺﾘ\n今回の記事に共感できたので、コメントしちゃいます(*´艸`*)♡\n\n私も以前、違うカタチでのバトンが回ってきた時にものすごく悩んでしまいました\n\nその時は、バトン形式を否定するように思われては…という思いで\n「ここに置いとくから、受け取りたい人は受け取って！」\nというカタチで対応しました\n\nネロ王子のような「止める」という選択肢もあったなぁ💦\nと改めて考えることができました\n\n私に気付きのキッカケを与えてくださり、ありがとぉございます",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "はじめまして(*ᴗ ᴗ)⁾⁾ﾍﾟｺﾘ\n今回の記事に共感できたので、コメントしちゃいます(*´艸`*)♡\n\n私も以前、違うカタチでのバトンが回ってきた時にものすごく悩んでしまいました\n\nその時は、バトン形式を否定するように思われては…という思いで\n「ここに置いとくから、受け取りたい人は受け取って！」\nというカタチで対応しました\n\nネロ王子のような「止める」という選択肢もあったなぁ💦\nと改めて考えることができました\n\n私に気付きのキッカケを与えてくださり、ありがとぉございます"
-          ]
-        },
-        {
-          "key": "nc77c1a9ce90c7",
-          "parentKey": "",
-          "authorUrlname": "fresh_walrus2288",
-          "authorName": "アイル",
-          "avatar": "https://assets.st-note.com/production/uploads/images/321575708/profile_a88a3afba4cd33e5da27bc16d7a2b054.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ネロ王子、こんにちは！\nお邪魔します🐕🐾\n足ふきふき\n\n以前から、王子は中身も人格者なのだろうな〜と思っていましたが……やっぱり！！(^^)\n\n自分のところでバトンを止めるのは、比較的簡単なことだと思います。\nでも、相手の気持ちを尊重しながら、言いにくいことまできちんと伝える。\nアイルは正直、そこまで他人のことを考えて踏み込もうとは思わないので、やはり王子はすごいなぁと感心しました。\n\nあっ、ちなみにアイルは柴犬なので、どれだけ成長しても人格者にはなれません。\nなっても人格犬です！！(｀・ω・´)ゞ",
-          "publishedAt": "2026-10-24T15:07:53.254+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc77c1a9ce90c7",
-          "rootAuthorUrlname": "fresh_walrus2288",
-          "rootBody": "ネロ王子、こんにちは！\nお邪魔します🐕🐾\n足ふきふき\n\n以前から、王子は中身も人格者なのだろうな〜と思っていましたが……やっぱり！！(^^)\n\n自分のところでバトンを止めるのは、比較的簡単なことだと思います。\nでも、相手の気持ちを尊重しながら、言いにくいことまできちんと伝える。\nアイルは正直、そこまで他人のことを考えて踏み込もうとは思わないので、やはり王子はすごいなぁと感心しました。\n\nあっ、ちなみにアイルは柴犬なので、どれだけ成長しても人格者にはなれません。\nなっても人格犬です！！(｀・ω・´)ゞ",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ネロ王子、こんにちは！\nお邪魔します🐕🐾\n足ふきふき\n\n以前から、王子は中身も人格者なのだろうな〜と思っていましたが……やっぱり！！(^^)\n\n自分のところでバトンを止めるのは、比較的簡単なことだと思います。\nでも、相手の気持ちを尊重しながら、言いにくいことまできちんと伝える。\nアイルは正直、そこまで他人のことを考えて踏み込もうとは思わないので、やはり王子はすごいなぁと感心しました。\n\nあっ、ちなみにアイルは柴犬なので、どれだけ成長しても人格者にはなれません。\nなっても人格犬です！！(｀・ω・´)ゞ"
-          ]
-        },
-        {
-          "key": "nc8375a79d4b81",
-          "parentKey": "",
-          "authorUrlname": "kiramekiwave",
-          "authorName": "水面こは🎹迷奏の音姫は今日も決められない",
-          "avatar": "https://assets.st-note.com/production/uploads/images/330748028/profile_838e8b3cfd1e81f49c9359c42163ee23.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "自分の気持ちをきちんと言語化して伝えてらっしゃるのが、なにより素敵です。尊敬します（ ;  ; ）",
-          "publishedAt": "2026-10-24T18:45:58.564+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc8375a79d4b81",
-          "rootAuthorUrlname": "kiramekiwave",
-          "rootBody": "自分の気持ちをきちんと言語化して伝えてらっしゃるのが、なにより素敵です。尊敬します（ ;  ; ）",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "自分の気持ちをきちんと言語化して伝えてらっしゃるのが、なにより素敵です。尊敬します（ ;  ; ）"
-          ]
-        },
-        {
-          "key": "nc8e67a60dcd35",
-          "parentKey": "",
-          "authorUrlname": "capricious_note",
-          "authorName": "カプリ",
-          "avatar": "https://assets.st-note.com/production/uploads/images/325718979/profile_41bef95473205ffabd7b09a70f048000.jpg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ネロ王子様、はじめまして。\n\nこちらの記事を拝読して、感銘を受けました。\n誰も傷つけず、批判せず、だけどしっかりとご自身の考えと行動を明確にする姿勢を見習いたいと思いました。\n「一度の売上より、長く続く信頼を」\nまさにその通りですね。\nその信頼の先に、収益があるのだと思います。\nとてもためになる、素晴らしい記事でした。",
-          "publishedAt": "2026-10-25T20:36:57.846+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc8e67a60dcd35",
-          "rootAuthorUrlname": "capricious_note",
-          "rootBody": "ネロ王子様、はじめまして。\n\nこちらの記事を拝読して、感銘を受けました。\n誰も傷つけず、批判せず、だけどしっかりとご自身の考えと行動を明確にする姿勢を見習いたいと思いました。\n「一度の売上より、長く続く信頼を」\nまさにその通りですね。\nその信頼の先に、収益があるのだと思います。\nとてもためになる、素晴らしい記事でした。",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ネロ王子様、はじめまして。\n\nこちらの記事を拝読して、感銘を受けました。\n誰も傷つけず、批判せず、だけどしっかりとご自身の考えと行動を明確にする姿勢を見習いたいと思いました。\n「一度の売上より、長く続く信頼を」\nまさにその通りですね。\nその信頼の先に、収益があるのだと思います。\nとてもためになる、素晴らしい記事でした。"
-          ]
-        }
-      ],
-      "checkedAt": 1795496129806
+      "unresolved": [],
+      "checkedAt": 1795578053905
     },
     "n888d088cb751": {
       "key": "n888d088cb751",
@@ -1678,49 +444,8 @@
       "commentCount": 46,
       "publishedAt": "2026-10-20T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n888d088cb751",
-      "unresolved": [
-        {
-          "key": "nc83d5fccf1e02",
-          "parentKey": "",
-          "authorUrlname": "00irea00",
-          "authorName": "紡えり🐱 ⁂GPT遊びに夢中⁂",
-          "avatar": "https://assets.st-note.com/production/uploads/images/335275206/profile_29d54c9f53c13a933668330c84f216f9.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "あー！Honoさん、頑張って育ててましたね(笑)(笑)(笑)\n苦戦してるのに笑って読んでました(笑)",
-          "publishedAt": "2026-10-21T19:56:43.600+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc2f6be6b293b1",
-          "rootAuthorUrlname": "00irea00",
-          "rootBody": "王子🌙🙌✨✨\n\n新曲たずさえての参戦ですか！！\n\nHello Againは、note書いてる方には響く歌詞ですね…👍✨✨\n\n雪綴ゆきさんの記事、私ものぞいてました(笑)\n参加しやすくて、すごくいいですよね！！",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "あー！Honoさん、頑張って育ててましたね(笑)(笑)(笑)\n苦戦してるのに笑って読んでました(笑)"
-          ]
-        },
-        {
-          "key": "nc8a711a1a7d52",
-          "parentKey": "",
-          "authorUrlname": "kan_mina867",
-          "authorName": "❁⃘*.ﾟMina❁⃘*.ﾟ｜︎︎雲バル・ブラバル運営中☁️🖤",
-          "avatar": "https://assets.st-note.com/production/uploads/images/330751797/profile_f730771dfb69a60dc81f2afcc0e11b78.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子、こんばんはꉂ🤭\nコメント64件www\n痺れる数字でしたねwww\n\nハロハロウィーンのコメントで先程バッティングしたから、追いついたのかしらとwwwꉂ🤣w‪𐤔\nちなみに、ワンラビさんとの遭遇率が非常に高いです。\n\nコメントは至極真面目に返していますが？ꉂ🤭\n笑ってもらえて嬉しいです(笑)\nこちらもたまに起こる、王子との笑いの応酬戦楽しんでますよwww\n\n10曲溜まったらぜひwww\nいんすとぅるめんたるは、王子の子守唄で。プリンセス用にもなるし、きっと互いに寝不足なのでꉂ🤭",
-          "publishedAt": "2026-10-22T18:21:48.922+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc8a0386f8b0bc",
-          "rootAuthorUrlname": "kan_mina867",
-          "rootBody": "王子、おはようございます☀️\n\nコスプレ倶楽部で遊び、フェス参加www活動量が凄いなぁꉂ🤣w‪𐤔\nどんなに楽しく遊んでも、\nハロハロウィーンのことも忘れない♡♡さすがですꉂ🤭✨️\n\nどの曲も好きですし、\nハロハロウィーンももちろん大好きですが、\n私は、王子のnoteへの気持ちが出てる、4曲目が特に好きです♡♡\nリピ決定ですね♡♡ꉂ🤭✨️\nあれ？SUNO事件は解決？www\n\nちなみに、アルバムはいつ出ますか？www\n配信お待ちしてますねーꉂ🤣w‪𐤔",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子、こんばんはꉂ🤭\nコメント64件www\n痺れる数字でしたねwww\n\nハロハロウィーンのコメントで先程バッティングしたから、追いついたのかしらとwwwꉂ🤣w‪𐤔\nちなみに、ワンラビさんとの遭遇率が非常に高いです。\n\nコメントは至極真面目に返していますが？ꉂ🤭\n笑ってもらえて嬉しいです(笑)\nこちらもたまに起こる、王子との笑いの応酬戦楽しんでますよwww\n\n10曲溜まったらぜひwww\nいんすとぅるめんたるは、王子の子守唄で。プリンセス用にもなるし、きっと互いに寝不足なのでꉂ🤭"
-          ]
-        }
-      ],
-      "checkedAt": 1795496131539
+      "unresolved": [],
+      "checkedAt": 1795578055622
     },
     "n76a630334117": {
       "key": "n76a630334117",
@@ -1728,89 +453,8 @@
       "commentCount": 62,
       "publishedAt": "2026-10-19T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n76a630334117",
-      "unresolved": [
-        {
-          "key": "nc9f0833d2b048",
-          "parentKey": "",
-          "authorUrlname": "apiosfanclub",
-          "authorName": "アピオスファンクラブ｜１人気ままなアピオス文化研究",
-          "avatar": "https://assets.st-note.com/production/uploads/images/319272379/profile_4d31e5f28941ac5a7449068fd2cdb455.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "はい、準備の準備です😊\nイベント盛りだくさんで、ハロウィンはまだおかしラリーしかできてません😅\n\n挨拶！\n「アディオス」っぽいんですよね🤣",
-          "publishedAt": "2026-10-22T12:49:32.802+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncf4deabb216b8",
-          "rootAuthorUrlname": "apiosfanclub",
-          "rootBody": "盛りだくさんすぎて、全部見る自信はありません。。\nほんとみんなスゴイです。\nお菓子やさんの準備をする準備ができたので、少しずつやっていきます(^^)\nあ、作文についての想いを綴りましたので、もし少しのお時間があれば、のぞいてみてください🙏",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "はい、準備の準備です😊\nイベント盛りだくさんで、ハロウィンはまだおかしラリーしかできてません😅\n\n挨拶！\n「アディオス」っぽいんですよね🤣"
-          ]
-        },
-        {
-          "key": "nc04d3b33fab75",
-          "parentKey": "",
-          "authorUrlname": "love_chance",
-          "authorName": "LOVEちゃん♡｜サンタクラシ🍄",
-          "avatar": "https://assets.st-note.com/production/uploads/images/336635159/profile_d699e2db9b87c5a5a01efe93aa3db87a.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "🎯 一発で見つけた！「一級ストーカー」でした🤣\nお菓子渡しときました🍬💕\n\n王子、眩しすぎます✨❇✴",
-          "publishedAt": "2026-10-22T08:25:00.831+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc04d3b33fab75",
-          "rootAuthorUrlname": "love_chance",
-          "rootBody": "🎯 一発で見つけた！「一級ストーカー」でした🤣\nお菓子渡しときました🍬💕\n\n王子、眩しすぎます✨❇✴",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "🎯 一発で見つけた！「一級ストーカー」でした🤣\nお菓子渡しときました🍬💕\n\n王子、眩しすぎます✨❇✴"
-          ]
-        },
-        {
-          "key": "nc8667dc56989c",
-          "parentKey": "",
-          "authorUrlname": "natty_skink7179",
-          "authorName": "枢木 経介｜【note発】ユーチューバー＆【新資本論／ネオ江戸思想家】",
-          "avatar": "https://assets.st-note.com/production/uploads/images/319037040/profile_1283fd4d2ae7959d7144c875de18c8a9.jpg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ごきげんよう☆ネロ王子様♡\n最近私忙しくて、ここにこれなかたの。\nでもきてみたら、やっぱり夢の国で☆★\n\n――王子さま、近いうちに私も『ハロハロウィーン』に、\n参加させていただきますわ♡♡",
-          "publishedAt": "2026-10-27T03:43:24.298+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc8667dc56989c",
-          "rootAuthorUrlname": "natty_skink7179",
-          "rootBody": "ごきげんよう☆ネロ王子様♡\n最近私忙しくて、ここにこれなかたの。\nでもきてみたら、やっぱり夢の国で☆★\n\n――王子さま、近いうちに私も『ハロハロウィーン』に、\n参加させていただきますわ♡♡",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ごきげんよう☆ネロ王子様♡\n最近私忙しくて、ここにこれなかたの。\nでもきてみたら、やっぱり夢の国で☆★\n\n――王子さま、近いうちに私も『ハロハロウィーン』に、\n参加させていただきますわ♡♡"
-          ]
-        },
-        {
-          "key": "nc2833e0b2b7fe",
-          "parentKey": "",
-          "authorUrlname": "ai_naoyuki",
-          "authorName": "ナオユキ｜物語と知識のコンシェルジュ",
-          "avatar": "https://assets.st-note.com/production/uploads/images/313291204/profile_a5b784b498c6219aaf599ff4dba0e39f.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ネロさん、こんにちは～✨\n\nプリンセスが遊んでいるブロックに、自分もなってみるっていう発想がスキです✨\n\nお城の壁画からブロック、モンブランと、王子の振り幅が大きいですね🤣\nでも、作るきっかけのお話を読むと、それぞれに身近な楽しみも入っているんだなと思いました。\n\n僕の記事やMVの紹介もありがとうございます。\n運営への気遣いまであって、楽しく読みながらあたたかい気持ちになりました😊",
-          "publishedAt": "2026-10-28T14:13:16.871+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc2833e0b2b7fe",
-          "rootAuthorUrlname": "ai_naoyuki",
-          "rootBody": "ネロさん、こんにちは～✨\n\nプリンセスが遊んでいるブロックに、自分もなってみるっていう発想がスキです✨\n\nお城の壁画からブロック、モンブランと、王子の振り幅が大きいですね🤣\nでも、作るきっかけのお話を読むと、それぞれに身近な楽しみも入っているんだなと思いました。\n\n僕の記事やMVの紹介もありがとうございます。\n運営への気遣いまであって、楽しく読みながらあたたかい気持ちになりました😊",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ネロさん、こんにちは～✨\n\nプリンセスが遊んでいるブロックに、自分もなってみるっていう発想がスキです✨\n\nお城の壁画からブロック、モンブランと、王子の振り幅が大きいですね🤣\nでも、作るきっかけのお話を読むと、それぞれに身近な楽しみも入っているんだなと思いました。\n\n僕の記事やMVの紹介もありがとうございます。\n運営への気遣いまであって、楽しく読みながらあたたかい気持ちになりました😊"
-          ]
-        }
-      ],
-      "checkedAt": 1795496133159
+      "unresolved": [],
+      "checkedAt": 1795578057327
     },
     "n9c329a589955": {
       "key": "n9c329a589955",
@@ -1818,29 +462,8 @@
       "commentCount": 22,
       "publishedAt": "2026-10-18T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n9c329a589955",
-      "unresolved": [
-        {
-          "key": "ncf9b9f1137357",
-          "parentKey": "",
-          "authorUrlname": "uchu_kasan",
-          "authorName": "宇宙人かあさん",
-          "avatar": "https://assets.st-note.com/production/uploads/images/312209009/profile_d4699bb05796464543c0e51d627d5afd.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ホイホイ🌙\nホイホイホイホイホイ👽\n\nホイホイホイホイホイホイ\nホイホイホイ。\n\nホイホイ、ホイホイホイホイ👽🛸",
-          "publishedAt": "2026-10-23T14:17:19.266+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncf9b9f1137357",
-          "rootAuthorUrlname": "uchu_kasan",
-          "rootBody": "ホイホイ🌙\nホイホイホイホイホイ👽\n\nホイホイホイホイホイホイ\nホイホイホイ。\n\nホイホイ、ホイホイホイホイ👽🛸",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ホイホイ🌙\nホイホイホイホイホイ👽\n\nホイホイホイホイホイホイ\nホイホイホイ。\n\nホイホイ、ホイホイホイホイ👽🛸"
-          ]
-        }
-      ],
-      "checkedAt": 1795496133708
+      "unresolved": [],
+      "checkedAt": 1795578057893
     },
     "n045caddfdeb2": {
       "key": "n045caddfdeb2",
@@ -1857,109 +480,8 @@
       "commentCount": 116,
       "publishedAt": "2026-10-17T07:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n599b78d349cb",
-      "unresolved": [
-        {
-          "key": "nc6b1f10be945a",
-          "parentKey": "",
-          "authorUrlname": "almabrillante",
-          "authorName": "あまね〘ฅ՞•ﻌ•՞ฅฅ^•ﻌ•^ฅ〙",
-          "avatar": "https://assets.st-note.com/production/uploads/images/331291863/profile_71e7eadaa5f628045baf464848fd8e9b.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "制覇は難しいかもですが😂\nお菓子をもっと作りたい…笑",
-          "publishedAt": "2026-10-22T00:03:14.302+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncd56e9a5f38a7",
-          "rootAuthorUrlname": "almabrillante",
-          "rootBody": "ネロ王子🌙\nお店作ったんですが…どのハッシュタグをつければ？3つともでしょうか？😶",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "制覇は難しいかもですが😂\nお菓子をもっと作りたい…笑"
-          ]
-        },
-        {
-          "key": "nc01898e0dd632",
-          "parentKey": "",
-          "authorUrlname": "nizi_no_mukouhe",
-          "authorName": "Cozy Cafe & Bar beyond｜ﾋﾞﾖﾝﾄﾞ店主（旦那の方）",
-          "avatar": "https://assets.st-note.com/production/uploads/images/311381647/profile_c83c2ce38a0e917f757b0a6f16fd7d74.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "1時に始めたはずが、もう3時🤣\n「発酵王子」しつこいから、\n違うキャラクター連れてきたら\n時間どんどん過ぎてました😱\n面白いけど、おそろしい企画🤣",
-          "publishedAt": "2026-10-26T03:11:36.696+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncde65b072b9d9",
-          "rootAuthorUrlname": "nizi_no_mukouhe",
-          "rootBody": "新しい企画もう始まってた💦\n深夜作業だけでは\nさすがにハードそうですね😱\nすみません、王子🤴\n時間あるときに出直します！\nたぶん、間に合うと思います🙇‍♂️",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "1時に始めたはずが、もう3時🤣\n「発酵王子」しつこいから、\n違うキャラクター連れてきたら\n時間どんどん過ぎてました😱\n面白いけど、おそろしい企画🤣"
-          ]
-        },
-        {
-          "key": "ncedea82212290",
-          "parentKey": "",
-          "authorUrlname": "akemi0730",
-          "authorName": "あけみ | note企画×子育て応援",
-          "avatar": "https://assets.st-note.com/production/uploads/images/335124947/profile_65d403de5b930fd0f46e89998ce9597a.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子のご来店お待ちしております😊‼️\n\nそれにしても、30店舗からがなかなか難しいですね😓",
-          "publishedAt": "2026-10-24T12:12:27.240+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc4e8546f4412a",
-          "rootAuthorUrlname": "akemi0730",
-          "rootBody": "王子！\n\nお菓子とお店できました！！\n\nもしよければ、お立ち寄りください。",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子のご来店お待ちしております😊‼️\n\nそれにしても、30店舗からがなかなか難しいですね😓"
-          ]
-        },
-        {
-          "key": "ncc3de2be0602f",
-          "parentKey": "",
-          "authorUrlname": "open_tulip9172",
-          "authorName": "ミノリ・グルーヴ@Minoriからの転生",
-          "avatar": "https://assets.st-note.com/production/uploads/images/334932598/profile_4914044f14fb5480494305073d860fc4.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ありがとうございます😭",
-          "publishedAt": "2026-10-25T15:02:59.710+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc9147e91810ec",
-          "rootAuthorUrlname": "open_tulip9172",
-          "rootBody": "ネロ王子✨\nこんにちは♪\n\n\n今から…参加、出店することって可能でしょうか？( ´△｀)ｵｽﾞｵｽﾞ",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ありがとうございます😭"
-          ]
-        },
-        {
-          "key": "nc79a88ff20849",
-          "parentKey": "",
-          "authorUrlname": "easy_coyote213",
-          "authorName": "マロ（ひろちorヒロ）",
-          "avatar": "https://assets.st-note.com/production/uploads/images/338804627/profile_b0f47facba1dea2e28710e5041847372.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "はーい\nありがとうございます",
-          "publishedAt": "2026-10-25T15:47:18.532+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc7da7aee37a1e",
-          "rootAuthorUrlname": "easy_coyote213",
-          "rootBody": "こんにちはー\n (｡˃ ᵕ ˂。)\n\nお菓子作りプロンプトお借りしました\nありがとうございます\n\n\nわたしもお店作れるのでしょうか？",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "はーい\nありがとうございます"
-          ]
-        }
-      ],
-      "checkedAt": 1795496137066
+      "unresolved": [],
+      "checkedAt": 1795578061664
     },
     "ncb2e8df1ba60": {
       "key": "ncb2e8df1ba60",
@@ -1976,29 +498,8 @@
       "commentCount": 39,
       "publishedAt": "2026-10-15T21:30:00+09:00",
       "url": "https://note.com/nero_notelover/n/n034e02d1ebe4",
-      "unresolved": [
-        {
-          "key": "nc2e4dfe47c0e3",
-          "parentKey": "",
-          "authorUrlname": "fancy_aster9977",
-          "authorName": "猫仏＠相互フォロー",
-          "avatar": "https://assets.st-note.com/production/uploads/images/326268467/profile_dee646246b31a3abf6bb0d3d1f3a88d1.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子ホイホイ、初めましてでも使ってよいと聞いて、小さな箱ごと来ましたにゃ📦🐈 「いけたらいくわ」の気楽さが好きです。\n王子も全部は追いきれないですもんにゃ。",
-          "publishedAt": "2026-10-23T19:30:22.016+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc2e4dfe47c0e3",
-          "rootAuthorUrlname": "fancy_aster9977",
-          "rootBody": "王子ホイホイ、初めましてでも使ってよいと聞いて、小さな箱ごと来ましたにゃ📦🐈 「いけたらいくわ」の気楽さが好きです。\n王子も全部は追いきれないですもんにゃ。",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子ホイホイ、初めましてでも使ってよいと聞いて、小さな箱ごと来ましたにゃ📦🐈 「いけたらいくわ」の気楽さが好きです。\n王子も全部は追いきれないですもんにゃ。"
-          ]
-        }
-      ],
-      "checkedAt": 1795496137710
+      "unresolved": [],
+      "checkedAt": 1795578062287
     },
     "n6c980c7258f4": {
       "key": "n6c980c7258f4",
@@ -2053,29 +554,9 @@
           "pendingBodies": [
             "王子🌙\nプリンセス、がんばってますね🥹\n七五三の歌、愛に溢れていてうっかり油断して涙目になりそうでした🥹\n\nそして年長さんでそんなに泳げるのは凄すぎます😳\n週5 の練習の賜物ですね👏✨\n\nママ即答と\n王妃と王子の優しい愛で\nほっこり回でした🥰"
           ]
-        },
-        {
-          "key": "nc628889ca67e6",
-          "parentKey": "",
-          "authorUrlname": "akemi0730",
-          "authorName": "あけみ | note企画×子育て応援",
-          "avatar": "https://assets.st-note.com/production/uploads/images/335124947/profile_65d403de5b930fd0f46e89998ce9597a.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "王子❗️うちもプールしてるからめっちゃ分かります‼️\n\nパパは携帯見てるんですよねー💦\nそして子どもは絶対ママに見て❗️と言いますよねー🤣\n\n私の場合、わが家の王子からは、「ママは家から応援しててね🌹」と言われます😊\n\nどこにいても、ママの応援は最強なんでしょうね📣",
-          "publishedAt": "2026-10-26T20:17:00.799+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc628889ca67e6",
-          "rootAuthorUrlname": "akemi0730",
-          "rootBody": "王子❗️うちもプールしてるからめっちゃ分かります‼️\n\nパパは携帯見てるんですよねー💦\nそして子どもは絶対ママに見て❗️と言いますよねー🤣\n\n私の場合、わが家の王子からは、「ママは家から応援しててね🌹」と言われます😊\n\nどこにいても、ママの応援は最強なんでしょうね📣",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "王子❗️うちもプールしてるからめっちゃ分かります‼️\n\nパパは携帯見てるんですよねー💦\nそして子どもは絶対ママに見て❗️と言いますよねー🤣\n\n私の場合、わが家の王子からは、「ママは家から応援しててね🌹」と言われます😊\n\nどこにいても、ママの応援は最強なんでしょうね📣"
-          ]
         }
       ],
-      "checkedAt": 1795496138674
+      "checkedAt": 1795578063099
     },
     "ncf8842e9aace": {
       "key": "ncf8842e9aace",
@@ -2152,7 +633,7 @@
           ]
         }
       ],
-      "checkedAt": 1795496139533
+      "checkedAt": 1795578063993
     },
     "n2499a4347e8e": {
       "key": "n2499a4347e8e",
@@ -2197,7 +678,7 @@
       "publishedAt": "2026-10-07T22:34:55+09:00",
       "url": "https://note.com/nero_notelover/n/ne84e56557461",
       "unresolved": [],
-      "checkedAt": 1794617755200
+      "checkedAt": 1795578067947
     },
     "n2c5543293164": {
       "key": "n2c5543293164",
@@ -2214,29 +695,8 @@
       "commentCount": 84,
       "publishedAt": "2026-10-05T22:22:02+09:00",
       "url": "https://note.com/nero_notelover/n/n6b56b61e1fa1",
-      "unresolved": [
-        {
-          "key": "nccf124ab91f80",
-          "parentKey": "",
-          "authorUrlname": "mixmorph",
-          "authorName": "MixMorph（ミックス・モーフ）",
-          "avatar": "https://assets.st-note.com/production/uploads/images/314048511/profile_407e55c2095ca418d5ff67a7607becc3.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "ネロ王子！\n\nMinaさんの記事で名前打ち間違ってたの気がついたよ！\n\n今、直しました！\nごめんなさい！",
-          "publishedAt": "2026-10-28T09:30:17.428+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncd0954ab99661",
-          "rootAuthorUrlname": "mixmorph",
-          "rootBody": "ネロ王子！\n王子の攻略本か…なるほど…転生するか！\nいや、嘘です…でも転生したら攻略本を携えて絡みにいきます！\n結局、秋読コレクションには投稿できませんでした。\n別の記事に熱が入ってました。笑",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "ネロ王子！\n\nMinaさんの記事で名前打ち間違ってたの気がついたよ！\n\n今、直しました！\nごめんなさい！"
-          ]
-        }
-      ],
-      "checkedAt": 1795496140758
+      "unresolved": [],
+      "checkedAt": 1795578069204
     },
     "nfec34a269814": {
       "key": "nfec34a269814",
@@ -2281,7 +741,7 @@
       "publishedAt": "2026-09-30T21:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n03732162963e",
       "unresolved": [],
-      "checkedAt": 1794617806307
+      "checkedAt": 1795578076894
     },
     "n5ac2f0f56308": {
       "key": "n5ac2f0f56308",
@@ -2299,7 +759,7 @@
       "publishedAt": "2026-09-29T06:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/n40e1bc7d811c",
       "unresolved": [],
-      "checkedAt": 1794969198474
+      "checkedAt": 1795578081192
     },
     "n7a4123fca48b": {
       "key": "n7a4123fca48b",
@@ -2353,7 +813,7 @@
       "publishedAt": "2026-09-27T19:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/nf558f15df86a",
       "unresolved": [],
-      "checkedAt": 1794617834121
+      "checkedAt": 1795578084051
     },
     "nfc54ff2e660e": {
       "key": "nfc54ff2e660e",
@@ -2362,7 +822,7 @@
       "publishedAt": "2026-09-27T18:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/nfc54ff2e660e",
       "unresolved": [],
-      "checkedAt": 1794617837129
+      "checkedAt": 1795578087119
     },
     "n5cef5558a49a": {
       "key": "n5cef5558a49a",
@@ -2407,7 +867,7 @@
       "publishedAt": "2026-09-23T10:20:53+09:00",
       "url": "https://note.com/nero_notelover/n/n5d373c663477",
       "unresolved": [],
-      "checkedAt": 1794969209251
+      "checkedAt": 1795578095778
     },
     "nd0af429284a2": {
       "key": "nd0af429284a2",
@@ -2461,7 +921,7 @@
       "publishedAt": "2026-09-18T06:00:00+09:00",
       "url": "https://note.com/nero_notelover/n/nb83d60ff76e2",
       "unresolved": [],
-      "checkedAt": 1794969213359
+      "checkedAt": 1795578100056
     },
     "n36212bf7056f": {
       "key": "n36212bf7056f",
@@ -2628,7 +1088,7 @@
           ]
         }
       ],
-      "checkedAt": 1795496186620
+      "checkedAt": 1795578100644
     },
     "n412a21c4ca4c": {
       "key": "n412a21c4ca4c",
@@ -2645,29 +1105,8 @@
       "commentCount": 33,
       "publishedAt": "2026-09-05T20:30:00+09:00",
       "url": "https://note.com/nero_notelover/n/n784117b5567b",
-      "unresolved": [
-        {
-          "key": "nc7119853c6dfe",
-          "parentKey": "",
-          "authorUrlname": "awesomey",
-          "authorName": "Awesome YAMAUCHI | 🔥闘魂連鎖🔥 開催中",
-          "avatar": "https://assets.st-note.com/production/uploads/images/51147548/profile_6c0f5f9552d9449851b52c8b2946aaad.png?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "https://note.com/apiosfanclub/n/n4e5931a5066d\nここからきました。先輩にご挨拶です。\n\n私もついに、https://note.com/apiosfanclub/n/n0c3602b7efff 47番をもらいました。先輩方をみならって、アピオス好きです！　を言っていきたいです。",
-          "publishedAt": "2026-10-24T07:56:01.357+09:00",
-          "isRoot": true,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "nc7119853c6dfe",
-          "rootAuthorUrlname": "awesomey",
-          "rootBody": "https://note.com/apiosfanclub/n/n4e5931a5066d\nここからきました。先輩にご挨拶です。\n\n私もついに、https://note.com/apiosfanclub/n/n0c3602b7efff 47番をもらいました。先輩方をみならって、アピオス好きです！　を言っていきたいです。",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "https://note.com/apiosfanclub/n/n4e5931a5066d\nここからきました。先輩にご挨拶です。\n\n私もついに、https://note.com/apiosfanclub/n/n0c3602b7efff 47番をもらいました。先輩方をみならって、アピオス好きです！　を言っていきたいです。"
-          ]
-        }
-      ],
-      "checkedAt": 1795496187549
+      "unresolved": [],
+      "checkedAt": 1795578101289
     },
     "nf4830fe23412": {
       "key": "nf4830fe23412",
@@ -2771,7 +1210,7 @@
           ]
         }
       ],
-      "checkedAt": 1795496188216
+      "checkedAt": 1795578101946
     },
     "nfaa8ad059650": {
       "key": "nfaa8ad059650",
@@ -2815,29 +1254,8 @@
       "commentCount": 24,
       "publishedAt": "2026-08-27T12:02:55+09:00",
       "url": "https://note.com/nero_notelover/n/n99f2859211d3",
-      "unresolved": [
-        {
-          "key": "nc8ad7ce963707",
-          "parentKey": "",
-          "authorUrlname": "yuu_boy3_mom",
-          "authorName": "ゆう@you, too.",
-          "avatar": "https://assets.st-note.com/production/uploads/images/339013427/profile_986933e194a386940d1b7132756dcaae.jpeg?fit=bounds&format=jpeg&quality=85&width=330",
-          "body": "そうなんですね…もうすぐアウトです🤭",
-          "publishedAt": "2026-11-21T07:54:42.660+09:00",
-          "isRoot": false,
-          "replyCount": 0,
-          "creatorReplied": false,
-          "creatorLiked": false,
-          "rootKey": "ncbf89af116902",
-          "rootAuthorUrlname": "yuu_boy3_mom",
-          "rootBody": "コメント依存症📝私もです🤭",
-          "pendingCount": 1,
-          "pendingBodies": [
-            "そうなんですね…もうすぐアウトです🤭"
-          ]
-        }
-      ],
-      "checkedAt": 1795496193034
+      "unresolved": [],
+      "checkedAt": 1795578103131
     },
     "n46c95069af22": {
       "key": "n46c95069af22",
